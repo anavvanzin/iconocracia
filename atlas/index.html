@@ -14,6 +14,10 @@
 <script type="text/babel" src="parts.jsx"></script>
 <style>
   html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    body { transition: none; }
+  }
   body { margin: 0; transition: background .35s var(--ease-out); }
   .atlas-root { position: relative; min-height: 100vh; }
   .grain-overlay { position: fixed; inset: 0; pointer-events: none; z-index: 1; background-image: var(--c-grain); background-size: 200px; opacity: .8; mix-blend-mode: multiply; }

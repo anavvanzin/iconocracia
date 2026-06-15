@@ -5,6 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>ICONOCRACIA · Iuris Memoria</title>
 <meta name="description" content="A alegoria feminina como tecnologia visual do Estado — Atlas e laboratório de inquérito iconocrático. Ana Vanzin · PPGD/UFSC." />
+<meta name="author" content="Ana Vanzin" />
+<meta name="theme-color" content="#1A2342" />
+<link rel="canonical" href="https://anavanzin.com/iconocracia/" />
+<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="64x64" href="./assets/favicon-64.png" />
+<link rel="apple-touch-icon" href="./assets/favicon-180.png" />
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="ICONOCRACIA · Iuris Memoria" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:url" content="https://anavanzin.com/iconocracia/" />
+<meta property="og:title" content="ICONOCRACIA · Iuris Memoria" />
+<meta property="og:description" content="A alegoria feminina como tecnologia visual do Estado. Uma cartografia comparada do corpo feminino alegórico na cultura jurídica de seis nações, 1789–2000." />
+<meta property="og:image" content="https://anavanzin.com/iconocracia/assets/og-cover.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="ICONOCRACIA — a alegoria feminina como tecnologia visual do Estado." />
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ICONOCRACIA · Iuris Memoria" />
+<meta name="twitter:description" content="A alegoria feminina como tecnologia visual do Estado — Atlas e laboratório de inquérito iconocrático." />
+<meta name="twitter:image" content="https://anavanzin.com/iconocracia/assets/og-cover.png" />
 <link rel="stylesheet" href="./styles.css" />
 <style>
   html { -webkit-text-size-adjust: 100%; }
@@ -57,9 +79,27 @@
     .wrap { padding: 44px 22px 36px; }
     .entries { grid-template-columns: 1fr; gap: 18px; margin-top: 38px; }
   }
+  @media (prefers-reduced-motion: reduce) {
+    a.card, .thumb img, .go svg { transition: none !important; }
+    a.card:hover { transform: none; }
+    a.card:hover .thumb img { transform: none; }
+    a.card:hover .go svg { transform: none; }
+  }
+  .backbar { width: 100%; box-sizing: border-box; max-width: 1080px; margin: 0 auto; padding: 0 40px; }
+  a.backlink { display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #6a6258; text-decoration: none; transition: color .18s var(--ease-out); }
+  a.backlink:hover { color: var(--terracotta); }
+  a.backlink svg { transition: transform .18s var(--ease-out); }
+  a.backlink:hover svg { transform: translateX(-3px); }
+  @media (max-width: 720px) { .backbar { padding: 0 22px; } }
 </style>
 </head>
 <body>
+  <div class="backbar" style="padding-top:24px;">
+    <a class="backlink" href="https://anavanzin.com/">
+      <svg width="15" height="11" viewBox="0 0 15 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5.5H1M6 1 1 5.5 6 10"/></svg>
+      anavanzin.com
+    </a>
+  </div>
   <div class="wrap">
     <header>
       <div class="rule"></div>
@@ -76,7 +116,7 @@
         </div>
         <div class="body">
           <h2>Atlas da Pesquisa</h2>
-          <p>A tese em página única: argumento, anatomia da alegoria, a parede de 27 espécimes, os oito painéis warburguianos, a radiografia do endurecimento e o léxico iconocrático.</p>
+          <p>A tese em página única: argumento, anatomia da alegoria, a parede de 30 espécimes, os oito painéis warburguianos, a radiografia do endurecimento e o léxico iconocrático.</p>
           <span class="go">Entrar no Atlas
             <svg width="16" height="12" viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h13M9 1l5 5-5 5"/></svg>
           </span>

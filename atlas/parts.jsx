@@ -71,6 +71,12 @@ function Nav({ tone, onTone }) {
   const jump = (id) => { const el = document.getElementById(id); if (el) window.scrollTo({ top: el.offsetTop - 64, behavior:"smooth" }); };
   return (
     <nav style={{ position:"sticky", top:0, zIndex:40, display:"flex", alignItems:"center", gap:18, padding:"14px 40px", background:"color-mix(in srgb, var(--c-ground) 86%, transparent)", backdropFilter:"blur(8px)", borderBottom:"1px solid var(--c-border)" }}>
+      <a href="https://anavanzin.com/" className="mono" style={{ display:"flex", alignItems:"center", gap:6, fontSize:9, letterSpacing:"2px", textTransform:"uppercase", color:"var(--c-ink-3)", textDecoration:"none" }}
+        onMouseEnter={e=>e.currentTarget.style.color="var(--c-accent)"} onMouseLeave={e=>e.currentTarget.style.color="var(--c-ink-3)"}>
+        <svg width="14" height="10" viewBox="0 0 15 11" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M14 5.5H1M6 1 1 5.5 6 10"/></svg>
+        anavanzin.com
+      </a>
+      <div style={{ width:1, height:18, background:"var(--c-border)" }} />
       <div style={{ display:"flex", alignItems:"baseline", gap:10 }}>
         <span style={{ fontFamily:"var(--font-display)", fontSize:"calc(20px * var(--scale))", letterSpacing:"3px", color:"var(--c-ink)" }}>ICONOCRACIA</span>
         <span className="mono" style={{ fontSize:8, letterSpacing:"2.5px", color:"var(--c-gold)", textTransform:"uppercase" }}>Atlas</span>

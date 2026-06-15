@@ -51,6 +51,9 @@ window.AtlasData = {
     { id:"US-1896-01", title:"History Instructing Youth", country:"US", year:1896, regime:"FUNDACIONAL", support:"cédula", img:A+"corpus/us-educational-1896-c.png" },
     // ── Normativo: a fórmula que sobrevive + a circulação como moeda ──
     { id:"BE-1559-01", title:"Iustitia", country:"BE", year:1559, regime:"NORMATIVO", support:"gravura", img:A+"corpus/fr-bruegel-justicia-1559.jpg" },
+    { id:"DE-1589-01", title:"Justitia da torre do relógio", country:"DE", year:1589, regime:"NORMATIVO", support:"escultura", img:A+"corpus/de-justitia-esslingen-1589-c.png" },
+    { id:"DE-1752-01", title:"Allegorie der Jus Civile", country:"DE", year:1752, regime:"NORMATIVO", support:"escultura", img:A+"corpus/de-jus-civile-wenzinger-1752-c.png" },
+    { id:"UK-1600-01", title:"Iustitia e Prudentia", country:"UK", year:"s/d", regime:"NORMATIVO", support:"gravura", img:A+"corpus/uk-justitia-prudentia-c.png" },
     { id:"FR-1865-01", title:"A Justiça, a Vingança e a Verdade", country:"FR", year:1865, regime:"NORMATIVO", support:"gravura", img:A+"corpus/fr-chifflart-justice-1865.jpg" },
     { id:"BR-1961-01", title:"A Justiça", country:"BR", year:1961, regime:"NORMATIVO", support:"escultura", img:A+"corpus/br-stf-justica-1961.jpg" },
     { id:"FR-1900-01", title:"A República de Clésinger", country:"FR", year:1900, regime:"NORMATIVO", support:"escultura", img:A+"corpus/fr-clesinger-republique-1900.jpg" },
