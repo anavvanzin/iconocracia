@@ -1,0 +1,1798 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ico": "https://iconocracia.anavanzin.com/vocab#",
+    "iconclass": "https://iconclass.org/",
+    "aat": "http://vocab.getty.edu/aat/",
+    "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+    "edm": "http://www.europeana.eu/schemas/edm/",
+    "dc": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "wd": "http://www.wikidata.org/entity/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "id": "@id",
+    "type": "@type",
+    "label": "skos:prefLabel",
+    "altLabel": "skos:altLabel",
+    "definition": "skos:definition",
+    "inScheme": {
+      "@id": "skos:inScheme",
+      "@type": "@id"
+    },
+    "narrower": {
+      "@id": "skos:narrower",
+      "@type": "@id"
+    },
+    "broader": {
+      "@id": "skos:broader",
+      "@type": "@id"
+    },
+    "exactMatch": {
+      "@id": "skos:exactMatch",
+      "@type": "@id"
+    },
+    "title": "dc:title",
+    "creator": "dc:creator",
+    "created": {
+      "@id": "dc:created",
+      "@type": "xsd:gYear"
+    },
+    "spatial": "dc:spatial",
+    "medium": "dc:medium",
+    "isPartOf": {
+      "@id": "dc:isPartOf",
+      "@type": "@id"
+    },
+    "image": {
+      "@id": "schema:image",
+      "@type": "@id"
+    },
+    "thumbnailUrl": {
+      "@id": "schema:thumbnailUrl",
+      "@type": "@id"
+    },
+    "name": "schema:name",
+    "instantiatesPathosformel": {
+      "@id": "ico:instantiatesPathosformel",
+      "@type": "@id"
+    },
+    "regime": {
+      "@id": "ico:regime"
+    },
+    "country": {
+      "@id": "ico:country"
+    },
+    "support": {
+      "@id": "ico:support"
+    },
+    "year": {
+      "@id": "ico:year"
+    },
+    "archive": {
+      "@id": "ico:archive"
+    },
+    "coreCorpusStatus": {
+      "@id": "ico:coreCorpusStatus"
+    },
+    "gesturalEnergy": {
+      "@id": "ico:gesturalEnergy"
+    },
+    "posturalTension": {
+      "@id": "ico:posturalTension"
+    },
+    "objectSymbolicLoad": {
+      "@id": "ico:objectSymbolicLoad"
+    },
+    "value": "schema:value",
+    "vector": {
+      "@id": "ico:vector",
+      "@container": "@list"
+    },
+    "axis": {
+      "@id": "ico:axis",
+      "@container": "@list"
+    },
+    "scaleAnchor": "ico:scaleAnchor",
+    "confidence": "ico:confidence",
+    "coderID": "ico:coderID",
+    "iconometricScore": {
+      "@id": "ico:iconometricScore"
+    },
+    "indicators": "ico:indicators",
+    "nachlebenEdge": {
+      "@id": "ico:nachlebenEdge",
+      "@container": "@set"
+    },
+    "source": {
+      "@id": "ico:source",
+      "@type": "@id"
+    },
+    "target": {
+      "@id": "ico:target",
+      "@type": "@id"
+    },
+    "relation": {
+      "@id": "ico:relation"
+    },
+    "precomputedXY": {
+      "@id": "ico:precomputedXY",
+      "@container": "@list"
+    },
+    "graph": "@graph"
+  },
+  "@id": "ico:corpus/v1",
+  "type": [
+    "ico:Corpus",
+    "schema:Dataset"
+  ],
+  "name": "Corpus Iconocracia · Alegoria Feminina na Cultura Jurídica (1559–1970)",
+  "dc:creator": "Ana Vanzin · PPGD/UFSC",
+  "created": "2026",
+  "dc:license": "https://creativecommons.org/licenses/by-nc/4.0/",
+  "schema:about": "Female allegory in legal-political iconography, 1800-2000",
+  "ico:specimenCount": 30,
+  "ico:pathosformelnCount": 6,
+  "ico:edgeCount": 10,
+  "ico:version": "0.1.0-jsonld-migration",
+  "ico:datasetStatus": "pre-freeze · piloto IRR pendente",
+  "graph": [
+    {
+      "id": "ico:PathosformelnScheme",
+      "type": "skos:ConceptScheme",
+      "label": "Pathosformeln da Iconocracia (PPGD/UFSC)",
+      "definition": "Esquema SKOS das seis fórmulas de pathos identificadas no corpus iconocrático: 1800–2000, Brasil + Europa + EUA.",
+      "dc:creator": "Ana Vanzin",
+      "created": "2026"
+    },
+    {
+      "id": "ico:libertasArmata",
+      "type": [
+        "skos:Concept",
+        "ico:Pathosformel"
+      ],
+      "inScheme": "ico:PathosformelnScheme",
+      "label": "Libertas Armata",
+      "altLabel": "Armed Liberty",
+      "definition": "Fórmula da figura feminina em movimento militante: braço erguido, pé avançado, arma ou estandarte em punho. Pathos da insurgência fundadora.",
+      "exactMatch": [
+        "iconclass:44B113",
+        "iconclass:11M3",
+        "wd:Q47340"
+      ]
+    },
+    {
+      "id": "ico:respublicaCoroada",
+      "type": [
+        "skos:Concept",
+        "ico:Pathosformel"
+      ],
+      "inScheme": "ico:PathosformelnScheme",
+      "label": "Respublica Coroada",
+      "altLabel": "Crowned Respublica",
+      "definition": "Fórmula da Marianne/República sentada ou ereta, drapejada, com barrete frígio, louros ou diadema. Pathos da legitimidade civil em repouso.",
+      "exactMatch": [
+        "iconclass:44B191",
+        "iconclass:11M41",
+        "wd:Q170509"
+      ]
+    },
+    {
+      "id": "ico:justitiaSerena",
+      "type": [
+        "skos:Concept",
+        "ico:Pathosformel"
+      ],
+      "inScheme": "ico:PathosformelnScheme",
+      "label": "Justitia Serena",
+      "altLabel": "Serene Justice",
+      "definition": "Fórmula da Justiça com balança e espada (frequentemente vendada), corpo idealizado, postura estática. Pathos da imparcialidade calcificada.",
+      "exactMatch": [
+        "iconclass:44G212",
+        "iconclass:11M312",
+        "wd:Q3231690"
+      ]
+    },
+    {
+      "id": "ico:matriaDomestica",
+      "type": [
+        "skos:Concept",
+        "ico:Pathosformel"
+      ],
+      "inScheme": "ico:PathosformelnScheme",
+      "label": "Matria Doméstica",
+      "altLabel": "Domestic Mother-Land",
+      "definition": "Fórmula da figura agrária, maternal, pedagógica — sentada com criança, espigas, alfaia ou livro. Pathos da reprodução naturalizada.",
+      "exactMatch": [
+        "iconclass:11H(MARIANNE)",
+        "iconclass:44A6",
+        "wd:Q174658"
+      ]
+    },
+    {
+      "id": "ico:imperiumFeminae",
+      "type": [
+        "skos:Concept",
+        "ico:Pathosformel"
+      ],
+      "inScheme": "ico:PathosformelnScheme",
+      "label": "Imperium Feminae",
+      "altLabel": "Female Empire",
+      "definition": "Fórmula da Britannia/Germania/Columbia armada, com elmo, escudo, tridente, leão. Pathos do poder imperial vestido de feminilidade marcial.",
+      "exactMatch": [
+        "iconclass:44B121",
+        "iconclass:11M3",
+        "wd:Q188909"
+      ]
+    },
+    {
+      "id": "ico:contraAlegoria",
+      "type": [
+        "skos:Concept",
+        "ico:Pathosformel"
+      ],
+      "inScheme": "ico:PathosformelnScheme",
+      "label": "Contra-Alegoria",
+      "altLabel": "Counter-Allegory",
+      "definition": "Fórmula da figura sátira, deformada, deserotizada ou ridicularizada — caricatura, alegoria ferida, alegoria desnudada. Pathos da fissura crítica.",
+      "exactMatch": [
+        "iconclass:49C2",
+        "iconclass:44B62",
+        "wd:Q221409"
+      ]
+    },
+    {
+      "id": "ico:country/FR",
+      "type": "skos:Concept",
+      "label": "França",
+      "altLabel": "FR"
+    },
+    {
+      "id": "ico:country/UK",
+      "type": "skos:Concept",
+      "label": "Reino Unido",
+      "altLabel": "UK"
+    },
+    {
+      "id": "ico:country/DE",
+      "type": "skos:Concept",
+      "label": "Alemanha",
+      "altLabel": "DE"
+    },
+    {
+      "id": "ico:country/US",
+      "type": "skos:Concept",
+      "label": "Estados Unidos",
+      "altLabel": "US"
+    },
+    {
+      "id": "ico:country/BE",
+      "type": "skos:Concept",
+      "label": "Bélgica",
+      "altLabel": "BE"
+    },
+    {
+      "id": "ico:country/BR",
+      "type": "skos:Concept",
+      "label": "Brasil",
+      "altLabel": "BR"
+    },
+    {
+      "id": "ico:regime/FUNDACIONAL",
+      "type": [
+        "skos:Concept",
+        "ico:Regime"
+      ],
+      "label": "Fundacional-Sacrificial"
+    },
+    {
+      "id": "ico:regime/NORMATIVO",
+      "type": [
+        "skos:Concept",
+        "ico:Regime"
+      ],
+      "label": "Normativo-Jurídico"
+    },
+    {
+      "id": "ico:regime/MILITAR",
+      "type": [
+        "skos:Concept",
+        "ico:Regime"
+      ],
+      "label": "Militar-Imperial"
+    },
+    {
+      "id": "ico:regime/CONTRA_ALEGORIA",
+      "type": [
+        "skos:Concept",
+        "ico:Regime"
+      ],
+      "label": "Contra-Alegoria"
+    },
+    {
+      "id": "ico:specimen/FR-1792-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "FR-1792-01",
+      "title": "Liberté",
+      "year": 1792,
+      "created": "1792",
+      "country": "ico:country/FR",
+      "regime": "ico:regime/FUNDACIONAL",
+      "support": "gravura",
+      "medium": "gravura",
+      "image": "assets/corpus/fr-moitte-liberte-1792.jpg",
+      "archive": "Bibliothèque nationale de France",
+      "creator": "Jean-Guillaume Moitte",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:libertasArmata",
+      "gesturalEnergy": {
+        "value": 8,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 6,
+        "axis": [
+          0.7,
+          0.7
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 7,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "iconometricScore": {
+        "type": "ico:IconometricScore",
+        "indicators": {
+          "FEI": 3,
+          "CII": 1,
+          "PRI": 2,
+          "SMI": 0,
+          "SMS": 3,
+          "AMCP": 2,
+          "MVI": 1,
+          "WI": 3,
+          "RI": 2,
+          "AI": 2
+        },
+        "ico:scale": "0-3 ordinal · 10 indicators (FEI/CII/PRI/SMI/SMS/AMCP/MVI/WI/RI/AI)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:edge/FR-1792-01--transformsFormula--FR-1915-01",
+      "type": "ico:NachlebenEdge",
+      "source": "ico:specimen/FR-1792-01",
+      "target": "ico:specimen/FR-1915-01",
+      "relation": "ico:transformsFormula",
+      "confidence": "preliminary"
+    },
+    {
+      "id": "ico:specimen/FR-1793-02",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "FR-1793-02",
+      "title": "A Liberdade coroando a Virtude",
+      "year": 1793,
+      "created": "1793",
+      "country": "ico:country/FR",
+      "regime": "ico:regime/FUNDACIONAL",
+      "support": "gravura",
+      "medium": "gravura",
+      "image": "assets/corpus/fr-boizot-liberte-1793.jpg",
+      "archive": "BnF",
+      "creator": "Louis-Simon Boizot",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:libertasArmata",
+      "gesturalEnergy": {
+        "value": 7,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 5,
+        "axis": [
+          0.5,
+          0.8
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 6,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:specimen/FR-1793-03",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "FR-1793-03",
+      "title": "A Liberdade armada do Cetro da Razão",
+      "year": 1793,
+      "created": "1793",
+      "country": "ico:country/FR",
+      "regime": "ico:regime/FUNDACIONAL",
+      "support": "gravura",
+      "medium": "gravura",
+      "image": "assets/corpus/fr-boizot-liberte-armada-1793.jpg",
+      "archive": "BnF",
+      "creator": "Louis-Simon Boizot",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:libertasArmata",
+      "gesturalEnergy": {
+        "value": 7,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 6,
+        "axis": [
+          0.6,
+          0.7
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 8,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:specimen/BR-1896-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "BR-1896-01",
+      "title": "O Retrato da República",
+      "year": 1896,
+      "created": "1896",
+      "country": "ico:country/BR",
+      "regime": "ico:regime/FUNDACIONAL",
+      "support": "pintura",
+      "medium": "pintura",
+      "image": "assets/corpus/br-villares-republica.jpg",
+      "archive": "Museu Histórico Nacional",
+      "creator": "Décio Villares",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:respublicaCoroada",
+      "gesturalEnergy": {
+        "value": 3,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 5,
+        "axis": [
+          0.1,
+          0.4
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 9,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "iconometricScore": {
+        "type": "ico:IconometricScore",
+        "indicators": {
+          "FEI": 2,
+          "CII": 3,
+          "PRI": 2,
+          "SMI": 1,
+          "SMS": 2,
+          "AMCP": 0,
+          "MVI": 2,
+          "WI": 1,
+          "RI": 1,
+          "AI": 3
+        },
+        "ico:scale": "0-3 ordinal · 10 indicators (FEI/CII/PRI/SMI/SMS/AMCP/MVI/WI/RI/AI)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:edge/BR-1896-01--absorbsFormula--FR-1900-01",
+      "type": "ico:NachlebenEdge",
+      "source": "ico:specimen/BR-1896-01",
+      "target": "ico:specimen/FR-1900-01",
+      "relation": "ico:absorbsFormula",
+      "confidence": "preliminary"
+    },
+    {
+      "id": "ico:edge/BR-1896-01--transformsFormula--BR-1906-01",
+      "type": "ico:NachlebenEdge",
+      "source": "ico:specimen/BR-1896-01",
+      "target": "ico:specimen/BR-1906-01",
+      "relation": "ico:transformsFormula",
+      "confidence": "preliminary"
+    },
+    {
+      "id": "ico:specimen/BR-1896-02",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "BR-1896-02",
+      "title": "Alegoria da República",
+      "year": 1896,
+      "created": "1896",
+      "country": "ico:country/BR",
+      "regime": "ico:regime/FUNDACIONAL",
+      "support": "pintura",
+      "medium": "pintura",
+      "image": "assets/corpus/br-lopes-republica-1896.jpg",
+      "archive": "acervo público",
+      "creator": "Manuel Lopes Rodrigues",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:respublicaCoroada",
+      "gesturalEnergy": {
+        "value": 3,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 5,
+        "axis": [
+          0.1,
+          0.5
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 7,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:specimen/US-1896-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "US-1896-01",
+      "title": "History Instructing Youth",
+      "year": 1896,
+      "created": "1896",
+      "country": "ico:country/US",
+      "regime": "ico:regime/FUNDACIONAL",
+      "support": "cédula",
+      "medium": "cédula",
+      "image": "assets/corpus/us-educational-1896-c.png",
+      "archive": "Bureau of Engraving and Printing",
+      "creator": "Will H. Low",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:matriaDomestica",
+      "gesturalEnergy": {
+        "value": 2,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 4,
+        "axis": [
+          0.0,
+          0.3
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 6,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "iconometricScore": {
+        "type": "ico:IconometricScore",
+        "indicators": {
+          "FEI": 0,
+          "CII": 3,
+          "PRI": 3,
+          "SMI": 3,
+          "SMS": 2,
+          "AMCP": 2,
+          "MVI": 0,
+          "WI": 2,
+          "RI": 1,
+          "AI": 3
+        },
+        "ico:scale": "0-3 ordinal · 10 indicators (FEI/CII/PRI/SMI/SMS/AMCP/MVI/WI/RI/AI)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:specimen/BE-1559-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "BE-1559-01",
+      "title": "Iustitia",
+      "year": 1559,
+      "created": "1559",
+      "country": "ico:country/BE",
+      "regime": "ico:regime/NORMATIVO",
+      "support": "gravura",
+      "medium": "gravura",
+      "image": "assets/corpus/fr-bruegel-justicia-1559.jpg",
+      "archive": "Rijksmuseum",
+      "creator": "Pieter Bruegel the Elder",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:justitiaSerena",
+      "gesturalEnergy": {
+        "value": 2,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 7,
+        "axis": [
+          0.0,
+          -0.1
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 8,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:edge/BE-1559-01--resurfacesAfterLatency--BR-1961-01",
+      "type": "ico:NachlebenEdge",
+      "source": "ico:specimen/BE-1559-01",
+      "target": "ico:specimen/BR-1961-01",
+      "relation": "ico:resurfacesAfterLatency",
+      "confidence": "preliminary"
+    },
+    {
+      "id": "ico:specimen/DE-1589-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "DE-1589-01",
+      "title": "Justitia da torre do relógio",
+      "year": 1589,
+      "created": "1589",
+      "country": "ico:country/DE",
+      "regime": "ico:regime/NORMATIVO",
+      "support": "escultura",
+      "medium": "escultura",
+      "image": "assets/corpus/de-justitia-esslingen-1589-c.png",
+      "archive": "Esslingen am Neckar",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:justitiaSerena",
+      "gesturalEnergy": {
+        "value": 1,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 8,
+        "axis": [
+          0.0,
+          -0.2
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 7,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:specimen/DE-1752-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "DE-1752-01",
+      "title": "Allegorie der Jus Civile",
+      "year": 1752,
+      "created": "1752",
+      "country": "ico:country/DE",
+      "regime": "ico:regime/NORMATIVO",
+      "support": "escultura",
+      "medium": "escultura",
+      "image": "assets/corpus/de-jus-civile-wenzinger-1752-c.png",
+      "archive": "Freiburg",
+      "creator": "Christian Wenzinger",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:justitiaSerena",
+      "gesturalEnergy": {
+        "value": 2,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 7,
+        "axis": [
+          0.0,
+          -0.1
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 7,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:specimen/UK-1600-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "UK-1600-01",
+      "title": "Iustitia e Prudentia",
+      "year": "s/d",
+      "country": "ico:country/UK",
+      "regime": "ico:regime/NORMATIVO",
+      "support": "gravura",
+      "medium": "gravura",
+      "image": "assets/corpus/uk-justitia-prudentia-c.png",
+      "archive": "British Museum",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:justitiaSerena",
+      "gesturalEnergy": {
+        "value": 2,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 6,
+        "axis": [
+          0.0,
+          -0.1
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 7,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:specimen/FR-1865-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "FR-1865-01",
+      "title": "A Justiça, a Vingança e a Verdade",
+      "year": 1865,
+      "created": "1865",
+      "country": "ico:country/FR",
+      "regime": "ico:regime/NORMATIVO",
+      "support": "gravura",
+      "medium": "gravura",
+      "image": "assets/corpus/fr-chifflart-justice-1865.jpg",
+      "archive": "BnF",
+      "creator": "François-Nicolas Chifflart",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:justitiaSerena",
+      "gesturalEnergy": {
+        "value": 4,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 6,
+        "axis": [
+          0.2,
+          0.0
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 8,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:specimen/BR-1961-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "BR-1961-01",
+      "title": "A Justiça",
+      "year": 1961,
+      "created": "1961",
+      "country": "ico:country/BR",
+      "regime": "ico:regime/NORMATIVO",
+      "support": "escultura",
+      "medium": "escultura",
+      "image": "assets/corpus/br-stf-justica-1961.jpg",
+      "archive": "Supremo Tribunal Federal",
+      "creator": "Alfredo Ceschiatti",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:justitiaSerena",
+      "gesturalEnergy": {
+        "value": 1,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 9,
+        "axis": [
+          0.0,
+          -0.4
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 4,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "iconometricScore": {
+        "type": "ico:IconometricScore",
+        "indicators": {
+          "FEI": 1,
+          "CII": 3,
+          "PRI": 3,
+          "SMI": 3,
+          "SMS": 1,
+          "AMCP": 0,
+          "MVI": 0,
+          "WI": 0,
+          "RI": 1,
+          "AI": 3
+        },
+        "ico:scale": "0-3 ordinal · 10 indicators (FEI/CII/PRI/SMI/SMS/AMCP/MVI/WI/RI/AI)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:specimen/FR-1900-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "FR-1900-01",
+      "title": "A República de Clésinger",
+      "year": 1900,
+      "created": "1900",
+      "country": "ico:country/FR",
+      "regime": "ico:regime/NORMATIVO",
+      "support": "escultura",
+      "medium": "escultura",
+      "image": "assets/corpus/fr-clesinger-republique-1900.jpg",
+      "archive": "acervo público",
+      "creator": "Auguste Clésinger",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:respublicaCoroada",
+      "gesturalEnergy": {
+        "value": 3,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 6,
+        "axis": [
+          0.1,
+          0.3
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 6,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:specimen/FR-1849-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "FR-1849-01",
+      "title": "Cérès — 5 francs",
+      "year": 1849,
+      "created": "1849",
+      "country": "ico:country/FR",
+      "regime": "ico:regime/NORMATIVO",
+      "support": "moeda",
+      "medium": "moeda",
+      "image": "assets/corpus/fr-ceres-5f-1849-c.png",
+      "archive": "Monnaie de Paris",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:matriaDomestica",
+      "gesturalEnergy": {
+        "value": 2,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 5,
+        "axis": [
+          0.0,
+          0.2
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 5,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "iconometricScore": {
+        "type": "ico:IconometricScore",
+        "indicators": {
+          "FEI": 1,
+          "CII": 3,
+          "PRI": 2,
+          "SMI": 1,
+          "SMS": 1,
+          "AMCP": 0,
+          "MVI": 1,
+          "WI": 0,
+          "RI": 1,
+          "AI": 3
+        },
+        "ico:scale": "0-3 ordinal · 10 indicators (FEI/CII/PRI/SMI/SMS/AMCP/MVI/WI/RI/AI)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:edge/FR-1849-01--contrastsWith--UK-1912-01",
+      "type": "ico:NachlebenEdge",
+      "source": "ico:specimen/FR-1849-01",
+      "target": "ico:specimen/UK-1912-01",
+      "relation": "ico:contrastsWith",
+      "confidence": "preliminary"
+    },
+    {
+      "id": "ico:specimen/UK-1898-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "UK-1898-01",
+      "title": "Britannia — 1 penny",
+      "year": 1898,
+      "created": "1898",
+      "country": "ico:country/UK",
+      "regime": "ico:regime/NORMATIVO",
+      "support": "moeda",
+      "medium": "moeda",
+      "image": "assets/corpus/uk-penny-1895-c.png",
+      "archive": "Royal Mint",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:imperiumFeminae",
+      "gesturalEnergy": {
+        "value": 3,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 7,
+        "axis": [
+          0.3,
+          -0.2
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 8,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "iconometricScore": {
+        "type": "ico:IconometricScore",
+        "indicators": {
+          "FEI": 0,
+          "CII": 3,
+          "PRI": 3,
+          "SMI": 3,
+          "SMS": 1,
+          "AMCP": 0,
+          "MVI": 0,
+          "WI": 2,
+          "RI": 1,
+          "AI": 3
+        },
+        "ico:scale": "0-3 ordinal · 10 indicators (FEI/CII/PRI/SMI/SMS/AMCP/MVI/WI/RI/AI)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:edge/UK-1898-01--anticipatesPathosformel--UK-1912-01",
+      "type": "ico:NachlebenEdge",
+      "source": "ico:specimen/UK-1898-01",
+      "target": "ico:specimen/UK-1912-01",
+      "relation": "ico:anticipatesPathosformel",
+      "confidence": "preliminary"
+    },
+    {
+      "id": "ico:specimen/UK-1695-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "UK-1695-01",
+      "title": "Britannia — meio penny",
+      "year": 1695,
+      "created": "1695",
+      "country": "ico:country/UK",
+      "regime": "ico:regime/NORMATIVO",
+      "support": "moeda",
+      "medium": "moeda",
+      "image": "assets/corpus/uk-halfpenny-1695-c.png",
+      "archive": "Royal Mint",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:imperiumFeminae",
+      "gesturalEnergy": {
+        "value": 3,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 6,
+        "axis": [
+          0.2,
+          -0.1
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 7,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:specimen/DE-1900-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "DE-1900-01",
+      "title": "Germania — Reichspost",
+      "year": 1900,
+      "created": "1900",
+      "country": "ico:country/DE",
+      "regime": "ico:regime/NORMATIVO",
+      "support": "selo",
+      "medium": "selo",
+      "image": "assets/corpus/de-germania-1900.jpg",
+      "archive": "Deutsche Reichspost",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:respublicaCoroada",
+      "gesturalEnergy": {
+        "value": 2,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 7,
+        "axis": [
+          0.1,
+          0.1
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 7,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:specimen/DE-1919-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "DE-1919-01",
+      "title": "Germania — 50 Mark",
+      "year": 1919,
+      "created": "1919",
+      "country": "ico:country/DE",
+      "regime": "ico:regime/NORMATIVO",
+      "support": "cédula",
+      "medium": "cédula",
+      "image": "assets/corpus/de-50mark-1919-c.png",
+      "archive": "Reichsbank",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:respublicaCoroada",
+      "gesturalEnergy": {
+        "value": 2,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 6,
+        "axis": [
+          0.1,
+          0.1
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 6,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:specimen/DE-1910-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "DE-1910-01",
+      "title": "1000 Mark — duas alegorias",
+      "year": 1910,
+      "created": "1910",
+      "country": "ico:country/DE",
+      "regime": "ico:regime/NORMATIVO",
+      "support": "cédula",
+      "medium": "cédula",
+      "image": "assets/corpus/de-1000mark-1910-c.png",
+      "archive": "Reichsbank",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:matriaDomestica",
+      "gesturalEnergy": {
+        "value": 2,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 5,
+        "axis": [
+          0.0,
+          0.2
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 7,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:specimen/DE-1908-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "DE-1908-01",
+      "title": "100 Mark — duas alegorias",
+      "year": 1908,
+      "created": "1908",
+      "country": "ico:country/DE",
+      "regime": "ico:regime/NORMATIVO",
+      "support": "cédula",
+      "medium": "cédula",
+      "image": "assets/corpus/de-100mark-1908-c.png",
+      "archive": "Reichsbank",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:matriaDomestica",
+      "gesturalEnergy": {
+        "value": 2,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 5,
+        "axis": [
+          0.0,
+          0.2
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 7,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:specimen/US-1864-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "US-1864-01",
+      "title": "Seated Liberty — 1 dólar",
+      "year": 1864,
+      "created": "1864",
+      "country": "ico:country/US",
+      "regime": "ico:regime/NORMATIVO",
+      "support": "moeda",
+      "medium": "moeda",
+      "image": "assets/corpus/us-seated-liberty-1840-c.png",
+      "archive": "US Mint",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:respublicaCoroada",
+      "gesturalEnergy": {
+        "value": 2,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 6,
+        "axis": [
+          0.0,
+          0.2
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 6,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:specimen/BR-1906-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "BR-1906-01",
+      "title": "República — 1000 réis",
+      "year": 1906,
+      "created": "1906",
+      "country": "ico:country/BR",
+      "regime": "ico:regime/NORMATIVO",
+      "support": "moeda",
+      "medium": "moeda",
+      "image": "assets/corpus/br-1000reis-1906-c.png",
+      "archive": "Casa da Moeda do Brasil",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:respublicaCoroada",
+      "gesturalEnergy": {
+        "value": 2,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 6,
+        "axis": [
+          0.0,
+          0.2
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 6,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "iconometricScore": {
+        "type": "ico:IconometricScore",
+        "indicators": {
+          "FEI": 0,
+          "CII": 3,
+          "PRI": 3,
+          "SMI": 3,
+          "SMS": 2,
+          "AMCP": 1,
+          "MVI": 1,
+          "WI": 1,
+          "RI": 1,
+          "AI": 3
+        },
+        "ico:scale": "0-3 ordinal · 10 indicators (FEI/CII/PRI/SMI/SMS/AMCP/MVI/WI/RI/AI)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:edge/BR-1906-01--transformsFormula--BR-1965-01",
+      "type": "ico:NachlebenEdge",
+      "source": "ico:specimen/BR-1906-01",
+      "target": "ico:specimen/BR-1965-01",
+      "relation": "ico:transformsFormula",
+      "confidence": "preliminary"
+    },
+    {
+      "id": "ico:specimen/BR-1970-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "BR-1970-01",
+      "title": "República — 1 cruzeiro",
+      "year": 1970,
+      "created": "1970",
+      "country": "ico:country/BR",
+      "regime": "ico:regime/NORMATIVO",
+      "support": "cédula",
+      "medium": "cédula",
+      "image": "assets/corpus/br-1cruzeiro-1970-c.png",
+      "archive": "Casa da Moeda do Brasil",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:respublicaCoroada",
+      "gesturalEnergy": {
+        "value": 1,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 6,
+        "axis": [
+          0.0,
+          0.0
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 5,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:specimen/BR-1965-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "BR-1965-01",
+      "title": "República — 50 cruzeiros",
+      "year": 1965,
+      "created": "1965",
+      "country": "ico:country/BR",
+      "regime": "ico:regime/NORMATIVO",
+      "support": "moeda",
+      "medium": "moeda",
+      "image": "assets/corpus/br-50cruzeiros-1965-c.png",
+      "archive": "Casa da Moeda do Brasil",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:respublicaCoroada",
+      "gesturalEnergy": {
+        "value": 1,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 6,
+        "axis": [
+          0.0,
+          0.0
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 5,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:specimen/FR-1915-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "FR-1915-01",
+      "title": "A República nos chama",
+      "year": 1915,
+      "created": "1915",
+      "country": "ico:country/FR",
+      "regime": "ico:regime/MILITAR",
+      "support": "litografia",
+      "medium": "litografia",
+      "image": "assets/corpus/fr-steinlen-republique-1915.jpg",
+      "archive": "BnF · Gallica",
+      "creator": "Théophile-Alexandre Steinlen",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:libertasArmata",
+      "gesturalEnergy": {
+        "value": 9,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 7,
+        "axis": [
+          0.8,
+          0.5
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 7,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "iconometricScore": {
+        "type": "ico:IconometricScore",
+        "indicators": {
+          "FEI": 1,
+          "CII": 2,
+          "PRI": 2,
+          "SMI": 0,
+          "SMS": 3,
+          "AMCP": 2,
+          "MVI": 0,
+          "WI": 2,
+          "RI": 1,
+          "AI": 2
+        },
+        "ico:scale": "0-3 ordinal · 10 indicators (FEI/CII/PRI/SMI/SMS/AMCP/MVI/WI/RI/AI)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:edge/FR-1915-01--resurfacesAfterLatency--UK-1912-01",
+      "type": "ico:NachlebenEdge",
+      "source": "ico:specimen/FR-1915-01",
+      "target": "ico:specimen/UK-1912-01",
+      "relation": "ico:resurfacesAfterLatency",
+      "confidence": "preliminary"
+    },
+    {
+      "id": "ico:specimen/UK-1912-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "UK-1912-01",
+      "title": "Britannia armada — 1 penny",
+      "year": 1912,
+      "created": "1912",
+      "country": "ico:country/UK",
+      "regime": "ico:regime/MILITAR",
+      "support": "moeda",
+      "medium": "moeda",
+      "image": "assets/corpus/uk-britannia-penny-1912.jpg",
+      "archive": "Royal Mint",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:imperiumFeminae",
+      "gesturalEnergy": {
+        "value": 4,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 8,
+        "axis": [
+          0.4,
+          -0.3
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 9,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "iconometricScore": {
+        "type": "ico:IconometricScore",
+        "indicators": {
+          "FEI": 0,
+          "CII": 2,
+          "PRI": 3,
+          "SMI": 2,
+          "SMS": 3,
+          "AMCP": 3,
+          "MVI": 0,
+          "WI": 3,
+          "RI": 1,
+          "AI": 2
+        },
+        "ico:scale": "0-3 ordinal · 10 indicators (FEI/CII/PRI/SMI/SMS/AMCP/MVI/WI/RI/AI)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:specimen/BE-1912-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "BE-1912-01",
+      "title": "Banque du Congo Belge — 100 francs",
+      "year": 1912,
+      "created": "1912",
+      "country": "ico:country/BE",
+      "regime": "ico:regime/MILITAR",
+      "support": "cédula",
+      "medium": "cédula",
+      "image": "assets/corpus/be-congo-100f-1912-c.png",
+      "archive": "Banque du Congo Belge",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:imperiumFeminae",
+      "gesturalEnergy": {
+        "value": 3,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 6,
+        "axis": [
+          0.3,
+          -0.2
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 8,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:specimen/BE-1921-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "BE-1921-01",
+      "title": "Monumento ao Congo Belga",
+      "year": 1921,
+      "created": "1921",
+      "country": "ico:country/BE",
+      "regime": "ico:regime/MILITAR",
+      "support": "monumento",
+      "medium": "monumento",
+      "image": "assets/corpus/be-congo-monumento-1921.jpg",
+      "archive": "Bruxelas",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:imperiumFeminae",
+      "gesturalEnergy": {
+        "value": 4,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 7,
+        "axis": [
+          0.4,
+          -0.2
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 9,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:specimen/FR-1871-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "FR-1871-01",
+      "title": "A República amável",
+      "year": 1871,
+      "created": "1871",
+      "country": "ico:country/FR",
+      "regime": "ico:regime/CONTRA_ALEGORIA",
+      "support": "gravura",
+      "medium": "gravura",
+      "image": "assets/corpus/fr-rops-republique-1871.jpg",
+      "archive": "acervo público",
+      "creator": "Félicien Rops",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:contraAlegoria",
+      "gesturalEnergy": {
+        "value": 5,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 3,
+        "axis": [
+          -0.5,
+          -0.4
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 5,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:edge/FR-1871-01--contestsFormula--FR-1900-01",
+      "type": "ico:NachlebenEdge",
+      "source": "ico:specimen/FR-1871-01",
+      "target": "ico:specimen/FR-1900-01",
+      "relation": "ico:contestsFormula",
+      "confidence": "preliminary"
+    },
+    {
+      "id": "ico:specimen/FR-1904-01",
+      "type": [
+        "ico:AllegoricalSpecimen",
+        "schema:VisualArtwork"
+      ],
+      "schema:identifier": "FR-1904-01",
+      "title": "O chocalho da República",
+      "year": 1904,
+      "created": "1904",
+      "country": "ico:country/FR",
+      "regime": "ico:regime/CONTRA_ALEGORIA",
+      "support": "litografia",
+      "medium": "litografia",
+      "image": "assets/corpus/fr-veber-hochet-1904.jpg",
+      "archive": "acervo público",
+      "creator": "Jean Veber",
+      "coreCorpusStatus": "core",
+      "instantiatesPathosformel": "ico:contraAlegoria",
+      "gesturalEnergy": {
+        "value": 6,
+        "scaleAnchor": "0=postura estática · 5=movimento contido · 10=corrida frontal com gesto erguido",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "posturalTension": {
+        "value": 3,
+        "axis": [
+          -0.6,
+          -0.3
+        ],
+        "scaleAnchor": "0=corpo relaxado · 5=ereto neutro · 10=hipertônico vertical (granito Ceschiatti)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      },
+      "objectSymbolicLoad": {
+        "value": 6,
+        "scaleAnchor": "0=nenhum objeto · 5=balança+espada padrão · 10=carga densa (escudo+elmo+tridente+leão)",
+        "confidence": "preliminary",
+        "coderID": "AV-single-coder"
+      }
+    },
+    {
+      "id": "ico:edge/FR-1904-01--contestsFormula--FR-1900-01",
+      "type": "ico:NachlebenEdge",
+      "source": "ico:specimen/FR-1904-01",
+      "target": "ico:specimen/FR-1900-01",
+      "relation": "ico:contestsFormula",
+      "confidence": "preliminary"
+    }
+  ]
+}
