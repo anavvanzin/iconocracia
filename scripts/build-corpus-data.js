@@ -76,11 +76,35 @@ function readJsonLines(filePath) {
 
 function loadValidator() {
   try {
-    const Ajv = require("ajv");
-    return new Ajv({ strict: false, allErrors: true });
+    // master-record.schema.json declares $schema "draft/2020-12"; the plain
+    // `require("ajv")` constructor only supports draft-07 and rejects the
+    // 2020-12 $schema with "no schema with key or ref". Use the 2020 build.
+    const Ajv2020 = require("ajv/dist/2020");
+    return new Ajv2020({ strict: false, allErrors: true });
   } catch {
     return null;
   }
+}
+
+// Collect relative $ref targets (e.g. "webscout-output.schema.json") so we can
+// register sibling schemas ajv cannot resolve from disk on its own.
+function collectExternalRefs(schema) {
+  const refs = new Set();
+  function walk(obj) {
+    if (Array.isArray(obj)) {
+      obj.forEach(walk);
+    } else if (obj && typeof obj === "object") {
+      for (const [k, v] of Object.entries(obj)) {
+        if (k === "$ref" && typeof v === "string" && !v.startsWith("#")) {
+          refs.add(v);
+        } else {
+          walk(v);
+        }
+      }
+    }
+  }
+  walk(schema);
+  return [...refs];
 }
 
 function fileExists(filePath) {
@@ -602,11 +626,32 @@ function normalizeRecord(record) {
   return item;
 }
 
-function validateRecords(records, schema) {
+function validateRecords(records, schema, schemaPath) {
   const ajv = loadValidator();
   if (!ajv) {
     warn("Ajv not available; skipping JSON-Schema validation.");
     return;
+  }
+  // Register sibling schemas referenced via relative $ref. ajv resolves a
+  // relative ref against the parent $id and looks it up in its registry — it
+  // does not read sibling files from disk. We load them from the schema's own
+  // directory and addSchema under the resolved URI.
+  const baseId = schema.$id || "";
+  const schemaDir = path.dirname(schemaPath);
+  for (const ref of collectExternalRefs(schema)) {
+    if (/^(https?:|urn:|\/)/.test(ref)) continue; // skip absolute refs
+    const siblingPath = path.join(schemaDir, ref);
+    if (!fileExists(siblingPath)) {
+      warn(`Referenced schema not found on disk: ${ref}`);
+      continue;
+    }
+    try {
+      const sibling = readJson(siblingPath);
+      const resolvedUri = baseId ? baseId.replace(/[^/]+$/, ref) : ref;
+      ajv.addSchema(sibling, resolvedUri);
+    } catch (err) {
+      warn(`Failed to load referenced schema ${ref}:`, err.message);
+    }
   }
   const validate = ajv.compile(schema);
   let failures = 0;
@@ -769,7 +814,7 @@ function main() {
       if (fileExists(SOURCES.schema)) {
         try {
           const schema = readJson(SOURCES.schema);
-          validateRecords(rawRecords, schema);
+          validateRecords(rawRecords, schema, SOURCES.schema);
         } catch (err) {
           warn("Schema validation error:", err.message);
         }
