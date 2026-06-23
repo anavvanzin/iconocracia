@@ -733,8 +733,19 @@ function readCanonicalSources() {
     warn("corpus-data.json is not an array; ignoring metadata source.");
   }
 
-  const merged = mergeSources(records, Array.isArray(meta) ? meta : []);
-  return { records: merged, hasRecords, hasMeta };
+  // Return raw records and meta separately so callers can validate the
+  // canonical master records (records.jsonl) against master-record.schema.json
+  // BEFORE the display-field overlay is merged in. The merged shape carries
+  // curated display fields (title/country/year/regime/...) that are not part of
+  // the master-record contract; validating the merged set against the strict
+  // schema produces false "additional properties" failures. Merge happens in
+  // main() after validation.
+  return {
+    records,
+    meta: Array.isArray(meta) ? meta : [],
+    hasRecords,
+    hasMeta,
+  };
 }
 
 function computeStats(corpus) {
@@ -807,22 +818,30 @@ function main() {
   if (fileExists(SOURCES.records) || fileExists(SOURCES.corpusMeta)) {
     const loaded = readCanonicalSources();
     if (loaded) {
-      sourceInfo = loaded;
+      sourceInfo = { hasRecords: loaded.hasRecords, hasMeta: loaded.hasMeta };
       const rawRecords = loaded.records;
+      const meta = loaded.meta;
       log(`Loaded ${rawRecords.length} raw records from canonical sources.`);
 
-      if (fileExists(SOURCES.schema)) {
+      // Validate the canonical master records (records.jsonl) against
+      // master-record.schema.json BEFORE merging display fields from
+      // corpus-data.json. The merged shape is a display layer, not a master
+      // record, and is not subject to the master-record contract.
+      if (fileExists(SOURCES.schema) && rawRecords.length > 0) {
         try {
           const schema = readJson(SOURCES.schema);
           validateRecords(rawRecords, schema, SOURCES.schema);
         } catch (err) {
           warn("Schema validation error:", err.message);
         }
-      } else {
+      } else if (!fileExists(SOURCES.schema)) {
         warn("Schema file not found; skipping validation.");
       }
 
-      corpus = rawRecords.map(normalizeRecord).filter((item) => {
+      const merged = mergeSources(rawRecords, meta);
+      log(`Merged ${rawRecords.length} records with ${meta.length} meta items → ${merged.length} items.`);
+
+      corpus = merged.map(normalizeRecord).filter((item) => {
         // Require at least a meaningful title and id.
         if (!item.id || !item.title) {
           warn("Skipping item without id or title.");
