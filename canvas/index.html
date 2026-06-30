@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>Canvas Iconocrático · Atlas Warburguiano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0f0d0a;
+    --ink: #e8dfd0;
+    --ink-dim: #9a8f7e;
+    --rule: rgba(232,223,208,0.14);
+    --accent: #c8a86c;
+
+    --p-libertas: #c93f4a;
+    --p-respublica: #d4a14c;
+    --p-justitia: #9bb6c8;
+    --p-matria: #a8b87a;
+    --p-imperium: #7e8a9c;
+    --p-contra: #b87aa0;
+
+    --serif: 'Crimson Pro', Georgia, serif;
+    --display: 'Instrument Serif', serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 100%; height: 100%; background: var(--bg); color: var(--ink); font-family: var(--serif); }
+  body { overflow: hidden; }
+
+  .topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 10;
+    display: flex; align-items: center; gap: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(180deg, rgba(15,13,10,0.95), rgba(15,13,10,0.6) 80%, transparent);
+    border-bottom: 1px solid var(--rule);
+  }
+  .brand {
+    font-family: var(--display); font-style: italic; font-size: 1.25rem;
+    letter-spacing: 0.01em;
+  }
+  .brand a { color: var(--ink); text-decoration: none; }
+  .modeswitch {
+    display: flex; gap: 0.25rem; padding: 0.25rem;
+    border: 1px solid var(--rule); border-radius: 999px;
+  }
+  .modeswitch button {
+    background: transparent; border: 0; color: var(--ink-dim);
+    font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.35rem 0.85rem; border-radius: 999px; cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .modeswitch button.active { background: var(--ink); color: var(--bg); }
+  .meta { margin-left: auto; font-family: var(--mono); font-size: 0.7rem; color: var(--ink-dim); }
+
+  .stage { position: absolute; inset: 0; }
+  svg.canvas { width: 100%; height: 100%; cursor: grab; }
+  svg.canvas:active { cursor: grabbing; }
+
+  .cluster-label {
+    font-family: var(--display); font-style: italic;
+    fill: var(--ink); text-anchor: middle; pointer-events: none;
+    opacity: 0.85;
+  }
+  .cluster-sub {
+    font-family: var(--mono); fill: var(--ink-dim);
+    text-anchor: middle; letter-spacing: 0.1em; pointer-events: none;
+  }
+  .cluster-ring {
+    fill: none; opacity: 0.4;
+  }
+  .nachleben-edge {
+    fill: none; opacity: 0.5;
+    transition: opacity 0.2s;
+  }
+  .nachleben-edge.hl { opacity: 1; }
+  .node {
+    cursor: pointer;
+    transition: filter 0.18s;
+  }
+  .node:hover { filter: brightness(1.4); }
+  .node-frame {
+    fill: none;
+  }
+  .node-pin {
+    fill: var(--bg);
+  }
+
+  .legend {
+    position: fixed; left: 1rem; bottom: 1rem; z-index: 10;
+    padding: 0.85rem 1rem;
+    background: rgba(15,13,10,0.85);
+    border: 1px solid var(--rule);
+    backdrop-filter: blur(8px);
+    font-family: var(--mono); font-size: 0.7rem;
+    max-width: 240px;
+  }
+  .legend h3 {
+    font-family: var(--display); font-style: italic; font-size: 0.95rem;
+    color: var(--ink); margin-bottom: 0.4rem; font-weight: 400;
+  }
+  .legend .row { display: flex; align-items: center; gap: 0.5rem; margin: 0.2rem 0; cursor: pointer; }
+  .legend .swatch { width: 10px; height: 10px; flex-shrink: 0; }
+  .legend .row.dim { opacity: 0.3; }
+  .legend .row:hover { color: var(--accent); }
+
+  .inspector {
+    position: fixed; right: 0; top: 60px; bottom: 0; z-index: 10;
+    width: 360px;
+    background: rgba(15,13,10,0.95);
+    border-left: 1px solid var(--rule);
+    backdrop-filter: blur(12px);
+    padding: 1.5rem;
+    overflow-y: auto;
+    transform: translateX(100%); transition: transform 0.25s ease;
+  }
+  .inspector.open { transform: translateX(0); }
+  .inspector h2 {
+    font-family: var(--display); font-style: italic; font-size: 1.4rem;
+    line-height: 1.15; margin-bottom: 0.4rem; font-weight: 400;
+  }
+  .inspector .breadcrumb {
+    font-family: var(--mono); font-size: 0.65rem; color: var(--ink-dim);
+    letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem;
+  }
+  .inspector img {
+    width: 100%; height: auto; margin: 0.75rem 0; display: block;
+    border: 1px solid var(--rule);
+  }
+  .inspector .field { margin: 0.6rem 0; font-size: 0.85rem; line-height: 1.4; }
+  .inspector .field .k {
+    font-family: var(--mono); font-size: 0.65rem;
+    color: var(--ink-dim); text-transform: uppercase; letter-spacing: 0.1em;
+    display: block; margin-bottom: 0.1rem;
+  }
+  .inspector .bars { margin-top: 0.6rem; }
+  .inspector .bar-row {
+    display: flex; align-items: center; gap: 0.5rem; margin: 0.2rem 0;
+    font-family: var(--mono); font-size: 0.7rem; color: var(--ink-dim);
+  }
+  .inspector .bar-row .label { width: 95px; }
+  .inspector .bar-row .track {
+    flex: 1; height: 4px; background: rgba(232,223,208,0.08);
+    position: relative;
+  }
+  .inspector .bar-row .fill {
+    position: absolute; left: 0; top: 0; bottom: 0;
+    background: var(--accent);
+  }
+  .inspector .nachleben-list { margin-top: 0.5rem; font-size: 0.8rem; }
+  .inspector .nachleben-list a {
+    display: block; color: var(--ink); text-decoration: none;
+    padding: 0.3rem 0; border-bottom: 1px solid var(--rule);
+  }
+  .inspector .nachleben-list a:hover { color: var(--accent); }
+  .inspector .close {
+    position: absolute; top: 0.75rem; right: 0.75rem;
+    background: transparent; border: 0; color: var(--ink-dim);
+    font-size: 1.2rem; cursor: pointer;
+  }
+
+  .toast {
+    position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%);
+    background: rgba(15,13,10,0.9); border: 1px solid var(--rule);
+    padding: 0.5rem 1rem;
+    font-family: var(--mono); font-size: 0.7rem; color: var(--ink-dim);
+    opacity: 0; transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  .toast.show { opacity: 1; }
+
+  .help-corner {
+    position: fixed; right: 1rem; bottom: 1rem; z-index: 9;
+    font-family: var(--mono); font-size: 0.65rem; color: var(--ink-dim);
+    text-align: right; line-height: 1.6;
+  }
+  .help-corner .k {
+    display: inline-block; padding: 1px 5px;
+    border: 1px solid var(--rule); border-radius: 3px;
+    background: rgba(0,0,0,0.3);
+  }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand"><a href="../">Iuris Memoria</a> · <span style="color: var(--ink-dim); font-style: normal; font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em;">CANVAS</span></div>
+    <div class="modeswitch" id="modeswitch">
+      <button class="active" data-mode="reading">Leitura</button>
+      <button data-mode="lab">Laboratório</button>
+      <button data-mode="nachleben">Nachleben</button>
+    </div>
+    <div class="meta" id="meta">— · — · —</div>
+  </div>
+
+  <div class="stage">
+    <svg class="canvas" id="canvas" viewBox="-1.2 -1.2 2.4 2.4" preserveAspectRatio="xMidYMid meet"></svg>
+  </div>
+
+  <div class="legend" id="legend">
+    <h3>Pathosformeln</h3>
+    <div class="row" data-p="libertasArmata">
+      <div class="swatch" style="background: var(--p-libertas)"></div>
+      <div>Libertas Armata</div>
+    </div>
+    <div class="row" data-p="respublicaCoroada">
+      <div class="swatch" style="background: var(--p-respublica)"></div>
+      <div>Respublica Coroada</div>
+    </div>
+    <div class="row" data-p="justitiaSerena">
+      <div class="swatch" style="background: var(--p-justitia)"></div>
+      <div>Justitia Serena</div>
+    </div>
+    <div class="row" data-p="matriaDomestica">
+      <div class="swatch" style="background: var(--p-matria)"></div>
+      <div>Matria Doméstica</div>
+    </div>
+    <div class="row" data-p="imperiumFeminae">
+      <div class="swatch" style="background: var(--p-imperium)"></div>
+      <div>Imperium Feminae</div>
+    </div>
+    <div class="row" data-p="contraAlegoria">
+      <div class="swatch" style="background: var(--p-contra)"></div>
+      <div>Contra-Alegoria</div>
+    </div>
+  </div>
+
+  <div class="help-corner">
+    <span class="k">click</span> espécime · <span class="k">click</span> filtro · <span class="k">drag</span> mover
+  </div>
+
+  <aside class="inspector" id="inspector">
+    <button class="close" id="closeInspector">×</button>
+    <div id="inspectorBody"></div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="../shared/loader.js"></script>
+  <script>
+  (async function () {
+    const PATHOSFORMEL_COLORS = {
+      libertasArmata: 'var(--p-libertas)',
+      respublicaCoroada: 'var(--p-respublica)',
+      justitiaSerena: 'var(--p-justitia)',
+      matriaDomestica: 'var(--p-matria)',
+      imperiumFeminae: 'var(--p-imperium)',
+      contraAlegoria: 'var(--p-contra)',
+    };
+
+    const PATHOSFORMEL_RAW_COLORS = {
+      libertasArmata: '#c93f4a',
+      respublicaCoroada: '#d4a14c',
+      justitiaSerena: '#9bb6c8',
+      matriaDomestica: '#a8b87a',
+      imperiumFeminae: '#7e8a9c',
+      contraAlegoria: '#b87aa0',
+    };
+
+    const CLUSTER_META = {
+      libertasArmata:    { cx: -0.7, cy:  0.7, label: 'Libertas Armata',    sub: 'INSURGÊNCIA' },
+      respublicaCoroada: { cx:  0.0, cy:  0.4, label: 'Respublica Coroada', sub: 'LEGITIMIDADE' },
+      justitiaSerena:    { cx:  0.7, cy:  0.4, label: 'Justitia Serena',    sub: 'JURIDICALIDADE' },
+      matriaDomestica:   { cx:  0.4, cy: -0.4, label: 'Matria Doméstica',   sub: 'REPRODUÇÃO' },
+      imperiumFeminae:   { cx: -0.4, cy: -0.4, label: 'Imperium Feminae',   sub: 'IMPÉRIO' },
+      contraAlegoria:    { cx:  0.0, cy: -0.8, label: 'Contra-Alegoria',    sub: 'FISSURA' },
+    };
+
+    const RELATION_LABEL = {
+      absorbsFormula: 'absorve fórmula',
+      transformsFormula: 'transforma fórmula',
+      neutralizesFormula: 'neutraliza fórmula',
+      anticipatesPathosformel: 'antecipa Pathosformel',
+      contestsFormula: 'contesta fórmula',
+      resurfacesAfterLatency: 'ressurge após latência',
+      fracturesFormula: 'fratura fórmula',
+      contrastsWith: 'contrasta com',
+    };
+
+    const svg = document.getElementById('canvas');
+    const inspector = document.getElementById('inspector');
+    const inspectorBody = document.getElementById('inspectorBody');
+    const meta = document.getElementById('meta');
+    const toastEl = document.getElementById('toast');
+    let currentMode = 'reading';
+    let filterPathos = null;
+    let highlightId = null;
+
+    function toast(msg) {
+      toastEl.textContent = msg;
+      toastEl.classList.add('show');
+      setTimeout(() => toastEl.classList.remove('show'), 1800);
+    }
+
+    // ─── load corpus ──────────────────────────────────────────────
+    try {
+      await IconocraciaCorpus.load('../data/corpus.jsonld');
+    } catch (e) {
+      svg.innerHTML = '<text x="0" y="0" fill="#e8dfd0" font-family="serif" font-size="0.05" text-anchor="middle">corpus.jsonld não pôde ser carregado · ' + e.message + '</text>';
+      return;
+    }
+    const { nodes, edges, pathosformeln } = IconocraciaCorpus.canvas;
+    meta.textContent = nodes.length + ' espécimes · ' + pathosformeln.length + ' Pathosformeln · ' + edges.length + ' arestas';
+
+    // ─── render layers ────────────────────────────────────────────
+    function render() {
+      svg.innerHTML = '';
+
+      // clusters
+      const gClusters = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      gClusters.setAttribute('class', 'clusters');
+      Object.entries(CLUSTER_META).forEach(([k, c]) => {
+        const ring = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        ring.setAttribute('cx', c.cx);
+        ring.setAttribute('cy', -c.cy);
+        ring.setAttribute('r', 0.26);
+        ring.setAttribute('class', 'cluster-ring');
+        ring.setAttribute('stroke', PATHOSFORMEL_RAW_COLORS[k]);
+        ring.setAttribute('stroke-width', '0.0035');
+        ring.setAttribute('stroke-dasharray', '0.012 0.018');
+        gClusters.appendChild(ring);
+
+        const sub = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        sub.setAttribute('x', c.cx);
+        sub.setAttribute('y', -c.cy - 0.34);
+        sub.setAttribute('class', 'cluster-sub');
+        sub.setAttribute('font-size', '0.022');
+        sub.setAttribute('fill', PATHOSFORMEL_RAW_COLORS[k]);
+        sub.setAttribute('opacity', '0.7');
+        sub.textContent = c.sub;
+        gClusters.appendChild(sub);
+
+        const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        label.setAttribute('x', c.cx);
+        label.setAttribute('y', -c.cy - 0.30);
+        label.setAttribute('class', 'cluster-label');
+        label.setAttribute('font-size', '0.044');
+        label.textContent = c.label;
+        gClusters.appendChild(label);
+      });
+      svg.appendChild(gClusters);
+
+      // edges (only in nachleben mode or when a node is highlighted)
+      if (currentMode === 'nachleben' || highlightId) {
+        const gEdges = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        gEdges.setAttribute('class', 'edges');
+        edges.forEach((e) => {
+          const src = nodes.find((n) => n.id === e.source);
+          const dst = nodes.find((n) => n.id === e.target);
+          if (!src || !dst) return;
+          const isHL = highlightId && (e.source === highlightId || e.target === highlightId);
+          const line = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          // bezier curve
+          const mx = (src.x + dst.x) / 2;
+          const my = -(src.y + dst.y) / 2;
+          const d = `M ${src.x} ${-src.y} Q ${mx} ${my - 0.15} ${dst.x} ${-dst.y}`;
+          line.setAttribute('d', d);
+          line.setAttribute('class', 'nachleben-edge' + (isHL ? ' hl' : ''));
+          line.setAttribute('stroke', PATHOSFORMEL_RAW_COLORS[src.pathosformel] || '#fff');
+          line.setAttribute('stroke-width', isHL ? '0.005' : '0.0025');
+          line.setAttribute('marker-end', 'url(#arrow)');
+          gEdges.appendChild(line);
+        });
+        svg.appendChild(gEdges);
+      }
+
+      // arrow marker definition
+      const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+      defs.innerHTML = '<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#9a8f7e" opacity="0.7" /></marker>';
+      svg.appendChild(defs);
+
+      // nodes
+      const gNodes = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      gNodes.setAttribute('class', 'nodes');
+
+      nodes.forEach((n) => {
+        const dim = filterPathos && n.pathosformel !== filterPathos;
+        const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        g.setAttribute('class', 'node');
+        g.setAttribute('transform', `translate(${n.x} ${-n.y})`);
+        g.setAttribute('opacity', dim ? 0.15 : 1);
+
+        // size mode: reading = uniform; lab = scaled by postural; nachleben = scaled by edges
+        let size = 0.05;
+        if (currentMode === 'lab') size = 0.025 + n.postural * 0.005;
+        else if (currentMode === 'nachleben') {
+          const deg = edges.filter((e) => e.source === n.id || e.target === n.id).length;
+          size = 0.04 + deg * 0.015;
+        }
+
+        const color = PATHOSFORMEL_RAW_COLORS[n.pathosformel] || '#fff';
+        const isHL = highlightId === n.id;
+
+        const frame = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        frame.setAttribute('class', 'node-frame');
+        frame.setAttribute('r', size);
+        frame.setAttribute('stroke', color);
+        frame.setAttribute('stroke-width', isHL ? 0.004 : 0.0018);
+        frame.setAttribute('fill', 'none');
+        g.appendChild(frame);
+
+        const pin = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        pin.setAttribute('class', 'node-pin');
+        pin.setAttribute('r', size * 0.62);
+        pin.setAttribute('fill', color);
+        pin.setAttribute('opacity', 0.78);
+        g.appendChild(pin);
+
+        // year label (lab mode only)
+        if (currentMode === 'lab' && n.year) {
+          const yt = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+          yt.setAttribute('y', size + 0.025);
+          yt.setAttribute('text-anchor', 'middle');
+          yt.setAttribute('font-size', '0.018');
+          yt.setAttribute('font-family', 'JetBrains Mono, monospace');
+          yt.setAttribute('fill', '#9a8f7e');
+          yt.textContent = n.year;
+          g.appendChild(yt);
+        }
+
+        g.addEventListener('click', (ev) => {
+          ev.stopPropagation();
+          openInspector(n);
+        });
+
+        gNodes.appendChild(g);
+      });
+      svg.appendChild(gNodes);
+    }
+
+    // ─── inspector ────────────────────────────────────────────────
+    function openInspector(n) {
+      highlightId = n.id;
+      const relatedEdges = edges.filter((e) => e.source === n.id || e.target === n.id);
+      const links = relatedEdges.map((e) => {
+        const otherId = e.source === n.id ? e.target : e.source;
+        const other = nodes.find((x) => x.id === otherId);
+        if (!other) return '';
+        const dir = e.source === n.id ? '→' : '←';
+        return `<a data-id="${other.id}">${dir} ${RELATION_LABEL[e.relation] || e.relation} · <span style="color:var(--ink-dim)">${other.title}</span> · ${other.year || ''}</a>`;
+      }).join('');
+
+      inspectorBody.innerHTML = `
+        <div class="breadcrumb">${n.country} · ${n.year || 's/d'} · ${n.support || ''}</div>
+        <h2>${n.title}</h2>
+        <div class="breadcrumb" style="color: ${PATHOSFORMEL_RAW_COLORS[n.pathosformel]}; margin-top: 0.2rem;">${n.pathosLabel}</div>
+        <img src="../${n.img}" alt="${n.title}" onerror="this.style.display='none'" />
+        ${n.creator ? `<div class="field"><span class="k">Atribuição</span>${n.creator}</div>` : ''}
+        ${n.archive ? `<div class="field"><span class="k">Acervo</span>${n.archive}</div>` : ''}
+        <div class="field"><span class="k">ID corpus</span><span style="font-family: var(--mono);">${n.id}</span></div>
+
+        <div class="bars">
+          <div class="bar-row"><div class="label">gestural</div><div class="track"><div class="fill" style="width:${n.gestural*10}%; background:${PATHOSFORMEL_RAW_COLORS[n.pathosformel]}"></div></div><div>${n.gestural}/10</div></div>
+          <div class="bar-row"><div class="label">postural</div><div class="track"><div class="fill" style="width:${n.postural*10}%; background:${PATHOSFORMEL_RAW_COLORS[n.pathosformel]}"></div></div><div>${n.postural}/10</div></div>
+          <div class="bar-row"><div class="label">objetos</div><div class="track"><div class="fill" style="width:${n.objectLoad*10}%; background:${PATHOSFORMEL_RAW_COLORS[n.pathosformel]}"></div></div><div>${n.objectLoad}/10</div></div>
+        </div>
+
+        ${relatedEdges.length ? `<div class="field" style="margin-top: 1rem;"><span class="k">Nachleben</span><div class="nachleben-list">${links}</div></div>` : ''}
+
+        <div class="field" style="margin-top: 1.5rem; padding-top: 0.8rem; border-top: 1px solid var(--rule); font-size: 0.7rem; color: var(--ink-dim); line-height: 1.5;">
+          Valores preliminares — codificador único. Sujeitos ao piloto IRR (Krippendorff α) antes do freeze do dataset.
+        </div>
+      `;
+      inspector.classList.add('open');
+      inspectorBody.querySelectorAll('a[data-id]').forEach((a) => {
+        a.addEventListener('click', (ev) => {
+          ev.preventDefault();
+          const id = a.getAttribute('data-id');
+          const target = nodes.find((x) => x.id === id);
+          if (target) openInspector(target);
+        });
+      });
+      render();
+    }
+
+    document.getElementById('closeInspector').addEventListener('click', () => {
+      inspector.classList.remove('open');
+      highlightId = null;
+      render();
+    });
+
+    // ─── mode switch ──────────────────────────────────────────────
+    document.querySelectorAll('#modeswitch button').forEach((b) => {
+      b.addEventListener('click', () => {
+        document.querySelectorAll('#modeswitch button').forEach((x) => x.classList.remove('active'));
+        b.classList.add('active');
+        currentMode = b.dataset.mode;
+        toast('modo: ' + b.textContent.toLowerCase());
+        render();
+      });
+    });
+
+    // ─── legend filter ────────────────────────────────────────────
+    document.querySelectorAll('#legend .row').forEach((r) => {
+      r.addEventListener('click', () => {
+        const p = r.dataset.p;
+        if (filterPathos === p) {
+          filterPathos = null;
+          document.querySelectorAll('#legend .row').forEach((x) => x.classList.remove('dim'));
+        } else {
+          filterPathos = p;
+          document.querySelectorAll('#legend .row').forEach((x) => {
+            x.classList.toggle('dim', x.dataset.p !== p);
+          });
+        }
+        render();
+      });
+    });
+
+    // ─── pan + zoom ───────────────────────────────────────────────
+    let view = { x: -1.2, y: -1.2, w: 2.4, h: 2.4 };
+    function applyView() {
+      svg.setAttribute('viewBox', `${view.x} ${view.y} ${view.w} ${view.h}`);
+    }
+    svg.addEventListener('wheel', (ev) => {
+      ev.preventDefault();
+      const k = ev.deltaY > 0 ? 1.1 : 0.9;
+      const cx = view.x + view.w / 2;
+      const cy = view.y + view.h / 2;
+      view.w *= k; view.h *= k;
+      view.x = cx - view.w / 2;
+      view.y = cy - view.h / 2;
+      applyView();
+    }, { passive: false });
+    let drag = null;
+    svg.addEventListener('mousedown', (ev) => {
+      drag = { x: ev.clientX, y: ev.clientY, vx: view.x, vy: view.y };
+    });
+    window.addEventListener('mousemove', (ev) => {
+      if (!drag) return;
+      const dx = (ev.clientX - drag.x) / svg.clientWidth * view.w;
+      const dy = (ev.clientY - drag.y) / svg.clientHeight * view.h;
+      view.x = drag.vx - dx;
+      view.y = drag.vy - dy;
+      applyView();
+    });
+    window.addEventListener('mouseup', () => { drag = null; });
+
+    // initial render
+    render();
+    toast('Canvas iconocrático · 30 espécimes · 6 Pathosformeln');
+  })();
+  </script>
+</body>
+</html>

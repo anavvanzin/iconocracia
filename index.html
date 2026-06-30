@@ -49,7 +49,7 @@
   .lede em { font-style: italic; color: var(--terracotta); }
 
   /* entry cards */
-  .entries { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 54px; }
+  .entries { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 54px; }
   a.card {
     display: flex; flex-direction: column; text-decoration: none;
     border: 1px solid var(--light-border); border-radius: var(--radius);
@@ -75,6 +75,9 @@
   .foot-in .col { font-family: var(--font-mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #6a6258; line-height: 1.8; }
   .foot-in .col b { font-family: var(--font-display); font-style: italic; font-size: 16px; letter-spacing: 0; text-transform: none; color: var(--ink); display: block; }
 
+  @media (max-width: 980px) {
+    .entries { grid-template-columns: 1fr 1fr; }
+  }
   @media (max-width: 720px) {
     .wrap { padding: 44px 22px 36px; }
     .entries { grid-template-columns: 1fr; gap: 18px; margin-top: 38px; }
@@ -132,6 +135,20 @@
           <h2>Atlas Lab</h2>
           <p>O laboratório de inquérito visual: modos Aprendizagem e Pesquisa, painéis do módulo ICONOCRACY, radar iconométrico dos dez indicadores e comparação de espécimes lado a lado.</p>
           <span class="go">Abrir o laboratório
+            <svg width="16" height="12" viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h13M9 1l5 5-5 5"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a class="card" href="./canvas/index.html">
+        <div class="thumb">
+          <img src="./assets/corpus/fr-steinlen-republique-1915.jpg" alt="A República nos chama, Steinlen (1915)" />
+          <span class="num">III · CANVAS</span>
+        </div>
+        <div class="body">
+          <h2>Canvas Warburguiano</h2>
+          <p>Superfície topológica dirigida pelas seis Pathosformeln. Trinta espécimes constelados por fórmula de pathos, com arestas de Nachleben e três modos: leitura, laboratório e sobrevivência.</p>
+          <span class="go">Abrir o canvas
             <svg width="16" height="12" viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h13M9 1l5 5-5 5"/></svg>
           </span>
         </div>
