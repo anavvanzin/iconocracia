@@ -14,9 +14,7 @@ canonical file/directory overview.
   There is no Vercel deploy. For local development run the Worker with Miniflare:
   - `npx wrangler dev --port 8787` — serves the `site/` assets plus the Worker. Open
     `http://127.0.0.1:8787/` (homepage) and `/acervo` (collection grid).
-  - The pinned wrangler is v3; it prints harmless warnings about being out-of-date and
-    about the `compatibility_date` being newer than the runtime — the site
-    serves fine regardless.
+  - Wrangler is v4 (devDependency `^4.131.1`; Node >= 22 required locally).
   - The old `/api/exec` sandbox endpoint (Cloudflare container Durable Object) was
     **removed** — the editorial site carries no server-side execution surface.
 
