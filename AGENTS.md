@@ -41,8 +41,9 @@ existente vence.**
 
 **NÃO USAR o musepool quando:**
 - O trabalho é dentro de um design system já resolvido. O iconocracia.com
-  (Mnemosyne Viva) já tem identidade própria: papel creme #EFE5CF, lacre
-  vermelho, Instrument Serif (display) + Crimson Pro (corpo) + JetBrains Mono.
+  (Mnemosyne Viva) já tem identidade própria: lavanda de exposição #B99AEE,
+  lilás de leitura, violeta âncora e amarelo ácido #E4FF38 como única cor de
+  ação; Instrument Serif (display) + Crimson Pro (corpo) + JetBrains Mono.
   Nesse caso a referência é o próprio site (site/assets/style.css) — mexer
   no design é dano, não melhoria. Pedido explícito de redesign → confirmar
   escopo antes de tocar nos tokens.
