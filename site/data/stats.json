@@ -1,7 +1,7 @@
 {
-  "total": 336,
+  "total": 337,
   "paises": 17,
-  "com_imagem": 331,
+  "com_imagem": 332,
   "periodo": {
     "min": 1707,
     "max": 1981
@@ -13,7 +13,7 @@
     },
     {
       "pais": "Brasil",
-      "n": 72
+      "n": 73
     },
     {
       "pais": "Estados Unidos",
@@ -96,6 +96,11 @@
       "regime": "Contra-alegoria",
       "chave": "CONTRA-ALEGORIA",
       "n": 15
+    },
+    {
+      "regime": "Não classificado",
+      "chave": "não classificado",
+      "n": 1
     }
   ],
   "motivos": [
