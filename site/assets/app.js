@@ -204,6 +204,8 @@
       syncURL(); return;
     }
     reproduce(selected, $('#ex-image'));
+    // A imagem do palco é o LCP da página — prioridade alta (insight LCPDiscovery).
+    $('#ex-image img')?.setAttribute('fetchpriority', 'high');
     $('#ex-title').textContent = shortTitle(selected);
     $('#ex-author').textContent = selected.autoria || 'Autoria não informada';
     $('#ex-date').textContent = selected.pais + ', ' + selected.data;
