@@ -104,7 +104,14 @@ export default {
     // Anything else: only assets (css/js/images/data) fall through.
     const isAsset = /\.[a-z0-9]+$/i.test(url.pathname);
     if (isAsset) {
-      return env.ASSETS.fetch(request);
+      const res = await env.ASSETS.fetch(request);
+      // WebPs do acervo e woff2 (nomeados por hash) quase nunca mudam: 1 semana
+      // fresco + 30 dias de stale-while-revalidate. O resto segue o perfil editorial.
+      const immutable = /\.(webp|woff2)$/i.test(url.pathname);
+      if (!immutable) return res;
+      const headers = new Headers(res.headers);
+      headers.set('Cache-Control', 'public, max-age=604800, stale-while-revalidate=2592000');
+      return new Response(res.body, { status: res.status, headers });
     }
 
     return servePage(env, '/404.html', 404);
