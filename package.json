@@ -2,7 +2,11 @@
   "name": "mnemosyne-viva",
   "version": "1.0.0",
   "type": "module",
+  "scripts": {
+    "test:browser": "playwright test"
+  },
   "devDependencies": {
+    "@playwright/test": "1.63.0",
     "wrangler": "^4.131.1"
   }
 }

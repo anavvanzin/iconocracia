@@ -2,6 +2,8 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import worker from '../src/index.js';
+// Run loader contracts in the existing Node CI job without extra permissions.
+import './test_acervo_loader.mjs';
 
 const site = new URL('../site/', import.meta.url);
 const origin = 'https://iconocracia.com';
