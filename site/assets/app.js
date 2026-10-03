@@ -267,24 +267,93 @@
   $('#view-palco').addEventListener('click', () => setView('palco'));
   $('#view-grade').addEventListener('click', () => setView('grade'));
   $('#view-constelacao').addEventListener('click', () => setView('constelacao'));
-  fetch('data/acervo.json').then((response) => { if (!response.ok) throw new Error('Acervo indisponível'); return response.json(); }).then((data) => {
-    if (!Array.isArray(data)) throw new Error('Formato inválido');
-    const featured = ['BR-009', 'US-008', 'FR-005', 'BR-005', 'FR-008'];
-    const rank = (item) => { const index = featured.indexOf(item.id); return index < 0 ? featured.length : index; };
-    items = data.slice().sort((a, b) => rank(a) - rank(b));
-    fillOptions(fields.pais, items.map((item) => item.pais));
-    fillOptions(fields.regime, items.map((item) => item.regime));
-    fillOptions(fields.periodo, items.map(centuryOf), (value) => value === 'sem-ano' ? 'Sem ano numérico' : 'Século ' + value);
-    fillOptions(fields.tipo, items.map(typeOf));
-    Object.entries(fields).forEach(([key, field]) => { field.value = params.get(key) || ''; });
-    selected = items.find((item) => item.id === params.get('item')) || items[0];
-    filterItems();
-    setView(view);
-    if (params.has('buscar')) fields.q.focus();
-  }).catch(() => {
-    filtered = []; selected = null; renderSelected();
-    $('#ex-title').textContent = 'Acervo indisponível';
-    $('#ex-image').textContent = 'Não foi possível carregar os registros. Recarregue a página para tentar novamente.';
-    $('#result-count').textContent = 'Falha ao carregar o acervo';
-  });
+  // Create the recovery control here so cached HTML also works with this script.
+  const retry = node('button', '', 'Tentar novamente');
+  retry.id = 'retry-acervo'; retry.type = 'button'; retry.hidden = true;
+  $('.ex-results-actions').prepend(retry);
+  const loadControls = document.querySelectorAll('.ex-filters input, .ex-filters select, .ex-filters button, .ex-view-toggle button, .ex-arrow, .ex-expand, #ex-open, #ex-more, #clear-filters');
+  let loading = false;
+
+  async function fetchAcervo(refresh = false) {
+    for (let attempt = 0; attempt < 3; attempt++) {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 8000);
+      try {
+        // A recovered server must not be hidden by a fresh cached error payload.
+        const response = await fetch('data/acervo.json', { signal: controller.signal, cache: attempt || refresh ? 'reload' : 'default' });
+        if (!response.ok) {
+          const error = new Error('Acervo indisponível: HTTP ' + response.status);
+          error.retryable = response.status >= 500 || response.status === 408 || response.status === 429;
+          throw error;
+        }
+        const data = await response.json();
+        // Validate the fields consumed by the renderer before mutating UI state.
+        if (!Array.isArray(data) || !data.every((item) => item && typeof item.id === 'string' && item.id.trim() && typeof item.titulo === 'string' && typeof item.pais === 'string' && (item.motivos == null || Array.isArray(item.motivos)))) {
+          throw new Error('Formato inválido do acervo');
+        }
+        return data;
+      } catch (error) {
+        const transient = controller.signal.aborted || error instanceof TypeError || error.retryable;
+        if (!transient || attempt === 2) throw error;
+      } finally {
+        clearTimeout(timeout);
+      }
+      await new Promise((resolve) => setTimeout(resolve, 250 * (attempt + 1)));
+    }
+  }
+
+  async function loadAcervo(refresh = false) {
+    if (loading) return;
+    loading = true;
+    const retryFocused = document.activeElement === retry;
+    const requested = new URLSearchParams(location.search);
+    $('.exhibition').setAttribute('aria-busy', 'true');
+    loadControls.forEach((control) => { control.disabled = true; });
+    retry.hidden = true;
+    $('#ex-source').hidden = true;
+    $('#ex-title').textContent = 'Carregando acervo';
+    $('#result-count').textContent = 'Carregando acervo…';
+    let loaded = false;
+    try {
+      const data = await fetchAcervo(refresh);
+      const featured = ['BR-009', 'US-008', 'FR-005', 'BR-005', 'FR-008'];
+      const rank = (item) => { const index = featured.indexOf(item.id); return index < 0 ? featured.length : index; };
+      items = data.slice().sort((a, b) => rank(a) - rank(b));
+      Object.values(fields).filter((field) => field.tagName === 'SELECT').forEach((field) => {
+        field.replaceChildren(field.options[0]);
+      });
+      fillOptions(fields.pais, items.map((item) => item.pais));
+      fillOptions(fields.regime, items.map((item) => item.regime));
+      fillOptions(fields.periodo, items.map(centuryOf), (value) => value === 'sem-ano' ? 'Sem ano numérico' : 'Século ' + value);
+      fillOptions(fields.tipo, items.map(typeOf));
+      Object.entries(fields).forEach(([key, field]) => { field.value = requested.get(key) || ''; });
+      selected = items.find((item) => item.id === requested.get('item')) || items[0];
+      loadControls.forEach((control) => { control.disabled = false; });
+      filterItems();
+      setView(view);
+      loaded = true;
+    } catch (error) {
+      console.error('Falha ao carregar o acervo', error);
+      loadControls.forEach((control) => { control.disabled = true; });
+      items = []; filtered = []; selected = null;
+      // Do not call renderSelected: its empty-search path rewrites the URL.
+      stage.hidden = false;
+      strip.hidden = grid.hidden = constellation.hidden = true;
+      strip.replaceChildren(); grid.replaceChildren(); constellation.replaceChildren();
+      $('#ex-image').textContent = 'Não foi possível carregar os registros. Tente novamente.';
+      $('#ex-title').textContent = 'Acervo indisponível';
+      $('#ex-author').textContent = $('#ex-date').textContent = $('#ex-description').textContent = '';
+      $('#ex-metadata').replaceChildren();
+      $('#ex-position').textContent = '—';
+      $('#result-count').textContent = 'Falha ao carregar o acervo';
+      $('#clear-filters').hidden = true;
+      retry.hidden = false;
+    } finally {
+      loading = false;
+      $('.exhibition').setAttribute('aria-busy', 'false');
+      if (loaded && (requested.has('buscar') || retryFocused)) fields.q.focus();
+    }
+  }
+  retry.addEventListener('click', () => loadAcervo(true));
+  loadAcervo();
 })();
