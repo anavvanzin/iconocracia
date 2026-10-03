@@ -96,6 +96,12 @@ export default {
       return Response.redirect(`${BASE_URL}${REDIRECTS.get(path)}`, 301);
     }
 
+    // A trailing slash makes the acervo's relative assets resolve under /acervo/.
+    if (path === '/acervo' && url.pathname.endsWith('/')) {
+      url.pathname = '/acervo';
+      return Response.redirect(url.href, 308);
+    }
+
     if (KNOWN_ROUTES.has(path)) {
       const asset = path === '/' || path === '/index' ? '/index.html' : `${path}.html`;
       return servePage(env, asset);
