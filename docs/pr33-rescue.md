@@ -126,3 +126,21 @@ e celular, incluindo 16 casos novos de prioridade, URL, deep link, foco,
 busca vazia, resize e larguras 320/390/1440 px. Node: 42/42 passaram. Python:
 31 passaram e um skip opcional permanece. `git diff --check` passou; os três
 JSON, geradores, manifesto, schema e gates permanecem inalterados nesta etapa.
+
+## Apresentação e voz autoral
+
+A abertura do acervo parte das obras publicadas de Ceschiatti (BR-009) e
+Décio Villares (BR-005), com links para suas fichas. O texto e o estado vazio
+foram revistos com o perfil `ana-writing-voice` e os perfis
+`intellectual-tastekeeper` e `Historian`. A formulação registra que a montagem
+autoral está em preparação. A nota de método explicita as perguntas e fontes
+necessárias às futuras aproximações. Os textos originais de Ana e o PDF
+fornecido permanecem intactos.
+
+O plugin Write For Me solicitado não disponibilizou uma ferramenta utilizável
+nesta sessão; a revisão aplicou o perfil autoral disponível, sem afirmar que
+o plugin foi executado. A inspeção visual local confirmou os 337 registros e
+ausência de rolagem horizontal em 320, 390 e 1440 px. Após a revisão de texto,
+os 62 casos Playwright passaram; Node manteve 42 casos aprovados e Python,
+31 aprovados e um skip opcional. A geração fail-closed preservou o catálogo e
+os artefatos públicos vazios. Os três JSON atuais continuam idênticos à main.

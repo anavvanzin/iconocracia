@@ -1237,6 +1237,9 @@ button:disabled { cursor:default; opacity:.4; }
 .ex-analysis p { max-width:66ch; line-height:1.6; }
 .ex-analysis-summary { font-size:1.08rem; }
 .ex-method-note { color:var(--ex-muted); font-size:.82rem; }
+.ex-collection-intro { max-width:72ch; margin:0 0 24px; }
+.ex-collection-intro p { margin:0 0 10px; }
+.ex-collection-intro a { color:var(--ex-selection); text-underline-offset:3px; }
 .ex-analysis-limitation { padding:12px; background:var(--ex-action); color:var(--ex-ink); }
 .constellation-main { padding:clamp(44px,7vw,110px) 4vw; }
 .constellation-intro { max-width:1050px; margin:0 auto clamp(60px,9vw,130px); }

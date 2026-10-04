@@ -145,7 +145,7 @@
     if (!definition) {
       if (requested) state('Percurso indisponível', 'Este percurso não está disponível na publicação atual.');
       else {
-        state('Nenhum percurso publicado', 'As lentes curatoriais aparecem aqui depois da revisão autoral e documental. Explore as obras já publicadas no campo do acervo.');
+        state('Nenhum percurso publicado', 'Os percursos ainda estão em revisão. As obras já publicadas podem ser consultadas no campo do acervo.');
         const link = node('a', 'btn btn-primary', 'Explorar a constelação do acervo');
         link.href = 'acervo.html?visao=constelacao'; intro.append(link);
       }

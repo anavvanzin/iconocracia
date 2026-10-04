@@ -45,24 +45,18 @@ prescrição tecnológica de Benjamin ou Weigel.
 
 ## Como desenvolver a montagem autoral
 
-O próximo trabalho de curadoria é formular perguntas que determinem quais
-imagens ficam em relação e como essa aproximação ajuda a lê-las. Uma composição
-pode colocar em tensão suportes, funções jurídico-políticas, presença corporal
-e usos de uma mesma figura, atravessando datas ou fronteiras quando a evidência
-justificar a aproximação. País, data ou semelhança visual, isoladamente, não
-devem produzir uma relação interpretativa automática.
+Uma aproximação entre obras começa por uma pergunta da pesquisa. O suporte
+da imagem pode importar tanto quanto seu lugar de exposição; a função
+jurídico-política exige documentação própria. Cada montagem deverá explicitar
+o que sustenta a comparação e permitir voltar à ficha de cada objeto. A
+semelhança entre figuras, isoladamente, não estabelece transmissão histórica.
+A mesma obra pode participar de mais de uma montagem.
 
-Cada montagem precisa de uma pergunta explicitada, uma justificativa autoral
-da seleção e das aproximações, fontes recuperáveis e indicação das incertezas
-que interferem na leitura. A mesma obra pode participar de mais de uma montagem.
-Comparações devem permitir retornar à reprodução, à ficha e ao contexto de
-cada objeto, conservando sua singularidade.
-
-A configuração atual do campo distribui as obras em células e usa o ID para
-pequenas variações estáveis de posição e tamanho. Essa estabilidade é uma
-conveniência de navegação. Ainda não codifica relações históricas ou uma
-montagem autoral: tornar o campo a entrada principal é a primeira mudança da
-hierarquia, enquanto a configuração fundamentada depende da curadoria.
+O campo atual distribui as imagens por uma regra estável ligada ao ID da obra.
+Essa regra organiza a navegação. A curadoria deverá justificar as aproximações
+e registrar as incertezas que interferem na leitura. A interlocução com Benjamin
+situa essa escolha no problema da apresentação do conhecimento; sua tradução
+em interface permanece uma decisão metodológica da pesquisa.
 
 ## Publicação e autoria
 
