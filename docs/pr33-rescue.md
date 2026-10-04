@@ -5,6 +5,12 @@ O PR original continua preservado em `codex/atlantic-constellations`, commit
 `fd97da1560bd24826ee9d4bcd69e786668ce5311`, em checkout isolado. Não recupera
 os artefatos antigos de 95 registros, nem altera o fluxo de geração atual.
 
+Antes do push, `main` avançou para
+`d8d359ad0c55b0a7abbd8f12e484ed9aff199fc6` (atualização de dependências).
+O resgate foi rebased sobre esse commit, sem conflitos e sem alterações nos
+dados. O manifesto continua ancorado no snapshot de dados `fd97da1`, cujos
+bytes também estão presentes na nova base. As dependências upstream foram preservadas.
+
 O instantâneo público de trabalho foi recontado: 337 registros, 337 IDs únicos,
 17 países, 332 registros com imagem declarada e intervalo numérico 1239–2021.
 Essas contagens descrevem este commit; o corpus continua em expansão.
