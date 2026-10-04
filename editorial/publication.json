@@ -1,0 +1,383 @@
+{
+  "schema_version": "2.0",
+  "corpus_repository": "anavvanzin/iconocracy-corpus",
+  "corpus_commit": "d5f8ad1d5eaf039f3837d13ad3eb6ef38dedf2b7",
+  "corpus_sha256": "344e37d257821285c265bbbfd4ae61b23922a9df8d5c93f38c5b29a816b77e48",
+  "baseline": {
+    "commit": "fd97da1560bd24826ee9d4bcd69e786668ce5311",
+    "acervo_sha256": "7e063f444cf48ac06b60aaeaa7b8ab82cad2aff4e63c37a377b777fffa35cb7b",
+    "stats_sha256": "1ddc3eb7f44bc6c79646166c92db88e3de6f8d7e6fab27b6c6e12f952fd478a3",
+    "corpus_enriched_sha256": "c379d79002f8b68fd820552acd3dedd18151bcc0206d2d81610311e5dcc0a0b6"
+  },
+  "generated_at": "2026-09-15",
+  "items": [
+    {
+      "canonical_id": "FR-087",
+      "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b6948145c.item",
+      "slug": "allegorie-constitution-1791",
+      "image": {
+        "path": "assets/acervo/FR-087.webp",
+        "source_url": "https://gallica.bnf.fr/iiif/ark:/12148/btv1b6948145c/f1/full/full/0/native.jpg",
+        "catalog_url": "https://gallica.bnf.fr/ark:/12148/btv1b6948145c.item",
+        "license": "Domínio público",
+        "credit": "Bibliothèque nationale de France / Gallica",
+        "alt": "Figura feminina coroada, sentada junto ao leão francês, sustenta a Constituição diante de um busto de Luís XVI."
+      },
+      "legacy_record_id": "FR-087",
+      "legacy_ids": [],
+      "editorial_status": "review",
+      "constellations": [
+        "constituicoes-atlanticas"
+      ],
+      "public_analysis": {
+        "status": "draft",
+        "summary": "A Constituição toma corpo feminino para articular nação, direitos e monarquia sob uma nova ordem escrita.",
+        "panofsky": {
+          "level_1": "Mulher coroada em vestes longas apresenta um volume aberto; leão, busto de Luís XVI, pedestais, inscrições e documentos estruturam a cena.",
+          "level_2": "A figura personifica a Constituição ou a Nação constitucional. O leão e o retrato régio inserem a nova ordem na monarquia constitucional.",
+          "level_3": "O corpo feminino torna a Constituição sensível, enquanto texto, rei e nação dividem a autoridade visual."
+        },
+        "indicators": {
+          "desincorporacao": 0,
+          "rigidez_postural": 1,
+          "dessexualizacao": 1,
+          "uniformizacao_facial": 1,
+          "heraldizacao": 2,
+          "enquadramento_arquitetonico": 1,
+          "apagamento_narrativo": 1,
+          "monocromatizacao": 0,
+          "serialidade": 1,
+          "inscricao_estatal": 3
+        },
+        "scale": "0–3; não aplicável quando não há figura feminina",
+        "method_note": "Rascunho assistido seguido de adjudicação humana quando indicado. O índice composto histórico não é exibido nem recalculado."
+      }
+    },
+    {
+      "canonical_id": "FR-073",
+      "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b53009905z.item",
+      "slug": "constitution-francaise-droits",
+      "image": {
+        "path": "assets/acervo/FR-073.webp",
+        "source_url": "https://gallica.bnf.fr/iiif/ark:/12148/btv1b53009905z/f1/full/full/0/native.jpg",
+        "catalog_url": "https://gallica.bnf.fr/ark:/12148/btv1b53009905z.item",
+        "license": "Domínio público",
+        "credit": "Bibliothèque nationale de France / Gallica",
+        "alt": "Figura masculina erguida sobre um braseiro segura barrete vermelho e coroa, cercada por homens em celebração."
+      },
+      "legacy_record_id": "FR-073",
+      "legacy_ids": [],
+      "editorial_status": "review",
+      "constellations": [
+        "constituicoes-atlanticas"
+      ],
+      "public_analysis": {
+        "status": "draft",
+        "summary": "A fundação constitucional aparece por corpos masculinos e emblemas políticos, sem personificação feminina identificável.",
+        "panofsky": {
+          "level_1": "Figura masculina elevada segura barrete vermelho e coroa diante de uma multidão masculina; fumaça e raios concentram o eixo central.",
+          "level_2": "Barrete, coroa e reunião pública articulam liberdade, monarquia e povo. A reprodução não sustenta a identificação de uma República feminina.",
+          "level_3": "Como caso negativo, a obra mostra que a lei também foi corporificada sem feminilidade alegórica."
+        },
+        "indicators": null,
+        "scale": "0–3; não aplicável quando não há figura feminina",
+        "method_note": "Rascunho assistido seguido de adjudicação humana quando indicado. O índice composto histórico não é exibido nem recalculado.",
+        "gender_attributed": "ausente"
+      }
+    },
+    {
+      "canonical_id": "ce773ab1-3bfc-9f6e-754a-efe0c567916d",
+      "source_url": "https://www.museodelprado.es/en/the-collection/art-work/truth-has-died/8c3b0257-606f-4d0b-af9e-73f05de59697",
+      "slug": "goya-murio-la-verdad",
+      "image": {
+        "path": "assets/acervo/ce773ab1-3bfc-9f6e-754a-efe0c567916d.webp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Francisco_de_Goya_Muri%C3%B3_la_Verdad_(Desastres_79).jpg",
+        "catalog_url": "https://www.museodelprado.es/en/the-collection/art-work/truth-has-died/8c3b0257-606f-4d0b-af9e-73f05de59697",
+        "license": "Domínio público — PDM 1.0",
+        "credit": "Francisco de Goya / Wikimedia Commons; ficha Museo del Prado",
+        "alt": "A Verdade, figura feminina luminosa, jaz morta diante de um cortejo dominado por religiosos; uma mulher lamenta à direita."
+      },
+      "legacy_record_id": "ce773ab1-3bfc-9f6e-754a-efe0c567916d",
+      "legacy_ids": [],
+      "editorial_status": "review",
+      "constellations": [
+        "constituicoes-atlanticas"
+      ],
+      "public_analysis": {
+        "status": "draft",
+        "summary": "A Verdade morta transforma a restauração absolutista em violência visível contra a promessa constitucional.",
+        "panofsky": {
+          "level_1": "Corpo feminino luminoso jaz no chão; uma mulher se curva sobre ele e figuras masculinas, entre elas clérigos, cercam a cena escura.",
+          "level_2": "A legenda identifica a morta como Verdade; luz e nudez separam seu corpo dos agentes do sepultamento.",
+          "level_3": "A alegoria não legitima o Estado: torna visível a supressão da verdade pública e da promessa liberal da Constituição de Cádiz."
+        },
+        "indicators": {
+          "desincorporacao": 0,
+          "rigidez_postural": 0,
+          "dessexualizacao": 0,
+          "uniformizacao_facial": 1,
+          "heraldizacao": 0,
+          "enquadramento_arquitetonico": 0,
+          "apagamento_narrativo": 0,
+          "monocromatizacao": 3,
+          "serialidade": 2,
+          "inscricao_estatal": 0
+        },
+        "scale": "0–3; não aplicável quando não há figura feminina",
+        "method_note": "Rascunho assistido seguido de adjudicação humana quando indicado. O índice composto histórico não é exibido nem recalculado."
+      }
+    },
+    {
+      "canonical_id": "324a90b6-403b-5b36-9bcf-d4c4db9efdc1",
+      "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b69481105",
+      "slug": "nation-loi-roi-1791",
+      "image": {
+        "path": "assets/acervo/324a90b6-403b-5b36-9bcf-d4c4db9efdc1.webp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:La_Nation,_la_Loi,_le_Roi._Constitution_fran%C3%A7aise._(du_14_septembre_1791)_-_estampe_-_btv1b69481105.jpg",
+        "catalog_url": "https://gallica.bnf.fr/ark:/12148/btv1b69481105",
+        "license": "Domínio público",
+        "credit": "Bibliothèque nationale de France / Gallica",
+        "alt": "Figura feminina de barrete frígio apresenta a Constituição de 1791 monumentalizada, sob galo, bandeiras e raios."
+      },
+      "legacy_record_id": "324a90b6-403b-5b36-9bcf-d4c4db9efdc1",
+      "legacy_ids": [],
+      "editorial_status": "review",
+      "constellations": [
+        "constituicoes-atlanticas"
+      ],
+      "public_analysis": {
+        "status": "approved",
+        "summary": "A Nação feminina dá presença à soberania, mas o texto constitucional monumentalizado domina a imagem.",
+        "panofsky": {
+          "level_1": "Figura feminina de barrete frígio e seio exposto aparece à esquerda da Constituição; galo, globo, raios, bandeiras, lanças e ramos completam a composição.",
+          "level_2": "A mulher personifica a Nação ou a França no vocabulário da Liberdade revolucionária e guarda a Constituição.",
+          "level_3": "Produzida entre 1835 e 1841, a estampa reapresenta a Constituição de 1791 como patrimônio jurídico nacional."
+        },
+        "indicators": {
+          "desincorporacao": 0,
+          "rigidez_postural": 1,
+          "dessexualizacao": 0,
+          "uniformizacao_facial": 1,
+          "heraldizacao": 2,
+          "enquadramento_arquitetonico": 2,
+          "apagamento_narrativo": 2,
+          "monocromatizacao": 3,
+          "serialidade": 1,
+          "inscricao_estatal": 3
+        },
+        "scale": "0–3; não aplicável quando não há figura feminina",
+        "method_note": "Rascunho assistido seguido de adjudicação humana quando indicado. O índice composto histórico não é exibido nem recalculado.",
+        "approved_by": "ana",
+        "approved_at": "2026-09-15"
+      },
+      "approved_by": "ana",
+      "approved_at": "2026-09-15"
+    },
+    {
+      "canonical_id": "FR-075",
+      "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b530172177.item",
+      "slug": "proclamation-constitution-1848",
+      "image": {
+        "path": "assets/acervo/FR-075.webp",
+        "source_url": "https://gallica.bnf.fr/iiif/ark:/12148/btv1b530172177/f1/full/full/0/native.jpg",
+        "catalog_url": "https://gallica.bnf.fr/ark:/12148/btv1b530172177.item",
+        "license": "Domínio público",
+        "credit": "Bibliothèque nationale de France / Gallica",
+        "alt": "Cena pública de proclamação da Constituição de 1848 conduzida por homens, dentro de moldura ornamental com bandeiras."
+      },
+      "legacy_record_id": "FR-075",
+      "legacy_ids": [],
+      "editorial_status": "review",
+      "constellations": [
+        "constituicoes-atlanticas"
+      ],
+      "public_analysis": {
+        "status": "draft",
+        "summary": "A proclamação constitucional é encenada como ritual cívico masculino, sem personificação feminina identificável.",
+        "panofsky": {
+          "level_1": "Homem elevado lê ou exibe um documento diante de assembleia masculina em uma moldura ornamental.",
+          "level_2": "O ato público, o documento e a assembleia identificam a proclamação da Constituição de 1848.",
+          "level_3": "Como caso negativo, a obra visualiza a soberania pela voz e pelo ritual político, sem corpo alegórico feminino."
+        },
+        "indicators": null,
+        "scale": "0–3; não aplicável quando não há figura feminina",
+        "method_note": "Rascunho assistido seguido de adjudicação humana quando indicado. O índice composto histórico não é exibido nem recalculado.",
+        "gender_attributed": "ausente"
+      }
+    },
+    {
+      "canonical_id": "BE-004",
+      "source_url": "https://neptun.unamur.be/ark:/83449/0091bdf9fa",
+      "slug": "constitution-belgique-1852",
+      "image": {
+        "path": "assets/acervo/BE-004.webp",
+        "source_url": "https://neptun.unamur.be/ark:/83449/0091bdf9fa",
+        "catalog_url": "https://neptun.unamur.be/ark:/83449/0091bdf9fa",
+        "license": "Domínio público; digitalização UNamur",
+        "credit": "Bibliothèque Universitaire Moretus Plantin, UNamur",
+        "alt": "La Belgique, coroada e entronizada, eleva a Constituição de 1831 sobre corpos sociais, militares e jurídicos masculinos."
+      },
+      "legacy_record_id": "BE-004",
+      "legacy_ids": [],
+      "editorial_status": "review",
+      "constellations": [
+        "constituicoes-atlanticas"
+      ],
+      "public_analysis": {
+        "status": "approved",
+        "summary": "La Belgique eleva a Constituição de 1831 enquanto corpos masculinos sustentam materialmente a ordem nacional.",
+        "panofsky": {
+          "level_1": "Figura feminina monumental, coroada, frontal e entronizada eleva a Constituição; leão, bandeira, raios e tipos sociais masculinos compõem a cena.",
+          "level_2": "La Belgique personifica a nação; os homens representam corpos sociais, jurídicos e militares que sustentam sua estrutura.",
+          "level_3": "A edição de 1852 monumentaliza retrospectivamente a Constituição de 1831 como origem e continuidade estatal."
+        },
+        "indicators": {
+          "desincorporacao": 0,
+          "rigidez_postural": 2,
+          "dessexualizacao": 2,
+          "uniformizacao_facial": 1,
+          "heraldizacao": 3,
+          "enquadramento_arquitetonico": 2,
+          "apagamento_narrativo": 1,
+          "monocromatizacao": 3,
+          "serialidade": 2,
+          "inscricao_estatal": 3
+        },
+        "scale": "0–3; não aplicável quando não há figura feminina",
+        "method_note": "Rascunho assistido seguido de adjudicação humana quando indicado. O índice composto histórico não é exibido nem recalculado.",
+        "approved_by": "ana",
+        "approved_at": "2026-09-15"
+      },
+      "approved_by": "ana",
+      "approved_at": "2026-09-15"
+    },
+    {
+      "canonical_id": "235c545a-f3b8-568a-f268-178806a4bf07",
+      "source_url": "https://www.loc.gov/item/2003689297/",
+      "slug": "lincoln-justice-liberty-1860",
+      "image": {
+        "path": "assets/acervo/235c545a-f3b8-568a-f268-178806a4bf07.webp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Abraham_Lincoln,_Republican_candidate_for_president_of_the_United_States_LCCN2003689297.jpg",
+        "catalog_url": "https://www.loc.gov/item/2003689297/",
+        "license": "Sem restrições conhecidas para publicação",
+        "credit": "Library of Congress, Prints & Photographs Division",
+        "alt": "Retrato de Abraham Lincoln entre as personificações da Justiça e da Liberdade, com Constituição, bandeiras e águia."
+      },
+      "legacy_record_id": "235c545a-f3b8-568a-f268-178806a4bf07",
+      "legacy_ids": [],
+      "editorial_status": "review",
+      "constellations": [
+        "constituicoes-atlanticas"
+      ],
+      "public_analysis": {
+        "status": "draft",
+        "summary": "Justiça e Liberty/Columbia oferecem caução constitucional à candidatura masculina no limiar da crise seccional.",
+        "panofsky": {
+          "level_1": "O retrato de Lincoln é ladeado por duas mulheres clássicas; balança, espada, águia, bandeiras, escudos e inscrições cercam o centro.",
+          "level_2": "Justiça e Liberty/Columbia guardam a Constituição e a União.",
+          "level_3": "Corpos femininos idealizados oferecem soberania abstrata ao agente masculino autorizado a exercer o poder."
+        },
+        "indicators": {
+          "desincorporacao": 1,
+          "rigidez_postural": 2,
+          "dessexualizacao": 2,
+          "uniformizacao_facial": 2,
+          "heraldizacao": 2,
+          "enquadramento_arquitetonico": 1,
+          "apagamento_narrativo": 1,
+          "monocromatizacao": 2,
+          "serialidade": 2,
+          "inscricao_estatal": 2
+        },
+        "scale": "0–3; não aplicável quando não há figura feminina",
+        "method_note": "Rascunho assistido seguido de adjudicação humana quando indicado. O índice composto histórico não é exibido nem recalculado."
+      }
+    },
+    {
+      "canonical_id": "BE-IND-1880",
+      "source_url": "https://en.numista.com/27258",
+      "slug": "belgica-cinquentenario-1880",
+      "image": {
+        "path": "",
+        "source_url": "https://en.numista.com/catalogue/photos/belgique/1661-original.jpg",
+        "catalog_url": "https://en.numista.com/27258",
+        "license": "",
+        "credit": "Fotografia © Heritage Auctions — autorização pendente",
+        "alt": "La Belgique apoia-se no leão e segura a Constituição; ao fundo, a Coluna do Congresso e o Palácio da Justiça."
+      },
+      "legacy_record_id": "BE-IND-1880",
+      "legacy_ids": [],
+      "editorial_status": "review",
+      "constellations": [
+        "constituicoes-atlanticas"
+      ],
+      "public_analysis": {
+        "status": "provisional-image-pending",
+        "summary": "No reverso comemorativo, La Belgique reúne Constituição, leão e monumentos numa memória estatal portátil.",
+        "panofsky": {
+          "level_1": "Conforme o catálogo, mulher apoia-se em leão e segura a Constituição; aparecem a Coluna do Congresso e o Palácio da Justiça.",
+          "level_2": "La Belgique reúne lei, emblema animal e monumentos nacionais.",
+          "level_3": "Cinquenta anos depois da independência, a soberania constitucional torna-se memória estatal serial."
+        },
+        "indicators": {
+          "desincorporacao": 1,
+          "rigidez_postural": 3,
+          "dessexualizacao": 2,
+          "uniformizacao_facial": 2,
+          "heraldizacao": 3,
+          "enquadramento_arquitetonico": 0,
+          "apagamento_narrativo": 1,
+          "monocromatizacao": 0,
+          "serialidade": 2,
+          "inscricao_estatal": 3
+        },
+        "scale": "0–3; não aplicável quando não há figura feminina",
+        "method_note": "Rascunho assistido seguido de adjudicação humana quando indicado. O índice composto histórico não é exibido nem recalculado.",
+        "limitation": "Leitura baseada na descrição catalográfica; inspeção direta e licença da fotografia pendentes."
+      }
+    }
+  ],
+  "constellations": [
+    {
+      "slug": "constituicoes-atlanticas",
+      "title": "Constituições atlânticas",
+      "subtitle": "Corpo, lei e soberania, 1789–1880",
+      "editorial_status": "review",
+      "introduction": "Entre a Revolução Francesa e o cinquentenário belga, a Constituição assume corpo, monumento, inscrição e ausência. O percurso aproxima imagens que celebram a fundação jurídica de outras que expõem seus limites: mulheres figuram a Nação, a Justiça, a Liberdade e a Verdade; em duas cenas francesas, porém, o feminino desaparece e a proclamação constitucional permanece inteiramente masculina.",
+      "method_note": "A ordem segue a produção dos objetos. La Nation, la Loi, le Roi foi impressa entre 1835 e 1841, embora represente a Constituição de 1791.",
+      "item_ids": [
+        "FR-087",
+        "FR-073",
+        "ce773ab1-3bfc-9f6e-754a-efe0c567916d",
+        "324a90b6-403b-5b36-9bcf-d4c4db9efdc1",
+        "FR-075",
+        "BE-004",
+        "235c545a-f3b8-568a-f268-178806a4bf07",
+        "BE-IND-1880"
+      ]
+    }
+  ],
+  "recovered_aliases": [
+    {
+      "canonical_id": "2b7a1a18-1a29-5703-9264-6012425c65e8",
+      "legacy_ids": [
+        "FR-007"
+      ],
+      "source_url": "https://www.europeana.eu/en/item/9200518/ark__12148_btv1b10051217v"
+    },
+    {
+      "canonical_id": "39ebfe77-0d0b-5130-8cce-f6f48d85a081",
+      "legacy_ids": [
+        "US-011"
+      ],
+      "source_url": "https://www.loc.gov/item/91726511/"
+    },
+    {
+      "canonical_id": "US-017",
+      "legacy_ids": [
+        "US-012"
+      ],
+      "source_url": "https://www.loc.gov/item/95506508/"
+    }
+  ]
+}

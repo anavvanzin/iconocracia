@@ -7,12 +7,15 @@ Site editorial estático para o novo `iconocracia.com`, concebido como casa púb
 - `site/index.html` — homepage.
 - `site/sobre.html` — apresentação do projeto, método e conceitos.
 - `site/acervo.html` — recorte inicial do acervo, com busca e filtros.
+- `site/constelacoes.html` — percursos curatoriais aprovados; permanece vazio enquanto o lote estiver em revisão.
 - `site/404.html` — página de erro servida pelo Worker para rotas desconhecidas.
 - `site/assets/` — CSS e JavaScript.
 - `site/data/` — JSONs estáticos usados pela homepage e pelo acervo.
 - `scripts/build_data.py` — regenera `site/data/*.json` a partir dos dados do corpus original.
 - `scripts/corpus_sync.py` — valida e transforma o export canônico do repositório
   [`iconocracy-corpus`](https://github.com/anavvanzin/iconocracy-corpus) em dados do site.
+- `scripts/publication_sync.py` — exporta complementos editoriais aprovados, preservando o catálogo publicado.
+- `editorial/publication.json` — manifesto recuperado do PR #33, com fontes e decisões ainda em revisão; fica fora dos assets do Worker.
 - `scripts/validate_acervo.py` — valida o JSON enriquecido (estrutura + JSON Schema) e verifica URLs de imagem.
 - `scripts/measure_performance.py` — mede o tempo de resposta das imagens e mantém o histórico em `site/data/performance.json`.
 - `schemas/corpus-data-enriched.schema.json` — JSON Schema (draft-07) do corpus enriquecido.
@@ -58,6 +61,36 @@ O campo `editorialStatus` é aplicado quando existir; registros sem esse campo n
 export upstream atual são tratados como publicados para manter compatibilidade.
 IDs são preservados como strings estáveis, inclusive UUIDs. `acervo.json` e
 `stats.json` continuam sendo artefatos gerados e não devem ser editados manualmente.
+
+## Publicação editorial e constelações
+
+O resgate do [PR #33](https://github.com/anavvanzin/iconocracia/pull/33) mantém
+os geradores atuais e acrescenta um export editorial separado. A fonte fica
+em `editorial/publication.json`, fora de `site/`; não copie esse manifesto
+para os assets nem gere prévias de `review`/`withheld`. As duas análises com
+aprovação histórica não liberam o lote de oito obras ou suas reproduções.
+
+Com `jsonschema` instalado no ambiente Python do projeto:
+
+```bash
+python scripts/publication_sync.py --check
+python scripts/publication_sync.py --out /tmp/iconocracia-publication
+python -m unittest discover -s tests -v
+node --test tests/test_*.mjs
+```
+
+O export produz `publication-overlay.json` e `constellations.json`. Uma
+alteração pública exige aprovação autoral, aprovação documental dos direitos
+com URL de evidência, crédito, texto alternativo e imagem local confinada a
+`site/`, vinculada à aprovação por SHA-256. A análise exige sua própria aprovação. O corpus é fixado por commit
+e hash; o baseline público também é verificado por hashes. A constelação
+publicada deve conter todas as obras na ordem declarada.
+
+No estado recuperado, os complementos públicos estão vazios e os dados
+atuais do acervo permanecem intactos. Consulte a
+[revisão técnica](docs/pr33-rescue.md) e a
+[revisão editorial por obra](editorial/PR33-REVIEW.md) antes de mudar qualquer
+status. `--include-review` é recusado.
 
 ## Monitoramento de performance
 
