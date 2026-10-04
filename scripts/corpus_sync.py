@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import pathlib
+import re
 import sys
 import urllib.error
 import urllib.request
@@ -127,10 +128,9 @@ def build_stats(items: list[dict[str, Any]], source_count: int, version: str) ->
     regimes = Counter(item["regime"] or "Não classificado" for item in items)
     years = []
     for item in items:
-        for token in item["data"].replace("-", " ").replace("/", " ").split():
-            if token.isdigit() and 1000 <= int(token) <= 2100:
-                years.append(int(token))
-                break
+        years.extend(int(token) for token in re.findall(
+            r"(?<!\d)(1\d{3}|20\d{2}|2100)(?!\d)", str(item["data"] or ""),
+        ))
     return {
         "total": len(items), "paises": len(countries - Counter({"Outros": countries["Outros"]})),
         "com_imagem": sum(item["tem_imagem"] for item in items),

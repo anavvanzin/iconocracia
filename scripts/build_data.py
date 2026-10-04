@@ -126,11 +126,8 @@ def build_stats(corpus: list[dict]) -> dict:
 
     years = []
     for x in corpus:
-        d = str(x.get("date") or "")
-        for tok in d.replace("-", " ").replace("/", " ").split():
-            if tok.isdigit() and 1700 <= int(tok) <= 2000:
-                years.append(int(tok))
-                break
+        d = str(x.get("date") or x.get("year") or "")
+        years.extend(int(tok) for tok in re.findall(r"(?<!\d)(1\d{3}|20\d{2}|2100)(?!\d)", d))
 
     return {
         "total": len(corpus),
