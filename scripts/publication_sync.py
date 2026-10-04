@@ -514,7 +514,8 @@ def _safe_output_paths(out: pathlib.Path, state_path: pathlib.Path) -> None:
         if path.is_symlink() or (path.exists() and not path.is_file()):
             raise ValueError(f"Saída inválida ou symlink: {path}")
     for path in (state_path, state_path.parent, state_path.parent.parent):
-        if path.is_symlink() or (path.exists() and path == state_path and not path.is_file()):
+        valid_type = path.is_file() if path == state_path else path.is_dir()
+        if path.is_symlink() or (path.exists() and not valid_type):
             raise ValueError("Estado privado não pode atravessar symlink ou arquivo inválido.")
     if state_path.resolve().is_relative_to((ROOT / "site").resolve()):
         raise ValueError("Estado privado deve ficar fora de site/.")

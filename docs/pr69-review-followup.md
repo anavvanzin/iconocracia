@@ -188,3 +188,19 @@ O novo teste cobre oito subcasos: schema ausente, diretório, JSON inválido e
 schema estruturalmente inválido nos dois modos, sem alteração de saídas ou
 recibo. A regressão foi reproduzida antes da correção. A suíte editorial final
 passou com 55/55 casos; `git diff --check` passou.
+
+## Diretório privado de recibos
+
+A revisão do head `7b0e319` encontrou uma inconsistência equivalente no estado
+privado: [`4179173290`](https://github.com/anavvanzin/iconocracia/pull/70#discussion_r4179173290).
+Se `editorial/.publication-state` fosse um arquivo regular, `--check` podia
+aceitar uma publicação que falharia ao criar o recibo. O preflight agora exige
+diretórios nos ancestrais existentes do recibo, além de um arquivo regular para
+o recibo existente. A recusa ocorre antes de qualquer escrita pública.
+
+O teste dirigido reproduz a falha antes da correção e verifica ambos os modos,
+preservando o arquivo bloqueador e os quatro arquivos públicos.
+A suíte editorial passa com 56/56 casos, e `publication_sync --check` mantém
+337 registros sem novas adições ou suplementos publicados. A revisão
+independente confirmou a recusa de arquivos e symlinks nos dois ancestrais do
+recibo, sem achados materiais adicionais. Os dados continuam iguais à base.

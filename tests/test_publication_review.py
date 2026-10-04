@@ -183,6 +183,21 @@ class PublicationReviewTests(unittest.TestCase):
                         self.assertEqual(receipt.read_bytes(), previous_receipt)
                         self.assertEqual(before, {path.name: path.read_bytes() for path in (root / "site/data").iterdir() if path.is_file()})
 
+    def test_cli_rejects_file_receipt_directory_before_check_or_write(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root, publication, _ = self.fixture(tmp)
+            publication["items"] = [self.helpers.entry("new-A")]
+            blocker = root / "editorial/.publication-state"
+            blocker.write_bytes(b"preserve private user file")
+            before = {name: (root / "site/data" / name).read_bytes() for name in sync.OUTPUT_NAMES}
+            for check in (True, False):
+                with self.subTest(check=check):
+                    process = self.run_projection(root, publication, check=check)
+                    self.assertEqual(blocker.read_bytes(), b"preserve private user file")
+                    self.assertEqual(before, {name: (root / "site/data" / name).read_bytes() for name in sync.OUTPUT_NAMES})
+                    self.assertEqual(process.returncode, 1, process.stdout)
+                    self.assertIn("Estado privado", process.stderr)
+
     def test_fresh_cli_accepts_verified_increment_and_restores_last_addition(self):
         with tempfile.TemporaryDirectory() as tmp:
             root, publication, raw = self.fixture(tmp)
