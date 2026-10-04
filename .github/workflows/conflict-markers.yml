@@ -39,8 +39,8 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Test acervo routes
-        run: node --test tests/test_acervo_route.mjs
+      - name: Test collection loading, routes and publication interface
+        run: node --test tests/test_*.mjs
 
   acervo-golden:
     name: Acervo production golden

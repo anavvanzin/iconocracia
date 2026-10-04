@@ -1,0 +1,44 @@
+name: Validate editorial publication
+
+on:
+  pull_request:
+    paths:
+      - scripts/publication_sync.py
+      - schemas/publication.schema.json
+      - tests/test_publication_sync.py
+      - editorial/**
+      - site/data/publication-overlay.json
+      - site/data/constellations.json
+      - .github/workflows/publication.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publication:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # The approved baseline is read from its immutable historical commit.
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install "jsonschema==4.23.0"
+      - name: Test editorial gates and preserve the current catalogue
+        run: python -m unittest tests.test_publication_sync -v
+      - name: Validate private manifest without writing
+        run: python scripts/publication_sync.py --check
+      - name: Reproduce approved public artifacts in temporary storage
+        run: |
+          python scripts/publication_sync.py --out "$RUNNER_TEMP/publication-data"
+          cmp site/data/publication-overlay.json "$RUNNER_TEMP/publication-data/publication-overlay.json"
+          cmp site/data/constellations.json "$RUNNER_TEMP/publication-data/constellations.json"
+          if [ -f "$RUNNER_TEMP/publication-data/acervo.json" ]; then
+            cmp site/data/acervo.json "$RUNNER_TEMP/publication-data/acervo.json"
+          fi
+          if [ -f "$RUNNER_TEMP/publication-data/stats.json" ]; then
+            cmp site/data/stats.json "$RUNNER_TEMP/publication-data/stats.json"
+          fi

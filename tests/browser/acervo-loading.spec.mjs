@@ -12,7 +12,7 @@ test('repeated first loads and reloads use the real Worker and retain selection'
     if(request.url().startsWith('http://127.0.0.1:') && request.failure()?.errorText!=='net::ERR_ABORTED') errors.push(request.url()+': '+request.failure()?.errorText);
   });
   for(let i=0;i<10;i++) {
-    await page.goto('/acervo?item=BR-009');
+    await page.goto('/acervo?item=BR-009&visao=palco');
     await ready(page);
     await expect(page.locator('#ex-title')).toHaveText('A Justiça');
     await expect.poll(()=>page.locator('#ex-image img').evaluate(i=>i.complete&&i.naturalWidth>0)).toBe(true);
@@ -75,7 +75,7 @@ test('a permanent 404 does not loop and can be retried manually',async({page})=>
   await expect(page.locator('#q')).toBeEnabled();
 });
 test('a detached image failure cannot replace the newly selected work',async({page})=>{
-  await page.goto('/acervo');await ready(page);
+  await page.goto('/acervo?visao=palco');await ready(page);
   const old=await page.locator('#ex-image img').elementHandle();
   await page.locator('.ex-next').click();
   const title=await page.locator('#ex-title').textContent();
@@ -103,7 +103,7 @@ test('slow request cannot stay loading forever and a later attempt succeeds',asy
   expect(requests).toBe(2);
 });
 test('search, four filters, views, empty state and complete record remain usable',async({page})=>{
-  await page.goto('/acervo');await ready(page);
+  await page.goto('/acervo?visao=palco');await ready(page);
   for(const key of ['pais','regime','periodo','tipo']) {
     const field=page.locator('#f-'+key);const value=await field.locator('option').nth(1).getAttribute('value');
     await field.selectOption(value);await page.reload();await expect(field).toHaveValue(value);
@@ -143,6 +143,7 @@ test('canonical images need no preview map and constellation dialog returns keyb
   page.on('request',request=>{if(request.url().includes('acervo-map.json'))mapRequests++;});
   await page.route('**/assets/acervo-map.json',()=>{});
   await page.goto('/acervo?item=BR-009&q=BR-009&visao=constelacao');
+  await expect(page.locator('dialog')).toBeVisible();await page.keyboard.press('Escape');
   const star=page.locator('.ex-star');await expect(star).toHaveCount(1);
   const original=await star.elementHandle();await star.focus();await page.keyboard.press('Enter');
   await expect(page.locator('dialog')).toContainText('A Justiça');await page.keyboard.press('Escape');

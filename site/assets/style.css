@@ -1193,7 +1193,8 @@ button:disabled { cursor:default; opacity:.4; }
 .ex-view-toggle button { display:flex; align-items:center; gap:8px; min-height:36px; padding:0 14px; border:1px solid var(--ex-ink); background:transparent; color:var(--ex-ink); font-family:"JetBrains Mono",monospace; font-size:var(--atlas-caption); }
 .ex-view-toggle button svg { width:17px; height:17px; }
 .ex-view-toggle button:first-child { border-radius:4px 0 0 4px; }
-.ex-view-toggle button + button { border-left:0; border-radius:0 4px 4px 0; }
+.ex-view-toggle button + button { border-left:0; border-radius:0; }
+.ex-view-toggle button:last-child { border-radius:0 4px 4px 0; }
 .ex-view-toggle button[aria-pressed="true"] { background:var(--ex-action); font-weight:600; }
 .ex-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:18px; margin-top:15px; }
 .ex-frame { display:block; text-align:left; background:var(--palette-paper); border:1px solid var(--ex-line); padding:8px; color:var(--ex-ink); box-shadow:var(--shadow); transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s cubic-bezier(.22,1,.36,1); }
@@ -1207,18 +1208,59 @@ button:disabled { cursor:default; opacity:.4; }
 @media(max-width:700px) { .ex-grid { grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:12px; } .ex-frame-image { height:130px; } .ex-results { flex-wrap:wrap; } }
 
 /* Constelação: campo disperso de molduras — a lógica da home estendida ao acervo inteiro. */
-.ex-constellation { height:clamp(430px,72vh,780px); overflow:auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:var(--ex-selection) transparent; margin-top:15px; }
+.ex-constellation { height:clamp(430px,72vh,780px); overflow-y:auto; overflow-x:hidden; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:var(--ex-selection) transparent; margin-top:15px; }
 .ex-const-field { position:relative; margin:0 auto; }
 .ex-star { position:absolute; display:block; text-align:left; background:var(--palette-paper); padding:8px; border:0; color:var(--ex-ink); box-shadow:0 14px 32px #3b175d20; transform:rotate(var(--rot,0deg)); transition:transform .2s cubic-bezier(.22,1,.36,1); }
 .ex-star:hover { transform:rotate(0deg) translateY(-6px); z-index:3; color:var(--ex-ink); text-decoration:none; box-shadow:var(--shadow-lg); }
 .ex-star:focus-visible { z-index:4; }
-.ex-star-acid { background:var(--ex-action); }
 .ex-star[aria-pressed="true"] { outline:2px solid var(--ex-selection); outline-offset:2px; }
 .ex-star-image { display:block; background:#ccbae3; }
 .ex-star-image img { width:100%; height:auto; max-height:260px; object-fit:contain; display:block; }
 .ex-star .ex-missing { font-size:11px; padding:20px 8px; }
-@media(max-width:700px) { .ex-constellation { height:64vh; } .ex-star-image img { max-height:190px; } }
+@media(max-width:700px) {
+ .ex-constellation { height:64vh; }
+ .ex-star-image { height:150px; display:flex; align-items:center; justify-content:center; }
+ .ex-star-image img { height:100%; max-height:150px; object-fit:contain; }
+ .ex-star .ex-frame-cap { padding-inline:0; }
+}
 .ex-layout-wide { grid-template-columns:minmax(0,1fr); }
 .ex-layout-wide .ex-caption { display:none; }
 @media(max-width:700px) { .ex-layout-wide { display:block; } }
 .ex-ground-full { background:var(--ex-ground); }
+
+/* Percursos curatoriais: mesma identidade do acervo, com ordem editorial. */
+.ex-constellation-label { margin:0 0 18px; padding:10px 15px; background:var(--ex-action); color:var(--ex-ink); font:13px/1.4 "JetBrains Mono",monospace; }
+.ex-constellation-label a { color:inherit; text-underline-offset:3px; }
+.ex-analysis { margin-top:28px; border-top:1px solid var(--ex-line); padding-top:18px; }
+.ex-analysis summary { cursor:pointer; font:600 18px/1.3 var(--font-display); }
+.ex-analysis h3 { margin:22px 0 6px; font:600 14px/1.4 "JetBrains Mono",monospace; text-transform:uppercase; letter-spacing:.04em; }
+.ex-analysis p { max-width:66ch; line-height:1.6; }
+.ex-analysis-summary { font-size:1.08rem; }
+.ex-method-note { color:var(--ex-muted); font-size:.82rem; }
+.ex-collection-intro { max-width:72ch; margin:0 0 24px; }
+.ex-collection-intro p { margin:0 0 10px; }
+.ex-collection-intro a { color:var(--ex-selection); text-underline-offset:3px; }
+.ex-analysis-limitation { padding:12px; background:var(--ex-action); color:var(--ex-ink); }
+.constellation-main { padding:clamp(44px,7vw,110px) 4vw; }
+.constellation-intro { max-width:1050px; margin:0 auto clamp(60px,9vw,130px); }
+.constellation-intro h1 { max-width:15ch; margin:.15em 0; font:500 clamp(46px,8vw,112px)/.94 var(--font-display); letter-spacing:-.045em; }
+.constellation-period { font:13px/1.5 "JetBrains Mono",monospace; text-transform:uppercase; letter-spacing:.08em; }
+.constellation-deck { max-width:66ch; font-size:clamp(18px,2vw,26px); line-height:1.45; }
+.constellation-items { list-style:none; max-width:1250px; margin:0 auto; padding:0; }
+.constellation-work { border-top:1px solid var(--ex-line); padding:clamp(28px,5vw,72px) 0; }
+.constellation-work a { color:inherit; text-decoration:none; }
+.constellation-work figure { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr); gap:clamp(24px,6vw,90px); align-items:center; margin:0; }
+.constellation-work:nth-child(even) .constellation-image { order:2; }
+.constellation-image { min-width:0; background:rgba(255,255,255,.22); }
+.constellation-work img { display:block; width:100%; max-height:76vh; object-fit:contain; }
+.constellation-work h2 { margin:8px 0; font:500 clamp(30px,4vw,62px)/1.05 var(--font-display); letter-spacing:-.03em; overflow-wrap:anywhere; }
+.constellation-number,.constellation-meta,.constellation-open { font:12px/1.5 "JetBrains Mono",monospace; text-transform:uppercase; letter-spacing:.06em; }
+.constellation-open { display:inline-block; margin-top:20px; border-bottom:1px solid; }
+.constellation-switcher { max-width:1250px; margin:50px auto; display:flex; justify-content:space-between; gap:20px; }
+@media(max-width:700px) {
+ .constellation-work figure { grid-template-columns:1fr; }
+ .constellation-work:nth-child(even) .constellation-image { order:0; }
+ .constellation-main { padding-inline:18px; }
+ .ex-header nav:has([data-constellations-link]:not([hidden])) { flex-wrap:wrap; justify-content:flex-start; }
+ .constellation-switcher { flex-wrap:wrap; }
+}

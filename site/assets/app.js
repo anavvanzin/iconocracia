@@ -1,6 +1,7 @@
 /* ICONOCRACIA — exposição, filtros e fichas do recorte publicado. */
 (() => {
   'use strict';
+  const publication = window.IconocraciaPublication;
   const $ = (selector) => document.querySelector(selector);
   const normalize = (value) => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
   const safeURL = (value) => /^https?:\/\//i.test(value || '');
@@ -31,16 +32,17 @@
       return;
     }
     const img = node('img');
-    img.alt = item.titulo;
+    img.alt = item.texto_alternativo || item.titulo;
     img.decoding = 'async';
     img.loading = lazy ? 'lazy' : 'eager';
-    img.src = 'assets/acervo/' + encodeURIComponent(item.id) + '.webp';
+    img.src = publication ? publication.imageSource(item) : 'assets/acervo/' + encodeURIComponent(item.id) + '.webp';
     let fallback = false;
     img.addEventListener('error', () => {
       // renderSelected reuses #ex-image. A 404 from the previous work must not
       // replaceChildren on the stage after that img has already been detached.
       if (img.parentNode !== container) return;
-      if (!fallback && safeURL(item.imagem)) { fallback = true; img.src = item.imagem; }
+      const imageURL = publication ? publication.imageURL(item.imagem) : (safeURL(item.imagem) ? item.imagem : null);
+      if (!fallback && imageURL && imageURL !== img.getAttribute('src')) { fallback = true; img.src = imageURL; }
       else container.replaceChildren(node('span', 'ex-missing', 'Reprodução indisponível — consulte o arquivo de origem.'));
     });
     container.append(img);
@@ -57,6 +59,15 @@
     }).catch(() => {});
   }
   if (!$('.exhibition')) {
+    if (publication && $('[data-constellations-link]')) {
+      fetch('data/acervo.json').then(response => {
+        if (!response.ok) throw new Error('Acervo indisponível');
+        return response.json();
+      }).then(data => {
+        if (!Array.isArray(data)) throw new Error('Acervo inválido');
+        return publication.loadContext(data);
+      }).then(context => publication.showNavigation(context.constellations)).catch(() => {});
+    }
     // Preserve collection links shared before the homepage became an introduction.
     if ($('.ex-home') && new URLSearchParams(location.search).has('item')) {
       location.replace('acervo.html' + location.search + location.hash);
@@ -64,20 +75,40 @@
     return;
   }
 
-  let items = [], filtered = [], selected = null;
+  let items = [], filtered = [], selected = null, activeConstellation = null;
   const fields = { q: $('#q'), pais: $('#f-pais'), regime: $('#f-regime'), periodo: $('#f-periodo'), tipo: $('#f-tipo') };
   const params = new URLSearchParams(location.search);
   const stage = $('.ex-stage'), strip = $('#ex-filmstrip'), grid = $('#ex-grid'), constellation = $('#ex-constellation');
-  const VIEWS = ['palco', 'grade', 'constelacao'];
-  let view = VIEWS.includes(params.get('visao')) ? params.get('visao') : 'palco';
+  const VIEWS = ['constelacao', 'palco', 'grade'];
+  let view = VIEWS.includes(params.get('visao')) ? params.get('visao') : 'constelacao';
+  let selectionLinked = params.has('item'), constellationWidth = 0, constellationSmall = false, dialogReturnFocus = null;
   // Layout da constelação: determinístico, semeado pelo id da obra — o campo é estável entre visitas.
   const hashId = (s) => { let h = 2166136261; for (const c of String(s)) { h ^= c.codePointAt(0); h = Math.imul(h, 16777619); } return h >>> 0; };
   const mulberry = (seed) => () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
   const dialog = node('dialog', 'ex-dialog');
   dialog.setAttribute('aria-labelledby', 'dialog-title');
   document.body.append(dialog);
-  dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
-  dialog.addEventListener('close', () => { document.body.style.overflow = ''; });
+  function closeRecord() {
+    if (view === 'constelacao') { selectionLinked = false; syncURL(); }
+    dialog.close();
+  }
+  dialog.addEventListener('click', (event) => { if (event.target === dialog) closeRecord(); });
+  dialog.addEventListener('cancel', (event) => { event.preventDefault(); closeRecord(); });
+  dialog.addEventListener('close', () => {
+    if (dialog.open) return;
+    document.body.style.overflow = '';
+    const target = dialogReturnFocus?.isConnected ? dialogReturnFocus : selectedFrame();
+    if (target?.classList.contains('ex-star')) focusFrame(target);
+    else target?.focus({ preventScroll: true });
+  });
+  const selectedFrame = () => [...constellation.querySelectorAll('.ex-star')].find(frame => frame.dataset.id === selected?.id);
+  function focusFrame(frame) {
+    if (!frame) return;
+    const top = frame.offsetTop, bottom = top + frame.offsetHeight;
+    if (top < constellation.scrollTop) constellation.scrollTop = Math.max(0, top - 20);
+    else if (bottom > constellation.scrollTop + constellation.clientHeight) constellation.scrollTop = bottom - constellation.clientHeight + 20;
+    frame.focus({ preventScroll: true });
+  }
 
   function fillOptions(element, values, label = (value) => value) {
     [...new Set(values)].filter(Boolean).sort((a, b) => a.localeCompare(b, 'pt', { numeric: true })).forEach((value) => {
@@ -89,13 +120,15 @@
     for (const [key, el] of Object.entries(fields)) {
       if (el.value) url.searchParams.set(key, el.value); else url.searchParams.delete(key);
     }
-    if (selected) url.searchParams.set('item', selected.id); else url.searchParams.delete('item');
-    if (view !== 'palco') url.searchParams.set('visao', view); else url.searchParams.delete('visao');
+    if (selected && (view !== 'constelacao' || selectionLinked)) url.searchParams.set('item', selected.id); else url.searchParams.delete('item');
+    url.searchParams.set('visao', view);
+    if (activeConstellation) url.searchParams.set('constelacao', activeConstellation.slug);
     url.searchParams.delete('buscar');
     history.replaceState(null, '', url);
   }
   function filterItems() {
-    filtered = items.filter((item) => {
+    const scoped = activeConstellation ? activeConstellation.item_ids.map(id => items.find(item => item.id === id)) : items;
+    filtered = scoped.filter((item) => {
       if (fields.pais.value && fields.pais.value !== item.pais) return false;
       if (fields.regime.value && fields.regime.value !== item.regime) return false;
       if (fields.periodo.value && fields.periodo.value !== centuryOf(item)) return false;
@@ -103,8 +136,12 @@
       const haystack = normalize([item.id, item.titulo, item.autoria, item.pais, item.data, item.instituicao, item.suporte, ...(item.motivos || [])].join(' '));
       return !fields.q.value || haystack.includes(normalize(fields.q.value));
     });
-    selected = filtered.find((item) => item.id === selected?.id) || filtered[0] || null;
-    $('#result-count').textContent = filtered.length + ' de ' + items.length + ' registros · recorte do acervo';
+    const previousId = selected?.id;
+    selected = filtered.find((item) => item.id === previousId) || filtered[0] || null;
+    if (view === 'constelacao' && selected?.id !== previousId) selectionLinked = false;
+    $('#result-count').textContent = activeConstellation
+      ? filtered.length + ' de ' + scoped.length + ' obras · ' + activeConstellation.title
+      : filtered.length + ' de ' + items.length + ' registros · recorte do acervo';
     $('#clear-filters').hidden = !Object.values(fields).some((el) => el.value);
     renderStrip();
     if (view === 'grade') renderGrid();
@@ -142,21 +179,27 @@
   function renderConstellation() {
     constellation.replaceChildren();
     const small = matchMedia('(max-width:700px)').matches;
-    const cols = small ? 3 : Math.max(4, Math.floor((constellation.clientWidth || 1200) / 300));
-    const cellW = small ? 250 : 300, cellH = small ? 260 : 300;
+    const width = constellation.clientWidth || Math.max(240, document.documentElement.clientWidth - 40);
+    constellationWidth = Math.round(width); constellationSmall = small;
+    if (!filtered.length) {
+      constellation.append(node('p', 'ex-empty', 'Nenhuma obra encontrada. Experimente outro termo ou limpe os filtros.'));
+      return;
+    }
+    const cols = Math.max(1, Math.floor(width / (small ? 160 : 300)));
+    const cellW = width / cols, cellH = small ? 360 : 300;
     const rows = Math.ceil(filtered.length / cols);
     const field = node('div', 'ex-const-field');
-    field.style.width = cols * cellW + 'px';
+    field.style.width = width + 'px';
     field.style.height = Math.max(rows * cellH, 400) + 'px';
     const widths = [150, 190, 240];
     filtered.forEach((item, i) => {
       const rng = mulberry(hashId(item.id));
       const col = i % cols, row = Math.floor(i / cols);
-      const w = widths[Math.floor(rng() * widths.length)];
-      const x = col * cellW + 20 + rng() * (cellW - w - 40);
-      const y = row * cellH + 18 + rng() * (cellH - w * 0.9 - 36);
-      const rot = (rng() * 14 - 7).toFixed(1);
-      const frame = node('button', 'ex-star' + (rng() < 0.08 ? ' ex-star-acid' : ''));
+      const w = small ? cellW - 16 : Math.min(widths[Math.floor(rng() * widths.length)], cellW - 40);
+      const x = col * cellW + (small ? 8 : 20 + rng() * (cellW - w - 40));
+      const y = row * cellH + 18 + rng() * (small ? 12 : cellH - w * 0.9 - 36);
+      const rot = small ? '0' : (rng() * 14 - 7).toFixed(1);
+      const frame = node('button', 'ex-star');
       frame.type = 'button'; frame.dataset.id = item.id;
       frame.style.left = x + 'px'; frame.style.top = Math.max(0, y) + 'px';
       frame.style.width = w + 'px'; frame.style.setProperty('--rot', rot + 'deg');
@@ -181,7 +224,7 @@
       strip.append(button);
     });
   }
-  function select(item) { selected = item; renderSelected(); }
+  function select(item) { selectionLinked = true; selected = item; renderSelected(); }
   function navigate(step) {
     const index = filtered.indexOf(selected);
     if (filtered[index + step]) select(filtered[index + step]);
@@ -234,22 +277,38 @@
   }
   function openRecord(imageOnly = false) {
     if (!selected) return;
+    dialogReturnFocus = document.activeElement;
     dialog.replaceChildren();
     dialog.classList.toggle('ex-dialog-image-only', imageOnly);
-    const close = node('button', 'ex-dialog-close', 'Fechar'); close.type = 'button'; close.addEventListener('click', () => dialog.close());
+    const close = node('button', 'ex-dialog-close', 'Fechar'); close.type = 'button'; close.addEventListener('click', closeRecord);
     const title = node('h2', '', selected.titulo); title.id = 'dialog-title';
     const layout = node('div', 'ex-dialog-layout');
     const picture = node('div', 'ex-dialog-image'); reproduce(selected, picture);
     const details = node('div', 'ex-dialog-details'); details.append(title);
     if (!imageOnly) {
       const list = node('dl', 'ex-record');
-      for (const [label, value] of [['Registro', selected.id], ['Autoria', selected.autoria], ['País', selected.pais], ['Data', selected.data], ['Instituição', selected.instituicao], ['Regime', selected.regime], ['Suporte', selected.suporte], ['Motivos', (selected.motivos || []).join(', ')], ['Descrição', selected.descricao], ['Direitos', selected.direitos], ['Citação', selected.citacao]]) {
+      for (const [label, value] of [['Registro', selected.id], ['Autoria', selected.autoria], ['País', selected.pais], ['Data', selected.data], ['Instituição', selected.instituicao], ['Regime', selected.regime], ['Suporte', selected.suporte], ['Motivos', (selected.motivos || []).join(', ')], ['Descrição', selected.descricao], ['Direitos', selected.direitos], ['Crédito da reprodução', selected.credito], ['Citação', selected.citacao]]) {
         if (value) list.append(node('dt', '', label), node('dd', '', value));
       }
       details.append(list);
+      const analysis = publication?.approvedAnalysis(selected.analise_publica);
+      if (analysis) {
+        const section = node('details', 'ex-analysis');
+        section.append(node('summary', '', 'Análise iconográfica'));
+        if (analysis.summary) section.append(node('p', 'ex-analysis-summary', analysis.summary));
+        for (const [label, key] of [['Nível 1 · pré-iconográfico', 'level_1'], ['Nível 2 · iconográfico', 'level_2'], ['Nível 3 · iconológico', 'level_3']]) {
+          if (typeof analysis.panofsky?.[key] === 'string') section.append(node('h3', '', label), node('p', '', analysis.panofsky[key]));
+        }
+        if (analysis.limitation) section.append(node('p', 'ex-analysis-limitation', analysis.limitation));
+        if (analysis.method_note) section.append(node('p', 'ex-method-note', analysis.method_note));
+        details.append(section);
+      }
     }
     if (safeURL(selected.fonte_url)) {
       const source = node('a', 'ex-action', 'Arquivo de origem'); source.href = selected.fonte_url; source.target = '_blank'; source.rel = 'noopener'; details.append(source);
+    }
+    if (safeURL(selected.imagem_fonte) && selected.imagem_fonte !== selected.fonte_url) {
+      const source = node('a', 'ex-action', 'Fonte da reprodução'); source.href = selected.imagem_fonte; source.target = '_blank'; source.rel = 'noopener'; details.append(source);
     }
     layout.append(picture, details); dialog.append(close, layout); dialog.showModal(); document.body.style.overflow = 'hidden'; close.focus();
   }
@@ -313,12 +372,29 @@
     $('#ex-source').hidden = true;
     $('#ex-title').textContent = 'Carregando acervo';
     $('#result-count').textContent = 'Carregando acervo…';
-    let loaded = false;
+    let loaded = false, linkedSelection = false;
     try {
       const data = await fetchAcervo(refresh);
+      const context = publication ? await publication.loadContext(data, refresh).catch(error => {
+        if (requested.has('constelacao')) throw error;
+        return { items: publication.publicItems(data), constellations: [] };
+      }) : { items: data, constellations: [] };
+      activeConstellation = context.constellations.find(entry => entry.slug === requested.get('constelacao')) || null;
+      if (requested.has('constelacao') && !activeConstellation) throw new Error('Percurso indisponível na publicação atual');
+      publication?.showNavigation(context.constellations);
+      const contextLabel = $('#ex-curatorial-context');
+      if (contextLabel) {
+        contextLabel.hidden = !activeConstellation;
+        contextLabel.replaceChildren();
+        if (activeConstellation) {
+          const link = node('a', '', activeConstellation.title);
+          link.href = 'constelacoes.html?slug=' + encodeURIComponent(activeConstellation.slug);
+          contextLabel.append(document.createTextNode('Percurso: '), link);
+        }
+      }
       const featured = ['BR-009', 'US-008', 'FR-005', 'BR-005', 'FR-008'];
       const rank = (item) => { const index = featured.indexOf(item.id); return index < 0 ? featured.length : index; };
-      items = data.slice().sort((a, b) => rank(a) - rank(b));
+      items = context.items.slice().sort((a, b) => rank(a) - rank(b));
       Object.values(fields).filter((field) => field.tagName === 'SELECT').forEach((field) => {
         field.replaceChildren(field.options[0]);
       });
@@ -327,32 +403,54 @@
       fillOptions(fields.periodo, items.map(centuryOf), (value) => value === 'sem-ano' ? 'Sem ano numérico' : 'Século ' + value);
       fillOptions(fields.tipo, items.map(typeOf));
       Object.entries(fields).forEach(([key, field]) => { field.value = requested.get(key) || ''; });
-      selected = items.find((item) => item.id === requested.get('item')) || items[0];
+      const linked = publication ? publication.resolveItem(items, requested.get('item')) : items.find(item => item.id === requested.get('item'));
+      selected = linked || items[0];
+      selectionLinked = !!linked;
       loadControls.forEach((control) => { control.disabled = false; });
       filterItems();
       setView(view);
+      linkedSelection = !!linked && selected?.id === linked.id;
       loaded = true;
     } catch (error) {
       console.error('Falha ao carregar o acervo', error);
       loadControls.forEach((control) => { control.disabled = true; });
-      items = []; filtered = []; selected = null;
+      items = []; filtered = []; selected = null; activeConstellation = null;
+      if ($('#ex-curatorial-context')) $('#ex-curatorial-context').hidden = true;
       // Do not call renderSelected: its empty-search path rewrites the URL.
       stage.hidden = false;
+      document.querySelector('.ex-layout').classList.remove('ex-layout-wide');
+      document.body.classList.remove('ex-ground-full');
       strip.hidden = grid.hidden = constellation.hidden = true;
       strip.replaceChildren(); grid.replaceChildren(); constellation.replaceChildren();
-      $('#ex-image').textContent = 'Não foi possível carregar os registros. Tente novamente.';
-      $('#ex-title').textContent = 'Acervo indisponível';
+      $('#ex-image').textContent = requested.has('constelacao') ? 'Este percurso não está disponível na publicação atual.' : 'Não foi possível carregar os registros. Tente novamente.';
+      $('#ex-title').textContent = requested.has('constelacao') ? 'Percurso indisponível' : 'Acervo indisponível';
       $('#ex-author').textContent = $('#ex-date').textContent = $('#ex-description').textContent = '';
       $('#ex-metadata').replaceChildren();
       $('#ex-position').textContent = '—';
-      $('#result-count').textContent = 'Falha ao carregar o acervo';
+      $('#result-count').textContent = requested.has('constelacao') ? 'Percurso indisponível' : 'Falha ao carregar o acervo';
       $('#clear-filters').hidden = true;
       retry.hidden = false;
     } finally {
       loading = false;
       $('.exhibition').setAttribute('aria-busy', 'false');
       if (loaded && (requested.has('buscar') || retryFocused)) fields.q.focus();
+      else if (loaded && linkedSelection && view === 'constelacao') {
+        const frame = selectedFrame();
+        if (frame) {
+          focusFrame(frame);
+          openRecord();
+        }
+      }
     }
+  }
+  if (typeof ResizeObserver === 'function') {
+    new ResizeObserver(() => {
+      const width = Math.round(constellation.clientWidth), small = matchMedia('(max-width:700px)').matches;
+      if (loading || !width || view !== 'constelacao' || (width === constellationWidth && small === constellationSmall)) return;
+      const focused = document.activeElement?.classList.contains('ex-star') ? document.activeElement.dataset.id : null;
+      renderConstellation();
+      if (focused && !dialog.open) focusFrame([...constellation.querySelectorAll('.ex-star')].find(frame => frame.dataset.id === focused));
+    }).observe(constellation);
   }
   retry.addEventListener('click', () => loadAcervo(true));
   loadAcervo();

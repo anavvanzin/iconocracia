@@ -14,7 +14,7 @@
 const BASE_URL = 'https://iconocracia.com';
 
 /** Routes that own a real static page in site/. */
-const KNOWN_ROUTES = new Set(['/', '/index', '/acervo', '/sobre']);
+const KNOWN_ROUTES = new Set(['/', '/index', '/acervo', '/sobre', '/constelacoes']);
 
 /** Legacy or promised URLs that permanently move elsewhere. */
 const REDIRECTS = new Map([
@@ -44,6 +44,7 @@ function buildSitemap(stats) {
     { loc: `${BASE_URL}/`, priority: '1.0' },
     { loc: `${BASE_URL}/sobre`, priority: '0.9' },
     { loc: `${BASE_URL}/acervo`, priority: '0.9' },
+    { loc: `${BASE_URL}/constelacoes`, priority: '0.7' },
   ];
   const body = urls
     .map(
@@ -96,9 +97,9 @@ export default {
       return Response.redirect(`${BASE_URL}${REDIRECTS.get(path)}`, 301);
     }
 
-    // A trailing slash makes the acervo's relative assets resolve under /acervo/.
-    if (path === '/acervo' && url.pathname.endsWith('/')) {
-      url.pathname = '/acervo';
+    // A trailing slash makes these pages' relative assets resolve in a subdir.
+    if (['/acervo', '/constelacoes'].includes(path) && url.pathname.endsWith('/')) {
+      url.pathname = path;
       return Response.redirect(url.href, 308);
     }
 
