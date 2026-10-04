@@ -79,16 +79,36 @@
   const fields = { q: $('#q'), pais: $('#f-pais'), regime: $('#f-regime'), periodo: $('#f-periodo'), tipo: $('#f-tipo') };
   const params = new URLSearchParams(location.search);
   const stage = $('.ex-stage'), strip = $('#ex-filmstrip'), grid = $('#ex-grid'), constellation = $('#ex-constellation');
-  const VIEWS = ['palco', 'grade', 'constelacao'];
-  let view = VIEWS.includes(params.get('visao')) ? params.get('visao') : 'palco';
+  const VIEWS = ['constelacao', 'palco', 'grade'];
+  let view = VIEWS.includes(params.get('visao')) ? params.get('visao') : 'constelacao';
+  let selectionLinked = params.has('item'), constellationWidth = 0, constellationSmall = false, dialogReturnFocus = null;
   // Layout da constelação: determinístico, semeado pelo id da obra — o campo é estável entre visitas.
   const hashId = (s) => { let h = 2166136261; for (const c of String(s)) { h ^= c.codePointAt(0); h = Math.imul(h, 16777619); } return h >>> 0; };
   const mulberry = (seed) => () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
   const dialog = node('dialog', 'ex-dialog');
   dialog.setAttribute('aria-labelledby', 'dialog-title');
   document.body.append(dialog);
-  dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
-  dialog.addEventListener('close', () => { document.body.style.overflow = ''; });
+  function closeRecord() {
+    if (view === 'constelacao') { selectionLinked = false; syncURL(); }
+    dialog.close();
+  }
+  dialog.addEventListener('click', (event) => { if (event.target === dialog) closeRecord(); });
+  dialog.addEventListener('cancel', (event) => { event.preventDefault(); closeRecord(); });
+  dialog.addEventListener('close', () => {
+    if (dialog.open) return;
+    document.body.style.overflow = '';
+    const target = dialogReturnFocus?.isConnected ? dialogReturnFocus : selectedFrame();
+    if (target?.classList.contains('ex-star')) focusFrame(target);
+    else target?.focus({ preventScroll: true });
+  });
+  const selectedFrame = () => [...constellation.querySelectorAll('.ex-star')].find(frame => frame.dataset.id === selected?.id);
+  function focusFrame(frame) {
+    if (!frame) return;
+    const top = frame.offsetTop, bottom = top + frame.offsetHeight;
+    if (top < constellation.scrollTop) constellation.scrollTop = Math.max(0, top - 20);
+    else if (bottom > constellation.scrollTop + constellation.clientHeight) constellation.scrollTop = bottom - constellation.clientHeight + 20;
+    frame.focus({ preventScroll: true });
+  }
 
   function fillOptions(element, values, label = (value) => value) {
     [...new Set(values)].filter(Boolean).sort((a, b) => a.localeCompare(b, 'pt', { numeric: true })).forEach((value) => {
@@ -100,8 +120,8 @@
     for (const [key, el] of Object.entries(fields)) {
       if (el.value) url.searchParams.set(key, el.value); else url.searchParams.delete(key);
     }
-    if (selected) url.searchParams.set('item', selected.id); else url.searchParams.delete('item');
-    if (view !== 'palco') url.searchParams.set('visao', view); else url.searchParams.delete('visao');
+    if (selected && (view !== 'constelacao' || selectionLinked)) url.searchParams.set('item', selected.id); else url.searchParams.delete('item');
+    url.searchParams.set('visao', view);
     if (activeConstellation) url.searchParams.set('constelacao', activeConstellation.slug);
     url.searchParams.delete('buscar');
     history.replaceState(null, '', url);
@@ -116,7 +136,9 @@
       const haystack = normalize([item.id, item.titulo, item.autoria, item.pais, item.data, item.instituicao, item.suporte, ...(item.motivos || [])].join(' '));
       return !fields.q.value || haystack.includes(normalize(fields.q.value));
     });
-    selected = filtered.find((item) => item.id === selected?.id) || filtered[0] || null;
+    const previousId = selected?.id;
+    selected = filtered.find((item) => item.id === previousId) || filtered[0] || null;
+    if (view === 'constelacao' && selected?.id !== previousId) selectionLinked = false;
     $('#result-count').textContent = activeConstellation
       ? filtered.length + ' de ' + scoped.length + ' obras · ' + activeConstellation.title
       : filtered.length + ' de ' + items.length + ' registros · recorte do acervo';
@@ -157,21 +179,27 @@
   function renderConstellation() {
     constellation.replaceChildren();
     const small = matchMedia('(max-width:700px)').matches;
-    const cols = small ? 3 : Math.max(4, Math.floor((constellation.clientWidth || 1200) / 300));
-    const cellW = small ? 250 : 300, cellH = small ? 260 : 300;
+    const width = constellation.clientWidth || Math.max(240, document.documentElement.clientWidth - 40);
+    constellationWidth = Math.round(width); constellationSmall = small;
+    if (!filtered.length) {
+      constellation.append(node('p', 'ex-empty', 'Nenhuma obra encontrada. Experimente outro termo ou limpe os filtros.'));
+      return;
+    }
+    const cols = Math.max(1, Math.floor(width / (small ? 160 : 300)));
+    const cellW = width / cols, cellH = small ? 360 : 300;
     const rows = Math.ceil(filtered.length / cols);
     const field = node('div', 'ex-const-field');
-    field.style.width = cols * cellW + 'px';
+    field.style.width = width + 'px';
     field.style.height = Math.max(rows * cellH, 400) + 'px';
     const widths = [150, 190, 240];
     filtered.forEach((item, i) => {
       const rng = mulberry(hashId(item.id));
       const col = i % cols, row = Math.floor(i / cols);
-      const w = widths[Math.floor(rng() * widths.length)];
-      const x = col * cellW + 20 + rng() * (cellW - w - 40);
-      const y = row * cellH + 18 + rng() * (cellH - w * 0.9 - 36);
-      const rot = (rng() * 14 - 7).toFixed(1);
-      const frame = node('button', 'ex-star' + (rng() < 0.08 ? ' ex-star-acid' : ''));
+      const w = small ? cellW - 16 : Math.min(widths[Math.floor(rng() * widths.length)], cellW - 40);
+      const x = col * cellW + (small ? 8 : 20 + rng() * (cellW - w - 40));
+      const y = row * cellH + 18 + rng() * (small ? 12 : cellH - w * 0.9 - 36);
+      const rot = small ? '0' : (rng() * 14 - 7).toFixed(1);
+      const frame = node('button', 'ex-star');
       frame.type = 'button'; frame.dataset.id = item.id;
       frame.style.left = x + 'px'; frame.style.top = Math.max(0, y) + 'px';
       frame.style.width = w + 'px'; frame.style.setProperty('--rot', rot + 'deg');
@@ -196,7 +224,7 @@
       strip.append(button);
     });
   }
-  function select(item) { selected = item; renderSelected(); }
+  function select(item) { selectionLinked = true; selected = item; renderSelected(); }
   function navigate(step) {
     const index = filtered.indexOf(selected);
     if (filtered[index + step]) select(filtered[index + step]);
@@ -249,9 +277,10 @@
   }
   function openRecord(imageOnly = false) {
     if (!selected) return;
+    dialogReturnFocus = document.activeElement;
     dialog.replaceChildren();
     dialog.classList.toggle('ex-dialog-image-only', imageOnly);
-    const close = node('button', 'ex-dialog-close', 'Fechar'); close.type = 'button'; close.addEventListener('click', () => dialog.close());
+    const close = node('button', 'ex-dialog-close', 'Fechar'); close.type = 'button'; close.addEventListener('click', closeRecord);
     const title = node('h2', '', selected.titulo); title.id = 'dialog-title';
     const layout = node('div', 'ex-dialog-layout');
     const picture = node('div', 'ex-dialog-image'); reproduce(selected, picture);
@@ -343,7 +372,7 @@
     $('#ex-source').hidden = true;
     $('#ex-title').textContent = 'Carregando acervo';
     $('#result-count').textContent = 'Carregando acervo…';
-    let loaded = false;
+    let loaded = false, linkedSelection = false;
     try {
       const data = await fetchAcervo(refresh);
       const context = publication ? await publication.loadContext(data, refresh).catch(error => {
@@ -374,10 +403,13 @@
       fillOptions(fields.periodo, items.map(centuryOf), (value) => value === 'sem-ano' ? 'Sem ano numérico' : 'Século ' + value);
       fillOptions(fields.tipo, items.map(typeOf));
       Object.entries(fields).forEach(([key, field]) => { field.value = requested.get(key) || ''; });
-      selected = (publication ? publication.resolveItem(items, requested.get('item')) : items.find(item => item.id === requested.get('item'))) || items[0];
+      const linked = publication ? publication.resolveItem(items, requested.get('item')) : items.find(item => item.id === requested.get('item'));
+      selected = linked || items[0];
+      selectionLinked = !!linked;
       loadControls.forEach((control) => { control.disabled = false; });
       filterItems();
       setView(view);
+      linkedSelection = !!linked && selected?.id === linked.id;
       loaded = true;
     } catch (error) {
       console.error('Falha ao carregar o acervo', error);
@@ -386,6 +418,8 @@
       if ($('#ex-curatorial-context')) $('#ex-curatorial-context').hidden = true;
       // Do not call renderSelected: its empty-search path rewrites the URL.
       stage.hidden = false;
+      document.querySelector('.ex-layout').classList.remove('ex-layout-wide');
+      document.body.classList.remove('ex-ground-full');
       strip.hidden = grid.hidden = constellation.hidden = true;
       strip.replaceChildren(); grid.replaceChildren(); constellation.replaceChildren();
       $('#ex-image').textContent = requested.has('constelacao') ? 'Este percurso não está disponível na publicação atual.' : 'Não foi possível carregar os registros. Tente novamente.';
@@ -400,7 +434,23 @@
       loading = false;
       $('.exhibition').setAttribute('aria-busy', 'false');
       if (loaded && (requested.has('buscar') || retryFocused)) fields.q.focus();
+      else if (loaded && linkedSelection && view === 'constelacao') {
+        const frame = selectedFrame();
+        if (frame) {
+          focusFrame(frame);
+          openRecord();
+        }
+      }
     }
+  }
+  if (typeof ResizeObserver === 'function') {
+    new ResizeObserver(() => {
+      const width = Math.round(constellation.clientWidth), small = matchMedia('(max-width:700px)').matches;
+      if (loading || !width || view !== 'constelacao' || (width === constellationWidth && small === constellationSmall)) return;
+      const focused = document.activeElement?.classList.contains('ex-star') ? document.activeElement.dataset.id : null;
+      renderConstellation();
+      if (focused && !dialog.open) focusFrame([...constellation.querySelectorAll('.ex-star')].find(frame => frame.dataset.id === focused));
+    }).observe(constellation);
   }
   retry.addEventListener('click', () => loadAcervo(true));
   loadAcervo();

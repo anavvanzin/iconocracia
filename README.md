@@ -6,7 +6,7 @@ Site editorial estático para o novo `iconocracia.com`, concebido como casa púb
 
 - `site/index.html` — homepage.
 - `site/sobre.html` — apresentação do projeto, método e conceitos.
-- `site/acervo.html` — recorte inicial do acervo, com busca e filtros.
+- `site/acervo.html` — entrada principal pelo campo constelacional, com busca, filtros e modos Palco/Grade para consulta.
 - `site/constelacoes.html` — percursos curatoriais aprovados; permanece vazio enquanto o lote estiver em revisão.
 - `site/404.html` — página de erro servida pelo Worker para rotas desconhecidas.
 - `site/assets/` — CSS e JavaScript.
@@ -16,6 +16,7 @@ Site editorial estático para o novo `iconocracia.com`, concebido como casa púb
   [`iconocracy-corpus`](https://github.com/anavvanzin/iconocracy-corpus) em dados do site.
 - `scripts/publication_sync.py` — exporta complementos editoriais aprovados, preservando o catálogo publicado.
 - `editorial/publication.json` — manifesto recuperado do PR #33, com fontes e decisões ainda em revisão; fica fora dos assets do Worker.
+- `docs/constellation-method.md` — orientação autoral e fundamento da hierarquia constelacional, com limites entre disposição visual e montagem fundamentada.
 - `scripts/validate_acervo.py` — valida o JSON enriquecido (estrutura + JSON Schema) e verifica URLs de imagem.
 - `scripts/measure_performance.py` — mede o tempo de resposta das imagens e mantém o histórico em `site/data/performance.json`.
 - `schemas/corpus-data-enriched.schema.json` — JSON Schema (draft-07) do corpus enriquecido.

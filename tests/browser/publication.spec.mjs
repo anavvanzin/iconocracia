@@ -22,7 +22,7 @@ test('the real public artifact has no pending constellation or editorial analysi
   await expect(page.locator('#constellation-intro h1')).toHaveText('Nenhum percurso publicado');
   await expect(page.locator('#constellation-items li')).toHaveCount(0);
   expect(new URL(page.url()).pathname).toBe('/constelacoes');
-  await page.goto('/acervo?item=BR-009');
+  await page.goto('/acervo?item=BR-009&visao=palco');
   await expect(page.locator('#result-count')).toContainText(`${catalog.length} de ${catalog.length}`);
   await page.locator('#ex-open').click();
   await expect(page.locator('.ex-analysis')).toHaveCount(0);
@@ -49,7 +49,7 @@ test('canonical aliases, ordered next work and approved analysis share the same 
     { id: 'US-008', legacy_ids: ['test-old-us'], analise_publica: approved },
     { id: 'BR-009', analise_publica: { status: 'draft', summary: 'PRIVATE DRAFT SENTINEL' } },
   ]);
-  await page.goto('/acervo?item=test-old-us&constelacao=test-approved');
+  await page.goto('/acervo?item=test-old-us&constelacao=test-approved&visao=palco');
   await expect(page.locator('#ex-title')).toHaveText(catalog.find(item => item.id === 'US-008').titulo);
   expect(new URL(page.url()).searchParams.get('item')).toBe('US-008');
   await expect(page.locator('#ex-curatorial-context')).toContainText(definition.title);

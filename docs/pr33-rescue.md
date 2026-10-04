@@ -99,3 +99,30 @@ sobrescrever essa alteração. Nenhum teste cria aprovação para os objetos rea
 
 A revisão documental por obra está em
 [`editorial/PR33-REVIEW.md`](../editorial/PR33-REVIEW.md).
+
+## Constelação como entrada principal
+
+Após a orientação autoral de Ana, a abertura de `/acervo` passou para o campo
+constelacional. O modo aparece primeiro e a ação principal da home leva a ele.
+Palco e Grade explícitos continuam persistidos na URL. Links diretos abrem a
+ficha sobre o campo após o carregamento; fechar devolve foco visível à moldura
+e retira a seleção da URL nesse modo. Filtros não transformam uma seleção de
+fallback em novo link direto. O campo acompanha a largura da tela, e molduras
+amarelas aleatórias foram retiradas.
+
+A escolha e seus limites estão em
+[`constellation-method.md`](constellation-method.md): a disposição estável
+atual passa a ser a entrada principal; a montagem de relações históricas e
+interpretativas depende da curadoria fundamentada. Nenhuma aprovação ou fonte
+editorial foi alterada para efetuar essa mudança.
+
+O novo teste de abertura reproduziu a falha antes dos ajustes. A revisão
+independente identificou e confirmou a correção de dois casos adicionais:
+seleção excluída por filtro mantida na URL e retorno de foco fora da área visível
+após redimensionar a tela com a ficha aberta.
+
+Validação final desta atualização: 62/62 casos Playwright passaram em desktop
+e celular, incluindo 16 casos novos de prioridade, URL, deep link, foco,
+busca vazia, resize e larguras 320/390/1440 px. Node: 42/42 passaram. Python:
+31 passaram e um skip opcional permanece. `git diff --check` passou; os três
+JSON, geradores, manifesto, schema e gates permanecem inalterados nesta etapa.
