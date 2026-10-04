@@ -2,14 +2,6 @@ name: Validate editorial publication
 
 on:
   pull_request:
-    paths:
-      - scripts/publication_sync.py
-      - schemas/publication.schema.json
-      - tests/test_publication_sync.py
-      - editorial/**
-      - site/data/publication-overlay.json
-      - site/data/constellations.json
-      - .github/workflows/publication.yml
   workflow_dispatch:
 
 permissions:
@@ -28,7 +20,7 @@ jobs:
           python-version: "3.11"
       - run: pip install "jsonschema==4.23.0"
       - name: Test editorial gates and preserve the current catalogue
-        run: python -m unittest tests.test_publication_sync -v
+        run: python -m unittest discover -s tests -p 'test_publication*.py' -v
       - name: Validate private manifest without writing
         run: python scripts/publication_sync.py --check
       - name: Reproduce approved public artifacts in temporary storage

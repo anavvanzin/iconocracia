@@ -186,7 +186,8 @@ class PublicationSecurityTests(unittest.TestCase):
             site = Path(tmp)
             (site / "assets").mkdir()
             (site / "assets/justice.webp").write_bytes(b"approved image")
-            items, _, _ = sync.generate([source], self.manifest([self.entry()]), [baseline], site_root=site)
+            items, _, _ = sync.generate([source], self.manifest([self.entry()]), [baseline], site_root=site,
+                                         baseline_records=[self.record()])
         self.assertEqual(items[0]["iconographic_metadata"], original["iconographic_metadata"])
         self.assertEqual(items[0]["titulo"], original["titulo"])
         self.assertEqual(baseline, original)
@@ -200,8 +201,8 @@ class PublicationSecurityTests(unittest.TestCase):
             (site / "assets").mkdir()
             (site / "assets/justice.webp").write_bytes(b"approved image")
             publication = self.manifest([self.entry()])
-            first = sync.generate([self.record()], publication, baseline, site_root=site)
-            second = sync.generate([self.record()], publication, baseline, site_root=site)
+            first = sync.generate([self.record()], publication, baseline, site_root=site, baseline_records=[old_source])
+            second = sync.generate([self.record()], publication, baseline, site_root=site, baseline_records=[old_source])
             self.assertEqual(first, second)
             self.assertEqual(first[0][0], baseline[0])
             self.assertEqual([item["id"] for item in first[0]], ["existing", "canonical"])
@@ -312,7 +313,7 @@ class PublicationSecurityTests(unittest.TestCase):
                            text=True, capture_output=True, check=True)
             for folder in ("scripts", "schemas", "site/data", "site/assets", "editorial"):
                 (root / folder).mkdir(parents=True, exist_ok=True)
-            for filename in ("publication_sync.py", "corpus_sync.py"):
+            for filename in ("publication_sync.py", "corpus_sync.py", "publication_stats.py", "build_data.py"):
                 shutil.copyfile(sync.ROOT / "scripts" / filename, root / "scripts" / filename)
             for filename in ("publication.schema.json", "corpus-input.schema.json"):
                 shutil.copyfile(sync.ROOT / "schemas" / filename, root / "schemas" / filename)

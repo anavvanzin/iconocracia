@@ -153,6 +153,7 @@
     }
     document.title = `${definition.title} — Iconocracia`;
     intro.replaceChildren(node('p', 'eyebrow', 'Constelação curatorial'), node('h1', '', definition.title), node('p', 'constellation-period', definition.subtitle || ''), node('p', 'constellation-deck', definition.introduction || ''));
+    if (typeof definition.method_note === 'string' && definition.method_note.trim()) intro.append(node('p', 'ex-method-note', definition.method_note));
     const byId = new Map(items.map(item => [item.id, item]));
     definition.item_ids.forEach((id, index) => {
       const item = byId.get(id);
