@@ -23,3 +23,5 @@ ds-bundle/
 # runtime/local junk
 acc.db*
 site/data/*.bak.*
+# Private, replayable publication receipts; never part of Worker assets.
+editorial/.publication-state/

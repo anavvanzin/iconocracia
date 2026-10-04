@@ -149,6 +149,7 @@
     renderSelected();
   }
   function setView(next) {
+    if (next === 'constelacao' && view !== 'constelacao') selectionLinked = false;
     view = next;
     stage.hidden = strip.hidden = next !== 'palco';
     grid.hidden = next !== 'grade';

@@ -80,12 +80,27 @@ python -m unittest discover -s tests -v
 node --test tests/test_*.mjs
 ```
 
-O export produz `publication-overlay.json` e `constellations.json`. Uma
+O export produz um pacote completo com `acervo.json`, `stats.json`,
+`publication-overlay.json` e `constellations.json`. Quando a projeção retorna
+à base, os bytes originais do catálogo e das estatísticas são restaurados. Uma
 alteração pública exige aprovação autoral, aprovação documental dos direitos
 com URL de evidência, crédito, texto alternativo e imagem local confinada a
 `site/`, vinculada à aprovação por SHA-256. A análise exige sua própria aprovação. O corpus é fixado por commit
 e hash; o baseline público também é verificado por hashes. A constelação
 publicada deve conter todas as obras na ordem declarada.
+
+As projeções que alteram a base registram seus insumos em recibos privados,
+ignorados pelo Git, em `editorial/.publication-state/`, fora dos assets. Antes
+de uma publicação incremental ou retirada, o export refaz a projeção anterior
+e compara os hashes do pacote inteiro. Edições externas, pacotes parciais ou
+recibos inválidos interrompem a operação antes da escrita. Um checkout limpo
+com o pacote completo já igual à projeção aprovada pode ser validado sem
+recibo local. `--check` não escreve arquivos nem recibos. Não edite um recibo
+para legitimar alterações: ele é um registro derivado, não uma aprovação.
+
+As estatísticas das adições reutilizam as regras de `build_data.py` e a fonte
+bruta imutável da base. Apenas os novos IDs aprovados entram na agregação.
+Consulte a [revisão posterior ao PR #69](docs/pr69-review-followup.md).
 
 No estado recuperado, os complementos públicos estão vazios e os dados
 atuais do acervo permanecem intactos. Consulte a

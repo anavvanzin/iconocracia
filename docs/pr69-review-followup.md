@@ -1,0 +1,122 @@
+# Revisão posterior ao PR #69
+
+Este patch corrige os dez comentários da revisão automática do head
+`25ded3febb087adb549c789381bf3158d32ec5d1`. Ana autorizou as correções; esta
+rodada termina em PR em rascunho, sem merge ou deploy e sem novas aprovações
+editoriais ou de direitos.
+
+## Base e preservação
+
+Worktree isolada `pr69-followup`, branch `codex/publication-review-followup`,
+base `origin/main` em `92d1ed9bee76ee39f0b46bd98dd6801f4f1e154b`. A contagem
+direta deste instantâneo público encontrou 337 registros com IDs únicos,
+17 países e 332 imagens declaradas. São contagens de trabalho, não um limite
+para o crescimento do corpus.
+
+| Arquivo | SHA-256 na base |
+| --- | --- |
+| `site/data/acervo.json` | `7e063f444cf48ac06b60aaeaa7b8ab82cad2aff4e63c37a377b777fffa35cb7b` |
+| `site/data/stats.json` | `1ddc3eb7f44bc6c79646166c92db88e3de6f8d7e6fab27b6c6e12f952fd478a3` |
+| `site/data/corpus-data-enriched.json` | `c379d79002f8b68fd820552acd3dedd18151bcc0206d2d81610311e5dcc0a0b6` |
+| `site/data/publication-overlay.json` | `da6fa0fb6dc64a3faf1f81f830b8696ccf02b9c654135111429090fa240870f8` |
+| `site/data/constellations.json` | `37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570` |
+
+O manifesto recuperado continua em revisão. Fixtures sintéticas exercitam
+aprovações somente nos testes; não alteram as decisões sobre os objetos reais.
+Os geradores existentes, as fixtures históricas, a prosa original e os dados
+atuais foram comparados com esta base e permanecem intactos.
+
+## Achados cobertos
+
+| Comentário no PR #69 | Contrato a verificar |
+| --- | --- |
+| `4178629140` | Palco/Grade para Constelação mantém a mesma ficha fechada após reload, enquanto um link direto abre a ficha. |
+| `4178629120` | Alterações só de imagem disparam a validação editorial de hashes. |
+| `4178629121` | Alias que colide com ID canônico é recusado em qualquer ordem. |
+| `4178629152` | Correspondências por URL nos dois catálogos não podem esconder identidades divergentes. |
+| `4178629131` | A análise aprovada produz os mesmos bytes em processos com sementes Python diferentes. |
+| `4178629123` | Publicação incremental reconhece somente a projeção anterior verificada. |
+| `4178629124` | Retirada restaura a base confiável, sem sobrescrever edições externas. |
+| `4178629156` | Adições mantêm as normalizações e agregações do gerador de produção. |
+| `4178629142` | A nota metodológica aprovada aparece na página do percurso. |
+| `4178629146` | Pesquisa e método oferece navegação condicional para percursos publicados. |
+
+As duas últimas omissões e os casos do pipeline são exercitados com fixtures
+publicadas. No estado real, os JSON editoriais públicos permanecem vazios.
+
+## Regressões reproduzidas antes das correções
+
+- Interface: quatro testes desktop falharam nos dois modos de seleção, na
+  ausência da nota metodológica e na ausência do marcador de navegação.
+- Workflow: cinco testes expuseram dez falhas de cobertura e descoberta antes
+  da remoção do filtro. Os comandos de validação e comparação já presentes
+  foram executados pelo teste, sem deploy.
+- Estatísticas: o helper anterior não reproduziu os agregados do instantâneo
+  de produção, incluindo ordem de empates, caixa dos regimes e ruído nos motivos.
+- Identidade, serialização e transições: seis casos novos produziram doze
+  falhas de asserção; os 25 testes anteriores dos gates passaram nessa rodada.
+
+## Limites da alteração
+
+Entrar no campo por troca de modo remove a seleção da URL e conserva a ficha
+fechada. A carga inicial por link direto, incluindo aliases canônicos, ainda
+abre a ficha. A nota metodológica é inserida como texto literal; estados em
+revisão, retidos ou incompletos continuam indisponíveis. A navegação em Pesquisa
+e método segue a mesma disponibilidade das demais páginas.
+
+Para agregação, `publication_stats.py` reutiliza `build_data.build_stats` com
+a fonte bruta da base imutável, na ordem original. Apenas fontes dos novos IDs
+efetivamente publicados são acrescentadas. A disponibilidade de imagem vem da
+projeção aprovada. Os geradores existentes permanecem intactos.
+
+A validação editorial passa a executar em todas as PRs e descobre os novos
+testes `test_publication*.py`. Continua com `contents: read`, sem dependências
+novas e sem operação de deploy.
+
+Publicação e retirada conferem o pacote inteiro de quatro arquivos antes da
+primeira escrita. Um recibo privado por destino, em
+`editorial/.publication-state/` (ignorado pelo Git e fora de `site/`), guarda o
+manifesto e o corpus fixados da projeção anterior. O pipeline recalcula essa
+projeção e seus hashes; hashes isolados não autorizam sobrescrever dados vivos.
+A retirada da última adição ou imagem restaura os bytes originais da base.
+
+O replay histórico pode reconhecer uma imagem anterior já removida do disco,
+mantendo a validação de caminho, esquema, aprovações e hash declarado. A
+publicação ativa continua exigindo a existência e o hash dos bytes atuais de
+cada imagem. Não há flag de CLI que dispense esses gates.
+
+Um checkout novo reconhece seu pacote já comprometido somente quando os quatro
+arquivos coincidem com a projeção aprovada recalculada. Um predecessor diferente
+exige recibo verificável. Recibo ausente ou corrompido, arquivos parciais,
+mistura de projeções, edição externa ou symlink são recusados antes da escrita.
+A recuperação exige restaurar um snapshot/recibo confiável; editar um recibo
+para legitimar saídas arbitrárias não é procedimento de recuperação.
+
+Os quatro arquivos não são uma transação atômica do filesystem. Uma interrupção
+entre escritas pode deixar um pacote parcial, que a execução seguinte rejeita;
+não tenta corrigir silenciosamente esse estado. `--check` valida o destino sem
+escrever arquivos ou recibos.
+
+## Validação final
+
+- Python: 59 testes, 58 aprovados e um skip pela ausência do executável opcional
+  `google-chrome`. São 52 casos editoriais (25 anteriores, 11 de identidade e
+  transições, 11 de estatísticas e cinco de workflow), além dos golden e do
+  pipeline existente. A corrida de carregamento de imagem coberta pelo teste
+  opcional também passou no Playwright em desktop e celular.
+- Playwright: 74/74 casos aprovados em desktop e celular, incluindo 12 novos
+  casos de navegação, nota literal, disponibilidade e links por alias.
+- Node: 42/42 casos aprovados; checagens de sintaxe JavaScript passaram.
+- CLI: `--check` e export em destino temporário aprovados. Os quatro arquivos
+  exportados foram comparados byte a byte com os arquivos públicos atuais.
+- Preservação: os cinco JSON públicos, o manifesto editorial, os geradores
+  existentes e as fixtures históricas permanecem sem diferenças contra a base.
+  `git diff --check` passou.
+- Revisão independente: sem achados materiais; sete recibos adicionais
+  malformados foram recusados sem traceback e sem alteração pública.
+
+Os testes exercitam publicação incremental, retirada parcial e total,
+independência da ordem dos aliases, divergência entre catálogos, sementes Python
+diferentes, perda/corrupção do recibo, pacote misturado, symlinks e retirada após
+remoção da imagem anterior. Nenhuma aprovação real foi acrescentada. A rodada
+termina em PR em rascunho; merge e deploy ficam fora deste patch.
