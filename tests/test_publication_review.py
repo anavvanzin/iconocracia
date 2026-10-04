@@ -83,15 +83,105 @@ class PublicationReviewTests(unittest.TestCase):
         publication["corpus_sha256"] = hashlib.sha256((root / "corpus.json").read_bytes()).hexdigest()
         return root, publication, raw
 
-    def run_projection(self, root, publication, *, out=None, check=False):
+    def run_projection(self, root, publication, *, out=None, check=False, schema=None):
         (root / "editorial/publication.json").write_text(json.dumps(publication), encoding="utf-8")
         command = [sys.executable, "scripts/publication_sync.py", "--corpus", "corpus.json"]
         if out is not None:
             command += ["--out", str(out)]
         if check:
             command.append("--check")
+        if schema is not None:
+            command += ["--schema", str(schema)]
         return subprocess.run(command, cwd=root, text=True, capture_output=True,
                               env={**os.environ, "PYTHONDONTWRITEBYTECODE": "1"})
+
+    def test_cli_custom_schema_validates_new_and_previous_receipts(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root, publication, _ = self.fixture(tmp)
+            schema = json.loads((root / "schemas/corpus-input.schema.json").read_bytes())
+            schema["items"]["required"].remove("date")
+            custom_schema = root / "custom-schema.json"
+            custom_schema.write_text(json.dumps(schema), encoding="utf-8")
+            corpus = json.loads((root / "corpus.json").read_bytes())
+            added = next(record for record in corpus if record["id"] == "new-A")
+            del added["date"]
+            (root / "corpus.json").write_text(json.dumps(corpus), encoding="utf-8")
+            publication["corpus_sha256"] = hashlib.sha256((root / "corpus.json").read_bytes()).hexdigest()
+            publication["items"] = [self.helpers.entry("new-A")]
+            first = self.run_projection(root, publication, schema=custom_schema)
+            self.assertEqual(first.returncode, 0, first.stderr)
+
+            # The active source now satisfies the default schema, but the
+            # verified predecessor snapshot still requires the selected schema.
+            added["date"] = "1900"
+            (root / "corpus.json").write_text(json.dumps(corpus), encoding="utf-8")
+            publication["corpus_sha256"] = hashlib.sha256((root / "corpus.json").read_bytes()).hexdigest()
+            publication["items"].append(self.helpers.entry("new-B"))
+            before = {path.name: path.read_bytes() for path in (root / "site/data").iterdir() if path.is_file()}
+            receipt = self.receipt_path(root)
+            previous_receipt = receipt.read_bytes()
+            for check in (True, False):
+                incompatible = self.run_projection(root, publication, check=check)
+                self.assertEqual(incompatible.returncode, 1, incompatible.stdout)
+                self.assertIn("'date' is a required property", incompatible.stderr)
+                self.assertEqual(receipt.read_bytes(), previous_receipt)
+                self.assertEqual(before, {path.name: path.read_bytes() for path in (root / "site/data").iterdir() if path.is_file()})
+
+            checked = self.run_projection(root, publication, schema=custom_schema, check=True)
+            self.assertEqual(checked.returncode, 0, checked.stderr)
+            self.assertEqual(receipt.read_bytes(), previous_receipt)
+            self.assertEqual(before, {path.name: path.read_bytes() for path in (root / "site/data").iterdir() if path.is_file()})
+            second = self.run_projection(root, publication, schema=custom_schema)
+            self.assertEqual(second.returncode, 0, second.stderr)
+            self.assertEqual(len(json.loads((root / "site/data/acervo.json").read_bytes())), 339)
+
+    def test_cli_rejects_file_output_root_and_ancestor_before_check_or_write(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root, publication, _ = self.fixture(tmp)
+            publication["items"] = [self.helpers.entry("new-A")]
+            blocker = root / "output-file"
+            blocker.write_bytes(b"preserve user file")
+            before = {path.name: path.read_bytes() for path in (root / "site/data").iterdir() if path.is_file()}
+            for destination in (blocker, blocker / "nested"):
+                for check in (True, False):
+                    with self.subTest(destination=destination, check=check):
+                        process = self.run_projection(root, publication, out=destination, check=check)
+                        self.assertEqual(process.returncode, 1, process.stdout)
+                        self.assertIn("saída não é diretório", process.stderr)
+                        self.assertEqual(blocker.read_bytes(), b"preserve user file")
+                        self.assertFalse((root / "editorial/.publication-state").exists())
+                        self.assertEqual(before, {path.name: path.read_bytes() for path in (root / "site/data").iterdir() if path.is_file()})
+
+    def test_cli_requires_valid_schema_file_before_check_or_write(self):
+        for kind in ("missing", "directory", "invalid-json", "invalid-schema"):
+            with tempfile.TemporaryDirectory() as tmp:
+                root, publication, _ = self.fixture(tmp)
+                publication["items"] = [self.helpers.entry("new-A")]
+                first = self.run_projection(root, publication)
+                self.assertEqual(first.returncode, 0, first.stderr)
+                schema_path = root / "selected-schema.json"
+                if kind == "directory":
+                    schema_path.mkdir()
+                elif kind == "invalid-json":
+                    schema_path.write_bytes(b"not JSON")
+                elif kind == "invalid-schema":
+                    schema_path.write_text(json.dumps({"type": "unknown-type"}), encoding="utf-8")
+                corpus = json.loads((root / "corpus.json").read_bytes())
+                del next(record for record in corpus if record["id"] == "new-A")["date"]
+                (root / "corpus.json").write_text(json.dumps(corpus), encoding="utf-8")
+                publication["corpus_sha256"] = hashlib.sha256((root / "corpus.json").read_bytes()).hexdigest()
+                publication["items"].append(self.helpers.entry("new-B"))
+                before = {path.name: path.read_bytes() for path in (root / "site/data").iterdir() if path.is_file()}
+                receipt = self.receipt_path(root)
+                previous_receipt = receipt.read_bytes()
+                for check in (True, False):
+                    with self.subTest(kind=kind, check=check):
+                        blocked = self.run_projection(root, publication, schema=schema_path, check=check)
+                        self.assertEqual(blocked.returncode, 1, blocked.stdout)
+                        self.assertIn("Schema do corpus", blocked.stderr[:1200])
+                        self.assertNotIn("Traceback", blocked.stderr[:1200])
+                        self.assertEqual(receipt.read_bytes(), previous_receipt)
+                        self.assertEqual(before, {path.name: path.read_bytes() for path in (root / "site/data").iterdir() if path.is_file()})
 
     def test_fresh_cli_accepts_verified_increment_and_restores_last_addition(self):
         with tempfile.TemporaryDirectory() as tmp:

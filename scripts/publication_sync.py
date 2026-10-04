@@ -56,6 +56,36 @@ def load_json(path: pathlib.Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def _corpus_schema_validator(schema_path: pathlib.Path) -> Any:
+    if not schema_path.is_file():
+        raise ValueError(f"Schema do corpus exige arquivo existente: {schema_path}")
+    try:
+        import jsonschema
+    except ModuleNotFoundError as error:
+        raise ValueError("Schema do corpus exige jsonschema instalado.") from error
+    try:
+        schema = load_json(schema_path)
+    except (OSError, ValueError) as error:
+        raise ValueError(f"Schema do corpus não é JSON legível: {schema_path}") from error
+    try:
+        jsonschema.Draft7Validator.check_schema(schema)
+    except jsonschema.exceptions.SchemaError as error:
+        raise ValueError(f"Schema do corpus inválido: {error.message}") from error
+    return jsonschema.Draft7Validator(schema)
+
+
+def _validate_corpus_records(records: Any, schema_path: pathlib.Path) -> None:
+    # The shared helper treats schema validation as optional. Publication must
+    # validate the loaded schema unconditionally, then retain its ID checks.
+    validator = _corpus_schema_validator(schema_path)
+    errors = sorted(validator.iter_errors(records), key=lambda error: str(error.absolute_path))
+    if errors:
+        details = "; ".join(f"{'/'.join(map(str, error.absolute_path)) or '<root>'}: {error.message}"
+                            for error in errors[:10])
+        raise ValueError(f"Corpus inválido segundo o schema: {details}")
+    validate_records(records, schema_path)
+
+
 def _schema_validate(value: Any) -> None:
     try:
         import jsonschema
@@ -477,6 +507,8 @@ def _safe_output_paths(out: pathlib.Path, state_path: pathlib.Path) -> None:
         system_alias = str(path) in {"/var", "/tmp"} and str(path.resolve()) in {"/private/var", "/private/tmp"}
         if path.is_symlink() and not system_alias:
             raise ValueError(f"Diretório de saída não pode atravessar symlink: {path}")
+        if path.exists() and not path.is_dir():
+            raise ValueError(f"Raiz/ancestral de saída não é diretório: {path}")
     for name in OUTPUT_NAMES:
         path = out / name
         if path.is_symlink() or (path.exists() and not path.is_file()):
@@ -495,12 +527,15 @@ def _receipt(publication: dict, corpus_bytes: bytes, out: pathlib.Path, bundle: 
             "outputs": {name: _digest(bundle[name]) for name in OUTPUT_NAMES}}
 
 
-def _replay_receipt(receipt: dict, publication: dict, baseline_raw: dict[str, bytes], out: pathlib.Path) -> dict[str, bytes]:
+def _replay_receipt(receipt: dict, publication: dict, baseline_raw: dict[str, bytes], out: pathlib.Path, *,
+                    schema_path: pathlib.Path = DEFAULT_SCHEMA) -> dict[str, bytes]:
     """Verify history by replay, rather than granting authority to recorded hashes.
 
 Only this private history path omits checking that an old image still exists.
 Its schema, author/rights approvals, safe path and declared SHA remain enforced.
 The active manifest always checks the bytes of every newly published image.
+The selected corpus schema applies to active and historical snapshots alike;
+an incompatible schema change rejects the transition before any output write.
 """
     keys = {"version", "output_root", "baseline", "publication", "publication_sha256", "corpus_b64", "outputs"}
     if (not isinstance(receipt, dict) or set(receipt) != keys or receipt["version"] != 1
@@ -520,8 +555,7 @@ The active manifest always checks the bytes of every newly published image.
     needed = any(entry.get("editorial_status") == "published" for entry in previous.get("items", []))
     if (needed or corpus_bytes != b"[]") and _digest(corpus_bytes) != previous.get("corpus_sha256"):
         raise ValueError("Snapshot do corpus anterior não corresponde ao hash fixado.")
-    if records:
-        validate_records(records, DEFAULT_SCHEMA)
+    _validate_corpus_records(records, schema_path)
     prior = _generate(records, previous, json.loads(baseline_raw["acervo.json"]),
                       baseline_stats=json.loads(baseline_raw["stats.json"]),
                       baseline_records=json.loads(baseline_raw["corpus-data-enriched.json"]), _historical=True)
@@ -532,7 +566,8 @@ The active manifest always checks the bytes of every newly published image.
 
 
 def _publish_bundle(out: pathlib.Path, bundle: dict[str, bytes], publication: dict, corpus_bytes: bytes,
-                    baseline_raw: dict[str, bytes], *, check: bool = False) -> None:
+                    baseline_raw: dict[str, bytes], *, check: bool = False,
+                    schema_path: pathlib.Path = DEFAULT_SCHEMA) -> None:
     """Check the complete destination and receipt before the first public write."""
     state_path = _state_path(out)
     _safe_output_paths(out, state_path)
@@ -540,7 +575,7 @@ def _publish_bundle(out: pathlib.Path, bundle: dict[str, bytes], publication: di
     current = {name: (out / name).read_bytes() if (out / name).exists() else None for name in OUTPUT_NAMES}
     previous = None
     if state_path.exists():
-        previous = _replay_receipt(load_json(state_path), publication, baseline_raw, out)
+        previous = _replay_receipt(load_json(state_path), publication, baseline_raw, out, schema_path=schema_path)
         # A stateful release is always a complete four-file package. A partial
         # write/missing file must be repaired from a trusted snapshot explicitly.
         if any(data is None for data in current.values()) or current not in (previous, bundle, baseline):
@@ -557,7 +592,7 @@ def _publish_bundle(out: pathlib.Path, bundle: dict[str, bytes], publication: di
     # authority. This also rejects an unpinned local corpus snapshot.
     next_receipt = _receipt(publication, corpus_bytes, out, bundle)
     if bundle != baseline or previous is not None:
-        _replay_receipt(next_receipt, publication, baseline_raw, out)
+        _replay_receipt(next_receipt, publication, baseline_raw, out, schema_path=schema_path)
     if check:
         return
     keep_receipt = bundle != baseline or previous is not None
@@ -594,6 +629,7 @@ def main() -> int:
             raise ValueError("--include-review foi removido: revisão não produz preview público.")
         if args.publication.resolve().is_relative_to((ROOT / "site").resolve()):
             raise ValueError("O manifesto editorial privado deve ficar fora de site/.")
+        _corpus_schema_validator(args.schema)
         publication = load_json(args.publication)
         validate_publication(publication)
         baseline_raw = validate_baseline(publication)
@@ -601,12 +637,12 @@ def main() -> int:
         needed = any(entry["editorial_status"] == "published" for entry in publication["items"])
         corpus_bytes = _load_corpus_bytes(args.corpus, publication, needed=needed)
         records = json.loads(corpus_bytes)
-        if records:
-            validate_records(records, args.schema)
+        _validate_corpus_records(records, args.schema)
         items, stats, constellations = generate(records, publication, baseline, baseline_stats=baseline_stats,
                                                baseline_records=json.loads(baseline_raw["corpus-data-enriched.json"]))
         bundle = _projection_bundle(baseline_raw, items, stats, constellations)
-        _publish_bundle(args.out, bundle, publication, corpus_bytes, baseline_raw, check=args.check)
+        _publish_bundle(args.out, bundle, publication, corpus_bytes, baseline_raw, check=args.check,
+                        schema_path=args.schema)
         print(f"Preservados {len(baseline)} itens da base; {len(items) - len(baseline)} adições; "
               f"{len(build_overlay(items, baseline)['items'])} suplementos; {len(constellations)} constelações aprovadas.")
         return 0

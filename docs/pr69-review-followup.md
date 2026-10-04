@@ -1,9 +1,10 @@
 # Revisão posterior ao PR #69
 
 Este patch corrige os dez comentários da revisão automática do head
-`25ded3febb087adb549c789381bf3158d32ec5d1`. Ana autorizou as correções; esta
-rodada termina em PR em rascunho, sem merge ou deploy e sem novas aprovações
-editoriais ou de direitos.
+`25ded3febb087adb549c789381bf3158d32ec5d1`. A implementação foi entregue em PR
+em rascunho. Depois da revisão, Ana autorizou a publicação em 2026-10-04,
+condicionada à validação do head, da prévia hospedada e dos gates. Não há novas
+aprovações editoriais ou de direitos.
 
 ## Base e preservação
 
@@ -118,8 +119,8 @@ escrever arquivos ou recibos.
 Os testes exercitam publicação incremental, retirada parcial e total,
 independência da ordem dos aliases, divergência entre catálogos, sementes Python
 diferentes, perda/corrupção do recibo, pacote misturado, symlinks e retirada após
-remoção da imagem anterior. Nenhuma aprovação real foi acrescentada. A rodada
-termina em PR em rascunho; merge e deploy ficam fora deste patch.
+remoção da imagem anterior. Nenhuma aprovação real foi acrescentada. As
+evidências dos checks e da publicação são registradas no PR #70.
 
 ## Configuração da prévia hospedada
 
@@ -147,5 +148,43 @@ artefatos editoriais vazios, caminhos privados inacessíveis e navegação em
 desktop/celular. O resultado e a URL efetiva são registrados na descrição do
 [PR #70](https://github.com/anavvanzin/iconocracia/pull/70). Produção continua no
 Worker `iconocracia`, com domínio `iconocracia.com` e deploy de `main` separado.
-O ajuste não altera a infraestrutura adicional `iconocracia-site`, não concede
-acesso a recursos e não autoriza merge ou deploy de produção.
+O ajuste não altera a infraestrutura adicional `iconocracia-site` nem concede
+acesso a recursos. A publicação em produção depende da autorização autoral
+recebida e da validação dos gates; configurar a prévia não substitui esses passos.
+
+## Dois achados da revisão automática do PR #70
+
+A revisão do head `085778e` identificou duas inconsistências da CLI:
+
+- [`4179096647`](https://github.com/anavvanzin/iconocracia/pull/70#discussion_r4179096647):
+  a validação ativa usava `--schema`, mas o replay do recibo usava o schema
+  padrão. O schema escolhido deve ser aplicado tanto à publicação ativa quanto
+  ao replay anterior e à conferência do novo recibo. O formato do recibo e os
+  hashes fixados permanecem intactos. Um schema incompatível com o predecessor
+  interrompe a transição sem escrever; é preciso selecionar um schema
+  compatível para recuperar aquele snapshot.
+- [`4179096650`](https://github.com/anavvanzin/iconocracia/pull/70#discussion_r4179096650):
+  `--check --out` aceitava um arquivo regular como raiz ou ancestral do destino,
+  embora a escrita real falhasse. Raiz e ancestrais existentes devem ser
+  diretórios nas duas operações. As exceções restritas para os aliases de
+  diretório `/var` e `/tmp` do macOS continuam válidas.
+
+Antes das correções, os dois testes de regressão produziram cinco falhas.
+Depois delas, os testes dirigidos passaram. O teste do schema cobre a primeira publicação, replay anterior,
+checagem sem escrita e recusa do schema padrão incompatível sem modificar
+saídas ou recibo. O teste do destino cobre raiz e ancestral como arquivo em
+ambos os modos, preservando o arquivo do usuário e sem criar estado privado.
+Nenhum conteúdo de `site/`, manifesto ou decisão editorial é alterado por
+essas correções da CLI.
+
+A revisão independente reproduziu uma regressão adicional da propagação:
+o helper compartilhado ignora o schema quando o arquivo não existe. Um caminho
+incorreto era aceito tanto em `--check` quanto na escrita. O pipeline editorial
+agora exige arquivo existente, JSON legível e schema Draft7 válido, e valida
+o corpus mesmo quando vazio e nos replays. O helper compartilhado permanece
+intacto e continua conferindo os IDs depois da validação estrita.
+
+O novo teste cobre oito subcasos: schema ausente, diretório, JSON inválido e
+schema estruturalmente inválido nos dois modos, sem alteração de saídas ou
+recibo. A regressão foi reproduzida antes da correção. A suíte editorial final
+passou com 55/55 casos; `git diff --check` passou.
