@@ -120,3 +120,32 @@ independência da ordem dos aliases, divergência entre catálogos, sementes Pyt
 diferentes, perda/corrupção do recibo, pacote misturado, symlinks e retirada após
 remoção da imagem anterior. Nenhuma aprovação real foi acrescentada. A rodada
 termina em PR em rascunho; merge e deploy ficam fora deste patch.
+
+## Configuração da prévia hospedada
+
+Os builds automáticos do head `a63626d` falharam nas duas integrações Cloudflare
+porque `npx wrangler preview`, executado com Wrangler 4.147.0, exige um bloco
+`previews` no arquivo de configuração. Nenhum deles produziu URL de prévia.
+Os jobs GitHub aprovados não demonstravam sucesso da hospedagem.
+
+O ajuste acrescenta somente `"previews": {}` a `wrangler.jsonc`, conforme a
+[configuração oficial](https://developers.cloudflare.com/workers/previews/configuration/).
+Assets permanecem em `site/`, fora de `editorial/`. A configuração de produção,
+a data de compatibilidade, as migrações históricas e os comandos remotos ficam
+intactos. A inspeção da configuração efetiva do Worker `iconocracia` confirmou
+ausência de base com bindings, variáveis ou segredos para a prévia; produção
+tem somente o binding `ASSETS`. O código apenas lê esses assets.
+
+O teste de configuração falhou antes do ajuste e passa com o bloco vazio. Dois
+casos novos verificam a adesão explícita ao modo de prévia, ausência de bindings
+de recursos e o limite dos assets: manifesto, recibos, arquivos do repositório
+e o endpoint removido `/api/exec` respondem 404. A suíte Node fica em 44 casos.
+
+O contrato de validação hospedada exige build vinculado ao head atual, hashes
+dos arquivos servidos iguais aos da branch, contagem direta do catálogo,
+artefatos editoriais vazios, caminhos privados inacessíveis e navegação em
+desktop/celular. O resultado e a URL efetiva são registrados na descrição do
+[PR #70](https://github.com/anavvanzin/iconocracia/pull/70). Produção continua no
+Worker `iconocracia`, com domínio `iconocracia.com` e deploy de `main` separado.
+O ajuste não altera a infraestrutura adicional `iconocracia-site`, não concede
+acesso a recursos e não autoriza merge ou deploy de produção.
