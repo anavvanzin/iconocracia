@@ -1,0 +1,148 @@
+{
+  "total": 337,
+  "paises": 17,
+  "com_imagem": 332,
+  "periodo": {
+    "min": 1707,
+    "max": 1981
+  },
+  "por_pais": [
+    {
+      "pais": "França",
+      "n": 103
+    },
+    {
+      "pais": "Brasil",
+      "n": 73
+    },
+    {
+      "pais": "Estados Unidos",
+      "n": 32
+    },
+    {
+      "pais": "Alemanha",
+      "n": 28
+    },
+    {
+      "pais": "Reino Unido",
+      "n": 23
+    },
+    {
+      "pais": "Itália",
+      "n": 20
+    },
+    {
+      "pais": "Bélgica",
+      "n": 11
+    },
+    {
+      "pais": "Portugal",
+      "n": 11
+    },
+    {
+      "pais": "Países Baixos",
+      "n": 10
+    },
+    {
+      "pais": "Espanha",
+      "n": 10
+    },
+    {
+      "pais": "Áustria",
+      "n": 4
+    },
+    {
+      "pais": "Chile",
+      "n": 3
+    },
+    {
+      "pais": "Dinamarca",
+      "n": 3
+    },
+    {
+      "pais": "México",
+      "n": 3
+    },
+    {
+      "pais": "Argentina",
+      "n": 1
+    },
+    {
+      "pais": "Suíça",
+      "n": 1
+    },
+    {
+      "pais": "Uruguai",
+      "n": 1
+    }
+  ],
+  "por_regime": [
+    {
+      "regime": "Fundacional",
+      "chave": "FUNDACIONAL",
+      "n": 164
+    },
+    {
+      "regime": "Normativo",
+      "chave": "NORMATIVO",
+      "n": 103
+    },
+    {
+      "regime": "Militar",
+      "chave": "MILITAR",
+      "n": 54
+    },
+    {
+      "regime": "Contra-alegoria",
+      "chave": "CONTRA-ALEGORIA",
+      "n": 15
+    },
+    {
+      "regime": "Não classificado",
+      "chave": "não classificado",
+      "n": 1
+    }
+  ],
+  "motivos": [
+    {
+      "motivo": "Justitia",
+      "n": 61
+    },
+    {
+      "motivo": "Republica",
+      "n": 54
+    },
+    {
+      "motivo": "Justice",
+      "n": 35
+    },
+    {
+      "motivo": "Marianne",
+      "n": 33
+    },
+    {
+      "motivo": "Columbia",
+      "n": 18
+    },
+    {
+      "motivo": "Britannia",
+      "n": 15
+    },
+    {
+      "motivo": "sword",
+      "n": 14
+    },
+    {
+      "motivo": "Liberty",
+      "n": 11
+    },
+    {
+      "motivo": "dispositivo estatal brasileiro",
+      "n": 11
+    },
+    {
+      "motivo": "scales",
+      "n": 10
+    }
+  ]
+}
