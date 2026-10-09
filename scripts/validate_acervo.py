@@ -73,7 +73,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--json",
-        default="site/data/corpus-data-enriched.json",
+        default="editorial/corpus-data-enriched.json",
         help="Path to the enriched corpus JSON file.",
     )
     parser.add_argument(

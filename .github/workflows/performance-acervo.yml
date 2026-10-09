@@ -33,7 +33,7 @@ jobs:
         id: perf
         run: |
           python scripts/measure_performance.py \
-            --json site/data/corpus-data-enriched.json \
+            --json editorial/corpus-data-enriched.json \
             --history site/data/performance.json \
             --report acervo-performance-report.md \
             --threshold-ms 2000 \

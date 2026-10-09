@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://iconocracia.com/schemas/corpus-data-enriched.schema.json",
   "title": "Mnemosyne Viva — Corpus enriquecido",
-  "description": "Esquema do arquivo site/data/corpus-data-enriched.json: um array de itens do acervo. Mantém compatibilidade retroativa com os itens já publicados e documenta o objeto opcional iconographic_metadata (metodologia ICONOCRACIA).",
+  "description": "Esquema do arquivo editorial/corpus-data-enriched.json: um array de itens do acervo. Mantém compatibilidade retroativa com os itens já publicados e documenta o objeto opcional iconographic_metadata (metodologia ICONOCRACIA).",
   "type": "array",
   "items": { "$ref": "#/definitions/corpusItem" },
   "definitions": {

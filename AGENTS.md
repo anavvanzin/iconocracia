@@ -27,7 +27,7 @@ canonical file/directory overview.
 
 ### Data generation
 
-- `site/data/publication.json` is the editorial source of truth. It pins one public
+- `editorial/publication.json` is the editorial source of truth. It pins one public
   commit of `anavvanzin/iconocracy-corpus` and stores publication decisions, aliases,
   image rights, public analysis, and constellations.
 - `site/data/acervo.json`, `stats.json`, and `constellations.json` are reproducible
@@ -37,7 +37,7 @@ canonical file/directory overview.
 
 ### Validation
 
-- `python3 scripts/validate_acervo.py --json site/data/corpus-data-enriched.json --schema schemas/corpus-data-enriched.schema.json --report /tmp/report.md`
+- `python3 scripts/validate_acervo.py --json editorial/corpus-data-enriched.json --schema schemas/corpus-data-enriched.schema.json --report /tmp/report.md`
   validates JSON + JSON Schema, then checks every external image URL over the network.
   Schema validation uses `jsonschema` when installed (stdlib fallback otherwise). Some
   image URLs return 403/timeout from restricted networks — those are network/WAF issues,

@@ -23,7 +23,7 @@ jobs:
       - name: Ler commit fixado do corpus
         id: corpus
         working-directory: imagens
-        run: python -c 'import json; print("sha=" + json.load(open("site/data/publication.json"))["corpus_commit"])' >> "$GITHUB_OUTPUT"
+        run: python -c 'import json; print("sha=" + json.load(open("editorial/publication.json"))["corpus_commit"])' >> "$GITHUB_OUTPUT"
 
       - name: Checkout público do corpus
         uses: actions/checkout@v4
@@ -43,7 +43,7 @@ jobs:
       - name: Validar manifesto e reproduzir artefatos
         working-directory: imagens
         run: |
-          python -c 'import json,jsonschema; jsonschema.validate(json.load(open("site/data/publication.json")),json.load(open("schemas/publication.schema.json")))'
+          python -c 'import json,jsonschema; jsonschema.validate(json.load(open("editorial/publication.json")),json.load(open("schemas/publication.schema.json")))'
           python scripts/corpus_sync.py --corpus ../iconocracy-corpus/corpus/corpus-data.json --out /tmp/iconocracia-generated
           diff -u site/data/acervo.json /tmp/iconocracia-generated/acervo.json
           diff -u site/data/stats.json /tmp/iconocracia-generated/stats.json
@@ -67,4 +67,4 @@ jobs:
       - name: Diagnóstico separado de links externos
         continue-on-error: true
         working-directory: imagens
-        run: python scripts/validate_acervo.py --json site/data/publication.json --schema schemas/publication.schema.json --report acervo-validation-report.md --retries 0 --timeout 8
+        run: python scripts/validate_acervo.py --json editorial/publication.json --schema schemas/publication.schema.json --report acervo-validation-report.md --retries 0 --timeout 8

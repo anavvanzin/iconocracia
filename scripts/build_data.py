@@ -38,7 +38,7 @@ def main() -> int:
     items, stats, constellations = generate(
         records, publication, legacy, include_review=args.include_review,
     )
-    write_outputs(args.out, items, stats, constellations)
+    write_outputs(args.out, items, stats, constellations, include_review=args.include_review)
     print(f"Sincronizados {len(items)} itens e {len(constellations)} constelações.")
     return 0
 

@@ -17,8 +17,8 @@ from typing import Any
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DEFAULT_SCHEMA = ROOT / "schemas" / "corpus-input.schema.json"
-DEFAULT_PUBLICATION = ROOT / "site" / "data" / "publication.json"
-DEFAULT_LEGACY = ROOT / "site" / "data" / "corpus-data-enriched.json"
+DEFAULT_PUBLICATION = ROOT / "editorial" / "publication.json"
+DEFAULT_LEGACY = ROOT / "editorial" / "corpus-data-enriched.json"
 DEFAULT_OUT = ROOT / "site" / "data"
 
 COUNTRY_PT = {
@@ -148,7 +148,45 @@ def resolve_entry(
     raise ValueError(f"Entrada editorial sem correspondência canônica explícita: {canonical_id or legacy_id}")
 
 
-def transform_item(source: dict[str, Any], editorial: dict[str, Any] | None = None) -> dict[str, Any]:
+# Only these editorial analysis fields may cross the public boundary. Canonical
+# scores, nested methodology metadata, approval records and notes stay internal.
+PUBLIC_ANALYSIS_TEXT_FIELDS = (
+    "summary", "scale", "method_note", "limitation", "gender_attributed",
+)
+PUBLIC_INDICATORS = (
+    "desincorporacao", "rigidez_postural", "dessexualizacao", "uniformizacao_facial",
+    "heraldizacao", "enquadramento_arquitetonico", "apagamento_narrativo",
+    "monocromatizacao", "serialidade", "inscricao_estatal",
+)
+PUBLIC_CONSTELLATION_FIELDS = (
+    "slug", "title", "subtitle", "introduction", "method_note",
+)
+
+
+def public_analysis(editorial: dict[str, Any], *, include_review: bool = False) -> dict | None:
+    analysis = editorial.get("public_analysis")
+    if not isinstance(analysis, dict):
+        return None
+    approved = (
+        editorial.get("editorial_status") == "published"
+        and analysis.get("status") == "approved"
+        and editorial.get("approved_by") and editorial.get("approved_at")
+    )
+    if not approved and not include_review:
+        return None
+    result = {key: analysis[key] for key in PUBLIC_ANALYSIS_TEXT_FIELDS
+              if isinstance(analysis.get(key), str)}
+    for key, fields in (("panofsky", ("level_1", "level_2", "level_3")),
+                        ("indicators", PUBLIC_INDICATORS)):
+        values = analysis.get(key)
+        if isinstance(values, dict):
+            result[key] = {field: values[field] for field in fields
+                           if field in values and isinstance(values[field], (str, int, float))}
+    return result or None
+
+
+def transform_item(source: dict[str, Any], editorial: dict[str, Any] | None = None,
+                   *, include_review: bool = False) -> dict[str, Any]:
     editorial = editorial or {}
     item = {**source, **(editorial.get("overrides") or {})}
     regime = str(item.get("regime") or "").lower()
@@ -183,13 +221,9 @@ def transform_item(source: dict[str, Any], editorial: dict[str, Any] | None = No
         "imagem": image,
         "tem_imagem": bool(image),
         "citacao": item.get("citation_abnt") or "",
-        "analise_publica": editorial.get("public_analysis") or None,
+        "analise_publica": public_analysis(editorial, include_review=include_review),
         "constelacoes": editorial.get("constellations") or [],
     }
-    if item.get("endurecimento_score") is not None:
-        result["endurecimento_score"] = item["endurecimento_score"]
-    if item.get("indicadores") is not None:
-        result["indicadores"] = item["indicadores"]
     return result
 
 
@@ -232,7 +266,8 @@ def build_constellations(
         ordered = [item_id for item_id in definition.get("item_ids", []) if item_id in visible_ids]
         if not ordered:
             continue
-        result.append({**definition, "item_ids": ordered})
+        result.append({**{key: definition[key] for key in PUBLIC_CONSTELLATION_FIELDS
+                         if key in definition}, "item_ids": ordered})
     return result
 
 
@@ -261,7 +296,7 @@ def generate(
             continue
         source, resolved_id = resolve_entry(entry, records, legacy)
         normalized = {**entry, "canonical_id": entry.get("canonical_id") or resolved_id}
-        items.append(transform_item(source, normalized))
+        items.append(transform_item(source, normalized, include_review=include_review))
     stats = build_stats(
         items, len(records), publication["corpus_commit"], publication.get("generated_at", ""),
     )
@@ -271,7 +306,10 @@ def generate(
     return items, stats, constellations
 
 
-def write_outputs(out: pathlib.Path, items: list[dict], stats: dict, constellations: list[dict]) -> None:
+def write_outputs(out: pathlib.Path, items: list[dict], stats: dict, constellations: list[dict],
+                  *, include_review: bool = False) -> None:
+    if include_review and out.resolve().is_relative_to((ROOT / "site").resolve()):
+        raise ValueError("Prévia editorial deve ser gerada fora de site/.")
     out.mkdir(parents=True, exist_ok=True)
     for name, value in (("acervo.json", items), ("stats.json", stats), ("constellations.json", constellations)):
         (out / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -294,7 +332,7 @@ def main() -> int:
         items, stats, constellations = generate(
             records, publication, legacy, include_review=args.include_review,
         )
-        write_outputs(args.out, items, stats, constellations)
+        write_outputs(args.out, items, stats, constellations, include_review=args.include_review)
         print(f"Sincronizados {len(items)} de {len(records)} itens; {len(constellations)} constelações.")
         return 0
     except (OSError, ValueError, json.JSONDecodeError, urllib.error.URLError) as error:

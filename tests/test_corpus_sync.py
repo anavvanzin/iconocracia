@@ -34,12 +34,77 @@ class CorpusSyncTests(unittest.TestCase):
         result = transform_item(self.corpus[0], {
             "canonical_id": "uuid-1", "legacy_ids": ["FR-OLD"],
             "image": {"path": "assets/acervo/uuid-1.webp", "license": "PD", "credit": "Arquivo"},
-            "public_analysis": {"summary": "Leitura."},
+            "editorial_status": "published", "approved_by": "ana", "approved_at": "2026-09-15",
+            "public_analysis": {"status": "approved", "summary": "Leitura."},
         })
         self.assertEqual(result["pais"], "França")
         self.assertEqual(result["imagem"], "assets/acervo/uuid-1.webp")
         self.assertEqual(result["legacy_ids"], ["FR-OLD"])
         self.assertEqual(result["analise_publica"]["summary"], "Leitura.")
+
+    def test_internal_fields_never_cross_public_projection(self):
+        source = {**self.corpus[0], "endurecimento_score": 27,
+                  "indicadores": {"private": "CANONICAL_SECRET"},
+                  "iconographic_metadata": {"endurecimento_score": 27}}
+        editorial = {
+            "editorial_status": "published", "grandfathered": True,
+            "approved_by": "ana", "approved_at": "2026-09-15",
+            "internal_notes": "EDITORIAL_SECRET",
+            "overrides": {"indicadores": {"private": "OVERRIDE_SECRET"}},
+            "public_analysis": {
+                "status": "approved", "summary": "Approved reading",
+                "internal_notes": "ANALYSIS_SECRET", "endurecimento_score": 27,
+                "panofsky": {"level_1": "Description", "draft": "NESTED_SECRET"},
+                "indicators": {"heraldizacao": 2, "private": "INDICATOR_SECRET"},
+            },
+        }
+        result = transform_item(source, editorial)
+        self.assertEqual(result["analise_publica"]["indicators"], {"heraldizacao": 2})
+        self.assertEqual(result["analise_publica"]["panofsky"], {"level_1": "Description"})
+        for forbidden in ("SECRET", "endurecimento_score", "indicadores", "iconographic_metadata"):
+            self.assertNotIn(forbidden, json.dumps(result))
+        for change in ({"public_analysis": None},
+                       {"public_analysis": {"status": "draft", "summary": "DRAFT"}},
+                       {"approved_by": None}, {"approved_at": None},
+                       {"editorial_status": "review"}, {"editorial_status": "withheld"}):
+            with self.subTest(change=change):
+                self.assertIsNone(transform_item(source, {**editorial, **change})["analise_publica"])
+
+    def test_constellation_projection_excludes_editorial_notes(self):
+        result = build_constellations([{
+            "slug": "approved", "editorial_status": "published", "item_ids": ["a"],
+            "title": "Approved title", "review_notes": "PRIVATE", "approved_by": "ana",
+        }], [{"id": "a"}])
+        self.assertEqual(result, [{"slug": "approved", "title": "Approved title", "item_ids": ["a"]}])
+
+    def test_review_output_cannot_be_written_to_served_tree(self):
+        with self.assertRaisesRegex(ValueError, "fora de site"):
+            write_outputs(ROOT / "site/data", [], {}, [], include_review=True)
+        with tempfile.TemporaryDirectory() as directory:
+            write_outputs(Path(directory), [], {}, [], include_review=True)
+            self.assertTrue((Path(directory) / "acervo.json").exists())
+
+    def test_served_artifacts_exclude_internal_sources_and_drafts(self):
+        from scripts.corpus_sync import DEFAULT_PUBLICATION, DEFAULT_LEGACY
+        served = ROOT / "site"
+        for path in (DEFAULT_PUBLICATION, DEFAULT_LEGACY):
+            self.assertFalse(path.resolve().is_relative_to(served.resolve()))
+            self.assertFalse(list(served.rglob(path.name)))
+        publication = json.loads(DEFAULT_PUBLICATION.read_text())
+        review = [item for item in publication["items"] if item["editorial_status"] == "review"]
+        artifacts = json.loads((served / "data/acervo.json").read_text())
+        self.assertEqual(len(artifacts), 95)
+        self.assertEqual(json.loads((served / "data/stats.json").read_text())["total"], 95)
+        self.assertEqual(json.loads((served / "data/constellations.json").read_text()), [])
+        self.assertTrue({item["canonical_id"] for item in review}.isdisjoint(
+            item["id"] for item in artifacts))
+        for path in served.rglob("*.json"):
+            text = path.read_text()
+            for forbidden in ('"endurecimento_score"', '"indicadores"', '"public_analysis"'):
+                self.assertFalse(forbidden in text, f"{forbidden} exposed by {path}")
+            for item in review:
+                self.assertFalse(item["public_analysis"]["summary"] in text, f"Draft exposed by {path}")
+            self.assertNotIn("Fotografia © Heritage Auctions — autorização pendente", text)
 
     def test_resolve_order_id_then_url_then_alias(self):
         source, item_id = resolve_entry({"canonical_id": "uuid-1"}, self.corpus, self.legacy)
@@ -105,7 +170,7 @@ class CorpusSyncTests(unittest.TestCase):
             validate_records(records, Path("/does/not/exist"))
 
     def test_manifest_preserves_95_and_stages_indivisible_batch(self):
-        publication = json.loads((ROOT / "site/data/publication.json").read_text())
+        publication = json.loads((ROOT / "editorial/publication.json").read_text())
         published = [item for item in publication["items"] if item["editorial_status"] == "published"]
         review = [item for item in publication["items"] if item["editorial_status"] == "review"]
         self.assertEqual(len(published), 95)
@@ -114,7 +179,7 @@ class CorpusSyncTests(unittest.TestCase):
         self.assertEqual(publication["constellations"][0]["item_ids"], [item["canonical_id"] for item in review])
 
     def test_public_analysis_never_contains_composite(self):
-        publication = json.loads((ROOT / "site/data/publication.json").read_text())
+        publication = json.loads((ROOT / "editorial/publication.json").read_text())
         for item in publication["items"]:
             analysis = item.get("public_analysis") or {}
             self.assertNotIn("purificacao_composto", json.dumps(analysis))

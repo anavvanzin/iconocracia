@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Mede o tempo de resposta das imagens do acervo Mnemosyne Viva.
 
-Percorre ``site/data/corpus-data-enriched.json``, mede o tempo de carregamento
+Percorre ``editorial/corpus-data-enriched.json``, mede o tempo de carregamento
 (HTTP GET completo) de cada imagem acessível, calcula a média e mantém um
 histórico determinístico em ``site/data/performance.json`` (array ``runs``).
 
@@ -54,7 +54,7 @@ class Measurement:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Mede tempos de resposta das imagens do acervo.")
-    parser.add_argument("--json", default="site/data/corpus-data-enriched.json",
+    parser.add_argument("--json", default="editorial/corpus-data-enriched.json",
                         help="Caminho do corpus enriquecido.")
     parser.add_argument("--history", default="site/data/performance.json",
                         help="Arquivo histórico de performance (array runs).")

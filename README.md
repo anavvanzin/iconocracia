@@ -21,24 +21,32 @@ Site editorial estático para o novo `iconocracia.com`, concebido como casa púb
 
 ## Dados e schema
 
-O arquivo `site/data/corpus-data-enriched.json` é um array de itens do acervo. Sua
+O arquivo `editorial/corpus-data-enriched.json` é um array de itens do acervo. Sua
 estrutura é documentada em [`schemas/corpus-data-enriched.schema.json`](schemas/corpus-data-enriched.schema.json)
 (JSON Schema draft-07). Campos centrais consumidos pelo frontend (`id`, `title`,
 `country`/`country_pt`, `regime`, `motif`, `url`, `thumbnail_url`, etc.) são
 preservados; novos itens devem seguir o padrão do schema.
 
-Metadados iconográficos da metodologia ICONOCRACIA são **opcionais** e ficam num
-objeto aninhado `iconographic_metadata` (campos: `allegorical_figure`, `iconclass`,
-`attributes`, `pathosformel`, `visual_regime`, `state_function`,
-`contract_visual_sexual`, `coloniality_of_seeing`, `purification_indicators`,
-`endurecimento_score`, `atlas_panel`). Quando presente, `build_data.py` preserva
-esse objeto em `site/data/acervo.json` sem afetar os filtros existentes.
+O manifesto interno `editorial/publication.json` fixa o commit do corpus e as
+aprovações. A coleção legada também fica em `editorial/`: nenhum desses insumos
+é servido pelo Worker. Apenas `acervo.json`, `stats.json` e `constellations.json`
+são gerados para publicação em `site/data/`.
+
+O transformador seleciona explicitamente os campos públicos. Indicadores
+canônicos (`indicadores`, `endurecimento_score`) e metadados metodológicos internos
+não são copiados. `analise_publica` só contém os campos permitidos de
+`public_analysis` quando seu status é `approved`, há `approved_by` e `approved_at`
+e o item está `published`. A aprovação de um item não aprova implicitamente sua
+análise. Novos campos do manifesto não se tornam públicos automaticamente.
+
+Prévias com `--include-review` devem usar `--out` fora de `site/` e não são
+artefatos de deploy. Os oito itens da constelação permanecem em revisão.
 
 Validação local (o `jsonschema` é opcional; sem ele, um validador stdlib mínimo é usado):
 
 ```bash
 pip install jsonschema  # opcional
-python scripts/validate_acervo.py --json site/data/corpus-data-enriched.json
+python scripts/validate_acervo.py --json editorial/corpus-data-enriched.json
 ```
 
 O export público versionado do corpus canônico é `corpus/corpus-data.json`. Para uma
