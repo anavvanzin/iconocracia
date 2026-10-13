@@ -7,7 +7,7 @@ Site editorial estático para o novo `iconocracia.com`, concebido como casa púb
 - `site/index.html` — homepage.
 - `site/sobre.html` — apresentação do projeto, método e conceitos.
 - `site/acervo.html` — entrada principal pelo campo constelacional, com busca, filtros e modos Palco/Grade para consulta.
-- `site/constelacoes.html` — percursos curatoriais aprovados; permanece vazio enquanto o lote estiver em revisão.
+- `site/constelacoes.html` — percursos curatoriais aprovados; inclui `columbia-dois-chamados`.
 - `site/404.html` — página de erro servida pelo Worker para rotas desconhecidas.
 - `site/assets/` — CSS e JavaScript.
 - `site/data/` — JSONs estáticos usados pela homepage e pelo acervo.
@@ -102,8 +102,9 @@ As estatísticas das adições reutilizam as regras de `build_data.py` e a fonte
 bruta imutável da base. Apenas os novos IDs aprovados entram na agregação.
 Consulte a [revisão posterior ao PR #69](docs/pr69-review-followup.md).
 
-No estado recuperado, os complementos públicos estão vazios e os dados
-atuais do acervo permanecem intactos. Consulte a
+O percurso aprovado [Columbia — dois chamados da nação](https://iconocracia.com/constelacoes?slug=columbia-dois-chamados)
+reúne dois itens já publicados, preservando os dados atuais do acervo.
+`constituicoes-atlanticas` e seu lote de oito obras seguem em `review`. Consulte a
 [revisão técnica](docs/pr33-rescue.md) e a
 [revisão editorial por obra](editorial/PR33-REVIEW.md) antes de mudar qualquer
 status. `--include-review` é recusado.

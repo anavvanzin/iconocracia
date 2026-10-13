@@ -1,6 +1,6 @@
 # Columbia — dois chamados da nação
 
-Situação: rascunho editorial revisado, pendente de aprovação autoral para publicação no site.
+Situação: publicação autorizada por Ana em 13 de outubro de 2026, nesta conversa.
 Revisão assistida com Mnemosyne Research Atelier em 13 de outubro de 2026.
 
 **Pergunta da montagem:** como a mesma personificação nacional participa de uma

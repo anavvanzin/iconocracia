@@ -117,16 +117,20 @@ test('the constellation fits 320 and 390 px screens and responds to resizing wit
   }
 });
 
-test('the home and empty editorial route both offer the public constellation', async ({ page }) => {
+test('the home offers the full public constellation alongside the approved Columbia route', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('.home-actions .btn-primary')).toHaveText(/Explorar a constelação/);
   await expect(page.locator('.home-actions .btn-primary')).toHaveAttribute('href', 'acervo.html?visao=constelacao');
-  await page.goto('/constelacoes');
-  await expect(page.locator('#constellation-intro h1')).toHaveText('Nenhum percurso publicado');
-  const explore = page.locator('#constellation-intro a');
-  await expect(explore).toHaveText('Explorar a constelação do acervo');
-  await expect(explore).toHaveAttribute('href', 'acervo.html?visao=constelacao');
-  await explore.click();
+  await expect(page.locator('[data-constellations-link]')).toBeVisible();
+  await page.locator('.home-actions .btn-primary').click();
   await ready(page);
   await expect(page.locator('#ex-constellation')).toBeVisible();
+  await expect(page.locator('.ex-star')).toHaveCount(catalog.length);
+  await page.locator('[data-constellations-link]').click();
+  await expect(page.locator('#constellation-intro h1')).toHaveText('Columbia — dois chamados da nação');
+  await expect(page.locator('#constellation-items li')).toHaveCount(2);
+  await expect(page.locator('#constellation-items h2')).toHaveText([
+    'Hedwig Reicher as Columbia in suffrage pageant',
+    'Columbia calls—Enlist now for U.S. Army',
+  ]);
 });
