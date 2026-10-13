@@ -1,6 +1,13 @@
 /* ICONOCRACIA — exposição, filtros e fichas do recorte publicado. */
 (() => {
   'use strict';
+  function debounce(fn, ms) {
+    let timer;
+    return () => {
+      clearTimeout(timer);
+      timer = setTimeout(fn, ms);
+    };
+  }
   const publication = window.IconocraciaPublication;
   const $ = (selector) => document.querySelector(selector);
   const normalize = (value) => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
@@ -127,14 +134,14 @@
     history.replaceState(null, '', url);
   }
   function filterItems() {
+    const query = normalize(fields.q.value);
     const scoped = activeConstellation ? activeConstellation.item_ids.map(id => items.find(item => item.id === id)) : items;
     filtered = scoped.filter((item) => {
       if (fields.pais.value && fields.pais.value !== item.pais) return false;
       if (fields.regime.value && fields.regime.value !== item.regime) return false;
       if (fields.periodo.value && fields.periodo.value !== centuryOf(item)) return false;
       if (fields.tipo.value && fields.tipo.value !== typeOf(item)) return false;
-      const haystack = normalize([item.id, item.titulo, item.autoria, item.pais, item.data, item.instituicao, item.suporte, ...(item.motivos || [])].join(' '));
-      return !fields.q.value || haystack.includes(normalize(fields.q.value));
+      return !query || item._hay.includes(query);
     });
     const previousId = selected?.id;
     selected = filtered.find((item) => item.id === previousId) || filtered[0] || null;
@@ -322,7 +329,8 @@
   $('#ex-more').addEventListener('click', () => openRecord());
   $('.ex-expand').addEventListener('click', () => openRecord(true));
   $('.ex-filters').addEventListener('submit', (event) => { event.preventDefault(); filterItems(); });
-  Object.values(fields).forEach((field) => field.addEventListener('input', filterItems));
+  fields.q.addEventListener('input', debounce(filterItems, 200));
+  Object.values(fields).filter((field) => field !== fields.q).forEach((field) => field.addEventListener('input', filterItems));
   $('#clear-filters').addEventListener('click', () => { Object.values(fields).forEach((field) => { field.value = ''; }); filterItems(); });
   $('#view-palco').addEventListener('click', () => setView('palco'));
   $('#view-grade').addEventListener('click', () => setView('grade'));
@@ -396,6 +404,9 @@
       const featured = ['BR-009', 'US-008', 'FR-005', 'BR-005', 'FR-008'];
       const rank = (item) => { const index = featured.indexOf(item.id); return index < 0 ? featured.length : index; };
       items = context.items.slice().sort((a, b) => rank(a) - rank(b));
+      items.forEach((item) => {
+        item._hay = normalize([item.id, item.titulo, item.autoria, item.pais, item.data, item.instituicao, item.suporte, ...(item.motivos || [])].join(' '));
+      });
       Object.values(fields).filter((field) => field.tagName === 'SELECT').forEach((field) => {
         field.replaceChildren(field.options[0]);
       });
