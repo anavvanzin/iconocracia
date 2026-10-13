@@ -1,55 +1,71 @@
 {
-  "total": 95,
-  "paises": 14,
-  "com_imagem": 39,
+  "total": 337,
+  "paises": 17,
+  "com_imagem": 332,
   "periodo": {
-    "min": 1730,
-    "max": 1975
+    "min": 1239,
+    "max": 2021
   },
   "por_pais": [
     {
       "pais": "França",
-      "n": 22
-    },
-    {
-      "pais": "Alemanha",
-      "n": 15
-    },
-    {
-      "pais": "Estados Unidos",
-      "n": 14
+      "n": 103
     },
     {
       "pais": "Brasil",
-      "n": 10
+      "n": 73
     },
     {
-      "pais": "Países Baixos",
-      "n": 8
+      "pais": "Estados Unidos",
+      "n": 32
+    },
+    {
+      "pais": "Alemanha",
+      "n": 28
     },
     {
       "pais": "Reino Unido",
-      "n": 6
-    },
-    {
-      "pais": "Portugal",
-      "n": 5
-    },
-    {
-      "pais": "Bélgica",
-      "n": 4
+      "n": 23
     },
     {
       "pais": "Itália",
-      "n": 4
+      "n": 20
     },
     {
-      "pais": "Áustria",
-      "n": 2
+      "pais": "Bélgica",
+      "n": 11
+    },
+    {
+      "pais": "Portugal",
+      "n": 11
+    },
+    {
+      "pais": "Países Baixos",
+      "n": 10
     },
     {
       "pais": "Espanha",
-      "n": 2
+      "n": 10
+    },
+    {
+      "pais": "Áustria",
+      "n": 4
+    },
+    {
+      "pais": "Chile",
+      "n": 3
+    },
+    {
+      "pais": "Dinamarca",
+      "n": 3
+    },
+    {
+      "pais": "México",
+      "n": 3
+    },
+    {
+      "pais": "Argentina",
+      "n": 1
     },
     {
       "pais": "Suíça",
@@ -58,69 +74,75 @@
     {
       "pais": "Uruguai",
       "n": 1
-    },
-    {
-      "pais": "México",
-      "n": 1
     }
   ],
   "por_regime": [
     {
+      "regime": "Fundacional",
+      "chave": "FUNDACIONAL",
+      "n": 164
+    },
+    {
       "regime": "Normativo",
       "chave": "NORMATIVO",
-      "n": 68
+      "n": 103
     },
     {
       "regime": "Militar",
       "chave": "MILITAR",
+      "n": 54
+    },
+    {
+      "regime": "Contra-alegoria",
+      "chave": "CONTRA-ALEGORIA",
       "n": 15
     },
     {
-      "regime": "Fundacional",
-      "chave": "FUNDACIONAL",
-      "n": 12
+      "regime": "Não classificado",
+      "chave": "não classificado",
+      "n": 1
     }
   ],
   "motivos": [
     {
-      "motivo": "Justice",
-      "n": 34
+      "motivo": "Justitia",
+      "n": 61
     },
     {
-      "motivo": "Justitia",
-      "n": 31
+      "motivo": "Republica",
+      "n": 54
+    },
+    {
+      "motivo": "Justice",
+      "n": 35
     },
     {
       "motivo": "Marianne",
-      "n": 11
-    },
-    {
-      "motivo": "Balança",
-      "n": 9
-    },
-    {
-      "motivo": "scales",
-      "n": 9
-    },
-    {
-      "motivo": "Espada",
-      "n": 8
-    },
-    {
-      "motivo": "sword",
-      "n": 8
+      "n": 33
     },
     {
       "motivo": "Columbia",
-      "n": 8
+      "n": 18
     },
     {
-      "motivo": "République",
-      "n": 7
+      "motivo": "Britannia",
+      "n": 15
     },
     {
-      "motivo": "Justiça",
-      "n": 6
+      "motivo": "sword",
+      "n": 14
+    },
+    {
+      "motivo": "Liberty",
+      "n": 11
+    },
+    {
+      "motivo": "dispositivo estatal brasileiro",
+      "n": 11
+    },
+    {
+      "motivo": "scales",
+      "n": 10
     }
   ]
 }

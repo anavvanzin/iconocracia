@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Private editorial publication manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "corpus_repository", "corpus_commit", "generated_at", "items", "constellations"],
+  "properties": {
+    "schema_version": {"const": "2.0"},
+    "corpus_repository": {"const": "anavvanzin/iconocracy-corpus"},
+    "corpus_commit": {"$ref": "#/definitions/commit"},
+    "corpus_sha256": {"$ref": "#/definitions/sha256"},
+    "generated_at": {"type": "string", "format": "date"},
+    "baseline": {
+      "type": "object", "additionalProperties": false,
+      "required": ["commit", "acervo_sha256", "stats_sha256", "corpus_enriched_sha256"],
+      "properties": {
+        "commit": {"$ref": "#/definitions/commit"},
+        "acervo_sha256": {"$ref": "#/definitions/sha256"},
+        "stats_sha256": {"$ref": "#/definitions/sha256"},
+        "corpus_enriched_sha256": {"$ref": "#/definitions/sha256"}
+      }
+    },
+    "recovered_aliases": {"type": "array", "items": {"type": "object"}},
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["editorial_status"],
+        "anyOf": [{"required": ["canonical_id"]}, {"required": ["legacy_record_id"]}],
+        "not": {"required": ["grandfathered"]},
+        "properties": {
+          "canonical_id": {"type": "string", "minLength": 1},
+          "legacy_record_id": {"type": "string", "minLength": 1},
+          "legacy_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+          "slug": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"},
+          "source_url": {"type": "string"},
+          "editorial_status": {"enum": ["review", "published", "withheld"]},
+          "approved_by": {"type": "string", "minLength": 1},
+          "approved_at": {"type": "string", "format": "date"},
+          "rights_approval": {"$ref": "#/definitions/approval"},
+          "public_analysis": {
+            "type": "object",
+            "properties": {
+              "status": {"enum": ["draft", "approved", "provisional-image-pending", "review", "withheld"]},
+              "approved_by": {"type": "string", "minLength": 1},
+              "approved_at": {"type": "string", "format": "date"},
+              "summary": {"type": "string"},
+              "panofsky": {"type": "object"}
+            }
+          },
+          "image": {
+            "type": "object",
+            "properties": {
+              "path": {"type": "string"}, "sha256": {"$ref": "#/definitions/sha256"}, "source_url": {"type": "string"},
+              "catalog_url": {"type": "string"}, "license": {"type": "string"},
+              "credit": {"type": "string"}, "alt": {"type": "string"}
+            }
+          }
+        },
+        "if": {"properties": {"editorial_status": {"const": "published"}}},
+        "then": {
+          "required": ["approved_by", "approved_at", "rights_approval", "image"],
+          "properties": {
+            "image": {"required": ["path", "sha256", "source_url", "license", "credit", "alt"]},
+            "public_analysis": {
+              "required": ["status", "approved_by", "approved_at"],
+              "properties": {"status": {"const": "approved"}}
+            }
+          }
+        }
+      }
+    },
+    "constellations": {
+      "type": "array",
+      "items": {
+        "type": "object", "required": ["slug", "editorial_status", "item_ids"],
+        "properties": {
+          "slug": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"},
+          "editorial_status": {"enum": ["review", "published", "withheld"]},
+          "title": {"type": "string"}, "subtitle": {"type": "string"},
+          "introduction": {"type": "string"}, "method_note": {"type": "string"},
+          "approved_by": {"type": "string", "minLength": 1},
+          "approved_at": {"type": "string", "format": "date"},
+          "item_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true}
+        },
+        "if": {"properties": {"editorial_status": {"const": "published"}}},
+        "then": {"required": ["approved_by", "approved_at", "title"]}
+      }
+    }
+  },
+  "definitions": {
+    "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "approval": {
+      "type": "object", "required": ["status", "approved_by", "approved_at", "evidence_url"],
+      "properties": {
+        "status": {"const": "approved"},
+        "approved_by": {"type": "string", "minLength": 1},
+        "approved_at": {"type": "string", "format": "date"},
+        "evidence_url": {"type": "string", "format": "uri"}
+      }
+    }
+  }
+}

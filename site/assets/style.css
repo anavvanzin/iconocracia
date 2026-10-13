@@ -5,28 +5,314 @@
    Rótulos pretos mono, módulos com moldura crisp, ícones de linha.
    ============================================================ */
 
-@import url("./design-system/styles.css");
+/* A cadeia de @import foi achatada aqui (auditoria web-perf 2026-09-28): os tokens
+   abaixo são cópia dos arquivos em design-system/tokens/. Editar lá E aqui, ou
+   tratar este arquivo como a fonte (ver AGENTS.md — o DS vive neste style.css). */
+
+/* ── design-system/tokens/colors.css (achatado em perf/webperf-audit; fonte de referência) ── */
+/* ICONOCRACIA — Color tokens
+   "Iuris Memoria": an archival, juridical palette sourced as if from
+   actual documents — iron-gall ink, faded vermilion, dust-yellow vellum,
+   aged gold leaf, malachite verdigris, with cool analytical intrusions. */
 
 :root {
+  /* ── Base · grounds ─────────────────────────── */
+  --paper:        #EFE5CF; /* warm vellum — primary page ground          */
+  --cream:        #F8F5EE; /* card / panel surface                       */
+  --ghost:        #F8F5EE; /* document folio surface (codex pages)       */
+  --ivory:        #E8DCC4; /* warm ivory — text on dark grounds          */
+  --ivory-light:  #F4F0E8;
+  --muted:        #DDD0B8; /* image placeholder / inert fill             */
+
+  /* ── Base · inks ────────────────────────────── */
+  --ink:          #1A1612; /* near-black warm-brown iron-gall ink        */
+  --warm-gray:    #7D756D; /* secondary prose                            */
+  --marble:       #9A9690; /* tertiary / stone captions                  */
+  --faded:        #8D8377; /* labels, meta, disabled                     */
+  --faded-on-dark:#D8CDBA; /* muted text over dark grounds               */
+
+  /* ── Brand mark · "Selo-Cartela · Lacre" ─────
+     The locked logo palette (mark 05 + palette 07). These are the
+     canonical brand-identity hexes; the document-sourced tokens above
+     remain the working surface palette. Keep them in lock-step:
+     reach for --brand-* only when rendering the mark / brand lockups. */
+  --brand-paper:    #EFE7D6; /* lockup ground                            */
+  --brand-indigo:   #1B2B4A; /* mark line / wordmark ink                 */
+  --brand-lacre:    #A8281F; /* wax-seal red — reverse chip, seal fill   */
+  --brand-ocre:     #D49A3C; /* brass — secondary mark accent            */
+  --brand-amethyst: #8A5FA8; /* feminine archival voice — inner ring     */
+
+  /* ── Base · juridical accents ───────────────── */
+  --terracotta:   #A04030; /* iron-oxide / faded vermilion — primary act */
+  --terracotta-deep:#7C2D12;
+  --deep-blue:    #1D2548; /* navy-deep — institutional reason           */
+  --navy-mid:     #2B3556; /* cabinet panels                             */
+  --gold:         #B8924A; /* aged gold leaf — rules, marks, frames      */
+  --gold-bright:  #D4A85E; /* lit gold — active / on-dark emphasis       */
+
+  /* ── Base · borders ─────────────────────────── */
+  --light-border: #D4C19A; /* hairline on light grounds                  */
+  --hairline-dark: rgba(184,146,74,.32); /* gold hairline on dark        */
+
+  /* ── Cabinet / "Prumo" chrome ────────────────
+     The dark indigo tier that frames the light vellum reading surface:
+     header, sidebar, plate captions. The plumb line (fio de prumo) and
+     amethyst node are the signature of the navigation spine. */
+  --cabinet-top:    #1B2B4A; /* chrome gradient — top (= brand indigo)    */
+  --cabinet-bottom: #131F36; /* chrome gradient — bottom                  */
+  --cabinet-grad:   linear-gradient(180deg, var(--cabinet-top), var(--cabinet-bottom));
+  --plumb-line:     linear-gradient(180deg, var(--gold-bright), rgba(212,154,60,.16)); /* fio de prumo */
+  --plumb-node:     var(--brand-amethyst);     /* amethyst bob — active spine node */
+  --plumb-halo:     rgba(138,95,168,.22);      /* glow ring around an active node  */
+  --plumb-bob:      var(--brand-lacre);        /* the weight at the line's end     */
+
+  /* ── Regimes (iconocratic classification) ───── */
+  --fundacional:  #5B3FA0; /* foundational — revolutionary corpus        */
+  --normativo:    #2A7A5A; /* normative — bureaucratic stabilization     */
+  --militar:      #A02828; /* military */
+  --contra-alegoria:#A04030; /* counter-allegory / fissures              */
+
+  /* ── Semantic aliases ───────────────────────── */
+  --surface-page:    var(--paper);
+  --surface-card:    var(--cream);
+  --surface-folio:   var(--ghost);
+  --surface-cabinet: var(--deep-blue); /* dark "cabinet" tier (Atlas)    */
+  --surface-cabinet-2: var(--navy-mid);
+
+  --text-primary:  var(--ink);
+  --text-secondary:var(--warm-gray);
+  --text-tertiary: var(--faded);
+  --text-on-dark:  var(--ivory);
+  --text-on-dark-muted: var(--faded-on-dark);
+
+  /* ── Semantic accents (the system's two-voice rule) ──
+     terracotta = the LIVE MARGIN: primary action, the iron-oxide rule
+                  down the side of a record, alerts/contra-allegory.
+     amethyst   = SELECTION / ACTIVE STATE: the chosen nav node, the
+                  selected row, the feminine archival voice. */
+  --accent:         var(--terracotta); /* primary action / live margin    */
+  --accent-gold:   var(--gold);       /* archival mark / frame           */
+  --accent-navy:   var(--deep-blue);
+  --state-active:  var(--brand-amethyst); /* selected / active node       */
+  --state-active-halo: var(--plumb-halo);
+  --alert:         var(--terracotta);  /* warnings / fissures             */
+
+  --border:        var(--light-border);
+  --border-on-dark:var(--hairline-dark);
+
+  --selection:     rgba(139,58,26,.18);
+
+  /* ── Country accents (corpus geography) ─────── */
+  --country-fr:#1D3A6E; --country-uk:#7C2D12; --country-de:#3A3A3A;
+  --country-us:#2A4D7A; --country-be:#8A6D1F; --country-br:#2A7A5A;
+}
+
+/* ── design-system/tokens/typography.css (achatado em perf/webperf-audit; fonte de referência) ── */
+/* ICONOCRACIA — Typography tokens
+   Three voices, each a register of legal writing:
+   · Instrument Serif  — display / rubrics / cartouche inscription (often italic)
+   · Crimson Pro       — body prose, the reading voice of the thesis
+   · JetBrains Mono    — classification labels, small-caps designation, meta */
+
+:root {
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-body:    "Crimson Pro", Georgia, serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, monospace;
+
+  /* ── Type scale ─────────────────────────────── */
+  --text-micro:    9px;   /* corner folios, tiniest meta            */
+  --text-mono-sm:  10px;  /* mono labels                           */
+  --text-caption:  11px;  /* plate captions                        */
+  --text-body-sm:  13px;
+  --text-body:     14px;  /* UI body                               */
+  --text-body-lg:  16px;  /* reading prose                         */
+  --text-h3:       20px;  /* card / verbete titles                 */
+  --text-h2:       28px;  /* page titles                           */
+  --text-h1:       46px;  /* section display                       */
+  --text-display:  64px;  /* atlas / hero display                  */
+
+  /* ── Reading prose (thesis reader) ──────────── */
+  --reader-body:   18px;
+  --leading-tight: 1.1;
+  --leading-snug:  1.4;
+  --leading-body:  1.65;
+  --leading-prose: 1.9;
+
+  /* ── Weights ────────────────────────────────── */
+  --weight-light:  300;
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold:   700;
+
+  /* ── Tracking ───────────────────────────────── */
+  --tracking-display:   -.01em; /* tight display serif             */
+  --tracking-body:      0;
+  --tracking-label:     2px;    /* mono small-caps designation     */
+  --tracking-small-caps:3px;    /* sidebar / section labels        */
+  --tracking-wide:      4px;    /* logo lockup                     */
+}
+
+/* ── design-system/tokens/spacing.css (achatado em perf/webperf-audit; fonte de referência) ── */
+/* ICONOCRACIA — Spacing, radii, shadows, rules, texture
+   Geometry of institutional reason: grids, columns, borders that
+   pretend to contain — and the gold rule that frames the document. */
+
+:root {
+  /* ── Spacing scale (4px base) ───────────────── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ── Radii ──────────────────────────────────── */
+  --radius-sm: 4px;   /* plates, corpus cards — nearly square      */
+  --radius:    10px;  /* default card / panel                      */
+  --radius-pill: 999px;
+
+  /* ── Borders & rules ────────────────────────── */
+  --rule-gold:        1px solid var(--gold);
+  --rule-gold-double: 3px double var(--gold);
+  --border-card:      1px solid var(--light-border);
+  --margin-bar:       3px solid var(--terracotta); /* live margin   */
+
+  /* ── Shadows — soft, document-on-table ──────── */
+  --shadow-sm:   0 2px 6px rgba(26,22,18,.06), 0 1px 2px rgba(26,22,18,.05);
+  --shadow-md:   0 10px 26px rgba(26,22,18,.10), 0 2px 8px rgba(26,22,18,.05);
+  --shadow-lg:   0 24px 72px rgba(26,22,18,.14), 0 8px 24px rgba(26,22,18,.08);
+  --shadow-card: 0 8px 20px rgba(26,22,18,.06), 0 0 0 1px rgba(26,22,18,.03);
+  --shadow-plate:0 6px 20px rgba(0,0,0,.18); /* plates on dark      */
+
+  /* ── Layout ─────────────────────────────────── */
+  --sidebar-w: 232px;
+  --header-h:  88px;
+  --content-max: 1160px;
+
+  /* ── Motion ─────────────────────────────────── */
+  --ease-out: cubic-bezier(.22,1,.36,1); /* @kind other */
+  --dur-fast: .15s; /* @kind other */
+  --dur:      .25s; /* @kind other */
+  --dur-slow: .5s; /* @kind other */
+
+  /* ── Texture · fine paper grain (overlay) ───── */
+  --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E"); /* @kind other */
+
+  /* ── Texture · faint grid (institutional reason) ─ */
+  --grid-gold: linear-gradient(rgba(184,146,74,.04) 1px, transparent 1px),
+               linear-gradient(90deg, rgba(184,146,74,.04) 1px, transparent 1px); /* @kind other */
+  --grid-size: 20px 20px;
+}
+
+/* ── design-system/tokens/base.css (achatado em perf/webperf-audit; fonte de referência) ── */
+/* ICONOCRACIA — Base layer
+   Element defaults, helpers and the motion vocabulary. Quiet,
+   archival, document-first. Imported after tokens + fonts. */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body);
+  font-weight: var(--weight-normal);
+  color: var(--text-primary);
+  background-color: var(--surface-page);
+  background-image: var(--grain);
+  background-repeat: repeat;
+  background-size: 200px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-normal);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-tight);
+  margin: 0;
+}
+
+/* The mono voice — small-caps designation, classification, meta. */
+.mono {
+  font-family: var(--font-mono);
+  font-feature-settings: 'liga' 1, 'calt' 1;
+}
+
+/* The display voice, almost always set in italic for inscription. */
+.rubric {
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+/* A label: mono, letterspaced, gold, uppercase — the corpus' caption voice. */
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-sm);
+  letter-spacing: var(--tracking-small-caps);
+  text-transform: uppercase;
+  color: var(--accent-gold);
+}
+
+a { color: var(--accent); text-decoration: none; }
+button { cursor: pointer; font-family: inherit; }
+input, textarea, select { font-family: var(--font-body); font-size: 15px; }
+
+::selection { background: var(--selection); color: var(--ink); }
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--muted); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--warm-gray); }
+
+:focus-visible { outline: 2px solid var(--state-active); outline-offset: 2px; }
+button:focus:not(:focus-visible), a:focus:not(:focus-visible) { outline: none; }
+
+/* ── Motion vocabulary ──────────────────────────
+   Soft, settling fades on a single decelerating curve.
+   No bounces. The archive does not bounce. */
+@keyframes fadeSlideUp { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn      { from { opacity:0; } to { opacity:1; } }
+@keyframes cardReveal  { from { opacity:0; transform:translateY(24px) scale(.97); } to { opacity:1; transform:translateY(0) scale(1); } }
+@keyframes goldPulse   { 0%,100% { opacity:.5; } 50% { opacity:.9; } }
+@keyframes shimmer     { 0% { background-position:-400px 0; } 100% { background-position:400px 0; } }
+@keyframes plateIn     { 0% { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+.anim-item { animation: fadeSlideUp var(--dur-slow) var(--ease-out) both; }
+.anim-card { animation: cardReveal var(--dur-slow) var(--ease-out) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+:root {
+  /* Tipografia e superficies: valores LITERAIS de proposito.
+     Estas declaracoes nao podem usar var() apontando para os tokens de
+     mesmo nome nem para tokens que apontem de volta para elas: o ciclo
+     torna a variavel invalida no momento da computacao e o navegador
+     descarta toda propriedade que a consome. Ver PR "fix/tokens-css-invalidos". */
   /* Tipografia mapeada do design system */
-  --font-display: var(--font-display);
-  --font-serif: var(--font-body);
-  --font-body: var(--font-body);
-  --font-mono: var(--font-mono);
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-serif: "Crimson Pro", Georgia, serif;
+  --font-body: "Crimson Pro", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   /* Paleta semântica do design system (Iuris Memoria) */
   --print-black: var(--ink);
-  --paper: var(--surface-page);
+  --paper: #EFE5CF;
   --paper-2: var(--surface-card);
   --paper-card: var(--surface-folio);
   
-  --bg-primary: var(--surface-page);
+  --bg-primary: #EFE5CF;
   --bg-secondary: var(--surface-card);
   --bg-card: var(--surface-folio);
   --bg-card-hover: var(--cream);
   --text-primary: var(--ink);
-  --text-secondary: var(--text-secondary);
-  --text-muted: var(--text-tertiary);
+  --text-secondary: #625A50;  /* AA: 5,42:1 no creme, 6,23:1 no card (era #7D756D = 3,62:1) */
+  --text-muted: #6B6157;      /* AA: 4,83:1 no creme, 5,55:1 no card (era #8D8377 = 2,97:1) */
   
   --accent: var(--brand-lacre);
   --accent-hover: var(--terracotta-deep);
@@ -35,7 +321,7 @@
   
   --red: var(--brand-lacre);
   --red-deep: var(--terracotta-deep);
-  --gold: var(--gold);
+  --gold: #B8924A;
   --gold-deep: var(--gold-bright);
   --gold-line: var(--hairline-dark);
   
@@ -44,7 +330,7 @@
   --border-light: rgba(212, 193, 154, 0.25);
   
   --shadow: var(--shadow-sm);
-  --shadow-lg: var(--shadow-lg);
+  --shadow-lg: 0 24px 72px rgba(26,22,18,.14), 0 8px 24px rgba(26,22,18,.08);
   --maxw: 1160px;
   --paper-grain: var(--grain);
 }
@@ -492,4 +778,489 @@ section.block.alt { background: var(--bg-secondary); border-top: 2px solid var(-
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* ============================================================
+   Landing 2026-07 — vitrine visual, nota da faixa de dados,
+   painel de regimes e bloco de fechamento.
+   ============================================================ */
+
+/* --- dossies de coexistencia: mesmo corpo alegorico, funcoes incompativeis --- */
+.vitrine-block { border-bottom: 2px solid var(--print-black); }
+
+.dossier {
+  margin: 2.75rem 0 0;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border);
+}
+.dossier:first-of-type { border-top: 0; padding-top: .5rem; }
+
+.dossier-head {
+  display: flex; align-items: baseline; gap: .75rem; flex-wrap: wrap;
+  margin-bottom: .5rem;
+}
+.dossier-num {
+  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .1em;
+  background: var(--print-black); color: var(--paper);
+  padding: .18rem .5rem; line-height: 1;
+}
+.dossier-head h3 {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 1.5rem; line-height: 1.15; margin: 0;
+  color: var(--text-primary);
+}
+.dossier-span {
+  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.dossier-read {
+  max-width: 68ch; margin: 0 0 1.4rem;
+  font-size: 1rem; line-height: 1.62; color: var(--text-secondary);
+  border-left: 2px solid var(--gold); padding-left: .9rem;
+}
+.dossier-read strong { color: var(--text-primary); }
+
+.dossier-figs {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+/* dossie de duas imagens nao deve esticar para tres colunas */
+.dossier-figs:has(> li:nth-child(2):last-child) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 62%;
+}
+
+.vfig { margin: 0; }
+.vfig > a {
+  display: block; text-decoration: none; color: inherit; height: 100%;
+  border: 1px solid var(--border); background: var(--paper-card);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.vfig > a:hover, .vfig > a:focus-visible {
+  border-color: var(--print-black); box-shadow: var(--shadow); transform: translateY(-3px);
+  text-decoration: none;
+}
+.vfig figure { margin: 0; display: flex; flex-direction: column; height: 100%; }
+.vfig img {
+  display: block; width: 100%; height: 250px; object-fit: cover;
+  background: var(--muted, #DDD0B8);
+  border-bottom: 1px solid var(--border);
+}
+.vfig figcaption {
+  padding: .8rem .85rem 1rem; display: flex; flex-direction: column;
+  gap: .35rem; flex: 1 1 auto;
+}
+.vfig .vmeta {
+  font-family: var(--font-mono); font-size: .7rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.vfig figcaption strong {
+  font-family: var(--font-display); font-size: 1.02rem; line-height: 1.25;
+  font-weight: 400; color: var(--text-primary);
+}
+.vfig .pill { align-self: flex-start; margin-top: auto; }
+.vitrine-foot { margin: 2.5rem 0 0; text-align: center; }
+
+/* --- nota da faixa de dados --- */
+.band-note {
+  font-size: .88rem; line-height: 1.6; color: var(--text-secondary);
+  padding-top: 1rem; padding-bottom: 0; margin: 0 auto;
+  max-width: 760px; text-align: center;
+}
+
+/* --- painel de regimes: rotulo e glosa em duas linhas --- */
+.panel.regimes p {
+  display: flex; flex-direction: column; gap: .15rem;
+  padding: .7rem 0; margin: 0; border-bottom: 1px solid var(--border);
+}
+.panel.regimes p:last-child { border-bottom: 0; }
+.panel.regimes strong {
+  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--accent);
+}
+.panel.regimes span { font-size: .95rem; color: var(--text-secondary); }
+.panel.regimes .pending strong { color: var(--text-muted); }
+.micro-note {
+  font-size: .86rem; color: var(--text-secondary);
+  border-left: 2px solid var(--gold); padding-left: .8rem; margin: 1rem 0 1.4rem;
+}
+
+/* --- bloco de fechamento --- */
+.block.closing { border-top: 2px solid var(--print-black); }
+
+/* --- responsivo dos dossies --- */
+@media (max-width: 1000px) {
+  .dossier-figs:has(> li:nth-child(2):last-child) { max-width: 100%; }
+  .vfig img { height: 210px; }
+}
+
+/* Em tela estreita, coluna unica destruiria a comparacao: o dossie vira
+   faixa deslizante com encaixe, mantendo as imagens lado a lado. */
+@media (max-width: 720px) {
+  .dossier-figs,
+  .dossier-figs:has(> li:nth-child(2):last-child) {
+    display: flex; max-width: 100%; gap: .8rem;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: .6rem;
+    scrollbar-width: thin;
+  }
+  .dossier-figs > .vfig {
+    flex: 0 0 72%; scroll-snap-align: start;
+  }
+  .dossier-head h3 { font-size: 1.28rem; }
+  .dossier-read { font-size: .95rem; }
+  .vfig img { height: 200px; }
+  .vfig figcaption { padding: .65rem .7rem .8rem; }
+  .vfig figcaption strong { font-size: .92rem; }
+  .vfig .vmeta { font-size: .72rem; letter-spacing: .1em; }
+  .band-note { text-align: left; font-size: .84rem; }
+  .dossier-figs::after { content: ""; flex: 0 0 .2rem; }
+}
+@media (max-width: 420px) {
+  .dossier-figs > .vfig { flex: 0 0 80%; }
+  .vfig img { height: 190px; }
+}
+
+/* Sem :has() (navegadores antigos), o dossie de duas imagens ainda funciona */
+@supports not selector(:has(*)) {
+  .dossier-figs { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+}
+
+
+/* Exposição aprovada: lavanda / tinta violeta / ação amarelo ácido. */
+:root {
+  --ex-ground:#b99aee; --ex-reading:#ede4ff; --ex-ink:#25103f; --ex-muted:#49335f;
+  --ex-action:#e4ff38; --ex-selection:#6524bd; --ex-line:#aa89c9;
+  --bg-primary:var(--ex-ground); --bg-secondary:var(--ex-reading); --bg-card:var(--ex-reading);
+  --text-primary:var(--ex-ink); --text-secondary:var(--ex-muted); --text-muted:var(--ex-muted);
+  --accent:var(--ex-selection); --border:var(--ex-line); --font-body:Arial,Helvetica,sans-serif;
+}
+body { background:var(--ex-ground); color:var(--ex-ink); font:16px/1.5 Arial,Helvetica,sans-serif; }
+button,input,select { font:inherit; }
+button,a,input,select { -webkit-tap-highlight-color:transparent; }
+button { cursor:pointer; }
+button:disabled { cursor:default; opacity:.4; }
+[hidden] { display:none!important; }
+.sr-only { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0; }
+.ex-page { background:linear-gradient(to right,var(--ex-ground) 0 67.6%,var(--ex-reading) 67.6% 100%); }
+.ex-header { min-height:86px; padding:20px 3.125%; display:flex; align-items:center; gap:40px; }
+.ex-brand { margin-right:auto; display:inline-flex; align-items:center; gap:13px; font:600 34px/1.1 Arial,Helvetica,sans-serif; letter-spacing:.09em; color:var(--ex-ink); }
+.ex-brand:hover { color:var(--ex-ink); text-decoration:none; }
+.ex-header nav { display:flex; align-items:center; gap:36px; }
+.ex-header nav a { color:var(--ex-ink); white-space:nowrap; font:16px/1.5 Arial,Helvetica,sans-serif; padding:8px 0; }
+.ex-header nav a[aria-current] { font-weight:600; text-decoration:underline; text-underline-offset:10px; text-decoration-thickness:2px; }
+.ex-search-shortcut { border:0; border-left:1px solid var(--ex-ink); padding:0 7px 0 40px; background:none; color:var(--ex-ink); }
+.ex-header svg,.ex-filters svg,.ex-action svg,.ex-more svg { width:24px; height:24px; flex:none; }
+.exhibition { padding:0 3.125% 25px; }
+.ex-filters { display:grid; grid-template-columns:1.85fr 1fr 1fr .96fr 1fr 1.12fr; gap:13px; margin:0 0 21px; }
+.ex-filters label { min-width:0; }
+.ex-filters select,.ex-search,.ex-filter-button { width:100%; min-height:45px; border:1px solid var(--ex-ink); border-radius:4px; background:transparent; color:var(--ex-ink); }
+.ex-filters select { padding:0 15px; font-size:14px; cursor:pointer; }
+.ex-filters select option { background:var(--ex-reading); color:var(--ex-ink); }
+.ex-search { display:flex; align-items:center; gap:12px; padding:0 14px; }
+.ex-search input { width:100%; min-width:0; outline:none; border:0; background:none; color:var(--ex-ink); font-size:14px; padding:10px 0; }
+.ex-search input::placeholder { color:var(--ex-muted); opacity:1; }
+.ex-search:focus-within { outline:2px solid var(--ex-selection); outline-offset:3px; }
+.ex-filter-button { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:0 15px; font-size:14px; }
+.ex-layout { display:grid; grid-template-columns:minmax(0,2.51fr) minmax(0,1fr); gap:4%; }
+.ex-viewer { min-width:0; }
+.ex-stage { position:relative; width:100%; height:clamp(390px,62.3vh,710px); background:#b8aec8; overflow:hidden; }
+#ex-image { width:100%; height:100%; display:flex; align-items:center; justify-content:center; }
+#ex-image img { width:100%; height:100%; object-fit:contain; }
+.ex-arrow { position:absolute; top:44%; width:52px; height:52px; border:0; border-radius:50%; background:rgba(37,22,48,.88); color:white; display:grid; place-items:center; }
+.ex-arrow svg { width:25px; height:25px; }
+.ex-prev { left:15px; }.ex-next { right:15px; }
+.ex-position { position:absolute; bottom:16px; left:17px; font-size:14px; color:white; background:rgba(25,10,53,.65); padding:2px 8px; }
+.ex-expand { position:absolute; bottom:14px; right:14px; display:grid; place-items:center; border:0; background:rgba(25,10,53,.65); color:white; width:38px; height:38px; }
+.ex-expand svg { width:27px; height:27px; }
+.ex-filmstrip { display:flex; gap:18px; overflow-x:auto; overscroll-behavior-x:contain; scrollbar-width:thin; scrollbar-color:var(--ex-selection) transparent; padding:15px 0 9px; position:relative; }
+.ex-thumb { flex:0 0 calc((100% - 72px)/5); min-width:0; text-align:left; background:none; border:0; color:var(--ex-ink); padding:0 0 4px; align-self:flex-start; }
+.ex-thumb-image { display:flex; align-items:center; justify-content:center; height:117px; background:#b8aec8; position:relative; }
+.ex-thumb img { height:100%; width:100%; object-fit:contain; }
+.ex-thumb[aria-pressed="true"] .ex-thumb-image { outline:2px solid var(--ex-selection); outline-offset:2px; }
+.ex-thumb[aria-pressed="true"] .ex-thumb-image::after { content:''; position:absolute; left:-2px; right:-2px; bottom:-8px; height:3px; background:var(--ex-selection); }
+.ex-thumb-title { display:block; font-size:14px; line-height:1.3; margin-top:13px; overflow-wrap:anywhere; }
+.ex-thumb-meta { display:block; font-size:13px; color:var(--ex-muted); margin-top:4px; }
+.ex-thumb[aria-pressed="true"] .ex-thumb-title { font-weight:700; }
+.ex-results { display:flex; gap:16px; align-items:center; justify-content:space-between; margin-top:8px; font-size:12px; color:var(--ex-muted); }
+.ex-results button { color:var(--ex-ink); background:none; border:0; text-decoration:underline; min-height:36px; }
+.ex-caption { padding:20px 0 0; min-width:0; }
+.ex-overline { font-size:13px; letter-spacing:.16em; color:var(--ex-muted); margin-bottom:2px; }
+.ex-caption h1 { font:600 clamp(30px,3.65vw,56px)/1.12 Arial,Helvetica,sans-serif; letter-spacing:-.045em; margin:0 0 8px; overflow-wrap:anywhere; }
+.ex-author { font-size:27px; line-height:1.25; margin:0 0 12px; letter-spacing:-.04em; }
+.ex-date { font-size:18px; margin-bottom:27px; }
+.ex-description { border-top:1px solid var(--ex-line); padding-top:18px; min-height:126px; margin-bottom:24px; font-size:16px; line-height:1.45; }
+.ex-action { width:100%; display:flex; align-items:center; gap:15px; min-height:54px; padding:12px 15px; border:1px solid var(--ex-ink); border-radius:4px; background:none; color:var(--ex-ink); font-size:16px; text-decoration:none; margin-bottom:15px; }
+.ex-action svg:last-child { margin-left:auto; width:20px; }
+.ex-action:hover { color:var(--ex-ink); background:rgba(255,255,255,.18); text-decoration:none; }
+.ex-primary { background:var(--ex-action); font-weight:600; }
+.ex-primary:hover { background:#dcf83b; }
+.ex-metadata { border-top:1px solid var(--ex-line); padding-top:17px; margin-top:26px; display:grid; grid-template-columns:34% 1fr; gap:10px 7px; font-size:14px; line-height:1.4; }
+.ex-metadata dt { color:var(--ex-muted); }
+.ex-metadata dd { margin:0; overflow-wrap:anywhere; }
+.ex-more { display:flex; align-items:center; gap:24px; margin-top:30px; min-height:40px; padding:0; color:var(--ex-ink); background:none; border:0; font-size:14px; }
+.ex-more svg { width:17px; }
+.ex-empty,.ex-missing { padding:30px; text-align:center; color:var(--ex-ink); font-size:16px; }
+.ex-thumb .ex-missing { font-size:11px; padding:8px; }
+.ex-dialog { border:1px solid var(--ex-ink); border-radius:4px; margin:auto; width:min(1200px,94vw); max-height:90vh; background:var(--ex-reading); color:var(--ex-ink); padding:24px; overflow:auto; }
+.ex-dialog::backdrop { background:rgba(25,10,53,.8); }
+.ex-dialog-close { display:block; margin:0 0 20px auto; background:none; border:1px solid var(--ex-ink); border-radius:4px; padding:10px 20px; color:inherit; }
+.ex-dialog-layout { display:grid; grid-template-columns:1fr 1fr; gap:30px; }
+.ex-dialog-image img { width:100%; height:auto; max-height:72vh; object-fit:contain; }
+.ex-dialog h2 { font:600 30px/1.2 Arial,Helvetica,sans-serif; margin-bottom:25px; }
+.ex-record dt { font-size:12px; font-weight:600; margin-top:16px; color:var(--ex-muted); }
+.ex-record dd { margin:4px 0 0; font-size:15px; overflow-wrap:anywhere; }
+.ex-dialog-image-only .ex-dialog-layout { grid-template-columns:1fr; }
+.ex-dialog-image-only .ex-dialog-details { text-align:center; }
+.ex-dialog-image-only .ex-action { width:max-content; margin:20px auto 0; }
+:focus-visible { outline:3px solid var(--ex-selection); outline-offset:4px; }
+.ex-home .block,.ex-home .stat-band,.ex-home .band-note,.site-footer { background:var(--ex-reading); }
+.ex-home .block { padding-block:65px; }
+.ex-home .section-head h2 { font-family:Arial,Helvetica,sans-serif; }
+.site-footer { border-top:1px solid var(--ex-line); color:var(--ex-ink); }
+.site-footer .muted { color:var(--ex-muted); }
+.research-page { background:var(--ex-reading); }
+@media(min-width:1800px) { .exhibition,.ex-header { max-width:1800px; margin-inline:auto; } }
+@media(max-width:1100px) {
+ .ex-header { gap:24px; }.ex-brand { font-size:27px; }.ex-header nav { gap:22px; }.ex-header nav a { font-size:14px; }
+ .ex-search-shortcut { padding-left:22px; }.ex-filters { grid-template-columns:1.4fr 1fr 1fr; gap:10px; }
+ .ex-layout { grid-template-columns:minmax(0,1.7fr) minmax(0,1fr); gap:25px; }.ex-page { background:linear-gradient(to right,var(--ex-ground) 0 63%,var(--ex-reading) 63%); }
+ .ex-stage { height:56vh; }.ex-author { font-size:22px; }.ex-caption h1 { font-size:34px; }.ex-description { min-height:100px; }
+ .ex-thumb { flex-basis:calc((100% - 36px)/3); }.ex-thumb-image { height:110px; }
+}
+@media(max-width:700px) {
+ .ex-page { background:var(--ex-ground); }.ex-header { padding:22px 20px 17px; min-height:0; flex-wrap:wrap; gap:20px 12px; }
+ .ex-brand { font-size:25px; letter-spacing:.065em; }.ex-header nav { order:3; width:100%; justify-content:space-between; gap:14px; }.ex-header nav a { font-size:14px; }
+ .ex-search-shortcut { padding-left:14px; }.ex-search-shortcut svg { width:22px; }.exhibition { padding:0 20px 25px; }
+ .ex-filters { grid-template-columns:1fr 1fr; gap:9px; margin-bottom:16px; }.ex-filters .ex-search { grid-column:1/-1; }.ex-filter-button { grid-column:1/-1; }
+ .ex-filters select,.ex-filter-button { font-size:13px; min-height:43px; }.ex-search { min-height:45px; }
+ .ex-layout { display:flex; flex-direction:column; gap:20px; }.ex-stage { height:clamp(290px,54vh,460px); }.ex-arrow { width:42px; height:42px; }.ex-prev { left:10px; }.ex-next { right:10px; }
+ .ex-filmstrip { gap:12px; padding-top:14px; }.ex-thumb { flex-basis:calc((100% - 24px)/3); }.ex-thumb-image { height:90px; }.ex-thumb-title { font-size:12px; }.ex-thumb-meta { font-size:11px; }
+ .ex-caption { background:var(--ex-reading); margin:0 -20px -25px; padding:28px 20px 35px; }.ex-caption h1 { font-size:38px; }.ex-author { font-size:23px; }
+ .ex-description { min-height:0; margin-bottom:24px; }.ex-action { min-height:54px; }.ex-metadata { font-size:14px; }.ex-results { font-size:11px; }
+ .ex-dialog { padding:17px; }.ex-dialog-layout { grid-template-columns:1fr; }.ex-dialog-image img { max-height:42vh; }.ex-dialog h2 { font-size:25px; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none!important; animation:none!important; } }
+
+/* Edelweiss: decorative brand illustrations, independent of corpus imagery.
+   Three motifs share one transparent sprite adapted from Ana's reference sheet. */
+.brand-ornament { display:block; flex:none; background-image:url("edelweiss-ornaments.png"); background-repeat:no-repeat; pointer-events:none; }
+.brand-flower { width:46px; height:46px; background-image:url("edelweiss-flower.png"); background-size:contain; background-repeat:no-repeat; background-position:center; }
+.ornamental-divider { display:flex; align-items:center; justify-content:center; gap:24px; padding:22px max(24px,6vw); background:var(--ex-reading); }
+.ornamental-divider::before,.ornamental-divider::after { content:""; height:1px; max-width:260px; flex:1; background:var(--ex-line); }
+.brand-scroll { width:min(290px,48vw); aspect-ratio:810 / 280; background-size:268.148% 258.571%; background-position:50% 50%; }
+.brand-seal { width:112px; height:112px; margin:0 auto 14px; background-size:300% 100%; background-position:100% 50%; clip-path:inset(0 0 0 6%); }
+.site-footer { border-top:0; padding-top:0; }
+.site-footer .ornamental-divider { padding-block:16px 28px; }
+.footer-mark .motto { color:var(--ex-ink); }
+@media(max-width:700px) {
+ .ex-brand { gap:8px; font-size:clamp(19px,5.5vw,25px); letter-spacing:.045em; }
+ .brand-flower { width:34px; height:34px; }
+ .ornamental-divider { gap:14px; padding:20px; }
+ .brand-scroll { width:190px; max-width:58vw; }
+ .brand-seal { width:92px; height:92px; }
+}
+
+/* Editorial hierarchy: ratio 4/3, base 18px. Local fonts only. */
+:root {
+ --atlas-caption:13.5px;
+ --atlas-body:18px;
+ --atlas-subtitle:24px;
+ --atlas-heading:32px;
+ --atlas-section:42.65px;
+ --atlas-display:56.86px;
+ --atlas-title:75.81px;
+}
+.ex-page,.research-page { font-family:"Crimson Pro",Georgia,serif; font-size:var(--atlas-body); line-height:1.6; }
+.ex-brand { font-family:"Instrument Serif",Georgia,serif; font-size:var(--atlas-section); font-weight:400; line-height:1; letter-spacing:.035em; }
+.ex-header nav a { font-family:"JetBrains Mono",monospace; font-size:var(--atlas-caption); font-weight:400; line-height:1.4; }
+.ex-header nav a[aria-current] { font-weight:600; }
+.ex-caption h1 { font-family:"Instrument Serif",Georgia,serif; font-size:clamp(var(--atlas-section),4.94vw,var(--atlas-title)); font-style:italic; font-weight:400; line-height:1.04; letter-spacing:-.02em; margin-bottom:14px; text-wrap:balance; }
+.ex-author { font-family:"Crimson Pro",Georgia,serif; font-size:var(--atlas-subtitle); font-style:italic; font-weight:400; line-height:1.35; letter-spacing:0; }
+.ex-overline,.ex-date,.ex-thumb-meta,.ex-results,.ex-position { font-family:"JetBrains Mono",monospace; font-size:var(--atlas-caption); font-weight:400; line-height:1.5; }
+.ex-overline { letter-spacing:.075em; margin-bottom:12px; }
+.ex-description { font-family:"Crimson Pro",Georgia,serif; font-size:var(--atlas-body); line-height:1.6; max-width:65ch; }
+.ex-filters select,.ex-search input,.ex-filter-button,.ex-action,.ex-more,.ex-dialog-close { font-family:"JetBrains Mono",monospace; font-size:var(--atlas-caption); line-height:1.5; }
+.ex-primary { font-weight:600; }
+.ex-metadata { font-size:var(--atlas-body); line-height:1.4; align-items:baseline; }
+.ex-metadata dt,.ex-record dt { font-family:"JetBrains Mono",monospace; font-size:var(--atlas-caption); line-height:1.5; }
+.ex-metadata dd { font-family:"Crimson Pro",Georgia,serif; }
+.ex-thumb-title { font-family:"Crimson Pro",Georgia,serif; font-size:var(--atlas-body); font-weight:400; line-height:1.25; }
+.ex-thumb[aria-pressed="true"] .ex-thumb-title { font-weight:600; }
+.ex-dialog h2 { font-family:"Instrument Serif",Georgia,serif; font-size:var(--atlas-section); font-weight:400; line-height:1.1; letter-spacing:-.01em; }
+.ex-record dd { font-family:"Crimson Pro",Georgia,serif; font-size:var(--atlas-body); line-height:1.6; max-width:65ch; }
+.ex-home .block h2,.ex-home .section-head h2,.research-page h1 { font-family:"Instrument Serif",Georgia,serif; font-size:clamp(var(--atlas-section),4vw,var(--atlas-display)); font-weight:400; line-height:1.1; letter-spacing:-.015em; }
+.ex-home .block h3,.research-page h2 { font-family:"Instrument Serif",Georgia,serif; font-size:var(--atlas-heading); font-weight:400; line-height:1.2; }
+.ex-home .block p,.research-page .prose p { font-family:"Crimson Pro",Georgia,serif; font-size:var(--atlas-body); line-height:1.6; max-width:65ch; }
+.site-footer .muted,.site-footer a,.footer-mark .motto { font-family:"Crimson Pro",Georgia,serif; font-size:var(--atlas-body); line-height:1.5; }
+.site-footer h4 { font-size:var(--atlas-caption); letter-spacing:.065em; }
+@media(max-width:1100px) {
+ .ex-header { gap:20px; }
+ .ex-header nav { gap:20px; }
+ .ex-brand { font-size:var(--atlas-heading); }
+ .ex-header nav a { font-size:var(--atlas-caption); }
+}
+@media(max-width:700px) {
+ .ex-brand { font-size:var(--atlas-heading); letter-spacing:.02em; gap:6px; }
+ .ex-header nav { gap:10px; }
+ .ex-header nav a { font-size:12px; }
+ .ex-caption h1 { font-size:var(--atlas-display); }
+ .ex-filters select,.ex-search input,.ex-filter-button { font-size:var(--atlas-caption); }
+ .ex-thumb-meta { font-size:12px; }
+}
+
+/* Site palette: lavender exhibition, lilac reading, violet anchors, acid actions. */
+:root {
+ --palette-violet:#3b175d;
+ --palette-blush:#f4ddeb;
+ --palette-paper:#f7f1ff;
+ --ink:var(--ex-ink); --print-black:var(--ex-ink);
+ --paper:var(--ex-reading); --paper-2:var(--palette-paper); --paper-card:var(--palette-paper);
+ --surface-card:var(--palette-paper); --surface-folio:var(--palette-paper);
+ --bg-card:var(--palette-paper); --bg-card-hover:var(--palette-blush);
+ --accent-hover:#451581; --accent-light:#e0cff4; --accent-border:var(--ex-line);
+ --red:var(--ex-selection); --red-deep:#451581; --brand-lacre:var(--ex-selection);
+ --gold:var(--ex-selection); --gold-deep:#451581; --gold-line:var(--ex-line);
+ --border-light:#d1bce7; --border-strong:var(--ex-ink); --muted:#d0bce7;
+ --shadow:0 8px 24px #3b175d12; --shadow-lg:0 24px 72px #3b175d26;
+}
+::selection { background:var(--ex-action); color:var(--ex-ink); }
+.ex-stage,.ex-thumb-image { background:#ccbae3; }
+.ex-home .block { background:var(--ex-reading); }
+.ex-home .block.alt { background:var(--palette-blush); border-color:var(--ex-line); }
+.ex-home .vitrine-block { background:var(--palette-paper); }
+.ex-home .stat-band { background:var(--ex-action); border-color:var(--ex-ink); }
+.stat .num,.stat .lbl { color:var(--ex-ink); }
+.ex-home .band-note { background:transparent; }
+.btn-primary,.btn-gold { background:var(--ex-action); border-color:var(--ex-ink); color:var(--ex-ink); }
+.btn-primary:hover,.btn-gold:hover { background:#d3ee20; border-color:var(--ex-ink); color:var(--ex-ink); }
+.btn-dark,.label,.tag,.dossier-index { background:var(--palette-violet); border-color:var(--palette-violet); color:var(--palette-paper); }
+.btn-dark:hover { background:var(--ex-reading); color:var(--ex-ink); }
+.tag.red,.tag.gold { background:var(--accent-light); color:var(--ex-ink); }
+.research-page .hero { background:var(--ex-ground); }
+.research-page .hero .subtitle { color:var(--palette-violet); }
+.prose blockquote,.notice { border-left-color:var(--ex-selection); }
+.site-footer {
+ --ex-line:#86639f; --text-primary:#f7f1ff; --text-secondary:#e3d4f0;
+ --text-muted:#e3d4f0; --ex-muted:#e3d4f0;
+ background:var(--palette-violet); color:var(--palette-paper);
+}
+.site-footer .ornamental-divider { background:transparent; }
+.site-footer h4,.site-footer a:hover { color:var(--ex-action); }
+.site-footer a,.site-footer .muted,.footer-mark .motto { color:#e3d4f0; }
+.site-footer :focus-visible { outline-color:var(--ex-action); }
+
+/* The homepage introduces the research; the collection owns the image browser. */
+.ex-home { background:var(--ex-ground); }
+.home-opening { display:grid; grid-template-columns:1fr 1.1fr; gap:5vw; padding:55px max(32px,6vw) 65px; max-width:1800px; margin:auto; }
+.home-intro { padding-top:15px; }
+.home-intro .eyebrow { color:var(--palette-violet); font-size:12px; letter-spacing:.08em; }
+.home-intro h1 { font-family:"Instrument Serif",Georgia,serif; font-size:clamp(72px,7.7vw,124px); line-height:.94; font-weight:400; letter-spacing:-.025em; margin:27px 0; }
+.home-intro h1 em { color:var(--palette-violet); font-weight:400; }
+.home-deck { max-width:38ch; font-size:24px; line-height:1.45; }
+.home-actions { display:flex; align-items:center; flex-wrap:wrap; gap:22px; margin:30px 0; }
+.home-actions>a:last-child { color:var(--ex-ink); text-decoration:underline; text-underline-offset:5px; }
+.home-byline { font-family:var(--font-mono); font-size:11px; color:var(--ex-muted); }
+.home-constellation { position:relative; min-height:700px; }
+.home-art { position:absolute; display:block; color:var(--ex-ink); box-shadow:0 14px 32px #3b175d20; background:var(--palette-paper); padding:8px; transition:transform .2s; }
+.home-art img { width:100%; display:block; object-fit:contain; }
+.home-art span { display:block; font:10px/1.5 var(--font-mono); padding:8px 2px 2px; }
+.home-art:hover { color:var(--ex-ink); text-decoration:none; transform:rotate(0deg) translateY(-6px); z-index:3; }
+.home-art:focus-visible { z-index:4; }
+.home-art-justice { width:48%; top:0; left:0; transform:rotate(-7deg); }
+.home-art-republic { width:44%; right:0; top:85px; transform:rotate(8deg); background:var(--ex-action); }
+.home-art-columbia { width:64%; left:12%; top:435px; transform:rotate(-3deg); }
+@media(max-width:1000px) {
+ .home-opening { gap:35px; padding-inline:32px; }
+ .home-constellation { min-height:600px; }
+ .home-art-columbia { top:340px; }
+}
+@media(max-width:700px) {
+ .home-opening { grid-template-columns:1fr; padding:24px 24px 40px; gap:36px; }
+ .home-intro h1 { font-size:clamp(68px,19vw,100px); }
+ .home-deck { font-size:22px; }
+ .home-constellation { min-height:540px; }
+ .home-art-columbia { top:330px; width:73%; left:10%; }
+}
+@media(prefers-reduced-motion:reduce) { .home-art { transition:none; } }
+
+/* Grade: parede do acervo — molduras de papel sobre a lavanda, caption em mono. */
+.ex-toolbar { display:flex; justify-content:flex-end; margin:-8px 0 13px; }
+.ex-results-actions { display:flex; align-items:center; gap:16px; }
+.ex-view-toggle { display:flex; }
+.ex-view-toggle button { display:flex; align-items:center; gap:8px; min-height:36px; padding:0 14px; border:1px solid var(--ex-ink); background:transparent; color:var(--ex-ink); font-family:"JetBrains Mono",monospace; font-size:var(--atlas-caption); }
+.ex-view-toggle button svg { width:17px; height:17px; }
+.ex-view-toggle button:first-child { border-radius:4px 0 0 4px; }
+.ex-view-toggle button + button { border-left:0; border-radius:0; }
+.ex-view-toggle button:last-child { border-radius:0 4px 4px 0; }
+.ex-view-toggle button[aria-pressed="true"] { background:var(--ex-action); font-weight:600; }
+.ex-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:18px; margin-top:15px; }
+.ex-frame { display:block; text-align:left; background:var(--palette-paper); border:1px solid var(--ex-line); padding:8px; color:var(--ex-ink); box-shadow:var(--shadow); transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s cubic-bezier(.22,1,.36,1); }
+.ex-frame:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); color:var(--ex-ink); text-decoration:none; }
+.ex-frame[aria-pressed="true"] { outline:2px solid var(--ex-selection); outline-offset:2px; }
+.ex-frame-image { display:flex; align-items:center; justify-content:center; height:200px; background:#ccbae3; }
+.ex-frame-image img { width:100%; height:100%; object-fit:contain; }
+.ex-frame-cap { display:block; font-family:"JetBrains Mono",monospace; font-size:10px; line-height:1.5; padding:8px 2px 2px; overflow-wrap:anywhere; }
+.ex-frame .ex-missing { font-size:11px; padding:20px 8px; }
+@media(max-width:1100px) { .ex-grid { grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); } .ex-frame-image { height:160px; } }
+@media(max-width:700px) { .ex-grid { grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:12px; } .ex-frame-image { height:130px; } .ex-results { flex-wrap:wrap; } }
+
+/* Constelação: campo disperso de molduras — a lógica da home estendida ao acervo inteiro. */
+.ex-constellation { height:clamp(430px,72vh,780px); overflow-y:auto; overflow-x:hidden; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:var(--ex-selection) transparent; margin-top:15px; }
+.ex-const-field { position:relative; margin:0 auto; }
+.ex-star { position:absolute; display:block; text-align:left; background:var(--palette-paper); padding:8px; border:0; color:var(--ex-ink); box-shadow:0 14px 32px #3b175d20; transform:rotate(var(--rot,0deg)); transition:transform .2s cubic-bezier(.22,1,.36,1); }
+.ex-star:hover { transform:rotate(0deg) translateY(-6px); z-index:3; color:var(--ex-ink); text-decoration:none; box-shadow:var(--shadow-lg); }
+.ex-star:focus-visible { z-index:4; }
+.ex-star[aria-pressed="true"] { outline:2px solid var(--ex-selection); outline-offset:2px; }
+.ex-star-image { display:block; background:#ccbae3; }
+.ex-star-image img { width:100%; height:auto; max-height:260px; object-fit:contain; display:block; }
+.ex-star .ex-missing { font-size:11px; padding:20px 8px; }
+@media(max-width:700px) {
+ .ex-constellation { height:64vh; }
+ .ex-star-image { height:150px; display:flex; align-items:center; justify-content:center; }
+ .ex-star-image img { height:100%; max-height:150px; object-fit:contain; }
+ .ex-star .ex-frame-cap { padding-inline:0; }
+}
+.ex-layout-wide { grid-template-columns:minmax(0,1fr); }
+.ex-layout-wide .ex-caption { display:none; }
+@media(max-width:700px) { .ex-layout-wide { display:block; } }
+.ex-ground-full { background:var(--ex-ground); }
+
+/* Percursos curatoriais: mesma identidade do acervo, com ordem editorial. */
+.ex-constellation-label { margin:0 0 18px; padding:10px 15px; background:var(--ex-action); color:var(--ex-ink); font:13px/1.4 "JetBrains Mono",monospace; }
+.ex-constellation-label a { color:inherit; text-underline-offset:3px; }
+.ex-analysis { margin-top:28px; border-top:1px solid var(--ex-line); padding-top:18px; }
+.ex-analysis summary { cursor:pointer; font:600 18px/1.3 var(--font-display); }
+.ex-analysis h3 { margin:22px 0 6px; font:600 14px/1.4 "JetBrains Mono",monospace; text-transform:uppercase; letter-spacing:.04em; }
+.ex-analysis p { max-width:66ch; line-height:1.6; }
+.ex-analysis-summary { font-size:1.08rem; }
+.ex-method-note { color:var(--ex-muted); font-size:.82rem; }
+.ex-collection-intro { max-width:72ch; margin:0 0 24px; }
+.ex-collection-intro p { margin:0 0 10px; }
+.ex-collection-intro a { color:var(--ex-selection); text-underline-offset:3px; }
+.ex-analysis-limitation { padding:12px; background:var(--ex-action); color:var(--ex-ink); }
+.constellation-main { padding:clamp(44px,7vw,110px) 4vw; }
+.constellation-intro { max-width:1050px; margin:0 auto clamp(60px,9vw,130px); }
+.constellation-intro h1 { max-width:15ch; margin:.15em 0; font:500 clamp(46px,8vw,112px)/.94 var(--font-display); letter-spacing:-.045em; }
+.constellation-period { font:13px/1.5 "JetBrains Mono",monospace; text-transform:uppercase; letter-spacing:.08em; }
+.constellation-deck { max-width:66ch; font-size:clamp(18px,2vw,26px); line-height:1.45; }
+.constellation-items { list-style:none; max-width:1250px; margin:0 auto; padding:0; }
+.constellation-work { border-top:1px solid var(--ex-line); padding:clamp(28px,5vw,72px) 0; }
+.constellation-work a { color:inherit; text-decoration:none; }
+.constellation-work figure { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr); gap:clamp(24px,6vw,90px); align-items:center; margin:0; }
+.constellation-work:nth-child(even) .constellation-image { order:2; }
+.constellation-image { min-width:0; background:rgba(255,255,255,.22); }
+.constellation-work img { display:block; width:100%; max-height:76vh; object-fit:contain; }
+.constellation-work h2 { margin:8px 0; font:500 clamp(30px,4vw,62px)/1.05 var(--font-display); letter-spacing:-.03em; overflow-wrap:anywhere; }
+.constellation-number,.constellation-meta,.constellation-open { font:12px/1.5 "JetBrains Mono",monospace; text-transform:uppercase; letter-spacing:.06em; }
+.constellation-open { display:inline-block; margin-top:20px; border-bottom:1px solid; }
+.constellation-switcher { max-width:1250px; margin:50px auto; display:flex; justify-content:space-between; gap:20px; }
+@media(max-width:700px) {
+ .constellation-work figure { grid-template-columns:1fr; }
+ .constellation-work:nth-child(even) .constellation-image { order:0; }
+ .constellation-main { padding-inline:18px; }
+ .ex-header nav:has([data-constellations-link]:not([hidden])) { flex-wrap:wrap; justify-content:flex-start; }
+ .constellation-switcher { flex-wrap:wrap; }
 }

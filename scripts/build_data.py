@@ -26,11 +26,24 @@ from __future__ import annotations
 import argparse
 import json
 import pathlib
+import re
 import sys
 from collections import Counter
 
+# URLs-placeholder internas nunca vão ao site público (regra: não inventar URL).
+PLACEHOLDER_URL = re.compile(r"iconocracy(-corpus)?\.(local|corpus)")
+
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DEFAULT_OUT = ROOT / "site" / "data"
+ACERVO_DIR = ROOT / "site" / "assets" / "acervo"
+
+
+def tem_webp_local(item_id) -> bool:
+    """Espelho local em WebP existe para o item (servido antes do fallback remoto)."""
+    if not item_id:
+        return False
+    path = ACERVO_DIR / f"{item_id}.webp"
+    return path.is_file() and path.stat().st_size > 0
 
 # Fonte primária (repo de trabalho) e fallback público (este repo autônomo).
 CORPUS_CANDIDATES = [
@@ -52,6 +65,8 @@ COUNTRY_PT = {
     "Spain": "Espanha", "Austria": "Áustria", "Denmark": "Dinamarca",
     "Mexico": "México", "Argentina": "Argentina", "Switzerland": "Suíça",
     "Uruguay": "Uruguai", "CL": "Chile",
+    # apelidos que apareciam crus no dataset e duplicavam o filtro de pais
+    "EUA": "Estados Unidos", "USA": "Estados Unidos", "US": "Estados Unidos",
 }
 
 REGIME_PT = {
@@ -111,16 +126,18 @@ def build_stats(corpus: list[dict]) -> dict:
 
     years = []
     for x in corpus:
-        d = str(x.get("date") or "")
-        for tok in d.replace("-", " ").replace("/", " ").split():
-            if tok.isdigit() and 1700 <= int(tok) <= 2000:
-                years.append(int(tok))
-                break
+        d = str(x.get("date") or x.get("year") or "")
+        years.extend(int(tok) for tok in re.findall(r"(?<!\d)(1\d{3}|20\d{2}|2100)(?!\d)", d))
 
     return {
         "total": len(corpus),
         "paises": len([c for c in countries if c != "Outros"]),
-        "com_imagem": sum(1 for x in corpus if x.get("thumbnail_url")),
+        # mesmo criterio de build_items(), senao stats e grade divergem
+        "com_imagem": sum(
+            1 for x in corpus
+            if x.get("thumbnail_url") or x.get("url_image_download")
+            or tem_webp_local(x.get("id"))
+        ),
         "periodo": {"min": min(years) if years else None, "max": max(years) if years else None},
         "por_pais": [{"pais": p, "n": n} for p, n in countries.most_common()],
         "por_regime": [
@@ -135,6 +152,13 @@ def build_items(enriched: list[dict]) -> list[dict]:
     itens = []
     for x in enriched:
         img = x.get("thumbnail_url") or x.get("url_image_download") or ""
+        fonte = x.get("url") or ""
+        if PLACEHOLDER_URL.search(fonte):
+            fonte = ""
+        citacao = x.get("citation_abnt") or ""
+        if PLACEHOLDER_URL.search(citacao):
+            citacao = re.sub(r"\s*Disponível em:.*$", "", citacao, flags=re.S).rstrip()
+            citacao = re.sub(r"\s*Acesso em:.*$", "", citacao, flags=re.S).rstrip()
         item = {
             "id": x.get("id"),
             "titulo": x.get("title") or "(sem título)",
@@ -147,10 +171,10 @@ def build_items(enriched: list[dict]) -> list[dict]:
             "motivos": x.get("motif") or [],
             "descricao": (x.get("description") or "")[:600],
             "direitos": x.get("rights") or "",
-            "fonte_url": x.get("url") or "",
+            "fonte_url": fonte,
             "imagem": img,
-            "tem_imagem": bool(img),
-            "citacao": x.get("citation_abnt") or "",
+            "tem_imagem": bool(img) or tem_webp_local(x.get("id")),
+            "citacao": citacao,
         }
         # Preserva metadados iconográficos quando presentes (opcional, não quebra filtros).
         iconografia = x.get(ICONOGRAPHIC_KEY)
