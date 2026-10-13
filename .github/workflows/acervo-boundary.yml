@@ -1,0 +1,26 @@
+name: Validate acervo boundary
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  acervo-boundary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'jsonschema==4.23.0'
+      - name: Test canonical boundary and unchanged production contract
+        run: |
+          python -m unittest discover -s tests -p 'test_acervo.py' -v
+          python -m unittest discover -s tests -p 'test_build_data_golden.py' -v
+      - name: Check input and generated output without writing
+        run: python scripts/acervo.py --check
