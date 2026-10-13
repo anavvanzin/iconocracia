@@ -64,6 +64,22 @@
     return matches.length === 1 ? matches[0] : null;
   }
 
+  function validCards(entry) {
+    return entry.cards === undefined || (Array.isArray(entry.cards)
+      && entry.cards.length === entry.item_ids?.length
+      && entry.cards.every((card, index) => card?.id === entry.item_ids[index]
+        && ['data', 'caption', 'texto_alternativo'].every(key => nonempty(card[key]))));
+  }
+  function constellationItem(item, definition) {
+    const card = definition.cards?.find(card => card.id === item.id);
+    if (!card) return item;
+    const result = { ...item, data: card.data, descricao: card.caption, texto_alternativo: card.texto_alternativo };
+    delete result.analise_publica; // The approved caption owns this curatorial card.
+    const image = overlayImages.get(item);
+    if (image) overlayImages.set(result, image);
+    return result;
+  }
+
   function publishedConstellations(definitions, items) {
     if (!Array.isArray(definitions)) return [];
     const ids = new Set(items.map(item => item.id));
@@ -74,7 +90,7 @@
       && counts.get(entry.slug) === 1 && nonempty(entry.title)
       && Array.isArray(entry.item_ids) && entry.item_ids.length > 0
       && new Set(entry.item_ids).size === entry.item_ids.length
-      && entry.item_ids.every(id => nonempty(id) && ids.has(id)));
+      && entry.item_ids.every(id => nonempty(id) && ids.has(id)) && validCards(entry));
   }
 
   const workLink = (item, slug) => `acervo.html?item=${encodeURIComponent(item.id)}&constelacao=${encodeURIComponent(slug)}`;
@@ -126,7 +142,7 @@
     return frame;
   }
 
-  window.IconocraciaPublication = { approvedAnalysis, publicItems, resolveItem, publishedConstellations, workLink, imageURL, imageSource, loadContext, showNavigation };
+  window.IconocraciaPublication = { constellationItem, approvedAnalysis, publicItems, resolveItem, publishedConstellations, workLink, imageURL, imageSource, loadContext, showNavigation };
   const intro = document.querySelector('#constellation-intro');
   if (!intro) return;
   const list = document.querySelector('#constellation-items');
@@ -156,7 +172,7 @@
     if (typeof definition.method_note === 'string' && definition.method_note.trim()) intro.append(node('p', 'ex-method-note', definition.method_note));
     const byId = new Map(items.map(item => [item.id, item]));
     definition.item_ids.forEach((id, index) => {
-      const item = byId.get(id);
+      const item = constellationItem(byId.get(id), definition);
       const li = node('li', 'constellation-work');
       const link = node('a'); link.href = workLink(item, definition.slug);
       const figure = node('figure');
