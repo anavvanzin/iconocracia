@@ -368,6 +368,20 @@
       "item_ids": [
         "US-008",
         "473ac4d7-a507-51c6-8215-983c2442fc23"
+      ],
+      "cards": [
+        {
+          "id": "US-008",
+          "data": "3 de março de 1913",
+          "caption": "Hedwig Reicher como Columbia, Washington, 3 de março de 1913. Fotografia; autoria fotográfica não indicada no registro consultado.",
+          "texto_alternativo": "Hedwig Reicher como Columbia: capacete, couraça, vestes longas e haste, diante de outras participantes e do edifício do Tesouro."
+        },
+        {
+          "id": "473ac4d7-a507-51c6-8215-983c2442fc23",
+          "data": "c1916",
+          "caption": "Columbia calls — Enlist now for U.S. Army. Concepção de Frances Adams Halsted; pintura de Vincent Aderente. Litografia colorida; o catálogo da Library of Congress registra c1916.",
+          "texto_alternativo": "Columbia em túnica, com bandeira erguida e espada abaixada, sobre a América do Norte no globo; o texto convoca ao alistamento."
+        }
       ]
     }
   ],

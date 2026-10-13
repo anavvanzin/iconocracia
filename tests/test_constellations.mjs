@@ -110,3 +110,40 @@ test('work links carry canonical ID and ordered constellation context', () => {
   assert.equal(link.searchParams.get('item'), 'canonical-a');
   assert.equal(link.searchParams.get('constelacao'), 'percurso');
 });
+
+const catalogue = JSON.parse(await readFile(new URL('../site/data/acervo.json', import.meta.url)));
+const definitions = JSON.parse(await readFile(new URL('../site/data/constellations.json', import.meta.url)));
+const editorial = await readFile(new URL('../editorial/constellations/columbia-dois-chamados.md', import.meta.url), 'utf8');
+
+test('Columbia cards use approved captions, dates and detailed alternatives for both works', () => {
+  const definition = api.publishedConstellations(definitions, catalogue)[0];
+  assert.equal(definition.slug, 'columbia-dois-chamados');
+  const before = JSON.stringify(catalogue);
+  const alternatives = [...editorial.matchAll(/!\[([^\]]+)\]/g)].map(match => match[1]);
+  definition.item_ids.forEach((id, index) => {
+    const baseline = catalogue.find(item => item.id === id);
+    const item = api.constellationItem({ ...baseline, descricao: '500 mil exemplares — 1917', analise_publica: {status: 'approved', summary: 'Unreviewed replacement'} }, definition);
+    assert.equal(item.texto_alternativo, alternatives[index]);
+    assert.notEqual(item.texto_alternativo, item.titulo);
+    assert.equal(item.analise_publica, undefined);
+    assert.doesNotMatch(item.descricao, /500|tiragem|1917/);
+    assert.equal(item.data, index === 0 ? '3 de março de 1913' : 'c1916');
+    assert.match(item.descricao, index === 0 ? /Fotografia; autoria fotográfica não indicada/ : /Frances Adams Halsted; pintura de Vincent Aderente/);
+    assert.equal(api.imageSource(item), `assets/acervo/${id}.webp`);
+    assert.equal(new URL(api.workLink(item, definition.slug), 'https://iconocracia.com').searchParams.get('item'), id);
+  });
+  assert.equal(JSON.stringify(catalogue), before);
+  const unrelated = { ...published };
+  assert.equal(api.constellationItem(items[0], unrelated), items[0]);
+  assert.match(source, /constellationItem\(byId.get\(id\), definition\)/);
+  assert.match(source, /image.alt = item.texto_alternativo \|\| item.titulo/);
+});
+
+test('incomplete, reordered or empty approved cards fail closed', () => {
+  const definition = definitions[0];
+  for (const cards of [[], definition.cards.slice(1), [...definition.cards].reverse(), definition.cards.map(card => ({...card, texto_alternativo: ''}))]) {
+    assert.equal(api.publishedConstellations([{...definition, cards}], catalogue).length, 0);
+  }
+  assert.equal(definition.cards.length, 2);
+  assert.doesNotMatch(JSON.stringify(definitions), /approved_by|approved_at|rights_approval|indicators|internal/);
+});

@@ -293,6 +293,13 @@ def build_constellations(definitions: list[dict], items: list[dict], include_rev
             raise ValueError(f"Constelação {slug} incompleta, duplicada ou com itens em revisão; publicação indivisível.")
         public = {key: copy.deepcopy(definition[key]) for key in
                   ("slug", "title", "subtitle", "introduction", "method_note") if key in definition}
+        if "cards" in definition:
+            cards = definition["cards"]
+            if [aliases.get(card["id"], card["id"]) for card in cards] != ordered:
+                raise ValueError(f"Cartões de {slug} devem acompanhar todos os IDs em ordem.")
+            public["cards"] = [{**{key: card[key] for key in
+                                 ("data", "caption", "texto_alternativo")}, "id": item_id}
+                               for card, item_id in zip(cards, ordered)]
         result.append({**public, "editorial_status": "published", "item_ids": ordered})
     return result
 

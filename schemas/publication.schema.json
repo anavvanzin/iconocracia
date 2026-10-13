@@ -79,6 +79,7 @@
           "editorial_status": {"enum": ["review", "published", "withheld"]},
           "title": {"type": "string"}, "subtitle": {"type": "string"},
           "introduction": {"type": "string"}, "method_note": {"type": "string"},
+          "cards": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["id", "data", "caption", "texto_alternativo"], "properties": {"id": {"type": "string", "minLength": 1}, "data": {"type": "string", "minLength": 1}, "caption": {"type": "string", "minLength": 1}, "texto_alternativo": {"type": "string", "minLength": 1}}}},
           "approved_by": {"type": "string", "minLength": 1},
           "approved_at": {"type": "string", "format": "date"},
           "item_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true}
