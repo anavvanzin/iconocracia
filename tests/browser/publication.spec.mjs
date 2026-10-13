@@ -15,17 +15,67 @@ async function mockPublication(page, definitions, entries = []) {
   await page.route('**/data/publication-overlay.json', route => route.fulfill({ contentType: 'application/json', body: JSON.stringify({ version: 1, items: entries }) }));
 }
 
-test('the real public artifact has no pending constellation or editorial analysis', async ({ page }) => {
+test('the real public artifact publishes only the approved Columbia reading and ordered works', async ({ page }) => {
+  const slug = 'columbia-dois-chamados';
+  const title = 'Columbia — dois chamados da nação';
+  const ids = ['US-008', '473ac4d7-a507-51c6-8215-983c2442fc23'];
+  const works = ids.map(id => catalog.find(item => item.id === id));
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
   await page.goto('/constelacoes/');
-  await expect(page.locator('#constellation-intro h1')).toHaveText('Nenhum percurso publicado');
-  await expect(page.locator('#constellation-items li')).toHaveCount(0);
   expect(new URL(page.url()).pathname).toBe('/constelacoes');
-  await page.goto('/acervo?item=BR-009&visao=palco');
-  await expect(page.locator('#result-count')).toContainText(`${catalog.length} de ${catalog.length}`);
-  await page.locator('#ex-open').click();
-  await expect(page.locator('.ex-analysis')).toHaveCount(0);
+  await expect(page.locator('#constellation-intro h1')).toHaveText(title);
+  await expect(page.locator('.constellation-period')).toHaveText('Sufrágio e recrutamento nos Estados Unidos, 1913–1917');
+  await expect(page.locator('.constellation-deck')).toHaveText('Nas duas reproduções, Columbia ocupa posição dominante, com vestes longas, emblemas nacionais e um braço estendido. Reicher porta capacete e couraça diante de outras participantes; no cartaz, a figura ergue a bandeira, segura uma espada e se apoia sobre a América do Norte no globo. A fotografia registra a encenação sufragista de 3 de março de 1913, diante do edifício do Tesouro, em Washington. O cartaz convoca ao alistamento no Exército; segundo a Library of Congress, Halsted doou o poema e o desenho ao Departamento de Guerra após a entrada dos Estados Unidos na guerra, em 6 de abril de 1917. A mesma personificação nacional participa de mobilizações com finalidades distintas. A montagem permite perguntar quem pode falar em nome da nação e o que essa voz exige. A couraça de Reicher mostra que atributos marciais também podiam servir à reivindicação sufragista.');
+  await expect(page.locator('#constellation-intro .ex-method-note')).toHaveText('O elo visual e os contextos estão documentados nos registros 97510759 e 95506508 da Library of Congress; influência direta entre as imagens não foi demonstrada. A comparação preserva a diferença entre encenação fotografada e imagem impressa, sem estabelecer uma sequência evolutiva. O acervo indica 1917 para o cartaz; o catálogo institucional registra c1916. A doação em 1917 é uma etapa distinta e não determina, sozinha, a data de impressão do exemplar. Leitura baseada em reproduções digitais.');
+  await expect(page.locator('[data-constellations-link]')).toBeVisible();
+  await expect(page.locator('#constellation-items li')).toHaveCount(2);
+  await expect(page.locator('#constellation-items h2')).toHaveText([
+    'Hedwig Reicher as Columbia in suffrage pageant',
+    'Columbia calls—Enlist now for U.S. Army',
+  ]);
+  await expect(page.locator('#constellation-items .constellation-number')).toHaveText(['01', '02']);
+  const hrefs = await page.locator('#constellation-items a').evaluateAll(links => links.map(link => link.getAttribute('href')));
+  expect(hrefs.map(href => {
+    const params = new URL(href, 'https://iconocracia.com').searchParams;
+    return [params.get('item'), params.get('constelacao')];
+  })).toEqual(ids.map(id => [id, slug]));
+  for (let index = 0; index < works.length; index++) {
+    const card = page.locator('#constellation-items li').nth(index);
+    await expect(card.locator('img')).toHaveAttribute('src', `assets/acervo/${ids[index]}.webp`);
+    await expect(card.locator('img')).toHaveAttribute('alt', works[index].titulo);
+    await expect.poll(() => card.locator('img').evaluate(img => img.complete && img.naturalWidth > 0)).toBe(true);
+    await expect(card.locator('figcaption p').last()).toHaveText(works[index].descricao);
+  }
+  await expect(page.locator('#constellation-switcher a')).toHaveCount(0);
+  await expect(page.locator('body')).not.toContainText('Constituições atlânticas');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+
+  await page.goto(`/acervo?item=${ids[0]}&constelacao=${slug}&visao=palco`);
+  await expect(page.locator('#result-count')).toContainText('2 de 2 obras');
+  await expect(page.locator('#ex-curatorial-context')).toHaveText(`Percurso: ${title}`);
+  for (let index = 0; index < works.length; index++) {
+    await expect(page.locator('#ex-title')).toHaveText(works[index].titulo);
+    expect(new URL(page.url()).searchParams.get('item')).toBe(ids[index]);
+    expect(new URL(page.url()).searchParams.get('constelacao')).toBe(slug);
+    await page.locator('#ex-open').click();
+    await expect(page.locator('.ex-analysis')).toHaveCount(0);
+    await page.keyboard.press('Escape');
+    if (index === 0) await page.locator('.ex-next').click();
+  }
+
+  await page.goto('/constelacoes?slug=constituicoes-atlanticas');
+  await expect(page.locator('#constellation-intro h1')).toHaveText('Percurso indisponível');
+  await expect(page.locator('#constellation-items li')).toHaveCount(0);
+  await expect(page.locator('body')).not.toContainText('Entre a Revolução Francesa e o cinquentenário belga');
+  for (const id of ['BR-009', '324a90b6-403b-5b36-9bcf-d4c4db9efdc1', 'BE-004']) {
+    await page.goto(`/acervo?item=${id}&visao=palco`);
+    await expect(page.locator('#result-count')).toContainText(`${catalog.length} de ${catalog.length}`);
+    expect(new URL(page.url()).searchParams.get('item')).toBe(id);
+    await page.locator('#ex-open').click();
+    await expect(page.locator('#dialog-title')).toHaveText(catalog.find(item => item.id === id).titulo);
+    await expect(page.locator('.ex-analysis')).toHaveCount(0);
+  }
   expect(errors).toEqual([]);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });

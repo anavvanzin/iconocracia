@@ -1,4 +1,17 @@
 {
   "version": 1,
-  "items": []
+  "items": [
+    {
+      "id": "473ac4d7-a507-51c6-8215-983c2442fc23",
+      "constelacoes": [
+        "columbia-dois-chamados"
+      ]
+    },
+    {
+      "id": "US-008",
+      "constelacoes": [
+        "columbia-dois-chamados"
+      ]
+    }
+  ]
 }
