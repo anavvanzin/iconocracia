@@ -37,7 +37,7 @@ class AcervoTests(unittest.TestCase):
             image.parent.mkdir(parents=True)
             image.write_bytes(b'image')
             source = record(local_image_path='assets/custom.jpg')
-            self.assertTrue(acervo.build([source]).itens[0]['tem_imagem'])
+            self.assertFalse(acervo.build([source]).itens[0]['tem_imagem'])
             image.unlink()
             self.assertFalse(acervo.build([source]).itens[0]['tem_imagem'])
             source['local_image_path'] = '../secret.jpg'
@@ -83,6 +83,72 @@ class AcervoTests(unittest.TestCase):
             self.assertNotIn('generated_at', package.stats['meta'])
             self.assertNotIn(str(tmp), json.dumps(package.stats))
 
+    def test_credential_urls_never_reach_public_json(self):
+        for url in ('https://user:token@example.org/a', 'https://user@example.org/a',
+                    'https://:token@example.org/a', 'https://user%40name:secret@example.org/a'):
+            with self.subTest(url=url), tempfile.TemporaryDirectory() as tmp:
+                source = record(url=url, thumbnail_url=url, url_iiif=url,
+                                url_image_download=url)
+                package = acervo.build([source], out_dir=tmp)
+                self.assertEqual(package.itens[0]['fonte_url'], '')
+                self.assertFalse(package.itens[0]['tem_imagem'])
+                self.assertNotIn(url, (Path(tmp) / 'acervo.json').read_text())
+                for field in ('citation_abnt', 'description', 'iconographic_metadata'):
+                    extra = {'nested': [url]} if field == 'iconographic_metadata' else 'Reference ' + url
+                    with self.assertRaisesRegex(ValueError, '^URL com credenciais proibida na projeção$'):
+                        acervo.build([record(**{field: extra})])
+
+    def test_private_outputs_are_blocked_in_cli_and_api_including_symlinks(self):
+        with tempfile.TemporaryDirectory() as tmp, patch.object(acervo, 'ROOT', Path(tmp)):
+            site = Path(tmp) / 'site'
+            site.mkdir()
+            alias = Path(tmp) / 'alias'
+            alias.symlink_to(site, target_is_directory=True)
+            for status in ('review', 'draft', 'archived'):
+                source = record(editorialStatus=status)
+                package = acervo.build([source], status=status)
+                for out in (site, site / 'data', alias / 'data'):
+                    with self.subTest(status=status, out=out), self.assertRaises(ValueError):
+                        package.escrever(out)
+                    with self.assertRaises(ValueError):
+                        acervo.build([source], status=status, out_dir=out)
+                private = Path(tmp) / status
+                package.escrever(private)
+                self.assertEqual(json.loads((private / 'acervo.json').read_text())[0]['id'], 'a')
+                source_path = Path(tmp) / 'source.json'
+                source_path.write_text(json.dumps([source]))
+                base = ['acervo.py', '--corpus', str(source_path), '--status', status]
+                for argv, expected in ((base, 1), (base + ['--out', str(site / 'data')], 1),
+                                       (base + ['--check'], 0)):
+                    with patch.object(sys, 'argv', argv):
+                        self.assertEqual(acervo.main(), expected)
+            self.assertEqual(list(site.iterdir()), [])
+
+    def test_nested_object_key_order_has_identical_bytes_and_provenance(self):
+        first = record(iconographic_metadata={'z': [{'b': 2, 'a': 1}], 'a': {'y': 2, 'x': 1}})
+        second = record(iconographic_metadata={'a': {'x': 1, 'y': 2}, 'z': [{'a': 1, 'b': 2}]})
+        with tempfile.TemporaryDirectory() as tmp:
+            one = acervo.build([first], out_dir=Path(tmp) / 'one')
+            two = acervo.build([second], out_dir=Path(tmp) / 'two')
+            self.assertEqual(one.meta, two.meta)
+            for name in ('acervo.json', 'stats.json'):
+                self.assertEqual((Path(tmp) / 'one' / name).read_bytes(),
+                                 (Path(tmp) / 'two' / name).read_bytes())
+
+    def test_unloadable_local_files_do_not_inflate_image_statistics(self):
+        with tempfile.TemporaryDirectory() as tmp, patch.object(acervo, 'ROOT', Path(tmp)):
+            local = Path(tmp) / 'site/assets/custom.jpg'
+            local.parent.mkdir(parents=True)
+            local.write_bytes(b'image')
+            for fields in ({'local_image_path': 'assets/custom.jpg'},
+                           {'files': [{'type': 'image', 'path': 'assets/custom.jpg'}]}):
+                package = acervo.build([record(**fields)])
+                self.assertEqual(package.itens[0]['imagem'], '')
+                self.assertEqual(package.stats['com_imagem'], 0)
+                package = acervo.build([record(**fields, thumbnail_url='https://example.org/a.jpg')])
+                self.assertEqual(package.itens[0]['imagem'], 'https://example.org/a.jpg')
+                self.assertEqual(package.stats['com_imagem'], 1)
+
     def test_invalid_input_output_schema_and_missing_schema_fail(self):
         for sources in ([record(), record()], [record(motif=[3])], [{'id': 'a'}]):
             with self.subTest(sources=sources), self.assertRaises(ValueError):
@@ -103,7 +169,7 @@ class AcervoTests(unittest.TestCase):
             source = record(files=[{'type': 'image', 'role': 'primary', 'path': 'assets/file.jpg'}],
                             thumbnail_url='https://iconocracy.local/placeholder',
                             url_iiif='https://example.org/iiif', url_image_download='https://example.org/download')
-            self.assertEqual(acervo.build([source]).itens[0]['imagem'], 'assets/file.jpg')
+            self.assertEqual(acervo.build([source]).itens[0]['imagem'], source['url_iiif'])
             image.unlink()
             self.assertEqual(acervo.build([source]).itens[0]['imagem'], source['url_iiif'])
 

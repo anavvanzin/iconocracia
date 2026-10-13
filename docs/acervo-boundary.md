@@ -68,7 +68,7 @@ os IDs por campo alterado e as estatísticas propostas. Comparação com o publi
 - Nenhum ID adicionado/removido, nenhuma mudança de ordem, país, regime, motivos
   originais, disponibilidade ou período.
 - `imagem`: 332 registros passam a apontar explicitamente para seu WebP publicado.
-  Cadeia: WebP não vazio → caminho local ou files[] existente dentro de site/ →
+  Cadeia compatível com os consumidores atuais: WebP não vazio →
   thumbnail HTTP(S) → IIIF HTTP(S) → download HTTP(S). Arquivo ausente, vazio,
   fora do pacote ou URL-placeholder não conta como reprodução.
 - `suporte`: 43 registros passam a usar `support` quando `medium` está ausente.
@@ -113,3 +113,38 @@ A escrita é atômica por arquivo, não uma transação de dois arquivos. Falha 
 preparar o pacote preserva ambos os destinos; falha entre os dois replaces pode
 produzir uma dupla incompleta. O fluxo editorial deve validar a dupla concluída
 antes de commit/deploy, mantendo a produção anterior quando houver erro.
+
+## Correções da revisão P1 — 13/10/2026
+
+- URLs de fonte/imagem com userinfo (usuário ou senha, inclusive vazios ou
+  codificados) são descartadas. URLs com credenciais em texto livre, citações
+  ou metadados aninhados abortam a projeção sem registrar o valor sensível.
+  A escrita revalida esse limite antes de criar arquivos.
+- `review`, `draft` e `archived` exigem `--out` explícito fora de `site/` para
+  escrita. `--check` continua aceitando esses status sem escrever. A API
+  `build(..., out_dir=...)` e `pacote.escrever(...)` aplicam o mesmo bloqueio,
+  inclusive para caminhos relativos e symlinks resolvidos. O pacote conserva
+  o status selecionado; ausência de status nos registros continua published.
+- `local_image_path` e `files[].path` alternativos não são selecionados nesta
+  etapa: app.js sem o módulo editorial carrega o espelho WebP e faz fallback
+  apenas HTTP(S); o módulo editorial já admite alguns caminhos locais. A
+  projeção usa a interseção dos contratos para funcionar em ambos os casos. Habilitar caminhos alternativos depende da migração conjunta dos
+  consumidores prevista na RFC #52. Não há mudança no frontend ou nos dados.
+- JSON emitido ordena recursivamente chaves de objetos, mantém arrays e usa
+  UTF-8, indentação de dois espaços e rejeição de NaN. É o formato canônico
+  deste módulo, não uma implementação de RFC 8785. Reordenar chaves aninhadas
+  preserva bytes e hashes; a ordem editorial dos registros não muda.
+
+Os quatro testes de regressão cobrem credenciais, destinos privados (CLI/API),
+imagens locais incompatíveis e chaves aninhadas. O teste do relatório continua
+exigindo exatamente os mesmos IDs, ordem e todos os agregados propostos:
+337 registros, 332 reproduções, 17 países, período 1239–2021. O golden legado
+permanece byte a byte preservado. A projeção não interpreta o manifesto privado
+como autorização: a integração com #33 e a aprovação curatorial permanecem
+pendentes antes de substituir geradores ou habilitar migração/publicação.
+
+Validação desta revisão: 80 testes Python (79 aprovados, um pulado por ausência
+de google-chrome), 44 testes JavaScript aprovados, `acervo.py --check`,
+`publication_sync.py --check` e `git diff --check` aprovados. Os quatro novos
+testes foram também executados contra o head anterior e reproduziram todos
+os P1. Nenhum arquivo público, manifesto editorial ou workflow foi alterado.

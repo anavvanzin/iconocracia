@@ -42,7 +42,7 @@ TECHNICAL_MOTIFS = {'descricao_pre_iconografica'}
 
 
 def _json_bytes(value):
-    return json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False).encode('utf-8')
+    return json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True, allow_nan=False).encode('utf-8')
 
 
 def _digest(value):
@@ -146,8 +146,37 @@ def _country(value):
 
 def _url(value):
     raw = str(value or '').strip()
-    parsed = urllib.parse.urlparse(raw)
-    return raw if parsed.scheme in ('https', 'http') and parsed.netloc and not PLACEHOLDER.search(raw) else ''
+    try:
+        parsed = urllib.parse.urlparse(raw)
+        valid = (parsed.scheme in ('https', 'http') and parsed.hostname
+                 and parsed.username is None and parsed.password is None
+                 and not PLACEHOLDER.search(raw))
+    except ValueError:
+        return ''
+    return raw if valid else ''
+
+
+def _reject_credentials(value):
+    """Fail closed for credential URLs in passthrough text and nested metadata.
+
+    Do not include the offending value in errors/logs.
+    """
+    if isinstance(value, dict):
+        for key, child in value.items():
+            _reject_credentials(key)
+            _reject_credentials(child)
+    elif isinstance(value, list):
+        for child in value:
+            _reject_credentials(child)
+    elif isinstance(value, str):
+        for url in re.findall(r'https?://[^\s<>"\']+', value, re.I):
+            try:
+                parsed = urllib.parse.urlparse(url)
+                credentials = parsed.username is not None or parsed.password is not None
+            except ValueError:
+                credentials = True
+            if credentials:
+                raise ValueError('URL com credenciais proibida na projeção')
 
 
 def _local(value):
@@ -167,14 +196,8 @@ def _image(item):
     mirror = _local(f'assets/acervo/{key}.webp') if '/' not in key and '\\' not in key else ''
     if mirror:
         return mirror
-    local = _local(item.get('local_image_path'))
-    if local:
-        return local
-    for file in item.get('files') or []:
-        if file.get('type') == 'image' and file.get('role') in (None, 'primary', 'thumbnail'):
-            local = _local(file.get('path'))
-            if local:
-                return local
+    # Alternative local paths require the optional editorial renderer.
+    # Defer them until the consumer migration in RFC #52.
     for name in ('thumbnail_url', 'url_iiif', 'url_image_download'):
         remote = _url(item.get(name))
         if remote:
@@ -252,6 +275,7 @@ class PacoteAcervo:
     itens: list[dict]
     stats: dict
     meta: MetaBuild
+    status: str = 'published'
 
     def fichas(self):
         keys = ('id', 'titulo', 'data', 'pais', 'regime', 'motivos', 'suporte', 'citacao', 'fonte_url', 'imagem')
@@ -263,8 +287,12 @@ class PacoteAcervo:
         Each file is atomic; this is not a two-file transactional filesystem.
         Editorial publication must validate the completed package before deploy.
         """
-        outputs = {'acervo.json': _json_bytes(self.itens), 'stats.json': _json_bytes(self.stats)}
         out_dir = Path(out_dir)
+        if self.status != 'published' and out_dir.resolve().is_relative_to((ROOT / 'site').resolve()):
+            raise ValueError('Projeções não publicadas exigem saída fora de site/')
+        _reject_credentials(self.itens)
+        _reject_credentials(self.stats)
+        outputs = {'acervo.json': _json_bytes(self.itens), 'stats.json': _json_bytes(self.stats)}
         out_dir.mkdir(parents=True, exist_ok=True)
         staged = []
         try:
@@ -320,7 +348,8 @@ def build(corpus=None, enriched=None, source_url=None, *, status='published', ou
     stats = _stats(items)
     if incluir_meta:
         stats['meta'] = meta.stable()
-    package = PacoteAcervo(items, stats, meta)
+    _reject_credentials(items)
+    package = PacoteAcervo(items, stats, meta, status)
     if out_dir is not None:
         package.escrever(out_dir)
     return package
@@ -332,14 +361,16 @@ def main():
     parser.add_argument('--enriched', type=Path)
     parser.add_argument('--source-url')
     parser.add_argument('--schema', type=Path, help='Contrato de saída; entrada sempre validada')
-    parser.add_argument('--out', type=Path, default=ROOT / 'site/data')
+    parser.add_argument('--out', type=Path, help='Saída explícita; status privado exige caminho fora de site/')
     parser.add_argument('--status', choices=sorted(STATUSES), default='published')
     parser.add_argument('--check', action='store_true')
     args = parser.parse_args()
     try:
+        if not args.check and args.status != 'published' and args.out is None:
+            raise ValueError('Status não publicado exige --out explícito fora de site/')
         package = build(args.corpus, args.enriched, args.source_url, status=args.status, schema=args.schema)
         if not args.check:
-            package.escrever(args.out)
+            package.escrever(args.out if args.out is not None else ROOT / 'site/data')
         print(json.dumps({'check': args.check, **package.meta.stable(), 'warnings': package.meta.warnings}, ensure_ascii=False))
         return 0
     except (OSError, ValueError, TypeError, urllib.error.URLError) as error:
