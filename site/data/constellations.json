@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "slug": "columbia-dois-chamados",
+    "title": "Columbia — dois chamados da nação",
+    "subtitle": "Sufrágio e recrutamento nos Estados Unidos, 1913–1917",
+    "introduction": "Nas duas reproduções, Columbia ocupa posição dominante, com vestes longas, emblemas nacionais e um braço estendido. Reicher porta capacete e couraça diante de outras participantes; no cartaz, a figura ergue a bandeira, segura uma espada e se apoia sobre a América do Norte no globo. A fotografia registra a encenação sufragista de 3 de março de 1913, diante do edifício do Tesouro, em Washington. O cartaz convoca ao alistamento no Exército; segundo a Library of Congress, Halsted doou o poema e o desenho ao Departamento de Guerra após a entrada dos Estados Unidos na guerra, em 6 de abril de 1917. A mesma personificação nacional participa de mobilizações com finalidades distintas. A montagem permite perguntar quem pode falar em nome da nação e o que essa voz exige. A couraça de Reicher mostra que atributos marciais também podiam servir à reivindicação sufragista.",
+    "method_note": "O elo visual e os contextos estão documentados nos registros 97510759 e 95506508 da Library of Congress; influência direta entre as imagens não foi demonstrada. A comparação preserva a diferença entre encenação fotografada e imagem impressa, sem estabelecer uma sequência evolutiva. O acervo indica 1917 para o cartaz; o catálogo institucional registra c1916. A doação em 1917 é uma etapa distinta e não determina, sozinha, a data de impressão do exemplar. Leitura baseada em reproduções digitais.",
+    "cards": [
+      {
+        "data": "3 de março de 1913",
+        "caption": "Hedwig Reicher como Columbia, Washington, 3 de março de 1913. Fotografia; autoria fotográfica não indicada no registro consultado.",
+        "texto_alternativo": "Hedwig Reicher como Columbia: capacete, couraça, vestes longas e haste, diante de outras participantes e do edifício do Tesouro.",
+        "id": "US-008"
+      },
+      {
+        "data": "c1916",
+        "caption": "Columbia calls — Enlist now for U.S. Army. Concepção de Frances Adams Halsted; pintura de Vincent Aderente. Litografia colorida; o catálogo da Library of Congress registra c1916.",
+        "texto_alternativo": "Columbia em túnica, com bandeira erguida e espada abaixada, sobre a América do Norte no globo; o texto convoca ao alistamento.",
+        "id": "473ac4d7-a507-51c6-8215-983c2442fc23"
+      }
+    ],
+    "editorial_status": "published",
+    "item_ids": [
+      "US-008",
+      "473ac4d7-a507-51c6-8215-983c2442fc23"
+    ]
+  }
+]

@@ -320,9 +320,89 @@
           "field": "espelho"
         }
       ]
+    },
+    {
+      "timestamp": "2026-10-01T17:36:33Z",
+      "checked_count": 332,
+      "accessible_count": 332,
+      "average_response_ms": 265,
+      "threshold_ms": 2000,
+      "status": "ok",
+      "top_slowest": [
+        {
+          "id": "FR-051",
+          "title": "N° 5 - Take up the sword of justice",
+          "url": "https://iconocracia.com/assets/acervo/FR-051.webp",
+          "response_ms": 527,
+          "field": "espelho"
+        },
+        {
+          "id": "FR-050",
+          "title": "Figures allégories de Vertus et de l'Ancien Testament : Enoch, allégorie de la Diligence, Mathusalem et allégorie de la Justice",
+          "url": "https://iconocracia.com/assets/acervo/FR-050.webp",
+          "response_ms": 494,
+          "field": "espelho"
+        },
+        {
+          "id": "FR-066",
+          "title": "Putti als Allegorien der Gerechtigkeit und der Klugheit",
+          "url": "https://iconocracia.com/assets/acervo/FR-066.webp",
+          "response_ms": 483,
+          "field": "espelho"
+        },
+        {
+          "id": "BE-002",
+          "title": "Palais de Justice de Bruxelles (Joseph Poelaert)",
+          "url": "https://iconocracia.com/assets/acervo/BE-002.webp",
+          "response_ms": 455,
+          "field": "espelho"
+        },
+        {
+          "id": "DE-017",
+          "title": "10 Pfennig Germania — Deutsches Reich (Weimar Republic, Mi.141, 1920)",
+          "url": "https://iconocracia.com/assets/acervo/DE-017.webp",
+          "response_ms": 428,
+          "field": "espelho"
+        },
+        {
+          "id": "BE-5F-LEOPOLD-1832",
+          "title": "5 Francs — Léopold I (founding coin of Belgium)",
+          "url": "https://iconocracia.com/assets/acervo/BE-5F-LEOPOLD-1832.webp",
+          "response_ms": 420,
+          "field": "espelho"
+        },
+        {
+          "id": "FR-054",
+          "title": "The Sun of Justice",
+          "url": "https://iconocracia.com/assets/acervo/FR-054.webp",
+          "response_ms": 420,
+          "field": "espelho"
+        },
+        {
+          "id": "BR-008",
+          "title": "Estátua da Justiça (Luiz Rochet) — referência no Almanak Laemmert",
+          "url": "https://iconocracia.com/assets/acervo/BR-008.webp",
+          "response_ms": 412,
+          "field": "espelho"
+        },
+        {
+          "id": "BE-001",
+          "title": "Allégorie de la Justice (Joseph Stallaert, Brussels City Hall)",
+          "url": "https://iconocracia.com/assets/acervo/BE-001.webp",
+          "response_ms": 411,
+          "field": "espelho"
+        },
+        {
+          "id": "FR-052",
+          "title": "[La Justice, la Vengeance et la Vérité] : [estampe] / F. Chifflart",
+          "url": "https://iconocracia.com/assets/acervo/FR-052.webp",
+          "response_ms": 409,
+          "field": "espelho"
+        }
+      ]
     }
   ],
-  "last_run": "2026-09-01T12:02:24Z",
-  "last_average_response_ms": 144,
+  "last_run": "2026-10-01T17:36:33Z",
+  "last_average_response_ms": 265,
   "last_status": "ok"
 }
