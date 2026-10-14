@@ -19,6 +19,108 @@ def record(id='a', **fields):
 
 
 class AcervoTests(unittest.TestCase):
+    def test_credentials_split_by_controls_abort_before_writing(self):
+        for control in ('\n', '\r', '\t', '\x00', '\x1f', '\x7f'):
+            url = 'https://user:' + control + 'secret@example.org/a'
+            for field in ('citation_abnt', 'description', 'iconographic_metadata'):
+                extra = {'nested': [url]} if field == 'iconographic_metadata' else 'Reference ' + url
+                with self.subTest(control=repr(control), field=field), tempfile.TemporaryDirectory() as tmp:
+                    out = Path(tmp) / 'out'
+                    with self.assertRaisesRegex(ValueError, '^URL com credenciais proibida na projeção$'):
+                        acervo.build([record(**{field: extra})], out_dir=out)
+                    self.assertFalse(out.exists())
+
+    def test_placeholder_citations_do_not_depend_on_portuguese_labels(self):
+        for citation in ('Reference. URL: https://iconocracy.local/object',
+                         'Reference (https://iconocracy-corpus.corpus/object).',
+                         'Reference https://iconocracy.local/object and https://example.org/source'):
+            with self.subTest(citation=citation), tempfile.TemporaryDirectory() as tmp:
+                package = acervo.build([record(citation_abnt=citation)], out_dir=tmp)
+                self.assertNotRegex(package.itens[0]['citacao'], acervo.PLACEHOLDER)
+                self.assertNotRegex((Path(tmp) / 'acervo.json').read_text(), acervo.PLACEHOLDER)
+                if 'example.org' in citation:
+                    self.assertIn('https://example.org/source', package.itens[0]['citacao'])
+
+    def test_provenance_identifies_equal_size_editorial_projections(self):
+        sources = [record(), record('b', editorialStatus='review'), record('c', editorialStatus='review')]
+        # Equal selected counts, but two review records exist in the full corpus.
+        enriched = sources[:2]
+        public = acervo.build(sources, enriched)
+        private = acervo.build(sources, enriched, status='review')
+        self.assertNotEqual(public.stats['meta'], private.stats['meta'])
+        for package, status in ((public, 'published'), (private, 'review')):
+            self.assertEqual(package.stats['meta']['selected_status'], status)
+            self.assertEqual(package.stats['meta']['selected_count'], 1)
+            self.assertEqual(package.stats['meta']['published_count'], 1)
+        only_private = acervo.build([sources[1]], status='review')
+        self.assertEqual(only_private.meta.published_count, 0)
+
+    def test_invalid_ports_do_not_inflate_image_statistics(self):
+        for port in ('bad', '99999', '-1'):
+            with self.subTest(port=port):
+                url = f'https://example.org:{port}/a'
+                package = acervo.build([record(url=url, thumbnail_url=url, url_iiif=url, url_image_download=url)])
+                self.assertEqual(package.itens[0]['fonte_url'], '')
+                self.assertEqual(package.itens[0]['imagem'], '')
+                self.assertEqual(package.stats['com_imagem'], 0)
+        package = acervo.build([record(thumbnail_url='https://example.org:443/a')])
+        self.assertEqual(package.stats['com_imagem'], 1)
+
+    def test_stdlib_applies_schema_valued_additional_properties(self):
+        schema = {'type': 'array', 'items': {'type': 'object', 'additionalProperties': {'type': 'string'}}}
+        with tempfile.TemporaryDirectory() as tmp, patch.dict(sys.modules, {'jsonschema': None}):
+            path = Path(tmp) / 'schema.json'
+            path.write_text(json.dumps(schema))
+            with self.assertRaises(ValueError):
+                acervo.build([record()], schema=path)
+            acervo._fallback_validate([{'extra': 'valid'}], schema)
+            with self.assertRaises(ValueError):
+                acervo._fallback_validate([{'extra': 3}], schema)
+
+    def test_write_revalidates_nested_mutations_before_touching_files(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / 'out'
+            out.mkdir()
+            for name in ('acervo.json', 'stats.json'):
+                (out / name).write_bytes(b'previous')
+            package = acervo.build([record()])
+            package.itens[0]['motivos'] = [3]
+            with self.assertRaises(ValueError):
+                package.escrever(out)
+            for name in ('acervo.json', 'stats.json'):
+                self.assertEqual((out / name).read_bytes(), b'previous')
+            self.assertEqual(len(list(out.iterdir())), 2)
+
+    def test_write_retains_custom_schema_after_source_is_removed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            schema = Path(tmp) / 'schema.json'
+            schema.write_text(json.dumps({'type': 'array', 'items': {'type': 'object',
+                'properties': {'suporte': {'enum': ['paper']}}}}))
+            package = acervo.build([record(medium='paper')], schema=schema)
+            schema.unlink()
+            package.escrever(Path(tmp) / 'valid')
+            package.itens[0]['suporte'] = 'metal'
+            with self.assertRaises(ValueError):
+                package.escrever(Path(tmp) / 'invalid')
+            self.assertFalse((Path(tmp) / 'invalid').exists())
+
+    def test_write_rejects_stale_statistics_and_provenance(self):
+        for mutation in ('item', 'stats', 'meta', 'credentials'):
+            with self.subTest(mutation=mutation), tempfile.TemporaryDirectory() as tmp:
+                package = acervo.build([record()])
+                if mutation == 'item':
+                    package.itens[0]['titulo'] = 'Changed title'
+                elif mutation == 'stats':
+                    package.stats['total'] = 2
+                elif mutation == 'meta':
+                    package.stats['meta']['selected_status'] = 'review'
+                else:
+                    package.itens[0]['citacao'] = 'https://user:\nsecret@example.org/a'
+                out = Path(tmp) / 'out'
+                with self.assertRaises(ValueError):
+                    package.escrever(out)
+                self.assertFalse(out.exists())
+
     def test_local_nonempty_mirror_precedes_remote_and_empty_is_ignored(self):
         with tempfile.TemporaryDirectory() as tmp, patch.object(acervo, 'ROOT', Path(tmp)):
             mirror = Path(tmp) / 'site/assets/acervo/a.webp'

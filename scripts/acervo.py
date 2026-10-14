@@ -20,7 +20,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from collections import Counter
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_ROOT = ROOT / 'schemas'
@@ -55,6 +55,10 @@ def _fallback_validate(value, schema, location='<root>'):
 
     Unknown constraints fail closed instead of pretending to validate them.
     """
+    if isinstance(schema, bool):
+        if not schema:
+            raise ValueError(f'{location}: schema proíbe o valor')
+        return
     supported = {'$schema', '$id', 'title', 'description', 'type', 'items', 'properties',
                  'required', 'additionalProperties', 'enum', 'minLength', 'maxItems'}
     unknown = set(schema) - supported
@@ -88,10 +92,16 @@ def _fallback_validate(value, schema, location='<root>'):
                 _fallback_validate(item, schema['properties'][name], f'{location}/{name}')
             elif schema.get('additionalProperties') is False:
                 raise ValueError(f'{location}: campo extra {name}')
+            elif isinstance(schema.get('additionalProperties'), dict):
+                _fallback_validate(item, schema['additionalProperties'], f'{location}/{name}')
 
 
 def _validate(value, path, warnings):
     schema = json.loads(Path(path).read_text(encoding='utf-8'))
+    _validate_schema(value, schema, warnings)
+
+
+def _validate_schema(value, schema, warnings):
     try:
         import jsonschema
     except ModuleNotFoundError:
@@ -148,6 +158,8 @@ def _url(value):
     raw = str(value or '').strip()
     try:
         parsed = urllib.parse.urlparse(raw)
+        # hostname alone does not validate the port (unlike the frontend URL API).
+        parsed.port
         valid = (parsed.scheme in ('https', 'http') and parsed.hostname
                  and parsed.username is None and parsed.password is None
                  and not PLACEHOLDER.search(raw))
@@ -169,7 +181,10 @@ def _reject_credentials(value):
         for child in value:
             _reject_credentials(child)
     elif isinstance(value, str):
-        for url in re.findall(r'https?://[^\s<>"\']+', value, re.I):
+        # URL parsers normalize embedded controls; scan that same representation
+        # conservatively, including other C0 controls and DEL, without changing text.
+        normalized = re.sub(r'[\x00-\x1f\x7f]', '', value)
+        for url in re.findall(r'https?://[^\s<>"\']+', normalized, re.I):
             try:
                 parsed = urllib.parse.urlparse(url)
                 credentials = parsed.username is not None or parsed.password is not None
@@ -218,6 +233,9 @@ def _item(source):
     citation = source.get('citation_abnt') or ''
     if PLACEHOLDER.search(citation):
         citation = re.sub(r'\s*(Disponível em:|Acesso em:).*$','', citation, flags=re.S).rstrip()
+        citation = re.sub(r'https?://[^\s<>"\']+',
+                          lambda match: '' if PLACEHOLDER.search(match[0]) else match[0],
+                          citation, flags=re.I).strip()
     result = {
         'id': source['id'], 'titulo': source['title'],
         'pais': _country(source.get('country_pt') or source['country']),
@@ -264,10 +282,14 @@ class MetaBuild:
     contract_version: str = CONTRACT_VERSION
     warnings: tuple[str, ...] = ()
     validation_errors: tuple[str, ...] = ()
+    selected_status: str = 'published'
+    selected_count: int = 0
+    items_sha256: str = ''
 
     def stable(self):
         return {name: getattr(self, name) for name in ('source_sha256', 'enriched_sha256',
-                'source_count', 'published_count', 'contract_version')}
+                'source_count', 'published_count', 'selected_status', 'selected_count',
+                'items_sha256', 'contract_version')}
 
 
 @dataclass(frozen=True)
@@ -276,6 +298,8 @@ class PacoteAcervo:
     stats: dict
     meta: MetaBuild
     status: str = 'published'
+    # Immutable snapshot: a custom contract must survive path changes/removal.
+    _schema_json: str | None = field(default=None, repr=False)
 
     def fichas(self):
         keys = ('id', 'titulo', 'data', 'pais', 'regime', 'motivos', 'suporte', 'citacao', 'fonte_url', 'imagem')
@@ -292,6 +316,16 @@ class PacoteAcervo:
             raise ValueError('Projeções não publicadas exigem saída fora de site/')
         _reject_credentials(self.itens)
         _reject_credentials(self.stats)
+        schema = (json.loads(self._schema_json) if self._schema_json is not None
+                  else json.loads((SCHEMA_ROOT / 'acervo.schema.json').read_text(encoding='utf-8')))
+        _validate_schema(self.itens, schema, [])
+        if self.status != self.meta.selected_status or _digest(self.itens) != self.meta.items_sha256:
+            raise ValueError('Pacote alterado após build: refaça a projeção')
+        expected_stats = _stats(self.itens)
+        if 'meta' in self.stats:
+            expected_stats['meta'] = self.meta.stable()
+        if self.stats != expected_stats:
+            raise ValueError('Estatísticas alteradas após build: refaça a projeção')
         outputs = {'acervo.json': _json_bytes(self.itens), 'stats.json': _json_bytes(self.stats)}
         out_dir.mkdir(parents=True, exist_ok=True)
         staged = []
@@ -341,15 +375,20 @@ def build(corpus=None, enriched=None, source_url=None, *, status='published', ou
     selected = [item for item in selected_source if item.get('editorialStatus', 'published') == status
                 and by_id[item['id']].get('editorialStatus', 'published') == status]
     items = sorted((_item(item) for item in selected), key=lambda i: (not i['tem_imagem'], i['pais'], i['titulo'], i['id']))
-    _validate(items, schema or SCHEMA_ROOT / 'acervo.schema.json', warnings)
+    _reject_credentials(items)
+    output_schema = json.loads(Path(schema or SCHEMA_ROOT / 'acervo.schema.json').read_text(encoding='utf-8'))
+    _validate_schema(items, output_schema, warnings)
+    published_count = sum(item.get('editorialStatus', 'published') == 'published'
+                          and by_id[item['id']].get('editorialStatus', 'published') == 'published'
+                          for item in selected_source)
     meta = MetaBuild(_digest(sorted(records, key=lambda i: i['id'])),
-                     _digest(sorted(selected_source, key=lambda i: i['id'])), len(records), len(items),
+                     _digest(sorted(selected_source, key=lambda i: i['id'])), len(records), published_count,
+                     selected_status=status, selected_count=len(items), items_sha256=_digest(items),
                      warnings=tuple(warnings))
     stats = _stats(items)
     if incluir_meta:
         stats['meta'] = meta.stable()
-    _reject_credentials(items)
-    package = PacoteAcervo(items, stats, meta, status)
+    package = PacoteAcervo(items, stats, meta, status, _json_bytes(output_schema).decode('utf-8'))
     if out_dir is not None:
         package.escrever(out_dir)
     return package

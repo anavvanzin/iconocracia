@@ -148,3 +148,31 @@ de google-chrome), 44 testes JavaScript aprovados, `acervo.py --check`,
 `publication_sync.py --check` e `git diff --check` aprovados. Os quatro novos
 testes foram também executados contra o head anterior e reproduziram todos
 os P1. Nenhum arquivo público, manifesto editorial ou workflow foi alterado.
+
+## Correções da segunda revisão — 14/10/2026
+
+- A detecção de credenciais examina strings sem controles C0/DEL, inclusive
+  URLs interrompidas por newline, CR ou tab, antes da validação de saída e da
+  escrita. O erro não inclui o valor sensível; textos válidos são preservados.
+- Citações removem URLs-placeholder independentemente do rótulo ou idioma.
+  URLs públicas no restante da citação continuam preservadas.
+- `stats.meta` inclui `selected_status`, `selected_count` e `items_sha256`
+  (hash da projeção canônica emitida). `published_count` conta apenas registros
+  publicados elegíveis na projeção enriched, inclusive ao selecionar review,
+  draft ou archived. Os hashes do corpus/enriched permanecem iguais.
+- URLs de imagens/fontes com portas inválidas ou fora de 0–65535 são descartadas;
+  não aumentam a contagem de reproduções.
+- O fallback stdlib aplica recursivamente `additionalProperties` quando seu
+  valor é um schema, mantendo a rejeição de constraints não suportados.
+- O pacote guarda um snapshot imutável do schema de saída, incluindo schemas
+  personalizados. `escrever()` reaplica esse contrato e verifica hash, status
+  e estatísticas antes de criar diretórios ou preparar arquivos. Mutações
+  exigem um novo build, para não publicar proveniência ou agregados obsoletos.
+
+Oito testes novos reproduzem as falhas no head `d3bda5f` e passam após as
+correções. Validação: 88 testes Python (87 aprovados; um pulado por ausência
+de google-chrome), 44 testes JavaScript aprovados, ambos os CLIs `--check` e
+`git diff --check` aprovados. O relatório de migração só acrescenta os três
+campos de proveniência; IDs, ordem, 337 itens, 332 reproduções e as 43 diferenças
+editoriais de suporte permanecem iguais. Nenhum arquivo em `site/`, manifesto
+ou workflow foi modificado; migração, merge e publicação não foram executados.

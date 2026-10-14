@@ -171,6 +171,9 @@
       "enriched_sha256": "16c05c055671a28b911bb2f768145d8096e6ff776ed1579e0324aa9cf70ed65c",
       "source_count": 337,
       "published_count": 337,
+      "selected_status": "published",
+      "selected_count": 337,
+      "items_sha256": "d8d6ba59016e413e62cb533f8cc8893e4fc65f0e17be78f4564bc5eaa41cbed9",
       "contract_version": "acervo/1"
     }
   },
