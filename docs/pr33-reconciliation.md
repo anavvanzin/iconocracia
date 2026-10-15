@@ -64,3 +64,46 @@ A PR permanece draft e não foi mergeada. A validação de navegador permanece
 pendente antes de considerar integração. Os alertas de URLs externas no
 workflow agendado são diagnósticos; esta revisão executou os gates locais,
 sem atribuir autorização a disponibilidade de terceiros.
+
+
+## Browser CI follow-up (2026-10-15 UTC)
+
+`browser-tests.yml` runs all 78 Playwright cases (desktop and mobile) on
+Ubuntu 24.04 / Node 22, including image fallback, keyboard/focus recovery,
+Columbia ordering/captions and exclusion of review/withheld material. It runs on
+pull requests, including drafts, and supports manual dispatch once available on
+the default branch. It has only `contents: read`, no secrets or deployment step,
+and checkout does not persist credentials.
+
+Reproduce on a supported Ubuntu host:
+
+```sh
+npm ci
+npx --no-install playwright install --with-deps chromium
+CI=true npm run test:browser
+```
+
+The lockfile pins Playwright 1.63.0 and its browser revision. The official
+installer obtains Chromium and its Linux packages; no custom mirror, downloaded
+shell script, TLS bypass or manually unpacked browser is used. Browser binaries
+are not cached. A larger connection timeout accommodates slow transfers but
+does not turn a corrupt archive into a successful installation.
+
+The earlier archive error was reproduced in this restricted execution
+environment: Chromium v1243 download reported 0 MiB and failed with
+`End of central directory record signature not found`. This points to a
+truncated/non-ZIP CDN response (possibly an egress proxy/cache), not missing
+Linux shared libraries. The exact upstream cause is unconfirmed. Installation
+failure remains a failing CI step and tests are never silently skipped.
+
+CI rejects focused tests, uses one worker and a 15-minute suite deadline; the
+25-minute job limit leaves room for setup and artifact upload. HTML, JUnit,
+failed-test screenshots, videos and traces are retained for 14 days, including
+a failed test run. Inspect the Actions installation log when setup fails before
+reports exist. No automatic test retries conceal regressions. Reports can be
+opened with `npx --no-install playwright show-report playwright-report`.
+
+Local validation: `npm ci`, discovery of all 78 cases and `git diff --check`
+passed. Browser execution requires the successful official installation in CI.
+Public data, images, editorial manifests, schemas and approval state are not
+modified by this follow-up. The PR remains draft.
