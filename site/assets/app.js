@@ -48,7 +48,8 @@
       // renderSelected reuses #ex-image. A 404 from the previous work must not
       // replaceChildren on the stage after that img has already been detached.
       if (img.parentNode !== container) return;
-      const imageURL = publication ? publication.imageURL(item.imagem) : (safeURL(item.imagem) ? item.imagem : null);
+      const sourceURL = item.imagem_fonte || item.imagem;
+      const imageURL = publication ? publication.imageURL(sourceURL) : (safeURL(sourceURL) ? sourceURL : null);
       if (!fallback && imageURL && imageURL !== img.getAttribute('src')) { fallback = true; img.src = imageURL; }
       else container.replaceChildren(node('span', 'ex-missing', 'Reprodução indisponível — consulte o arquivo de origem.'));
     });

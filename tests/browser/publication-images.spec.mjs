@@ -30,3 +30,13 @@ test('approved supplement replaces the actual primary image and attribution in c
   await expect(page.locator('#constellation-items img')).toHaveAttribute('src', replacement);
   expect(errors).toEqual([]);
 });
+
+test('missing approved local reproduction falls back to its separate source image', async ({ page }) => {
+  await page.route('**/data/constellations.json', route => route.fulfill({ contentType: 'application/json', body: JSON.stringify([published]) }));
+  await page.route('**/data/publication-overlay.json', route => route.fulfill({ contentType: 'application/json', body: JSON.stringify(overlay) }));
+  await page.route('**/' + replacement, route => route.fulfill({ status: 404, body: 'missing' }));
+  await page.route(overlay.items[0].imagem_fonte, route => route.fulfill({ contentType: 'image/webp', body: image }));
+  await page.goto('/acervo?item=BR-009&constelacao=image-approved&visao=palco');
+  await expect(page.locator('#ex-image img')).toHaveAttribute('src', overlay.items[0].imagem_fonte);
+  await expect.poll(() => page.locator('#ex-image img').evaluate(img => img.complete && img.naturalWidth > 0)).toBe(true);
+});

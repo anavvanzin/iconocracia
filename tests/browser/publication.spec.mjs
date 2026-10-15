@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 
 const catalog = JSON.parse(readFileSync(new URL('../../site/data/acervo.json', import.meta.url)));
+const columbia = JSON.parse(readFileSync(new URL('../../site/data/constellations.json', import.meta.url))).find(entry => entry.slug === 'columbia-dois-chamados');
 const selected = ['US-008', 'BR-009'];
 const definition = { slug: 'test-approved', title: 'Percurso de teste', editorial_status: 'published', item_ids: selected };
 const approved = { status: 'approved', approved_by: 'fixture', approved_at: '2026-10-04', summary: 'Leitura aprovada de teste.', panofsky: { level_1: 'Descrição de teste.' } };
@@ -43,9 +44,11 @@ test('the real public artifact publishes only the approved Columbia reading and 
   for (let index = 0; index < works.length; index++) {
     const card = page.locator('#constellation-items li').nth(index);
     await expect(card.locator('img')).toHaveAttribute('src', `assets/acervo/${ids[index]}.webp`);
-    await expect(card.locator('img')).toHaveAttribute('alt', works[index].titulo);
+    const approvedCard = columbia.cards[index];
+    expect(approvedCard.id).toBe(ids[index]);
+    await expect(card.locator('img')).toHaveAttribute('alt', approvedCard.texto_alternativo);
     await expect.poll(() => card.locator('img').evaluate(img => img.complete && img.naturalWidth > 0)).toBe(true);
-    await expect(card.locator('figcaption p').last()).toHaveText(works[index].descricao);
+    await expect(card.locator('figcaption p').last()).toHaveText(approvedCard.caption);
   }
   await expect(page.locator('#constellation-switcher a')).toHaveCount(0);
   await expect(page.locator('body')).not.toContainText('Constituições atlânticas');
