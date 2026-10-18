@@ -1399,3 +1399,51 @@ html[data-theme="noite"] .home-intro .eyebrow, html[data-theme="noite"] .home-in
 .ex-page, .ex-home .block, .ex-home .stat-band, .ex-home .vitrine-block, .site-footer, .ex-header, .dossier, .card {
   transition:background-color .2s ease, color .2s ease, border-color .2s ease;
 }
+
+
+/* ============================================================
+   Etapa 2 (2026-10-18): o sistema arquivístico nas demais páginas
+   (sobre, constelações, acervo, 404). Mesmos tokens, mesma voz mono;
+   o modo noite passa a cobrir os elementos específicos dessas páginas.
+   Conteúdo editorial permanece byte-idêntico.
+   ============================================================ */
+
+/* Superfícies de reserva de imagem sobre o chão escuro. */
+html[data-theme="noite"] .ex-stage,
+html[data-theme="noite"] .ex-thumb-image,
+html[data-theme="noite"] .ex-frame-image,
+html[data-theme="noite"] .ex-star-image {
+  background:#3a2760;
+}
+/* Amarelo ácido pede tinta violeta-escura por cima, em qualquer página. */
+html[data-theme="noite"] .ex-night,
+html[data-theme="noite"] .ex-constellation-label,
+html[data-theme="noite"] .ex-analysis-limitation,
+html[data-theme="noite"] .ex-view-toggle button[aria-pressed="true"] {
+  color:#1d1033;
+}
+/* Sobre: glosas e citações herdam os tokens; só a transição barata é nova. */
+.research-page, .constellation-page, .exhibition, .ex-toolbar, .ex-filters,
+.constellation-intro, .constellation-work, .def, .prose blockquote, .seal, .ex-stage, .ex-caption {
+  transition:background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+html[data-theme="noite"] .constellation-image { background:rgba(255,255,255,.05); }
+
+/* Filete arquivístico entre colunas do rodapé (desligado quando empilha). */
+.site-footer .fcol { position:relative; }
+@media(min-width:761px) {
+  .site-footer .cols .fcol:not(:first-child)::before {
+    content:""; position:absolute; left:-15px; top:3px; bottom:3px; width:1px;
+    background:var(--ex-line); opacity:.55; pointer-events:none;
+  }
+  .site-footer .cols .fcol:not(:first-child)::before { left:calc(-0.9rem); }
+}
+
+/* Constelações: filete entre a coluna da reprodução e a da legenda. */
+@media(min-width:701px) {
+  .constellation-work figcaption { position:relative; }
+  .constellation-work figcaption::before {
+    content:""; position:absolute; left:calc(clamp(24px,6vw,90px) / -2); top:8px; bottom:8px; width:1px;
+    background:var(--ex-ink); opacity:.18; pointer-events:none;
+  }
+}
