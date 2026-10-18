@@ -1391,8 +1391,8 @@ html[data-theme="noite"] ::selection { color:#1d1033; }
 html[data-theme="noite"] .label, html[data-theme="noite"] .tag { color:var(--ex-ink); }
 html[data-theme="noite"] .home-intro .eyebrow, html[data-theme="noite"] .home-intro h1 em { color:var(--accent); }
 @media(max-width:860px) {
- .ex-home .ex-header { flex-wrap:wrap; row-gap:4px; }
- .ex-home .ex-header nav { order:3; width:100%; justify-content:flex-start; gap:20px; }
+ .ex-header { flex-wrap:wrap; row-gap:4px; }
+ .ex-header nav { order:3; width:100%; justify-content:flex-start; gap:20px; }
 }
 /* Transição barata só de cor; reduzido por prefers-reduced-motion global.
    .const-card guarda a própria lista (com transform) na sua regra-base. */
