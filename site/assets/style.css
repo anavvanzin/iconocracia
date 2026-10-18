@@ -1289,3 +1289,113 @@ button:disabled { cursor:default; opacity:.4; }
 }
 
 
+/* ============================================================
+   Redesign Mnemosyne Viva — "Campo constelacional arquivístico" (2026-10-18).
+   Registro arquivístico: JetBrains Mono como voz de metadados, filetes
+   verticais separando colunas, modo noite derivado do sistema lavanda.
+   Texto acadêmico permanece byte-idêntico; só a voz de interface muda.
+   ============================================================ */
+
+/* Cabeçalho dos dossiês em voz de índice: mono, maiúsculas, letter-spaced. */
+.dossier-head h3 {
+  font:var(--weight-normal) .82rem/1.6 var(--font-mono);
+  letter-spacing:.14em; text-transform:uppercase; line-height:1.5;
+  align-self:center; margin-top:-2px;
+}
+.dossier-num::before { content:"DOSSIÊ "; letter-spacing:.12em; }
+
+/* Filetes verticais (1px, tinta a baixa opacidade) entre colunas de dossiês
+   e de cartões de conceitos — o separador arquivístico de colunas. */
+.dossier-figs > .vfig { position:relative; }
+.dossier-figs > .vfig:not(:first-child)::before {
+  content:""; position:absolute; left:-11px; top:4px; bottom:4px; width:1px;
+  background:var(--ex-ink); opacity:.26; pointer-events:none;
+}
+@media(min-width:721px) and (max-width:1000px) {
+  .dossier-figs > .vfig:not(:first-child)::before { left:-10px; }
+}
+@media(min-width:1001px) {
+  .grid-3 > .card:not(:first-child)::before {
+    content:""; position:absolute; left:-12px; top:18px; bottom:18px; width:1px;
+    background:var(--ex-ink); opacity:.22; pointer-events:none;
+  }
+}
+@media(max-width:720px) {
+  .dossier-figs > .vfig:not(:first-child)::before { content:none; }
+}
+
+/* Faixa de estatísticas e metadados já em mono — afina a voz de índice. */
+.stat .lbl { letter-spacing:.16em; }
+.vmeta { letter-spacing:.12em; }
+.dossier-head h3 { line-height:1.55; }
+
+/* ---------- modo noite (toggle NOITE/DIA) ---------- */
+.ex-night {
+  border:0; border-left:1px solid var(--ex-ink); padding:0 9px 0 26px;
+  background:none; color:var(--ex-ink); min-height:44px;
+  font:var(--atlas-caption)/1.5 "JetBrains Mono",monospace;
+  letter-spacing:.14em; text-transform:uppercase; white-space:nowrap;
+  transition:background-color .2s ease, color .2s ease;
+}
+.ex-night:hover { color:var(--ex-ink); background:var(--ex-action); text-decoration:none; }
+
+html[data-theme="noite"] {
+  --ex-ground:#1d1033;
+  --ex-reading:#241242;
+  --palette-paper:#2e1c52;
+  --palette-blush:#231241;
+  --palette-violet:#120826;
+  --ex-ink:#efe7ff;
+  --ex-muted:#b9a7d8;
+  --ex-line:#4d3373;
+  --ex-selection:#b48bff;
+  --ex-action:#e4ff38;
+  --accent:#b48bff;
+  --accent-hover:#c9a4ff;
+  --accent-light:#3b2466;
+  --accent-border:#4d3373;
+  --ink:#efe7ff; --print-black:#efe7ff;
+  --paper:#241242; --paper-2:#2e1c52; --paper-card:#2e1c52;
+  --surface-card:#2e1c52; --surface-folio:#2e1c52;
+  --bg-card:#2e1c52; --bg-card-hover:#3a2560;
+  --text-primary:#efe7ff; --text-secondary:#c9b9e4; --text-muted:#b9a7d8;
+  --accent-hover:#c9a4ff;
+  --red:#b48bff; --red-deep:#c9a4ff;
+  --gold:#b48bff; --gold-deep:#c9a4ff;
+  --gold-line:#4d3373;
+  --border:#4d3373; --border-strong:#efe7ff; --border-light:#45306a;
+  --muted:#45306a;
+  --shadow:0 8px 24px rgba(10,3,22,.5); --shadow-lg:0 24px 72px rgba(10,3,22,.7);
+}
+html[data-theme="noite"] .const-card { background:#31205a; box-shadow:0 14px 32px rgba(10,3,22,.45), 0 2px 8px rgba(10,3,22,.4); }
+html[data-theme="noite"] .const-card img,
+html[data-theme="noite"] .vfig img,
+html[data-theme="noite"] .ex-stage img,
+html[data-theme="noite"] .ex-thumb-image img,
+html[data-theme="noite"] .ex-frame-image img,
+html[data-theme="noite"] .ex-star-image img,
+html[data-theme="noite"] .constellation-work img,
+html[data-theme="noite"] .ex-dialog-image img {
+  filter:sepia(.22) brightness(.82) saturate(.78);
+}
+html[data-theme="noite"] .ex-night { border-left-color:var(--ex-ink); }
+html[data-theme="noite"] .ex-metadata dd,
+html[data-theme="noite"] .ex-thumb-title { color:var(--ex-ink); }
+/* Superfícies de ação em amarelo ácido pedem tinta violeta-escura sobre elas. */
+html[data-theme="noite"] .btn-primary { color:#1d1033; }
+html[data-theme="noite"] .btn-primary:hover { color:#1d1033; }
+html[data-theme="noite"] .btn-gold { color:#1d1033; }
+html[data-theme="noite"] .stat .num, html[data-theme="noite"] .stat .lbl { color:#1d1033; }
+html[data-theme="noite"] ::selection { color:#1d1033; }
+/* Rótulo violeta e glosas: em noite, o texto sobre o cartucho escuro vira lilás claro. */
+html[data-theme="noite"] .label, html[data-theme="noite"] .tag { color:var(--ex-ink); }
+html[data-theme="noite"] .home-intro .eyebrow, html[data-theme="noite"] .home-intro h1 em { color:var(--accent); }
+@media(max-width:860px) {
+ .ex-home .ex-header { flex-wrap:wrap; row-gap:4px; }
+ .ex-home .ex-header nav { order:3; width:100%; justify-content:flex-start; gap:20px; }
+}
+/* Transição barata só de cor; reduzido por prefers-reduced-motion global.
+   .const-card guarda a própria lista (com transform) na sua regra-base. */
+.ex-page, .ex-home .block, .ex-home .stat-band, .ex-home .vitrine-block, .site-footer, .ex-header, .dossier, .card {
+  transition:background-color .2s ease, color .2s ease, border-color .2s ease;
+}
