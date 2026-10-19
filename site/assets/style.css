@@ -1182,7 +1182,8 @@ button:disabled { cursor:default; opacity:.4; }
   transform:translate(0,0) rotate(0deg) translateZ(90px) scale(1.05);
   z-index:12; box-shadow:var(--shadow-lg); color:var(--ex-ink); text-decoration:none;
 }
-.const-card:focus-visible { outline:3px solid var(--ex-action); outline-offset:4px; }
+/* O contorno usa a tinta de seleção; o sublinhado conserva o amarelo ácido. */
+.const-card:focus-visible { outline:3px solid var(--ex-selection); outline-offset:4px; }
 .const-card img { width:100%; height:auto; background:transparent; }
 .const-card .const-cap {
   display:block; font:10px/1.5 var(--font-mono); padding:8px 2px 2px;
@@ -1205,8 +1206,14 @@ button:disabled { cursor:default; opacity:.4; }
 }
 @media(prefers-reduced-motion:reduce) {
   .const-field { transform:none !important; }
-  .const-card { transform:translate(var(--ox,0px),var(--oy,0px)) rotate(var(--rot,0deg)) translateZ(var(--z,0px)) !important; }
-  .const-card:hover, .const-card:focus-visible { transform:none !important; box-shadow:var(--shadow-lg); z-index:6; }
+  /* A mesma posição em repouso, hover e foco: sem saltos ao navegar. */
+  .const-card, .const-card:hover, .const-card:focus-visible {
+    transform:translate(var(--ox,0px),var(--oy,0px)) rotate(var(--rot,0deg)) translateZ(var(--z,0px)) !important;
+  }
+  .const-card:hover, .const-card:focus-visible { box-shadow:var(--shadow-lg); z-index:6; }
+}
+@media(prefers-reduced-motion:reduce) and (max-width:768px) {
+  .const-card, .const-card:hover, .const-card:focus-visible { transform:rotate(var(--mrot)) !important; }
 }
 
 /* Grade: parede do acervo — molduras de papel sobre a lavanda, caption em mono. */
@@ -1382,12 +1389,13 @@ html[data-theme="noite"] .ex-night { border-left-color:var(--ex-ink); }
 html[data-theme="noite"] .ex-metadata dd,
 html[data-theme="noite"] .ex-thumb-title { color:var(--ex-ink); }
 /* Superfícies de ação em amarelo ácido pedem tinta violeta-escura sobre elas. */
-html[data-theme="noite"] .btn-primary { color:#1d1033; }
-html[data-theme="noite"] .btn-primary:hover { color:#1d1033; }
-html[data-theme="noite"] .btn-gold { color:#1d1033; }
+html[data-theme="noite"] .btn-primary,
+html[data-theme="noite"] .btn-gold,
+html[data-theme="noite"] .ex-primary { color:#1d1033; }
 html[data-theme="noite"] .stat .num, html[data-theme="noite"] .stat .lbl { color:#1d1033; }
 html[data-theme="noite"] ::selection { color:#1d1033; }
 /* Rótulo violeta e glosas: em noite, o texto sobre o cartucho escuro vira lilás claro. */
+html[data-theme="noite"] .btn-dark,
 html[data-theme="noite"] .label, html[data-theme="noite"] .tag { color:var(--ex-ink); }
 html[data-theme="noite"] .home-intro .eyebrow, html[data-theme="noite"] .home-intro h1 em { color:var(--accent); }
 @media(max-width:860px) {
@@ -1416,7 +1424,7 @@ html[data-theme="noite"] .ex-star-image {
   background:#3a2760;
 }
 /* Amarelo ácido pede tinta violeta-escura por cima, em qualquer página. */
-html[data-theme="noite"] .ex-night,
+html[data-theme="noite"] .ex-night:hover,
 html[data-theme="noite"] .ex-constellation-label,
 html[data-theme="noite"] .ex-analysis-limitation,
 html[data-theme="noite"] .ex-view-toggle button[aria-pressed="true"] {
