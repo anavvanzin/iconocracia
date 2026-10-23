@@ -138,6 +138,15 @@ def build_stats(corpus: list[dict]) -> dict:
             if x.get("thumbnail_url") or x.get("url_image_download")
             or tem_webp_local(x.get("id"))
         ),
+        # Use the canonical numeric year, not years guessed from display text.
+        # SCOUT-563, for example, has date="século XIX" and year=1850.
+        # This is a descriptive count of the supplied selection, not approval
+        # to publish a record or a claim that uncertain dates are exact.
+        "recorte_tese_brasil_1822_1922": sum(
+            norm_country(x.get("country")) == "Brasil"
+            and type(x.get("year")) is int and 1822 <= x["year"] <= 1922
+            for x in corpus
+        ),
         "periodo": {"min": min(years) if years else None, "max": max(years) if years else None},
         "por_pais": [{"pais": p, "n": n} for p, n in countries.most_common()],
         "por_regime": [
@@ -199,7 +208,7 @@ def main() -> int:
 
     out = args.out
     out.mkdir(parents=True, exist_ok=True)
-    (out / "stats.json").write_text(json.dumps(stats, ensure_ascii=False, indent=2), encoding="utf-8")
+    (out / "stats.json").write_text(json.dumps(stats, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (out / "acervo.json").write_text(json.dumps(itens, ensure_ascii=False, indent=2), encoding="utf-8")
 
     print(f"fonte corpus:   {corpus_path}")

@@ -4,9 +4,9 @@
   "corpus_commit": "d5f8ad1d5eaf039f3837d13ad3eb6ef38dedf2b7",
   "corpus_sha256": "344e37d257821285c265bbbfd4ae61b23922a9df8d5c93f38c5b29a816b77e48",
   "baseline": {
-    "commit": "fd97da1560bd24826ee9d4bcd69e786668ce5311",
+    "commit": "529fb580545079581b066031d08a140705ceb997",
     "acervo_sha256": "7e063f444cf48ac06b60aaeaa7b8ab82cad2aff4e63c37a377b777fffa35cb7b",
-    "stats_sha256": "1ddc3eb7f44bc6c79646166c92db88e3de6f8d7e6fab27b6c6e12f952fd478a3",
+    "stats_sha256": "6953066a5534cfe30c8abb5d5ca4379ee22c109523e403cb825bada4a31bc04e",
     "corpus_enriched_sha256": "c379d79002f8b68fd820552acd3dedd18151bcc0206d2d81610311e5dcc0a0b6"
   },
   "generated_at": "2026-09-15",
