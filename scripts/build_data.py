@@ -125,9 +125,18 @@ def build_stats(corpus: list[dict]) -> dict:
                 motifs[m] += 1
 
     years = []
+    thesis_slice = 0
     for x in corpus:
         d = str(x.get("date") or x.get("year") or "")
-        years.extend(int(tok) for tok in re.findall(r"(?<!\d)(1\d{3}|20\d{2}|2100)(?!\d)", d))
+        date_years = [int(tok) for tok in re.findall(r"(?<!\d)(1\d{3}|20\d{2}|2100)(?!\d)", d)]
+        years.extend(date_years)
+        # O ano catalogado também cobre datas textuais, como "século XIX".
+        item_year = x.get("year")
+        if item_year is None:
+            item_year = date_years[0] if date_years else None
+        if norm_country(x.get("country")) == "Brasil" \
+           and isinstance(item_year, int) and 1822 <= item_year <= 1922:
+            thesis_slice += 1
 
     return {
         "total": len(corpus),
@@ -138,6 +147,7 @@ def build_stats(corpus: list[dict]) -> dict:
             if x.get("thumbnail_url") or x.get("url_image_download")
             or tem_webp_local(x.get("id"))
         ),
+        "recorte_tese_brasil_1822_1922": thesis_slice,
         "periodo": {"min": min(years) if years else None, "max": max(years) if years else None},
         "por_pais": [{"pais": p, "n": n} for p, n in countries.most_common()],
         "por_regime": [

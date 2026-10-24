@@ -176,3 +176,11 @@ de google-chrome), 44 testes JavaScript aprovados, ambos os CLIs `--check` e
 campos de proveniência; IDs, ordem, 337 itens, 332 reproduções e as 43 diferenças
 editoriais de suporte permanecem iguais. Nenhum arquivo em `site/`, manifesto
 ou workflow foi modificado; migração, merge e publicação não foram executados.
+
+## Revalidação após a correção de DE-100M-1908 — 24/10/2026
+
+O relatório de comparação foi recalculado sobre o snapshot `8d75717`, que
+corrige a identificação, autoria, datas e fontes de DE-100M-1908. Apenas a
+referência da base e os hashes de proveniência mudaram no relatório; os IDs,
+a ordem, os agregados e as diferenças entre geradores permanecem iguais.
+A fronteira continua opt-in; esta correção mantém o produtor legado do site.

@@ -1,13 +1,13 @@
 {
   "schema_version": "2.0",
   "corpus_repository": "anavvanzin/iconocracy-corpus",
-  "corpus_commit": "d5f8ad1d5eaf039f3837d13ad3eb6ef38dedf2b7",
-  "corpus_sha256": "344e37d257821285c265bbbfd4ae61b23922a9df8d5c93f38c5b29a816b77e48",
+  "corpus_commit": "0d385ffc1c6b17f955780e672941c85fa6c0faed",
+  "corpus_sha256": "af46ee210aa4781e1e2ff6e09b4b626180badbd911d2997c3d613825a1b65578",
   "baseline": {
-    "commit": "fd97da1560bd24826ee9d4bcd69e786668ce5311",
-    "acervo_sha256": "7e063f444cf48ac06b60aaeaa7b8ab82cad2aff4e63c37a377b777fffa35cb7b",
-    "stats_sha256": "1ddc3eb7f44bc6c79646166c92db88e3de6f8d7e6fab27b6c6e12f952fd478a3",
-    "corpus_enriched_sha256": "c379d79002f8b68fd820552acd3dedd18151bcc0206d2d81610311e5dcc0a0b6"
+    "commit": "8d75717f66c8003e1916f0a95617e985e0cf2491",
+    "acervo_sha256": "6bdb04a50b502381de3c5ed09ff290123de715160cb42398e99e36a8d2904459",
+    "stats_sha256": "a8307e5ac1d52f8822be73ab17ab5e2e777de5bde2d1b3612c0a7df20d3030ef",
+    "corpus_enriched_sha256": "813aef09f2e57cacfec7e7cd1762cd945bfa7a97f70e9fedd9d11d18811367f8"
   },
   "generated_at": "2026-09-15",
   "items": [
