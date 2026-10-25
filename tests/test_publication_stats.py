@@ -24,7 +24,7 @@ class PublicationStatsTests(unittest.TestCase):
         result = build_publication_stats(self.baseline, self.baseline, baseline_records=self.raw)
         self.assertEqual(result, self.stats)
 
-    def test_thesis_recorte_uses_canonical_year_and_inclusive_limits(self):
+    def test_thesis_recorte_prioritizes_numeric_year_and_preserves_reviewed_fallback(self):
         records = [
             {"country": "Brazil", "year": 1822},
             {"country": "Brasil", "year": 1922},
@@ -36,7 +36,9 @@ class PublicationStatsTests(unittest.TestCase):
         records += [{"country": "Brazil", "date": "1900", "year": year}
                     for year in (None, "1900", True, 1900.5)]
         original = copy.deepcopy(records)
-        self.assertEqual(build_data.build_stats(records)["recorte_tese_brasil_1822_1922"], 3)
+        # #80 preserves the display-date fallback only when year is absent/None.
+        # A conflicting numeric year still wins, and strings/bools/floats fail.
+        self.assertEqual(build_data.build_stats(records)["recorte_tese_brasil_1822_1922"], 4)
         self.assertEqual(records, original)
 
     def test_thesis_recorte_addition_and_withdrawal_use_only_approved_sources(self):

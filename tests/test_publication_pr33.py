@@ -12,8 +12,14 @@ from tests import test_publication_sync as fixtures
 
 class PR33ReconciliationTests(unittest.TestCase):
     def test_stats_anchor_changes_no_catalogue_or_canonical_source_bytes(self):
-        publication = sync.load_json(sync.DEFAULT_PUBLICATION)
-        current = sync.validate_baseline(publication)
+        # Historical diagnosis stays pinned when newer reviewed baselines land.
+        names = ('acervo.json', 'stats.json', 'corpus-data-enriched.json')
+        current = {
+            name: subprocess.run(
+                ['git', 'show', f'529fb580545079581b066031d08a140705ceb997:site/data/{name}'],
+                cwd=sync.ROOT, capture_output=True, check=True,
+            ).stdout for name in names
+        }
         previous = {
             name: subprocess.run(
                 ['git', 'show', f'fd97da1560bd24826ee9d4bcd69e786668ce5311:site/data/{name}'],

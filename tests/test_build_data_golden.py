@@ -19,18 +19,18 @@ class BuildDataGoldenTests(unittest.TestCase):
         actual_bytes = actual.read_bytes()
         expected_bytes = expected.read_bytes()
         if expected == FIXTURE / "stats.json":
-            # Keep the historical fixture and its manifest hashes intact.
-            # Apply only the reviewed #67 date span and 529fb58's additive
-            # thesis count/serialization changes to the expected output.
+            # Keep the historical fixture bytes/hash intact. Apply only the
+            # reviewed #67 date span and the approved Brazilian thesis metric.
             self.assertEqual(json.loads(expected_bytes)["periodo"],
                              {"min": 1707, "max": 1981})
+            self.assertNotIn("recorte_tese_brasil_1822_1922", json.loads(expected_bytes))
             expected_bytes = expected_bytes.replace(b'"min": 1707', b'"min": 1239')
             expected_bytes = expected_bytes.replace(b'"max": 1981', b'"max": 2021')
-            self.assertEqual(expected_bytes.count(b'  "com_imagem": 332,\n'), 1)
             expected_bytes = expected_bytes.replace(
-                b'  "com_imagem": 332,\n',
-                b'  "com_imagem": 332,\n  "recorte_tese_brasil_1822_1922": 53,\n',
-            ) + b'\n'
+                b'  "periodo": {',
+                b'  "recorte_tese_brasil_1822_1922": 53,\n  "periodo": {',
+                1,
+            )
         # Avoid dumping the entire corpus when the byte-level contract changes.
         self.assertTrue(
             actual_bytes == expected_bytes,

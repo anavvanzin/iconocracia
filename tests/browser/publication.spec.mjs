@@ -16,6 +16,21 @@ async function mockPublication(page, definitions, entries = []) {
   await page.route('**/data/publication-overlay.json', route => route.fulfill({ contentType: 'application/json', body: JSON.stringify({ version: 1, items: entries }) }));
 }
 
+test('the corrected Germania record distinguishes printed date and reprints in the currency filter', async ({ page }) => {
+  await page.goto('/acervo?item=DE-100M-1908&visao=palco');
+  await expect(page.locator('#ex-metadata')).toContainText('Moeda e cédula');
+  await page.locator('#f-tipo').selectOption('Moeda e cédula');
+  await expect(page.locator('#ex-title')).toContainText('Germania em medalhão');
+  await page.locator('#ex-open').click();
+  const record = page.locator('.ex-record');
+  await expect(record).toContainText('Paul Thumann (desenho); Hans Meyer (gravura)');
+  await expect(record).toContainText('data impressa: 7 fev. 1908; reimpressões: 1918–1922');
+  await expect(record).toContainText('data exata de produção do exemplar fotografado: [VERIFICAR]');
+  await expect(record).toContainText('alegorias da indústria e da agricultura');
+  await expect(record).toContainText('DEUTSCHE BUNDESBANK');
+  await expect(record).toContainText('STATISTISCHES AMT DER STADT NÜRNBERG');
+});
+
 test('the real public artifact publishes only the approved Columbia reading and ordered works', async ({ page }) => {
   const slug = 'columbia-dois-chamados';
   const title = 'Columbia — dois chamados da nação';

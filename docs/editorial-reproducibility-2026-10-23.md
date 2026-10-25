@@ -154,3 +154,26 @@ Para repetir a localização temporal, execute os quatro testes nomeados na
 descrição da PR #77 em worktrees de `8e9ba07`, `529fb58`, `29438d6` e
 `1142eec`, com o histórico Git disponível. Não execute os geradores sem
 `--check` sobre `site/data` para tentar corrigir o estado publicado.
+
+## Atualização de integração em 25/10/2026
+
+A PR #80 foi integrada depois desta auditoria (`4317163`) e corrigiu o registro
+DE-100M-1908. Seu manifesto ancora os artefatos revisados no commit `8d75717` e
+a fonte em `0d385ffc`. Esta integração conserva integralmente esse manifesto,
+os arquivos públicos e a fixture histórica; não restaura a base anterior
+`529fb58`. A serialização atual de `stats.json` não tem LF final, conforme os
+bytes publicados pela #80, e o gerador mantém esse contrato.
+
+A PR #80 também integrou o cálculo do agregado e testes próprios. Conservamos
+esse algoritmo já revisado: `year` numérico tem prioridade; somente a ausência
+de `year`/valor nulo permite o fallback para o primeiro ano no texto de `date`.
+As regressões desta PR foram conciliadas com esse comportamento, sem alterar
+os 53 itens atuais. Esse fallback é uma convenção descritiva do catálogo, não
+uma nova confirmação de data histórica ou autorização editorial.
+
+A contribuição restante da #79 é o diagnóstico histórico e as regressões de
+reprodução, seleção editorial, retirada de suplementos e rejeição de deriva
+sem recibo. Nenhum gerador, manifesto, artefato público ou snapshot histórico
+difere da `main` após a conciliação. A causa histórica das quatro falhas na #77
+continua sendo `529fb58`; a correção do modo noite não participa da geração nem
+da autorização editorial.
