@@ -22,7 +22,7 @@
     if (/sculpture|relief|bust/.test(support)) return 'Escultura';
     if (/poster|affiche|cartaz/.test(support)) return 'Cartaz';
     if (/oil|painting|pintura|decorative panel/.test(support)) return 'Pintura';
-    if (/coin|money/.test(support)) return 'Moeda e cédula';
+    if (/coin|money|moeda|cedula/.test(support)) return 'Moeda e cédula';
     if (/print|engraving|etching|lithogra|gravura|estampe|woodcut|drawing|desenho/.test(support)) return 'Gravura e desenho';
     if (/manuscript|periodical/.test(support)) return 'Documento';
     return 'Outros suportes';

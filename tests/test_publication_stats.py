@@ -24,6 +24,35 @@ class PublicationStatsTests(unittest.TestCase):
         result = build_publication_stats(self.baseline, self.baseline, baseline_records=self.raw)
         self.assertEqual(result, self.stats)
 
+    def test_thesis_recorte_prioritizes_numeric_year_and_preserves_reviewed_fallback(self):
+        records = [
+            {"country": "Brazil", "year": 1822},
+            {"country": "Brasil", "year": 1922},
+            {"country": "Brazil", "year": 1850, "date": "século XIX"},
+            {"country": "Brazil", "year": 1821, "date": "1900"},
+            {"country": "Brazil", "year": 1923, "date": "1900"},
+            {"country": "France", "year": 1900},
+        ]
+        records += [{"country": "Brazil", "date": "1900", "year": year}
+                    for year in (None, "1900", True, 1900.5)]
+        original = copy.deepcopy(records)
+        # #80 preserves the display-date fallback only when year is absent/None.
+        # A conflicting numeric year still wins, and strings/bools/floats fail.
+        self.assertEqual(build_data.build_stats(records)["recorte_tese_brasil_1822_1922"], 4)
+        self.assertEqual(records, original)
+
+    def test_thesis_recorte_addition_and_withdrawal_use_only_approved_sources(self):
+        approved = {"id": "new-br", "country": "Brazil", "year": 1822, "date": "1822"}
+        private = {"id": "private-br", "country": "Brazil", "year": 1900, "date": "1900"}
+        sources = [approved, private]
+        stats = build_publication_stats(self.baseline + [{"id": "new-br", "tem_imagem": False}],
+                                        self.baseline, self.stats, baseline_records=self.raw,
+                                        added_records=sources)
+        self.assertEqual(stats["recorte_tese_brasil_1822_1922"], 54)
+        self.assertEqual(stats["total"], 338)
+        self.assertEqual(build_publication_stats(self.baseline, self.baseline, self.stats,
+                                                 baseline_records=self.raw, added_records=sources), self.stats)
+
     def test_approved_addition_changes_only_relevant_aggregates(self):
         source = {"id": "approved-new", "country": "France (held in Austria)",
                   "regime": "FUNDACIONAL", "date": "c. 1220 / 2025",
