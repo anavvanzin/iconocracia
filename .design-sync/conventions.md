@@ -3,7 +3,7 @@
 **There are no components.** This design system is the stylesheet of iconocracia.com, a static HTML/CSS site. `window.MnemosyneViva` is empty: nothing to import or mount, so skip the React loading notes further down. Build with plain HTML elements (or JSX that renders plain elements) carrying the class names and tokens below. Link `styles.css` once; it brings the fonts, every token and every class. Content language is Brazilian Portuguese.
 
 ## Wrapper
-Put `class="ex-page"` on `<body>` (or the outermost wrapper). Without it the page falls back to Arial 16px; with it, text is Crimson Pro 18px/1.6. Editorial pages made of `section.block` bands also take `ex-home` (`class="ex-page ex-home"`), which turns `.block` lilac and `.block.alt` blush. Light theme only: the site never sets `data-theme`.
+Put `class="ex-page"` on `<body>` (or the outermost wrapper). Without it the page falls back to Arial 16px; with it, text is Crimson Pro 18px/1.6. Editorial pages made of `section.block` bands also take `ex-home` (`class="ex-page ex-home"`), which turns `.block` lilac and `.block.alt` blush. Night mode: put `data-theme="noite"` on `<html>`. It remaps the `--ex-*`, `--palette-*` and base tokens (ground #1d1033, ink #efe7ff, action stays #e4ff38), so anything styled through `var(--…)` follows. The header toggle is `button.ex-night` (label NOITE / DIA). Never use `data-theme="dark"`: that is the old base layer's mode.
 
 ## Tokens (use `var(--…)`)
 The Exposição palette overrides the older Iuris Memoria vellum tokens that are still in the file. Don't bring back cream or red.
@@ -24,7 +24,7 @@ The Exposição palette overrides the older Iuris Memoria vellum tokens that are
 | Callout | `div.notice` with a leading `<strong>` |
 | Figures | `section.stat-band` > `.stat` > `.num` + `.lbl` |
 | Collection viewer | `.exhibition`; filters `.ex-filters` (`.ex-search` with input, selects, `.ex-filter-button`); image `.ex-stage`; `.ex-filmstrip` > `button.ex-thumb` (`.ex-thumb-image`, `.ex-thumb-title`, `.ex-thumb-meta`); text `.ex-caption` (`.ex-overline`, `h1`, `.ex-author`, `.ex-description`, `dl.ex-metadata`); actions `a.ex-action` (+ `.ex-primary` for the yellow one) |
-| Collection views | switch `.ex-toolbar` > `.ex-view-toggle` (buttons with `aria-pressed="true"` on the current one); wall `.ex-grid` > `button.ex-frame` (`.ex-frame-image` + `.ex-frame-cap` "01 / title · country, date"); scattered field `.ex-constellation` > `.ex-const-field` > `button.ex-star` (+ `.ex-star-acid`, `.ex-star-image`, `.ex-frame-cap`, tilt via `style="--rot:-4deg"`); missing image `span.ex-missing` |
+| Collection views | switch `.ex-toolbar` > `.ex-view-toggle` (buttons with `aria-pressed="true"` on the current one); wall `.ex-grid` > `button.ex-frame` (`.ex-frame-image` + `.ex-frame-cap` "01 / title · country, date"); scattered field `.ex-constellation` > `.ex-const-field` > `button.ex-star` (`.ex-star-image`, `.ex-frame-cap`, tilt via `style="--rot:-4deg"`); missing image `span.ex-missing` |
 | Ornaments | `span.brand-ornament` + `.brand-scroll` (scroll), `.brand-seal` (round seal) or `.brand-flower` (46px mark); divider `div.ornamental-divider` > `span.brand-scroll.brand-ornament` |
 | Footer | `footer.site-footer` (violet ground, acid headings) |
 | Utilities | `.sr-only`, `.mono`, `.rubric` |
