@@ -1,0 +1,123 @@
+{
+  "repository": "anavvanzin/iconocracia",
+  "captured_at_utc": "2026-10-31",
+  "corpus_version": "iconocracy-corpus@d5f8ad1",
+  "corpus_commit": "d5f8ad1",
+  "derivation": "tests/fixtures/jogo-production/make_fixture.py",
+  "files": {
+    "acervo-slice.json": {
+      "source": "site/data/acervo.json (fatia Brasil 1822-1922 + ids autorizados)",
+      "bytes": 102049,
+      "sha256": "7791c4efd0dc353139c9ae8fa7d21950ea8eaf60926ce455670bf1ab00fe76d7"
+    },
+    "purification-slice.jsonl": {
+      "source": "data/processed/purification.jsonl (fatia)",
+      "bytes": 24735,
+      "sha256": "5927cb8763be785d46212ec57a74b370fa2d8611597294b71f8ac75da12bc9a4"
+    },
+    "records-slice.jsonl": {
+      "source": "data/processed/records.jsonl (fatia)",
+      "bytes": 166234,
+      "sha256": "3c8d3b7dd080fff167a49b04eba95eef80588e02153241f17524c062aaf4e1d7"
+    },
+    "jogo.json": {
+      "source": "site/data/jogo.json",
+      "bytes": 34050,
+      "sha256": "1bda2f76cb95017826d5c34e928de947fb70539fae636964906a858e5cde4c4d"
+    }
+  },
+  "upstream": {
+    "site/data/acervo.json": "6bdb04a50b502381de3c5ed09ff290123de715160cb42398e99e36a8d2904459",
+    "data/processed/purification.jsonl": "b66ca91469a601b437dabf7664c8f9315721d0f9f23984b88d39952d94e4cb21",
+    "data/processed/records.jsonl": "db579e9473abe88196c19042b4441ef4b532eced4a9c1e6f927ff34d6dc74a38"
+  },
+  "fatia": {
+    "ids_total": 57,
+    "ids_nucleo_brasil_1822_1922": 52,
+    "ids_autorizados_etapas_iii_iv": [
+      "BR-009",
+      "DE-015",
+      "FR-031",
+      "SCOUT-571",
+      "US-019"
+    ],
+    "ids_com_linha_no_ledger": 51,
+    "ids_sem_linha_no_ledger": [
+      "14990163-f5e4-a143-0d6b-288477d89a2b",
+      "2e077aa6-5e64-3c58-f33b-99b0bcfcef83",
+      "49706189-9d27-da9e-59d5-3467a32a1f5e",
+      "a7971ac5-e277-f70a-bb11-ba25db7e6ac0",
+      "dfe19295-505c-5df1-866e-e8bb695dbc5f",
+      "e1d2e177-0905-a3bc-2e17-f6dd4f040db0"
+    ],
+    "ids_com_registro_em_records": 55,
+    "ids_dos_lotes_com_registro_em_records": [
+      "4a6fa350-a8f7-87ed-e4be-76860dba356b",
+      "BR-001",
+      "BR-005",
+      "BR-006",
+      "BR-009",
+      "BR-010",
+      "BR-021",
+      "BR-023",
+      "BR-027",
+      "BR-038",
+      "BR-045",
+      "DE-015",
+      "FR-031",
+      "SCOUT-559",
+      "SCOUT-561",
+      "SCOUT-562",
+      "SCOUT-564",
+      "SCOUT-565",
+      "SCOUT-566",
+      "SCOUT-567",
+      "SCOUT-568",
+      "SCOUT-571",
+      "US-019"
+    ],
+    "ids_dos_lotes_sem_registro_em_records": [
+      "BR-041"
+    ]
+  },
+  "lotes_por_etapa": {
+    "contra-alegoria": 4,
+    "fundacional": 10,
+    "militar": 1,
+    "normativo": 9
+  },
+  "total_lotes": 24,
+  "excluidos": {
+    "base_textual": 2,
+    "codificacao_pendente": 22,
+    "codificacao_tentativa": 1,
+    "sem_imagem": 2,
+    "sem_linha_no_ledger": 6
+  },
+  "ids_dos_lotes": [
+    "BR-006",
+    "BR-005",
+    "BR-027",
+    "BR-021",
+    "BR-041",
+    "BR-023",
+    "SCOUT-559",
+    "BR-010",
+    "BR-001",
+    "BR-045",
+    "SCOUT-562",
+    "SCOUT-561",
+    "SCOUT-564",
+    "SCOUT-567",
+    "4a6fa350-a8f7-87ed-e4be-76860dba356b",
+    "SCOUT-568",
+    "SCOUT-565",
+    "BR-038",
+    "SCOUT-566",
+    "BR-009",
+    "DE-015",
+    "US-019",
+    "FR-031",
+    "SCOUT-571"
+  ]
+}
