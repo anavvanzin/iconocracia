@@ -400,9 +400,89 @@
           "field": "espelho"
         }
       ]
+    },
+    {
+      "timestamp": "2026-11-01T12:01:35Z",
+      "checked_count": 332,
+      "accessible_count": 332,
+      "average_response_ms": 270,
+      "threshold_ms": 2000,
+      "status": "ok",
+      "top_slowest": [
+        {
+          "id": "DE-014",
+          "title": "Helft uns siegen! Zeichnet die Kriegsanleihe",
+          "url": "https://iconocracia.com/assets/acervo/DE-014.webp",
+          "response_ms": 1273,
+          "field": "espelho"
+        },
+        {
+          "id": "BR-039",
+          "title": "Efígie da República — Selo Definitivo do Brasil Republicano",
+          "url": "https://iconocracia.com/assets/acervo/BR-039.webp",
+          "response_ms": 753,
+          "field": "espelho"
+        },
+        {
+          "id": "AT-001",
+          "title": "Zeichnet 8. Kriegsanleihe",
+          "url": "https://iconocracia.com/assets/acervo/AT-001.webp",
+          "response_ms": 723,
+          "field": "espelho"
+        },
+        {
+          "id": "da35cbd9-2e8c-24a6-7c44-d7f1741e0a2a",
+          "title": "\"Justitia\"",
+          "url": "https://iconocracia.com/assets/acervo/da35cbd9-2e8c-24a6-7c44-d7f1741e0a2a.webp",
+          "response_ms": 722,
+          "field": "espelho"
+        },
+        {
+          "id": "d44093ca-343e-580c-99f2-c740d8c68ef9",
+          "title": "5 Pesos (\\\"Ángel de la Libertad\\\") — winged female allegory of Liberty breaking chains, coup date 11-IX-1973 (KM#209)",
+          "url": "https://iconocracia.com/assets/acervo/d44093ca-343e-580c-99f2-c740d8c68ef9.webp",
+          "response_ms": 719,
+          "field": "espelho"
+        },
+        {
+          "id": "FR-050",
+          "title": "Figures allégories de Vertus et de l'Ancien Testament : Enoch, allégorie de la Diligence, Mathusalem et allégorie de la Justice",
+          "url": "https://iconocracia.com/assets/acervo/FR-050.webp",
+          "response_ms": 617,
+          "field": "espelho"
+        },
+        {
+          "id": "US-EDUC-1896-02",
+          "title": "Science Presenting Steam and Electricity to Commerce and Manufacture ($2 Silver Certificate)",
+          "url": "https://iconocracia.com/assets/acervo/US-EDUC-1896-02.webp",
+          "response_ms": 609,
+          "field": "espelho"
+        },
+        {
+          "id": "SCOUT-560",
+          "title": "Virtudes cardinais da Matriz de Nossa Senhora do Pilar, Ouro Preto",
+          "url": "https://iconocracia.com/assets/acervo/SCOUT-560.webp",
+          "response_ms": 604,
+          "field": "espelho"
+        },
+        {
+          "id": "FR-026",
+          "title": "Emprunt national 1920 (Banque Nationale de Paris et des Pays-Bas)",
+          "url": "https://iconocracia.com/assets/acervo/FR-026.webp",
+          "response_ms": 583,
+          "field": "espelho"
+        },
+        {
+          "id": "0970108c-1619-50f5-bc85-719eb5f80aee",
+          "title": "Marianne / La Marseillaise (François Rude) — Mutilação no Arco do Triunfo durante os protestos dos Coletes Amarelos (2018)",
+          "url": "https://iconocracia.com/assets/acervo/0970108c-1619-50f5-bc85-719eb5f80aee.webp",
+          "response_ms": 566,
+          "field": "espelho"
+        }
+      ]
     }
   ],
-  "last_run": "2026-10-01T17:36:33Z",
-  "last_average_response_ms": 265,
+  "last_run": "2026-11-01T12:01:35Z",
+  "last_average_response_ms": 270,
   "last_status": "ok"
 }
