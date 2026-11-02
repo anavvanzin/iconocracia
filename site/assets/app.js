@@ -296,7 +296,7 @@
     const details = node('div', 'ex-dialog-details'); details.append(title);
     if (!imageOnly) {
       const list = node('dl', 'ex-record');
-      for (const [label, value] of [['Registro', selected.id], ['Autoria', selected.autoria], ['País', selected.pais], ['Data', selected.data], ['Instituição', selected.instituicao], ['Regime', selected.regime], ['Suporte', selected.suporte], ['Motivos', (selected.motivos || []).join(', ')], ['Descrição', selected.descricao], ['Direitos', selected.direitos], ['Crédito da reprodução', selected.credito], ['Citação', selected.citacao]]) {
+      for (const [label, value] of [['Registro', selected.id], ['Autoria', selected.autoria], ['País', selected.pais], ['Data', selected.data], ['Instituição', selected.instituicao], ['Regime', selected.regime], ['Suporte', selected.suporte], ['Motivos', (selected.motivos || []).join(', ')], ['Descrição', selected.descricao], ['Direitos', selected.direitos], ['Crédito da reprodução', selected.credito], ['Nota curatorial', selected.notas_curatoriais], ['Citação', selected.citacao]]) {
         if (value) list.append(node('dt', '', label), node('dd', '', value));
       }
       details.append(list);

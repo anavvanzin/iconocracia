@@ -89,6 +89,18 @@
         "rights": {
           "type": "string"
         },
+        "reproduction_credit": {
+          "type": "string",
+          "description": "Crédito da reprodução exibida (fotógrafo/procedência), distinto da autoria da obra."
+        },
+        "reproduction_source_url": {
+          "type": "string",
+          "description": "URL da fonte da reprodução exibida (ex.: página do arquivo no Wikimedia Commons)."
+        },
+        "curatorialNotes": {
+          "type": "string",
+          "description": "Nota curatorial documental, inclusive divergências de reprodução pendentes de adjudicação."
+        },
         "tags": {
           "type": "array",
           "items": {

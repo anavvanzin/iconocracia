@@ -186,6 +186,15 @@ def build_items(enriched: list[dict]) -> list[dict]:
             "tem_imagem": bool(img) or tem_webp_local(x.get("id")),
             "citacao": citacao,
         }
+        # Campos documentais opcionais: só entram no artefato público quando preenchidos.
+        for item_key, source_key in (
+            ("credito", "reproduction_credit"),
+            ("imagem_fonte", "reproduction_source_url"),
+            ("notas_curatoriais", "curatorialNotes"),
+        ):
+            valor = x.get(source_key)
+            if valor:
+                item[item_key] = valor
         # Preserva metadados iconográficos quando presentes (opcional, não quebra filtros).
         iconografia = x.get(ICONOGRAPHIC_KEY)
         if isinstance(iconografia, dict) and iconografia:

@@ -252,6 +252,12 @@ def _item(source):
     }
     if source.get('iconographic_metadata'):
         result['iconographic_metadata'] = _clean_metadata(source['iconographic_metadata'])
+    reproducao_credito = source.get('reproduction_credit')
+    if reproducao_credito:
+        result['credito'] = reproducao_credito
+    reproducao_fonte = _url(source.get('reproduction_source_url'))
+    if reproducao_fonte:
+        result['imagem_fonte'] = reproducao_fonte
     return result
 
 

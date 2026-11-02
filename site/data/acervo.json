@@ -3213,6 +3213,9 @@
     "imagem": "https://upload.wikimedia.org/wikipedia/commons/2/27/D%C3%A9cio_Villares_-_A_Rep%C3%BAblica.jpg",
     "tem_imagem": true,
     "citacao": "VILLARES, Décio. Alegoria da República. c. 1900. 1 pintura, óleo sobre tela, 97 x 77 cm. Museu Histórico Nacional. Disponível em: https://archive.nyu.edu/handle/2451/61396.",
+    "credito": "Reprodução via Wikimedia Commons (arquivo «Décio Villares - A República.jpg», PD-Art / Public Domain Mark). Fotógrafo não identificado nas fontes consultadas.",
+    "imagem_fonte": "https://commons.wikimedia.org/wiki/File:D%C3%A9cio_Villares_-_A_Rep%C3%BAblica.jpg",
+    "notas_curatoriais": "Nota de reprodução: a reprodução associada a este registro corresponde visualmente ao Retrato da República (Décio Villares, 1919, acervo do Senado Federal; catálogo do Senado Federal, 2010, p. 57, 55 × 45 cm), via Wikimedia Commons. Não corresponde ao esboço do Museu Histórico Nacional (c. 1900, 97 × 77 cm) descrito nesta ficha pela fonte NYU (Rj12-03). A relação entre os dois objetos não foi demonstrada; a adjudicação catalográfica permanece pendente.",
     "iconographic_metadata": {
       "visual_regime": "fundacional",
       "panofsky": {
@@ -6356,11 +6359,13 @@
       "colonialism"
     ],
     "descricao": "The Brussels Palace of Justice — one of the largest courthouses ever built and a monument to 19th-century legal grandeur. The 'pompous staircase with sculptures attired in Roman robes' and allegorical female figures throughout. Poelaert's design made the Belgian state visible through classical feminine allegory. Central to the dissertation's Belgian case study and Huygebaert's colonial paternalism analysis.",
-    "direitos": "Public domain",
+    "direitos": "Domínio público (obra de Joseph Poelaert, 1866–1883). Reprodução fotográfica: CC BY 2.0.",
     "fonte_url": "https://be-monumen.be/patrimoine-belge/poelaert-joseph/",
     "imagem": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Bruxelles_-_Palais_de_Justice.jpg",
     "tem_imagem": true,
     "citacao": "POELAERT, Joseph. Palais de Justice de Bruxelles. 1866–1883. Complexo arquitetônico. Bruxelles. Disponível em: https://be-monumen.be/patrimoine-belge/poelaert-joseph/.",
+    "credito": "Fotografia: Fred Romero, 12/06/2015 (data EXIF da fonte), via Flickr/Wikimedia Commons. Licença: CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/). Reprodução local derivada em WebP (900 × 600 px).",
+    "imagem_fonte": "https://commons.wikimedia.org/wiki/File:Bruxelles_-_Palais_de_Justice.jpg",
     "iconographic_metadata": {
       "visual_regime": "normativo",
       "panofsky": {
