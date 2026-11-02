@@ -486,8 +486,8 @@ def _manifest_digest(publication: dict) -> str:
 def _projection_bundle(baseline_raw: dict[str, bytes], items: list[dict], stats: dict,
                        constellations: list[dict]) -> dict[str, bytes]:
     baseline = json.loads(baseline_raw["acervo.json"])
-    # Supplements stay in the overlay. A withdrawal restores the original
-    # catalogue/statistical bytes, including formatting and the final newline.
+    # Supplements stay in the overlay. A withdrawal restores original catalogue
+    # bytes and statistical counts, with the current taxonomy presentation.
     return {
         "acervo.json": baseline_raw["acervo.json"] if len(items) == len(baseline) else _encoded(items),
         "stats.json": baseline_raw["stats.json"] if stats == json.loads(baseline_raw["stats.json"]) else _encoded(stats),
@@ -569,6 +569,17 @@ an incompatible schema change rejects the transition before any output write.
                       baseline_records=json.loads(baseline_raw["corpus-data-enriched.json"]), _historical=True)
     bundle = _projection_bundle(baseline_raw, *prior)
     if {name: _digest(bundle[name]) for name in OUTPUT_NAMES} != receipt["outputs"]:
+        # Receipts issued before the taxonomy presentation change are verified
+        # by reconstructing that exact statistical view, never by trusting the
+        # recorded hashes alone. This bundle is history only; active generation
+        # still publishes the current framework. All other bytes/gates match.
+        if "taxonomia" not in json.loads(baseline_raw["stats.json"]) and "por_rotulo_catalogado" in prior[1]:
+            legacy_stats = copy.deepcopy(prior[1])
+            legacy_stats["por_regime"] = legacy_stats.pop("por_rotulo_catalogado")
+            legacy_stats.pop("taxonomia")
+            legacy_bundle = _projection_bundle(baseline_raw, prior[0], legacy_stats, prior[2])
+            if {name: _digest(legacy_bundle[name]) for name in OUTPUT_NAMES} == receipt["outputs"]:
+                return legacy_bundle
         raise ValueError("Hashes do estado privado não correspondem à projeção anterior recalculada.")
     return bundle
 

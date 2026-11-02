@@ -22,6 +22,11 @@ import urllib.request
 from collections import Counter
 from dataclasses import dataclass, field
 
+if __package__ in (None, ""):
+    from taxonomy import present_taxonomy
+else:
+    from .taxonomy import present_taxonomy
+
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_ROOT = ROOT / 'schemas'
 __all__ = ['build', 'PacoteAcervo']
@@ -265,12 +270,12 @@ def _stats(items):
     motifs = Counter(m.strip() for i in items for m in i['motivos']
                      if m.strip() and m.strip().lower() not in TECHNICAL_MOTIFS)
     years = [int(y) for i in items for y in re.findall(r'(?<!\d)(1\d{3}|20\d{2}|2100)(?!\d)', i['data'])]
-    return dict(total=len(items), paises=len(set(countries) - {'Outros'}),
+    return present_taxonomy(dict(total=len(items), paises=len(set(countries) - {'Outros'}),
                 com_imagem=sum(i['tem_imagem'] for i in items),
                 periodo={'min': min(years) if years else None, 'max': max(years) if years else None},
                 por_pais=_rank(countries, 'pais'),
                 por_regime=[{**r, 'chave': r['regime'].lower()} for r in _rank(regimes, 'regime')],
-                motivos=_rank(motifs, 'motivo')[:10])
+                motivos=_rank(motifs, 'motivo')[:10]))
 
 
 @dataclass(frozen=True)

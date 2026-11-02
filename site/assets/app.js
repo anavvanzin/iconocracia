@@ -123,6 +123,24 @@
       const option = node('option', '', label(value)); option.value = value; element.append(option);
     });
   }
+  const interpretiveRegimes = new Set(['fundacional', 'normativo', 'militar']);
+  const isLegacyClassification = value => normalize(value) === 'contra-alegoria';
+  const classificationLabel = value => isLegacyClassification(value) ? `${value} (rótulo legado)` : value;
+  function fillClassifications(values) {
+    const groups = [
+      ['Regimes interpretativos', value => interpretiveRegimes.has(normalize(value))],
+      ['Classificações legadas', isLegacyClassification],
+      ['Outros rótulos catalogados', value => !interpretiveRegimes.has(normalize(value)) && !isLegacyClassification(value)],
+    ];
+    for (const [label, accepts] of groups) {
+      const options = values.filter(value => value && accepts(value));
+      if (!options.length) continue;
+      const group = node('optgroup'); group.label = label;
+      // Labels clarify status; values and shared ?regime= links retain exact matching.
+      fillOptions(group, options, classificationLabel);
+      fields.regime.append(group);
+    }
+  }
   function syncURL() {
     const url = new URL(location.href);
     for (const [key, el] of Object.entries(fields)) {
@@ -264,7 +282,7 @@
     // A descrição extensa e a citação são preservadas integralmente na ficha.
     $('#ex-description').textContent = selected.instituicao || 'Instituição não informada';
     $('#ex-source').href = selected.fonte_url || '';
-    const metadata = [['País', selected.pais], ['Regime', selected.regime], ['Data', selected.data], ['Tipo de obra', typeOf(selected)], ['Suporte', selected.suporte]];
+    const metadata = [['País', selected.pais], ['Classificação catalogada', classificationLabel(selected.regime)], ['Data', selected.data], ['Tipo de obra', typeOf(selected)], ['Suporte', selected.suporte]];
     metadata.forEach(([label, value]) => { if (value) $('#ex-metadata').append(node('dt', '', label), node('dd', '', value)); });
     $('#ex-position').textContent = (index + 1) + ' / ' + filtered.length;
     strip.querySelectorAll('.ex-thumb').forEach((button) => {
@@ -296,7 +314,7 @@
     const details = node('div', 'ex-dialog-details'); details.append(title);
     if (!imageOnly) {
       const list = node('dl', 'ex-record');
-      for (const [label, value] of [['Registro', selected.id], ['Autoria', selected.autoria], ['País', selected.pais], ['Data', selected.data], ['Instituição', selected.instituicao], ['Regime', selected.regime], ['Suporte', selected.suporte], ['Motivos', (selected.motivos || []).join(', ')], ['Descrição', selected.descricao], ['Direitos', selected.direitos], ['Crédito da reprodução', selected.credito], ['Citação', selected.citacao]]) {
+      for (const [label, value] of [['Registro', selected.id], ['Autoria', selected.autoria], ['País', selected.pais], ['Data', selected.data], ['Instituição', selected.instituicao], ['Classificação catalogada', classificationLabel(selected.regime)], ['Suporte', selected.suporte], ['Motivos', (selected.motivos || []).join(', ')], ['Descrição', selected.descricao], ['Direitos', selected.direitos], ['Crédito da reprodução', selected.credito], ['Citação', selected.citacao]]) {
         if (value) list.append(node('dt', '', label), node('dd', '', value));
       }
       details.append(list);
@@ -412,7 +430,7 @@
         field.replaceChildren(field.options[0]);
       });
       fillOptions(fields.pais, items.map((item) => item.pais));
-      fillOptions(fields.regime, items.map((item) => item.regime));
+      fillClassifications(items.map((item) => item.regime));
       fillOptions(fields.periodo, items.map(centuryOf), (value) => value === 'sem-ano' ? 'Sem ano numérico' : 'Século ' + value);
       fillOptions(fields.tipo, items.map(typeOf));
       Object.entries(fields).forEach(([key, field]) => { field.value = requested.get(key) || ''; });
