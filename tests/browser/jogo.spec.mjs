@@ -222,3 +222,128 @@ test.describe('FUNDIÇÃO — o gabinete', () => {
   });
 
 });
+
+const CHAVE = 'iconocracia:fundicao:v1';
+
+async function cunhar(page, lote) {
+  for (const [eixo, alvo] of Object.entries(lote.matriz)) {
+    const alavanca = page.locator('#jogo-alavancas button[data-eixo="' + eixo + '"]');
+    if (await alavanca.locator('.jogo-alavanca__alvo').textContent() === 'não lido') {
+      await alavanca.click();
+    }
+    const golpes = lote.etapa === 'contra-alegoria' ? (alvo < 3 ? 1 : 0) : alvo;
+    for (let i = 0; i < golpes; i++) await alavanca.click();
+  }
+  await expect(page.locator('#jogo-dossie')).toBeVisible();
+}
+
+test('regressão · conclusão persiste, desbloqueia e encerra a campanha', async ({ page }) => {
+  const manifesto = await lerManifesto(page);
+  manifesto.lotes = manifesto.lotes.slice(0, 2);
+  await page.route('**/data/jogo.json', route => route.fulfill({ json: manifesto }));
+  await abrirJogo(page);
+  await comecar(page);
+  await cunhar(page, manifesto.lotes[0]);
+  expect(await page.locator('#jogo-dossie').evaluate(el => el.matches(':modal'))).toBe(true);
+  expect(await page.evaluate(chave => JSON.parse(localStorage.getItem(chave)).concluidos, CHAVE))
+    .toEqual({ [manifesto.lotes[0].id]: true });
+  await page.reload();
+  await expect(page.locator('#jogo-acao')).toBeEnabled();
+  await page.locator('#jogo-mapa').click();
+  const primeiro = page.locator('#jogo-mapa-lista button[data-lote="' + manifesto.lotes[0].id + '"]');
+  const segundo = page.locator('#jogo-mapa-lista button[data-lote="' + manifesto.lotes[1].id + '"]');
+  await expect(primeiro).toContainText('cunhado');
+  await expect(segundo).toBeEnabled();
+  await segundo.click();
+  await comecar(page);
+  await cunhar(page, manifesto.lotes[1]);
+  await expect(page.locator('#jogo-dossie-proximo')).toHaveText('CONCLUIR CAMPANHA');
+  await page.locator('#jogo-dossie-proximo').click();
+  await expect(page.locator('#jogo-dossie-corpo')).toContainText('Campanha concluída');
+  expect(await page.locator('#jogo-dossie').evaluate(el => el.matches(':modal'))).toBe(true);
+});
+
+test('regressão · leitura que esgota o relógio oferece repetição', async ({ page }) => {
+  const manifesto = await lerManifesto(page);
+  const lote = manifesto.lotes.find(lote => lote.etapa === 'normativo');
+  lote.segundos = 10;
+  await page.route('**/data/jogo.json', route => route.fulfill({ json: { ...manifesto, lotes: [lote] } }));
+  await page.clock.install();
+  await abrirJogo(page);
+  await comecar(page);
+  await page.clock.runFor(8500);
+  await page.locator('#jogo-alavancas button').nth(9).click();
+  await expect(page.locator('#jogo-overlay button[data-acao="repetir"]')).toBeVisible();
+  expect(await page.evaluate(chave => JSON.parse(localStorage.getItem(chave)).concluidos, CHAVE)).toEqual({});
+  await page.locator('#jogo-overlay button[data-acao="repetir"]').click();
+  await comecar(page);
+  await expect(page.locator('#jogo-alavancas button').first()).toBeEnabled();
+});
+
+test('regressão · QWERTY e setas mantêm seleção e foco juntos', async ({ page }) => {
+  await abrirJogo(page);
+  await comecar(page);
+  await page.keyboard.press('r');
+  await expect(page.locator('#jogo-alavancas button').nth(3)).toBeFocused();
+  await page.keyboard.press('q');
+  await page.keyboard.press('ArrowRight');
+  await expect(page.locator('#jogo-alavancas button').nth(1)).toBeFocused();
+  await page.keyboard.press('Enter');
+  await expect(page.locator('#jogo-platen')).toHaveAttribute('data-t-rigidez_postural', '1');
+  await expect(page.locator('#jogo-platen')).toHaveAttribute('data-t-desincorporacao', '0');
+});
+
+test('regressão · pausa automática expõe continuar e imagem falha mantém fonte', async ({ page }) => {
+  await page.route('**/images/**', route => route.abort());
+  const manifesto = await lerManifesto(page);
+  await page.route('**/' + manifesto.lotes[0].image.replace(/^\//, ''), route => route.abort());
+  await abrirJogo(page);
+  await comecar(page);
+  await expect(page.locator('#jogo-platen-legenda')).toContainText('Reprodução indisponível');
+  await page.locator('#jogo-alavancas button').nth(1).click();
+  await expect(page.locator('#jogo-platen-legenda')).toContainText(manifesto.lotes[0].fonte_url);
+  await page.evaluate(() => {
+    Object.defineProperty(document, 'hidden', { configurable: true, value: true });
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  await expect(page.locator('#jogo-pausa')).toHaveText('Continuar');
+  await expect(page.locator('#jogo-pausa')).toHaveAttribute('aria-pressed', 'true');
+  await page.evaluate(() => Object.defineProperty(document, 'hidden', { configurable: true, value: false }));
+  await page.locator('#jogo-pausa').click();
+  await expect(page.locator('#jogo-pausa')).toHaveText('Pausar');
+});
+
+test('regressão · relógio esgotado desativa ações e permite recomeçar', async ({ page }) => {
+  const manifesto = await lerManifesto(page);
+  manifesto.lotes[0].segundos = 10;
+  await page.route('**/data/jogo.json', route => route.fulfill({ json: manifesto }));
+  await page.clock.install();
+  await abrirJogo(page);
+  await comecar(page);
+  await page.clock.runFor(11000);
+  await expect(page.locator('#jogo-acao')).toBeDisabled();
+  await expect(page.locator('#jogo-alavancas button').first()).toBeDisabled();
+  await page.locator('#jogo-overlay button[data-acao="repetir"]').click();
+  await comecar(page);
+  await expect(page.locator('#jogo-acao')).toBeEnabled();
+});
+
+test('regressão · canvas medido no início e efeitos em coordenadas locais', async ({ page }) => {
+  await abrirJogo(page);
+  await comecar(page);
+  const medida = await page.locator('#jogo-fx').evaluate(canvas => {
+    const caixa = canvas.getBoundingClientRect();
+    window.aneis = [];
+    const ctx = canvas.getContext('2d');
+    const arc = ctx.arc.bind(ctx);
+    ctx.arc = (...args) => { window.aneis.push(args.slice(0, 2)); return arc(...args); };
+    return { width: canvas.width, esperado: Math.round(caixa.width * devicePixelRatio),
+      x: caixa.width / 2, y: caixa.height / 2 };
+  });
+  expect(medida.width).toBe(medida.esperado);
+  await page.locator('#jogo-alavancas button').nth(1).click();
+  await expect.poll(() => page.evaluate(() => window.aneis.length)).toBeGreaterThan(0);
+  const [x, y] = await page.evaluate(() => window.aneis[0]);
+  expect(x).toBeCloseTo(medida.x);
+  expect(y).toBeCloseTo(medida.y);
+});

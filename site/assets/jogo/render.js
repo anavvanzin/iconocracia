@@ -154,7 +154,9 @@ export function criarRender(refs) {
         estado.lote.titulo + ' (' + (estado.lote.year || 's/data') + '). Tratamentos aplicados: ' + descricao + '.',
       );
     });
-    refs.platenLegenda.textContent = descricao;
+    refs.platenLegenda.textContent = estado.imagemIndisponivel
+      ? 'Reprodução indisponível — consulte o arquivo de origem: ' + estado.lote.fonte_url
+      : descricao;
   }
 
   /* -------------------------------------------------------------- orientações */

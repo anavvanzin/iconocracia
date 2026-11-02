@@ -175,19 +175,22 @@ function golpar(eixo) {
     audio.golpe(1);
     const botao = refs.alavancas.querySelector('[data-eixo="' + eixo + '"]');
     if (botao) {
-      const caixa = botao.getBoundingClientRect();
-      efeitos.golpe(caixa.left + caixa.width / 2, caixa.top + caixa.height / 2, 1);
+      const caixa = refs.fx.getBoundingClientRect();
+      efeitos.golpe(caixa.width / 2, caixa.height / 2, 1);
     }
   }
-  if (evento.tipo === 'falhou') {
+  if (estado.fase === FASES.FAILED) {
     render.mostrarAviso(estado, 'falha');
   }
   if (evento.tipo === 'cunhou') {
+    progresso.concluidos[estado.lote.id] = true;
+    guardarProgresso();
+    const estadoCunhado = estado;
     audio.cunha();
-    const caixa = refs.platen.getBoundingClientRect();
-    efeitos.cunha(caixa.left + caixa.width / 2, caixa.top + caixa.height / 2);
+    const caixa = refs.fx.getBoundingClientRect();
+    efeitos.cunha(caixa.width / 2, caixa.height / 2);
     window.setTimeout(() => {
-      if (!estado || estado.fase !== FASES.CASTING) return;
+      if (estado !== estadoCunhado || estado.fase !== FASES.CASTING) return;
       abrirDossie(estado);
       mostrarDossie();
     }, DURACAO_CUNHAGEM);
@@ -229,8 +232,9 @@ function mostrarDossie() {
   if (!estado) return;
   render.pintarDossie(estado);
   const proximo = lotes[estado.posicao + 1];
-  refs.dossieProximo.hidden = !proximo;
-  refs.dossie.open = true;
+  refs.dossieProximo.hidden = false;
+  refs.dossieProximo.textContent = proximo ? 'PRÓXIMO LOTE' : 'CONCLUIR CAMPANHA';
+  if (!refs.dossie.open) refs.dossie.showModal();
 }
 
 function fecharDossie() {
@@ -264,7 +268,7 @@ function mostrarFimDeCampanha() {
     'Todos os lotes foram cunhados. A campanha lista objetos e citações — não um número sobre o acervo.';
   caixas.append(titulo, texto);
   refs.dossieProximo.hidden = true;
-  refs.dossie.open = true;
+  if (!refs.dossie.open) refs.dossie.showModal();
 }
 
 /* ------------------------------------------------------------------- carga */
@@ -283,12 +287,11 @@ function carregarLote(posicao, opcoes = {}) {
   efeitos.limpar();
   refs.legenda.textContent = [lote.regime, lote.year ? String(lote.year) : null].filter(Boolean).join(' · ');
   pintar();
+  const estadoCarregado = estado;
+  efeitos.medir();
   precarregar(lote).then((falhou) => {
-    if (!estado || estado.lote.id !== lote.id) return;
-    if (falhou) {
-      refs.platenLegenda.textContent =
-        'Reprodução indisponível — consulte o arquivo de origem: ' + lote.fonte_url;
-    }
+    if (estado !== estadoCarregado) return;
+    estado.imagemIndisponivel = falhou;
     abrirBriefing(estado);
     render.mostrarAviso(estado, 'briefing');
     pintar();
@@ -300,6 +303,8 @@ function carregarLote(posicao, opcoes = {}) {
 
 function pintar() {
   if (!estado) return;
+  refs.pausa.setAttribute('aria-pressed', String(estado.pausado));
+  refs.pausa.textContent = estado.pausado ? 'Continuar' : 'Pausar';
   render.pintarHud(estado);
   render.pintarAlavancas(estado);
   render.pintarPlaten(estado);
@@ -348,6 +353,7 @@ function quadro(agora) {
     if (!document.hidden && !refs.dossie.open) {
       if (tick(estado, delta)) {
         render.mostrarAviso(estado, 'falha');
+        pintar();
       } else {
         const inteiro = Math.ceil(estado.tempoRestante);
         if (inteiro <= 10 && inteiro !== relogioAvisado) {
@@ -408,22 +414,25 @@ function tratarTecla(evento) {
     if (ehContraAlegoria(estado.lote) && estado.fase === FASES.STRIKING) {
       evento.preventDefault();
       recusa();
+      return;
     }
-    return;
   }
   if (tecla === 'ArrowDown' || tecla === 'ArrowRight') {
     evento.preventDefault();
     moverSelecao(estado, 1);
     pintar();
+    focarSelecao();
     return;
   }
   if (tecla === 'ArrowUp' || tecla === 'ArrowLeft') {
     evento.preventDefault();
     moverSelecao(estado, -1);
     pintar();
+    focarSelecao();
     return;
   }
-  const posicaoTecla = MAPA_TECLAS.indexOf(tecla.toLowerCase());
+  const posicaoMapa = MAPA_TECLAS.indexOf(tecla.toLowerCase());
+  const posicaoTecla = posicaoMapa < 0 ? -1 : posicaoMapa % EIXOS.length;
   if (posicaoTecla >= 0 && posicaoTecla < EIXOS.length) {
     evento.preventDefault();
     selecionar(estado, EIXOS[posicaoTecla]);
@@ -431,6 +440,11 @@ function tratarTecla(evento) {
     const botao = refs.alavancas.querySelector('[data-eixo="' + EIXOS[posicaoTecla] + '"]');
     if (botao) botao.focus({ preventScroll: true });
   }
+}
+
+function focarSelecao() {
+  const botao = refs.alavancas.querySelector('[data-eixo="' + EIXOS[estado.eixoSelecionado] + '"]');
+  if (botao) botao.focus({ preventScroll: true });
 }
 
 function ligarEntrada() {
@@ -487,7 +501,10 @@ function ligarEntrada() {
   });
 
   document.addEventListener('visibilitychange', () => {
-    if (document.hidden && estado) estado.pausado = true;
+    if (document.hidden && estado) {
+      estado.pausado = true;
+      pintar();
+    }
   });
   window.addEventListener('resize', () => efeitos.medir());
 }
