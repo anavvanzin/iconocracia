@@ -67,6 +67,7 @@ class PublicationStatsTests(unittest.TestCase):
                         periodo={"min": 1220, "max": 2025})
         expected["por_pais"][0]["n"] += 1
         expected["por_regime"][0]["n"] += 1
+        expected["por_rotulo_catalogado"][0]["n"] += 1
         expected["motivos"][0]["n"] += 1
         self.assertEqual(result, expected)
         self.assertEqual((self.baseline, self.raw, source, self.stats), original)

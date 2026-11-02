@@ -322,7 +322,11 @@ class AcervoTests(unittest.TestCase):
             for key in sorted(set(old[item['id']]) | set(item)):
                 if old[item['id']].get(key) != item.get(key):
                     changes.setdefault(key, []).append(item['id'])
-        self.assertEqual(package.stats, report['proposed_stats'])
+        # The historical migration report is not rewritten by a presentation fix.
+        old_view = copy.deepcopy(package.stats)
+        old_view['por_regime'] = old_view.pop('por_rotulo_catalogado')
+        old_view.pop('taxonomia')
+        self.assertEqual(old_view, report['proposed_stats'])
         self.assertEqual({key: {'count': len(ids), 'ids': sorted(ids)} for key, ids in changes.items()},
                          report['changed_fields'])
         self.assertEqual([i['id'] for i in package.itens], [i['id'] for i in published])

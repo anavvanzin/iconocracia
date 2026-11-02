@@ -92,16 +92,6 @@
       "regime": "Militar",
       "chave": "MILITAR",
       "n": 54
-    },
-    {
-      "regime": "Contra-alegoria",
-      "chave": "CONTRA-ALEGORIA",
-      "n": 15
-    },
-    {
-      "regime": "Não classificado",
-      "chave": "não classificado",
-      "n": 1
     }
   ],
   "motivos": [
@@ -145,5 +135,46 @@
       "motivo": "scales",
       "n": 10
     }
-  ]
+  ],
+  "por_rotulo_catalogado": [
+    {
+      "regime": "Fundacional",
+      "chave": "FUNDACIONAL",
+      "n": 164
+    },
+    {
+      "regime": "Normativo",
+      "chave": "NORMATIVO",
+      "n": 103
+    },
+    {
+      "regime": "Militar",
+      "chave": "MILITAR",
+      "n": 54
+    },
+    {
+      "regime": "Contra-alegoria",
+      "chave": "CONTRA-ALEGORIA",
+      "n": 15
+    },
+    {
+      "regime": "Não classificado",
+      "chave": "não classificado",
+      "n": 1
+    }
+  ],
+  "taxonomia": {
+    "regimes_interpretativos": [
+      "Fundacional",
+      "Normativo",
+      "Militar"
+    ],
+    "contra_alegoria": {
+      "estatuto": "teste_critico",
+      "rotulo_legado": "Contra-alegoria",
+      "nota": "O rótulo legado não constitui um quarto regime nem comprova a aplicação do teste crítico."
+    },
+    "unidade": "registro do catálogo publicado",
+    "nota_contagens": "por_rotulo_catalogado preserva todos os rótulos armazenados, inclusive os legados e não classificados. por_regime seleciona apenas os rótulos dos três regimes; sua soma pode ser menor que total. As contagens não reclassificam registros nem validam interpretações iconológicas."
+  }
 }
