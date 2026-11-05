@@ -492,6 +492,7 @@ test('regressão · matriz já satisfeita conclui sem golpe errado nem perda de 
  test('24 · pausa no briefing desabilita o início e permite retomar', async ({ page }) => {
   await abrirJogo(page);
   const inicio = page.locator('#jogo-overlay [data-acao="comecar"]');
+  await expect(inicio).toBeVisible();
   await page.keyboard.press('Escape');
   await expect(inicio).toBeDisabled();
   await expect(page.locator('#jogo-acao')).toBeDisabled();
