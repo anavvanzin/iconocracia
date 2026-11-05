@@ -26,6 +26,7 @@ const EN_ROUTES = [
   { path: '/en/constelacoes', marker: 'Constellations' },
   { path: '/en/jogo', marker: 'FOUNDRY' },
   { path: '/en/nachleben', marker: 'Bilderatlas · Tafeln I–V' },
+  { path: '/en/marmore-a-margem', marker: 'Female Allegories and Legal Legitimacy in Brazil (1822–1922)' },
 ];
 
 test('English clean routes serve native English HTML with editorial cache', async () => {
@@ -83,6 +84,7 @@ test('sitemap.xml lists all English routes and Portuguese routes', async () => {
   for (const { path } of EN_ROUTES) {
     assert.ok(xml.includes(`<loc>${origin}${path}</loc>`), `sitemap must list ${path}`);
   }
+  assert.ok(xml.includes(`<loc>${origin}/marmore-a-margem</loc>`), 'sitemap must list /marmore-a-margem');
 });
 
 test('bidirectional hreflang links exist between PT and EN routes', async () => {
@@ -93,6 +95,7 @@ test('bidirectional hreflang links exist between PT and EN routes', async () => 
     { pt: '/constelacoes', en: '/en/constelacoes' },
     { pt: '/jogo', en: '/en/jogo' },
     { pt: '/nachleben', en: '/en/nachleben' },
+    { pt: '/marmore-a-margem', en: '/en/marmore-a-margem' },
   ];
 
   for (const pair of routePairs) {

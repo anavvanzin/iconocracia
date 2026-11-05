@@ -95,7 +95,7 @@
   const fields = { q: $('#q'), pais: $('#f-pais'), regime: $('#f-regime'), periodo: $('#f-periodo'), tipo: $('#f-tipo') };
   const params = new URLSearchParams(location.search);
   let activeStrand = params.get('recorte') === 'tese' ? 'tese' : '';
-  const strandAll = $('#strand-all'), strandTese = $('#strand-tese');
+  const strandAll = $('#strand-all'), strandTese = $('#strand-tese'), strandContext = $('#ex-strand-context');
   const stage = $('.ex-stage'), strip = $('#ex-filmstrip'), grid = $('#ex-grid'), constellation = $('#ex-constellation');
   const VIEWS = ['constelacao', 'palco', 'grade'];
   let view = VIEWS.includes(params.get('visao')) ? params.get('visao') : 'constelacao';
@@ -161,6 +161,18 @@
     if (view === 'constelacao' && selected?.id !== previousId) selectionLinked = false;
     strandAll?.setAttribute('aria-pressed', String(activeStrand !== 'tese'));
     strandTese?.setAttribute('aria-pressed', String(activeStrand === 'tese'));
+    if (strandContext) {
+      if (activeStrand === 'tese') {
+        strandContext.hidden = false;
+        strandContext.innerHTML = tr(
+          '<span>Recorte Doutoral Ativo</span> · <em>Mármore à Margem (Brasil, 1822–1922) · In marmore regnat, in iure tacet</em> · <a href="marmore-a-margem.html">Ler ensaio do recorte →</a>',
+          '<span>Active Doctoral Strand</span> · <em>Mármore à Margem (Brazil, 1822–1922) · In marmore regnat, in iure tacet</em> · <a href="/en/marmore-a-margem">Read strand essay →</a>'
+        );
+      } else {
+        strandContext.hidden = true;
+        strandContext.replaceChildren();
+      }
+    }
     $('#result-count').textContent = activeConstellation
       ? filtered.length + tr(' de ', ' of ') + scoped.length + tr(' obras · ', ' works · ') + activeConstellation.title
       : activeStrand === 'tese'
@@ -496,6 +508,7 @@
       loadControls.forEach((control) => { control.disabled = true; });
       items = []; filtered = []; selected = null; activeConstellation = null;
       if ($('#ex-curatorial-context')) $('#ex-curatorial-context').hidden = true;
+      if (strandContext) { strandContext.hidden = true; strandContext.replaceChildren(); }
       // Do not call renderSelected: its empty-search path rewrites the URL.
       stage.hidden = false;
       document.querySelector('.ex-layout').classList.remove('ex-layout-wide');

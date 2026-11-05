@@ -22,6 +22,7 @@ const KNOWN_ROUTES = new Set([
   '/constelacoes',
   '/jogo',
   '/nachleben',
+  '/marmore-a-margem',
   '/en',
   '/en/index',
   '/en/acervo',
@@ -29,6 +30,7 @@ const KNOWN_ROUTES = new Set([
   '/en/constelacoes',
   '/en/jogo',
   '/en/nachleben',
+  '/en/marmore-a-margem',
 ]);
 
 /** Legacy or promised URLs that permanently move elsewhere. */
@@ -64,12 +66,14 @@ function buildSitemap(stats) {
     { loc: `${BASE_URL}/constelacoes`, priority: '0.7' },
     { loc: `${BASE_URL}/jogo`, priority: '0.8' },
     { loc: `${BASE_URL}/nachleben`, priority: '0.8' },
+    { loc: `${BASE_URL}/marmore-a-margem`, priority: '0.9' },
     { loc: `${BASE_URL}/en`, priority: '0.9' },
     { loc: `${BASE_URL}/en/sobre`, priority: '0.8' },
     { loc: `${BASE_URL}/en/acervo`, priority: '0.8' },
     { loc: `${BASE_URL}/en/constelacoes`, priority: '0.7' },
     { loc: `${BASE_URL}/en/jogo`, priority: '0.8' },
     { loc: `${BASE_URL}/en/nachleben`, priority: '0.7' },
+    { loc: `${BASE_URL}/en/marmore-a-margem`, priority: '0.8' },
   ];
   const body = urls
     .map(
@@ -136,12 +140,14 @@ export default {
       '/constelacoes',
       '/jogo',
       '/nachleben',
+      '/marmore-a-margem',
       '/en',
       '/en/acervo',
       '/en/sobre',
       '/en/constelacoes',
       '/en/jogo',
       '/en/nachleben',
+      '/en/marmore-a-margem',
     ];
     if (SLASH_PATHS.includes(path) && url.pathname.endsWith('/')) {
       url.pathname = path;
