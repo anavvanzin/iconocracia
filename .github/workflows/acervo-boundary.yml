@@ -22,5 +22,6 @@ jobs:
         run: |
           python -m unittest discover -s tests -p 'test_acervo.py' -v
           python -m unittest discover -s tests -p 'test_build_data_golden.py' -v
+          python -m unittest discover -s tests -p 'test_taxonomy.py' -v
       - name: Check input and generated output without writing
         run: python scripts/acervo.py --check

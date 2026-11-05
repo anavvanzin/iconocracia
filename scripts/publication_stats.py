@@ -13,6 +13,7 @@ import copy
 from collections.abc import Iterable, Mapping
 
 from scripts.build_data import build_stats as build_production_stats
+from scripts.taxonomy import present_taxonomy
 
 
 def _index(records: Iterable[dict], label: str) -> dict[str, dict]:
@@ -43,8 +44,8 @@ def build_publication_stats(items: list[dict], baseline: list[dict], baseline_st
     of new projected items. Always pass the original baseline, including when
     withdrawing a previously generated addition or image supplement.
 
-    Unchanged projections and image-only supplements preserve all other baseline
-    statistics verbatim. Additions require complete original raw sources and
+    Unchanged projections and image-only supplements preserve baseline counts
+    and apply the current taxonomy presentation to historical aggregates. Additions require complete original raw sources and
     reuse ``build_data.build_stats`` instead of approximating its semantics.
     """
     projected_by_id = _index(items, "Projeção")
@@ -66,7 +67,7 @@ def build_publication_stats(items: list[dict], baseline: list[dict], baseline_st
             if not isinstance(count, int) or isinstance(count, bool) or count + image_delta < 0:
                 raise ValueError("Estatísticas da base não têm com_imagem válido.")
             result["com_imagem"] = count + image_delta
-        return result
+        return present_taxonomy(result)
 
     if baseline and baseline_records is None:
         raise ValueError("baseline_records é obrigatório para reconstruir agregados da base publicada.")
