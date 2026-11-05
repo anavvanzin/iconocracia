@@ -1502,6 +1502,23 @@ html[data-theme="noite"] .ex-lang:hover { color:#1d1033; }
 }
 html[data-theme="noite"] .inscriptio-banner em { color:var(--ex-action); }
 
+.inscriptio-pill {
+  font-family:"Instrument Serif",Georgia,serif; font-style:italic;
+  font-size:1.1rem; line-height:1.2; color:var(--ex-selection);
+  margin:.2rem 0 .5rem;
+}
+html[data-theme="noite"] .inscriptio-pill { color:var(--ex-action); }
+
+.author-direct-link,
+.site-footer a.footer-author-link {
+  font-weight:600; text-decoration:underline;
+  text-decoration-thickness:1px; text-underline-offset:3px;
+}
+.author-direct-link:hover,
+.site-footer a.footer-author-link:hover {
+  color:var(--ex-action);
+}
+
 /* Barra de recorte no acervo (Atlas completo vs. Mármore à Margem 1822–1922) */
 .ex-strand-bar {
   display:flex; align-items:center; flex-wrap:wrap; gap:10px;
