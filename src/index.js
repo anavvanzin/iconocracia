@@ -14,12 +14,29 @@
 const BASE_URL = 'https://iconocracia.com';
 
 /** Routes that own a real static page in site/. */
-const KNOWN_ROUTES = new Set(['/', '/index', '/acervo', '/sobre', '/constelacoes', '/jogo']);
+const KNOWN_ROUTES = new Set([
+  '/',
+  '/index',
+  '/acervo',
+  '/sobre',
+  '/constelacoes',
+  '/jogo',
+  '/nachleben',
+  '/en',
+  '/en/index',
+  '/en/acervo',
+  '/en/sobre',
+  '/en/constelacoes',
+  '/en/jogo',
+  '/en/nachleben',
+]);
 
 /** Legacy or promised URLs that permanently move elsewhere. */
 const REDIRECTS = new Map([
   ['/pesquisa-e-metodo', '/sobre'],
   ['/home', '/'],
+  ['/en/home', '/en'],
+  ['/en/pesquisa-e-metodo', '/en/sobre'],
 ]);
 
 const XML_HEADERS = { 'Content-Type': 'application/xml; charset=utf-8' };
@@ -46,6 +63,13 @@ function buildSitemap(stats) {
     { loc: `${BASE_URL}/acervo`, priority: '0.9' },
     { loc: `${BASE_URL}/constelacoes`, priority: '0.7' },
     { loc: `${BASE_URL}/jogo`, priority: '0.8' },
+    { loc: `${BASE_URL}/nachleben`, priority: '0.8' },
+    { loc: `${BASE_URL}/en`, priority: '0.9' },
+    { loc: `${BASE_URL}/en/sobre`, priority: '0.8' },
+    { loc: `${BASE_URL}/en/acervo`, priority: '0.8' },
+    { loc: `${BASE_URL}/en/constelacoes`, priority: '0.7' },
+    { loc: `${BASE_URL}/en/jogo`, priority: '0.8' },
+    { loc: `${BASE_URL}/en/nachleben`, priority: '0.7' },
   ];
   const body = urls
     .map(
@@ -94,18 +118,41 @@ export default {
       return new Response(buildSitemap(stats), { headers: XML_HEADERS });
     }
 
+    // Defense-in-depth: rewrite trapped relative asset and data calls from /en/
+    if (url.pathname.startsWith('/en/assets/') || url.pathname.startsWith('/en/data/')) {
+      const strippedPath = url.pathname.slice(3); // strips '/en'
+      const assetRequest = new Request(new URL(strippedPath, url.origin), request);
+      return env.ASSETS.fetch(assetRequest);
+    }
+
     if (REDIRECTS.has(path)) {
       return Response.redirect(`${BASE_URL}${REDIRECTS.get(path)}`, 301);
     }
 
     // A trailing slash makes these pages' relative assets resolve in a subdir.
-    if (['/acervo', '/constelacoes', '/jogo'].includes(path) && url.pathname.endsWith('/')) {
+    const SLASH_PATHS = [
+      '/acervo',
+      '/sobre',
+      '/constelacoes',
+      '/jogo',
+      '/nachleben',
+      '/en',
+      '/en/acervo',
+      '/en/sobre',
+      '/en/constelacoes',
+      '/en/jogo',
+      '/en/nachleben',
+    ];
+    if (SLASH_PATHS.includes(path) && url.pathname.endsWith('/')) {
       url.pathname = path;
       return Response.redirect(url.href, 308);
     }
 
     if (KNOWN_ROUTES.has(path)) {
-      const asset = path === '/' || path === '/index' ? '/index.html' : `${path}.html`;
+      let asset;
+      if (path === '/' || path === '/index') asset = '/index.html';
+      else if (path === '/en' || path === '/en/index') asset = '/en/index.html';
+      else asset = `${path}.html`;
       return servePage(env, asset);
     }
 

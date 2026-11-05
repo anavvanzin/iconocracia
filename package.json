@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "test:browser": "playwright test"
+    "test:browser": "playwright test",
+    "plates:generate": "node scripts/plates/generate.cjs site/assets/plates"
   },
   "devDependencies": {
     "@playwright/test": "1.63.0",
+    "opentype.js": "^2.0.0",
     "wrangler": "^4.151.0"
   }
 }

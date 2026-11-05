@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FOUNDRY — The Archive Apparatus — Mnemosyne Viva</title>
+<meta name="description" content="THE FOUNDRY: an archive press apparatus exploring the Iconocracia research. Ten axes of classical purification, one matrix per object, and the verified archival citation upon completing each run.">
+<meta name="author" content="Ana Vanzin — PPGD/UFSC">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FOUNDRY — The Archive Apparatus">
+<meta property="og:description" content="Press the ten axes of classical purification upon real objects from the Iconocracia archive.">
+<meta property="og:locale" content="en_US">
+<meta name="theme-color" content="#b99aee">
+<link rel="canonical" href="https://iconocracia.com/en/jogo">
+<link rel="alternate" hreflang="pt-BR" href="https://iconocracia.com/jogo">
+<link rel="alternate" hreflang="en" href="https://iconocracia.com/en/jogo">
+<script>
+// Night mode initialization to prevent FOUC.
+(function () { try { var m = localStorage.getItem('iconocracia-modo');
+  if (m === 'noite' || (m !== 'dia' && window.matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.setAttribute('data-theme', 'noite');
+} catch (e) {} })();
+</script>
+<link rel="icon" href="/assets/edelweiss-icon.png" type="image/png">
+<link rel="preload" href="/assets/design-system/fonts/jizBRFtNs2ka5fXjeivQ4LroWlx-6zUTjnTLgNs.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/design-system/fonts/q5uDsoa5M_tv7IihmnkabARboYF6CsKj.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/design-system/fonts/fonts.css">
+<link rel="stylesheet" href="/assets/style.css?v=20261019-a11y">
+<link rel="stylesheet" href="/assets/jogo/jogo.css?v=20261031-fundicao">
+</head>
+<body class="ex-page ex-jogo">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="ex-header"><a class="ex-brand" href="/en"><span class="brand-flower brand-ornament" aria-hidden="true"></span><span class="ex-brand-text"><span class="ex-brand-title">MNEMOSYNE VIVA</span><span class="ex-brand-sub">ICONOCRACIA · RESEARCH ATLAS</span></span></a><nav aria-label="Main navigation"><a href="/en">Home</a><a href="/en/acervo">Archive</a><a href="/en/constelacoes" data-constellations-link hidden>Constellations</a><a href="/en/sobre">Research &amp; Method</a><a href="/en/nachleben">Nachleben</a></nav><button class="ex-night" id="night-toggle" type="button" aria-pressed="false">NOITE</button><a class="ex-lang" id="lang-toggle" href="/jogo" aria-label="Ler em português">PT</a><button class="ex-search-shortcut" aria-label="Search the archive" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/></svg></button></header>
+
+<main id="main" class="jogo">
+
+  <section class="jogo-hud" aria-label="Foundry state">
+    <div class="jogo-hud__bloco">
+      <p class="jogo-hud__etapa"><span id="jogo-etapa-romano">I</span> · <span id="jogo-etapa-nome">Foundational</span></p>
+      <p class="jogo-hud__lote" id="jogo-lote-titulo">—</p>
+      <p class="jogo-hud__meta" id="jogo-lote-meta"></p>
+    </div>
+    <dl class="jogo-hud__marcas">
+      <div class="jogo-marca"><dt>Time</dt><dd id="jogo-tempo">—</dd></div>
+      <div class="jogo-marca"><dt>Stamps</dt><dd id="jogo-carimbos">—</dd></div>
+      <div class="jogo-marca"><dt>Target axes</dt><dd id="jogo-eixos">—</dd></div>
+      <div class="jogo-marca"><dt>Combo</dt><dd id="jogo-combo">—</dd></div>
+      <div class="jogo-marca jogo-marca--pontos"><dt>Minting points</dt><dd id="jogo-pontos">0</dd></div>
+    </dl>
+    <div class="jogo-hud__acoes">
+      <button type="button" class="btn btn-primary" id="jogo-acao">START THE FOUNDRY</button>
+      <button type="button" class="btn btn-dark" id="jogo-pausa" aria-pressed="false">Pause</button>
+      <button type="button" class="btn btn-ghost" id="jogo-som" aria-pressed="false">Sound</button>
+      <button type="button" class="btn btn-ghost" id="jogo-mapa">Timeline</button>
+    </div>
+  </section>
+
+  <div class="jogo-corpo">
+
+    <section class="jogo-palco" aria-labelledby="jogo-palco-titulo">
+      <h2 id="jogo-palco-titulo" class="sr-only">Press platen</h2>
+      <figure class="jogo-platen" id="jogo-platen">
+        <canvas class="jogo-fx" id="jogo-fx" aria-hidden="true"></canvas>
+        <div class="jogo-platen__figs" id="jogo-figs"></div>
+        <div class="jogo-platen__overlays" aria-hidden="true">
+          <div class="jogo-ov jogo-ov--plumb"></div>
+          <div class="jogo-ov jogo-ov--face"></div>
+          <div class="jogo-ov jogo-ov--colunas"></div>
+          <div class="jogo-ov jogo-ov--vinheta"></div>
+          <div class="jogo-ov jogo-ov--moldura"></div>
+          <div class="jogo-ov jogo-ov--legenda" id="jogo-legenda-faixa"></div>
+        </div>
+        <div class="jogo-overlay" id="jogo-overlay" hidden></div>
+      </figure>
+      <figcaption class="jogo-platen__legenda" id="jogo-platen-legenda"></figcaption>
+    </section>
+
+    <section class="jogo-matriz" id="jogo-matriz" aria-labelledby="jogo-matriz-titulo" data-aberta="0">
+      <header class="jogo-matriz__cabecalho">
+        <div class="jogo-matriz__topo">
+          <h2 class="jogo-matriz__titulo" id="jogo-matriz-titulo">Foundry matrix</h2>
+          <button type="button" class="btn btn-ghost jogo-gaveta" id="jogo-gaveta" aria-expanded="false" aria-controls="jogo-matriz">Matrix ▲</button>
+        </div>
+        <p class="jogo-matriz__nota" id="jogo-matriz-nota"></p>
+      </header>
+      <ul class="jogo-alavancas" id="jogo-alavancas"></ul>
+      <p class="jogo-matriz__rodape" id="jogo-matriz-rodape"></p>
+    </section>
+
+  </div>
+
+  <section class="jogo-regra">
+    <h2 class="sr-only">About the experiment</h2>
+    <div class="inscriptio-banner">
+      <span>Inscriptio</span> · <em>Matrix errans, lex immobilis.</em>
+    </div>
+    <p>FUNDIÇÃO («The Foundry» · <em>Matrix errans, lex immobilis</em>: «Wandering matrix, immobile law») puts <strong>Classical Purification</strong> into play: the operation through which the State extracts historical femininity from a figure and fixes it onto an eternal allegorical surface. The ten levers are the ten purification indicators of the archive itself; the die (<em>matrix</em>) of each batch is the real coding of that object, with the coder, date, and notes recorded in the corpus. Values are <strong>situated interpretive acts</strong>, not neutral data — and none of them is collapsed into a single score.</p>
+  </section>
+
+</main>
+
+<dialog class="jogo-dialog jogo-dossie" id="jogo-dossie" aria-labelledby="jogo-dossie-titulo">
+  <div class="jogo-dossie__corpo" id="jogo-dossie-corpo"></div>
+  <div class="jogo-dossie__acoes">
+    <button type="button" class="btn btn-ghost" id="jogo-dossie-repetir">Repeat</button>
+    <button type="button" class="btn btn-primary" id="jogo-dossie-proximo">Next batch</button>
+    <button type="button" class="btn btn-ghost" id="jogo-dossie-fechar">Close</button>
+  </div>
+</dialog>
+
+<dialog class="jogo-dialog jogo-mapa-dialog" id="jogo-mapa-dialog" aria-labelledby="jogo-mapa-titulo">
+  <h2 id="jogo-mapa-titulo" class="jogo-dialog__titulo">Timeline</h2>
+  <p class="jogo-dialog__nota">The batches of each stage follow the year. A batch unlocks when the previous one is minted.</p>
+  <div id="jogo-mapa-lista"></div>
+  <div class="jogo-dossie__acoes">
+    <button type="button" class="btn btn-ghost" id="jogo-mapa-fechar">Close</button>
+  </div>
+</dialog>
+
+<dialog class="jogo-dialog" id="jogo-controles" aria-labelledby="jogo-controles-titulo">
+  <h2 id="jogo-controles-titulo" class="jogo-dialog__titulo">Controls</h2>
+  <dl class="jogo-controles__lista">
+    <div><dt>1…0 / Q…P</dt><dd>select lever (in stage IV, use 4 for R axis)</dd></div>
+    <div><dt>Space / Enter</dt><dd>stamp selected axis</dd></div>
+    <div><dt>R</dt><dd>refuse (stage IV)</dd></div>
+    <div><dt>Arrow keys</dt><dd>move selection</dd></div>
+    <div><dt>Esc</dt><dd>pause</dd></div>
+    <div><dt>?</dt><dd>this list</dd></div>
+  </dl>
+  <p class="jogo-dialog__nota">The clock runs while the foundry is in play. It stops when the dossier opens, when the tab goes to the background, and when the press is paused.</p>
+  <div class="jogo-dossie__acoes">
+    <button type="button" class="btn btn-ghost" id="jogo-controles-fechar">Close</button>
+  </div>
+</dialog>
+
+<pre class="jogo-debug" id="jogo-debug" hidden></pre>
+
+<footer class="site-footer">
+  <div class="ornamental-divider" aria-hidden="true"><span class="brand-scroll brand-ornament"></span></div>
+  <div class="footer-mark">
+    <span class="brand-seal brand-ornament" aria-hidden="true"></span>
+    <div class="motto">Matrix errans, lex immobilis · Imago animi vultus</div>
+  </div>
+  <div class="wrap cols">
+    <div class="fcol">
+      <h4>Mnemosyne Viva</h4>
+      <p class="muted">Long-term research atlas of the Iconocracia project. Documented sources, thematic constellations, and the doctoral strand Mármore à Margem (Brazil, 1822–1922).</p>
+    </div>
+    <div class="fcol">
+      <h4>Navigation</h4>
+      <p><a href="/en">Home</a> · <a href="/en/acervo">Archive</a> · <a href="/en/sobre">Research &amp; Method</a> · <a href="/en/nachleben">Nachleben</a> · <a href="/en/jogo">Foundry</a></p>
+    </div>
+    <div class="fcol">
+      <h4>Research &amp; Authorship</h4>
+      <p class="muted"><a href="https://anavanzin.com" target="_blank" rel="noopener" class="footer-author-link"><strong>Ana Vanzin</strong> ↗</a> · PPGD/UFSC<br>
+        Personal site &amp; essays: <a href="https://anavanzin.com" target="_blank" rel="noopener" class="footer-author-link">anavanzin.com ↗</a><br>
+        Metadata licensed under CC-BY-4.0. Reproductions belong to their holding institutions.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/constellations.js?v=20261004-review-followup" defer></script>
+<script src="/assets/app.js?v=20261004-review-followup" defer></script>
+<script src="/assets/constellation-field.js?v=20261018-archival" defer></script>
+<script type="module" src="/assets/jogo/jogo.js?v=20261031-fundicao"></script>
+</body>
+</html>

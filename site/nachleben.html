@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nachleben — Bilderatlas Tafeln I–V · Mnemosyne Viva</title>
+<meta name="description" content="Cinco pranchas e divisas em gravura vetorial sobre a sobrevida das imagens. Bilderatlas Mnemosyne, pesquisa Iconocracia.">
+<meta name="author" content="Ana Vanzin — PPGD/UFSC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nachleben — Bilderatlas Tafeln I–V · Mnemosyne Viva">
+<meta property="og:description" content="Cinco pranchas e divisas em gravura vetorial sobre a sobrevida das imagens no arquivo de Mnemosyne.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="assets/plates/04-pathos-in-figura-bilingual-light.svg">
+<meta name="theme-color" content="#b99aee">
+<link rel="canonical" href="https://iconocracia.com/nachleben">
+<link rel="alternate" hreflang="pt-BR" href="https://iconocracia.com/nachleben">
+<link rel="alternate" hreflang="en" href="https://iconocracia.com/en/nachleben">
+
+<script>
+// Modo noite decide antes da primeira pintura para não haver clarão (FOUC).
+(function () { try { var m = localStorage.getItem('iconocracia-modo');
+  if (m === 'noite' || (m !== 'dia' && window.matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.setAttribute('data-theme', 'noite');
+} catch (e) {} })();
+</script>
+<link rel="icon" href="assets/edelweiss-icon.png" type="image/png">
+<link rel="preload" href="assets/design-system/fonts/jizBRFtNs2ka5fXjeivQ4LroWlx-6zUTjnTLgNs.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/design-system/fonts/q5uDsoa5M_tv7IihmnkabARboYF6CsKj.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/design-system/fonts/fonts.css">
+<link rel="stylesheet" href="assets/style.css?v=20261105-nachleben">
+
+<style>
+/* ── Estilos dedicados ao gabinete de pranchas Nachleben ── */
+.nachleben-hero {
+  text-align: center; padding: 3rem 1.5rem 2.5rem; max-width: 960px; margin: 0 auto;
+}
+.nachleben-hero h1 {
+  font-family: "Instrument Serif", Georgia, serif; font-size: clamp(3.2rem, 8vw, 6rem);
+  line-height: .92; letter-spacing: .06em; margin: .4rem 0 .8rem; text-transform: uppercase;
+}
+.nachleben-hero .lead {
+  font-family: "Crimson Pro", Georgia, serif; font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-style: italic; color: var(--ex-muted); max-width: 64ch; margin: 0 auto 1.5rem; line-height: 1.35;
+}
+
+/* Barra de controles do gabinete */
+.plate-controls {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: 12px; margin: 2rem auto 3rem; max-width: 860px;
+}
+.plate-ctrl-group {
+  display: inline-flex; border: 1px solid var(--ex-ink); background: var(--ex-reading);
+  border-radius: 2px; overflow: hidden;
+}
+.plate-ctrl-btn {
+  font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: .18em;
+  text-transform: uppercase; padding: 8px 14px; background: transparent; color: var(--ex-muted);
+  border: none; cursor: pointer; transition: background .2s, color .2s;
+}
+.plate-ctrl-btn:not(:last-child) { border-right: 1px solid var(--ex-line); }
+.plate-ctrl-btn.is-active {
+  background: var(--ex-action); color: #1d1033; font-weight: 600;
+}
+html[data-theme="noite"] .plate-ctrl-btn.is-active {
+  background: var(--ex-action); color: #120924;
+}
+
+/* Grade de pranchas no cavalete warburgiano */
+.plates-board {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 36px 28px; max-width: 1240px; margin: 0 auto 5rem; padding: 0 1.5rem;
+}
+@media (min-width: 1040px) {
+  .plates-board { grid-template-columns: repeat(3, 1fr); }
+  .plate-card:nth-child(4) { grid-column: 1 / 2; margin-left: auto; width: 100%; }
+  .plate-card:nth-child(5) { grid-column: 2 / 3; margin-right: auto; width: 100%; }
+}
+@media (min-width: 1200px) {
+  .plates-board { grid-template-columns: repeat(5, 1fr); }
+  .plate-card:nth-child(4), .plate-card:nth-child(5) { grid-column: auto; }
+}
+
+.plate-card {
+  position: relative; display: flex; flex-direction: column;
+  transition: transform .3s cubic-bezier(.2,.8,.2,1), filter .3s ease;
+  cursor: pointer; outline: none;
+}
+.plate-card:focus-visible {
+  outline: 2px solid var(--ex-action); outline-offset: 6px;
+}
+/* Leves inclinações de prancha no painel de madeira */
+.plate-card:nth-child(1) { transform: rotate(-1.5deg); }
+.plate-card:nth-child(2) { transform: rotate(1.2deg); }
+.plate-card:nth-child(3) { transform: rotate(-0.8deg); }
+.plate-card:nth-child(4) { transform: rotate(1.6deg); }
+.plate-card:nth-child(5) { transform: rotate(-1.2deg); }
+
+.plate-card:hover {
+  transform: translateY(-8px) scale(1.02); z-index: 10;
+}
+.plate-card img {
+  display: block; width: 100%; height: auto; border-radius: 1px;
+  box-shadow: 0 14px 28px rgba(29, 16, 51, .16), 0 2px 6px rgba(29, 16, 51, .08);
+  transition: box-shadow .3s ease;
+}
+html[data-theme="noite"] .plate-card img {
+  box-shadow: 0 16px 36px rgba(0, 0, 0, .6), 0 0 1px rgba(228, 255, 56, .2);
+}
+
+.plate-meta {
+  margin-top: 14px; text-align: center;
+}
+.plate-meta .tafel-num {
+  font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--ex-muted);
+}
+.plate-meta h3 {
+  font-family: "Instrument Serif", Georgia, serif; font-size: 1.45rem; font-style: italic;
+  font-weight: 400; margin: 4px 0 2px; color: var(--ex-selection);
+}
+html[data-theme="noite"] .plate-meta h3 { color: var(--ex-action); }
+.plate-meta p {
+  font-family: "Crimson Pro", Georgia, serif; font-size: .95rem; font-style: italic;
+  color: var(--ex-muted); margin: 0;
+}
+
+/* Modal de inspeção e download */
+.plate-modal {
+  position: fixed; inset: 0; background: rgba(29, 16, 51, .88); z-index: 9999;
+  display: flex; align-items: center; justify-content: center; padding: 24px;
+  backdrop-filter: blur(8px); opacity: 0; pointer-events: none; transition: opacity .25s ease;
+}
+.plate-modal.is-open {
+  opacity: 1; pointer-events: auto;
+}
+.plate-modal-box {
+  background: var(--ex-reading); border: 1px solid var(--ex-ink);
+  max-width: 1080px; width: 100%; max-height: 92vh; overflow-y: auto;
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; padding: 32px;
+  position: relative; box-shadow: 0 24px 64px rgba(0,0,0,.5);
+}
+@media (max-width: 820px) {
+  .plate-modal-box { grid-template-columns: 1fr; padding: 20px; gap: 20px; }
+}
+.plate-modal-view img {
+  width: 100%; height: auto; max-height: 75vh; object-fit: contain; display: block;
+  border: 1px solid var(--ex-line); box-shadow: 0 8px 24px rgba(0,0,0,.2);
+}
+.plate-modal-close {
+  position: absolute; right: 16px; top: 16px; background: transparent; border: 1px solid var(--ex-line);
+  font-family: "JetBrains Mono", monospace; font-size: 14px; width: 34px; height: 34px;
+  display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--ex-ink);
+}
+.plate-modal-close:hover { background: var(--ex-action); color: #1d1033; }
+.plate-modal-info h2 {
+  font-family: "Instrument Serif", Georgia, serif; font-size: 2.4rem; font-style: italic;
+  margin: 6px 0 10px; line-height: 1.1; color: var(--ex-selection);
+}
+html[data-theme="noite"] .plate-modal-info h2 { color: var(--ex-action); }
+.plate-modal-info .lead-trans {
+  font-family: "Crimson Pro", Georgia, serif; font-size: 1.25rem; font-style: italic;
+  color: var(--ex-ink); margin-bottom: 1.2rem;
+}
+.plate-modal-desc {
+  font-family: "Crimson Pro", Georgia, serif; font-size: 1.05rem; line-height: 1.5;
+  color: var(--ex-ink); border-top: 1px solid var(--ex-line); padding-top: 1rem; margin-top: 1rem;
+}
+.plate-actions {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-top: 2rem;
+}
+.plate-actions a, .plate-actions button {
+  font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: .16em;
+  text-transform: uppercase; padding: 10px 16px; text-decoration: none; border: 1px solid var(--ex-ink);
+  background: var(--ex-action); color: #1d1033; cursor: pointer; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.plate-actions a.secondary, .plate-actions button.secondary {
+  background: transparent; color: var(--ex-ink);
+}
+.plate-actions a.secondary:hover, .plate-actions button.secondary:hover {
+  background: var(--ex-ground);
+}
+
+/* Impressão em livro de pranchas */
+@media print {
+  body { background: #fff !important; color: #000 !important; }
+  .ex-header, .site-footer, .plate-controls, .plate-modal, .nachleben-bridge { display: none !important; }
+  .plates-board { display: block !important; }
+  .plate-card { break-after: page; page-break-after: always; transform: none !important; max-width: 170mm; margin: 0 auto !important; }
+  .plate-card img { box-shadow: none !important; }
+}
+</style>
+</head>
+<body class="nachleben-page">
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+<header class="ex-header"><a class="ex-brand" href="index.html"><span class="brand-flower brand-ornament" aria-hidden="true"></span><span class="ex-brand-text"><span class="ex-brand-title">MNEMOSYNE VIVA</span><span class="ex-brand-sub" data-en="ICONOCRACIA · RESEARCH ATLAS">ICONOCRACIA · ATLAS DE PESQUISA</span></span></a><nav aria-label="Navegação principal" data-en-aria="Main navigation"><a href="index.html" data-en="Home">Início</a><a href="acervo.html" data-en="Archive">Acervo</a><a href="constelacoes.html" data-constellations-link hidden data-en="Constellations">Constelações</a><a href="sobre.html" data-en="Research &amp; Method">Pesquisa e método</a><a href="nachleben.html" aria-current="page" data-en="Nachleben Plates">Nachleben</a></nav><button class="ex-night" id="night-toggle" type="button" aria-pressed="false">NOITE</button><button class="ex-lang" id="lang-toggle" type="button" aria-pressed="false" aria-label="Read in English">EN</button><button class="ex-search-shortcut" aria-label="Buscar no acervo" data-en-aria="Search the archive" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/></svg></button></header>
+
+<main id="main">
+
+  <section class="nachleben-hero">
+    <p class="label" data-en="BILDERATLAS · TAFELN I–V">Bilderatlas · Tafeln I–V</p>
+    <h1 data-en="NACHLEBEN">NACHLEBEN</h1>
+    <p class="lead" data-en="The image outlives the text. Five mottos on surviving form, pinned as plates of a visual archive.">
+      A imagem sobrevive ao texto. Cinco divisas em gravura vetorial sobre a persistência das formas, fixadas como pranchas de um arquivo visual.
+    </p>
+
+    <!-- Inscriptio de entrada da coleção -->
+    <div class="inscriptio-banner" style="justify-content:center;">
+      <span data-en="Aby Warburg · Mnemosyne">Aby Warburg · Mnemosyne</span> · <em>Pathos in figura superstes · Memory defies oblivion</em>
+    </div>
+  </section>
+
+  <!-- Controles interativos do gabinete -->
+  <div class="plate-controls" role="toolbar" aria-label="Opções de exibição das pranchas">
+    <div class="plate-ctrl-group">
+      <button type="button" class="plate-ctrl-btn is-active" data-tone="light" id="btn-tone-light" data-en="Paper (Light)">Papel (Dia)</button>
+      <button type="button" class="plate-ctrl-btn" data-tone="dark" id="btn-tone-dark" data-en="Carbon (Dark)">Carvão (Noite)</button>
+    </div>
+    <div class="plate-ctrl-group">
+      <button type="button" class="plate-ctrl-btn is-active" data-lang="bilingual" id="btn-lang-bi" data-en="Bilingual">Latim + Tradução</button>
+      <button type="button" class="plate-ctrl-btn" data-lang="latin" id="btn-lang-lat" data-en="Latin only">Apenas Latim</button>
+    </div>
+    <div class="plate-ctrl-group">
+      <button type="button" class="plate-ctrl-btn" onclick="window.print()" data-en="Print Book">🖨 Imprimir Pranchas</button>
+    </div>
+  </div>
+
+  <!-- Cavalete / Grade de Pranchas -->
+  <section class="plates-board" id="plates-board" aria-label="Pranchas de Nachleben">
+
+    <!-- Tafel I -->
+    <article class="plate-card" data-index="0" data-slug="01-ex-imagine-mens" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Abrir prancha I: Ex imagine mens">
+      <img src="assets/plates/01-ex-imagine-mens-bilingual-light.svg" alt="Tafel I: Ex imagine mens — Da imagem, a mente" loading="eager" width="800" height="1000">
+      <div class="plate-meta">
+        <span class="tafel-num">Tafel I</span>
+        <h3>Ex imagine mens</h3>
+        <p data-en="From the image, the mind.">Da imagem, a mente.</p>
+      </div>
+    </article>
+
+    <!-- Tafel II -->
+    <article class="plate-card" data-index="1" data-slug="02-imago-superest" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Abrir prancha II: Imago superest et loquitur">
+      <img src="assets/plates/02-imago-superest-bilingual-light.svg" alt="Tafel II: Imago superest et loquitur — A imagem sobrevive e fala" loading="eager" width="800" height="1000">
+      <div class="plate-meta">
+        <span class="tafel-num">Tafel II</span>
+        <h3>Imago superest et loquitur</h3>
+        <p data-en="The image survives and speaks.">A imagem sobrevive e fala.</p>
+      </div>
+    </article>
+
+    <!-- Tafel III -->
+    <article class="plate-card" data-index="2" data-slug="03-forma-manens" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Abrir prancha III: Forma manens, memoria vivens">
+      <img src="assets/plates/03-forma-manens-bilingual-light.svg" alt="Tafel III: Forma manens, memoria vivens — A forma permanece, a memória vive" loading="eager" width="800" height="1000">
+      <div class="plate-meta">
+        <span class="tafel-num">Tafel III</span>
+        <h3>Forma manens, memoria vivens</h3>
+        <p data-en="The remaining form, the living memory.">A forma que permanece, a memória que vive.</p>
+      </div>
+    </article>
+
+    <!-- Tafel IV -->
+    <article class="plate-card" data-index="3" data-slug="04-pathos-in-figura" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Abrir prancha IV: Pathos in figura superstes">
+      <img src="assets/plates/04-pathos-in-figura-bilingual-light.svg" alt="Tafel IV: Pathos in figura superstes — A ninfa e as linhas de drapejamento" loading="eager" width="800" height="1000">
+      <div class="plate-meta">
+        <span class="tafel-num">Tafel IV · Pathosformel</span>
+        <h3>Pathos in figura superstes</h3>
+        <p data-en="The emotional intensity surviving within the form.">A intensidade emocional sobrevivente na forma.</p>
+      </div>
+    </article>
+
+    <!-- Tafel V -->
+    <article class="plate-card" data-index="4" data-slug="05-in-umbra-imago" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Abrir prancha V: In umbra imago, in imagine veritas">
+      <img src="assets/plates/05-in-umbra-imago-bilingual-light.svg" alt="Tafel V: In umbra imago, in imagine veritas — Na sombra a imagem, na imagem a verdade" loading="eager" width="800" height="1000">
+      <div class="plate-meta">
+        <span class="tafel-num">Tafel V</span>
+        <h3>In umbra imago, in imagine veritas</h3>
+        <p data-en="In the shadow, the image; in the image, the truth.">Na sombra, a imagem; na imagem, a verdade.</p>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- Ponte Teórica com o Atlas e a Tese -->
+  <div class="ornamental-divider" aria-hidden="true"><span class="brand-scroll brand-ornament"></span></div>
+  <section class="block nachleben-bridge">
+    <div class="wrap narrow prose">
+      <span class="label" data-en="Epistemic Strands">Articulação Epistêmica</span>
+      <h2 data-en="From Warburg's Nachleben to the State Allegory">Do Nachleben de Warburg à Alegoria de Estado</h2>
+      <p data-en-html="In Aby Warburg's Bilderatlas Mnemosyne (1924–1929), images do not illustrate a peaceful history: they carry <em>Pathosformeln</em> (formulas of emotion) that survive through petrification, repression, and sudden reactivation across Atlantic time. In this atlas, the five plates above articulate the theoretical bedrock of the research:">
+        No Bilderatlas Mnemosyne de Aby Warburg (1924–1929), as imagens não ilustram uma história pacífica:
+        carregam <em>Pathosformeln</em> (fórmulas de pathos) que sobrevivem por petrificação, recalcamento e
+        reativação súbita. As cinco pranchas acima condensam a matriz teórica do projeto:
+      </p>
+      <ul>
+        <li data-en-html="<strong>Tafel I (Ex imagine mens)</strong> — The gaze and the seed of epistemic inquiry through images."><strong>Tafel I (Ex imagine mens)</strong> — O olhar como órgão de pensamento e a imagem como ponto de partida da investigação jurídica.</li>
+        <li data-en-html="<strong>Tafel II (Imago superest et loquitur)</strong> — The shattered marble fragment that continues to speak when living citizens are muted (<em>Muta persona, loquens imago</em>)."><strong>Tafel II (Imago superest et loquitur)</strong> — O fragmento clássico rompido que fala mesmo quando os sujeitos de direito são silenciados (<em>Muta persona, loquens imago</em>).</li>
+        <li data-en-html="<strong>Tafel III (Forma manens, memoria vivens)</strong> — The architectural colonnade and civic repetition holding living memory."><strong>Tafel III (Forma manens, memoria vivens)</strong> — As arcadas e a permanência monumental que sustentam a memória cívica do Estado.</li>
+        <li data-en-html="<strong>Tafel IV (Pathos in figura superstes)</strong> — Warburg's Nymph (Ninfa fiorentina): swirling draperies and the feminine body mobilized to personify sovereignty."><strong>Tafel IV (Pathos in figura superstes)</strong> — A Ninfa de Warburg: as vestes fluidas e o corpo feminino convocado para personificar a República e o Direito.</li>
+        <li data-en-html="<strong>Tafel V (In umbra imago, in imagine veritas)</strong> — The emergence of historical truth from legal shadows (<em>Veritas temporis filia</em>)."><strong>Tafel V (In umbra imago, in imagine veritas)</strong> — O corpo que emerge da hachura e da sombra processual: a verdade revelada no tempo (<em>Veritas temporis filia</em>).</li>
+      </ul>
+      <p>
+        <a class="btn btn-primary" href="constelacoes.html" data-en="Explore the Constellations →">Ver as Constelações no Acervo →</a>
+        <a class="btn" href="sobre.html" data-en="Research &amp; Method →">Ler sobre o Método →</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- Modal Lightbox de Inspeção -->
+<div class="plate-modal" id="plate-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title">
+  <div class="plate-modal-box">
+    <button type="button" class="plate-modal-close" id="modal-close" aria-label="Fechar visualização">✕</button>
+    <div class="plate-modal-view">
+      <img id="modal-img" src="" alt="Prancha selecionada em alta resolução">
+    </div>
+    <div class="plate-modal-info">
+      <span class="tafel-num" id="modal-tafel">TAFEL I</span>
+      <h2 id="modal-title">Ex imagine mens</h2>
+      <p class="lead-trans" id="modal-trans">Da imagem, a mente.</p>
+      <div class="plate-modal-desc" id="modal-desc">
+        Descrição do motivo em gravura e notas arquivísticas.
+      </div>
+      <div class="plate-actions">
+        <a id="btn-download-svg" href="" download class="btn">Baixar SVG Vetorial ↗</a>
+        <button type="button" id="btn-copy-svg" class="btn secondary">Copiar Código SVG</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer"><div class="ornamental-divider" aria-hidden="true"><span class="brand-scroll brand-ornament"></span></div><div class="footer-mark"><span class="brand-seal brand-ornament" aria-hidden="true"></span><div class="motto" data-en="Forma manens, memoria vivens · Pathos in figura superstes">Forma manens, memoria vivens · Pathos in figura superstes</div></div><div class="wrap cols"><div class="fcol"><h4>Mnemosyne Viva</h4><p class="muted" data-en="Long-term research atlas of the Iconocracia project. Documented sources, thematic constellations, and the doctoral strand Mármore à Margem (Brazil, 1822–1922).">Atlas de pesquisa de longa duração do projeto Iconocracia. Fontes documentadas, constelações temáticas e o recorte doutoral Mármore à Margem (Brasil, 1822–1922).</p></div><div class="fcol"><h4 data-en="Navigation">Navegação</h4><p><a href="index.html" data-en="Home">Início</a> · <a href="acervo.html" data-en="Archive">Acervo</a> · <a href="constelacoes.html" data-en="Constellations">Constelações</a> · <a href="sobre.html" data-en="Research &amp; Method">Pesquisa e método</a> · <a href="nachleben.html" data-en="Nachleben Plates">Nachleben</a> · <a href="jogo.html" data-en="Foundry">Fundição</a></p></div><div class="fcol"><h4 data-en="Research &amp; Author">Pesquisa e autoria</h4><p class="muted" data-en-html="<a href=&quot;https://anavanzin.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;footer-author-link&quot;><strong>Ana Vanzin</strong> ↗</a> · PPGD/UFSC<br>Personal site &amp; essays: <a href=&quot;https://anavanzin.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;footer-author-link&quot;>anavanzin.com ↗</a>"><a href="https://anavanzin.com" target="_blank" rel="noopener" class="footer-author-link"><strong>Ana Vanzin</strong> ↗</a> · PPGD/UFSC<br>Site pessoal e ensaios: <a href="https://anavanzin.com" target="_blank" rel="noopener" class="footer-author-link">anavanzin.com ↗</a></p></div></div></footer>
+
+<script src="assets/constellation-field.js"></script>
+<script>
+(function() {
+  const PLATES_DATA = [
+    {
+      n: "I",
+      slug: "01-ex-imagine-mens",
+      lat: "Ex imagine mens",
+      pt: "Da imagem, a mente.",
+      en: "From the image, the mind.",
+      descPt: "O olho radiante e a abertura do campo visual: a imagem não como ilustração de um texto já pronto, mas como semente do pensamento epistêmico.",
+      descEn: "The radiating eye and the visual aperture: the image not as illustration of pre-existing text, but as the generative seed of epistemic inquiry."
+    },
+    {
+      n: "II",
+      slug: "02-imago-superest",
+      lat: "Imago superest et loquitur",
+      pt: "A imagem sobrevive e fala.",
+      en: "The image survives and speaks.",
+      descPt: "Fragmento de perfil clássico de mármore com borda partida e lábios abertos: o poder enunciativo da alegoria quando os sujeitos de direito são silenciados.",
+      descEn: "A broken classical marble profile with a fractured edge and open mouth: the sovereign eloquence of allegory persisting even when living subjects are muted."
+    },
+    {
+      n: "III",
+      slug: "03-forma-manens",
+      lat: "Forma manens, memoria vivens",
+      pt: "A forma que permanece, a memória que vive.",
+      en: "The remaining form, the living memory.",
+      descPt: "Arcadas e colunatas repetidas que ecoam e se esvanecem em camadas: a persistência monumental das formas jurídicas e das arquiteturas do Estado.",
+      descEn: "Repeating arcades and colonnades fading into layered strata: the monumental endurance of legal forms and State civic architecture."
+    },
+    {
+      n: "IV",
+      slug: "04-pathos-in-figura",
+      lat: "Pathos in figura superstes",
+      pt: "A intensidade emocional sobrevivente na forma.",
+      en: "The emotional intensity surviving within the form.",
+      descPt: "A Ninfa de Warburg (*Ninfa fiorentina*): vestes fluidas e linhas de drapejamento em movimento súbito. A personificação feminina como condutora do afeto estatal.",
+      descEn: "Warburg's Nymph (*Ninfa fiorentina*): swirling draperies and kinetic Pathosformeln. The female body mobilized to carry and naturalize State power."
+    },
+    {
+      n: "V",
+      slug: "05-in-umbra-imago",
+      lat: "In umbra imago, in imagine veritas",
+      pt: "Na sombra, a imagem; na imagem, a verdade.",
+      en: "In the shadow, the image; in the image, the truth.",
+      descPt: "A figura que emerge do campo de hachura e sombra: a dialética entre a imagem soberana de fachada e o contrato de exclusão que ela oculta e revela.",
+      descEn: "A figure emerging from cross-hatched shadow: the dialectic between the sovereign facade and the underlying contract of exclusion it both veils and reveals."
+    }
+  ];
+
+  let currentTone = document.documentElement.getAttribute('data-theme') === 'noite' ? 'dark' : 'light';
+  let currentLang = 'bilingual';
+  let isEn = document.documentElement.lang === 'en' || document.documentElement.getAttribute('data-lang') === 'en';
+
+  const board = document.getElementById('plates-board');
+  const cards = board.querySelectorAll('.plate-card');
+
+  function updateImages() {
+    cards.forEach((card, idx) => {
+      const data = PLATES_DATA[idx];
+      const img = card.querySelector('img');
+      const filename = `assets/plates/${data.slug}-${currentLang}-${currentTone}.svg`;
+      img.src = filename;
+    });
+  }
+
+  // Sincronizar com o alternador global Noite do site
+  const nightToggle = document.getElementById('night-toggle');
+  if (nightToggle) {
+    nightToggle.addEventListener('click', () => {
+      setTimeout(() => {
+        const isNight = document.documentElement.getAttribute('data-theme') === 'noite';
+        currentTone = isNight ? 'dark' : 'light';
+        document.getElementById('btn-tone-dark').classList.toggle('is-active', isNight);
+        document.getElementById('btn-tone-light').classList.toggle('is-active', !isNight);
+        updateImages();
+      }, 50);
+    });
+  }
+
+  // Botões de tom (Papel / Carvão)
+  document.getElementById('btn-tone-light').onclick = function() {
+    currentTone = 'light';
+    this.classList.add('is-active');
+    document.getElementById('btn-tone-dark').classList.remove('is-active');
+    updateImages();
+  };
+  document.getElementById('btn-tone-dark').onclick = function() {
+    currentTone = 'dark';
+    this.classList.add('is-active');
+    document.getElementById('btn-tone-light').classList.remove('is-active');
+    updateImages();
+  };
+
+  // Botões de idioma (Bilíngue / Latim)
+  document.getElementById('btn-lang-bi').onclick = function() {
+    currentLang = 'bilingual';
+    this.classList.add('is-active');
+    document.getElementById('btn-lang-lat').classList.remove('is-active');
+    updateImages();
+  };
+  document.getElementById('btn-lang-lat').onclick = function() {
+    currentLang = 'latin';
+    this.classList.add('is-active');
+    document.getElementById('btn-lang-bi').classList.remove('is-active');
+    updateImages();
+  };
+
+  // Modal / Lightbox de inspeção
+  const modal = document.getElementById('plate-modal');
+  const modalImg = document.getElementById('modal-img');
+  const modalTafel = document.getElementById('modal-tafel');
+  const modalTitle = document.getElementById('modal-title');
+  const modalTrans = document.getElementById('modal-trans');
+  const modalDesc = document.getElementById('modal-desc');
+  const btnDownload = document.getElementById('btn-download-svg');
+  const btnCopy = document.getElementById('btn-copy-svg');
+  const modalClose = document.getElementById('modal-close');
+
+  function openModal(idx) {
+    const data = PLATES_DATA[idx];
+    const src = `assets/plates/${data.slug}-${currentLang}-${currentTone}.svg`;
+    modalImg.src = src;
+    modalTafel.textContent = `TAFEL ${data.n}`;
+    modalTitle.textContent = data.lat;
+    modalTrans.textContent = isEn ? data.en : data.pt;
+    modalDesc.innerHTML = isEn ? data.descEn : data.descPt;
+    btnDownload.href = src;
+    btnDownload.setAttribute('download', `${data.slug}-${currentLang}-${currentTone}.svg`);
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    modalClose.focus();
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+  }
+
+  cards.forEach((card, idx) => {
+    card.addEventListener('click', () => openModal(idx));
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModal(idx);
+      }
+    });
+  });
+
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+  });
+
+  btnCopy.addEventListener('click', async () => {
+    try {
+      const res = await fetch(modalImg.src);
+      const text = await res.text();
+      await navigator.clipboard.writeText(text);
+      btnCopy.textContent = "SVG Copiado ✓";
+      setTimeout(() => { btnCopy.textContent = "Copiar Código SVG"; }, 1800);
+    } catch (err) {
+      btnCopy.textContent = "Erro ao copiar";
+    }
+  });
+
+  // Atualizar quando idioma global mudar
+  window.addEventListener('iconocracia:lang', (e) => {
+    isEn = e.detail.lang === 'en';
+  });
+
+})();
+</script>
+</body>
+</html>
