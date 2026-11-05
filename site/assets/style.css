@@ -1455,3 +1455,107 @@ html[data-theme="noite"] .constellation-image { background:rgba(255,255,255,.05)
     background:var(--ex-ink); opacity:.18; pointer-events:none;
   }
 }
+
+/* ============================================================
+   Etapa 3 (2026-11): Arquitetura de longa duração — Mnemosyne Viva
+   (Atlas comparativo), Mármore à Margem (recorte doutoral 1822–1922),
+   separação epistêmica (Registro documental vs. Leitura na pesquisa),
+   selos emblemáticos latinos e suporte bilíngue (PT/EN).
+   ============================================================ */
+
+.ex-brand-text {
+  display:flex; flex-direction:column; gap:3px; line-height:1;
+}
+.ex-brand-title {
+  font-family:"Instrument Serif",Georgia,serif;
+  font-size:clamp(25px,2.5vw,38px); font-weight:400;
+  letter-spacing:.03em; line-height:.95; color:var(--ex-ink);
+}
+.ex-brand-sub {
+  font-family:"JetBrains Mono",monospace;
+  font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ex-muted); line-height:1.2;
+}
+
+.ex-lang {
+  border:0; border-left:1px solid var(--ex-ink); padding:0 9px 0 20px;
+  background:none; color:var(--ex-ink); min-height:44px;
+  font:var(--atlas-caption)/1.5 "JetBrains Mono",monospace;
+  letter-spacing:.14em; text-transform:uppercase; white-space:nowrap;
+  transition:background-color .2s ease, color .2s ease;
+}
+.ex-lang:hover { color:var(--ex-ink); background:var(--ex-action); text-decoration:none; }
+html[data-theme="noite"] .ex-lang { border-left-color:var(--ex-ink); }
+html[data-theme="noite"] .ex-lang:hover { color:#1d1033; }
+
+/* Cartela de inscrição latina (Mármore à Margem / Fundição) */
+.inscriptio-banner {
+  display:inline-flex; align-items:center; gap:10px; flex-wrap:wrap;
+  font-family:"JetBrains Mono",monospace; font-size:11px;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ex-ink); border-left:3px solid var(--ex-selection);
+  padding:4px 0 4px 12px; margin:8px 0 18px;
+}
+.inscriptio-banner em {
+  font-family:"Instrument Serif",Georgia,serif; font-style:italic;
+  font-size:18px; letter-spacing:.02em; text-transform:none; color:var(--ex-selection);
+}
+html[data-theme="noite"] .inscriptio-banner em { color:var(--ex-action); }
+
+/* Barra de recorte no acervo (Atlas completo vs. Mármore à Margem 1822–1922) */
+.ex-strand-bar {
+  display:flex; align-items:center; flex-wrap:wrap; gap:10px;
+  margin:14px 0 18px; padding:10px 14px;
+  background:var(--palette-paper); border:1px solid var(--ex-line); border-radius:4px;
+}
+.ex-strand-label {
+  font-family:"JetBrains Mono",monospace; font-size:11px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ex-muted);
+  margin-right:4px;
+}
+.ex-strand-btn {
+  border:1px solid var(--ex-ink); border-radius:4px;
+  background:transparent; color:var(--ex-ink);
+  font-family:"JetBrains Mono",monospace; font-size:12px;
+  padding:6px 12px; min-height:36px;
+  transition:background-color .2s ease, color .2s ease;
+}
+.ex-strand-btn[aria-pressed="true"] {
+  background:var(--ex-action); color:#1d1033; font-weight:600;
+}
+.ex-strand-btn:hover {
+  background:var(--ex-action); color:#1d1033;
+}
+
+/* Separação epistêmica na ficha (Camada I: Registro documental / Camada II: Leitura na pesquisa) */
+.ex-metadata dt.ex-layer-head,
+.ex-record dt.ex-layer-head {
+  grid-column:1 / -1;
+  font-family:"JetBrains Mono",monospace; font-size:11px; font-weight:700;
+  letter-spacing:.15em; text-transform:uppercase;
+  color:var(--ex-ink); background:var(--accent-light);
+  border-left:3px solid var(--ex-selection);
+  padding:6px 10px; margin-top:18px; margin-bottom:2px;
+}
+.ex-metadata dt.ex-layer-head:first-child,
+.ex-record dt.ex-layer-head:first-child {
+  margin-top:4px;
+}
+.ex-metadata dd.ex-layer-note,
+.ex-record dd.ex-layer-note {
+  grid-column:1 / -1;
+  font-family:"Crimson Pro",Georgia,serif; font-style:italic;
+  font-size:14px; color:var(--ex-muted); margin:0 0 6px;
+}
+
+/* Selos emblemáticos latinos em sobre.html */
+.seal-row--emblemata .seal {
+  width:158px; min-height:118px; height:auto; padding:.75rem .65rem;
+}
+.seal-row--emblemata .seal .seal-latin {
+  font-family:"Instrument Serif",Georgia,serif; font-style:italic;
+  font-size:1.02rem; line-height:1.15; color:var(--ex-ink); margin-top:.15rem;
+}
+.seal-row--emblemata .seal .seal-txt {
+  font-size:.52rem; letter-spacing:.09em; color:var(--ex-muted); margin-top:.2rem;
+}

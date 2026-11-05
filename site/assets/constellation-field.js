@@ -5,8 +5,14 @@
 (() => {
   'use strict';
   const MODE_KEY = 'iconocracia-modo';
+  const LANG_KEY = 'iconocracia-lang';
   const root = document.documentElement;
   const toggle = document.getElementById('night-toggle');
+  const langToggle = document.getElementById('lang-toggle');
+
+  function currentLang() {
+    return root.getAttribute('data-lang') === 'en' ? 'en' : 'pt';
+  }
 
   /* ── modo noite ──
      O estado inicial já foi decidido no <head>; aqui só se confirma
@@ -15,18 +21,80 @@
     if (nightMode) root.setAttribute('data-theme', 'noite');
     else root.removeAttribute('data-theme');
     if (toggle) {
-      toggle.textContent = nightMode ? 'DIA' : 'NOITE';
+      const en = currentLang() === 'en';
+      toggle.textContent = nightMode ? (en ? 'DAY' : 'DIA') : (en ? 'NIGHT' : 'NOITE');
       toggle.setAttribute('aria-pressed', String(nightMode));
     }
   }
+
+  /* ── idioma (PT / EN) ──
+     Padrão pt-BR; alternância imediata preservando todos os nós do DOM. */
+  function applyLang(lang, notify = false) {
+    const en = lang === 'en';
+    root.lang = en ? 'en' : 'pt-BR';
+    if (en) root.setAttribute('data-lang', 'en');
+    else root.removeAttribute('data-lang');
+    if (langToggle) {
+      langToggle.textContent = en ? 'PT' : 'EN';
+      langToggle.setAttribute('aria-pressed', String(en));
+      langToggle.setAttribute('aria-label', en ? 'Ler em português' : 'Read in English');
+    }
+    document.querySelectorAll('[data-en]').forEach((el) => {
+      if (el.dataset.pt === undefined) el.dataset.pt = el.textContent;
+      el.textContent = en ? el.dataset.en : el.dataset.pt;
+    });
+    document.querySelectorAll('[data-en-html]').forEach((el) => {
+      if (el.dataset.ptHtml === undefined) el.dataset.ptHtml = el.innerHTML;
+      el.innerHTML = en ? el.dataset.enHtml : el.dataset.ptHtml;
+    });
+    document.querySelectorAll('[data-en-placeholder]').forEach((el) => {
+      if (el.dataset.ptPlaceholder === undefined) el.dataset.ptPlaceholder = el.getAttribute('placeholder') || '';
+      el.setAttribute('placeholder', en ? el.dataset.enPlaceholder : el.dataset.ptPlaceholder);
+    });
+    document.querySelectorAll('[data-en-aria]').forEach((el) => {
+      if (el.dataset.ptAria === undefined) el.dataset.ptAria = el.getAttribute('aria-label') || '';
+      el.setAttribute('aria-label', en ? el.dataset.enAria : el.dataset.ptAria);
+    });
+    applyMode(root.getAttribute('data-theme') === 'noite');
+    if (notify) {
+      window.dispatchEvent(new CustomEvent('iconocracia:lang', { detail: { lang: en ? 'en' : 'pt' } }));
+    }
+  }
+
   const stored = (() => {
     try { return localStorage.getItem(MODE_KEY); } catch { return null; }
   })();
+  const initialLang = (() => {
+    try {
+      const param = new URLSearchParams(location.search).get('lang');
+      if (param === 'en' || param === 'pt') {
+        localStorage.setItem(LANG_KEY, param);
+        return param;
+      }
+      return localStorage.getItem(LANG_KEY) === 'en' ? 'en' : 'pt';
+    } catch { return 'pt'; }
+  })();
+
   applyMode(stored === 'noite' || (stored !== 'dia' && matchMedia('(prefers-color-scheme: dark)').matches));
+  if (initialLang === 'en') applyLang('en', false);
+
   if (toggle) toggle.addEventListener('click', () => {
     const nightMode = root.getAttribute('data-theme') !== 'noite';
     applyMode(nightMode);
     try { localStorage.setItem(MODE_KEY, nightMode ? 'noite' : 'dia'); } catch { /* sem armazenamento */ }
+  });
+  if (langToggle) langToggle.addEventListener('click', () => {
+    const next = currentLang() === 'en' ? 'pt' : 'en';
+    try { localStorage.setItem(LANG_KEY, next); } catch { /* sem armazenamento */ }
+    applyLang(next, true);
+  });
+  document.addEventListener('click', (event) => {
+    const trigger = event.target.closest?.('[data-set-lang]');
+    if (!trigger) return;
+    event.preventDefault();
+    const next = trigger.getAttribute('data-set-lang') === 'en' ? 'en' : 'pt';
+    try { localStorage.setItem(LANG_KEY, next); } catch { /* sem armazenamento */ }
+    applyLang(next, true);
   });
 
   /* ── campo constelacional ── */
