@@ -14,7 +14,7 @@
 const BASE_URL = 'https://iconocracia.com';
 
 /** Routes that own a real static page in site/. */
-const KNOWN_ROUTES = new Set(['/', '/index', '/acervo', '/sobre', '/constelacoes']);
+const KNOWN_ROUTES = new Set(['/', '/index', '/acervo', '/sobre', '/constelacoes', '/jogo']);
 
 /** Legacy or promised URLs that permanently move elsewhere. */
 const REDIRECTS = new Map([
@@ -45,6 +45,7 @@ function buildSitemap(stats) {
     { loc: `${BASE_URL}/sobre`, priority: '0.9' },
     { loc: `${BASE_URL}/acervo`, priority: '0.9' },
     { loc: `${BASE_URL}/constelacoes`, priority: '0.7' },
+    { loc: `${BASE_URL}/jogo`, priority: '0.8' },
   ];
   const body = urls
     .map(
@@ -98,7 +99,7 @@ export default {
     }
 
     // A trailing slash makes these pages' relative assets resolve in a subdir.
-    if (['/acervo', '/constelacoes'].includes(path) && url.pathname.endsWith('/')) {
+    if (['/acervo', '/constelacoes', '/jogo'].includes(path) && url.pathname.endsWith('/')) {
       url.pathname = path;
       return Response.redirect(url.href, 308);
     }

@@ -1,0 +1,109 @@
+{
+  "slug": "brasil-1822-1922",
+  "type": "doctoral_thesis_strand",
+  "status": "active",
+  "title_status": "provisional_proposals",
+  "provisional_titles": [
+    {
+      "id": "prop-1",
+      "short_title": "Do Mármore à Margem",
+      "full_title_pt": "Do Mármore à Margem: Alegorias femininas, matriz fiduciária e subordinação civil no Brasil (1822–1922)",
+      "rationale": "Foregrounds the core structural mechanism uniting petrified state monumentality/coinage (mármore/bronze/matriz) and the civil marginalization of living women under positive law (à margem)."
+    },
+    {
+      "id": "prop-2",
+      "short_title": "Muta Imago",
+      "full_title_pt": "Muta Imago: O Contrato Sexual Visual e a Feminilidade de Estado no Brasil (1822–1922)",
+      "rationale": "Draws on classical Latin legal-emblematic tradition (silent image / Anima -> imago) to name how the female allegory is hyper-visible yet stripped of political voice and civil agency."
+    },
+    {
+      "id": "prop-3",
+      "short_title": "Lex Hysteria",
+      "full_title_pt": "Lex Hysteria: Corpo errante, matriz de aço e purificação clássica na cultura jurídica brasileira (1822–1922)",
+      "rationale": "Articulates the threefold matrix/matriz synthesis: the Hippocratic wandering womb (hystera -> matrix), the engraved steel die at the Casa da Moeda (matriz), and the structural grid of legal codification."
+    }
+  ],
+  "institution": "Universidade Federal de Santa Catarina (PPGD/UFSC)",
+  "author": "Ana Vitória Vanzin Mendes",
+  "scope": {
+    "geography_primary": "Brasil (Império e Primeira República)",
+    "geography_comparative": ["França", "Estados Unidos", "Reino Unido", "Alemanha", "Bélgica", "Itália"],
+    "date_start": 1822,
+    "date_end": 1922,
+    "diachronic_controls": [1888, 1961, 1965]
+  },
+  "inclusion_criteria": {
+    "rule": "Artifacts produced, commissioned, circulated, or normatively regulated by the Brazilian State between 1822 and 1922 (plus documented transatlantic models and diachronic survival controls) that deploy a female allegorical figure in an explicit legal, constitutional, judicial, or fiduciary function.",
+    "corpus_filter": {
+      "country": "BR",
+      "year_min": 1822,
+      "year_max": 1922
+    }
+  },
+  "matrix_triad_thesis": {
+    "opening_argument": "In the Hippocratic treatise Diseases of Women (Gynaikeia), female pathology stems from Displacement: the womb (hystera) breaks loose and wanders through the body, causing suffocation and disorder until it is weighed down and anchored in place. Applied to nineteenth-century legal iconography, this medical myth reveals the exact mechanism of Do Mármore à Margem / Muta Imago / Lex Hysteria: positive law diagnosed living women as unstable subjects requiring civil tutelage at the margins, while state art cured that perceived unruliness by casting the female body in immobile marble, bronze, and silver. At the same time, in a Warburgian sense, these allegorical images refused to stay still—migrating across oceans, regimes, coins, and courthouses. The direct Latin and Portuguese translation of the Greek hystera (womb) is matrix (matriz)—the exact word for the engraved metal die used at the Casa da Moeda to strike state effigies onto coins, as well as the structural grid of the digital Counter-Archive.",
+    "triad_nodes": [
+      {
+        "dimension": "hystera_tutelage",
+        "term": "Hystera (ὑστέρα) ➔ Tutela Civil à Margem",
+        "legal_sources": [
+          "Ordenações Filipinas (Livro IV)",
+          "Constituição de 1824 e Constituição de 1891 (exclusão do sufrágio feminino)",
+          "Decreto nº 181 de 24/01/1890 (Casamento Civil)",
+          "Código Civil de 1916 (Lei nº 3.071/1916, art. 6º, II e art. 242 — incapacidade civil relativa da mulher casada)"
+        ]
+      },
+      {
+        "dimension": "numismatic_die_matriz",
+        "term": "Matriz (Cunho de Aço) ➔ O Peso do Mármore e do Metal",
+        "archival_sources": [
+          "Casa da Moeda do Brasil — Seção de Gravura (Francisco Carneiro, Auguste-René Girardet, Ludovico Villares, Calmon Barreto)",
+          "Arquivo Nacional (Fundo Ministério da Fazenda — BR RJANRIO 16)",
+          "Museu Histórico Nacional (Coleção de Cunhos e Matrizes — BR RJMRAHI MP-DI-001)"
+        ],
+        "audit_specimens": [
+          "CMB-AUD-01 (1889 · Ensaio Proclamação, F.C.)",
+          "CMB-AUD-02 (1891 · Moeda 2.000 Réis Prata, Girardet)",
+          "CMB-AUD-03 (1893–1894 · Cédula 10 Mil-Réis, Waterlow/CMB)",
+          "CMB-AUD-04 (1896 · Ensaio 1.000 Réis Barrete Frígio, Girardet)",
+          "CMB-AUD-05 (1906 · Série Caixa de Conversão, Lei nº 1.575/1906)",
+          "CMB-AUD-06 (1913 · Moeda 20 Mil-Réis Ouro, Villares/Girardet)",
+          "CMB-AUD-07 (1922 · Medalha Centenário da Independência, Pedro I & Deodoro)",
+          "CMB-CTRL-01 (1888 · Cédula 500 Mil-Réis D. Pedro II — Controle Imperial)",
+          "CMB-CTRL-02 (1965 · Moeda/Cédula Cruzeiro Efígie — Controle Diacrônico)"
+        ]
+      },
+      {
+        "dimension": "digital_grid_matrix",
+        "term": "Matriz Digital ➔ O Contra-Arquivo (Iconclass vs. Operação)",
+        "methodological_role": "Separates the administrative catalogue (Object/Source/Iconclass) from the critical operation (Claim/Concept), preventing machine-coded or unverified interpretations from contaminating the documentary baseline."
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "number": 1,
+      "title": "A Matriz Epistemológica: Dogmática Jurídica, Teologia Fiduciária e Genealogia Visual",
+      "constellation_arc": "Fundamentação Teórica e Metodológica",
+      "core_concepts": ["contrato-sexual-visual", "feminilidade-de-estado", "marmore-a-margem", "muta-imago", "lex-hysteria-matriz"]
+    },
+    {
+      "number": 2,
+      "title": "Constelação I (1822–1889): O Trono Ocular do Império e a Ausência da Mulher Pública",
+      "constellation_arc": "1822–1889",
+      "anchor_cases": ["CMB-CTRL-01", "BR-IMP-1824"]
+    },
+    {
+      "number": 3,
+      "title": "Constelação II (1889–1905): A República das Efígies, a Purificação Clássica e a Subordinação Civil",
+      "constellation_arc": "1889–1905",
+      "anchor_cases": ["CMB-AUD-01", "CMB-AUD-02", "CMB-AUD-04", "SCOUT-095", "BR-005"]
+    },
+    {
+      "number": 4,
+      "title": "Constelação III (1916–1922): A Consolidação Civilista (CC/1916) e o Centenário da Independência",
+      "constellation_arc": "1916–1922",
+      "anchor_cases": ["CMB-AUD-05", "CMB-AUD-06", "CMB-AUD-07", "BR-009"]
+    }
+  ]
+}

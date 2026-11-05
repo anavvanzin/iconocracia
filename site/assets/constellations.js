@@ -145,12 +145,19 @@
   window.IconocraciaPublication = { constellationItem, approvedAnalysis, publicItems, resolveItem, publishedConstellations, workLink, imageURL, imageSource, loadContext, showNavigation };
   const intro = document.querySelector('#constellation-intro');
   if (!intro) return;
+  const isEn = () => document.documentElement?.getAttribute('data-lang') === 'en';
+  const biNode = (tag, className, pt, en) => {
+    const el = node(tag, className, isEn() ? en : pt);
+    el.setAttribute('data-pt-orig', pt);
+    el.setAttribute('data-en', en);
+    return el;
+  };
   const list = document.querySelector('#constellation-items');
   const switcher = document.querySelector('#constellation-switcher');
   const requested = new URLSearchParams(location.search).get('slug');
   const state = (title, message) => {
     list.replaceChildren(); switcher.replaceChildren();
-    intro.replaceChildren(node('p', 'eyebrow', 'Constelações'), node('h1', '', title), node('p', '', message));
+    intro.replaceChildren(biNode('p', 'eyebrow', 'Constelações', 'Constellations'), node('h1', '', title), node('p', '', message));
   };
   fetchJSON('data/acervo.json').then(data => {
     if (!Array.isArray(data) || !data.every(item => item && nonempty(item.id) && typeof item.titulo === 'string' && typeof item.pais === 'string')) throw new Error('Acervo inválido');
@@ -162,13 +169,13 @@
       if (requested) state('Percurso indisponível', 'Este percurso não está disponível na publicação atual.');
       else {
         state('Nenhum percurso publicado', 'Os percursos ainda estão em revisão. As obras já publicadas podem ser consultadas no campo do acervo.');
-        const link = node('a', 'btn btn-primary', 'Explorar a constelação do acervo');
+        const link = biNode('a', 'btn btn-primary', 'Explorar a constelação do acervo', 'Explore the collection constellation');
         link.href = 'acervo.html?visao=constelacao'; intro.append(link);
       }
       return;
     }
-    document.title = `${definition.title} — Iconocracia`;
-    intro.replaceChildren(node('p', 'eyebrow', 'Constelação curatorial'), node('h1', '', definition.title), node('p', 'constellation-period', definition.subtitle || ''), node('p', 'constellation-deck', definition.introduction || ''));
+    document.title = `${definition.title} — Mnemosyne Viva · Iconocracia`;
+    intro.replaceChildren(biNode('p', 'eyebrow', 'Constelação curatorial', 'Curatorial constellation'), node('h1', '', definition.title), node('p', 'constellation-period', definition.subtitle || ''), node('p', 'constellation-deck', definition.introduction || ''));
     if (typeof definition.method_note === 'string' && definition.method_note.trim()) intro.append(node('p', 'ex-method-note', definition.method_note));
     const byId = new Map(items.map(item => [item.id, item]));
     definition.item_ids.forEach((id, index) => {
@@ -180,7 +187,7 @@
       caption.append(node('span', 'constellation-number', String(index + 1).padStart(2, '0')), node('h2', '', item.titulo), node('p', 'constellation-meta', `${item.pais} · ${item.data}`));
       const analysis = approvedAnalysis(item.analise_publica);
       if (analysis?.summary || item.descricao) caption.append(node('p', '', analysis?.summary || item.descricao));
-      caption.append(node('span', 'constellation-open', 'Abrir ficha →'));
+      caption.append(biNode('span', 'constellation-open', 'Abrir ficha →', 'Open record →'));
       figure.append(imageFor(item, index >= 2), caption); link.append(figure); li.append(link); list.append(li);
     });
     const current = constellations.indexOf(definition);

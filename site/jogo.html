@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FUNDIÇÃO — o arcade do acervo — Mnemosyne Viva</title>
+<meta name="description" content="FUNDIÇÃO: um arcade de prensa sobre o acervo Iconocracia. Dez eixos de purificação, uma matriz por objeto e a citação arquivada real ao fim de cada fundição.">
+<meta name="author" content="Ana Vanzin — PPGD/UFSC">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FUNDIÇÃO — o arcade do acervo">
+<meta property="og:description" content="Aperte os dez eixos da purificação clássica sobre objetos reais do acervo Iconocracia.">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#b99aee">
+<script>
+// Modo noite decide antes da primeira pintura para não haver clarão (FOUC).
+(function () { try { var m = localStorage.getItem('iconocracia-modo');
+  if (m === 'noite' || (m !== 'dia' && window.matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.setAttribute('data-theme', 'noite');
+} catch (e) {} })();
+</script>
+    <link rel="icon" href="assets/edelweiss-icon.png" type="image/png">
+    <link rel="preload" href="assets/design-system/fonts/jizBRFtNs2ka5fXjeivQ4LroWlx-6zUTjnTLgNs.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/design-system/fonts/q5uDsoa5M_tv7IihmnkabARboYF6CsKj.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/design-system/fonts/fonts.css">
+    <link rel="stylesheet" href="assets/style.css?v=20261019-a11y">
+    <link rel="stylesheet" href="assets/jogo/jogo.css?v=20261031-fundicao">
+</head>
+<body class="ex-page ex-jogo">
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+<header class="ex-header"><a class="ex-brand" href="index.html"><span class="brand-flower brand-ornament" aria-hidden="true"></span><span class="ex-brand-text"><span class="ex-brand-title">MNEMOSYNE VIVA</span><span class="ex-brand-sub" data-en="ICONOCRACIA · RESEARCH ATLAS">ICONOCRACIA · ATLAS DE PESQUISA</span></span></a><nav aria-label="Navegação principal" data-en-aria="Main navigation"><a href="index.html" data-en="Home">Início</a><a href="acervo.html" data-en="Archive">Acervo</a><a href="constelacoes.html" data-constellations-link hidden data-en="Constellations">Constelações</a><a href="sobre.html" data-en="Research &amp; Method">Pesquisa e método</a></nav><button class="ex-night" id="night-toggle" type="button" aria-pressed="false">NOITE</button><button class="ex-lang" id="lang-toggle" type="button" aria-pressed="false" aria-label="Read in English">EN</button><button class="ex-search-shortcut" aria-label="Buscar no acervo" data-en-aria="Search the archive" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/></svg></button></header>
+
+<main id="main" class="jogo">
+
+  <section class="jogo-hud" aria-label="Estado da fundição">
+    <div class="jogo-hud__bloco">
+      <p class="jogo-hud__etapa"><span id="jogo-etapa-romano">I</span> · <span id="jogo-etapa-nome">Fundacional</span></p>
+      <p class="jogo-hud__lote" id="jogo-lote-titulo">—</p>
+      <p class="jogo-hud__meta" id="jogo-lote-meta"></p>
+    </div>
+    <dl class="jogo-hud__marcas">
+      <div class="jogo-marca"><dt>Tempo</dt><dd id="jogo-tempo">—</dd></div>
+      <div class="jogo-marca"><dt>Carimbos</dt><dd id="jogo-carimbos">—</dd></div>
+      <div class="jogo-marca"><dt>Eixos no alvo</dt><dd id="jogo-eixos">—</dd></div>
+      <div class="jogo-marca"><dt>Combo</dt><dd id="jogo-combo">—</dd></div>
+      <div class="jogo-marca jogo-marca--pontos"><dt>Pontos de cunhagem</dt><dd id="jogo-pontos">0</dd></div>
+    </dl>
+    <div class="jogo-hud__acoes">
+      <button type="button" class="btn btn-primary" id="jogo-acao">COMEÇAR A FUNDIÇÃO</button>
+      <button type="button" class="btn btn-dark" id="jogo-pausa" aria-pressed="false">Pausar</button>
+      <button type="button" class="btn btn-ghost" id="jogo-som" aria-pressed="false">Som</button>
+      <button type="button" class="btn btn-ghost" id="jogo-mapa">Linha do tempo</button>
+    </div>
+  </section>
+
+  <div class="jogo-corpo">
+
+    <section class="jogo-palco" aria-labelledby="jogo-palco-titulo">
+      <h2 id="jogo-palco-titulo" class="sr-only">Platina da prensa</h2>
+      <figure class="jogo-platen" id="jogo-platen">
+        <canvas class="jogo-fx" id="jogo-fx" aria-hidden="true"></canvas>
+        <div class="jogo-platen__figs" id="jogo-figs"></div>
+        <div class="jogo-platen__overlays" aria-hidden="true">
+          <div class="jogo-ov jogo-ov--plumb"></div>
+          <div class="jogo-ov jogo-ov--face"></div>
+          <div class="jogo-ov jogo-ov--colunas"></div>
+          <div class="jogo-ov jogo-ov--vinheta"></div>
+          <div class="jogo-ov jogo-ov--moldura"></div>
+          <div class="jogo-ov jogo-ov--legenda" id="jogo-legenda-faixa"></div>
+        </div>
+        <div class="jogo-overlay" id="jogo-overlay" hidden></div>
+      </figure>
+      <figcaption class="jogo-platen__legenda" id="jogo-platen-legenda"></figcaption>
+    </section>
+
+    <section class="jogo-matriz" id="jogo-matriz" aria-labelledby="jogo-matriz-titulo" data-aberta="0">
+      <header class="jogo-matriz__cabecalho">
+        <div class="jogo-matriz__topo">
+          <h2 class="jogo-matriz__titulo" id="jogo-matriz-titulo">Matriz da fundição</h2>
+          <button type="button" class="btn btn-ghost jogo-gaveta" id="jogo-gaveta" aria-expanded="false" aria-controls="jogo-matriz">Matriz ▲</button>
+        </div>
+        <p class="jogo-matriz__nota" id="jogo-matriz-nota"></p>
+      </header>
+      <ul class="jogo-alavancas" id="jogo-alavancas"></ul>
+      <p class="jogo-matriz__rodape" id="jogo-matriz-rodape"></p>
+    </section>
+
+  </div>
+
+  <section class="jogo-regra">
+    <h2 class="sr-only" data-en="About the experiment">Sobre o jogo</h2>
+    <div class="inscriptio-banner">
+      <span>Inscriptio</span> · <em>Matrix errans, lex immobilis.</em>
+    </div>
+    <p data-en-html="FUNDIÇÃO («The Foundry» · <em>Matrix errans, lex immobilis</em>: «Wandering matrix, immobile law») puts <strong>Classical Purification</strong> into play: the operation through which the State extracts historical femininity from a figure and fixes it onto an eternal allegorical surface. The ten levers are the ten purification indicators of the archive itself; the die (<em>matrix</em>) of each batch is the real coding of that object, with the coder, date, and notes recorded in the corpus. Values are <strong>situated interpretive acts</strong>, not neutral data — and none of them is collapsed into a single score.">FUNDIÇÃO (<em>Matrix errans, lex immobilis</em> · «Matriz errante, lei imóvel») põe em jogo a <strong>purificação clássica</strong>: a operação pela qual o
+      Estado extrai o feminino histórico de uma figura e o fixa numa superfície alegórica
+      eterna. As dez alavancas são os dez indicadores de purificação do próprio acervo; a
+      matriz de cada lote é a codificação real daquele objeto, com o codificador, a data e as
+      notas que o corpus registrou. Os valores são <strong>atos interpretativos situados</strong>,
+      não dados neutros — e nenhum deles é somado em um número único.</p>
+  </section>
+
+</main>
+
+<dialog class="jogo-dialog jogo-dossie" id="jogo-dossie" aria-labelledby="jogo-dossie-titulo">
+  <div class="jogo-dossie__corpo" id="jogo-dossie-corpo"></div>
+  <div class="jogo-dossie__acoes">
+    <button type="button" class="btn btn-ghost" id="jogo-dossie-repetir">Repetir</button>
+    <button type="button" class="btn btn-primary" id="jogo-dossie-proximo">Próximo lote</button>
+    <button type="button" class="btn btn-ghost" id="jogo-dossie-fechar">Fechar</button>
+  </div>
+</dialog>
+
+<dialog class="jogo-dialog jogo-mapa-dialog" id="jogo-mapa-dialog" aria-labelledby="jogo-mapa-titulo">
+  <h2 id="jogo-mapa-titulo" class="jogo-dialog__titulo">Linha do tempo</h2>
+  <p class="jogo-dialog__nota">Os lotes de cada etapa seguem o ano. Um lote se abre quando o anterior é cunhado.</p>
+  <div id="jogo-mapa-lista"></div>
+  <div class="jogo-dossie__acoes">
+    <button type="button" class="btn btn-ghost" id="jogo-mapa-fechar">Fechar</button>
+  </div>
+</dialog>
+
+<dialog class="jogo-dialog" id="jogo-controles" aria-labelledby="jogo-controles-titulo">
+  <h2 id="jogo-controles-titulo" class="jogo-dialog__titulo">Controles</h2>
+  <dl class="jogo-controles__lista">
+    <div><dt>1…0 / Q…P</dt><dd>selecionar a alavanca (na etapa IV, use 4 para o eixo de R)</dd></div>
+    <div><dt>Espaço / Enter</dt><dd>estampar o eixo selecionado</dd></div>
+    <div><dt>R</dt><dd>recusar (etapa IV)</dd></div>
+    <div><dt>Setas</dt><dd>mover a seleção</dd></div>
+    <div><dt>Esc</dt><dd>pausar</dd></div>
+    <div><dt>?</dt><dd>esta lista</dd></div>
+  </dl>
+  <p class="jogo-dialog__nota">O relógio corre enquanto a fundição está em jogo. Ele para quando
+    o dossiê abre, quando a aba fica em segundo plano e quando a prensa é pausada.</p>
+  <div class="jogo-dossie__acoes">
+    <button type="button" class="btn btn-ghost" id="jogo-controles-fechar">Fechar</button>
+  </div>
+</dialog>
+
+<pre class="jogo-debug" id="jogo-debug" hidden></pre>
+
+<footer class="site-footer">
+  <div class="ornamental-divider" aria-hidden="true"><span class="brand-scroll brand-ornament"></span></div>
+  <div class="footer-mark">
+    <span class="brand-seal brand-ornament" aria-hidden="true"></span>
+    <div class="motto" data-en="Matrix errans, lex immobilis · Reading is method, method is research">Matrix errans, lex immobilis · Ler é método, método é pesquisa</div>
+  </div>
+  <div class="wrap cols">
+    <div class="fcol">
+      <h4>Mnemosyne Viva</h4>
+      <p class="muted" data-en="Long-term research atlas of the Iconocracia project. Documented sources, thematic constellations, and the doctoral strand Mármore à Margem (Brazil, 1822–1922).">Atlas de pesquisa de longa duração do projeto Iconocracia. Fontes documentadas,
+        constelações temáticas e o recorte doutoral Mármore à Margem (Brasil, 1822–1922).</p>
+    </div>
+    <div class="fcol">
+      <h4 data-en="Navigation">Navegação</h4>
+      <p><a href="index.html" data-en="Home">Início</a> · <a href="acervo.html" data-en="Archive">Acervo</a> · <a href="sobre.html" data-en="Research &amp; Method">Pesquisa e método</a> · <a href="jogo.html" data-en="Foundry">Fundição</a></p>
+    </div>
+    <div class="fcol">
+      <h4 data-en="Research">Pesquisa</h4>
+      <p class="muted" data-en-html="Ana Vanzin · PPGD/UFSC<br>Metadata licensed under CC-BY-4.0. Reproductions belong to their holding institutions.">Ana Vanzin · PPGD/UFSC<br>
+        Metadados sob licença CC-BY-4.0. As reproduções pertencem às instituições de origem.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/constellations.js?v=20261004-review-followup" defer></script>
+<script src="assets/app.js?v=20261004-review-followup" defer></script>
+<script src="assets/constellation-field.js?v=20261018-archival" defer></script>
+<script type="module" src="assets/jogo/jogo.js?v=20261031-fundicao"></script>
+</body>
+</html>

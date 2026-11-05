@@ -1,0 +1,75 @@
+[
+  {
+    "id": "contrato-sexual-visual",
+    "term": "Contrato Sexual Visual",
+    "status": "core",
+    "iconclass_target": "31AA",
+    "counter_notation": "31AA::CSV",
+    "definition": "A extensão visual do contrato sexual. A imagem alegórica feminina naturaliza, no registro estético e fiduciário, um pacto de exclusão que a teoria política descreve fora da imagem: representa-se a mulher como emblema soberano justamente para dela retirar o corpo histórico e a titularidade de direitos.",
+    "interlocutors": ["Carole Pateman (The Sexual Contract, 1988)", "Joan B. Landes (Visualizing the Nation, 2001)"],
+    "strands": ["atlas-global", "brasil-1822-1922"]
+  },
+  {
+    "id": "feminilidade-de-estado",
+    "term": "Feminilidade de Estado",
+    "status": "core",
+    "iconclass_target": "44G0",
+    "counter_notation": "44G0::FE",
+    "definition": "O mecanismo pelo qual o Estado se figura no feminino — como República, Justiça, Nação — administrando o corpo alegórico como infraestrutura pública de afeto e confiança fiduciária, enquanto organiza institucionalmente a subordinação civil e política das mulheres reais.",
+    "interlocutors": ["Pierre Legendre (Dieu au miroir, 1994)", "Marie-José Mondzain (Image, icône, économie, 1996)", "Peter Goodrich (Legal Emblems and the Art of Law, 2013)"],
+    "strands": ["atlas-global", "brasil-1822-1922"]
+  },
+  {
+    "id": "contrato-racial-visual",
+    "term": "Contrato Racial Visual",
+    "status": "core",
+    "iconclass_target": "44B",
+    "counter_notation": "44B::CRV",
+    "definition": "A branquitude constitutiva da alegoria dita «universal»: demonstra como a transferência transatlântica de modelos neoclássicos europeus instalou um padrão racializado de representação estatal, apagando a corporalidade negra e indígena nos suportes fiduciários e forenses pós-Abolição.",
+    "interlocutors": ["Charles W. Mills (The Racial Contract, 1997)", "Carole Pateman & Charles W. Mills (Contract and Domination, 2007)", "Lilia Moritz Schwarcz (2024)"],
+    "strands": ["atlas-global", "brasil-1822-1922"]
+  },
+  {
+    "id": "purificacao-classica",
+    "term": "Purificação Clássica",
+    "status": "core",
+    "iconclass_target": "48C24",
+    "counter_notation": "48C24::PC",
+    "definition": "A operação formal e oficinal pela qual o regime iconocrático extrai o feminino histórico — biografia, insurgência popular, gesto e materialidade — e o fixa numa superfície alegórica estática, helenizada e funcional à soberania, observável na rigidez postural, na uniformização facial e no apagamento narrativo.",
+    "interlocutors": ["Aby Warburg (Bilderatlas Mnemosyne)", "Erwin Panofsky (Studies in Iconology, 1939)"],
+    "strands": ["atlas-global", "brasil-1822-1922"]
+  },
+  {
+    "id": "marmore-a-margem",
+    "term": "Do Mármore à Margem",
+    "status": "working",
+    "provisional_thesis_title": true,
+    "iconclass_target": "48C24",
+    "counter_notation": "48C24::MM",
+    "definition": "Síntese do duplo movimento jurídico-visual oitocentista e novecentista: enquanto o direito positivo diagnostica as mulheres vivas como sujeitos instáveis que exigem tutela civil às margens da ordem política, a arte oficial de Estado «cura» essa instabilidade fundindo o corpo feminino na imobilidade do mármore, do bronze e da moeda.",
+    "interlocutors": ["Tratados Hipocráticos (Gynaikeia / Doenças das Mulheres)", "Código Civil Brasileiro de 1916 (art. 6º, II e art. 242)"],
+    "strands": ["brasil-1822-1922"]
+  },
+  {
+    "id": "muta-imago",
+    "term": "Muta Imago",
+    "status": "working",
+    "provisional_thesis_title": true,
+    "iconclass_target": "44G0",
+    "counter_notation": "44G0::MI",
+    "definition": "A condição emblemática da alegoria jurídica feminina como «imagem muda»: hipervisível nos frontispícios de tribunais, selos e cédulas como fiadora da palavra da lei, mas estruturalmente privada de voz deliberativa própria.",
+    "interlocutors": ["Peter Goodrich (Obiter Depicta / Legal Emblems, 2013)", "Cesare Ripa (Iconologia)"],
+    "strands": ["brasil-1822-1922"]
+  },
+  {
+    "id": "lex-hysteria-matriz",
+    "term": "Lex Hysteria / A Tríade da Matriz",
+    "status": "working",
+    "provisional_thesis_title": true,
+    "iconclass_target": "48C51",
+    "counter_notation": "48C51::MATRIZ",
+    "definition": "Articulação semântica, arquivística e material entre (1) o útero errante (hystera, traduzido ao latim e português como matrix/matriz) que a patologia médica e a tutela civil buscam ancorar, (2) a matriz de aço gravada na Casa da Moeda do Brasil para cunhar a efígie da República sob alta pressão, e (3) a matriz relacional de dados do Contra-Arquivo.",
+    "interlocutors": ["Corpus Hippocraticum (Gynaikeia)", "Aby Warburg (Bilderwanderung)", "Acervo da Casa da Moeda do Brasil (Seção de Gravura, 1889–1922)"],
+    "strands": ["brasil-1822-1922"]
+  }
+]

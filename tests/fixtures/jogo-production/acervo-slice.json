@@ -1,0 +1,3066 @@
+[
+  {
+    "id": "DE-015",
+    "titulo": "Germania — Guter Rat ist teuer (Bismarck e Alsácia-Lorena)",
+    "pais": "Alemanha",
+    "autoria": "",
+    "instituicao": "",
+    "data": "c. 1871",
+    "suporte": "",
+    "regime": "Contra-alegoria",
+    "motivos": [
+      "Germania",
+      "Alsace",
+      "Lorraine",
+      "Bismarck",
+      "annexation"
+    ],
+    "descricao": "Cartoon satírico do Kladderadatsch: Bismarck conduz as figuras femininas alegóricas de Alsácia e Lorena — jovens em trajes regionais — para o Império Alemão. Germania preside a absorção territorial.",
+    "direitos": "",
+    "fonte_url": "https://germanhistorydocs.ghi-dc.org/sub_image.cfm?image_id=1408",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "Germania — Guter Rat ist teuer (Bismarck e Alsácia-Lorena)",
+    "iconographic_metadata": {
+      "visual_regime": "contra-alegoria",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Germania",
+            "observed": true
+          },
+          {
+            "motif": "Alsace",
+            "observed": true
+          },
+          {
+            "motif": "Lorraine",
+            "observed": true
+          },
+          {
+            "motif": "Bismarck",
+            "observed": true
+          },
+          {
+            "motif": "annexation",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: CONTRA-ALEGORIA",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          },
+          {
+            "claim_text": "Subversão deliberada do repertório alegórico oficial — a imagem desloca Germania, anexação, Alsácia-Lorena do registro solene para o satírico",
+            "claim_type": "legal_context",
+            "status": "supported",
+            "confidence": 0.75
+          },
+          {
+            "claim_text": "O corpo alegórico feminino mantém relativa autonomia expressiva, preservando marcadores de individualidade e corporalidade. A Feminilidade de Estado é mobilizada mas não plenamente domesticada.",
+            "claim_type": "postcolonial_marker",
+            "status": "tentative",
+            "confidence": 0.65
+          }
+        ],
+        "confidence": 0.267
+      }
+    }
+  },
+  {
+    "id": "BR-034",
+    "titulo": "100 Réis — Liberty (Série MCMI)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1901",
+    "suporte": "moeda",
+    "regime": "Normativo",
+    "motivos": [
+      "Republica"
+    ],
+    "descricao": "100 Réis — Liberty (Série MCMI)",
+    "direitos": "",
+    "fonte_url": "https://en.numista.com/catalogue/pieces4333.html",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "100 Réis — Liberty (Série MCMI)",
+    "iconographic_metadata": {
+      "visual_regime": "normativo",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Republica",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: NORMATIVO",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          }
+        ],
+        "confidence": 0.85
+      }
+    }
+  },
+  {
+    "id": "BR-1000R-1906",
+    "titulo": "1000 Réis — Efígie da República (Brasil, 1906–1912)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1906-1912",
+    "suporte": "moeda",
+    "regime": "Normativo",
+    "motivos": [
+      "A República"
+    ],
+    "descricao": "A República",
+    "direitos": "",
+    "fonte_url": "https://en.numista.com/catalogue/pieces14484.html",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "1000 Réis — Efígie da República (Brasil, 1906–1912)",
+    "iconographic_metadata": {
+      "visual_regime": "normativo",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "A República",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: NORMATIVO",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          }
+        ],
+        "confidence": 0.0
+      }
+    }
+  },
+  {
+    "id": "BR-033",
+    "titulo": "1000 Réis — Efígie da República (prata .917, emissão inaugural 1889)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1889",
+    "suporte": "moeda",
+    "regime": "Fundacional",
+    "motivos": [
+      "Republica"
+    ],
+    "descricao": "1000 Réis — Efígie da República (prata .917, emissão inaugural 1889)",
+    "direitos": "",
+    "fonte_url": "https://en.numista.com/catalogue/pieces36319.html",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "1000 Réis — Efígie da República (prata .917, emissão inaugural 1889)",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Republica",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          }
+        ],
+        "confidence": 0.85
+      }
+    }
+  },
+  {
+    "id": "BR-029",
+    "titulo": "20 Mil Réis — Cédula do Banco da República dos Estados Unidos do Brazil (c.",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1890-1893",
+    "suporte": "moeda",
+    "regime": "Fundacional",
+    "motivos": [
+      "Liberdade"
+    ],
+    "descricao": "20 Mil Réis — Cédula do Banco da República dos Estados Unidos do Brazil (c.",
+    "direitos": "",
+    "fonte_url": "https://en.numista.com/catalogue/note222815.html",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "20 Mil Réis — Cédula do Banco da República dos Estados Unidos do Brazil (c.",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Liberdade",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.65
+          }
+        ],
+        "confidence": 0.65
+      }
+    }
+  },
+  {
+    "id": "BR-031",
+    "titulo": "20.000 Réis Ouro — Efígie da República com Barrete Frígio (1889–1922)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1889-1922",
+    "suporte": "moeda",
+    "regime": "Fundacional",
+    "motivos": [
+      "Republica"
+    ],
+    "descricao": "20.000 Réis Ouro — Efígie da República com Barrete Frígio (1889–1922)",
+    "direitos": "",
+    "fonte_url": "https://en.numista.com/catalogue/pieces36131.html",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "20.000 Réis Ouro — Efígie da República com Barrete Frígio (1889–1922)",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Republica",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          }
+        ],
+        "confidence": 0.85
+      }
+    }
+  },
+  {
+    "id": "BR-035",
+    "titulo": "200 Réis — Liberty (Série MCMI)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1901",
+    "suporte": "moeda",
+    "regime": "Normativo",
+    "motivos": [
+      "Republica"
+    ],
+    "descricao": "200 Réis — Liberty (Série MCMI)",
+    "direitos": "",
+    "fonte_url": "https://en.numista.com/catalogue/pieces6440.html",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "200 Réis — Liberty (Série MCMI)",
+    "iconographic_metadata": {
+      "visual_regime": "normativo",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Republica",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: NORMATIVO",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          }
+        ],
+        "confidence": 0.85
+      }
+    }
+  },
+  {
+    "id": "BR-032",
+    "titulo": "2000 Réis — Efígie da Liberdade Laureada (prata .917, série 1891–1897)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1891",
+    "suporte": "moeda",
+    "regime": "Fundacional",
+    "motivos": [
+      "Republica"
+    ],
+    "descricao": "2000 Réis — Efígie da Liberdade Laureada (prata .917, série 1891–1897)",
+    "direitos": "",
+    "fonte_url": "https://en.numista.com/catalogue/pieces36132.html",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "2000 Réis — Efígie da Liberdade Laureada (prata .917, série 1891–1897)",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Republica",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          }
+        ],
+        "confidence": 0.85
+      }
+    }
+  },
+  {
+    "id": "BR-2000R-1907",
+    "titulo": "2000 Réis — Efígie da República com Barrete Frígio",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1906-1912",
+    "suporte": "moeda",
+    "regime": "Normativo",
+    "motivos": [
+      "A República",
+      "Phrygian cap",
+      "bust profile"
+    ],
+    "descricao": "Bust of the Republic wearing Phrygian cap, profile facing left. Inscription: REPUBLICA DOS ESTADOS UNIDOS DO BRAZIL. Reverse: denomination and date within wreath. Positivist Republic period. Transplant of French Marianne Pathosformel to Brazilian context.",
+    "direitos": "",
+    "fonte_url": "https://en.numista.com/catalogue/pieces14489.html",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "CASA DA MOEDA DO BRASIL. 2000 Réis — Efígie da República. 1906-1912. Moeda, prata .900, 20 g. Disponível em: https://en.numista.com/catalogue/pieces14489.html. Acesso em: 01 abr. 2026.",
+    "iconographic_metadata": {
+      "visual_regime": "normativo",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "A República",
+            "observed": true
+          },
+          {
+            "motif": "Phrygian cap",
+            "observed": true
+          },
+          {
+            "motif": "bust profile",
+            "observed": true
+          }
+        ],
+        "codes": [
+          {
+            "scheme": "iconclass",
+            "notation": "44A1",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "44B191",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "48C51",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: NORMATIVO",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          },
+          {
+            "claim_text": "Maximum normative: coin circulates female body through every transaction",
+            "claim_type": "legal_context",
+            "status": "supported",
+            "confidence": 0.75
+          },
+          {
+            "claim_text": "Most abstract and most pervasive: state borrows femininity for its face, strips it of all content",
+            "claim_type": "postcolonial_marker",
+            "status": "tentative",
+            "confidence": 0.65
+          }
+        ],
+        "confidence": 0.933
+      },
+      "iconclass": [
+        "44A1",
+        "44B191",
+        "48C51"
+      ]
+    }
+  },
+  {
+    "id": "BR-036",
+    "titulo": "400 Réis — Liberty (Série MCMI)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1901",
+    "suporte": "moeda",
+    "regime": "Normativo",
+    "motivos": [
+      "Republica"
+    ],
+    "descricao": "400 Réis — Liberty (Série MCMI)",
+    "direitos": "",
+    "fonte_url": "https://en.numista.com/catalogue/pieces6773.html",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "400 Réis — Liberty (Série MCMI)",
+    "iconographic_metadata": {
+      "visual_regime": "normativo",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Republica",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: NORMATIVO",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          }
+        ],
+        "confidence": 0.85
+      }
+    }
+  },
+  {
+    "id": "BR-046",
+    "titulo": "50 Mil Réis — Cédula do Banco do Brazil (1890)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1890",
+    "suporte": "moeda",
+    "regime": "Fundacional",
+    "motivos": [
+      "Justica",
+      "Liberdade",
+      "Governo"
+    ],
+    "descricao": "50 Mil Réis — Cédula do Banco do Brazil (1890)",
+    "direitos": "",
+    "fonte_url": "https://www.worldbanknotescoins.com/2015/02/brazil-50-mil-reis-banknote-1890-banco-do-brazil.html",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "50 Mil Réis — Cédula do Banco do Brazil (1890)",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Justica",
+            "observed": true
+          },
+          {
+            "motif": "Liberdade",
+            "observed": true
+          },
+          {
+            "motif": "Governo",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          }
+        ],
+        "confidence": 0.85
+      }
+    }
+  },
+  {
+    "id": "BR-030",
+    "titulo": "500 Réis — Efígie da República (prata, 1912)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1912",
+    "suporte": "moeda",
+    "regime": "Normativo",
+    "motivos": [
+      "Republica"
+    ],
+    "descricao": "500 Réis — Efígie da República (prata, 1912)",
+    "direitos": "",
+    "fonte_url": "https://en.numista.com/catalogue/pieces14481.html",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "500 Réis — Efígie da República (prata, 1912)",
+    "iconographic_metadata": {
+      "visual_regime": "normativo",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Republica",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: NORMATIVO",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          }
+        ],
+        "confidence": 0.85
+      }
+    }
+  },
+  {
+    "id": "BR-009",
+    "titulo": "A Justiça (Alfredo Ceschiatti, STF Brasília)",
+    "pais": "Brasil",
+    "autoria": "Alfredo Ceschiatti",
+    "instituicao": "Supremo Tribunal Federal, Praça dos Três Poderes, Brasília",
+    "data": "1961",
+    "suporte": "Granite sculpture",
+    "regime": "Militar",
+    "motivos": [
+      "Justiça",
+      "Justice",
+      "Themis",
+      "blindfold",
+      "sword",
+      "modernism"
+    ],
+    "descricao": "Monumental granite sculpture of Justice (Themis) seated before the Supreme Federal Tribunal in Brasília. Eyes closed, holding a sword with both hands. Designed to complement Oscar Niemeyer's modernist architecture. The Brazilian Justiça — a seated, blindfolded, sword-bearing woman as the face of the highest court. Attacked on January 8, 2023, making it a central object in the dissertation's analysis of iconoclasm and legal literacy.",
+    "direitos": "Public domain",
+    "fonte_url": "https://acervos.ims.com.br/index.php/Detail/objects/18758",
+    "imagem": "https://acervos.ims.com.br/service.php/File/13350_ca_object_representations_media_8449_medium.jpg",
+    "tem_imagem": true,
+    "citacao": "CESCHIATTI, Alfredo. A Justiça. 1961. 1 escultura em granito. Supremo Tribunal Federal, Praça dos Três Poderes, Brasília. Disponível em: https://acervos.ims.com.br/index.php/Detail/objects/18758.",
+    "iconographic_metadata": {
+      "visual_regime": "militar",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Justiça",
+            "observed": true
+          },
+          {
+            "motif": "Justice",
+            "observed": true
+          },
+          {
+            "motif": "Themis",
+            "observed": true
+          },
+          {
+            "motif": "blindfold",
+            "observed": true
+          },
+          {
+            "motif": "sword",
+            "observed": true
+          },
+          {
+            "motif": "modernism",
+            "observed": true
+          }
+        ],
+        "codes": [
+          {
+            "scheme": "iconclass",
+            "notation": "44A1",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "44A3",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "48C51",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: MILITAR",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          },
+          {
+            "claim_text": "Monumentalize Justice as silent, blind, armed authority. Inaugurated 1961 (Kubitschek) but served military regime 1964-1985.",
+            "claim_type": "legal_context",
+            "status": "supported",
+            "confidence": 0.75
+          },
+          {
+            "claim_text": "Most refined Brazilian expression: female but stripped of femininity. Seated (contained), blind (passive), armed (delegated violence), silent. Feminilidade de Estado in purest form.",
+            "claim_type": "postcolonial_marker",
+            "status": "tentative",
+            "confidence": 0.65
+          }
+        ],
+        "confidence": 0.733
+      },
+      "iconclass": [
+        "44A1",
+        "44A3",
+        "48C51"
+      ]
+    }
+  },
+  {
+    "id": "49706189-9d27-da9e-59d5-3467a32a1f5e",
+    "titulo": "A Providência guia Cabral",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1900",
+    "suporte": "estampa/gravura",
+    "regime": "Fundacional",
+    "motivos": [
+      "descricao_pre_iconografica"
+    ],
+    "descricao": "Mito fundacional da nação brasileira sob a república recém-instaurada: o feminino encarnado e vivo personifica a legitimação providencial-nacional do 'descobrimento', operando como garantia alegórica da origem do corpo político — feminilidade de Estado em registro fundacional, ainda não endurecida.",
+    "direitos": "",
+    "fonte_url": "https://eliseuvisconti.com.br/obra/p332/",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "VISCONTI, Eliseu. A Providência guia Cabral. [1900]. Óleo sobre tela. Pinacoteca do Estado de São Paulo, São Paulo. Projeto Eliseu Visconti, P332. Disponível em: https://eliseuvisconti.com.br/obra/p332/. Acesso em: 19 maio 2026.",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "descricao_pre_iconografica",
+            "observed": true,
+            "notes": "Pintura simbolista em tons quentes ocres e azuis: figura feminina nua de cabelos ruivos esvoaçantes, seios desnudos, erguendo um archote flamejante com a mão direita; abaixo, um homem barbado de manto vermelho (Cabral) e outros navegantes entre velas e cordame de uma nau em alto-mar."
+          }
+        ],
+        "codes": [
+          {
+            "scheme": "iconclass",
+            "notation": "48C51",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.7,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "44A31",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.7,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "92",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.7,
+            "evidence_source_id": "e1"
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.78
+          },
+          {
+            "claim_text": "Alegoria da Providência/Pátria guiando a frota cabralina rumo ao Brasil: a mulher pousa a mão sobre a cabeça do descobridor, conduzindo-o como agente do destino nacional; o archote é luz-guia, as velas e o mar situam a viagem fundadora de 1500.",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.78
+          },
+          {
+            "claim_text": "Mito fundacional da nação brasileira sob a república recém-instaurada: o feminino encarnado e vivo personifica a legitimação providencial-nacional do 'descobrimento', operando como garantia alegórica da origem do corpo político — feminilidade de Estado em registro fundacional, ainda não endurecida.",
+            "claim_type": "legal_context",
+            "status": "supported",
+            "confidence": 0.702
+          }
+        ],
+        "confidence": 0.78
+      },
+      "iconclass": [
+        "48C51",
+        "44A31",
+        "92"
+      ]
+    }
+  },
+  {
+    "id": "2e077aa6-5e64-3c58-f33b-99b0bcfcef83",
+    "titulo": "A República",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1896",
+    "suporte": "cartaz",
+    "regime": "Fundacional",
+    "motivos": [
+      "descricao_pre_iconografica"
+    ],
+    "descricao": "Obra fundacional da iconografia republicana brasileira (1896, sete anos após a Proclamação), erige a alegoria feminina como corpo soberano do novo Estado, articulando Contrato Sexual Visual e Feminilidade de Estado: o feminino é convocado para encarnar a legitimidade jurídico-política da República nascente, ainda com corpo vivo, sensível e calorosamente entronizado, antes do endurecimento normativo posterior.",
+    "direitos": "",
+    "fonte_url": "https://artsandculture.google.com/asset/a-rep%C3%BAblica-manoel-lopes-rodrigues/AQGV9DG4UbJnBg",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "RODRIGUES, Manoel Lopes. A República. 1896. Óleo sobre tela, 228 × 118,5 cm. Museu de Arte da Bahia, Salvador. Disponível em: https://artsandculture.google.com/asset/a-rep%C3%BAblica-manoel-lopes-rodrigues/AQGV9DG4UbJnBg. Acesso em: 19 maio 2026.",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "descricao_pre_iconografica",
+            "observed": true,
+            "notes": "Mulher jovem sentada num trono de mármore sobre estrado, em túnica branca esvoaçante e amplo manto verde, descalça. Coroa de louros vermelha/folhas sobre cabeça com véu carmim, colar de ouro com máscara (górgona/leão). Segura uma espada longa apontada para baixo na mão direita e apoia a esquerda no braço esculpido do trono. Ao fundo, painel ornamental com estrelas e medalhões; em arco superior a data MDCCCLXXXIX e a inscrição 'ESTADOS UNIDOS DO BRAZIL' em torno de um escudo com a faixa do Cruzeiro. Aos pés, ramos de palma e oliveira (louro) cruzados no chão."
+          }
+        ],
+        "codes": [
+          {
+            "scheme": "iconclass",
+            "notation": "44A31",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.7,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "48C51",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.7,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "11MM31",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.7,
+            "evidence_source_id": "e1"
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.95
+          },
+          {
+            "claim_text": "Personificação de 'A República' brasileira, identificada pelo brasão dos Estados Unidos do Brasil e pela data de proclamação (1889). Atributos jurídico-soberanos: espada (poder/justiça armada), barrete frígio estilizado em vermelho (liberdade republicana), louros (vitória/glória cívica), palma e oliveira (paz/concórdia) e trono (soberania institucional). Síntese entre a Marianne francesa e a iconografia neoclássica da Justiça/República.",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.95
+          },
+          {
+            "claim_text": "Obra fundacional da iconografia republicana brasileira (1896, sete anos após a Proclamação), erige a alegoria feminina como corpo soberano do novo Estado, articulando Contrato Sexual Visual e Feminilidade de Estado: o feminino é convocado para encarnar a legitimidade jurídico-política da República nascente, ainda com corpo vivo, sensível e calorosamente entronizado, antes do endurecimento normativo posterior.",
+            "claim_type": "legal_context",
+            "status": "supported",
+            "confidence": 0.855
+          }
+        ],
+        "confidence": 0.95
+      },
+      "iconclass": [
+        "44A31",
+        "48C51",
+        "11MM31"
+      ]
+    }
+  },
+  {
+    "id": "e1d2e177-0905-a3bc-2e17-f6dd4f040db0",
+    "titulo": "A República (estudo para escultura/bandeira)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1889",
+    "suporte": "moeda",
+    "regime": "Fundacional",
+    "motivos": [
+      "descricao_pre_iconografica"
+    ],
+    "descricao": "Imagem do momento fundacional republicano brasileiro: Décio Villares constrói a República como corpo feminino vivo, encarnado e erotizado (carnação quente, cabelos soltos, lábios e faces rubros), inscrevendo a legitimidade do novo regime na vitalidade sacrificial-juvenil da alegoria antes de sua posterior burocratização e endurecimento heráldico em moedas e selos.",
+    "direitos": "",
+    "fonte_url": "https://museudarepublica.museus.gov.br/publicacoes/",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "VILLARES, Décio Rodrigues. A República [conjunto de estudos e obras alegóricas]. 1889-1931. Museu da República; Museu Nacional de Belas Artes; Museu Casa de Benjamin Constant, Rio de Janeiro. Disponível em: https://museudarepublica.museus.gov.br/publicacoes/. Acesso em: 19 maio 2026.",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "descricao_pre_iconografica",
+            "observed": true,
+            "notes": "Busto feminino em perfil esquerdo, sobre fundo de céu azul que desce a um horizonte amarelo-dourado; cabelos castanhos longos e soltos, faces coradas, lábios vermelhos. Veste túnica verde com debrum dourado no decote e usa um barrete frígio verde com fita branca/clara. A pintura está contida numa abertura de topo arqueado recortada numa moldura/passe-partout marrom; assinatura 'D. Villares' no canto inferior direito."
+          }
+        ],
+        "codes": [
+          {
+            "scheme": "iconclass",
+            "notation": "44A31",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.7,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "48C51",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.7,
+            "evidence_source_id": "e1"
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.86
+          },
+          {
+            "claim_text": "O barrete frígio verde, a túnica clássica e o porte juvenil identificam a figura como personificação alegórica da República — aqui a República brasileira (1889) na linhagem da Marianne francesa, mas tratada como retrato idealizado de jovem viva e sensual, não como emblema rígido.",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.86
+          },
+          {
+            "claim_text": "Imagem do momento fundacional republicano brasileiro: Décio Villares constrói a República como corpo feminino vivo, encarnado e erotizado (carnação quente, cabelos soltos, lábios e faces rubros), inscrevendo a legitimidade do novo regime na vitalidade sacrificial-juvenil da alegoria antes de sua posterior burocratização e endurecimento heráldico em moedas e selos.",
+            "claim_type": "legal_context",
+            "status": "supported",
+            "confidence": 0.774
+          }
+        ],
+        "confidence": 0.86
+      },
+      "iconclass": [
+        "44A31",
+        "48C51"
+      ]
+    }
+  },
+  {
+    "id": "SCOUT-414",
+    "titulo": "A República nos braços de Floriano",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1891",
+    "suporte": "",
+    "regime": "Normativo",
+    "motivos": [
+      "Republica"
+    ],
+    "descricao": "A República nos braços de Floriano",
+    "direitos": "",
+    "fonte_url": "https://hemerotecadigital.bn.br/acervo-digital/revista-illustrada/332747",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "A República nos braços de Floriano",
+    "iconographic_metadata": {
+      "visual_regime": "normativo"
+    }
+  },
+  {
+    "id": "14990163-f5e4-a143-0d6b-288477d89a2b",
+    "titulo": "Alegoria da Exposição Internacional do Centenário da Independência de 1922",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1922",
+    "suporte": "estampa/gravura",
+    "regime": "Fundacional",
+    "motivos": [
+      "descricao_pre_iconografica"
+    ],
+    "descricao": "A figura encena a 'Feminilidade de Estado' fundacional: corpo feminino vivo, sensual e dinâmico convertido em suporte vivo da soberania nacional e da concórdia internacional; o gesto de envolver-se na bandeira sacraliza o pacto cívico-político do Centenário, fixando a mulher como portadora corporal da nação ainda antes de sua plena domesticação heráldica.",
+    "direitos": "",
+    "fonte_url": "https://mhn.acervos.museus.gov.br/acervo-museologico/pintura-alegorica-14/",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "VILLARES, Décio Rodrigues. Alegoria da Exposição Internacional do Centenário da Independência de 1922. 1922. Óleo sobre tela, 105 × 74,5 cm. Museu Histórico Nacional, Rio de Janeiro. Nº de registro 310906. Disponível em: https://mhn.acervos.museus.gov.br/acervo-museologico/pintura-alegorica-14/. Acesso em: 19 maio 2026.",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "descricao_pre_iconografica",
+            "observed": true,
+            "notes": "Pintura a óleo emoldurada em talha dourada com remate em arco mourisco; figura feminina jovem de cabelos longos soltos, em túnica clássica esvoaçante, suspensa/voando sobre um mar ao crepúsculo, abraçando e desfraldando uma grande bandeira de listras coloridas; uma pomba branca paira acima dela."
+          }
+        ],
+        "codes": [
+          {
+            "scheme": "iconclass",
+            "notation": "44A31",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.7,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "48C51",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.7,
+            "evidence_source_id": "e1"
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.78
+          },
+          {
+            "claim_text": "A jovem alada/ascendente que enlaça a bandeira é uma personificação alegórica da Nação (A República brasileira) — possivelmente envolvendo as bandeiras das nações participantes ou a bandeira nacional —, com a pomba como emblema de paz/concórdia; composição típica da alegoria cívica da Exposição do Centenário da Independência (1922).",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.78
+          },
+          {
+            "claim_text": "A figura encena a 'Feminilidade de Estado' fundacional: corpo feminino vivo, sensual e dinâmico convertido em suporte vivo da soberania nacional e da concórdia internacional; o gesto de envolver-se na bandeira sacraliza o pacto cívico-político do Centenário, fixando a mulher como portadora corporal da nação ainda antes de sua plena domesticação heráldica.",
+            "claim_type": "legal_context",
+            "status": "supported",
+            "confidence": 0.702
+          }
+        ],
+        "confidence": 0.78
+      },
+      "iconclass": [
+        "44A31",
+        "48C51"
+      ]
+    }
+  },
+  {
+    "id": "BR-006",
+    "titulo": "Alegoria da República (Carlos Chambelland)",
+    "pais": "Brasil",
+    "autoria": "Carlos Chambelland",
+    "instituicao": "Museu Histórico Nacional",
+    "data": "1922",
+    "suporte": "Oil on canvas (202 × 152 cm)",
+    "regime": "Fundacional",
+    "motivos": [
+      "República",
+      "Alegoria feminina",
+      "Centenário",
+      "Anjo"
+    ],
+    "descricao": "Allegorical painting commissioned for Brazil's centennial of independence (1922). Female figure in flowing white and green robes, arm raised, accompanied by an angel, with male figures holding manuscripts below — blending republican allegory with national celebration.",
+    "direitos": "Public domain",
+    "fonte_url": "https://brasiliana.museus.gov.br/acervos/alegoria-da-republica/",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "CHAMBELLAND, Carlos. Alegoria da República. 1922. 1 pintura, óleo sobre tela, 202 x 152 cm. Museu Histórico Nacional. Disponível em: https://brasiliana.museus.gov.br/acervos/alegoria-da-republica/.",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "República",
+            "observed": true
+          },
+          {
+            "motif": "Alegoria feminina",
+            "observed": true
+          },
+          {
+            "motif": "Centenário",
+            "observed": true
+          },
+          {
+            "motif": "Anjo",
+            "observed": true
+          }
+        ],
+        "codes": [
+          {
+            "scheme": "iconclass",
+            "notation": "44A11",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "11G",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "48C51",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          },
+          {
+            "claim_text": "Centennial celebration and refoundation (1922)",
+            "claim_type": "legal_context",
+            "status": "supported",
+            "confidence": 0.75
+          },
+          {
+            "claim_text": "Republic-woman blesses from above; men write/legislate below",
+            "claim_type": "postcolonial_marker",
+            "status": "tentative",
+            "confidence": 0.65
+          }
+        ],
+        "confidence": 0.233
+      },
+      "iconclass": [
+        "44A11",
+        "11G",
+        "48C51"
+      ]
+    }
+  },
+  {
+    "id": "BR-005",
+    "titulo": "Alegoria da República (Décio Villares)",
+    "pais": "Brasil",
+    "autoria": "Décio Villares (1851–1931)",
+    "instituicao": "Museu Histórico Nacional",
+    "data": "c. 1900",
+    "suporte": "Oil on canvas (sketch, 97 × 77 cm)",
+    "regime": "Fundacional",
+    "motivos": [
+      "República",
+      "Alegoria feminina",
+      "Positivismo",
+      "Barrete frígio"
+    ],
+    "descricao": "Allegorical painting of the Brazilian Republic by Décio Villares, the positivist artist who designed the blue disc on Brazil's national flag. The female figure wears a Phrygian cap inscribed with 'Ordem e Progresso' — directly linking republican feminine allegory to positivist ideology. Key work for understanding how European allegorical forms were transplanted and adapted in Brazilian republican iconography.",
+    "direitos": "Public domain",
+    "fonte_url": "https://archive.nyu.edu/handle/2451/61396",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/D%C3%A9cio_Villares_-_A_Rep%C3%BAblica.jpg/800px-D%C3%A9cio_Villares_-_A_Rep%C3%BAblica.jpg",
+    "tem_imagem": true,
+    "citacao": "VILLARES, Décio. Alegoria da República. c. 1900. 1 pintura, óleo sobre tela, 97 x 77 cm. Museu Histórico Nacional. Disponível em: https://archive.nyu.edu/handle/2451/61396.",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "República",
+            "observed": true
+          },
+          {
+            "motif": "Alegoria feminina",
+            "observed": true
+          },
+          {
+            "motif": "Positivismo",
+            "observed": true
+          },
+          {
+            "motif": "Barrete frígio",
+            "observed": true
+          }
+        ],
+        "codes": [
+          {
+            "scheme": "iconclass",
+            "notation": "44A11",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "44A11(+1)",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "48C51",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          },
+          {
+            "claim_text": "Found the visual face of the Brazilian Republic. Positivist program disputed with jacobins.",
+            "claim_type": "legal_context",
+            "status": "supported",
+            "confidence": 0.75
+          },
+          {
+            "claim_text": "Exemplary. Modeled on Clotilde de Vaux. Positivism: women morally superior but politically excluded. The woman-Republic is an image, not an agent.",
+            "claim_type": "postcolonial_marker",
+            "status": "tentative",
+            "confidence": 0.65
+          }
+        ],
+        "confidence": 0.333
+      },
+      "iconclass": [
+        "44A11",
+        "44A11(+1)",
+        "48C51"
+      ]
+    }
+  },
+  {
+    "id": "BR-027",
+    "titulo": "Alegoria da República Brasileira — Revista Illustrada",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "c. 1889 (pós-Proclamação, 15 nov. 1889)",
+    "suporte": "",
+    "regime": "Fundacional",
+    "motivos": [
+      "Republic"
+    ],
+    "descricao": "Alegoria da República Brasileira — Revista Illustrada",
+    "direitos": "",
+    "fonte_url": "https://commons.wikimedia.org/wiki/File:Republica_no_brasil.jpg",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "Alegoria da República Brasileira — Revista Illustrada",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Republic",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime pendente",
+            "claim_type": "iconographic",
+            "status": "tentative",
+            "confidence": 0.45
+          }
+        ],
+        "confidence": 0.45
+      }
+    }
+  },
+  {
+    "id": "BR-021",
+    "titulo": "Alegoria da República — Manoel Lopes Rodrigues (óleo sobre tela)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1896",
+    "suporte": "pintura",
+    "regime": "Fundacional",
+    "motivos": [
+      "Republic"
+    ],
+    "descricao": "Alegoria da República — Manoel Lopes Rodrigues (óleo sobre tela)",
+    "direitos": "",
+    "fonte_url": "https://artsandculture.google.com/story/cole%C3%A7%C3%A3o-lopes-rodrigues-museu-de-arte-da-bahia/kAXx2Zki-R24Lw",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "Alegoria da República — Manoel Lopes Rodrigues (óleo sobre tela)",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Republic",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime pendente",
+            "claim_type": "iconographic",
+            "status": "tentative",
+            "confidence": 0.45
+          }
+        ],
+        "confidence": 0.45
+      }
+    }
+  },
+  {
+    "id": "BR-041",
+    "titulo": "Alegoria à Lei de 13 de Maio de 1888 (estudo)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "c. 1888 (final do séc. XIX)",
+    "suporte": "",
+    "regime": "Fundacional",
+    "motivos": [
+      "Generic allegory"
+    ],
+    "descricao": "Alegoria à Lei de 13 de Maio de 1888 (estudo)",
+    "direitos": "",
+    "fonte_url": "https://mhn.museus.gov.br/estudo-de-decio-villares-volta-ao-circuito-expositivo-do-mhn/",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "Alegoria à Lei de 13 de Maio de 1888 (estudo)",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Generic allegory",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime pendente",
+            "claim_type": "iconographic",
+            "status": "tentative",
+            "confidence": 0.45
+          }
+        ],
+        "confidence": 0.45
+      }
+    }
+  },
+  {
+    "id": "dfe19295-505c-5df1-866e-e8bb695dbc5f",
+    "titulo": "Alegoria à Lei de 13 de Maio de 1888 (estudo)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1888",
+    "suporte": "",
+    "regime": "",
+    "motivos": [
+      "alegoria",
+      "Lei Áurea",
+      "abolição",
+      "figura feminina",
+      "República",
+      "liberdade"
+    ],
+    "descricao": "Estudo preparatório de Décio Villares para uma obra comemorativa da assinatura da Lei Áurea (13 de maio de 1888). A pintura, incorporada ao acervo do MHN em 1941, retrata alegoricamente o momento histórico da abolição da escravatura no Brasil através de figuras femininas simbólicas, numa linguagem própria do positivismo republicano. Após restauração, integra a exposição permanente 'A construção da nação (1822-1889)'.",
+    "direitos": "",
+    "fonte_url": "https://mhn.acervos.museus.gov.br/acervo-museologico/pintura-alegorica-11/",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "VILLARES, Décio Rodrigues. Alegoria à Lei de 13 de Maio de 1888 (estudo). [188-]. Óleo sobre tela. Museu Histórico Nacional, Rio de Janeiro. Disponível em: https://mhn.museus.gov.br/estudo-de-decio-villares-volta-ao-circuito-expositivo-do-mhn/. Acesso em: 19 maio 2026.",
+    "iconographic_metadata": {
+      "visual_regime": "",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "alegoria",
+            "observed": true
+          },
+          {
+            "motif": "Lei Áurea",
+            "observed": true
+          },
+          {
+            "motif": "abolição",
+            "observed": true
+          },
+          {
+            "motif": "figura feminina",
+            "observed": true
+          },
+          {
+            "motif": "República",
+            "observed": true
+          },
+          {
+            "motif": "liberdade",
+            "observed": true
+          }
+        ],
+        "codes": [
+          {
+            "scheme": "iconclass",
+            "notation": "44A31",
+            "code_role": "depicts",
+            "confidence": 0.65,
+            "evidence_source_id": "v1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "48C51",
+            "code_role": "depicts",
+            "confidence": 0.65,
+            "evidence_source_id": "v1"
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Legacy drive-import metadata migrated to current master-record schema.",
+            "claim_type": "iconographic",
+            "status": "tentative",
+            "confidence": 0.65
+          }
+        ],
+        "confidence": 0.65
+      },
+      "iconclass": [
+        "44A31",
+        "48C51"
+      ]
+    }
+  },
+  {
+    "id": "BR-020",
+    "titulo": "Alegoria à Lei do Ventre Livre (A.D. Bressae) — NYU Faculty Digital Archive",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "c. 1871",
+    "suporte": "",
+    "regime": "Fundacional",
+    "motivos": [
+      "Alegoria da Lei do Ventre Livre"
+    ],
+    "descricao": "Alegoria à Lei do Ventre Livre (A.D. Bressae) — NYU Faculty Digital Archive",
+    "direitos": "",
+    "fonte_url": "https://archive.nyu.edu/handle/2451/61367",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "Alegoria à Lei do Ventre Livre (A.D. Bressae) — NYU Faculty Digital Archive",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Alegoria da Lei do Ventre Livre",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.65
+          }
+        ],
+        "confidence": 0.65
+      }
+    }
+  },
+  {
+    "id": "a7971ac5-e277-f70a-bb11-ba25db7e6ac0",
+    "titulo": "Alegoria à República (Décio Villares — conjunto positivista)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1890",
+    "suporte": "cartaz",
+    "regime": "Fundacional",
+    "motivos": [
+      "descricao_pre_iconografica"
+    ],
+    "descricao": "A alegoria opera a transposição da soberania do corpo do monarca para um corpo feminino idealizado e classicizado: a mulher-República encarna o novo fundamento jurídico-político do Estado republicano. A vitalidade sensual e o gorro da liberdade situam a obra no momento fundacional do regime, em que o corpo alegórico vivo ainda condensa o pacto de soberania antes de seu endurecimento burocrático e militar posterior.",
+    "direitos": "",
+    "fonte_url": "https://mnba.gov.br/",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "VILLARES, Décio Rodrigues. Alegoria à República [conjunto de obras do MNBA]. [1890-1910]. Óleo sobre tela. Museu Nacional de Belas Artes, Rio de Janeiro. Disponível em: https://mnba.gov.br/. Acesso em: 19 maio 2026.",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "descricao_pre_iconografica",
+            "observed": true,
+            "notes": "Busto de jovem mulher em perfil esquerdo, cabelos castanhos soltos, lábios entreabertos e avermelhados, vestindo um barrete cônico listrado de verde e branco que tomba para a frente e um manto drapeado em verde e amarelo com decote aberto. A figura inscreve-se em um campo oval/camafeu claro recortado sobre fundo verde-escuro; assinatura 'D. Villares' no canto inferior direito."
+          }
+        ],
+        "codes": [
+          {
+            "scheme": "iconclass",
+            "notation": "44A31",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.7,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "48C51",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.7,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "11MM",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.7,
+            "evidence_source_id": "e1"
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.8
+          },
+          {
+            "claim_text": "O barrete frígio (gorro da liberdade) e a combinação cromática verde-e-amarela identificam a figura como personificação alegórica da República — especificamente a República brasileira no programa iconográfico positivista de Décio Villares (desenhista da bandeira nacional). É uma das versões-irmãs da 'República' de Villares, distinta da versão do Museu da República.",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.8
+          },
+          {
+            "claim_text": "A alegoria opera a transposição da soberania do corpo do monarca para um corpo feminino idealizado e classicizado: a mulher-República encarna o novo fundamento jurídico-político do Estado republicano. A vitalidade sensual e o gorro da liberdade situam a obra no momento fundacional do regime, em que o corpo alegórico vivo ainda condensa o pacto de soberania antes de seu endurecimento burocrático e militar posterior.",
+            "claim_type": "legal_context",
+            "status": "supported",
+            "confidence": 0.72
+          }
+        ],
+        "confidence": 0.8
+      },
+      "iconclass": [
+        "44A31",
+        "48C51",
+        "11MM"
+      ]
+    }
+  },
+  {
+    "id": "BR-023",
+    "titulo": "Alegoria à República — Capa da Revista Illustrada n. 566",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1889",
+    "suporte": "",
+    "regime": "Fundacional",
+    "motivos": [
+      "Republic"
+    ],
+    "descricao": "Alegoria à República — Capa da Revista Illustrada n. 566",
+    "direitos": "",
+    "fonte_url": "https://commons.wikimedia.org/wiki/File:Capa_da_Revista_Illustrada,_n.%C2%BA_566_(1889).png",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "Alegoria à República — Capa da Revista Illustrada n. 566",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Republic",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime pendente",
+            "claim_type": "iconographic",
+            "status": "tentative",
+            "confidence": 0.45
+          }
+        ],
+        "confidence": 0.45
+      }
+    }
+  },
+  {
+    "id": "BR-026",
+    "titulo": "Alegorias do Palácio Anchieta — esculturas de Pedro Gianordoli (Vitória/ES)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1912",
+    "suporte": "monumento/escultura",
+    "regime": "Normativo",
+    "motivos": [
+      "Republica"
+    ],
+    "descricao": "Alegorias do Palácio Anchieta — esculturas de Pedro Gianordoli (Vitória/ES)",
+    "direitos": "",
+    "fonte_url": "https://commons.wikimedia.org/wiki/File:Pal%C3%A1cio_Anchieta_Escadaria_B%C3%A1rbara_Monteiro_Lindenberg_Vit%C3%B3ria_Esp%C3%ADrito_Santo_2019-4708.jpg",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "Alegorias do Palácio Anchieta — esculturas de Pedro Gianordoli (Vitória/ES)",
+    "iconographic_metadata": {
+      "visual_regime": "normativo",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Republica",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: NORMATIVO",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          }
+        ],
+        "confidence": 0.85
+      }
+    }
+  },
+  {
+    "id": "BR-042",
+    "titulo": "Alegorias do Palácio do Catete — esculturas Val d'Osne (República, Justiça,",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1899-1910",
+    "suporte": "monumento/escultura",
+    "regime": "Fundacional",
+    "motivos": [
+      "Republica",
+      "Justitia"
+    ],
+    "descricao": "Alegorias do Palácio do Catete — esculturas Val d'Osne (República, Justiça,",
+    "direitos": "",
+    "fonte_url": "https://museudarepublica.museus.gov.br/wp-content/uploads/2013/10/republica-em-documentos_colecao-de-alegorias_web.pdf",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "Alegorias do Palácio do Catete — esculturas Val d'Osne (República, Justiça,",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Republica",
+            "observed": true
+          },
+          {
+            "motif": "Justitia",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          }
+        ],
+        "confidence": 0.85
+      }
+    }
+  },
+  {
+    "id": "BR-007",
+    "titulo": "As Estátuas Fallando (The Statues Speaking) — Justiça",
+    "pais": "Brasil",
+    "autoria": "Unknown (periodical 'BRASIL')",
+    "instituicao": "Fundação Biblioteca Nacional",
+    "data": "1827",
+    "suporte": "Periodical text",
+    "regime": "Fundacional",
+    "motivos": [
+      "Justiça",
+      "Estátua falante",
+      "Diálogo alegórico",
+      "Verdade"
+    ],
+    "descricao": "Article titled 'As Estátuas Fallando' (The Statues Speaking) featuring a literary dialogue where Justice appears as an animated statue character. 'A Verdade: Que dizes, ó Justiça?' (Truth: What do you say, oh Justice?). Early Brazilian example of Justice personified as a speaking female figure in periodical press.",
+    "direitos": "Public domain",
+    "fonte_url": "http://memoria.bn.br/pdf/702390/per702390_1827_00060.pdf",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "AS ESTÁTUAS fallando. Brasil, n. 60, 1827. p. [s.n.]. Disponível em: http://memoria.bn.br/pdf/702390/per702390_1827_00060.pdf.",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Justiça",
+            "observed": true
+          },
+          {
+            "motif": "Estátua falante",
+            "observed": true
+          },
+          {
+            "motif": "Diálogo alegórico",
+            "observed": true
+          },
+          {
+            "motif": "Verdade",
+            "observed": true
+          }
+        ],
+        "codes": [
+          {
+            "scheme": "iconclass",
+            "notation": "44A1",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "59B22",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "48C51",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          },
+          {
+            "claim_text": "Legitimation of imperial juridical order 5 years post-independence",
+            "claim_type": "legal_context",
+            "status": "supported",
+            "confidence": 0.75
+          },
+          {
+            "claim_text": "Operates through grammatical gender only — zero-degree femininity",
+            "claim_type": "postcolonial_marker",
+            "status": "tentative",
+            "confidence": 0.65
+          }
+        ],
+        "confidence": 0.767
+      },
+      "iconclass": [
+        "44A1",
+        "59B22",
+        "48C51"
+      ]
+    }
+  },
+  {
+    "id": "SCOUT-562",
+    "titulo": "Brasão da República dos Estados Unidos do Brasil",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1889–",
+    "suporte": "Brasão de armas / selo de Estado",
+    "regime": "Normativo",
+    "motivos": [
+      "figura feminina alegorica",
+      "dispositivo estatal brasileiro"
+    ],
+    "descricao": "Fontes identificadas no guia de planejamento; busca web nao executada para piloto.",
+    "direitos": "",
+    "fonte_url": "https://www.planalto.gov.br/ccivil_03/constituicao/brasao.htm",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "BRASIL. Decreto que institui o brasão de armas da República dos Estados Unidos do Brasil. 1889.",
+    "iconographic_metadata": {
+      "visual_regime": "normativo"
+    }
+  },
+  {
+    "id": "SCOUT-559",
+    "titulo": "Crispim do Amaral, Alegoria da República (pano de boca do Theatro da Paz, Belém, 1890), reproduzida em Lima Junior (2020)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1890",
+    "suporte": "pintura",
+    "regime": "Fundacional",
+    "motivos": [
+      "Alegoria feminina",
+      "República",
+      "Trono"
+    ],
+    "descricao": "Seated female allegory of the Brazilian Republic enthroned. Wears white classical dress with green mantle (national colors), laurel crown with red Phrygian cap, golden necklace. Right hand rests on a sword, left hand on the throne's armrest with lion-head finials. Palm frond at her feet. Background mosaic inscription 'ESTADOS UNIDOS DO BRASIL' with Roman numeral MDCCCLXXXIX (1889, date of Republic proclamation). Ornamental border with blue rosettes.",
+    "direitos": "",
+    "fonte_url": "https://teses.usp.br/teses/disponiveis/93/93131/tde-16062021-151518/publico/2020_CarlosRogerioLimaJunior_VCorr.pdf",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "LIMA JUNIOR, Carlos Rogério. Marianne à brasileira: imagens republicanas e os dilemas do Brasil nos finais do século XIX. 2020. Tese (Doutorado em História) — Faculdade de Filosofia, Letras e Ciências Humanas, Universidade de São Paulo, São Paulo, 2020. Reprodução: Alegoria da República (pano de boca do Theatro da Paz, Belém, 1890), de Crispim do Amaral.",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Alegoria feminina",
+            "observed": true
+          },
+          {
+            "motif": "República",
+            "observed": true
+          },
+          {
+            "motif": "Trono",
+            "observed": true
+          }
+        ],
+        "codes": [
+          {
+            "scheme": "iconclass",
+            "notation": "48C51",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "44B11",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          },
+          {
+            "claim_text": "Visual legitimation of the Republic through classical feminine body — enthroned as sovereign replacement for Emperor",
+            "claim_type": "legal_context",
+            "status": "supported",
+            "confidence": 0.75
+          },
+          {
+            "claim_text": "Female body occupies the sovereign position vacated by Pedro II, yet remains ornamental and static — power through beauty, not action",
+            "claim_type": "postcolonial_marker",
+            "status": "tentative",
+            "confidence": 0.65
+          }
+        ],
+        "confidence": 0.6
+      },
+      "iconclass": [
+        "48C51",
+        "44B11"
+      ]
+    }
+  },
+  {
+    "id": "SCOUT-561",
+    "titulo": "Cédula de 2.000 réis de 1890 — figura feminina",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1890",
+    "suporte": "Cédula de papel-moeda",
+    "regime": "Normativo",
+    "motivos": [
+      "figura feminina alegorica",
+      "dispositivo estatal brasileiro"
+    ],
+    "descricao": "Fontes identificadas no guia de planejamento; busca web nao executada para piloto.",
+    "direitos": "",
+    "fonte_url": "https://www.youtube.com/watch?v=TUuDNXMqna0",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "Casa da Moeda do Brasil. Cédula de 2.000 réis. 1890.",
+    "iconographic_metadata": {
+      "visual_regime": "normativo",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "figura feminina alegorica",
+            "observed": true,
+            "notes": "Personificacao feminina do Estado/justica/republica segundo gramatica europeia."
+          },
+          {
+            "motif": "dispositivo estatal brasileiro",
+            "observed": true,
+            "notes": "Suporte oficial ou comparador genealogico documentado."
+          }
+        ],
+        "codes": [
+          {
+            "scheme": "iconclass",
+            "notation": "44G411",
+            "label": "Republica feminina",
+            "code_role": "depicts",
+            "confidence": 0.6,
+            "evidence_source_id": "9647a075"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "11M31",
+            "label": "Iustitia",
+            "code_role": "depicts",
+            "confidence": 0.5,
+            "evidence_source_id": "9647a075"
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Personificacao feminina do Estado segundo gramatica europeia.",
+            "claim_type": "iconographic",
+            "status": "tentative",
+            "confidence": 0.6
+          }
+        ],
+        "confidence": 0.6
+      },
+      "attributes": [
+        "outro"
+      ],
+      "iconclass": [
+        "44G411",
+        "11M31"
+      ]
+    }
+  },
+  {
+    "id": "SCOUT-564",
+    "titulo": "Efígie da República em moedas e cédulas brasileiras (1889–1945)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1889–1945",
+    "suporte": "Moedas e cédulas",
+    "regime": "Normativo",
+    "motivos": [
+      "figura feminina alegorica",
+      "dispositivo estatal brasileiro"
+    ],
+    "descricao": "Fontes identificadas no guia de planejamento; busca web nao executada para piloto.",
+    "direitos": "",
+    "fonte_url": "",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "Casa da Moeda do Brasil. Efígie da República em moedas e cédulas brasileiras. 1889–1945.",
+    "iconographic_metadata": {
+      "visual_regime": "normativo"
+    }
+  },
+  {
+    "id": "BR-039",
+    "titulo": "Efígie da República — Selo Definitivo do Brasil Republicano",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1894-1910",
+    "suporte": "selo",
+    "regime": "Fundacional",
+    "motivos": [
+      "Republica"
+    ],
+    "descricao": "Efígie da República — Selo Definitivo do Brasil Republicano",
+    "direitos": "",
+    "fonte_url": "",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "Efígie da República — Selo Definitivo do Brasil Republicano",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Republica",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          }
+        ],
+        "confidence": 0.85
+      }
+    }
+  },
+  {
+    "id": "SCOUT-567",
+    "titulo": "Elementos hídricos no escudo de armas do Império e da República",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1822–1889–",
+    "suporte": "Brasão de armas / selo de Estado",
+    "regime": "Normativo",
+    "motivos": [
+      "figura feminina alegorica",
+      "dispositivo estatal brasileiro"
+    ],
+    "descricao": "Fontes identificadas no guia de planejamento; busca web nao executada para piloto.",
+    "direitos": "",
+    "fonte_url": "https://www.planalto.gov.br/ccivil_03/constituicao/brasao.htm",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "BRASIL. Lei que institui o brasão de armas do Império do Brasil. 18 de setembro de 1822.",
+    "iconographic_metadata": {
+      "visual_regime": "normativo"
+    }
+  },
+  {
+    "id": "BR-024",
+    "titulo": "Eliseu Visconti — A Lei Áurea (projeto para selo dos Correios, 1904)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1903",
+    "suporte": "selo",
+    "regime": "Normativo",
+    "motivos": [
+      "Republica"
+    ],
+    "descricao": "Eliseu Visconti — A Lei Áurea (projeto para selo dos Correios, 1904)",
+    "direitos": "",
+    "fonte_url": "https://commons.wikimedia.org/wiki/File:EliseuVisconti-A813-A_Lei_%C3%81urea_%E2%80%93_Projeto_para_selo_integrante_da_cole%C3%A7%C3%A3o_vencedora_do_Concurso_dos_Correios_de_1904.jpg",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "Eliseu Visconti — A Lei Áurea (projeto para selo dos Correios, 1904)",
+    "iconographic_metadata": {
+      "visual_regime": "normativo",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Republica",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: NORMATIVO",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          }
+        ],
+        "confidence": 0.85
+      }
+    }
+  },
+  {
+    "id": "BR-025",
+    "titulo": "Eliseu Visconti — A Mulher Brasileira (projeto para selo dos Correios, 1904)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1903",
+    "suporte": "selo",
+    "regime": "Normativo",
+    "motivos": [
+      "Republica"
+    ],
+    "descricao": "Eliseu Visconti — A Mulher Brasileira (projeto para selo dos Correios, 1904)",
+    "direitos": "",
+    "fonte_url": "https://commons.wikimedia.org/wiki/File:EliseuVisconti-A814-A_Mulher_Brasileira_%E2%80%93_Projeto_para_selo_integrante_da_cole%C3%A7%C3%A3o_vencedora_do_Concurso_dos_Correios_de_1904.jpg",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "Eliseu Visconti — A Mulher Brasileira (projeto para selo dos Correios, 1904)",
+    "iconographic_metadata": {
+      "visual_regime": "normativo",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Republica",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: NORMATIVO",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          }
+        ],
+        "confidence": 0.85
+      }
+    }
+  },
+  {
+    "id": "BR-010",
+    "titulo": "Eliseu Visconti — Alegoria (Biblioteca Nacional, Rio de Janeiro)",
+    "pais": "Brasil",
+    "autoria": "Eliseu Visconti",
+    "instituicao": "Fundação Biblioteca Nacional, Rio de Janeiro",
+    "data": "1910",
+    "suporte": "Decorative panel (oil)",
+    "regime": "Fundacional",
+    "motivos": [
+      "Alegoria feminina",
+      "Republic",
+      "impressionism"
+    ],
+    "descricao": "Impressionist-style allegorical panel for the Presidential Room of the Biblioteca Nacional in Rio de Janeiro. Female allegorical figure in Visconti's distinctive impressionist idiom — the French-trained Brazilian artist adapting European allegorical vocabulary to national institutional decoration. A key example of transatlantic visual transfer.",
+    "direitos": "Public domain",
+    "fonte_url": "https://eliseuvisconti.com.br/obra/d702/",
+    "imagem": "https://eliseuvisconti.com.br/wp-content/uploads/2017/06/D702.jpg",
+    "tem_imagem": true,
+    "citacao": "VISCONTI, Eliseu. Alegoria (Biblioteca Nacional). 1910. 1 painel decorativo, óleo. Fundação Biblioteca Nacional, Rio de Janeiro. Disponível em: https://eliseuvisconti.com.br/obra/d702/.",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Alegoria feminina",
+            "observed": true
+          },
+          {
+            "motif": "Republic",
+            "observed": true
+          },
+          {
+            "motif": "impressionism",
+            "observed": true
+          }
+        ],
+        "codes": [
+          {
+            "scheme": "iconclass",
+            "notation": "48C51",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "49L7",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "44A1",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          },
+          {
+            "claim_text": "Decorative legitimation of republican cultural apparatus. Belle Epoque Rio.",
+            "claim_type": "legal_context",
+            "status": "supported",
+            "confidence": 0.75
+          },
+          {
+            "claim_text": "LOWEST Brazilian expression. Body retains corporeality, sensuality, movement, color. Soft but operative: female body beautifies state space while remaining nameless.",
+            "claim_type": "postcolonial_marker",
+            "status": "tentative",
+            "confidence": 0.65
+          }
+        ],
+        "confidence": 0.167
+      },
+      "iconclass": [
+        "48C51",
+        "49L7",
+        "44A1"
+      ]
+    }
+  },
+  {
+    "id": "BR-008",
+    "titulo": "Estátua da Justiça (Luiz Rochet) — referência no Almanak Laemmert",
+    "pais": "Brasil",
+    "autoria": "Luiz Rochet (sculptor); Almanak Laemmert (source)",
+    "instituicao": "Fundação Biblioteca Nacional",
+    "data": "1872 (inaugurated); 1929 (reference)",
+    "suporte": "Periodical reference to sculpture",
+    "regime": "Fundacional",
+    "motivos": [
+      "Justiça",
+      "Estátua",
+      "Escultor francês",
+      "Praça pública"
+    ],
+    "descricao": "Reference in the Almanak Laemmert (1929 edition) to the statue of Justice by French sculptor Luiz Rochet, inaugurated September 1872. Alongside statues of History, Poetry and Science. Documents the importation of French allegorical sculpture into Brazilian public space.",
+    "direitos": "Public domain",
+    "fonte_url": "http://memoria.bn.br/docreader/webindex/WIPagina/313394/101306",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "ALMANAK Laemmert. Rio de Janeiro, 1929. ed. A00085, p. 542. Disponível em: http://memoria.bn.br/docreader/webindex/WIPagina/313394/101306.",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Justiça",
+            "observed": true
+          },
+          {
+            "motif": "Estátua",
+            "observed": true
+          },
+          {
+            "motif": "Escultor francês",
+            "observed": true
+          },
+          {
+            "motif": "Praça pública",
+            "observed": true
+          }
+        ],
+        "codes": [
+          {
+            "scheme": "iconclass",
+            "notation": "44A1",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "44A3(+1)",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "48C51",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          },
+          {
+            "claim_text": "Imperial legitimation through French monumental vocabulary",
+            "claim_type": "legal_context",
+            "status": "supported",
+            "confidence": 0.75
+          },
+          {
+            "claim_text": "Architecturally explicit: female bodies form BASE supporting male sovereign ABOVE",
+            "claim_type": "postcolonial_marker",
+            "status": "tentative",
+            "confidence": 0.65
+          }
+        ],
+        "confidence": 0.833
+      },
+      "iconclass": [
+        "44A1",
+        "44A3(+1)",
+        "48C51"
+      ]
+    }
+  },
+  {
+    "id": "BR-001",
+    "titulo": "Estátua feminina na abertura da amostra dos produtos do Rio Grande do Sul",
+    "pais": "Brasil",
+    "autoria": "José Boscagli (photographer)",
+    "instituicao": "Museu Histórico Nacional",
+    "data": "1908",
+    "suporte": "Photograph (p&b)",
+    "regime": "Fundacional",
+    "motivos": [
+      "Alegoria feminina",
+      "Exposição Nacional",
+      "Estátua"
+    ],
+    "descricao": "Black and white photograph showing a female statue displayed at the National Exhibition of 1908. Female allegorical figure representing progress and abundance at the Rio Grande do Sul exhibition pavilion.",
+    "direitos": "Public access",
+    "fonte_url": "https://brasilianafotografica.bn.gov.br/brasiliana/handle/20.500.12156.1/11778",
+    "imagem": "https://brasilianafotografica.bn.gov.br/brasiliana/bitstream/handle/20.500.12156.1/11778/0000001.JPG.jpg?sequence=3&isAllowed=y",
+    "tem_imagem": true,
+    "citacao": "BOSCAGLI, José. [Estátua feminina na abertura da amostra dos produtos do Rio Grande do Sul]. 1908. 1 fotografia, p&b, 16,5 x 23 cm. Museu Histórico Nacional. Disponível em: https://brasilianafotografica.bn.gov.br/brasiliana/handle/20.500.12156.1/11778.",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Alegoria feminina",
+            "observed": true
+          },
+          {
+            "motif": "Exposição Nacional",
+            "observed": true
+          },
+          {
+            "motif": "Estátua",
+            "observed": true
+          }
+        ],
+        "codes": [
+          {
+            "scheme": "iconclass",
+            "notation": "48C51",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "44G3",
+            "label": "",
+            "code_role": "depicts",
+            "confidence": 0.8,
+            "evidence_source_id": "e1"
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          },
+          {
+            "claim_text": "Aesthetic legitimation of republican modernization project",
+            "claim_type": "legal_context",
+            "status": "supported",
+            "confidence": 0.75
+          },
+          {
+            "claim_text": "Female body as decorative frame for male economic activity",
+            "claim_type": "postcolonial_marker",
+            "status": "tentative",
+            "confidence": 0.65
+          }
+        ],
+        "confidence": 0.467
+      },
+      "iconclass": [
+        "48C51",
+        "44G3"
+      ]
+    }
+  },
+  {
+    "id": "4a6fa350-a8f7-87ed-e4be-76860dba356b",
+    "titulo": "Ex-libris da Biblioteca Nacional (A Mulher-Biblioteca)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1903",
+    "suporte": "",
+    "regime": "Normativo",
+    "motivos": [
+      "alegoria feminina",
+      "biblioteca",
+      "mulher leitora",
+      "íris",
+      "globo terrestre",
+      "livro",
+      "escrita",
+      "sabedoria"
+    ],
+    "descricao": "Ex-libris criado por Eliseu Visconti em 1903 para a Biblioteca Nacional do Rio de Janeiro, ainda em uso atualmente. A composição central mostra 'A Mulher-Biblioteca' de perfil: figura feminina de cabelos fartos presos em coque de íris (símbolo entre deuses e homens), folheando um livro aberto sobre balcão, com globo terrestre ao centro. A alegoria feminina da Biblioteca relaciona-se diretamente com a tradição iconográfica das virtudes e das musas.",
+    "direitos": "",
+    "fonte_url": "https://eliseuvisconti.com.br/obra/a803/",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "VISCONTI, Eliseu. Ex-libris da Biblioteca Nacional. 1903. Desenho, tinta. Biblioteca Nacional, Rio de Janeiro. Projeto Eliseu Visconti, A803. Disponível em: https://eliseuvisconti.com.br/obra/a803/. Acesso em: 19 maio 2026.",
+    "iconographic_metadata": {
+      "visual_regime": "normativo",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "alegoria feminina",
+            "observed": true
+          },
+          {
+            "motif": "biblioteca",
+            "observed": true
+          },
+          {
+            "motif": "mulher leitora",
+            "observed": true
+          },
+          {
+            "motif": "íris",
+            "observed": true
+          },
+          {
+            "motif": "globo terrestre",
+            "observed": true
+          },
+          {
+            "motif": "livro",
+            "observed": true
+          },
+          {
+            "motif": "escrita",
+            "observed": true
+          },
+          {
+            "motif": "sabedoria",
+            "observed": true
+          }
+        ],
+        "codes": [
+          {
+            "scheme": "iconclass",
+            "notation": "48C51",
+            "code_role": "depicts",
+            "confidence": 0.85
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "44A31",
+            "code_role": "depicts",
+            "confidence": 0.85
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Legacy drive-import metadata migrated to current master-record schema.",
+            "claim_type": "iconographic",
+            "status": "tentative",
+            "confidence": 0.85
+          }
+        ],
+        "confidence": 0.85
+      },
+      "iconclass": [
+        "48C51",
+        "44A31"
+      ]
+    }
+  },
+  {
+    "id": "BR-043",
+    "titulo": "Medalha comemorativa da Proclamação da República (Casa da Moeda, 1890)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1890",
+    "suporte": "medalha",
+    "regime": "Fundacional",
+    "motivos": [
+      "Republica"
+    ],
+    "descricao": "Medalha comemorativa da Proclamação da República (Casa da Moeda, 1890)",
+    "direitos": "",
+    "fonte_url": "https://www.brasilianaiconografica.art.br/obras/12345/medalha-da-proclamacao-da-republica",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "Medalha comemorativa da Proclamação da República (Casa da Moeda, 1890)",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Republica",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.65
+          }
+        ],
+        "confidence": 0.65
+      }
+    }
+  },
+  {
+    "id": "SCOUT-568",
+    "titulo": "Monumento à República / Pátria feminina em praça pública brasileira",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1889–1950",
+    "suporte": "Monumento público (bronze, mármore ou concreto)",
+    "regime": "Normativo",
+    "motivos": [
+      "figura feminina alegorica",
+      "dispositivo estatal brasileiro"
+    ],
+    "descricao": "Fontes identificadas no guia de planejamento; busca web nao executada para piloto.",
+    "direitos": "",
+    "fonte_url": "",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "BRASIL. Monumento à República / Pátria. 1889–1950.",
+    "iconographic_metadata": {
+      "visual_regime": "normativo"
+    }
+  },
+  {
+    "id": "BR-037",
+    "titulo": "O Dia de Amanhã (Alegoria da República)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1889",
+    "suporte": "",
+    "regime": "Fundacional",
+    "motivos": [
+      "Republica"
+    ],
+    "descricao": "O Dia de Amanhã (Alegoria da República)",
+    "direitos": "",
+    "fonte_url": "https://hemerotecadigital.bn.br/acervo-digital/o-mequetrefe/702390",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "O Dia de Amanhã (Alegoria da República)",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Republica",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          }
+        ],
+        "confidence": 0.85
+      }
+    }
+  },
+  {
+    "id": "BR-019",
+    "titulo": "O mundo às avessas: voto feminino",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1917",
+    "suporte": "",
+    "regime": "Contra-alegoria",
+    "motivos": [
+      "Voto Feminino"
+    ],
+    "descricao": "O mundo às avessas: voto feminino",
+    "direitos": "",
+    "fonte_url": "http://memoria.bn.br/docreader/116300/4346",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "O mundo às avessas: voto feminino",
+    "iconographic_metadata": {
+      "visual_regime": "contra-alegoria"
+    }
+  },
+  {
+    "id": "SCOUT-565",
+    "titulo": "Personificação do Brasil em selos postais republicanos",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1889–1960",
+    "suporte": "Selo postal (gravura a talhe-doce, litografia)",
+    "regime": "Normativo",
+    "motivos": [
+      "figura feminina alegorica",
+      "dispositivo estatal brasileiro"
+    ],
+    "descricao": "Fontes identificadas no guia de planejamento; busca web nao executada para piloto.",
+    "direitos": "",
+    "fonte_url": "",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "CORREIOS. Selos postais da República dos Estados Unidos do Brasil com personificação feminina. 1889–1960.",
+    "iconographic_metadata": {
+      "visual_regime": "normativo"
+    }
+  },
+  {
+    "id": "BR-040",
+    "titulo": "Proclamação da República — litografia de Angelo Agostini",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1889-11",
+    "suporte": "estampa/gravura",
+    "regime": "Fundacional",
+    "motivos": [
+      "Republica"
+    ],
+    "descricao": "Proclamação da República — litografia de Angelo Agostini",
+    "direitos": "",
+    "fonte_url": "https://memoria.bn.br/DocReader/Hotpage/HotpageBN.aspx?bib=094078&pagfis=4&url=http://memoria.bn.br/docreader",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "Proclamação da República — litografia de Angelo Agostini",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Republica",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.65
+          }
+        ],
+        "confidence": 0.65
+      }
+    }
+  },
+  {
+    "id": "BR-045",
+    "titulo": "Report of the United States Commission to the Columbian Historical Exposition",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1895",
+    "suporte": "",
+    "regime": "Fundacional",
+    "motivos": [
+      "Columbia"
+    ],
+    "descricao": "Report of the United States Commission to the Columbian Historical Exposition",
+    "direitos": "",
+    "fonte_url": "https://www.loc.gov/item/2024771974/",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "Report of the United States Commission to the Columbian Historical Exposition",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Columbia",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime pendente",
+            "claim_type": "iconographic",
+            "status": "tentative",
+            "confidence": 0.45
+          }
+        ],
+        "confidence": 0.45
+      }
+    }
+  },
+  {
+    "id": "BR-038",
+    "titulo": "Revista Illustrada — Alegoria da República (16 nov. 1889)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1889",
+    "suporte": "",
+    "regime": "Normativo",
+    "motivos": [
+      "Republica"
+    ],
+    "descricao": "Revista Illustrada — Alegoria da República (16 nov. 1889)",
+    "direitos": "",
+    "fonte_url": "https://hemerotecadigital.bn.br/acervo-digital/revista-illustrada/332747",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "Revista Illustrada — Alegoria da República (16 nov. 1889)",
+    "iconographic_metadata": {
+      "visual_regime": "normativo"
+    }
+  },
+  {
+    "id": "BR-028",
+    "titulo": "Selo Cabeça da Liberdade — Thesouro Nacional (1891)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1891",
+    "suporte": "selo",
+    "regime": "Fundacional",
+    "motivos": [
+      "Republica"
+    ],
+    "descricao": "Selo Cabeça da Liberdade — Thesouro Nacional (1891)",
+    "direitos": "",
+    "fonte_url": "https://commons.wikimedia.org/wiki/File:Stamp_of_Brazil_-_1891_-_Colnect_811739_-_Liberty_thesouro_nacional.jpeg",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "Selo Cabeça da Liberdade — Thesouro Nacional (1891)",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Republica",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          }
+        ],
+        "confidence": 0.85
+      }
+    }
+  },
+  {
+    "id": "SCOUT-566",
+    "titulo": "Vitral de Iustitia sem venda no Antigo Palácio da Justiça (Rio de Janeiro)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1909",
+    "suporte": "vitral",
+    "regime": "Normativo",
+    "motivos": [
+      "Justiça de olhos abertos",
+      "Balança e espada",
+      "Vitral"
+    ],
+    "descricao": "Vitral na Sala de Sessões representando a Justiça de olhos abertos (sem venda), desenhado pelo belga F. Urban e executado pela paulista Casa Conrado para o Tribunal Federal no Rio de Janeiro (1909).",
+    "direitos": "",
+    "fonte_url": "https://www.memoriasbelgas.com.br/vitral-da-sala-de-sessoes-do-ccjf/",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "URBAN, F. Vitral da deusa Iustitia. 1909. 1 vitral. Executado por Casa Conrado. Sala de Sessões do Centro Cultural Justiça Federal, Rio de Janeiro. Disponível em: https://www.memoriasbelgas.com.br/.",
+    "iconographic_metadata": {
+      "visual_regime": "normativo",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Justiça de olhos abertos",
+            "observed": true,
+            "notes": "Iustitia representada sem venda."
+          },
+          {
+            "motif": "Balança e espada",
+            "observed": true,
+            "notes": "Atributos clássicos."
+          },
+          {
+            "motif": "Vitral",
+            "observed": true,
+            "notes": "Suporte da obra."
+          }
+        ],
+        "codes": [
+          {
+            "scheme": "iconclass",
+            "notation": "11M31",
+            "label": "Iustitia",
+            "code_role": "depicts",
+            "confidence": 0.9,
+            "evidence_source_id": "7b1308fd"
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Vitral da deusa Iustitia sem venda no Antigo Palácio da Justiça, Rio de Janeiro.",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.9
+          }
+        ],
+        "confidence": 0.9
+      },
+      "attributes": [
+        "balança",
+        "espada"
+      ],
+      "iconclass": [
+        "11M31"
+      ]
+    }
+  },
+  {
+    "id": "US-019",
+    "titulo": "Liberty Is Not Anarchy",
+    "pais": "Estados Unidos",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1886",
+    "suporte": "",
+    "regime": "Contra-alegoria",
+    "motivos": [
+      "Columbia",
+      "Liberty",
+      "anarchy",
+      "Haymarket"
+    ],
+    "descricao": "Mãos desincorporadas de Columbia/Liberty agarrando anarquistas numa mão e espada \"U.S.\" na outra, após o veredito de Haymarket. Columbia é reduzida a enormes mãos punitivas — sem rosto, sem corpo, apenas instrumentos de violência estatal.",
+    "direitos": "",
+    "fonte_url": "https://www.loc.gov/item/2004679037/",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "Liberty Is Not Anarchy",
+    "iconographic_metadata": {
+      "visual_regime": "contra-alegoria",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Columbia",
+            "observed": true
+          },
+          {
+            "motif": "Liberty",
+            "observed": true
+          },
+          {
+            "motif": "anarchy",
+            "observed": true
+          },
+          {
+            "motif": "Haymarket",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: CONTRA-ALEGORIA",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          },
+          {
+            "claim_text": "Subversão deliberada do repertório alegórico oficial — a imagem desloca Columbia, anarquia, Haymarket do registro solene para o satírico",
+            "claim_type": "legal_context",
+            "status": "supported",
+            "confidence": 0.75
+          },
+          {
+            "claim_text": "O corpo alegórico feminino encontra-se em processo de instrumentalização moderada. O Contrato Sexual Visual opera pela hipervisibilidade compensatória.",
+            "claim_type": "postcolonial_marker",
+            "status": "tentative",
+            "confidence": 0.65
+          }
+        ],
+        "confidence": 0.567
+      }
+    }
+  },
+  {
+    "id": "FR-031",
+    "titulo": "Madame Anastasie (avec les ciseaux de la censure)",
+    "pais": "França",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1874",
+    "suporte": "estampa/gravura",
+    "regime": "Contra-alegoria",
+    "motivos": [
+      "Anastasie",
+      "censure",
+      "anti-Marianne",
+      "satire"
+    ],
+    "descricao": "Capa de L'Éclipse no. 209: velha quase surda e cega agarrando tesouras enormes — personificação da censura da imprensa. Encarna o aparato repressivo do governo da Ordem Moral sob MacMahon. A \"Anastasie\" de Gill tornou-se a representação icônica francesa da censura.",
+    "direitos": "",
+    "fonte_url": "https://gallica.bnf.fr/ark:/12148/bpt6k1068692m",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "Madame Anastasie (avec les ciseaux de la censure)",
+    "iconographic_metadata": {
+      "visual_regime": "contra-alegoria",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Anastasie",
+            "observed": true
+          },
+          {
+            "motif": "censure",
+            "observed": true
+          },
+          {
+            "motif": "anti-Marianne",
+            "observed": true
+          },
+          {
+            "motif": "satire",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: CONTRA-ALEGORIA",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.85
+          },
+          {
+            "claim_text": "Subversão deliberada do repertório alegórico oficial — a imagem desloca Anastasie, censura, anti-Marianne do registro solene para o satírico",
+            "claim_type": "legal_context",
+            "status": "supported",
+            "confidence": 0.75
+          },
+          {
+            "claim_text": "O corpo alegórico feminino mantém relativa autonomia expressiva, preservando marcadores de individualidade e corporalidade. A Feminilidade de Estado é mobilizada mas não plenamente domesticada.",
+            "claim_type": "postcolonial_marker",
+            "status": "tentative",
+            "confidence": 0.65
+          }
+        ],
+        "confidence": 0.133
+      }
+    }
+  },
+  {
+    "id": "SCOUT-571",
+    "titulo": "Intervenção feminista no Paseo de la Reforma, Cidade do México, 2021",
+    "pais": "México",
+    "autoria": "",
+    "instituicao": "",
+    "data": "2021",
+    "suporte": "Escultura temporária em plinto público",
+    "regime": "Contra-alegoria",
+    "motivos": [
+      "figura feminina alegorica",
+      "dispositivo estatal brasileiro"
+    ],
+    "descricao": "Fontes identificadas no guia de planejamento; busca web nao executada para piloto.",
+    "direitos": "",
+    "fonte_url": "https://awarewomenartists.com/en/magazine/interventions-monumentales-feminisme-art-et-resistance-publique-au-mexique/",
+    "imagem": "",
+    "tem_imagem": true,
+    "citacao": "AWARE. Monumental Interventions: Feminism, Art and Public Resistance in Mexico. 2021.",
+    "iconographic_metadata": {
+      "visual_regime": "contra-alegoria",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "figura feminina alegorica",
+            "observed": true,
+            "notes": "Personificacao feminina do Estado/justica/republica segundo gramatica europeia."
+          },
+          {
+            "motif": "dispositivo estatal brasileiro",
+            "observed": true,
+            "notes": "Suporte oficial ou comparador genealogico documentado."
+          }
+        ],
+        "codes": [
+          {
+            "scheme": "iconclass",
+            "notation": "44G411",
+            "label": "Republica feminina",
+            "code_role": "depicts",
+            "confidence": 0.6,
+            "evidence_source_id": "d55b1f29"
+          },
+          {
+            "scheme": "iconclass",
+            "notation": "11M31",
+            "label": "Iustitia",
+            "code_role": "depicts",
+            "confidence": 0.5,
+            "evidence_source_id": "d55b1f29"
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Personificacao feminina do Estado segundo gramatica europeia.",
+            "claim_type": "iconographic",
+            "status": "tentative",
+            "confidence": 0.6
+          }
+        ],
+        "confidence": 0.6
+      },
+      "attributes": [
+        "outro"
+      ],
+      "iconclass": [
+        "44G411",
+        "11M31"
+      ]
+    }
+  },
+  {
+    "id": "BR-018",
+    "titulo": "A República em Leilão",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1904",
+    "suporte": "",
+    "regime": "Normativo",
+    "motivos": [
+      "Republica"
+    ],
+    "descricao": "A República em Leilão",
+    "direitos": "",
+    "fonte_url": "http://memoria.bn.br/DocReader/116300/4346",
+    "imagem": "",
+    "tem_imagem": false,
+    "citacao": "A República em Leilão",
+    "iconographic_metadata": {
+      "visual_regime": "normativo"
+    }
+  },
+  {
+    "id": "BR-017",
+    "titulo": "Frontispício do Decreto n.º 1 — Governo Provisório (1889)",
+    "pais": "Brasil",
+    "autoria": "",
+    "instituicao": "",
+    "data": "1889-11",
+    "suporte": "frontispício",
+    "regime": "Fundacional",
+    "motivos": [
+      "Republica"
+    ],
+    "descricao": "Frontispício do Decreto n.º 1 — Governo Provisório (1889)",
+    "direitos": "",
+    "fonte_url": "http://docvirt.com/docreader/DocReader.aspx?bib=ACDigital&pagfis=11894",
+    "imagem": "",
+    "tem_imagem": false,
+    "citacao": "Frontispício do Decreto n.º 1 — Governo Provisório (1889)",
+    "iconographic_metadata": {
+      "visual_regime": "fundacional",
+      "panofsky": {
+        "pre_iconographic": [
+          {
+            "motif": "Republica",
+            "observed": true
+          }
+        ],
+        "interpretation": [
+          {
+            "claim_text": "Regime iconocrático: FUNDACIONAL",
+            "claim_type": "iconographic",
+            "status": "supported",
+            "confidence": 0.65
+          }
+        ],
+        "confidence": 0.65
+      }
+    }
+  }
+]
