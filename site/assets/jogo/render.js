@@ -242,7 +242,7 @@ export function criarRender(refs) {
       elemento(
         'p',
         'jogo-dossie__legenda',
-        'Os valores expressam atos interpretativos situados, e não dados neutros. Cada indicador reflete a leitura de uma pesquisadora sobre o suporte material, e não uma métrica abstrata.',
+        'Os valores expressam atos interpretativos situados, não dados neutros. Cada indicador reflete a leitura de uma pesquisadora sobre o suporte material, e não uma métrica abstrata.',
       ),
     );
     corpo.append(matriz);

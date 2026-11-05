@@ -22,8 +22,15 @@
     else root.removeAttribute('data-theme');
     if (toggle) {
       const en = currentLang() === 'en';
-      toggle.textContent = nightMode ? (en ? 'DAY' : 'DIA') : (en ? 'NIGHT' : 'NOITE');
+      const label = toggle.querySelector('[data-theme-label]');
+      const text = nightMode ? (en ? 'DAY' : 'DIA') : (en ? 'NIGHT' : 'NOITE');
+      if (label) {
+        label.textContent = text;
+      } else {
+        toggle.textContent = text;
+      }
       toggle.setAttribute('aria-pressed', String(nightMode));
+      toggle.setAttribute('aria-label', nightMode ? (en ? 'Switch to day mode' : 'Alternar para modo dia') : (en ? 'Switch to night mode' : 'Alternar para modo noite'));
     }
   }
 

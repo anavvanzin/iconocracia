@@ -397,7 +397,7 @@ a:hover { color: var(--accent-hover); text-decoration: underline; text-underline
 .narrow { max-width: 780px; }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-display); font-weight: 700; line-height: 1.16;
+  font-family: var(--font-display); font-weight: 400; line-height: 1.16;
   color: var(--text-primary); letter-spacing: -.01em;
 }
 h2 { font-size: clamp(1.7rem, 3.4vw, 2.25rem); margin-bottom: .75rem; }
@@ -407,7 +407,7 @@ p { margin-bottom: 1rem; }
 /* ---------- rótulo preto retangular (assinatura do brand board) ---------- */
 .label {
   display: inline-block; font-family: var(--font-mono); font-size: .64rem;
-  text-transform: uppercase; letter-spacing: .18em; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .10em; font-weight: 600;
   background: var(--print-black); color: var(--paper); padding: .3rem .7rem;
   line-height: 1.1;
 }
@@ -415,8 +415,8 @@ p { margin-bottom: 1rem; }
 
 /* eyebrow (variante inline discreta) */
 .eyebrow {
-  font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .2em;
-  font-size: .7rem; font-weight: 700; color: var(--accent);
+  font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .12em;
+  font-size: .7rem; font-weight: 600; color: var(--accent);
   margin-bottom: .8rem; display: inline-block;
 }
 
@@ -447,7 +447,7 @@ p { margin-bottom: 1rem; }
 .brand { display: flex; align-items: center; gap: .7rem; }
 .brand .brand-mark { width: 36px; height: 36px; color: var(--accent); flex: none; }
 .brand .brand-text { display: flex; flex-direction: column; line-height: 1.05; }
-.brand .name { font-family: var(--font-display); font-size: 1.24rem; font-weight: 700; color: var(--text-primary); }
+.brand .name { font-family: var(--font-display); font-size: 1.24rem; font-weight: 400; color: var(--text-primary); }
 .brand:hover { text-decoration: none; }
 .brand:hover .name { color: var(--accent); }
 .brand .sub { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .16em; text-transform: uppercase; color: var(--text-muted); }
@@ -484,7 +484,7 @@ nav.main-nav a[aria-current="page"] { color: var(--accent); font-weight: 700; }
   overflow: hidden;
   background: radial-gradient(circle at 50% 35%, rgba(184, 146, 74, 0.05), transparent 60%);
 }
-.hero h1 { font-size: clamp(2.6rem, 6.5vw, 4.4rem); font-weight: 700; letter-spacing: -.02em; margin-bottom: .5rem; }
+.hero h1 { font-size: clamp(2.6rem, 6.5vw, 4.4rem); font-weight: 400; letter-spacing: -.02em; margin-bottom: .5rem; }
 .hero .lead {
   font-family: var(--font-serif); font-style: italic; font-weight: 500;
   font-size: clamp(1.25rem, 2.8vw, 1.7rem); color: var(--accent); margin-bottom: 1.4rem;
@@ -598,7 +598,7 @@ section.block.alt { background: var(--bg-secondary); border-top: 2px solid var(-
 .tarot-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 .tarot-card .roman { font-family: var(--font-serif); font-style: italic; font-size: .9rem; color: var(--gold); letter-spacing: .1em; }
 .tarot-card svg { width: 40px; height: 40px; color: var(--accent); margin: .7rem auto .8rem; }
-.tarot-card .t-name { font-family: var(--font-display); font-weight: 700; font-size: 1.02rem; }
+.tarot-card .t-name { font-family: var(--font-display); font-weight: 400; font-size: 1.02rem; }
 .tarot-card .t-sub { font-family: var(--font-mono); font-size: .58rem; text-transform: uppercase; letter-spacing: .1em; color: var(--text-muted); margin-top: .35rem; }
 
 /* ---------- painel dividido ---------- */
@@ -719,7 +719,7 @@ section.block.alt { background: var(--bg-secondary); border-top: 2px solid var(-
   padding: 1.3rem 1.5rem; margin-bottom: 1.1rem; background: var(--bg-card);
   box-shadow: var(--shadow-sm);
 }
-.def .term { font-family: var(--font-display); font-weight: 700; color: var(--accent); font-size: 1.16rem; margin-bottom: .3rem; }
+.def .term { font-family: var(--font-display); font-weight: 400; color: var(--accent); font-size: 1.16rem; margin-bottom: .3rem; }
 .def p { margin-bottom: 0; }
 
 /* ---------- selos / carimbos (flat) ---------- */
@@ -1336,15 +1336,30 @@ button:disabled { cursor:default; opacity:.4; }
 .vmeta { letter-spacing:.12em; }
 .dossier-head h3 { line-height:1.55; }
 
-/* ---------- modo noite (toggle NOITE/DIA) ---------- */
+/* ---------- modo noite (toggle Sol/Lua) ---------- */
 .ex-night {
-  border:0; border-left:1px solid var(--ex-ink); padding:0 9px 0 26px;
+  border:0; border-left:1px solid var(--ex-ink); padding:0 14px 0 24px;
   background:none; color:var(--ex-ink); min-height:44px;
-  font:var(--atlas-caption)/1.5 "JetBrains Mono",monospace;
-  letter-spacing:.14em; text-transform:uppercase; white-space:nowrap;
+  display:inline-flex; align-items:center; justify-content:center;
+  cursor:pointer;
   transition:background-color .2s ease, color .2s ease;
 }
 .ex-night:hover { color:var(--ex-ink); background:var(--ex-action); text-decoration:none; }
+.ex-night .theme-icon {
+  width:20px; height:20px; display:block;
+  transition:transform .3s ease;
+}
+.ex-night:hover .theme-icon {
+  transform:rotate(18deg);
+}
+
+/* No modo Dia: mostra a Lua (convite ao modo noite) */
+html:not([data-theme="noite"]) .ex-night .theme-icon--sun { display:none; }
+html:not([data-theme="noite"]) .ex-night .theme-icon--moon { display:block; }
+
+/* No modo Noite: mostra o Sol (convite ao modo dia) */
+html[data-theme="noite"] .ex-night .theme-icon--moon { display:none; }
+html[data-theme="noite"] .ex-night .theme-icon--sun { display:block; }
 
 html[data-theme="noite"] {
   --ex-ground:#1d1033;
@@ -1572,7 +1587,7 @@ html[data-theme="noite"] .inscriptio-pill:not(.phylactery-wrap) { color:var(--ex
   text-transform:none; letter-spacing:normal;
 }
 .phylactery-wrap--hero {
-  max-width:680px; margin:16px 0 22px;
+  max-width:760px; margin:16px 0 22px;
 }
 .phylactery-wrap--center,
 .section-head .phylactery-wrap,
@@ -1614,7 +1629,7 @@ html[data-theme="noite"] .inscriptio-pill:not(.phylactery-wrap) { color:var(--ex
 }
 .phylactery .ribbon-text .sub-lex {
   font-family:"JetBrains Mono",monospace; font-style:normal; font-size:.44em;
-  letter-spacing:.18em; text-transform:uppercase; fill:var(--phylactery-stroke);
+  letter-spacing:.12em; text-transform:uppercase; fill:var(--phylactery-stroke);
 }
 .phylactery-caption {
   display:block; text-align:center;
@@ -1689,4 +1704,35 @@ html[data-theme="noite"] .inscriptio-pill:not(.phylactery-wrap) { color:var(--ex
 }
 .seal-row--emblemata .seal .seal-txt {
   font-size:.52rem; letter-spacing:.09em; color:var(--ex-muted); margin-top:.2rem;
+}
+
+/* ════════════════════════════════════════════════════════════
+   CURSORES TEMÁTICOS · Highlighted 3D-Bronze (cimofj2 / RW-Designer)
+   Licença CC-BY · Hotspots ópticos calibrados em 48×48px
+   PNG com fallback nativo .cur e ponteiro de sistema
+   ════════════════════════════════════════════════════════════ */
+:root {
+  --cursor-default: url("cursors/0-3dgarro.png") 24 24, url("cursors/0-3dgarro.cur"), auto;
+  --cursor-pointer: url("cursors/0-aero_link_l.png") 23 20, url("cursors/0-aero_link_l.cur"), pointer;
+  --cursor-text:    url("cursors/0-beam_rl.png") 23 23, url("cursors/0-beam_rl.cur"), text;
+  --cursor-move:    url("cursors/0-3dgmove.png") 23 23, url("cursors/0-3dgmove.cur"), move;
+  --cursor-no:      url("cursors/0-3dgno.png") 0 0, url("cursors/0-3dgno.cur"), not-allowed;
+  --cursor-cross:   url("cursors/0-cross_rl.png") 23 23, url("cursors/0-cross_rl.cur"), crosshair;
+  --cursor-help:    url("cursors/0-help_il.png") 15 16, url("cursors/0-help_il.cur"), help;
+}
+
+html, body {
+  cursor: var(--cursor-default);
+}
+
+a, button, [role="button"], select, summary, .btn, .ex-thumb, .const-card, .tarot-card, .ex-view-toggle button, .ex-night, .ex-lang, .ex-search-shortcut {
+  cursor: var(--cursor-pointer);
+}
+
+input[type="text"], input[type="search"], textarea {
+  cursor: var(--cursor-text);
+}
+
+button:disabled, [aria-disabled="true"] {
+  cursor: var(--cursor-no);
 }
