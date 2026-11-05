@@ -1621,10 +1621,6 @@ html[data-theme="noite"] .inscriptio-pill:not(.phylactery-wrap) { color:var(--ex
   font-family:"Crimson Pro",Georgia,serif; font-size:.98rem; line-height:1.35;
   font-style:italic; color:var(--ex-muted); margin-top:4px;
 }
-.phylactery-caption::before {
-  content: "— ";
-  content: "— " / "";
-}
 .site-footer .phylactery-caption { color:#e3d4f0; font-size:.92rem; }
 
 .author-direct-link,

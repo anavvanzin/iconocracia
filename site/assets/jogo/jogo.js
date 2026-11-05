@@ -276,7 +276,7 @@ function mostrarFimDeCampanha() {
   texto.className = 'jogo-dossie__descricao';
   texto.textContent =
     completa
-      ? 'Todos os lotes foram cunhados. A campanha lista objetos e citações — não um número sobre o acervo.'
+      ? 'Todos os lotes foram cunhados. A campanha lista objetos e citações, e não um número sobre o acervo.'
       : 'Ainda há lotes por cunhar. Feche o dossiê e consulte o mapa para continuar a campanha.';
   caixas.append(titulo, texto);
   refs.dossieProximo.hidden = true;

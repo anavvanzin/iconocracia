@@ -124,7 +124,7 @@
   function imageFor(item, lazy) {
     const frame = node('div', 'constellation-image');
     if (!item.tem_imagem) {
-      frame.append(node('p', 'ex-missing', 'Sem reprodução disponível — consulte o arquivo de origem.'));
+      frame.append(node('p', 'ex-missing', 'Sem reprodução disponível. Consulte o arquivo de origem.'));
       return frame;
     }
     const image = node('img');
@@ -136,7 +136,7 @@
       if (image.parentNode !== frame) return;
       const url = imageURL(item.imagem);
       if (!fallback && url && url !== image.getAttribute('src')) { fallback = true; image.src = url; }
-      else frame.replaceChildren(node('p', 'ex-missing', 'Reprodução indisponível — consulte o arquivo de origem.'));
+      else frame.replaceChildren(node('p', 'ex-missing', 'Reprodução indisponível. Consulte o arquivo de origem.'));
     });
     frame.append(image);
     return frame;
@@ -174,7 +174,7 @@
       }
       return;
     }
-    document.title = `${definition.title} — Mnemosyne Viva · Iconocracia`;
+    document.title = `${definition.title} · Mnemosyne Viva · Iconocracia`;
     intro.replaceChildren(biNode('p', 'eyebrow', 'Constelação curatorial', 'Curatorial constellation'), node('h1', '', definition.title), node('p', 'constellation-period', definition.subtitle || ''), node('p', 'constellation-deck', definition.introduction || ''));
     if (typeof definition.method_note === 'string' && definition.method_note.trim()) intro.append(node('p', 'ex-method-note', definition.method_note));
     const byId = new Map(items.map(item => [item.id, item]));

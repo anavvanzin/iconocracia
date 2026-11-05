@@ -155,7 +155,7 @@ export function criarRender(refs) {
       );
     });
     refs.platenLegenda.textContent = estado.imagemIndisponivel
-      ? 'Reprodução indisponível — consulte o arquivo de origem: ' + estado.lote.fonte_url
+      ? 'Reprodução indisponível. Consulte o arquivo de origem: ' + estado.lote.fonte_url
       : descricao;
   }
 
@@ -175,7 +175,7 @@ export function criarRender(refs) {
     }
     refs.matrizNota.textContent =
       'Matriz parcial: ' + estado.cota + ' de ' + EIXOS.length +
-      ' eixos lidos. Golpeie uma alavanca de valor desconhecido para lê-la — a leitura custa ' +
+      ' eixos lidos. Golpeie uma alavanca de valor desconhecido para revelá-la: o exame consome ' +
       estado.custoLeitura + ' segundos do relógio.';
   }
 
@@ -242,7 +242,7 @@ export function criarRender(refs) {
       elemento(
         'p',
         'jogo-dossie__legenda',
-        'Os escores são atos interpretativos situados, não dados neutros. Cada valor é a leitura de uma pessoa, numa data, sobre um objeto — e não uma medida.',
+        'Os valores expressam atos interpretativos situados, e não dados neutros. Cada indicador reflete a leitura de uma pesquisadora sobre o suporte material, e não uma métrica abstrata.',
       ),
     );
     corpo.append(matriz);

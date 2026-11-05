@@ -43,7 +43,7 @@
   }
   function reproduce(item, container, lazy = false) {
     if (!item.tem_imagem) {
-      container.append(node('span', 'ex-missing', 'Sem reprodução disponível — consulte o arquivo de origem.'));
+      container.append(node('span', 'ex-missing', 'Sem reprodução disponível. Consulte o arquivo de origem.'));
       return;
     }
     const img = node('img');
@@ -59,7 +59,7 @@
       const sourceURL = item.imagem_fonte || item.imagem;
       const imageURL = publication ? publication.imageURL(sourceURL) : (safeURL(sourceURL) ? sourceURL : null);
       if (!fallback && imageURL && imageURL !== img.getAttribute('src')) { fallback = true; img.src = imageURL; }
-      else container.replaceChildren(node('span', 'ex-missing', 'Reprodução indisponível — consulte o arquivo de origem.'));
+      else container.replaceChildren(node('span', 'ex-missing', 'Reprodução indisponível. Consulte o arquivo de origem.'));
     });
     container.append(img);
   }
