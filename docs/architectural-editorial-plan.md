@@ -9,6 +9,14 @@
 **Author & Principal Investigator**: Ana Vanzin (PPGD/UFSC)  
 **External Academic Touchpoint**: `https://anavanzin.com`
 
+**Methodological reconciliation, 2026-11-05:** this plan follows the current
+[2026-07-31 decision](https://github.com/anavvanzin/iconocracy-corpus/blob/8cdc287817d9da45a3f681232b8ce515c91e2926/docs/decisions/2026-07-31-metodologia-2-0-iconometry-consolidation.md):
+three interpretive regimes (Foundational, Normative, Military), with counter-allegory
+as a critical test. The historical fourth enum value remains a stored label;
+337 records and all empirical classifications are preserved. The former wording
+“four regimes” in this plan did not record a methodological reopening. See the
+[dated reconciliation and evidence](taxonomia-publica.md).
+
 ---
 
 ## 1. Executive Summary & Epistemic Thesis
@@ -88,7 +96,7 @@ An audit of the verified baseline datasets (`site/data/stats.json`, `site/data/a
   - Switzerland: 1 item
   - Uruguay: 1 item
 - **Chronological Breadth**: **1239–2021** (effective coverage); core modernity concentration: **1800–2000**.
-- **Distribution by Authorial Iconocratic Regime**:
+- **Distribution by Stored Classification Label** (three interpretive regimes, a historical counter-allegory label, and an unclassified record):
   - *Regime Fundacional* (Foundational): 164 items
   - *Regime Normativo* (Normative): 103 items
   - *Regime Militar* (Military): 54 items
@@ -143,7 +151,7 @@ The architectural plan establishes three clearly labeled views:
 │     SYNTHESIS     │     SOURCES       │     & DOSSIERS    │     METHOD                 │
 │  / (index.html)   │  /acervo          │  /constelacoes    │  /sobre                    │
 │  • Public Gateway │  • 337 Items      │  • Thematic Paths │  • Epistemology & Method   │
-│  • Constellation  │  • 3 Visual Modes │  • Dialectical    │  • 4 Concepts & Regimes    │
+│  • Constellation  │  • 3 Visual Modes │  • Dialectical    │  • 4 Concepts; 3 Regimes    │
 │    Field Canvas   │  • Camada I vs II   Montages          │  • Latin Seals             │
 │  • Doctoral Call  │  • Strand Toggles │  • Gated Dossiers │  • Author Dossier          │
 │  • 3 Dossiers     │  • Faceted Filters│                   │    (anavanzin.com)         │
@@ -177,7 +185,7 @@ The architectural plan establishes three clearly labeled views:
   4. *Coexistence Dossiers*: Three historical case studies (US, France, Brazil).
   5. *Stat Band*: Dynamic metrics reading from `stats.json` (337 items, 17 countries, 1239–2021, and the dedicated 53-item doctoral slice).
   6. *Doctoral Strand Callout*: *O Atlas e o Recorte Doutoral* (*In marmore regnat, in iure tacet*).
-  7. *Operations & Regimes*: *Patria feminea, civitas masculina* and the 4 iconocratic regimes.
+  7. *Operations & Regimes*: *Patria feminea, civitas masculina* and the 3 interpretive regimes, with counter-allegory as a critical test.
   8. *Theoretical Concepts*: Visual Sexual Contract, State Femininity, Visual Racial Contract, Classical Purification.
   9. *Colophon & Footer*: Standard 3-column footer with Latin motto and CC-BY-4.0 terms.
 
@@ -366,7 +374,7 @@ To eliminate the current conflation of disparate topics on a single short page, 
 │ • Interface Mechanics: Why the archive opens in Constellation mode rather than an      │
 │   alphanumeric table; how relational proximity displaces teleological chronology.      │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
-│ MODULE 4: THE FOUR ICONOCRATIC REGIMES & APPARATUSES                                   │
+│ MODULE 4: THREE INTERPRETIVE REGIMES & THE CRITICAL TEST                                   │
 │ • H2: Os Regimes Iconocráticos e os Aparatos Críticos                                  │
 │ • The 3 Interpretive Regimes: Fundacional, Normativo, Militar                          │
 │ • The Critical Test: Contra-alegoria (why it is a critical probe, not a 4th regime)   │
@@ -487,7 +495,7 @@ The primary research surfaces must form a closed, bi-directional, and symmetrica
   ↓ Tests the formal levers of Classical Purification in Fundição (/jogo).
 [Step 5: Academic Reference & PPGD/UFSC Citation]
   ↓ References the theoretical framework in master's or doctoral work at UFSC.
-  ↓ Navigates to /sobre to cite the four iconocratic regimes and the Latin formulas.
+  ↓ Navigates to /sobre to cite the three interpretive regimes, the critical status of counter-allegory, and the Latin formulas.
 ```
 
 ---

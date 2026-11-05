@@ -30,6 +30,11 @@ import re
 import sys
 from collections import Counter
 
+if __package__ in (None, ""):
+    from taxonomy import present_taxonomy
+else:
+    from .taxonomy import present_taxonomy
+
 # URLs-placeholder internas nunca vão ao site público (regra: não inventar URL).
 PLACEHOLDER_URL = re.compile(r"iconocracy(-corpus)?\.(local|corpus)")
 
@@ -138,7 +143,7 @@ def build_stats(corpus: list[dict]) -> dict:
            and isinstance(item_year, int) and 1822 <= item_year <= 1922:
             thesis_slice += 1
 
-    return {
+    return present_taxonomy({
         "total": len(corpus),
         "paises": len([c for c in countries if c != "Outros"]),
         # mesmo criterio de build_items(), senao stats e grade divergem
@@ -155,7 +160,7 @@ def build_stats(corpus: list[dict]) -> dict:
             for r, n in regimes.most_common()
         ],
         "motivos": [{"motivo": m, "n": n} for m, n in motifs.most_common(10)],
-    }
+    })
 
 
 def build_items(enriched: list[dict]) -> list[dict]:
@@ -209,7 +214,7 @@ def main() -> int:
 
     out = args.out
     out.mkdir(parents=True, exist_ok=True)
-    (out / "stats.json").write_text(json.dumps(stats, ensure_ascii=False, indent=2), encoding="utf-8")
+    (out / "stats.json").write_text(json.dumps(stats, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (out / "acervo.json").write_text(json.dumps(itens, ensure_ascii=False, indent=2), encoding="utf-8")
 
     print(f"fonte corpus:   {corpus_path}")

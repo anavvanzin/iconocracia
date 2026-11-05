@@ -91,7 +91,7 @@ Em todas as superfícies do site e dos artefatos de dados, *Mnemosyne Viva* pres
    - Preserva incertezas datais ou de atribuição explicitamente (sem substituir lacunas arquivísticas por inferências silenciosas).
 
 2. **Camada II — Leitura Autoral Situada e Indicadores de Purificação Clássica (*Situated Authorial Reading & Classical Purification Indicators*):**
-   - Reúne o enquadramento analítico produzido pela pesquisa: inserção no recorte do atlas (*Mármore à Margem · Brasil 1822–1922* vs. *Atlas comparativo transnacional*), classificação nos **quatro regimes iconocráticos** (`Fundacional`, `Normativo`, `Militar`, `Contra-alegoria`), motivos iconográficos observados (`motivos`), leitura em três níveis (pré-iconográfico, iconográfico com notações Iconclass/AAT e iconológico em `iconographic_metadata.panofsky`), montagens constelacionais (`constellations.json`) e o inventário verbal/ordinal sobre os **10 indicadores formais da Purificação Clássica** (`purification.jsonl` / `records.jsonl`).
+   - Reúne o enquadramento analítico produzido pela pesquisa: inserção no recorte do atlas (*Mármore à Margem · Brasil 1822–1922* vs. *Atlas comparativo transnacional*), os **três regimes interpretativos** (`Fundacional`, `Normativo`, `Militar`) construídos por leitura densa de casos exemplares e a **contra-alegoria como teste crítico** dos seus limites, motivos iconográficos observados (`motivos`), leitura em três níveis (pré-iconográfico, iconográfico com notações Iconclass/AAT e iconológico em `iconographic_metadata.panofsky`), montagens constelacionais (`constellations.json`) e o inventário verbal/ordinal sobre os **10 indicadores formais da Purificação Clássica** (`purification.jsonl` / `records.jsonl`).
    - **Nota metodológica fundamental:** Os indicadores de Purificação Clássica são tratados como **atos interpretativos situados** (com registro de codificador, data e notas justificativas) e **nunca são somados em um escore único** (os antigos campos compostos `endurecimento_score` e `purificacao_composto` foram definitivamente abolidos e proibidos pelo schema).
 
 ### English
@@ -103,10 +103,31 @@ Across both the web interface and the synchronized JSON artifacts, *Mnemosyne Vi
    - Explicitly records archival uncertainties in dating or attribution rather than smoothing them over.
 
 2. **Layer II — Situated Authorial Reading & Classical Purification Indicators (*Camada II — Leitura Autoral Situada e Indicadores de Purificação Clássica*):**
-   - Contains the theoretical and iconological reading developed by the research: atlas strand classification (*Marble at the Margin · Brazil 1822–1922* vs. *Transnational comparative atlas*), classification across the **four iconocratic regimes** (`Fundacional` / Foundational, `Normativo` / Normative, `Militar` / Military, `Contra-alegoria` / Counter-allegory), observed motifs (`motivos`), three-level Panofskian annotation (`iconographic_metadata.panofsky` with Iconclass/Getty AAT notations and confidence-tagged claims), curatorial constellations (`constellations.json`), and the ordinal coding across the **10 formal indicators of Classical Purification** (`purification.jsonl` / `records.jsonl`).
+   - Contains the theoretical and iconological reading developed by the research: atlas strand classification (*Marble at the Margin · Brazil 1822–1922* vs. *Transnational comparative atlas*), the **three interpretive regimes** (`Fundacional` / Foundational, `Normativo` / Normative, `Militar` / Military) developed through close reading of exemplary cases, and **counter-allegory as a critical test** of their limits, observed motifs (`motivos`), three-level Panofskian annotation (`iconographic_metadata.panofsky` with Iconclass/Getty AAT notations and confidence-tagged claims), curatorial constellations (`constellations.json`), and the ordinal coding across the **10 formal indicators of Classical Purification** (`purification.jsonl` / `records.jsonl`).
    - **Core Methodological Rule:** The 10 Classical Purification indicators (`desincorporacao`, `rigidez_postural`, `dessexualizacao`, `uniformizacao_facial`, `heraldizacao`, `enquadramento_arquitetonico`, `apagamento_narrativo`, `monocromatizacao`, `serialidade`, `inscricao_estatal`) represent **situated interpretive acts** anchored to primary sources and **are never summed into a composite score** (legacy composite fields `endurecimento_score` and `purificacao_composto` were permanently retired and prohibited in the schema).
 
 ---
+
+### 3.1. Regimes, rótulos e contagens / Regimes, labels and counts
+
+**PT:** A [decisão metodológica de 31/07/2026](https://github.com/anavvanzin/iconocracy-corpus/blob/8cdc287817d9da45a3f681232b8ce515c91e2926/docs/decisions/2026-07-31-metodologia-2-0-iconometry-consolidation.md) preserva três regimes e define contra-alegoria como teste crítico. O quarto valor histórico do enum, `contra-alegoria`, permanece nos registros, sem constituir um quarto regime. O rótulo, por si só, não documenta a aplicação ou o resultado do teste crítico. Qualquer reclassificação exige regra metodológica documentada e evidência por registro; os indicadores não atribuem automaticamente regimes.
+
+**EN:** The [methodological decision of 31 July 2026](https://github.com/anavvanzin/iconocracy-corpus/blob/8cdc287817d9da45a3f681232b8ce515c91e2926/docs/decisions/2026-07-31-metodologia-2-0-iconometry-consolidation.md) retains three regimes and defines counter-allegory as a critical test. The fourth historical enum value, `contra-alegoria`, remains in the records without establishing a fourth regime. The label alone does not document the application or outcome of the critical test. Reclassification requires a documented methodological rule and evidence for each record; indicators do not automatically assign regimes.
+
+Instantâneo verificado em 05/11/2026 / Snapshot verified on 5 November 2026:
+
+| Rótulo catalogado / Stored label | Registros / Records | Estatuto / Status |
+| :--- | ---: | :--- |
+| Fundacional / Foundational | 164 | Regime interpretativo / Interpretive regime |
+| Normativo / Normative | 103 | Regime interpretativo / Interpretive regime |
+| Militar / Military | 54 | Regime interpretativo / Interpretive regime |
+| Contra-alegoria / Counter-allegory | 15 | Rótulo histórico preservado / Preserved historical label |
+| Não classificado / Unclassified | 1 | Sem atribuição de regime / No regime assigned |
+| **Total** | **337** | Catálogo completo / Full catalog |
+
+**PT:** `stats.por_regime` soma 321 registros com rótulos dos três regimes; `stats.por_rotulo_catalogado` preserva a distribuição completa, com 337. Os 15 rótulos históricos e o registro não classificado não são redistribuídos. As 286 observações de `purification.jsonl` constituem outra unidade documental e não demonstram cobertura integral dos 337 objetos. Os dez indicadores permanecem independentes, sem soma, média ou índice composto.
+
+**EN:** `stats.por_regime` totals 321 records labeled with the three regimes; `stats.por_rotulo_catalogado` preserves the full distribution of 337. The 15 historical labels and the unclassified record are not reassigned. The 286 observations in `purification.jsonl` are a separate documentary unit and do not establish full coding coverage of all 337 objects. The ten indicators remain independent, without sums, averages or a composite index.
 
 ## 4. Os Quatro Conceitos Analíticos / The Four Analytical Concepts
 

@@ -24,6 +24,12 @@ class BuildDataGoldenTests(unittest.TestCase):
             self.assertEqual(json.loads(expected_bytes)["periodo"],
                              {"min": 1707, "max": 1981})
             self.assertNotIn("recorte_tese_brasil_1822_1922", json.loads(expected_bytes))
+            # Preserve the archived distribution; only the current presentation
+            # splits theory from stored labels. New semantics have separate tests.
+            actual_stats = json.loads(actual_bytes)
+            actual_stats["por_regime"] = actual_stats.pop("por_rotulo_catalogado")
+            actual_stats.pop("taxonomia")
+            actual_bytes = json.dumps(actual_stats, ensure_ascii=False, indent=2).encode("utf-8")
             expected_bytes = expected_bytes.replace(b'"min": 1707', b'"min": 1239')
             expected_bytes = expected_bytes.replace(b'"max": 1981', b'"max": 2021')
             expected_bytes = expected_bytes.replace(
@@ -61,6 +67,7 @@ class BuildDataGoldenTests(unittest.TestCase):
             script.parent.mkdir()
             # Always exercise the current implementation, never a frozen script.
             shutil.copyfile(ROOT / "scripts" / "build_data.py", script)
+            shutil.copyfile(ROOT / "scripts" / "taxonomy.py", script.parent / "taxonomy.py")
             data_dir = isolated / "site" / "data"
             data_dir.mkdir(parents=True)
             shutil.copyfile(FIXTURE / "corpus-data-enriched.json",

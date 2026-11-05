@@ -18,6 +18,17 @@ class PublicationReviewTests(unittest.TestCase):
     def setUp(self):
         self.helpers = fixtures.PublicationSecurityTests()
 
+    def assert_restored_statistics(self, actual, historical):
+        # Withdrawal restores historical counts while retaining the current
+        # public taxonomy. The immutable baseline bytes remain untouched.
+        current = json.loads(actual)
+        self.assertEqual(current["taxonomia"]["regimes_interpretativos"],
+                         ["Fundacional", "Normativo", "Militar"])
+        self.assertNotIn("Contra-alegoria", [r["regime"] for r in current["por_regime"]])
+        current["por_regime"] = current.pop("por_rotulo_catalogado")
+        current.pop("taxonomia")
+        self.assertEqual(current, json.loads(historical))
+
     def record(self, item_id):
         value = self.helpers.record(item_id)
         value["url"] = "https://archive.test/" + item_id
@@ -94,6 +105,37 @@ class PublicationReviewTests(unittest.TestCase):
             command += ["--schema", str(schema)]
         return subprocess.run(command, cwd=root, text=True, capture_output=True,
                               env={**os.environ, "PYTHONDONTWRITEBYTECODE": "1"})
+
+    def test_receipt_from_before_taxonomy_change_replays_and_withdraws_safely(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root, publication, raw = self.fixture(tmp)
+            publication["items"] = [self.helpers.entry("new-A")]
+            # Reproduce the pre-migration aggregate contract without the adapter.
+            # All publication checks still run and generate the receipt hashes.
+            adapter = root / "scripts/taxonomy.py"
+            adapter.write_text("def present_taxonomy(stats):\n    return stats\n", encoding="utf-8")
+            first = self.run_projection(root, publication)
+            self.assertEqual(first.returncode, 0, first.stderr)
+            self.assertNotIn("taxonomia", json.loads((root / "site/data/stats.json").read_bytes()))
+            shutil.copyfile(sync.ROOT / "scripts/taxonomy.py", adapter)
+            # A tampered historical receipt must still be rejected.
+            receipt_path = self.receipt_path(root)
+            original_receipt = receipt_path.read_bytes()
+            receipt = json.loads(original_receipt)
+            receipt["outputs"]["stats.json"] = "0" * 64
+            receipt_path.write_text(json.dumps(receipt))
+            checked = self.run_projection(root, publication, check=True)
+            self.assertEqual(checked.returncode, 1)
+            self.assertIn("Hashes do estado privado", checked.stderr)
+            receipt_path.write_bytes(original_receipt)
+            checked = self.run_projection(root, publication, check=True)
+            self.assertEqual(checked.returncode, 0, checked.stderr)
+            self.assertEqual(receipt_path.read_bytes(), original_receipt)
+            publication["items"] = []
+            withdrawn = self.run_projection(root, publication)
+            self.assertEqual(withdrawn.returncode, 0, withdrawn.stderr)
+            self.assertEqual((root / "site/data/acervo.json").read_bytes(), raw["acervo.json"])
+            self.assert_restored_statistics((root / "site/data/stats.json").read_bytes(), raw["stats.json"])
 
     def test_cli_custom_schema_validates_new_and_previous_receipts(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -210,7 +252,7 @@ class PublicationReviewTests(unittest.TestCase):
                 self.assertEqual(len(json.loads((root / "site/data/acervo.json").read_bytes())),
                                  len(json.loads(raw["acervo.json"])) + len(entries))
             self.assertEqual((root / "site/data/acervo.json").read_bytes(), raw["acervo.json"])
-            self.assertEqual((root / "site/data/stats.json").read_bytes(), raw["stats.json"])
+            self.assert_restored_statistics((root / "site/data/stats.json").read_bytes(), raw["stats.json"])
             self.assertEqual(json.loads((root / "site/data/publication-overlay.json").read_bytes()), {"version": 1, "items": []})
 
     def test_reused_out_restores_removed_addition_and_image_supplement(self):
@@ -224,7 +266,7 @@ class PublicationReviewTests(unittest.TestCase):
             second = self.run_projection(root, publication, out=destination)
             self.assertEqual(second.returncode, 0, second.stderr)
             self.assertEqual((destination / "acervo.json").read_bytes(), raw["acervo.json"])
-            self.assertEqual((destination / "stats.json").read_bytes(), raw["stats.json"])
+            self.assert_restored_statistics((destination / "stats.json").read_bytes(), raw["stats.json"])
             missing_image = next(item["id"] for item in json.loads(raw["acervo.json"]) if not item["tem_imagem"])
             publication["items"] = [self.helpers.entry(missing_image)]
             third = self.run_projection(root, publication, out=destination)
@@ -234,7 +276,7 @@ class PublicationReviewTests(unittest.TestCase):
             publication["items"] = []
             fourth = self.run_projection(root, publication, out=destination)
             self.assertEqual(fourth.returncode, 0, fourth.stderr)
-            self.assertEqual((destination / "stats.json").read_bytes(), raw["stats.json"])
+            self.assert_restored_statistics((destination / "stats.json").read_bytes(), raw["stats.json"])
 
     def test_reused_out_external_edit_is_rejected_before_any_write(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -348,7 +390,7 @@ class PublicationReviewTests(unittest.TestCase):
             removed = self.run_projection(root, publication)
             self.assertEqual(removed.returncode, 0, removed.stderr)
             self.assertEqual((root / "site/data/acervo.json").read_bytes(), raw["acervo.json"])
-            self.assertEqual((root / "site/data/stats.json").read_bytes(), raw["stats.json"])
+            self.assert_restored_statistics((root / "site/data/stats.json").read_bytes(), raw["stats.json"])
             self.assertEqual(json.loads((root / "site/data/publication-overlay.json").read_bytes())["items"], [])
 
 
