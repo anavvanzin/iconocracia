@@ -1488,26 +1488,144 @@ html[data-theme="noite"] .constellation-image { background:rgba(255,255,255,.05)
 html[data-theme="noite"] .ex-lang { border-left-color:var(--ex-ink); }
 html[data-theme="noite"] .ex-lang:hover { color:#1d1033; }
 
-/* Cartela de inscrição latina (Mármore à Margem / Fundição) */
-.inscriptio-banner {
+/* ============================================================
+   A Família dos Filactérios — fita das empresas renascentistas
+   (Alciato, Bocchi, Giovio) em SVG com <textPath>.
+   Substitui os antigos .inscriptio-banner e .inscriptio-pill,
+   preservando as classes para compatibilidade e semântica.
+   ============================================================ */
+:root {
+  color-scheme: light;
+  --phylactery-stroke: var(--ex-ink);
+  --phylactery-fill: var(--ex-reading);
+  --phylactery-fold: var(--ex-line);
+  --phylactery-text: var(--ex-selection);
+}
+html[data-theme="noite"] {
+  color-scheme: dark;
+  --phylactery-stroke: var(--ex-action);
+  --phylactery-fill: #22123e;
+  --phylactery-fold: #3d2365;
+  --phylactery-text: var(--ex-action);
+}
+
+/* Contenção de rolagem para todos os <dialog> modais (acervo, fundição, nachleben) */
+dialog:modal {
+  overscroll-behavior: contain;
+}
+dialog::backdrop {
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
+
+/* Balanceamento tipográfico e prevenção de palavras órfãs em parágrafos editoriais */
+h1, h2, h3, .phylactery-caption {
+  text-wrap: balance;
+}
+.ex-home .block p,
+.research-page .prose p,
+.dossier-read,
+.jogo-regra p {
+  text-wrap: pretty;
+}
+/* Quando o filactério pousa sobre superfície lilás de leitura (--ex-reading),
+   o corpo da fita assume o pergaminho claro (--palette-paper) no modo Dia. */
+html:not([data-theme="noite"]) .ex-home .block:not(.alt):not(.vitrine-block) .phylactery-wrap,
+html:not([data-theme="noite"]) .research-page .block .phylactery-wrap {
+  --phylactery-fill: var(--palette-paper);
+}
+/* No rodapé violeta-escuro (.site-footer), a fita usa fundo de gabinete e divisa ácida. */
+.site-footer .phylactery-wrap {
+  --phylactery-stroke: #e3d4f0;
+  --phylactery-fill: #280f42;
+  --phylactery-fold: #4a2373;
+  --phylactery-text: var(--ex-action);
+}
+html[data-theme="noite"] .site-footer .phylactery-wrap {
+  --phylactery-stroke: var(--ex-action);
+}
+
+.inscriptio-banner:not(.phylactery-wrap) {
   display:inline-flex; align-items:center; gap:10px; flex-wrap:wrap;
   font-family:"JetBrains Mono",monospace; font-size:11px;
   letter-spacing:.14em; text-transform:uppercase;
   color:var(--ex-ink); border-left:3px solid var(--ex-selection);
   padding:4px 0 4px 12px; margin:8px 0 18px;
 }
-.inscriptio-banner em {
+.inscriptio-banner:not(.phylactery-wrap) em {
   font-family:"Instrument Serif",Georgia,serif; font-style:italic;
   font-size:18px; letter-spacing:.02em; text-transform:none; color:var(--ex-selection);
 }
-html[data-theme="noite"] .inscriptio-banner em { color:var(--ex-action); }
+html[data-theme="noite"] .inscriptio-banner:not(.phylactery-wrap) em { color:var(--ex-action); }
 
-.inscriptio-pill {
+.inscriptio-pill:not(.phylactery-wrap) {
   font-family:"Instrument Serif",Georgia,serif; font-style:italic;
   font-size:1.1rem; line-height:1.2; color:var(--ex-selection);
   margin:.2rem 0 .5rem;
 }
-html[data-theme="noite"] .inscriptio-pill { color:var(--ex-action); }
+html[data-theme="noite"] .inscriptio-pill:not(.phylactery-wrap) { color:var(--ex-action); }
+
+.phylactery-wrap,
+.inscriptio-banner.phylactery-wrap {
+  display:block; width:100%; max-width:720px;
+  margin:14px 0 20px; padding:0; border:0;
+  text-transform:none; letter-spacing:normal;
+}
+.phylactery-wrap--hero {
+  max-width:680px; margin:16px 0 22px;
+}
+.phylactery-wrap--center,
+.section-head .phylactery-wrap,
+.nachleben-hero .phylactery-wrap {
+  margin-left:auto; margin-right:auto;
+}
+.phylactery-wrap--constellation {
+  max-width:780px; margin:0 auto 28px;
+}
+.phylactery-wrap--footer {
+  max-width:560px; margin:4px auto 0;
+}
+.inscriptio-pill.phylactery-wrap {
+  max-width:340px; margin:6px 0 12px;
+}
+.inscriptio-pill.phylactery-wrap--wide {
+  max-width:440px;
+}
+
+.phylactery,
+.footer-mark svg.phylactery {
+  display:block; width:100%; height:auto;
+  margin:0 auto; overflow:visible;
+}
+.phylactery .ribbon-fold {
+  fill:var(--phylactery-fold); stroke:var(--phylactery-stroke);
+  stroke-width:1.15; stroke-linejoin:round; stroke-linecap:round;
+}
+.phylactery .ribbon-body {
+  fill:var(--phylactery-fill); stroke:var(--phylactery-stroke);
+  stroke-width:1.25; stroke-linejoin:round; stroke-linecap:round;
+}
+.phylactery .ribbon-crease {
+  stroke:var(--phylactery-stroke); stroke-width:.85; opacity:.45; fill:none;
+}
+.phylactery .ribbon-text {
+  font-family:"Instrument Serif",Georgia,serif; font-style:italic;
+  fill:var(--phylactery-text); letter-spacing:.02em;
+}
+.phylactery .ribbon-text .sub-lex {
+  font-family:"JetBrains Mono",monospace; font-style:normal; font-size:.44em;
+  letter-spacing:.18em; text-transform:uppercase; fill:var(--phylactery-stroke);
+}
+.phylactery-caption {
+  display:block; text-align:center;
+  font-family:"Crimson Pro",Georgia,serif; font-size:.98rem; line-height:1.35;
+  font-style:italic; color:var(--ex-muted); margin-top:4px;
+}
+.phylactery-caption::before {
+  content: "— ";
+  content: "— " / "";
+}
+.site-footer .phylactery-caption { color:#e3d4f0; font-size:.92rem; }
 
 .author-direct-link,
 .site-footer a.footer-author-link {
