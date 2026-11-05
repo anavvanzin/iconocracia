@@ -167,7 +167,7 @@ def carregar_records(url: str | None, path: pathlib.Path | None) -> list[dict[st
 def vetor_de(row: dict[str, Any]) -> dict[str, int] | None:
     """Extrai o vetor de dez eixos; None quando incompleto."""
     valores = {chave: row.get(chave) for chave in EIXOS_CHAVES}
-    if not all(isinstance(valor, int) and 0 <= valor <= 3 for valor in valores.values()):
+    if not all(type(valor) is int and 0 <= valor <= 3 for valor in valores.values()):
         return None
     return {chave: int(valor) for chave, valor in valores.items()}
 

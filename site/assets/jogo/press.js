@@ -282,6 +282,7 @@ export function abrirBriefing(estado) {
 export function iniciarGolpe(estado) {
   if (estado.fase !== FASES.BRIEFING) return;
   estado.fase = FASES.STRIKING;
+  if (todosNoAlvo(estado)) fecharLote(estado);
 }
 
 export function selecionar(estado, eixo) {

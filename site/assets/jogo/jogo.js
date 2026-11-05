@@ -115,7 +115,7 @@ function lotesLiberados() {
   const liberados = {};
   if (lotes.length) liberados[lotes[0].id] = true;
   lotes.forEach((lote, ordem) => {
-    if (ordem > 0 && progresso.concluidos[lotes[ordem - 1].id]) liberados[lote.id] = true;
+    if (progresso.concluidos[lote.id] || (ordem > 0 && progresso.concluidos[lotes[ordem - 1].id])) liberados[lote.id] = true;
   });
   return liberados;
 }
@@ -144,7 +144,7 @@ function definirImagem(lote) {
 }
 
 /** Pré-carrega o WebP do lote; nunca bloqueia o gabinete. */
-function precarregar(lote) {
+function precarregar(lote, aoFalhar) {
   return new Promise((resolver) => {
     const imagem = new Image();
     let pronto = false;
@@ -154,7 +154,10 @@ function precarregar(lote) {
       resolver(falhou);
     };
     imagem.addEventListener('load', () => concluir(false));
-    imagem.addEventListener('error', () => concluir(true));
+    imagem.addEventListener('error', () => {
+      aoFalhar();
+      concluir(true);
+    });
     imagem.src = lote.image;
     window.setTimeout(() => concluir(false), 4000);
   });
@@ -167,7 +170,7 @@ function golpar(eixo) {
   const evento = golpear(estado, eixo);
   if (evento.tipo === 'ignorado') return;
   selecionar(estado, eixo);
-  if (evento.tipo === 'leitura') {
+  if (evento.tipo === 'leitura' || evento.tipo === 'leitou-e-falhou') {
     audio.leitura();
   } else if (evento.tipo === 'erro') {
     audio.golpe(0.7);
@@ -182,26 +185,29 @@ function golpar(eixo) {
   if (estado.fase === FASES.FAILED) {
     render.mostrarAviso(estado, 'falha');
   }
-  if (evento.tipo === 'cunhou') {
-    progresso.concluidos[estado.lote.id] = true;
-    guardarProgresso();
-    const estadoCunhado = estado;
-    audio.cunha();
-    const caixa = refs.fx.getBoundingClientRect();
-    efeitos.cunha(caixa.width / 2, caixa.height / 2);
-    window.setTimeout(() => {
-      if (estado !== estadoCunhado || estado.fase !== FASES.CASTING) return;
-      abrirDossie(estado);
-      mostrarDossie();
-    }, DURACAO_CUNHAGEM);
-  }
+  if (evento.tipo === 'cunhou') concluirCunhagem();
   pintar();
 }
 
+function concluirCunhagem() {
+  progresso.concluidos[estado.lote.id] = true;
+  guardarProgresso();
+  const estadoCunhado = estado;
+  audio.cunha();
+  const caixa = refs.fx.getBoundingClientRect();
+  efeitos.cunha(caixa.width / 2, caixa.height / 2);
+  window.setTimeout(() => {
+    if (estado !== estadoCunhado || estado.fase !== FASES.CASTING) return;
+    abrirDossie(estado);
+    mostrarDossie();
+  }, DURACAO_CUNHAGEM);
+}
+
 function acaoPrincipal() {
-  if (!estado) return;
+  if (!estado || estado.pausado) return;
   if (estado.fase === FASES.BRIEFING) {
     iniciarGolpe(estado);
+    if (estado.fase === FASES.CASTING) concluirCunhagem();
     render.esconderAviso();
     refs.acao.focus({ preventScroll: true });
     pintar();
@@ -261,11 +267,17 @@ function mostrarFimDeCampanha() {
   caixas.replaceChildren();
   const titulo = document.createElement('h2');
   titulo.className = 'jogo-dossie__titulo';
-  titulo.textContent = 'Campanha concluída';
+  titulo.id = 'jogo-dossie-titulo';
+  titulo.tabIndex = -1;
+  titulo.setAttribute('autofocus', '');
+  const completa = lotes.every((lote) => progresso.concluidos[lote.id]);
+  titulo.textContent = completa ? 'Campanha concluída' : 'Fim do percurso';
   const texto = document.createElement('p');
   texto.className = 'jogo-dossie__descricao';
   texto.textContent =
-    'Todos os lotes foram cunhados. A campanha lista objetos e citações — não um número sobre o acervo.';
+    completa
+      ? 'Todos os lotes foram cunhados. A campanha lista objetos e citações — não um número sobre o acervo.'
+      : 'Ainda há lotes por cunhar. Feche o dossiê e consulte o mapa para continuar a campanha.';
   caixas.append(titulo, texto);
   refs.dossieProximo.hidden = true;
   if (!refs.dossie.open) refs.dossie.showModal();
@@ -289,7 +301,11 @@ function carregarLote(posicao, opcoes = {}) {
   pintar();
   const estadoCarregado = estado;
   efeitos.medir();
-  precarregar(lote).then((falhou) => {
+  precarregar(lote, () => {
+    if (estado !== estadoCarregado) return;
+    estado.imagemIndisponivel = true;
+    pintar();
+  }).then((falhou) => {
     if (estado !== estadoCarregado) return;
     estado.imagemIndisponivel = falhou;
     abrirBriefing(estado);
@@ -316,9 +332,11 @@ function pintar() {
   refs.acao.textContent = estado.fase === FASES.BRIEFING
     ? 'COMEÇAR A FUNDIÇÃO'
     : contra ? 'RECUSAR (R)' : 'ESTAMPAR (Espaço)';
-  refs.acao.disabled = !(estado.fase === FASES.BRIEFING || emJogo);
+  refs.acao.disabled = estado.pausado || !(estado.fase === FASES.BRIEFING || emJogo);
   refs.alavancas.querySelectorAll('button').forEach((botao) => {
-    botao.disabled = !emJogo;
+    botao.disabled = !emJogo || estado.pausado;
+    const gavetaFechada = window.matchMedia('(max-width: 860px)').matches && refs.matriz.dataset.aberta !== '1';
+    botao.tabIndex = gavetaFechada ? -1 : 0;
   });
   refs.matriz.dataset.etapa = estado.lote.etapa;
   refs.pausa.disabled = !(estado.fase === FASES.BRIEFING || emJogo);
@@ -388,6 +406,7 @@ function tratarTecla(evento) {
 
   const tecla = evento.key;
   if (tecla === ' ' || tecla === 'Spacebar') {
+    if (alvo && alvo.tagName === 'BUTTON') return;
     if (estado.fase === FASES.BRIEFING || estado.fase === FASES.STRIKING) {
       evento.preventDefault();
       acaoPrincipal();
@@ -437,12 +456,17 @@ function tratarTecla(evento) {
     evento.preventDefault();
     selecionar(estado, EIXOS[posicaoTecla]);
     pintar();
-    const botao = refs.alavancas.querySelector('[data-eixo="' + EIXOS[posicaoTecla] + '"]');
-    if (botao) botao.focus({ preventScroll: true });
+    focarSelecao();
   }
 }
 
 function focarSelecao() {
+  if (window.matchMedia('(max-width: 860px)').matches && estado.fase === FASES.STRIKING && !estado.pausado) {
+    refs.matriz.dataset.aberta = '1';
+    refs.gaveta.setAttribute('aria-expanded', 'true');
+    refs.gaveta.textContent = 'Matriz ▼';
+    pintar();
+  }
   const botao = refs.alavancas.querySelector('[data-eixo="' + EIXOS[estado.eixoSelecionado] + '"]');
   if (botao) botao.focus({ preventScroll: true });
 }
@@ -470,6 +494,7 @@ function ligarEntrada() {
     refs.matriz.dataset.aberta = aberta ? '0' : '1';
     refs.gaveta.setAttribute('aria-expanded', aberta ? 'false' : 'true');
     refs.gaveta.textContent = aberta ? 'Matriz ▲' : 'Matriz ▼';
+    pintar();
   });
 
   refs.alavancas.addEventListener('click', (evento) => {
@@ -490,10 +515,7 @@ function ligarEntrada() {
     const botao = evento.target.closest('button[data-acao]');
     if (!botao) return;
     if (botao.dataset.acao === 'comecar') {
-      iniciarGolpe(estado);
-      render.esconderAviso();
-      refs.acao.focus({ preventScroll: true });
-      pintar();
+      acaoPrincipal();
     } else if (botao.dataset.acao === 'repetir') {
       render.esconderAviso();
       carregarLote(estado.posicao);
@@ -506,7 +528,7 @@ function ligarEntrada() {
       pintar();
     }
   });
-  window.addEventListener('resize', () => efeitos.medir());
+  window.addEventListener('resize', () => { efeitos.medir(); pintar(); });
 }
 
 /* -------------------------------------------------------------------- início */

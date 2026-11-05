@@ -549,6 +549,7 @@
 /* --------------------------------------------------------------- diálogos */
 
 .jogo-dialog {
+  margin: auto;
   border: 1px solid var(--jogo-borda-forte);
   background: var(--ex-reading);
   color: var(--ex-ink);

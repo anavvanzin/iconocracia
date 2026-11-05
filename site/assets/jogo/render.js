@@ -202,7 +202,11 @@ export function criarRender(refs) {
 
     const cabecalho = elemento('header', 'jogo-dossie__cabecalho');
     cabecalho.append(elemento('p', 'jogo-dossie__etapa', (ETAPAS[lote.etapa] || {}).nome || lote.etapa));
-    cabecalho.append(elemento('h2', 'jogo-dossie__titulo', lote.titulo));
+    const titulo = elemento('h2', 'jogo-dossie__titulo', lote.titulo);
+    titulo.id = 'jogo-dossie-titulo';
+    titulo.tabIndex = -1;
+    titulo.setAttribute('autofocus', '');
+    cabecalho.append(titulo);
     cabecalho.append(
       elemento(
         'p',

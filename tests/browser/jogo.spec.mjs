@@ -347,3 +347,144 @@ test('regressão · canvas medido no início e efeitos em coordenadas locais', a
   expect(x).toBeCloseTo(medida.x);
   expect(y).toBeCloseTo(medida.y);
 });
+
+// Exercita a UI real; não escreve conclusões para testar o desbloqueio.
+async function cunharCompleto(page, lote) {
+  await comecar(page);
+  for (const [eixo, alvo] of Object.entries(lote.matriz)) {
+    const botao = page.locator(`[data-eixo="${eixo}"]`);
+    const atual = Number(await page.locator('#jogo-platen').getAttribute('data-t-' + eixo));
+    if (atual === alvo) continue;
+    if (await botao.locator('.jogo-alavanca__alvo').textContent() === 'não lido') await botao.click();
+    const golpes = lote.etapa === 'contra-alegoria' ? 1 : alvo - atual;
+    for (let i = 0; i < golpes; i++) await botao.click();
+  }
+  await expect(page.locator('#jogo-dossie')).toBeVisible();
+}
+
+const mapaLote = (page, lote) => page.locator(`#jogo-mapa-lista [data-lote="${lote.id}"]`);
+
+test('16 · cunhagens desbloqueiam o mapa e sobrevivem à recarga e à repetição', async ({ page }) => {
+  const { lotes } = await lerManifesto(page);
+  await abrirJogo(page);
+  await page.locator('#jogo-mapa').click();
+  await expect(mapaLote(page, lotes[1])).toBeDisabled();
+  await page.locator('#jogo-mapa-fechar').click();
+  await cunharCompleto(page, lotes[0]);
+  await page.locator('#jogo-dossie-fechar').click();
+  await page.locator('#jogo-mapa').click();
+  await expect(mapaLote(page, lotes[0])).toHaveAttribute('data-estado', 'feito');
+  await expect(mapaLote(page, lotes[1])).toBeEnabled();
+  await expect(mapaLote(page, lotes[2])).toBeDisabled();
+  await mapaLote(page, lotes[1]).click();
+  await cunharCompleto(page, lotes[1]);
+  await page.locator('#jogo-dossie-proximo').click();
+  await expect(page.locator('#jogo-lote-titulo')).toHaveText(lotes[2].titulo.replace(/\s*\([^)]*\)\s*$/, ''));
+  await page.reload();
+  await expect(page.locator('#jogo-acao')).toBeEnabled();
+  await page.locator('#jogo-mapa').click();
+  await expect(mapaLote(page, lotes[1])).toHaveAttribute('data-estado', 'feito');
+  await expect(mapaLote(page, lotes[2])).toBeEnabled();
+  await expect(mapaLote(page, lotes[3])).toBeDisabled();
+  await mapaLote(page, lotes[0]).click();
+  await expect(page.locator('#jogo-acao')).toBeEnabled();
+  await page.locator('#jogo-mapa').click();
+  await expect(mapaLote(page, lotes[2])).toBeEnabled();
+  await mapaLote(page, lotes[2]).click();
+});
+
+for (const completa of [false, true]) {
+  test(`18 · último lote encerra o percurso; campanha completa=${completa}`, async ({ page }, testInfo) => {
+    const { lotes } = await lerManifesto(page);
+    if (completa) {
+      // Prepara apenas os predecessores; o último é concluído pelos controles reais.
+      await page.addInitScript(ids => localStorage.setItem('iconocracia:fundicao:v1', JSON.stringify({
+        concluidos: Object.fromEntries(ids.map(id => [id, true])), posicao: 0,
+      })), lotes.slice(0, -1).map(l => l.id));
+    }
+    await abrirJogo(page, '?lote=' + lotes.at(-1).id);
+    await cunharCompleto(page, lotes.at(-1));
+    await expect(page.locator('#jogo-dossie-proximo')).toHaveText('CONCLUIR CAMPANHA');
+    await expect(page.locator('#jogo-dossie')).toHaveJSProperty('open', true);
+    expect(await page.locator('#jogo-dossie').evaluate(el => el.matches(':modal'))).toBe(true);
+    await expect(page.locator('#jogo-dossie')).toHaveAccessibleName(lotes.at(-1).titulo);
+    await expect(page.locator('#jogo-dossie-titulo')).toBeInViewport();
+    await expect(page.locator('#jogo-dossie-titulo')).toBeFocused();
+    const caixa = await page.locator('#jogo-dossie').boundingBox();
+    expect(caixa.y).toBeGreaterThanOrEqual(0);
+    expect(caixa.y + caixa.height).toBeLessThanOrEqual(page.viewportSize().height);
+    await page.screenshot({ path: testInfo.outputPath('dossie.png') });
+    await page.locator('#jogo-dossie-proximo').click();
+    await expect(page.locator('#jogo-dossie')).toHaveAccessibleName(completa ? 'Campanha concluída' : 'Fim do percurso');
+    await expect(page.locator('#jogo-dossie-proximo')).toBeHidden();
+    await page.locator('#jogo-dossie-fechar').click();
+    await page.locator('#jogo-mapa').click();
+    await expect(mapaLote(page, lotes.at(-1))).toHaveAttribute('data-estado', 'feito');
+    await expect(mapaLote(page, lotes.at(-1))).toBeEnabled();
+    await page.screenshot({ path: testInfo.outputPath('mapa.png') });
+  });
+}
+
+
+test('regressão · Espaço respeita o botão focado e pausa desativa a prensa', async ({ page }) => {
+  await abrirJogo(page);
+  await comecar(page);
+  const antes = await page.locator('#jogo-carimbos').textContent();
+  await page.locator('#jogo-pausa').press('Space');
+  await expect(page.locator('#jogo-pausa')).toHaveText('Continuar');
+  await expect(page.locator('#jogo-acao')).toBeDisabled();
+  await expect(page.locator('#jogo-alavancas button').first()).toBeDisabled();
+  await page.locator('#jogo-pausa').press('Space');
+  await expect(page.locator('#jogo-acao')).toBeEnabled();
+  await page.locator('#jogo-mapa').press('Space');
+  await expect(page.locator('#jogo-mapa-dialog')).toBeVisible();
+  await expect(page.locator('#jogo-carimbos')).toHaveText(antes);
+});
+
+test('regressão · gaveta fechada sai da tabulação e atalho a abre', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await abrirJogo(page);
+  await comecar(page);
+  await page.locator('#jogo-gaveta').click();
+  const botoes = page.locator('#jogo-alavancas button');
+  for (const botao of await botoes.all()) await expect(botao).toHaveAttribute('tabindex', '-1');
+  await page.keyboard.press('2');
+  await expect(page.locator('#jogo-gaveta')).toHaveAttribute('aria-expanded', 'true');
+  await expect(botoes.nth(1)).toBeFocused();
+  await expect(botoes.nth(1)).toBeInViewport();
+});
+
+test('regressão · erro de imagem após timeout de carga preserva a fonte', async ({ page }) => {
+  let liberar;
+  const liberado = new Promise(resolve => { liberar = resolve; });
+  await page.route('**/*', async route => {
+    if (route.request().resourceType() !== 'image') return route.continue();
+    await liberado;
+    await route.abort();
+  });
+  try {
+    await page.goto('/jogo', { waitUntil: 'domcontentloaded' });
+    await expect(page.locator('#jogo-acao')).toBeEnabled({ timeout: 7000 });
+  } finally {
+    liberar();
+  }
+  await expect(page.locator('#jogo-platen-legenda')).toContainText('Reprodução indisponível');
+  await comecar(page);
+  await golpesIniciais(page);
+  await expect(page.locator('#jogo-platen-legenda')).toContainText('Reprodução indisponível');
+});
+
+test('regressão · matriz já satisfeita conclui sem golpe errado nem perda de carimbo', async ({ page }) => {
+  const manifesto = await lerManifesto(page);
+  const lote = manifesto.lotes[0];
+  lote.matriz = Object.fromEntries(Object.keys(lote.matriz).map(eixo => [eixo, 0]));
+  await page.route('**/data/jogo.json', route => route.fulfill({ json: manifesto }));
+  await abrirJogo(page);
+  await expect(page.locator('#jogo-acao')).toBeEnabled();
+  await page.locator('#jogo-overlay [data-acao="comecar"]').click();
+  await expect(page.locator('#jogo-dossie')).toBeVisible();
+  await expect(page.locator('#jogo-carimbos')).toHaveText(String(lote.carimbos));
+  expect(await page.evaluate(chave => JSON.parse(localStorage.getItem(chave)).concluidos, CHAVE))
+    .toEqual({ [lote.id]: true });
+  await expect(page.locator('#jogo-dossie-corpo')).toContainText('0 de ' + lote.carimbos);
+});
