@@ -123,18 +123,22 @@ html[data-theme="noite"] .plate-meta h3 { color: var(--ex-action); }
   color: var(--ex-muted); margin: 0;
 }
 
-/* Modal lightbox inspection */
+/* Modal lightbox inspection (native top-layer <dialog>) */
 .plate-modal {
-  position: fixed; inset: 0; background: rgba(29, 16, 51, .88); z-index: 9999;
-  display: flex; align-items: center; justify-content: center; padding: 24px;
-  backdrop-filter: blur(8px); opacity: 0; pointer-events: none; transition: opacity .25s ease;
+  border: 0; padding: 0; background: transparent;
+  max-width: 1080px; width: calc(100% - 48px); max-height: 92vh;
+  margin: auto; color: var(--ex-ink);
+  overscroll-behavior: contain;
 }
-.plate-modal.is-open {
-  opacity: 1; pointer-events: auto;
+.plate-modal::backdrop {
+  background-color: rgba(29, 16, 51, .88);
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+  overscroll-behavior: contain;
 }
 .plate-modal-box {
   background: var(--ex-reading); border: 1px solid var(--ex-ink);
-  max-width: 1080px; width: 100%; max-height: 92vh; overflow-y: auto;
+  width: 100%; max-height: 92vh; overflow-y: auto;
   display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; padding: 32px;
   position: relative; box-shadow: 0 24px 64px rgba(0,0,0,.5);
 }
@@ -205,9 +209,22 @@ html[data-theme="noite"] .plate-modal-info h2 { color: var(--ex-action); }
     </p>
 
     <!-- Inscriptio opening -->
-    <div class="inscriptio-banner" style="justify-content:center;">
-      <span>Aby Warburg · Mnemosyne</span> · <em>Pathos in figura superstes · Memory defies oblivion</em>
-    </div>
+    <figure class="inscriptio-banner phylactery-wrap phylactery-wrap--hero phylactery-wrap--center">
+      <svg class="phylactery" viewBox="0 0 780 130" role="img" aria-labelledby="t-ph-nachleben-hero">
+        <title id="t-ph-nachleben-hero">Aby Warburg · Mnemosyne · Pathos in figura superstes · Memory defies oblivion</title>
+        <path class="ribbon-fold" d="M72 38 L16 52 L38 72 L12 96 L72 102 Z"/>
+        <path class="ribbon-fold" d="M708 38 L764 52 L742 72 L768 96 L708 102 Z"/>
+        <path class="ribbon-body" d="M64 34 Q390 4 716 34 L716 104 Q390 74 64 104 Z"/>
+        <path class="ribbon-crease" d="M64 34 L72 38 M64 104 L72 102 M716 34 L708 38 M716 104 L708 102"/>
+        <path id="ph-nachleben-hero" d="M84 80 Q390 50 696 80" fill="none"/>
+        <text class="ribbon-text" font-size="32">
+          <textPath href="#ph-nachleben-hero" startOffset="50%" text-anchor="middle" lang="la">
+            Pathos in figura superstes <tspan class="sub-lex">· MEMORY DEFIES OBLIVION</tspan>
+          </textPath>
+        </text>
+      </svg>
+      <figcaption class="phylactery-caption">Aby Warburg · Bilderatlas Mnemosyne · Passion survives in form</figcaption>
+    </figure>
   </section>
 
   <!-- Interactive cabinet controls -->
@@ -307,10 +324,12 @@ html[data-theme="noite"] .plate-modal-info h2 { color: var(--ex-action); }
 
 </main>
 
-<!-- Lightbox Modal -->
-<div class="plate-modal" id="plate-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title">
+<!-- Lightbox Modal (native <dialog>) -->
+<dialog class="plate-modal" id="plate-modal" closedby="any" aria-labelledby="modal-title">
   <div class="plate-modal-box">
-    <button type="button" class="plate-modal-close" id="modal-close" aria-label="Close viewer">✕</button>
+    <form method="dialog">
+      <button type="submit" class="plate-modal-close" id="modal-close" autofocus aria-label="Close viewer">✕</button>
+    </form>
     <div class="plate-modal-view">
       <img id="modal-img" src="" alt="Selected plate in high resolution">
     </div>
@@ -327,7 +346,7 @@ html[data-theme="noite"] .plate-modal-info h2 { color: var(--ex-action); }
       </div>
     </div>
   </div>
-</div>
+</dialog>
 
 <footer class="site-footer"><div class="ornamental-divider" aria-hidden="true"><span class="brand-scroll brand-ornament"></span></div><div class="footer-mark"><span class="brand-seal brand-ornament" aria-hidden="true"></span><div class="motto">Forma manens, memoria vivens · Pathos in figura superstes</div></div><div class="wrap cols"><div class="fcol"><h4>Mnemosyne Viva</h4><p class="muted">Long-term research atlas of the Iconocracia project. Documented sources, thematic constellations, and the doctoral strand Mármore à Margem (Brazil, 1822–1922).</p></div><div class="fcol"><h4>Navigation</h4><p><a href="/en">Home</a> · <a href="/en/acervo">Archive</a> · <a href="/en/constelacoes">Constellations</a> · <a href="/en/sobre">Research &amp; Method</a> · <a href="/en/nachleben">Nachleben</a> · <a href="/en/jogo">Foundry</a></p></div><div class="fcol"><h4>Research &amp; Author</h4><p class="muted"><a href="https://anavanzin.com" target="_blank" rel="noopener" class="footer-author-link"><strong>Ana Vanzin</strong> ↗</a> · PPGD/UFSC<br>Personal site &amp; essays: <a href="https://anavanzin.com" target="_blank" rel="noopener" class="footer-author-link">anavanzin.com ↗</a></p></div></div></footer>
 
@@ -450,14 +469,7 @@ html[data-theme="noite"] .plate-modal-info h2 { color: var(--ex-action); }
     modalDesc.innerHTML = data.descEn;
     btnDownload.href = src;
     btnDownload.setAttribute('download', `${data.slug}-${currentLang}-${currentTone}.svg`);
-    modal.classList.add('is-open');
-    modal.setAttribute('aria-hidden', 'false');
-    modalClose.focus();
-  }
-
-  function closeModal() {
-    modal.classList.remove('is-open');
-    modal.setAttribute('aria-hidden', 'true');
+    if (!modal.open) modal.showModal();
   }
 
   cards.forEach((card, idx) => {
@@ -470,13 +482,15 @@ html[data-theme="noite"] .plate-modal-info h2 { color: var(--ex-action); }
     });
   });
 
-  modalClose.addEventListener('click', closeModal);
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
-  });
+  if (!('closedBy' in HTMLDialogElement.prototype)) {
+    const outside = (e, dialog) => {
+      const r = dialog.getBoundingClientRect();
+      return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
+    };
+    let pressedOutside = false;
+    modal.addEventListener('pointerdown', (e) => { pressedOutside = outside(e, modal); });
+    modal.addEventListener('pointerup', (e) => { if (pressedOutside && outside(e, modal)) modal.close(); });
+  }
 
   btnCopy.addEventListener('click', async () => {
     try {
