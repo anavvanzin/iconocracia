@@ -123,18 +123,22 @@ html[data-theme="noite"] .plate-meta h3 { color: var(--ex-action); }
   color: var(--ex-muted); margin: 0;
 }
 
-/* Modal de inspeção e download */
+/* Modal de inspeção e download (<dialog> nativo na top-layer) */
 .plate-modal {
-  position: fixed; inset: 0; background: rgba(29, 16, 51, .88); z-index: 9999;
-  display: flex; align-items: center; justify-content: center; padding: 24px;
-  backdrop-filter: blur(8px); opacity: 0; pointer-events: none; transition: opacity .25s ease;
+  border: 0; padding: 0; background: transparent;
+  max-width: 1080px; width: calc(100% - 48px); max-height: 92vh;
+  margin: auto; color: var(--ex-ink);
+  overscroll-behavior: contain;
 }
-.plate-modal.is-open {
-  opacity: 1; pointer-events: auto;
+.plate-modal::backdrop {
+  background-color: rgba(29, 16, 51, .88);
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+  overscroll-behavior: contain;
 }
 .plate-modal-box {
   background: var(--ex-reading); border: 1px solid var(--ex-ink);
-  max-width: 1080px; width: 100%; max-height: 92vh; overflow-y: auto;
+  width: 100%; max-height: 92vh; overflow-y: auto;
   display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; padding: 32px;
   position: relative; box-shadow: 0 24px 64px rgba(0,0,0,.5);
 }
@@ -320,10 +324,12 @@ html[data-theme="noite"] .plate-modal-info h2 { color: var(--ex-action); }
 
 </main>
 
-<!-- Modal Lightbox de Inspeção -->
-<div class="plate-modal" id="plate-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title">
+<!-- Modal Lightbox de Inspeção (<dialog> nativo) -->
+<dialog class="plate-modal" id="plate-modal" closedby="any" aria-labelledby="modal-title">
   <div class="plate-modal-box">
-    <button type="button" class="plate-modal-close" id="modal-close" aria-label="Fechar visualização">✕</button>
+    <form method="dialog">
+      <button type="submit" class="plate-modal-close" id="modal-close" autofocus aria-label="Fechar visualização" data-en-aria="Close preview">✕</button>
+    </form>
     <div class="plate-modal-view">
       <img id="modal-img" src="" alt="Prancha selecionada em alta resolução">
     </div>
@@ -340,7 +346,7 @@ html[data-theme="noite"] .plate-modal-info h2 { color: var(--ex-action); }
       </div>
     </div>
   </div>
-</div>
+</dialog>
 
 <footer class="site-footer"><div class="ornamental-divider" aria-hidden="true"><span class="brand-scroll brand-ornament"></span></div><div class="footer-mark"><span class="brand-seal brand-ornament" aria-hidden="true"></span><div class="motto" data-en="Forma manens, memoria vivens · Pathos in figura superstes">Forma manens, memoria vivens · Pathos in figura superstes</div></div><div class="wrap cols"><div class="fcol"><h4>Mnemosyne Viva</h4><p class="muted" data-en="Long-term research atlas of the Iconocracia project. Documented sources, thematic constellations, and the doctoral strand Mármore à Margem (Brazil, 1822–1922).">Atlas de pesquisa de longa duração do projeto Iconocracia. Fontes documentadas, constelações temáticas e o recorte doutoral Mármore à Margem (Brasil, 1822–1922).</p></div><div class="fcol"><h4 data-en="Navigation">Navegação</h4><p><a href="index.html" data-en="Home">Início</a> · <a href="acervo.html" data-en="Archive">Acervo</a> · <a href="constelacoes.html" data-en="Constellations">Constelações</a> · <a href="sobre.html" data-en="Research &amp; Method">Pesquisa e método</a> · <a href="nachleben.html" data-en="Nachleben Plates">Nachleben</a> · <a href="jogo.html" data-en="Foundry">Fundição</a></p></div><div class="fcol"><h4 data-en="Research &amp; Author">Pesquisa e autoria</h4><p class="muted" data-en-html="<a href=&quot;https://anavanzin.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;footer-author-link&quot;><strong>Ana Vanzin</strong> ↗</a> · PPGD/UFSC<br>Personal site &amp; essays: <a href=&quot;https://anavanzin.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;footer-author-link&quot;>anavanzin.com ↗</a>"><a href="https://anavanzin.com" target="_blank" rel="noopener" class="footer-author-link"><strong>Ana Vanzin</strong> ↗</a> · PPGD/UFSC<br>Site pessoal e ensaios: <a href="https://anavanzin.com" target="_blank" rel="noopener" class="footer-author-link">anavanzin.com ↗</a></p></div></div></footer>
 
@@ -474,14 +480,7 @@ html[data-theme="noite"] .plate-modal-info h2 { color: var(--ex-action); }
     modalDesc.innerHTML = isEn ? data.descEn : data.descPt;
     btnDownload.href = src;
     btnDownload.setAttribute('download', `${data.slug}-${currentLang}-${currentTone}.svg`);
-    modal.classList.add('is-open');
-    modal.setAttribute('aria-hidden', 'false');
-    modalClose.focus();
-  }
-
-  function closeModal() {
-    modal.classList.remove('is-open');
-    modal.setAttribute('aria-hidden', 'true');
+    if (!modal.open) modal.showModal();
   }
 
   cards.forEach((card, idx) => {
@@ -494,13 +493,15 @@ html[data-theme="noite"] .plate-modal-info h2 { color: var(--ex-action); }
     });
   });
 
-  modalClose.addEventListener('click', closeModal);
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
-  });
+  if (!('closedBy' in HTMLDialogElement.prototype)) {
+    const outside = (e, dialog) => {
+      const r = dialog.getBoundingClientRect();
+      return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
+    };
+    let pressedOutside = false;
+    modal.addEventListener('pointerdown', (e) => { pressedOutside = outside(e, modal); });
+    modal.addEventListener('pointerup', (e) => { if (pressedOutside && outside(e, modal)) modal.close(); });
+  }
 
   btnCopy.addEventListener('click', async () => {
     try {
