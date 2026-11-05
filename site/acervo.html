@@ -27,42 +27,47 @@
 <body class="ex-page">
 <a class="skip-link" href="#main">Pular para o conteúdo</a>
 
-<header class="ex-header"><a class="ex-brand" href="index.html"><span class="brand-flower brand-ornament" aria-hidden="true"></span><span>ICONOCRACIA</span></a><nav aria-label="Navegação principal"><a href="index.html">Início</a><a href="acervo.html" aria-current="page">Acervo</a><a href="constelacoes.html" data-constellations-link hidden>Constelações</a><a href="sobre.html">Pesquisa e método</a></nav><button class="ex-night" id="night-toggle" type="button" aria-pressed="false">NOITE</button><button class="ex-search-shortcut" aria-label="Buscar no acervo" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/></svg></button></header>
+<header class="ex-header"><a class="ex-brand" href="index.html"><span class="brand-flower brand-ornament" aria-hidden="true"></span><span class="ex-brand-text"><span class="ex-brand-title">MNEMOSYNE VIVA</span><span class="ex-brand-sub" data-en="ICONOCRACIA · RESEARCH ATLAS">ICONOCRACIA · ATLAS DE PESQUISA</span></span></a><nav aria-label="Navegação principal" data-en-aria="Main navigation"><a href="index.html" data-en="Home">Início</a><a href="acervo.html" aria-current="page" data-en="Archive">Acervo</a><a href="constelacoes.html" data-constellations-link hidden data-en="Constellations">Constelações</a><a href="sobre.html" data-en="Research &amp; Method">Pesquisa e método</a></nav><button class="ex-night" id="night-toggle" type="button" aria-pressed="false">NOITE</button><button class="ex-lang" id="lang-toggle" type="button" aria-pressed="false" aria-label="Read in English">EN</button><button class="ex-search-shortcut" aria-label="Buscar no acervo" data-en-aria="Search the archive" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/></svg></button></header>
 
 <main id="main">
-<section class="exhibition" aria-label="Exposição do acervo">
-<h1 class="sr-only">Acervo iconográfico</h1>
+<section class="exhibition" aria-label="Exposição do acervo" data-en-aria="Archive exhibition">
+<h1 class="sr-only" data-en="Iconographic archive">Acervo iconográfico</h1>
 <div class="ex-collection-intro">
- <p>Na escultura de <a href="acervo.html?item=BR-009">Ceschiatti</a>, a Justiça está sentada diante do Supremo Tribunal Federal. Na tela de <a href="acervo.html?item=BR-005">Décio Villares</a>, a figura feminina representa a República. A comparação começa pelo suporte e pelo lugar de cada obra.</p>
- <p class="ex-method-note">Neste campo, a posição das imagens organiza a consulta. A montagem autoral das relações entre as obras ainda está em preparação.</p>
+ <p data-en-html="In <a href=&quot;acervo.html?item=BR-009&quot;>Ceschiatti’s</a> sculpture, Justice sits before the Supreme Federal Court. In <a href=&quot;acervo.html?item=BR-005&quot;>Décio Villares’s</a> canvas, the female figure personifies the Republic. Comparison begins with the medium and the institutional site of each work.">Na escultura de <a href="acervo.html?item=BR-009">Ceschiatti</a>, a Justiça está sentada diante do Supremo Tribunal Federal. Na tela de <a href="acervo.html?item=BR-005">Décio Villares</a>, a figura feminina representa a República. A comparação começa pelo suporte e pelo lugar de cada obra.</p>
+ <p class="ex-method-note" data-en="In this field, the spatial arrangement organizes inspection. Every record distinguishes documented archival provenance (Layer I) from the authorial research reading (Layer II).">Neste campo, a posição das imagens organiza a consulta. Cada ficha distingue o registro documental e arquivístico (Camada I) da leitura autoral na pesquisa (Camada II).</p>
+ <div class="ex-strand-bar" role="group" aria-label="Recorte de pesquisa" data-en-aria="Research strand">
+  <span class="ex-strand-label" data-en="Strand:">Recorte:</span>
+  <button type="button" class="ex-strand-btn" id="strand-all" aria-pressed="true" data-en="Full Comparative Atlas">Atlas comparativo completo</button>
+  <button type="button" class="ex-strand-btn" id="strand-tese" aria-pressed="false" data-en="Doctoral Strand · Mármore à Margem: Brazil, 1822–1922">Recorte da tese · Mármore à Margem: Brasil, 1822–1922</button>
+ </div>
 </div>
 <p id="ex-curatorial-context" class="ex-constellation-label" hidden></p>
 <form class="ex-filters" role="search">
- <label class="ex-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/></svg><span class="sr-only">Buscar no acervo</span><input id="q" type="search" placeholder="Buscar no acervo…" autocomplete="off"></label>
- <label><span class="sr-only">País</span><select id="f-pais"><option value="">País</option></select></label>
- <label><span class="sr-only">Regime</span><select id="f-regime"><option value="">Regime</option></select></label>
- <label><span class="sr-only">Período</span><select id="f-periodo"><option value="">Período</option></select></label>
- <label><span class="sr-only">Tipo de obra</span><select id="f-tipo"><option value="">Tipo de obra</option></select></label>
- <button class="ex-filter-button" type="submit">Filtrar acervo<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h8m4 0h6M3 12h2m4 0h12M3 19h12m4 0h2"/><circle cx="13" cy="5" r="2"/><circle cx="7" cy="12" r="2"/><circle cx="17" cy="19" r="2"/></svg></button>
+ <label class="ex-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/></svg><span class="sr-only" data-en="Search the archive">Buscar no acervo</span><input id="q" type="search" placeholder="Buscar no acervo…" data-en-placeholder="Search the archive…" autocomplete="off"></label>
+ <label><span class="sr-only" data-en="Country">País</span><select id="f-pais"><option value="" data-en="Country">País</option></select></label>
+ <label><span class="sr-only" data-en="Regime">Regime</span><select id="f-regime"><option value="" data-en="Regime">Regime</option></select></label>
+ <label><span class="sr-only" data-en="Period">Período</span><select id="f-periodo"><option value="" data-en="Period">Período</option></select></label>
+ <label><span class="sr-only" data-en="Work type">Tipo de obra</span><select id="f-tipo"><option value="" data-en="Work type">Tipo de obra</option></select></label>
+ <button class="ex-filter-button" type="submit"><span data-en="Filter archive">Filtrar acervo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h8m4 0h6M3 12h2m4 0h12M3 19h12m4 0h2"/><circle cx="13" cy="5" r="2"/><circle cx="7" cy="12" r="2"/><circle cx="17" cy="19" r="2"/></svg></button>
 </form>
-<div class="ex-toolbar"><div class="ex-view-toggle" role="group" aria-label="Modo de exibição"><button id="view-constelacao" type="button" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="1.7"/><circle cx="19" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="6" cy="19" r="1.7"/><circle cx="18" cy="18" r="1.7"/><path d="m6.5 7.4 4 3.4m2.3-.9 5-4.3M13 13.4l4 3.7m-10.4 1.2 3.7-5.2"/></svg>Constelação</button><button id="view-palco" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="1"/><circle cx="9" cy="10" r="1.6"/><path d="m21 16-4.8-4.8L8 19"/></svg>Palco</button><button id="view-grade" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Grade</button></div></div>
+<div class="ex-toolbar"><div class="ex-view-toggle" role="group" aria-label="Modo de exibição" data-en-aria="Display mode"><button id="view-constelacao" type="button" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="1.7"/><circle cx="19" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="6" cy="19" r="1.7"/><circle cx="18" cy="18" r="1.7"/><path d="m6.5 7.4 4 3.4m2.3-.9 5-4.3M13 13.4l4 3.7m-10.4 1.2 3.7-5.2"/></svg><span data-en="Constellation">Constelação</span></button><button id="view-palco" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="1"/><circle cx="9" cy="10" r="1.6"/><path d="m21 16-4.8-4.8L8 19"/></svg><span data-en="Stage">Palco</span></button><button id="view-grade" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg><span data-en="Grid">Grade</span></button></div></div>
 <div class="ex-layout">
  <div class="ex-viewer">
-  <div class="ex-stage" tabindex="0" aria-label="Obra selecionada; use as setas para navegar" hidden>
-   <div id="ex-image"></div><button class="ex-arrow ex-prev" aria-label="Obra anterior" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button><button class="ex-arrow ex-next" aria-label="Próxima obra" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
-   <span id="ex-position" class="ex-position" aria-live="polite">Carregando…</span><button class="ex-expand" aria-label="Ampliar imagem" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button>
+  <div class="ex-stage" tabindex="0" aria-label="Obra selecionada; use as setas para navegar" data-en-aria="Selected work; use arrow keys to navigate" hidden>
+   <div id="ex-image"></div><button class="ex-arrow ex-prev" aria-label="Obra anterior" data-en-aria="Previous work" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button><button class="ex-arrow ex-next" aria-label="Próxima obra" data-en-aria="Next work" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+   <span id="ex-position" class="ex-position" aria-live="polite">Carregando…</span><button class="ex-expand" aria-label="Ampliar imagem" data-en-aria="Expand image" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button>
   </div>
-  <div id="ex-filmstrip" class="ex-filmstrip" aria-label="Obras do acervo" hidden></div>
-  <div id="ex-grid" class="ex-grid" aria-label="Parede de obras do acervo" hidden></div>
-  <div id="ex-constellation" class="ex-constellation" aria-label="Constelação de obras do acervo" tabindex="0"></div>
-  <div class="ex-results"><span id="result-count" role="status">Carregando acervo…</span><div class="ex-results-actions"><button id="clear-filters" type="button" hidden>Limpar filtros</button></div></div>
+  <div id="ex-filmstrip" class="ex-filmstrip" aria-label="Obras do acervo" data-en-aria="Works in the archive" hidden></div>
+  <div id="ex-grid" class="ex-grid" aria-label="Parede de obras do acervo" data-en-aria="Wall of works in the archive" hidden></div>
+  <div id="ex-constellation" class="ex-constellation" aria-label="Constelação de obras do acervo" data-en-aria="Constellation of works in the archive" tabindex="0"></div>
+  <div class="ex-results"><span id="result-count" role="status">Carregando acervo…</span><div class="ex-results-actions"><button id="clear-filters" type="button" hidden data-en="Clear filters">Limpar filtros</button></div></div>
  </div>
- <aside class="ex-caption" aria-label="Informações da obra selecionada">
-  <p class="ex-overline">OBRA</p><h1 id="ex-title">Carregando acervo</h1><p id="ex-author" class="ex-author"></p><p id="ex-date" class="ex-date"></p>
+ <aside class="ex-caption" aria-label="Informações da obra selecionada" data-en-aria="Selected work information">
+  <p class="ex-overline" data-en="WORK">OBRA</p><h1 id="ex-title">Carregando acervo</h1><p id="ex-author" class="ex-author"></p><p id="ex-date" class="ex-date"></p>
   <p id="ex-description" class="ex-description"></p>
-  <button class="ex-action ex-primary" id="ex-open" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H5v20h14V7zM14 2v5h5"/></svg><span>Abrir ficha</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
-  <a class="ex-action" id="ex-source" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h7v7M21 3l-12 12M10 3H3v18h18v-7"/></svg><span>Arquivo de origem</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></a>
-  <dl id="ex-metadata" class="ex-metadata"></dl><button id="ex-more" class="ex-more" type="button">Ver mais detalhes<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+  <button class="ex-action ex-primary" id="ex-open" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H5v20h14V7zM14 2v5h5"/></svg><span data-en="Open full record">Abrir ficha</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+  <a class="ex-action" id="ex-source" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h7v7M21 3l-12 12M10 3H3v18h18v-7"/></svg><span data-en="Source archive">Arquivo de origem</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></a>
+  <dl id="ex-metadata" class="ex-metadata"></dl><button id="ex-more" class="ex-more" type="button"><span data-en="View full details">Ver mais detalhes</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
  </aside>
 </div>
 <noscript><p>Ative o JavaScript para explorar as obras. <a href="data/acervo.json">Consultar os metadados do acervo</a>.</p></noscript>
@@ -73,21 +78,21 @@
   <div class="ornamental-divider" aria-hidden="true"><span class="brand-scroll brand-ornament"></span></div>
   <div class="footer-mark">
     <span class="brand-seal brand-ornament" aria-hidden="true"></span>
-    <div class="motto">Ler é método · método é pesquisa</div>
+    <div class="motto" data-en="In marmore regnat, in iure tacet · Reading is method, method is research">In marmore regnat, in iure tacet · Ler é método, método é pesquisa</div>
   </div>
   <div class="wrap cols">
     <div class="fcol">
       <h4>Mnemosyne Viva</h4>
-      <p class="muted">Casa pública do acervo, do atlas e da pesquisa Iconocracia. Alegoria feminina
-        como operador epistêmico da legitimidade jurídica.</p>
+      <p class="muted" data-en="Long-term research atlas of the Iconocracia project. Documented sources, thematic constellations, and the doctoral strand Mármore à Margem (Brazil, 1822–1922).">Atlas de pesquisa de longa duração do projeto Iconocracia. Fontes documentadas,
+        constelações temáticas e o recorte doutoral Mármore à Margem (Brasil, 1822–1922).</p>
     </div>
     <div class="fcol">
-      <h4>Navegação</h4>
-      <p><a href="index.html">Início</a> · <a href="sobre.html">Pesquisa e método</a> · <a href="acervo.html">Acervo</a></p>
+      <h4 data-en="Navigation">Navegação</h4>
+      <p><a href="index.html" data-en="Home">Início</a> · <a href="sobre.html" data-en="Research &amp; Method">Pesquisa e método</a> · <a href="acervo.html" data-en="Archive">Acervo</a> · <a href="jogo.html" data-en="Foundry">Fundição</a></p>
     </div>
     <div class="fcol">
-      <h4>Pesquisa</h4>
-      <p class="muted">Ana Vanzin · PPGD/UFSC · defesa prevista: 2030<br>
+      <h4 data-en="Research">Pesquisa</h4>
+      <p class="muted" data-en-html="Ana Vanzin · PPGD/UFSC · Defense expected: 2030<br>Metadata licensed under CC-BY-4.0. Images belong to their holding institutions.">Ana Vanzin · PPGD/UFSC · defesa prevista: 2030<br>
         Metadados sob licença CC-BY-4.0. Imagens pertencem às instituições de origem.</p>
     </div>
   </div>
