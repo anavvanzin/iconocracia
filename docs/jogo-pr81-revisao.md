@@ -108,3 +108,7 @@ em `anavvanzin/iconocracia`, não uma alteração do ledger canônico de
 A campanha brasileira, os comparadores e o corpus amplo têm estatutos distintos;
 a pontuação lúdica não atribui regimes nem constitui índice dos dez indicadores.
 Nenhuma adjudicação, fonte, nota interpretativa ou aprovação editorial foi criada.
+
+### Complemento: pausa no briefing
+
+A revisão automática de `bf688d0` confirmou que o botão de início sobre a imagem permanecia habilitado durante a pausa. O estado disabled agora acompanha o controle principal, e retomar reabilita ambos. Regressão adicional aprovada em desktop e mobile: 2/2. A suíte completa anterior permanece com 144 aprovações; não foi repetida para esta alteração localizada.

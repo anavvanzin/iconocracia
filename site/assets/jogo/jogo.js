@@ -333,6 +333,8 @@ function pintar() {
     ? 'COMEÇAR A FUNDIÇÃO'
     : contra ? 'RECUSAR (R)' : 'ESTAMPAR (Espaço)';
   refs.acao.disabled = estado.pausado || !(estado.fase === FASES.BRIEFING || emJogo);
+  const inicioOverlay = refs.overlay.querySelector('[data-acao="comecar"]');
+  if (inicioOverlay) inicioOverlay.disabled = refs.acao.disabled;
   refs.alavancas.querySelectorAll('button').forEach((botao) => {
     botao.disabled = !emJogo || estado.pausado;
     const gavetaFechada = window.matchMedia('(max-width: 860px)').matches && refs.matriz.dataset.aberta !== '1';

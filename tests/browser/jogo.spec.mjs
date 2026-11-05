@@ -488,3 +488,16 @@ test('regressão · matriz já satisfeita conclui sem golpe errado nem perda de 
     .toEqual({ [lote.id]: true });
   await expect(page.locator('#jogo-dossie-corpo')).toContainText('0 de ' + lote.carimbos);
 });
+
+ test('24 · pausa no briefing desabilita o início e permite retomar', async ({ page }) => {
+  await abrirJogo(page);
+  const inicio = page.locator('#jogo-overlay [data-acao="comecar"]');
+  await page.keyboard.press('Escape');
+  await expect(inicio).toBeDisabled();
+  await expect(page.locator('#jogo-acao')).toBeDisabled();
+  await page.locator('#jogo-pausa').click();
+  await expect(inicio).toBeEnabled();
+  await inicio.click();
+  await expect(page.locator('#jogo-overlay')).toBeHidden();
+  await expect(page.locator('#jogo-acao')).toBeEnabled();
+});
