@@ -13,6 +13,11 @@ from collections import Counter
 from datetime import datetime, timezone
 from typing import Any
 
+if __package__ in (None, ""):
+    from taxonomy import present_taxonomy
+else:
+    from .taxonomy import present_taxonomy
+
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DEFAULT_SOURCE = ROOT / "site/data/corpus-data-enriched.json"
 DEFAULT_SCHEMA = ROOT / "schemas/corpus-input.schema.json"
@@ -131,7 +136,7 @@ def build_stats(items: list[dict[str, Any]], source_count: int, version: str) ->
         years.extend(int(token) for token in re.findall(
             r"(?<!\d)(1\d{3}|20\d{2}|2100)(?!\d)", str(item["data"] or ""),
         ))
-    return {
+    return present_taxonomy({
         "total": len(items), "paises": len(countries - Counter({"Outros": countries["Outros"]})),
         "com_imagem": sum(item["tem_imagem"] for item in items),
         "periodo": {"min": min(years) if years else None, "max": max(years) if years else None},
@@ -143,7 +148,7 @@ def build_stats(items: list[dict[str, Any]], source_count: int, version: str) ->
         "meta": {"source_count": source_count, "published_count": len(items),
                  "generated_at": datetime.now(timezone.utc).isoformat(),
                  "corpus_version": version},
-    }
+    })
 
 
 def load_source(path: pathlib.Path | None, url: str | None) -> tuple[list[dict[str, Any]], str]:

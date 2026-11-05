@@ -133,6 +133,28 @@
       const option = node('option', '', label(value)); option.value = value; element.append(option);
     });
   }
+  const interpretiveRegimes = new Set(['fundacional', 'normativo', 'militar']);
+  const isLegacyClassification = value => normalize(value) === 'contra-alegoria';
+  function classificationLabel(value) {
+    if (isLegacyClassification(value)) return tr('Contra-alegoria (rótulo legado)', 'Counter-allegory (legacy label)');
+    const names = { fundacional: tr('Fundacional', 'Foundational'), normativo: tr('Normativo', 'Normative'), militar: tr('Militar', 'Military') };
+    return names[normalize(value)] || value;
+  }
+  function fillClassifications(values) {
+    const groups = [
+      [tr('Regimes interpretativos', 'Interpretive regimes'), value => interpretiveRegimes.has(normalize(value))],
+      [tr('Classificações legadas', 'Legacy classifications'), isLegacyClassification],
+      [tr('Outros rótulos catalogados', 'Other cataloged labels'), value => !interpretiveRegimes.has(normalize(value)) && !isLegacyClassification(value)],
+    ];
+    for (const [label, accepts] of groups) {
+      const options = values.filter(value => value && accepts(value));
+      if (!options.length) continue;
+      const group = node('optgroup'); group.label = label;
+      // Display labels clarify status; stored values and ?regime= links stay unchanged.
+      fillOptions(group, options, classificationLabel);
+      fields.regime.append(group);
+    }
+  }
   function syncURL() {
     const url = new URL(location.href);
     for (const [key, el] of Object.entries(fields)) {
@@ -295,7 +317,7 @@
     const docLayer = [[tr('País', 'Country'), selected.pais], [tr('Data', 'Date'), selected.data], [tr('Tipo de obra', 'Work type'), typeOf(selected)], [tr('Suporte', 'Medium'), selected.suporte]];
     const readLayer = [
       [tr('Recorte no atlas', 'Atlas strand'), inThesisStrand(selected) ? tr('Mármore à Margem · Brasil (1822–1922)', 'Marble at the Margin · Brazil (1822–1922)') : tr('Atlas comparativo transnacional', 'Transnational comparative atlas')],
-      [tr('Regime', 'Regime'), selected.regime],
+      [tr('Classificação catalogada', 'Cataloged classification'), classificationLabel(selected.regime)],
     ];
     $('#ex-metadata').append(
       node('dt', 'ex-layer-head', tr('Camada I · Registro documental', 'Layer I · Documentary record')),
@@ -360,7 +382,7 @@
       );
       for (const [label, value] of [
         [tr('Recorte no atlas', 'Atlas strand'), inThesisStrand(selected) ? tr('Mármore à Margem · Brasil (1822–1922)', 'Marble at the Margin · Brazil (1822–1922)') : tr('Atlas comparativo transnacional', 'Transnational comparative atlas')],
-        [tr('Regime', 'Regime'), selected.regime],
+        [tr('Classificação catalogada', 'Cataloged classification'), classificationLabel(selected.regime)],
         [tr('Motivos', 'Motifs'), (selected.motivos || []).join(', ')],
         [tr('Descrição', 'Description'), selected.descricao],
       ]) {
@@ -490,7 +512,7 @@
         field.replaceChildren(field.options[0]);
       });
       fillOptions(fields.pais, items.map((item) => item.pais));
-      fillOptions(fields.regime, items.map((item) => item.regime));
+      fillClassifications(items.map((item) => item.regime));
       fillOptions(fields.periodo, items.map(centuryOf), (value) => value === 'sem-ano' ? 'Sem ano numérico' : 'Século ' + value);
       fillOptions(fields.tipo, items.map(typeOf));
       Object.entries(fields).forEach(([key, field]) => { field.value = requested.get(key) || ''; });
