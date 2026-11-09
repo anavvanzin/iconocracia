@@ -1,0 +1,37 @@
+[
+  {
+    "slug": "columbia-dois-chamados",
+    "title": "Columbia — dois chamados da nação",
+    "subtitle": "Sufrágio e recrutamento nos Estados Unidos, 1913–1917",
+    "question": null,
+    "ghosted_formula": null,
+    "members": [
+      {
+        "object_id": "US-008",
+        "role_label": "member",
+        "caption": "Hedwig Reicher como Columbia, Washington, 3 de março de 1913. Fotografia; autoria fotográfica não indicada no registro consultado.",
+        "alt_override": null,
+        "position": null
+      },
+      {
+        "object_id": "473ac4d7-a507-51c6-8215-983c2442fc23",
+        "role_label": "member",
+        "caption": "Columbia calls — Enlist now for U.S. Army. Concepção de Frances Adams Halsted; pintura de Vincent Aderente. Litografia colorida; o catálogo da Library of Congress registra c1916.",
+        "alt_override": null,
+        "position": null
+      }
+    ],
+    "links": [],
+    "reading_claims": [],
+    "method_note": "O elo visual e os contextos estão documentados nos registros 97510759 e 95506508 da Library of Congress; influência direta entre as imagens não foi demonstrada. A comparação preserva a diferença entre encenação fotografada e imagem impressa, sem estabelecer uma sequência evolutiva. O acervo indica 1917 para o cartaz; o catálogo institucional registra c1916. A doação em 1917 é uma etapa distinta e não determina, sozinha, a data de impressão do exemplar. Leitura baseada em reproduções digitais.",
+    "editorial_status": "draft",
+    "concepts": [],
+    "strands": [
+      "atlas-global"
+    ],
+    "tags": [],
+    "notes": null,
+    "created_at": "2026-11-09T06:25:53.096Z",
+    "updated_at": "2026-11-09T06:25:53.096Z"
+  }
+]

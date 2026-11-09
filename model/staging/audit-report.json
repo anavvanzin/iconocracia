@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "generated_at": "2026-11-09T06:25:53.101Z",
+    "converter_version": "1.0.0",
+    "input_file": "/Users/anavanzin/Recuperacao/Projetos/iconocracia/site/data/corpus-data-enriched.json",
+    "input_records": 337,
+    "acervo_records": 337,
+    "constellations_records": 1
+  },
+  "statistics": {
+    "objects_created": 337,
+    "images_created": 84,
+    "sources_created": 159,
+    "claims_extracted": 990,
+    "constellations_processed": 1,
+    "legacy_metadata_stripped": {
+      "coded_by": 178,
+      "regime_justificativa": 337,
+      "interpretations": 653
+    }
+  },
+  "validation": {
+    "all_object_ids_unique": true,
+    "all_image_ids_unique": true,
+    "all_source_ids_unique": true,
+    "all_claim_ids_unique": true,
+    "all_constellation_slugs_unique": true
+  },
+  "issues": [],
+  "recommendations": [
+    "Found 178 records with legacy coded_by metadata that was stripped. All claim authorship is now unified under project editorial gate.",
+    "Found 337 regime_justificativa entries extracted as claims with review_state='draft'. These need editorial review before approval.",
+    "Found 653 panofsky.interpretation entries. These were extracted as claims but may contain machine-generated content that needs review."
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://iconocracia.com/schemas/image.json",
+  "title": "Image",
+  "description": "Digital image record associated with an Object. Contains technical metadata, rights information, and access details.",
+  "type": "object",
+  "required": [
+    "id",
+    "object_id",
+    "source_url",
+    "rights_status",
+    "alt_text"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for this image record.",
+      "minLength": 1,
+      "examples": ["BR-009-main", "BR-009-detail-01"]
+    },
+    "object_id": {
+      "type": "string",
+      "description": "Reference to the parent Object this image belongs to.",
+      "minLength": 1
+    },
+    "file": {
+      "type": "string",
+      "description": "Local file path relative to the assets directory (e.g., images/acervo/BR-009.webp)."
+    },
+    "sha256": {
+      "type": "string",
+      "description": "SHA-256 hash of the image file for integrity verification.",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "file_size_bytes": {
+      "type": "integer",
+      "description": "Size of the image file in bytes.",
+      "minimum": 0
+    },
+    "width_px": {
+      "type": "integer",
+      "description": "Width of the image in pixels.",
+      "minimum": 1
+    },
+    "height_px": {
+      "type": "integer",
+      "description": "Height of the image in pixels.",
+      "minimum": 1
+    },
+    "format": {
+      "type": "string",
+      "description": "Image file format.",
+      "enum": ["webp", "jpg", "jpeg", "png", "tiff", "svg", "avif"]
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the source image at the holding institution or archive."
+    },
+    "iiif_manifest": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to IIIF manifest for this image."
+    },
+    "iiif_service": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to IIIF image service endpoint."
+    },
+    "license": {
+      "type": "string",
+      "description": "License under which the image is made available.",
+      "enum": [
+        "CC0-1.0",
+        "CC-BY-4.0",
+        "CC-BY-SA-4.0",
+        "CC-BY-NC-4.0",
+        "CC-BY-NC-ND-4.0",
+        "Public Domain",
+        "All Rights Reserved",
+        "unknown"
+      ]
+    },
+    "rights_status": {
+      "type": "string",
+      "description": "Rights status determining how the image can be used.",
+      "enum": ["cleared_to_host", "link_only", "withheld", "restricted"]
+    },
+    "rights_evidence_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the rights statement or evidence documentation."
+    },
+    "credit": {
+      "type": "string",
+      "description": "Required credit line for the image.",
+      "minLength": 1
+    },
+    "credit_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL for the credit attribution."
+    },
+    "alt_text": {
+      "type": "string",
+      "description": "Descriptive alt text for accessibility. Must be non-interpretive, describing only what is visible.",
+      "minLength": 10
+    },
+    "caption": {
+      "type": "string",
+      "description": "Optional caption for the image."
+    },
+    "view": {
+      "type": "string",
+      "description": "Type of view or perspective.",
+      "enum": ["front", "back", "obverse", "reverse", "detail", "full", "three-quarter", "profile", "other"]
+    },
+    "is_primary": {
+      "type": "boolean",
+      "description": "Whether this is the primary representative image for the object.",
+      "default": false
+    },
+    "sequence": {
+      "type": "integer",
+      "description": "Sequence number for ordering multiple images of the same object.",
+      "minimum": 0
+    },
+    "notes": {
+      "type": "string",
+      "description": "Internal notes about the image."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this image record was created."
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this image record was last updated."
+    }
+  },
+  "additionalProperties": false
+}

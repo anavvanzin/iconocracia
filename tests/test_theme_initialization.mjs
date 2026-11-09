@@ -13,8 +13,23 @@ for (const path of await readdir(site, { recursive: true })) {
 }
 
 test('theme regression coverage includes every current themed page', () => {
-  assert.deepEqual(themedPages.map(page => page.path).sort(),
-    ['404.html', 'acervo.html', 'constelacoes.html', 'index.html', 'sobre.html']);
+  assert.deepEqual(themedPages.map(page => page.path).sort(), [
+    '404.html',
+    'acervo.html',
+    'constelacoes.html',
+    'en/acervo.html',
+    'en/constelacoes.html',
+    'en/index.html',
+    'en/jogo.html',
+    'en/marmore-a-margem.html',
+    'en/nachleben.html',
+    'en/sobre.html',
+    'index.html',
+    'jogo.html',
+    'marmore-a-margem.html',
+    'nachleben.html',
+    'sobre.html',
+  ]);
 });
 
 for (const { path, html } of themedPages) {
@@ -32,17 +47,43 @@ for (const { path, html } of themedPages) {
     for (const storage of ['getItem throws', 'localStorage getter throws', null, 'invalid', 'dia', 'noite']) {
       test(`${path}: ${dark ? 'dark' : 'light'} system, storage ${storage}`, () => {
         let theme = null;
+        const isEnglishPage = path.startsWith('en/');
+        let lang = isEnglishPage ? 'en' : 'pt';
         const root = {
-          setAttribute(name, value) { if (name === 'data-theme') theme = value; },
-          removeAttribute(name) { if (name === 'data-theme') theme = null; },
-          getAttribute() { return theme; },
+          setAttribute(name, value) {
+            if (name === 'data-theme') theme = value;
+            if (name === 'data-lang') lang = value;
+          },
+          removeAttribute(name) {
+            if (name === 'data-theme') theme = null;
+            if (name === 'data-lang') lang = 'pt';
+          },
+          getAttribute(name) {
+            if (name === 'data-theme') return theme;
+            if (name === 'data-lang') return lang;
+            return null;
+          },
         };
-        const toggle = { textContent: '', setAttribute() {}, addEventListener() {} };
+        const label = { textContent: '' };
+        const toggle = {
+          textContent: '',
+          setAttribute() {},
+          addEventListener() {},
+          querySelector(selector) {
+            if (selector === '[data-theme-label]') return label;
+            return null;
+          },
+        };
         const context = {
-          document: { documentElement: root, getElementById: () => toggle, querySelector: () => null },
+          document: {
+            documentElement: root,
+            getElementById: id => (id === 'night-toggle' ? toggle : null),
+            querySelector: () => null,
+            addEventListener: () => {},
+          },
           matchMedia(query) {
-            assert.equal(query, '(prefers-color-scheme: dark)');
-            return { matches: dark };
+            if (query === '(prefers-color-scheme: dark)') return { matches: dark };
+            return { matches: false };
           },
         };
         Object.defineProperty(context, 'localStorage', { get() {
@@ -60,7 +101,8 @@ for (const { path, html } of themedPages) {
         assert.equal(theme, expected, 'theme must already be correct before the deferred script');
         vm.runInContext(runtime, context);
         assert.equal(theme, expected, 'deferred script must preserve the initial theme');
-        assert.equal(toggle.textContent, expected === 'noite' ? 'DIA' : 'NOITE');
+        const expectedText = expected === 'noite' ? (isEnglishPage ? 'DAY' : 'DIA') : (isEnglishPage ? 'NIGHT' : 'NOITE');
+        assert.equal(label.textContent || toggle.textContent, expectedText);
       });
     }
   }

@@ -17,9 +17,11 @@
 <link rel="alternate" hreflang="en" href="https://iconocracia.com/en">
 <script>
 // Night mode initialization to prevent FOUC.
-(function () { try { var m = localStorage.getItem('iconocracia-modo');
+(function () {
+  var m = null;
+  try { m = localStorage.getItem('iconocracia-modo'); } catch (e) { /* sem armazenamento */ }
   if (m === 'noite' || (m !== 'dia' && window.matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.setAttribute('data-theme', 'noite');
-} catch (e) {} })();
+})();
 </script>
 <link rel="icon" href="/assets/edelweiss-icon.png" type="image/png">
 <link rel="preload" href="/assets/design-system/fonts/jizBRFtNs2ka5fXjeivQ4LroWlx-6zUTjnTLgNs.woff2" as="font" type="font/woff2" crossorigin>
@@ -453,8 +455,8 @@
           <figcaption class="phylactery-caption">A feminine homeland, a masculine citizenry</figcaption>
         </figure>
         <p>The analysis does not ask which stage of an evolutionary path an image occupies. It asks what operation the image performs: when a female body becomes summonable for a function of State, when the expected body is bypassed or effaced, and when contradictory bodies serve the same State in the same period.</p>
-        <p class="micro-note">The four regimes (Foundational, Normative, Military, and Counter-allegory) classify each item as an analytical lens, <strong>never as stages of a linear progression</strong>. Time is evidence of shifting repertoires, not an evolutionary arrow.</p>
-        <a class="btn btn-ghost" href="/en/acervo">Filter the archive by regime</a>
+        <p class="micro-note">The three regimes (Foundational, Normative and Military) are interpretive repertoires built through close reading, <strong>never stages of a linear progression</strong>. Counter-allegory is a critical test of their limits. The archive preserves historical classification labels.</p>
+        <a class="btn btn-ghost" href="/en/acervo">Filter by cataloged classification</a>
       </div>
       <div class="panel regimes">
         <p><strong>Entries</strong><span>when the female body becomes summonable for a function of State</span></p>
@@ -470,7 +472,7 @@
       <div class="section-head">
         <span class="label">Theoretical framework</span>
         <h2>The concepts and their intersection</h2>
-        <p>Four concepts, and the way they intersect. The originality of the research lies in this intersection, not in the novelty of the terms taken in isolation.</p>
+        <p>Four concepts, and how they intersect. The contribution of the dissertation lies in the articulation of these concepts and empirical demonstration through the corpus, not in the novelty of the terms taken one by one.</p>
       </div>
       <div class="grid-3">
         <article class="card">
@@ -568,7 +570,7 @@
               </text>
             </svg>
           </div>
-          <p>The formal operation through which the iconocratic regime extracts historical density (biography, materiality, subjectivity) from the feminine figure and fixes it onto an eternal allegorical surface functional to sovereignty. Observable in postural rigidity, the erasure of gesture, and facial standardization, it makes the other three concepts comparable across the archive.</p>
+          <p>The formal operation through which the iconocratic regime extracts historical density (biography, materiality, subjectivity) from the feminine figure and fixes it onto an eternal allegorical surface functional to sovereignty. Not a metaphor: the effects can be measured, visible in postural rigidity, the erasure of gesture, and facial standardization, which makes the other three concepts comparable across the archive.</p>
         </article>
         <article class="card">
           <span class="numeral" aria-hidden="true">V</span>

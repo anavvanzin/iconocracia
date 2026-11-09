@@ -1,0 +1,251 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://iconocracia.com/schemas/strand.json",
+  "title": "Strand",
+  "description": "Research strand in the Counter-Archive. Represents a focused line of research within the broader Atlas. The doctoral thesis (Brazil, 1822-1922) is one such strand.",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "description",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier using kebab-case (e.g., brasil-1822-1922, atlas-global).",
+      "minLength": 1,
+      "pattern": "^[a-z][a-z0-9-]*$",
+      "examples": ["brasil-1822-1922", "atlas-global"]
+    },
+    "title": {
+      "type": "string",
+      "description": "Display title of the strand.",
+      "minLength": 1,
+      "examples": ["Brasil (1822-1922)", "Atlas Global (1800-2000)"]
+    },
+    "title_pt": {
+      "type": "string",
+      "description": "Portuguese title if different from primary title."
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the strand's scope and purpose.",
+      "minLength": 50
+    },
+    "short_description": {
+      "type": "string",
+      "description": "Brief one-sentence description."
+    },
+    "status": {
+      "type": "string",
+      "description": "Current status of the strand.",
+      "enum": ["active", "draft", "archived", "planned"],
+      "default": "draft"
+    },
+    "is_thesis_strand": {
+      "type": "boolean",
+      "description": "Whether this strand represents a doctoral thesis project.",
+      "default": false
+    },
+    "provisional_titles": {
+      "type": "array",
+      "description": "Provisional working title proposals for this strand (especially for thesis strands). Each title should be marked with status: 'provisional_proposal'.",
+      "items": {
+        "type": "object",
+        "required": ["title", "status"],
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": ["provisional_proposal", "selected", "discarded"],
+            "default": "provisional_proposal"
+          },
+          "subtitle": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string",
+            "description": "Explanation of this title proposal's significance."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "temporal_range": {
+      "type": "object",
+      "description": "Temporal boundaries for the strand.",
+      "properties": {
+        "start_year": {
+          "type": "integer",
+          "description": "Start year of the strand's temporal scope.",
+          "minimum": 1800,
+          "maximum": 2000
+        },
+        "end_year": {
+          "type": "integer",
+          "description": "End year of the strand's temporal scope.",
+          "minimum": 1800,
+          "maximum": 2000
+        },
+        "start_label": {
+          "type": "string",
+          "description": "Human-readable label for start (e.g., 'Independence', 'Proclamation of Republic')."
+        },
+        "end_label": {
+          "type": "string",
+          "description": "Human-readable label for end."
+        }
+      },
+      "required": ["start_year", "end_year"]
+    },
+    "geographic_scope": {
+      "type": "object",
+      "description": "Geographic scope of the strand.",
+      "properties": {
+        "countries": {
+          "type": "array",
+          "description": "Country codes included in this strand.",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]{2}$"
+          }
+        },
+        "regions": {
+          "type": "array",
+          "description": "Region names included.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "inclusion_criteria": {
+          "type": "string",
+          "description": "Criteria for including objects in this geographic scope."
+        }
+      }
+    },
+    "inclusion_criteria": {
+      "type": "object",
+      "description": "Detailed inclusion criteria for objects in this strand.",
+      "properties": {
+        "object_types": {
+          "type": "array",
+          "description": "Support types included (e.g., moeda, papel-moeda, escultura).",
+          "items": {
+            "type": "string"
+          }
+        },
+        "thematic_focus": {
+          "type": "array",
+          "description": "Thematic criteria.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "minimum_required_fields": {
+          "type": "array",
+          "description": "Fields that must be present for inclusion.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "strata": {
+      "type": "array",
+      "description": "Historical strata or periods within this strand.",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "start_year", "end_year"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string"
+          },
+          "start_year": {
+            "type": "integer",
+            "minimum": 1800,
+            "maximum": 2000
+          },
+          "end_year": {
+            "type": "integer",
+            "minimum": 1800,
+            "maximum": 2000
+          },
+          "anchor_cases": {
+            "type": "array",
+            "description": "Key anchor objects for this stratum.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "characteristics": {
+            "type": "string",
+            "description": "Distinguishing characteristics of this period."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "anchor_cases": {
+      "type": "array",
+      "description": "Key anchor objects for this strand.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "related_concepts": {
+      "type": "array",
+      "description": "Concept IDs most relevant to this strand.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "related_constellations": {
+      "type": "array",
+      "description": "Constellation slugs most relevant to this strand.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "related_essays": {
+      "type": "array",
+      "description": "Essay IDs associated with this strand.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "description": "Source IDs supporting this strand's framework.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string",
+      "description": "Internal editorial notes."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this strand was created."
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this strand was last updated."
+    }
+  },
+  "additionalProperties": false
+}

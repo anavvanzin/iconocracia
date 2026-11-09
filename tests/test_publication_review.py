@@ -110,18 +110,14 @@ class PublicationReviewTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root, publication, raw = self.fixture(tmp)
             publication["items"] = [self.helpers.entry("new-A")]
-            # Generate a genuine receipt using the pre-migration producers.
-            producers = ("build_data.py", "corpus_sync.py", "publication_stats.py")
-            for filename in producers:
-                old = subprocess.run(["git", "show",
-                    f"14ff9d8de057d1d3e72d9e00c7bd3f46e01fd267:scripts/{filename}"],
-                    cwd=sync.ROOT, capture_output=True, check=True).stdout
-                (root / "scripts" / filename).write_bytes(old)
+            # Reproduce the pre-migration aggregate contract without the adapter.
+            # All publication checks still run and generate the receipt hashes.
+            adapter = root / "scripts/taxonomy.py"
+            adapter.write_text("def present_taxonomy(stats):\n    return stats\n", encoding="utf-8")
             first = self.run_projection(root, publication)
             self.assertEqual(first.returncode, 0, first.stderr)
             self.assertNotIn("taxonomia", json.loads((root / "site/data/stats.json").read_bytes()))
-            for filename in producers:
-                shutil.copyfile(sync.ROOT / "scripts" / filename, root / "scripts" / filename)
+            shutil.copyfile(sync.ROOT / "scripts/taxonomy.py", adapter)
             # A tampered historical receipt must still be rejected.
             receipt_path = self.receipt_path(root)
             original_receipt = receipt_path.read_bytes()
