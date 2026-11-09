@@ -1,13 +1,13 @@
 {
   "schema_version": "2.0",
   "corpus_repository": "anavvanzin/iconocracy-corpus",
-  "corpus_commit": "0d385ffc1c6b17f955780e672941c85fa6c0faed",
-  "corpus_sha256": "af46ee210aa4781e1e2ff6e09b4b626180badbd911d2997c3d613825a1b65578",
+  "corpus_commit": "d5f8ad1d5eaf039f3837d13ad3eb6ef38dedf2b7",
+  "corpus_sha256": "344e37d257821285c265bbbfd4ae61b23922a9df8d5c93f38c5b29a816b77e48",
   "baseline": {
-    "commit": "8d75717f66c8003e1916f0a95617e985e0cf2491",
-    "acervo_sha256": "6bdb04a50b502381de3c5ed09ff290123de715160cb42398e99e36a8d2904459",
-    "stats_sha256": "a8307e5ac1d52f8822be73ab17ab5e2e777de5bde2d1b3612c0a7df20d3030ef",
-    "corpus_enriched_sha256": "813aef09f2e57cacfec7e7cd1762cd945bfa7a97f70e9fedd9d11d18811367f8"
+    "commit": "b37ca5e2532d0ce88d3e6d7bb55a3f599c3d5f63",
+    "acervo_sha256": "f0c174909fcdf41ca87995c7de576de41c5730b66175e51b45feff3ce7ec6fbf",
+    "stats_sha256": "1ddc3eb7f44bc6c79646166c92db88e3de6f8d7e6fab27b6c6e12f952fd478a3",
+    "corpus_enriched_sha256": "942929ca4d646ef849ce3bc637abc8033c2d3e4c9b6f769ea9a9c7c501eba77e"
   },
   "generated_at": "2026-09-15",
   "items": [
@@ -354,34 +354,6 @@
         "BE-004",
         "235c545a-f3b8-568a-f268-178806a4bf07",
         "BE-IND-1880"
-      ]
-    },
-    {
-      "slug": "columbia-dois-chamados",
-      "title": "Columbia — dois chamados da nação",
-      "subtitle": "Sufrágio e recrutamento nos Estados Unidos, 1913–1917",
-      "editorial_status": "published",
-      "approved_by": "ana",
-      "approved_at": "2026-10-13",
-      "introduction": "Nas duas reproduções, Columbia ocupa posição dominante, com vestes longas, emblemas nacionais e um braço estendido. Reicher porta capacete e couraça diante de outras participantes; no cartaz, a figura ergue a bandeira, segura uma espada e se apoia sobre a América do Norte no globo. A fotografia registra a encenação sufragista de 3 de março de 1913, diante do edifício do Tesouro, em Washington. O cartaz convoca ao alistamento no Exército; segundo a Library of Congress, Halsted doou o poema e o desenho ao Departamento de Guerra após a entrada dos Estados Unidos na guerra, em 6 de abril de 1917. A mesma personificação nacional participa de mobilizações com finalidades distintas. A montagem permite perguntar quem pode falar em nome da nação e o que essa voz exige. A couraça de Reicher mostra que atributos marciais também podiam servir à reivindicação sufragista.",
-      "method_note": "O elo visual e os contextos estão documentados nos registros 97510759 e 95506508 da Library of Congress; influência direta entre as imagens não foi demonstrada. A comparação preserva a diferença entre encenação fotografada e imagem impressa, sem estabelecer uma sequência evolutiva. O acervo indica 1917 para o cartaz; o catálogo institucional registra c1916. A doação em 1917 é uma etapa distinta e não determina, sozinha, a data de impressão do exemplar. Leitura baseada em reproduções digitais.",
-      "item_ids": [
-        "US-008",
-        "473ac4d7-a507-51c6-8215-983c2442fc23"
-      ],
-      "cards": [
-        {
-          "id": "US-008",
-          "data": "3 de março de 1913",
-          "caption": "Hedwig Reicher como Columbia, Washington, 3 de março de 1913. Fotografia; autoria fotográfica não indicada no registro consultado.",
-          "texto_alternativo": "Hedwig Reicher como Columbia: capacete, couraça, vestes longas e haste, diante de outras participantes e do edifício do Tesouro."
-        },
-        {
-          "id": "473ac4d7-a507-51c6-8215-983c2442fc23",
-          "data": "c1916",
-          "caption": "Columbia calls — Enlist now for U.S. Army. Concepção de Frances Adams Halsted; pintura de Vincent Aderente. Litografia colorida; o catálogo da Library of Congress registra c1916.",
-          "texto_alternativo": "Columbia em túnica, com bandeira erguida e espada abaixada, sobre a América do Norte no globo; o texto convoca ao alistamento."
-        }
       ]
     }
   ],
