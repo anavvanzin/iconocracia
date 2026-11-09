@@ -1,0 +1,859 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "date": "2026-11-09",
+    "source": "Based on ICONOCRACIA Counter-Archive architecture and standard Iconclass",
+    "notes": "This mapping provides standard Iconclass codes for motifs. Counter-Archive notations (e.g., 31AA::CSV) are handled separately in the claim deconstruction mapping."
+  },
+  
+  "motif_to_iconclass": {
+    "female": "31AA",
+    "figura feminina": "31AA",
+    "female figure": "31AA",
+    "woman": "31AA",
+    "allegorical female figure": "31AA",
+    "alegoria feminina": "31AA",
+    "female allegory": "31AA",
+    "women": "31AA",
+    "mulher": "31AA",
+    "feminino": "31AA",
+    "corpo feminino": "31AA",
+    "figure féminine": "31AA",
+    "figura feminina alegórica": "31AA",
+    "figura feminina alegorica": "31AA",
+    "c Corps féminin": "31AA",
+    
+    "justice": "44G0",
+    "justiça": "44G0",
+    "justitia": "44G0",
+    "iustitia": "44G0",
+    "alegoria da justiça": "44G0",
+    "figura feminina da justiça": "44G0",
+    "deusa têmis": "44G0",
+    "la justice": "44G0",
+    "légalité": "44G0",
+    "legal": "44G0",
+    "lei": "44G0",
+    "law": "44G0",
+    "justiça civil": "44G0",
+    "civil justice": "44G0",
+    "justice civile": "44G0",
+    "jus civile": "44G0",
+    "jurisprudência": "44G0",
+    "jurisprudentia": "44G0",
+    "exempla iustitiae": "44G0",
+    "direito": "44G0",
+    "right": "44G0",
+    "direito canônico": "44G0",
+    "direito penal": "44G0",
+    "justiça de olhos abertos": "44G0",
+    "justiça de salomão": "44G0",
+    "justiça popular": "44G0",
+    "julgamento": "44G0",
+    
+    "liberty": "44B11",
+    "liberté": "44B11",
+    "liberdade": "44B11",
+    "freetedom": "44B11",
+    "alegoria da liberdade": "44B11",
+    "liberdade sentada": "44B11",
+    "liberty seated": "44B11",
+    "goddess of liberty": "44B11",
+    "marianne": "44B11",
+    "la république": "44B11",
+    "république": "44B11",
+    "república": "44B11",
+    "a república": "44B11",
+    "république française": "44B11",
+    "french republic": "44B11",
+    "columbia": "44B11",
+    "britannia": "44B11",
+    "germania": "44B11",
+    "hibernia": "44B11",
+    "hispania": "44B11",
+    "helvetia": "44B11",
+    "belgica": "44B11",
+    "la belgique": "44B11",
+    "belgique": "44B11",
+    "belen": "44B11",
+    
+    "state": "44B",
+    "estado": "44B",
+    "soberania": "44B",
+    "sovereignty": "44B",
+    "nação": "44B",
+    "nation": "44B",
+    "pátria": "44B",
+    "patrie": "44B",
+    "country": "44B",
+    "país": "44B",
+    "nacional": "44B",
+    "national": "44B",
+    "alegoria nacional": "44B",
+    "alegoria nacional feminina": "44B",
+    "national allegory": "44B",
+    
+    "ruler": "44B1",
+    "rei": "44B1",
+    "king": "44B1",
+    "imperador": "44B1",
+    "emperor": "44B1",
+    "presidente": "44B1",
+    "president": "44B1",
+    "monarca": "44B1",
+    "monarch": "44B1",
+    
+    "sculpture": "48C24",
+    "escultura": "48C24",
+    "statue": "48C24",
+    "estátua": "48C24",
+    "monumento": "48C24",
+    "monument": "48C24",
+    "busto": "48C24",
+    "bust": "48C24",
+    "buste": "48C24",
+    "escultura monumental": "48C24",
+    "esculturas alegóricas": "48C24",
+    "esculturas monumentais": "48C24",
+    "relevo": "48C24",
+    "relief": "48C24",
+    "cunho": "48C24",
+    "matriz-cunho": "48C24",
+    
+    "coin": "48C51",
+    "moeda": "48C51",
+    "medalha": "48C51",
+    "medal": "48C51",
+    "medallion": "48C51",
+    "papel-moeda": "48C51",
+    "selo": "48C51",
+    "stamp": "48C51",
+    
+    "painting": "48C5",
+    "pintura": "48C5",
+    "fresco": "48C5",
+    "fresco painting": "48C5",
+    "ceiling painting": "48C5",
+    "ceiling fresco": "48C5",
+    "teto pintado": "48C5",
+    
+    "drawing": "48C3",
+    "desenho": "48C3",
+    "gravura": "48C3",
+    "engraving": "48C3",
+    "print": "48C3",
+    "litografia": "48C3",
+    "lithograph": "48C3",
+    "woodcut": "48C3",
+    "etching": "48C3",
+    "steel engraving": "48C3",
+    
+    "photograph": "48C7",
+    "fotografia": "48C7",
+    "photo": "48C7",
+    "photography": "48C7",
+    "press photograph": "48C7",
+    
+    "architecture": "48C",
+    "arquitetura": "48C",
+    "edifício": "48C",
+    "building": "48C",
+    "civic architecture": "48C",
+    "civic building": "48C",
+    "palácio": "48C",
+    "palace": "48C",
+    "tribunal": "48C",
+    "courthouse": "48C",
+    "senate": "48C",
+    "senate doors": "48C",
+    "prefeitura": "48C",
+    "town hall": "48C",
+    "mairie": "48C",
+    "city hall": "48C",
+    "capitol": "48C",
+    "campo de santana": "48C",
+    "praça pública": "48C",
+    "public space": "48C",
+    "civic space": "48C",
+    
+    "balança": "44B19",
+    "scales": "44B19",
+    "balança e espada": "44B19",
+    "sword and scales": "44B19",
+    "justiça com balança": "44B19",
+    
+    "espada": "45L1",
+    "sword": "45L1",
+    "espada em punho": "45L1",
+    "espada em repouso": "45L1",
+    
+    "escudo": "45L2",
+    "shield": "45L2",
+    "bandiera": "45L2",
+    "bandeira": "45L2",
+    "flag": "45L2",
+    
+    "coroa": "44B191",
+    "crown": "44B191",
+    "coroa alada": "44B191",
+    "winged crown": "44B191",
+    "imperial crown": "44B191",
+    "radiate crown": "44B191",
+    "laurel": "48C1624",
+    "coroa-de-louros": "48C1624",
+    "wreath": "48C1624",
+    
+    "barrete frígio": "44B191",
+    "barrete-frigio": "44B191",
+    "bonnet phrygien": "44B191",
+    "phrygian cap": "44B191",
+    "gorro frígio": "44B191",
+    "barrete frígio": "44B191",
+    "pike frígio": "44B191",
+    
+    "olho-da-providencia": "48C24",
+    "all-seeing eye": "48C24",
+    "eye": "48C24",
+    "oculo": "48C24",
+    
+    "livro": "48C1",
+    "book": "48C1",
+    "livro-da-lei": "44B",
+    "law book": "44B",
+    
+    "fasces": "44B19",
+    "mace": "44B19",
+    
+    "toga": "41D",
+    "tunica": "41D",
+    
+    "venda": "48C16",
+    "blindfold": "48C16",
+    "olhos vendados": "48C16",
+    "blind": "48C16",
+    
+    "caduceo": "92D",
+    "caduceus": "92D",
+    
+    "sol": "26",
+    "sun": "26",
+    "rising sun": "26",
+    "dawn": "26",
+    
+    "lua": "25",
+    "moon": "25",
+    
+    "estrela": "24",
+    "star": "24",
+    "starry sky": "24",
+    
+    "globo": "25G",
+    "globe": "25G",
+    "globo terrestre": "25G",
+    
+    "leão": "25F23",
+    "lion": "25F23",
+    
+    "coroa": "25F",
+    
+    "nuvem": "26A",
+    "cloud": "26A",
+    
+    "fogo": "42B",
+    "fire": "42B",
+    
+    "água": "25H",
+    "water": "25H",
+    
+    "terra": "25G",
+    "earth": "25G",
+    
+    "ar": "26C",
+    "air": "26C",
+    
+    "animal": "25",
+    "animals": "25",
+    
+    "planta": "25G",
+    "plant": "25G",
+    
+    "flor": "25G4",
+    "flower": "25G4",
+    
+    "árvore": "25G3",
+    "tree": "25G3",
+    
+    "criança": "31D",
+    "child": "31D",
+    "children": "31D",
+    
+    "homem": "31A",
+    "man": "31A",
+    "male": "31A",
+    "masculino": "31A",
+    "figuras masculinas": "31A",
+    
+    "anjo": "73A",
+    "angel": "73A",
+    
+    "deus": "1",
+    "god": "1",
+    "divine": "1",
+    
+    "santo": "1",
+    "saint": "1",
+    
+    "morte": "31E",
+    "death": "31E",
+    "danse macabre": "31E",
+    
+    "vitória": "45L1",
+    "victory": "45L1",
+    "vitória alada": "45L1",
+    "winged victory": "45L1",
+    
+    "paz": "45L2",
+    "peace": "45L2",
+    "olive branch": "45L2",
+    "ramo de oliveira": "45L2",
+    
+    "guerra": "45",
+    "war": "45",
+    "wwi": "45",
+    "primeira guerra mundial": "45",
+    "guerre": "45",
+    
+    "amor": "46",
+    "love": "46",
+    
+    "sabedoria": "48C",
+    "wisdom": "48C",
+    "prudentia": "48C",
+    "prudence": "48C",
+    
+    "força": "48C",
+    "strength": "48C",
+    
+    "justiça": "44G0",
+    "justice": "44G0",
+    
+    "caridade": "46",
+    "charity": "46",
+    
+    "esperança": "46",
+    "hope": "46",
+    
+    "fé": "71",
+    "faith": "71",
+    
+    "verdade": "48C",
+    "truth": "48C",
+    "vérité": "48C",
+    
+    "história": "9",
+    "history": "9",
+    "history allegory": "9",
+    "alegoria histórica": "9",
+    
+    "tempo": "23",
+    "time": "23",
+    "time allegory": "23",
+    "tempo alegórico": "23",
+    
+    "fama": "46",
+    "fame": "46",
+    
+    "glória": "45L1",
+    "glory": "45L1",
+    
+    "virtude": "48C",
+    "virtue": "48C",
+    "virtudes cardinais": "48C",
+    "cardinal virtues": "48C",
+    
+    "bem": "46",
+    "good": "46",
+    
+    "mal": "46",
+    "evil": "46",
+    
+    "castigo": "44G0",
+    "punishment": "44G0",
+    "punição": "44G0",
+    
+    "perdão": "46",
+    "forgiveness": "46",
+    
+    "misericórdia": "46",
+    "mercy": "46",
+    
+    "culpa": "44G0",
+    "guilt": "44G0",
+    
+    "inocência": "46",
+    "innocence": "46",
+    
+    "conhecimento": "48C",
+    "knowledge": "48C",
+    
+    "ciência": "48C",
+    "science": "48C",
+    
+    "arte": "48",
+    "art": "48",
+    
+    "música": "48C7",
+    "music": "48C7",
+    
+    "literatura": "48C1",
+    "literature": "48C1",
+    
+    "filosofia": "1",
+    "philosophy": "1",
+    
+    "religião": "1",
+    "religion": "1",
+    
+    "política": "44",
+    "politics": "44",
+    
+    "economia": "44",
+    "economy": "44",
+    
+    "comércio": "44",
+    "commerce": "44",
+    "commercial": "44",
+    
+    "indústria": "44",
+    "industry": "44",
+    
+    "agricultura": "44",
+    "agriculture": "44",
+    
+    "mar": "25H",
+    "sea": "25H",
+    "navigation": "46C",
+    "navegação": "46C",
+    
+    "navio": "46C",
+    "ship": "46C",
+    "ships": "46C",
+    "merchant ship": "46C",
+    
+    "viagem": "46C",
+    "journey": "46C",
+    "travel": "46C",
+    
+    "cidade": "25I",
+    "city": "25I",
+    
+    "campo": "25I",
+    "country": "25I",
+    "rural": "25I",
+    
+    "construção": "48",
+    "construction": "48",
+    
+    "destruição": "45",
+    "destruction": "45",
+    
+    "poder": "44",
+    "power": "44",
+    
+    "autoridade": "44",
+    "authority": "44",
+    
+    "domínio": "44",
+    "dominion": "44",
+    
+    "controle": "44",
+    "control": "44",
+    
+    "governo": "44",
+    "government": "44",
+    
+    " lei áurea": "44",
+    "lei aurea": "44",
+    "abolição": "44",
+    "abolition": "44",
+    
+    "república": "44B",
+    "republic": "44B",
+    "republican": "44B",
+    "republican iconography": "44B",
+    
+    "imperial": "44B",
+    "império": "44B",
+    "empire": "44B",
+    
+    "constituição": "44B",
+    "constitution": "44B",
+    "constitutionalismo": "44B",
+    
+    "democracia": "44B",
+    "democracy": "44B",
+    
+    "monarquia": "44B",
+    "monarchy": "44B",
+    
+    "revolução": "44",
+    "revolution": "44",
+    "revolução francesa": "44",
+    "french revolution": "44",
+    
+    "independência": "44",
+    "independence": "44",
+    
+    "colônia": "44",
+    "colony": "44",
+    "colonial": "44",
+    "colonialism": "44",
+    "colonialismo": "44",
+    
+    "escravidão": "44",
+    "slavery": "44",
+    
+    "libertação": "44",
+    "liberation": "44",
+    
+    "direitos": "44",
+    "rights": "44",
+    "human rights": "44",
+    "mulheres": "31AA",
+    "women": "31AA",
+    "feminism": "46",
+    "feminismo": "46",
+    "women's rights": "44",
+    "direitos das mulheres": "44",
+    
+    "voto feminino": "44",
+    "suffrage": "44",
+    "sufrágio": "44",
+    
+    "educação": "48C1",
+    "education": "48C1",
+    "escola": "48C1",
+    "school": "48C1",
+    
+    "cultura": "48",
+    "culture": "48",
+    
+    "tradição": "48",
+    "tradition": "48",
+    
+    "moderno": "48",
+    "modern": "48",
+    "modernism": "48",
+    "modernismo": "48",
+    
+    "clássico": "48C",
+    "classical": "48C",
+    "classicismo": "48C",
+    
+    "barroco": "48C3",
+    "baroque": "48C3",
+    "gravura barroca": "48C3",
+    
+    "renascimento": "48C",
+    "renaissance": "48C",
+    "norte renascimento": "48C",
+    "northern renaissance": "48C",
+    "renascença": "48C",
+    
+    "romântico": "48C",
+    "romantic": "48C",
+    
+    "simbolismo": "48C",
+    "symbolism": "48C",
+    "symbolisme": "48C",
+    
+    "realismo": "48C",
+    "realism": "48C",
+    
+    "abstrato": "48C",
+    "abstract": "48C",
+    
+    "geométrico": "48C",
+    "geometric": "48C",
+    
+    "cornucópia": "25G4",
+    "abundância": "25G4",
+    "abundance": "25G4",
+    
+    "serpente": "25F25",
+    "snake": "25F25",
+    
+    "pomba": "25F32",
+    "dove": "25F32",
+    
+    "águia": "25F23",
+    "eagle": "25F23",
+    
+    "cruz": "73C",
+    "cross": "73C",
+    "cruzeiro": "73C",
+    
+    "cor quadruple": "25F",
+    "quatro animais": "25F",
+    
+    "vingança": "45L1",
+    "vengeance": "45L1",
+    
+    "sátira": "46",
+    "satire": "46",
+    "satira política": "46",
+    "political satire": "46",
+    
+    "caricatura": "46",
+    "caricature": "46",
+    "cartoon": "46",
+    
+    "propaganda": "45",
+    "propaganda poster": "45",
+    "cartaz político": "45",
+    "political poster": "45",
+    
+    "recrutamento": "45",
+    "recruitment": "45",
+    "conscript": "45",
+    
+    "finanças": "44",
+    "finance": "44",
+    "state finance": "44",
+    
+    "empréstimo": "44",
+    "loan": "44",
+    "emprunt": "44",
+    "war loan": "44",
+    "war bonds": "44",
+    
+    "poupança": "44",
+    "savings": "44",
+    "épargne": "44",
+    
+    "comércio": "44",
+    "trade": "44",
+    
+    "indústria": "44",
+    "industry": "44",
+    
+    "agricultura": "44",
+    "agriculture": "44",
+    "cereais": "25G4",
+    "wheat": "25G4",
+    "trigo": "25G4",
+    
+    "vinho": "25G4",
+    "wine": "25G4",
+    
+    "ouro": "25D",
+    "gold": "25D",
+    "dourado": "25D",
+    "gilded": "25D",
+    
+    "prata": "25D",
+    "silver": "25D",
+    
+    "bronze": "25D",
+    "copper": "25D",
+    "cobre": "25D",
+    
+    "ferro": "25D",
+    "iron": "25D",
+    
+    "madeira": "25G3",
+    "wood": "25G3",
+    "wooden": "25G3",
+    "wooden ceiling": "48",
+    
+    "pedra": "25D",
+    "stone": "25D",
+    "mármore": "25D",
+    "marble": "25D",
+    "granito": "25D",
+    "granite": "25D",
+    
+    "vidro": "25D",
+    "glass": "25D",
+    "vitral": "48C7",
+    "stained glass": "48C7",
+    
+    "marfim": "25D",
+    "ivory": "25D",
+    "ivory tusk": "25D",
+    
+    "funerário": "42E",
+    "funeral": "42E",
+    
+    "religioso": "1",
+    "religious": "1",
+    
+    "secular": "44",
+    "laïcité": "44",
+    
+    "civil": "44",
+    "civilizing": "44",
+    
+    "militar": "45",
+    "military": "45",
+    "militarismo": "45",
+    "military occupation": "45",
+    "soldado": "45",
+    "soldier": "45",
+    
+    "armor": "45L",
+    "armadura": "45L",
+    "helmet": "45L",
+    "capacete": "45L",
+    "chain mail": "45L",
+    
+    "arma": "45L",
+    "weapon": "45L",
+    
+    "dinheiro": "44",
+    "money": "44",
+    "currency": "44",
+    "moeda": "48C51",
+    
+    "casa da moeda": "44",
+    "mint": "44",
+    
+    "biblioteca": "48C1",
+    "library": "48C1",
+    "manuscrito": "48C1",
+    "manuscript": "48C1",
+    "miniatura": "48C3",
+    "miniature": "48C3",
+    
+    "livro": "48C1",
+    "codex": "48C1",
+    
+    "papel": "48C3",
+    "paper": "48C3",
+    
+    "tinta": "48C3",
+    "ink": "48C3",
+    
+    "pincel": "48C3",
+    "brush": "48C3",
+    
+    "paleta": "48C3",
+    "palette": "48C3",
+    
+    "cavalo": "25F23",
+    "horse": "25F23",
+    
+    "boi": "25F21",
+    "ox": "25F21",
+    "bull": "25F21",
+    
+    "carneiro": "25F22",
+    "sheep": "25F22",
+    "ram": "25F22",
+    
+    "cão": "25F23",
+    "dog": "25F23",
+    
+    "gato": "25F23",
+    "cat": "25F23",
+    
+    "passaro": "25F32",
+    "bird": "25F32",
+    
+    "peixe": "25F26",
+    "fish": "25F26",
+    
+    "ausencia alegorica": "31AA",
+    "ausencia alegorica — portrait of léopold i": "31AA",
+    "ausencia alegorica — portrait of wilhelm i": "31AA",
+    "portrait": "31A",
+    "retrato": "31A",
+    
+    "contra alegoria": "31AA",
+    "contra-alegoria": "31AA",
+    
+    "nacao": "44B",
+    "nação": "44B",
+    
+    "regime_incerto": "44",
+    "regime incerto": "44",
+    
+    "semeuse": "31AA",
+    "sower": "46C",
+    "semeador": "46C",
+    
+    "descricao_pre_iconografica": "48C",
+    "pre-iconographic": "48C",
+    
+    "Flor": "25G4",
+    
+    "rosas": "25G4",
+    "roses": "25G4",
+    
+    "lirios": "25G4",
+    "lilies": "25G4",
+    
+    "árvores": "25G3",
+    "trees": "25G3",
+    
+    "floresta": "25G3",
+    "forest": "25G3",
+    
+    "jardim": "25I",
+    "garden": "25I",
+    
+    "campo": "25I",
+    "field": "25I",
+    
+    "montanha": "25H",
+    "mountain": "25H",
+    
+    "rio": "25H",
+    "river": "25H",
+    
+    "mar": "25H",
+    "sea": "25H",
+    "oceano": "25H",
+    "ocean": "25H",
+    
+    "céu": "26",
+    "sky": "26",
+    
+    "nuvens": "26A",
+    "clouds": "26A",
+    
+    "tempestade": "26F",
+    "storm": "26F",
+    
+    "chuva": "26F",
+    "rain": "26F",
+    
+    "neve": "26F",
+    "snow": "26F",
+    
+    "fogo": "42B",
+    "fire": "42B",
+    
+    "luz": "26",
+    "light": "26",
+    
+    "escuridão": "26B",
+    "darkness": "26B",
+    
+    "sombra": "26B",
+    "shadow": "26B"
+  },
+  
+  "iconclass_axis_roles": {
+    "31AA": "anatomical",
+    "44G0": "personification",
+    "44B": "sovereignty",
+    "44B11": "sovereignty",
+    "48C24": "medium",
+    "48C51": "medium",
+    "45": "sovereignty",
+    "45L": "sovereignty",
+    "45L1": "sovereignty",
+    "45L2": "sovereignty"
+  }
+}

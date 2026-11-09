@@ -33,9 +33,24 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Liberty",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Argentina",
           "axis_role": "other"
+        },
+        {
+          "code": "26",
+          "label": "sun",
+          "axis_role": "other"
+        },
+        {
+          "code": "45L2",
+          "label": "shield",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -85,9 +100,24 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Kriegsanleihe",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44B19",
+          "label": "scales",
           "axis_role": "other"
+        },
+        {
+          "code": "45L1",
+          "label": "sword",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "45L2",
+          "label": "peace",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -142,8 +172,28 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "48C24",
+          "label": "relief",
+          "axis_role": "medium"
+        },
+        {
+          "code": "25D",
+          "label": "gilded",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C",
+          "label": "Renaissance",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -208,8 +258,33 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "25F",
+          "label": "Coroa",
+          "axis_role": "other"
+        },
+        {
+          "code": "26A",
+          "label": "Nuvem",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B19",
+          "label": "scales",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B191",
+          "label": "crowned",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -263,8 +338,8 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "48C",
+          "label": "descricao_pre_iconografica",
           "axis_role": "other"
         }
       ]
@@ -327,6 +402,36 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "46",
+          "label": "Charity",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "Charity",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C",
+          "label": "city hall",
+          "axis_role": "other"
+        },
+        {
+          "code": "25I",
+          "label": "city hall",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C5",
+          "label": "ceiling painting",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -389,6 +494,21 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "48C",
+          "label": "architecture",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "architecture",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -443,8 +563,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Belgique",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -491,9 +616,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B11",
+          "label": "Belgique",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -545,8 +670,18 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "31AA",
+          "label": "AUSENCIA ALEGORICA — portrait of Léopold I",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "31A",
+          "label": "AUSENCIA ALEGORICA — portrait of Léopold I",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -600,13 +735,28 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "44G0",
-          "label": "Allegory of Europe",
+          "code": "44B11",
+          "label": "La Belgique",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         },
         {
-          "code": "48C24",
+          "code": "48C51",
           "label": "medallion",
+          "axis_role": "medium"
+        },
+        {
+          "code": "25F23",
+          "label": "medallion",
+          "axis_role": "other"
+        },
+        {
+          "code": "25D",
+          "label": "ivory",
           "axis_role": "other"
         }
       ]
@@ -665,13 +815,38 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "44G0",
-          "label": "allegory of Europe",
+          "code": "44B11",
+          "label": "La Belgique",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B19",
+          "label": "mace",
           "axis_role": "other"
         },
         {
           "code": "31AA",
           "label": "African woman",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "31A",
+          "label": "African woman",
+          "axis_role": "other"
+        },
+        {
+          "code": "25D",
+          "label": "ivory tusk",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "colonial hierarchy",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -729,7 +904,22 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44B11",
+          "label": "La Belgique",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
+          "axis_role": "other"
+        },
+        {
           "code": "31AA",
+          "label": "African woman",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "31A",
           "label": "African woman",
           "axis_role": "other"
         }
@@ -786,7 +976,27 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44B11",
+          "label": "La Belgique",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "25F23",
+          "label": "lion",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B",
+          "label": "Constitution",
+          "axis_role": "sovereignty"
+        },
+        {
           "code": "44G0",
+          "label": "Palace of Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "48C",
           "label": "Palace of Justice",
           "axis_role": "other"
         }
@@ -849,6 +1059,26 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "48C",
+          "label": "Truth",
+          "axis_role": "other"
+        },
+        {
+          "code": "71",
+          "label": "Allégorie féminine",
+          "axis_role": "other"
+        },
+        {
+          "code": "23",
+          "label": "Time",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -910,11 +1140,41 @@
       "iconclass_codes": [
         {
           "code": "44G0",
-          "label": "Justice civile",
+          "label": "civil justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
+          "axis_role": "other"
+        },
+        {
+          "code": "71",
+          "label": "Allégorie féminine",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "Flemish art",
+          "axis_role": "other"
+        },
+        {
+          "code": "48",
+          "label": "Flemish art",
           "axis_role": "other"
         },
         {
           "code": "31AA",
+          "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
           "label": "female allegory",
           "axis_role": "other"
         }
@@ -969,9 +1229,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -1017,9 +1277,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -1066,8 +1326,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "48C",
+          "label": "descricao_pre_iconografica",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -1120,8 +1385,8 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "48C",
+          "label": "descricao_pre_iconografica",
           "axis_role": "other"
         }
       ]
@@ -1174,9 +1439,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -1223,8 +1488,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "48C",
+          "label": "descricao_pre_iconografica",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -1284,8 +1554,28 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "31AA",
+          "label": "mulher leitora",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "48C1",
+          "label": "livro",
+          "axis_role": "other"
+        },
+        {
+          "code": "44G0",
+          "label": "mulher leitora",
+          "axis_role": "personification"
+        },
+        {
+          "code": "25G",
+          "label": "globo terrestre",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C",
+          "label": "sabedoria",
           "axis_role": "other"
         }
       ]
@@ -1347,11 +1637,31 @@
         {
           "code": "31AA",
           "label": "female allegory",
-          "axis_role": "other"
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44B",
+          "label": "Republic",
+          "axis_role": "sovereignty"
         },
         {
           "code": "48C24",
           "label": "statue",
+          "axis_role": "medium"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Rio Grande do Sul",
           "axis_role": "other"
         }
       ]
@@ -1414,8 +1724,38 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44B",
+          "label": "Estado Novo",
+          "axis_role": "sovereignty"
+        },
+        {
           "code": "31AA",
           "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "48C24",
+          "label": "Republic monument",
+          "axis_role": "medium"
+        },
+        {
+          "code": "45L2",
+          "label": "Bandeira",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "Getúlio Vargas",
           "axis_role": "other"
         }
       ]
@@ -1477,7 +1817,27 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44B",
+          "label": "Estado Novo",
+          "axis_role": "sovereignty"
+        },
+        {
           "code": "31AA",
+          "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "48C24",
+          "label": "Republic monument",
+          "axis_role": "medium"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
           "label": "female allegory",
           "axis_role": "other"
         }
@@ -1542,11 +1902,46 @@
         {
           "code": "31AA",
           "label": "female allegory",
-          "axis_role": "other"
+          "axis_role": "anatomical"
         },
         {
           "code": "48C24",
           "label": "sculpture",
+          "axis_role": "medium"
+        },
+        {
+          "code": "48",
+          "label": "Escultura",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "Jardim público",
+          "axis_role": "other"
+        },
+        {
+          "code": "25I",
+          "label": "Campo de Santana",
+          "axis_role": "other"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Rio de Janeiro",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C",
+          "label": "Campo de Santana",
           "axis_role": "other"
         }
       ]
@@ -1609,8 +2004,38 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44B",
+          "label": "Republic",
+          "axis_role": "sovereignty"
+        },
+        {
           "code": "31AA",
           "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44B191",
+          "label": "Phrygian cap",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "Barrete frígio",
+          "axis_role": "other"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C5",
+          "label": "painting",
           "axis_role": "other"
         }
       ]
@@ -1674,8 +2099,43 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44B",
+          "label": "Republic",
+          "axis_role": "sovereignty"
+        },
+        {
           "code": "31AA",
           "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "25H",
+          "label": "Centenário",
+          "axis_role": "other"
+        },
+        {
+          "code": "73A",
+          "label": "angel",
+          "axis_role": "other"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C5",
+          "label": "painting",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -1740,11 +2200,36 @@
         {
           "code": "44G0",
           "label": "Justice",
-          "axis_role": "other"
+          "axis_role": "personification"
         },
         {
           "code": "48C24",
           "label": "speaking statues",
+          "axis_role": "medium"
+        },
+        {
+          "code": "48C",
+          "label": "Truth",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B1",
+          "label": "speaking statues",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "periodical",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B",
+          "label": "Empire",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -1808,11 +2293,21 @@
         {
           "code": "44G0",
           "label": "Justice",
-          "axis_role": "other"
+          "axis_role": "personification"
         },
         {
           "code": "48C24",
           "label": "statue",
+          "axis_role": "medium"
+        },
+        {
+          "code": "48C",
+          "label": "public space",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -1878,6 +2373,36 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "48C16",
+          "label": "blindfold",
+          "axis_role": "other"
+        },
+        {
+          "code": "45L1",
+          "label": "sword",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "48",
+          "label": "modernism",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C24",
+          "label": "Niemeyer",
+          "axis_role": "medium"
+        },
+        {
+          "code": "25D",
+          "label": "granite",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "January 8",
           "axis_role": "other"
         }
       ]
@@ -1938,8 +2463,28 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "44G0",
-          "label": "allegory",
+          "code": "31AA",
+          "label": "Alegoria feminina",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44B",
+          "label": "Biblioteca Nacional",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "48C1",
+          "label": "Biblioteca Nacional",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Rio de Janeiro",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -1994,9 +2539,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -2044,8 +2589,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -2093,9 +2643,14 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44",
+          "label": "Voto Feminino",
           "axis_role": "other"
+        },
+        {
+          "code": "31AA",
+          "label": "Voto Feminino",
+          "axis_role": "anatomical"
         }
       ]
     },
@@ -2142,9 +2697,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44G0",
+          "label": "Alegoria da Lei do Ventre Livre",
+          "axis_role": "personification"
         }
       ]
     },
@@ -2191,9 +2746,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republic",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -2241,8 +2796,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -2289,9 +2849,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republic",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -2338,9 +2898,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -2387,9 +2947,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -2437,8 +2997,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -2486,9 +3051,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republic",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -2536,8 +3101,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -2586,8 +3156,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Liberdade",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -2635,9 +3210,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -2684,9 +3259,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -2734,8 +3309,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -2784,8 +3364,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -2833,9 +3418,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -2882,9 +3467,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -2931,9 +3516,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -2980,9 +3565,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -3030,8 +3615,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -3080,8 +3670,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -3129,9 +3724,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -3228,9 +3823,14 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
         }
       ]
     },
@@ -3277,9 +3877,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -3327,8 +3927,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -3375,9 +3980,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B11",
+          "label": "Columbia",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -3427,8 +4032,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Liberdade",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -3476,9 +4086,14 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B11",
+          "label": "A República",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B",
+          "label": "A República",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -3526,8 +4141,23 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "48C24",
+          "code": "44B",
           "label": "A República (efígie em medalha)",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B11",
+          "label": "A República (efígie em medalha)",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "48C51",
+          "label": "A República (efígie em medalha)",
+          "axis_role": "medium"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -3576,9 +4206,24 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "A República",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B",
+          "label": "A República",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B191",
+          "label": "Phrygian cap",
           "axis_role": "other"
+        },
+        {
+          "code": "48C24",
+          "label": "bust profile",
+          "axis_role": "medium"
         }
       ]
     },
@@ -3630,9 +4275,14 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "A República (efígie)",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B11",
+          "label": "A República (efígie)",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -3679,8 +4329,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -3731,8 +4386,18 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "31AA",
+          "label": "Alegoria feminina",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44B",
+          "label": "República",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -3789,6 +4454,16 @@
         {
           "code": "31AA",
           "label": "figura feminina alegorica",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44G0",
+          "label": "dispositivo estatal brasileiro",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -3843,7 +4518,12 @@
         {
           "code": "31AA",
           "label": "figura feminina alegorica",
-          "axis_role": "other"
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44G0",
+          "label": "dispositivo estatal brasileiro",
+          "axis_role": "personification"
         }
       ]
     },
@@ -3898,7 +4578,12 @@
         {
           "code": "31AA",
           "label": "figura feminina alegorica",
-          "axis_role": "other"
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44G0",
+          "label": "dispositivo estatal brasileiro",
+          "axis_role": "personification"
         }
       ]
     },
@@ -3953,7 +4638,12 @@
         {
           "code": "31AA",
           "label": "figura feminina alegorica",
-          "axis_role": "other"
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44G0",
+          "label": "dispositivo estatal brasileiro",
+          "axis_role": "personification"
         }
       ]
     },
@@ -4007,7 +4697,12 @@
         {
           "code": "31AA",
           "label": "figura feminina alegorica",
-          "axis_role": "other"
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44G0",
+          "label": "dispositivo estatal brasileiro",
+          "axis_role": "personification"
         }
       ]
     },
@@ -4062,7 +4757,12 @@
         {
           "code": "31AA",
           "label": "figura feminina alegorica",
-          "axis_role": "other"
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44G0",
+          "label": "dispositivo estatal brasileiro",
+          "axis_role": "personification"
         }
       ]
     },
@@ -4116,8 +4816,23 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justiça de olhos abertos",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44B19",
+          "label": "Balança e espada",
+          "axis_role": "other"
+        },
+        {
+          "code": "45L1",
+          "label": "Balança e espada",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "48C7",
+          "label": "Vitral",
           "axis_role": "other"
         }
       ]
@@ -4174,6 +4889,16 @@
         {
           "code": "31AA",
           "label": "figura feminina alegorica",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44G0",
+          "label": "dispositivo estatal brasileiro",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -4230,6 +4955,16 @@
         {
           "code": "31AA",
           "label": "figura feminina alegorica",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44G0",
+          "label": "dispositivo estatal brasileiro",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -4286,6 +5021,16 @@
         {
           "code": "31AA",
           "label": "figura feminina alegorica",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44G0",
+          "label": "dispositivo estatal brasileiro",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -4341,6 +5086,16 @@
         {
           "code": "31AA",
           "label": "figura feminina alegorica",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44G0",
+          "label": "dispositivo estatal brasileiro",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -4395,8 +5150,28 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "48C24",
+          "label": "Escultura em fachada",
+          "axis_role": "medium"
+        },
+        {
+          "code": "48",
+          "label": "Escultura em fachada",
+          "axis_role": "other"
+        },
+        {
+          "code": "44G0",
+          "label": "Figura feminina da Justiça",
+          "axis_role": "personification"
+        },
+        {
           "code": "31AA",
           "label": "Figura feminina da Justiça",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -4452,8 +5227,33 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Deusa Têmis",
+          "axis_role": "personification"
+        },
+        {
+          "code": "1",
+          "label": "Deusa Têmis",
+          "axis_role": "other"
+        },
+        {
+          "code": "45L1",
+          "label": "Espada em punho",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "48C24",
+          "label": "Esculturas monumentais",
+          "axis_role": "medium"
+        },
+        {
+          "code": "48",
+          "label": "Esculturas monumentais",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -4509,8 +5309,43 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Deusa Têmis",
+          "axis_role": "personification"
+        },
+        {
+          "code": "1",
+          "label": "Deusa Têmis",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C16",
+          "label": "Olhos abertos (sem venda)",
+          "axis_role": "other"
+        },
+        {
+          "code": "45L1",
+          "label": "Espada em repouso",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "48C24",
+          "label": "Escultura monumental em bronze",
+          "axis_role": "medium"
+        },
+        {
+          "code": "48",
+          "label": "Escultura monumental em bronze",
+          "axis_role": "other"
+        },
+        {
+          "code": "25D",
+          "label": "Escultura monumental em bronze",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -4563,8 +5398,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "48C",
+          "label": "descricao_pre_iconografica",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -4618,8 +5458,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -4671,9 +5516,29 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44G0",
+          "label": "Lei Áurea",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "abolição",
+          "axis_role": "other"
+        },
+        {
           "code": "31AA",
           "label": "figura feminina",
-          "axis_role": "other"
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44B",
+          "label": "República",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B11",
+          "label": "liberdade",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -4725,9 +5590,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
         }
       ]
     },
@@ -4774,8 +5639,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "48C",
+          "label": "descricao_pre_iconografica",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -4836,8 +5706,28 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "lei",
+          "axis_role": "personification"
+        },
+        {
+          "code": "45L1",
+          "label": "espada",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "31D",
+          "label": "criança",
+          "axis_role": "other"
+        },
+        {
+          "code": "31A",
+          "label": "figuras masculinas",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -4889,9 +5779,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -4937,9 +5827,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -4985,9 +5875,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -5034,8 +5924,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "48C",
+          "label": "descricao_pre_iconografica",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -5088,8 +5983,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "48C",
+          "label": "descricao_pre_iconografica",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -5142,8 +6042,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "48C",
+          "label": "descricao_pre_iconografica",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -5195,9 +6100,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -5243,8 +6148,18 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
           "axis_role": "other"
         }
       ]
@@ -5300,7 +6215,52 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44B11",
+          "label": "République",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "45",
+          "label": "propaganda",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B",
+          "label": "Republic",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "71",
+          "label": "Allégorie féminine",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "defense loan",
+          "axis_role": "other"
+        },
+        {
           "code": "31AA",
+          "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
           "label": "female allegory",
           "axis_role": "other"
         }
@@ -5358,6 +6318,11 @@
         {
           "code": "31AA",
           "label": "figura feminina de pé",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44B191",
+          "label": "gorro frígio",
           "axis_role": "other"
         }
       ]
@@ -5410,8 +6375,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B",
+          "label": "Nacao",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -5463,9 +6433,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "31AA",
+          "label": "Contra Alegoria",
+          "axis_role": "anatomical"
         }
       ]
     },
@@ -5511,8 +6481,18 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
           "axis_role": "other"
         }
       ]
@@ -5562,6 +6542,11 @@
         {
           "code": "31AA",
           "label": "figura feminina alegórica",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "26C",
+          "label": "grupo narrativo abolicionista",
           "axis_role": "other"
         }
       ]
@@ -5618,7 +6603,27 @@
         {
           "code": "31AA",
           "label": "figura feminina à romana",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "31A",
+          "label": "figura feminina à romana",
           "axis_role": "other"
+        },
+        {
+          "code": "44B19",
+          "label": "fasces",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B191",
+          "label": "báculo com gorro frígio",
+          "axis_role": "other"
+        },
+        {
+          "code": "45L1",
+          "label": "Vitória alada",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -5679,16 +6684,51 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "45L1",
+          "label": "Vengeance",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "48C",
+          "label": "Truth",
+          "axis_role": "other"
+        },
+        {
+          "code": "71",
+          "label": "Allégorie féminine",
           "axis_role": "other"
         },
         {
           "code": "31AA",
           "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
           "axis_role": "other"
         },
         {
-          "code": "48C24",
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C3",
           "label": "engraving",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B",
+          "label": "Second Empire",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -5752,16 +6792,46 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "48C",
+          "label": "Truth",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Triomphe",
+          "axis_role": "other"
+        },
+        {
+          "code": "71",
+          "label": "Allégorie féminine",
           "axis_role": "other"
         },
         {
           "code": "31AA",
           "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
           "axis_role": "other"
         },
         {
-          "code": "48C24",
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C3",
           "label": "engraving",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -5823,16 +6893,36 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "71",
+          "label": "Allégorie féminine",
           "axis_role": "other"
         },
         {
           "code": "31AA",
           "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
           "axis_role": "other"
         },
         {
-          "code": "48C24",
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C3",
           "label": "engraving",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -5894,8 +6984,63 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44B11",
+          "label": "République",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25F23",
+          "label": "education",
+          "axis_role": "other"
+        },
+        {
+          "code": "71",
+          "label": "Allégorie féminine",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B",
+          "label": "Republic",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "48C1",
+          "label": "education",
+          "axis_role": "other"
+        },
+        {
           "code": "31AA",
           "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "31D",
+          "label": "children",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "laïcité",
           "axis_role": "other"
         }
       ]
@@ -5958,8 +7103,38 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44B11",
+          "label": "République",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "71",
+          "label": "Félicien Rops",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "satire",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B",
+          "label": "Republic",
+          "axis_role": "sovereignty"
+        },
+        {
           "code": "31AA",
           "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -6021,8 +7196,53 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "71",
+          "label": "Allégorie féminine",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "cartoon",
+          "axis_role": "other"
+        },
+        {
+          "code": "25F23",
+          "label": "Caricature politique",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B",
+          "label": "Republic",
+          "axis_role": "sovereignty"
+        },
+        {
           "code": "31AA",
           "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "48",
+          "label": "cartoon",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
           "axis_role": "other"
         }
       ]
@@ -6085,7 +7305,47 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44B11",
+          "label": "République",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "45",
+          "label": "recruitment",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "71",
+          "label": "Allégorie féminine",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B",
+          "label": "Republic",
+          "axis_role": "sovereignty"
+        },
+        {
           "code": "31AA",
+          "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
           "label": "female allegory",
           "axis_role": "other"
         }
@@ -6149,8 +7409,43 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "48C24",
+          "label": "bust",
+          "axis_role": "medium"
+        },
+        {
+          "code": "26C",
+          "label": "mairie",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C",
+          "label": "civic space",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B",
+          "label": "Republic",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "48C7",
+          "label": "press photograph",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -6212,7 +7507,32 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44B11",
+          "label": "République",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "71",
+          "label": "Allégorie féminine",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B",
+          "label": "Republic",
+          "axis_role": "sovereignty"
+        },
+        {
           "code": "31AA",
+          "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "31A",
           "label": "female allegory",
           "axis_role": "other"
         }
@@ -6278,11 +7598,46 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "31E",
+          "label": "death",
           "axis_role": "other"
         },
         {
           "code": "31AA",
           "label": "female figure",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "71",
+          "label": "Figure féminine",
+          "axis_role": "other"
+        },
+        {
+          "code": "31A",
+          "label": "manuscript",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "female figure",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C",
+          "label": "Renaissance",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C1",
+          "label": "manuscript",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -6341,8 +7696,23 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "July Revolution",
           "axis_role": "other"
         }
       ]
@@ -6407,13 +7777,48 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44G0",
+          "label": "legal iconography",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44B1",
+          "label": "Declaração dos Direitos",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "Déclaration des droits",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "French Revolution",
+          "axis_role": "other"
+        },
+        {
           "code": "31AA",
+          "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44B11",
+          "label": "Liberty",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "31A",
           "label": "female allegory",
           "axis_role": "other"
         },
         {
-          "code": "44G0",
-          "label": "Justice",
+          "code": "46",
+          "label": "female allegory",
           "axis_role": "other"
         }
       ]
@@ -6477,7 +7882,42 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44G0",
+          "label": "legal iconography",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44B1",
+          "label": "Declaração dos Direitos",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "Déclaration des droits",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "French Revolution",
+          "axis_role": "other"
+        },
+        {
           "code": "31AA",
+          "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44B11",
+          "label": "Liberty",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
           "label": "female allegory",
           "axis_role": "other"
         }
@@ -6546,12 +7986,42 @@
         {
           "code": "31AA",
           "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44G0",
+          "label": "Justiça",
+          "axis_role": "personification"
+        },
+        {
+          "code": "25G4",
+          "label": "Abundância",
+          "axis_role": "other"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "26",
+          "label": "Enlightenment",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         },
         {
           "code": "44B",
           "label": "state finance",
-          "axis_role": "other"
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -6618,6 +8088,41 @@
         {
           "code": "31AA",
           "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44G0",
+          "label": "Justiça",
+          "axis_role": "personification"
+        },
+        {
+          "code": "25G4",
+          "label": "Abundância",
+          "axis_role": "other"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "26",
+          "label": "Enlightenment",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "variant edition",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -6684,6 +8189,41 @@
         {
           "code": "31AA",
           "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44G0",
+          "label": "Justiça",
+          "axis_role": "personification"
+        },
+        {
+          "code": "25G4",
+          "label": "Abundância",
+          "axis_role": "other"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "26",
+          "label": "Enlightenment",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "transparency",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -6747,9 +8287,44 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44B11",
+          "label": "Liberté Égalité Fraternité",
+          "axis_role": "sovereignty"
+        },
+        {
           "code": "31AA",
           "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
           "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Directory period",
+          "axis_role": "other"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "French Revolution",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B",
+          "label": "Republican iconography",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -6813,9 +8388,49 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44B11",
+          "label": "French Republic",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
           "code": "31AA",
           "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "45",
+          "label": "propaganda poster",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26",
+          "label": "Soldado",
           "axis_role": "other"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B",
+          "label": "Third Republic",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -6881,8 +8496,33 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "direito canônico",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44B1",
+          "label": "direito canônico",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C3",
+          "label": "miniatura",
+          "axis_role": "other"
+        },
+        {
+          "code": "31A",
+          "label": "manuscrito medieval",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C1",
+          "label": "manuscrito medieval",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -6939,8 +8579,23 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Liberté",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "barricada",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "revolução",
           "axis_role": "other"
         }
       ]
@@ -6990,8 +8645,28 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "colonialisme",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "satire",
           "axis_role": "other"
         }
       ]
@@ -7040,9 +8715,34 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
           "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "45",
+          "label": "emprunt de guerre",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "emprunt de guerre",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B",
+          "label": "défense nationale",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -7091,8 +8791,33 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B",
+          "label": "emprunt national",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
+          "axis_role": "other"
+        },
+        {
+          "code": "48",
+          "label": "reconstruction",
           "axis_role": "other"
         }
       ]
@@ -7142,8 +8867,28 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B",
+          "label": "emprunt national",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -7192,8 +8937,23 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Liberté",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "emprunt de la libération",
           "axis_role": "other"
         }
       ]
@@ -7244,8 +9004,23 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -7295,8 +9070,28 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B",
+          "label": "emprunt national",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -7346,8 +9141,28 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "armée",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B",
+          "label": "Patrie",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "épargne",
           "axis_role": "other"
         }
       ]
@@ -7397,8 +9212,23 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "anti-Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "anti-Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "anti-Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "satire",
           "axis_role": "other"
         }
       ]
@@ -7448,8 +9278,8 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "46",
+          "label": "satire",
           "axis_role": "other"
         }
       ]
@@ -7499,9 +9329,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Empire",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -7551,8 +9381,18 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "31AA",
+          "label": "Alegoria feminina",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44B11",
+          "label": "Liberté",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -7606,8 +9446,18 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Liberté",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B191",
+          "label": "Bonnet phrygien",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B19",
+          "label": "Fasces",
           "axis_role": "other"
         }
       ]
@@ -7662,8 +9512,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Liberté",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "46",
+          "label": "Innocence",
           "axis_role": "other"
         }
       ]
@@ -7719,8 +9574,18 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Direito penal",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44B1",
+          "label": "Direito penal",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -7777,6 +9642,21 @@
         {
           "code": "44G0",
           "label": "La Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "71",
+          "label": "Allégorie féminine",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B11",
+          "label": "République",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -7829,8 +9709,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -7878,8 +9763,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -7927,8 +9817,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -7975,9 +9870,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
         }
       ]
     },
@@ -8023,9 +9918,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
         }
       ]
     },
@@ -8072,8 +9967,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -8121,8 +10021,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -8170,8 +10075,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -8219,8 +10129,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -8268,8 +10183,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -8317,8 +10237,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -8366,8 +10291,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -8415,8 +10345,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -8464,8 +10399,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -8513,8 +10453,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "31AA",
+          "label": "Alegoria feminina",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -8562,8 +10507,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -8611,8 +10561,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -8660,8 +10615,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "31AA",
+          "label": "Alegoria feminina",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -8709,8 +10669,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -8758,9 +10723,14 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "31AA",
+          "label": "Semeuse",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -8806,8 +10776,18 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
           "axis_role": "other"
         }
       ]
@@ -8854,9 +10834,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "31AA",
+          "label": "Semeuse",
+          "axis_role": "anatomical"
         }
       ]
     },
@@ -8903,8 +10883,23 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -8951,9 +10946,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B11",
+          "label": "La République",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -8999,9 +10994,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -9047,9 +11042,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -9095,9 +11090,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -9143,9 +11138,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B11",
+          "label": "La République",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -9191,9 +11186,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
         }
       ]
     },
@@ -9240,8 +11235,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "31AA",
+          "label": "Alegoria feminina",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -9289,8 +11289,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -9338,8 +11343,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -9386,9 +11396,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
         }
       ]
     },
@@ -9434,9 +11444,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "31AA",
+          "label": "Alegoria feminina",
+          "axis_role": "anatomical"
         }
       ]
     },
@@ -9483,8 +11493,23 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -9532,8 +11557,23 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -9580,9 +11620,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
         }
       ]
     },
@@ -9629,8 +11669,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -9677,9 +11722,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -9725,9 +11770,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B11",
+          "label": "La République",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -9773,9 +11818,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "31AA",
+          "label": "Alegoria feminina",
+          "axis_role": "anatomical"
         }
       ]
     },
@@ -9821,9 +11866,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
         }
       ]
     },
@@ -9871,8 +11916,28 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -9919,8 +11984,18 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
           "axis_role": "other"
         }
       ]
@@ -9970,6 +12045,11 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -10016,8 +12096,18 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
           "axis_role": "other"
         }
       ]
@@ -10065,8 +12155,23 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -10114,8 +12219,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -10162,9 +12272,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B11",
+          "label": "La République / La Liberté",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -10211,8 +12321,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Cérès / La République",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -10265,8 +12380,28 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44B11",
+          "label": "La République",
+          "axis_role": "sovereignty"
+        },
+        {
           "code": "44G0",
           "label": "La Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44B191",
+          "label": "Phrygian cap",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "triangular level",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -10324,8 +12459,38 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B19",
+          "label": "fasces",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B191",
+          "label": "radiate crown",
+          "axis_role": "other"
+        },
+        {
+          "code": "25G4",
+          "label": "wheat",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -10381,8 +12546,33 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "31AA",
+          "label": "Semeuse",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B191",
+          "label": "Phrygian cap",
+          "axis_role": "other"
+        },
+        {
+          "code": "26",
+          "label": "Rising sun",
           "axis_role": "other"
         }
       ]
@@ -10435,8 +12625,33 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "31AA",
+          "label": "Semeuse",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44B191",
+          "label": "Phrygian cap",
+          "axis_role": "other"
+        },
+        {
+          "code": "26",
+          "label": "rising sun",
           "axis_role": "other"
         }
       ]
@@ -10492,8 +12707,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Liberté",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -10545,8 +12765,18 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
           "axis_role": "other"
         }
       ]
@@ -10595,8 +12825,23 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B191",
+          "label": "coroa alada",
+          "axis_role": "other"
+        },
+        {
+          "code": "25F",
+          "label": "coroa alada",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "carvalho e louro",
+          "axis_role": "other"
+        },
+        {
+          "code": "25D",
+          "label": "carvalho e louro",
           "axis_role": "other"
         }
       ]
@@ -10656,8 +12901,38 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "71",
+          "label": "Allégorie féminine",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C",
+          "label": "Symbolism",
+          "axis_role": "other"
+        },
+        {
           "code": "31AA",
           "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B",
+          "label": "Third Republic",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -10720,11 +12995,31 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "46",
+          "label": "satire",
           "axis_role": "other"
         },
         {
-          "code": "48C24",
+          "code": "26",
+          "label": "Enlightenment",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C3",
           "label": "engraving",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "political commentary",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -10787,6 +13082,21 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "48C",
+          "label": "Renaissance",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "civic architecture",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -10850,6 +13160,31 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "48C3",
+          "label": "Baroque",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "Baroque",
+          "axis_role": "other"
+        },
+        {
+          "code": "48",
+          "label": "wooden ceiling",
+          "axis_role": "other"
+        },
+        {
+          "code": "25G3",
+          "label": "wooden ceiling",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -10911,11 +13246,26 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "48C",
+          "label": "civic building",
           "axis_role": "other"
         },
         {
           "code": "48C24",
           "label": "architectural sculpture",
+          "axis_role": "medium"
+        },
+        {
+          "code": "26C",
+          "label": "architectural sculpture",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -10979,6 +13329,21 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "48C",
+          "label": "Renaissance",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C24",
+          "label": "relief",
+          "axis_role": "medium"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -11039,8 +13404,23 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "44B",
-          "label": "civil law",
+          "code": "44G0",
+          "label": "secular law",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C3",
+          "label": "Baroque",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "secular law",
           "axis_role": "other"
         }
       ]
@@ -11102,7 +13482,37 @@
       "iconclass_codes": [
         {
           "code": "44G0",
-          "label": "Justice",
+          "label": "Leipzig",
+          "axis_role": "personification"
+        },
+        {
+          "code": "25H",
+          "label": "civic interior",
+          "axis_role": "other"
+        },
+        {
+          "code": "42B",
+          "label": "fireplace",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C",
+          "label": "town hall",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "Early Modern",
+          "axis_role": "other"
+        },
+        {
+          "code": "48",
+          "label": "Early Modern",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -11168,6 +13578,31 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "45L1",
+          "label": "sword",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B19",
+          "label": "scales",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C",
+          "label": "Northern Renaissance",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C5",
+          "label": "painting",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -11232,8 +13667,48 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B",
+          "label": "alegoria nacional",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B11",
+          "label": "Germania",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "31A",
+          "label": "Germania",
+          "axis_role": "other"
+        },
+        {
+          "code": "45",
+          "label": "propaganda",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "48C5",
+          "label": "pintura",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "militarismo",
+          "axis_role": "other"
+        },
+        {
+          "code": "48",
+          "label": "arte alemã",
+          "axis_role": "other"
+        },
+        {
+          "code": "31AA",
+          "label": "feminino",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -11289,9 +13764,24 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Kriegsanleihe",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "war loan",
           "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "war loan",
+          "axis_role": "other"
+        },
+        {
+          "code": "45",
+          "label": "war loan",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -11341,8 +13831,28 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Germania",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "31A",
+          "label": "Germania",
+          "axis_role": "other"
+        },
+        {
+          "code": "26F",
+          "label": "Lorraine",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "Bismarck",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Bismarck",
           "axis_role": "other"
         }
       ]
@@ -11389,8 +13899,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Germania",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "31A",
+          "label": "Germania",
           "axis_role": "other"
         }
       ]
@@ -11438,8 +13953,18 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Germania",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "31A",
+          "label": "Germania",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -11487,8 +14012,18 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Germania",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "31A",
+          "label": "Germania",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -11536,8 +14071,18 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "31AA",
+          "label": "AUSENCIA ALEGORICA — portrait of Wilhelm I",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "31A",
+          "label": "AUSENCIA ALEGORICA — portrait of Wilhelm I",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -11585,8 +14130,8 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "44G0",
-          "label": "Generic allegory / Fountain of Youth",
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -11633,8 +14178,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Germania",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "31A",
+          "label": "Germania",
           "axis_role": "other"
         }
       ]
@@ -11681,8 +14231,28 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Germania / Navigation / Agriculture",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "31A",
+          "label": "Germania / Navigation / Agriculture",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "Germania / Navigation / Agriculture",
+          "axis_role": "other"
+        },
+        {
+          "code": "46C",
+          "label": "Germania / Navigation / Agriculture",
+          "axis_role": "other"
+        },
+        {
+          "code": "48",
+          "label": "Germania / Navigation / Agriculture",
           "axis_role": "other"
         }
       ]
@@ -11729,8 +14299,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Germania",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "31A",
+          "label": "Germania",
           "axis_role": "other"
         }
       ]
@@ -11785,6 +14360,21 @@
         {
           "code": "31AA",
           "label": "Allegorical female figure (transitional)",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "31A",
+          "label": "Allegorical female figure (transitional)",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "Allegorical female figure (transitional)",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -11837,8 +14427,48 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Germania",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "31A",
+          "label": "Germania",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B191",
+          "label": "imperial crown",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B",
+          "label": "imperial crown",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "45L1",
+          "label": "sword",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "45L2",
+          "label": "olive branch",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "45L",
+          "label": "armor",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "armor",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -11895,8 +14525,48 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Germania",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "31A",
+          "label": "Germania",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B191",
+          "label": "imperial crown",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B",
+          "label": "imperial crown",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "45L1",
+          "label": "sword",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "45L2",
+          "label": "olive branch",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "48C3",
+          "label": "Belgien overprint",
+          "axis_role": "other"
+        },
+        {
+          "code": "45",
+          "label": "military occupation",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "military occupation",
           "axis_role": "other"
         }
       ]
@@ -11953,8 +14623,33 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Germania",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "31A",
+          "label": "Germania",
+          "axis_role": "other"
+        },
+        {
+          "code": "24",
+          "label": "Starry sky",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "Starry sky",
+          "axis_role": "other"
+        },
+        {
+          "code": "26",
+          "label": "Starry sky",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -12007,11 +14702,11 @@
         {
           "code": "31AA",
           "label": "Anonymous woman",
-          "axis_role": "other"
+          "axis_role": "anatomical"
         },
         {
-          "code": "44G0",
-          "label": "Civic allegory",
+          "code": "31A",
+          "label": "Anonymous woman",
           "axis_role": "other"
         }
       ]
@@ -12071,6 +14766,21 @@
         {
           "code": "44G0",
           "label": "criminal justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "48C5",
+          "label": "ceiling fresco",
+          "axis_role": "other"
+        },
+        {
+          "code": "31A",
+          "label": "Germany",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -12133,8 +14843,38 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44B19",
+          "label": "scales",
+          "axis_role": "other"
+        },
+        {
+          "code": "45L1",
+          "label": "sword",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "48C3",
+          "label": "Baroque",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "Baroque",
+          "axis_role": "other"
+        },
+        {
+          "code": "31A",
+          "label": "Germany",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -12194,6 +14934,21 @@
         {
           "code": "31AA",
           "label": "Female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "31A",
+          "label": "Female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "Female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -12253,8 +15008,33 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44B19",
+          "label": "scales",
+          "axis_role": "other"
+        },
+        {
+          "code": "45L1",
+          "label": "sword",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "48C3",
+          "label": "print",
+          "axis_role": "other"
+        },
+        {
+          "code": "25D",
+          "label": "Dutch Golden Age",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -12308,9 +15088,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -12356,9 +15136,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -12404,9 +15184,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -12453,8 +15233,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -12502,8 +15287,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -12550,9 +15340,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -12598,9 +15388,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -12656,7 +15446,27 @@
       "iconclass_codes": [
         {
           "code": "44G0",
-          "label": "Justice",
+          "label": "legal iconography",
+          "axis_role": "personification"
+        },
+        {
+          "code": "25D",
+          "label": "marble",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "marble",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "marble",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -12720,11 +15530,21 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "48C",
+          "label": "Renaissance",
           "axis_role": "other"
         },
         {
-          "code": "48C24",
-          "label": "engraving",
+          "code": "48C3",
+          "label": "print",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -12788,6 +15608,26 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "48C",
+          "label": "Renaissance",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "cardinal virtues",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C3",
+          "label": "drawing",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -12850,6 +15690,26 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "71",
+          "label": "Allégorie féminine",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C3",
+          "label": "Baroque",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "Baroque",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -12905,9 +15765,19 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44",
+          "label": "war bonds",
           "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "war bonds",
+          "axis_role": "other"
+        },
+        {
+          "code": "45",
+          "label": "war bonds",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -12955,8 +15825,8 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "48C1624",
+          "label": "laurel",
           "axis_role": "other"
         }
       ]
@@ -13006,8 +15876,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "26C",
+          "label": "caravelle",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -13057,9 +15932,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "48C51",
+          "label": "stamp",
+          "axis_role": "medium"
         }
       ]
     },
@@ -13105,8 +15980,8 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "48C",
+          "label": "descricao_pre_iconografica",
           "axis_role": "other"
         }
       ]
@@ -13159,8 +16034,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "48C",
+          "label": "descricao_pre_iconografica",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -13212,9 +16092,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -13260,9 +16140,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -13308,9 +16188,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -13367,8 +16247,33 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "alegoria da justiça",
+          "axis_role": "personification"
+        },
+        {
+          "code": "48C",
+          "label": "virtudes cardinais",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "virtudes cardinais",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C3",
+          "label": "litografia",
+          "axis_role": "other"
+        },
+        {
+          "code": "31AA",
+          "label": "feminino",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -13426,8 +16331,23 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B",
+          "label": "República Mexicana",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "25F23",
+          "label": "eagle",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "cocar",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -13477,7 +16397,12 @@
         {
           "code": "31AA",
           "label": "figura feminina alegorica",
-          "axis_role": "other"
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44G0",
+          "label": "dispositivo estatal brasileiro",
+          "axis_role": "personification"
         }
       ]
     },
@@ -13529,8 +16454,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "48C",
+          "label": "descricao_pre_iconografica",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -13582,8 +16512,8 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "48C",
+          "label": "descricao_pre_iconografica",
           "axis_role": "other"
         }
       ]
@@ -13647,11 +16577,31 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "45L1",
+          "label": "sword",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B19",
+          "label": "scales",
           "axis_role": "other"
         },
         {
-          "code": "48C24",
+          "code": "48C",
+          "label": "Renaissance",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C3",
           "label": "engraving",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -13715,6 +16665,21 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "48C24",
+          "label": "bust",
+          "axis_role": "medium"
+        },
+        {
+          "code": "44B191",
+          "label": "crown",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -13777,12 +16742,27 @@
       "iconclass_codes": [
         {
           "code": "44G0",
-          "label": "Justice",
-          "axis_role": "other"
+          "label": "sovereignty of law",
+          "axis_role": "personification"
         },
         {
           "code": "44B",
-          "label": "sovereignty of law",
+          "label": "sovereignty",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B1",
+          "label": "sovereignty",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C3",
+          "label": "Baroque",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "Baroque",
           "axis_role": "other"
         }
       ]
@@ -13846,13 +16826,48 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44G0",
+          "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
           "code": "31AA",
+          "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "45L1",
+          "label": "Espada",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B19",
+          "label": "Balança",
+          "axis_role": "other"
+        },
+        {
+          "code": "31A",
           "label": "female allegory",
           "axis_role": "other"
         },
         {
-          "code": "44G0",
-          "label": "Justice",
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "25D",
+          "label": "Dutch Golden Age",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C",
+          "label": "virtue series",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -13918,13 +16933,43 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44G0",
+          "label": "exempla iustitiae",
+          "axis_role": "personification"
+        },
+        {
           "code": "31AA",
+          "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "45L1",
+          "label": "Espada",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B19",
+          "label": "Balança",
+          "axis_role": "other"
+        },
+        {
+          "code": "31A",
           "label": "female allegory",
           "axis_role": "other"
         },
         {
-          "code": "44G0",
-          "label": "Justice",
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "25D",
+          "label": "Dutch Golden Age",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -13988,13 +17033,53 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44G0",
+          "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
           "code": "31AA",
+          "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "45L1",
+          "label": "Espada",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B19",
+          "label": "Balança",
+          "axis_role": "other"
+        },
+        {
+          "code": "31A",
           "label": "female allegory",
           "axis_role": "other"
         },
         {
-          "code": "44G0",
-          "label": "Justice",
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "25D",
+          "label": "Dutch Golden Age",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C",
+          "label": "cardinal virtues",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "cardinal virtues",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -14058,13 +17143,48 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44G0",
+          "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
           "code": "31AA",
+          "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "45L1",
+          "label": "Espada",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B19",
+          "label": "Balança",
+          "axis_role": "other"
+        },
+        {
+          "code": "31A",
           "label": "female allegory",
           "axis_role": "other"
         },
         {
-          "code": "44G0",
-          "label": "Justice",
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "25D",
+          "label": "Dutch Golden Age",
+          "axis_role": "other"
+        },
+        {
+          "code": "48",
+          "label": "Goltzius tradition",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -14127,13 +17247,43 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44G0",
+          "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
           "code": "31AA",
+          "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "45L1",
+          "label": "Espada",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B19",
+          "label": "Balança",
+          "axis_role": "other"
+        },
+        {
+          "code": "31A",
           "label": "female allegory",
           "axis_role": "other"
         },
         {
-          "code": "44G0",
-          "label": "Justice",
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "25D",
+          "label": "Dutch Golden Age",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -14187,9 +17337,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -14246,7 +17396,32 @@
         {
           "code": "44G0",
           "label": "popular justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "26C",
+          "label": "Carnation Revolution",
           "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
+          "axis_role": "other"
+        },
+        {
+          "code": "45",
+          "label": "political poster",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "48",
+          "label": "Cartaz político",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B",
+          "label": "Carnation Revolution",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -14309,18 +17484,43 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "31AA",
-          "label": "Figura feminina",
-          "axis_role": "other"
-        },
-        {
-          "code": "44G0",
+          "code": "9",
           "label": "History allegory",
           "axis_role": "other"
         },
         {
-          "code": "48C24",
+          "code": "31AA",
+          "label": "female figure",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "48C3",
           "label": "engraving",
+          "axis_role": "other"
+        },
+        {
+          "code": "31A",
+          "label": "female figure",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "female figure",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "early modern",
+          "axis_role": "other"
+        },
+        {
+          "code": "48",
+          "label": "early modern",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -14383,13 +17583,23 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "44G0",
+          "code": "31E",
           "label": "Death allegory",
           "axis_role": "other"
         },
         {
-          "code": "48C24",
+          "code": "48C3",
           "label": "engraving",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "Quillard",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -14452,13 +17662,23 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "44G0",
+          "code": "23",
           "label": "Time allegory",
           "axis_role": "other"
         },
         {
-          "code": "48C24",
+          "code": "48C3",
           "label": "engraving",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "Quillard",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -14523,8 +17743,53 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44B",
+          "label": "Republic",
+          "axis_role": "sovereignty"
+        },
+        {
           "code": "31AA",
           "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44G0",
+          "label": "Eleição",
+          "axis_role": "personification"
+        },
+        {
+          "code": "45",
+          "label": "Cartaz político",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Cartaz político",
+          "axis_role": "other"
+        },
+        {
+          "code": "48",
+          "label": "Cartaz político",
+          "axis_role": "other"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46C",
+          "label": "anti-dictatorship",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -14580,8 +17845,23 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B",
+          "label": "República",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B191",
+          "label": "Phrygian cap",
+          "axis_role": "other"
+        },
+        {
+          "code": "26",
+          "label": "dawn",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -14632,9 +17912,24 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B",
+          "label": "República",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
+        },
+        {
+          "code": "48",
+          "label": "agriculture",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C51",
+          "label": "stamp",
+          "axis_role": "medium"
         }
       ]
     },
@@ -14680,9 +17975,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -14728,9 +18023,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -14776,9 +18071,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -14824,9 +18119,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -14875,8 +18170,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B191",
+          "label": "gorro frígio",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -14928,9 +18228,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -14987,7 +18287,37 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44B",
+          "label": "Republican iconography",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B11",
+          "label": "Marianne",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
           "code": "31AA",
+          "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
           "label": "female allegory",
           "axis_role": "other"
         }
@@ -15051,9 +18381,34 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B",
+          "label": "alegoria nacional",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "46",
+          "label": "satira política",
           "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B191",
+          "label": "barrete frígio",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "barrete frígio",
+          "axis_role": "other"
+        },
+        {
+          "code": "31AA",
+          "label": "feminino",
+          "axis_role": "anatomical"
         }
       ]
     },
@@ -15110,8 +18465,18 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Hispania",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Gibraltar",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -15162,8 +18527,23 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Hispania",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "45L2",
+          "label": "olive branch",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B",
+          "label": "republic",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -15215,6 +18595,21 @@
         {
           "code": "31AA",
           "label": "figura feminina republicana",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44B",
+          "label": "figura feminina republicana",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B1",
+          "label": "fila de monarcas",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "fila de monarcas",
           "axis_role": "other"
         }
       ]
@@ -15266,8 +18661,8 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "48C",
+          "label": "descricao_pre_iconografica",
           "axis_role": "other"
         }
       ]
@@ -15323,8 +18718,38 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "31AA",
+          "label": "busto feminino em relevo",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "48C24",
+          "label": "busto feminino em relevo",
+          "axis_role": "medium"
+        },
+        {
+          "code": "44B191",
+          "label": "gorro frígio",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B19",
+          "label": "balança",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B",
+          "label": "inscrição PLAZA DE LA REPÚBLICA",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B11",
+          "label": "inscrição PLAZA DE LA REPÚBLICA",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -15387,7 +18812,32 @@
       "iconclass_codes": [
         {
           "code": "44G0",
-          "label": "Justice",
+          "label": "legal iconography",
+          "axis_role": "personification"
+        },
+        {
+          "code": "48C16",
+          "label": "blindfold",
+          "axis_role": "other"
+        },
+        {
+          "code": "45L1",
+          "label": "sword",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B19",
+          "label": "scales",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C",
+          "label": "Renaissance",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -15442,8 +18892,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "48C",
+          "label": "descricao_pre_iconografica",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -15505,6 +18960,26 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "45L1",
+          "label": "sword",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B19",
+          "label": "scales",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C3",
+          "label": "print",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "Baroque",
           "axis_role": "other"
         }
       ]
@@ -15568,6 +19043,26 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44B19",
+          "label": "scales",
+          "axis_role": "other"
+        },
+        {
+          "code": "25F25",
+          "label": "snake",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "architectural",
+          "axis_role": "other"
+        },
+        {
+          "code": "25F23",
+          "label": "personification",
           "axis_role": "other"
         }
       ]
@@ -15629,6 +19124,21 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "48C",
+          "label": "cardinal virtues",
+          "axis_role": "other"
+        },
+        {
+          "code": "45L1",
+          "label": "sword",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "cardinal virtues",
           "axis_role": "other"
         }
       ]
@@ -15693,7 +19203,37 @@
       "iconclass_codes": [
         {
           "code": "44G0",
-          "label": "Justice",
+          "label": "Lady Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "45L1",
+          "label": "sword",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B19",
+          "label": "scales",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C16",
+          "label": "unblindfolded",
+          "axis_role": "other"
+        },
+        {
+          "code": "25D",
+          "label": "bronze",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C",
+          "label": "courthouse",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -15758,13 +19298,43 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44G0",
+          "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
           "code": "31AA",
+          "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "45L1",
+          "label": "sword and scales",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B19",
+          "label": "sword and scales",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C",
+          "label": "Renaissance",
+          "axis_role": "other"
+        },
+        {
+          "code": "31A",
           "label": "female allegory",
           "axis_role": "other"
         },
         {
-          "code": "44G0",
-          "label": "Justice",
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -15831,6 +19401,26 @@
         {
           "code": "31AA",
           "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "45",
+          "label": "gender and war",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "gender and war",
           "axis_role": "other"
         }
       ]
@@ -15887,9 +19477,19 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "45",
+          "label": "recruitment",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "45L1",
+          "label": "sword",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -15939,8 +19539,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Hibernia",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -15988,8 +19593,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Britannia",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -16037,8 +19647,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Britannia",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -16086,8 +19701,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Britannia",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -16135,8 +19755,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Britannia",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -16184,8 +19809,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Britannia",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -16233,8 +19863,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Britannia",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -16282,8 +19917,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Britannia",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -16330,9 +19970,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B11",
+          "label": "Britannia",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -16379,8 +20019,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Britannia",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -16429,8 +20074,28 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "48C24",
+          "code": "44B11",
+          "label": "Britannia (seated",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "25H",
+          "label": "Britannia (seated",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C51",
           "label": "earliest coin appearance)",
+          "axis_role": "medium"
+        },
+        {
+          "code": "26C",
+          "label": "earliest coin appearance)",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -16484,8 +20149,33 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Britannia",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "45L2",
+          "label": "shield",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "45L",
+          "label": "helmet",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26",
+          "label": "lighthouse",
+          "axis_role": "other"
+        },
+        {
+          "code": "46C",
+          "label": "ship",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -16539,7 +20229,7 @@
         {
           "code": "31AA",
           "label": "figura feminina alegórica",
-          "axis_role": "other"
+          "axis_role": "anatomical"
         }
       ]
     },
@@ -16585,9 +20275,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B11",
+          "label": "Britannia",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -16639,8 +20329,28 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Britannia",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "45L2",
+          "label": "shield",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "45L",
+          "label": "helmet",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "46C",
+          "label": "merchant ship",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -16693,8 +20403,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "48C",
+          "label": "descricao_pre_iconografica",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -16756,8 +20471,48 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44B11",
+          "label": "Goddess of Liberty",
+          "axis_role": "sovereignty"
+        },
+        {
           "code": "31AA",
           "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44B",
+          "label": "Estados Unidos",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "45",
+          "label": "propaganda poster",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "1",
+          "label": "Goddess of Liberty",
+          "axis_role": "other"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "45L2",
+          "label": "James Montgomery Flagg",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B191",
+          "label": "Phrygian cap",
           "axis_role": "other"
         }
       ]
@@ -16820,9 +20575,44 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44B11",
+          "label": "Columbia",
+          "axis_role": "sovereignty"
+        },
+        {
           "code": "31AA",
           "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44B",
+          "label": "Estados Unidos",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "45",
+          "label": "propaganda poster",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
           "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "25G",
+          "label": "globe",
+          "axis_role": "other"
+        },
+        {
+          "code": "45L1",
+          "label": "sword",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -16876,8 +20666,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "48C",
+          "label": "descricao_pre_iconografica",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -16930,8 +20725,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "48C",
+          "label": "descricao_pre_iconografica",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -16984,8 +20784,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "48C",
+          "label": "descricao_pre_iconografica",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -17046,6 +20851,21 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44B11",
+          "label": "Britannia",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B19",
+          "label": "scales",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -17107,12 +20927,27 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "9",
+          "label": "History",
           "axis_role": "other"
+        },
+        {
+          "code": "48C",
+          "label": "Senate doors",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B11",
+          "label": "Columbia",
+          "axis_role": "sovereignty"
         },
         {
           "code": "48C24",
           "label": "sculpture",
-          "axis_role": "other"
+          "axis_role": "medium"
         }
       ]
     },
@@ -17173,10 +21008,30 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "48C16",
+          "label": "blindfold",
           "axis_role": "other"
         },
         {
-          "code": "48C24",
+          "code": "45L1",
+          "label": "sword",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B19",
+          "label": "scales",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "government",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C3",
           "label": "steel engraving",
           "axis_role": "other"
         }
@@ -17242,7 +21097,27 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44B11",
+          "label": "Columbia",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Marianne",
           "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Marianne",
+          "axis_role": "other"
+        },
+        {
+          "code": "45",
+          "label": "WWI",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -17305,6 +21180,21 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44B11",
+          "label": "Columbia",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B",
+          "label": "Constitution",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -17366,6 +21256,21 @@
         {
           "code": "44G0",
           "label": "Justice",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44B11",
+          "label": "Britannia",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B19",
+          "label": "scales",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -17426,9 +21331,39 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "44G0",
-          "label": "martial allegory",
+          "code": "44B11",
+          "label": "Liberty",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Spanish-American War",
           "axis_role": "other"
+        },
+        {
+          "code": "48",
+          "label": "martial",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "martial",
+          "axis_role": "other"
+        },
+        {
+          "code": "45",
+          "label": "Spanish-American War",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "48C3",
+          "label": "chromolithograph",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B",
+          "label": "imperialism",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -17489,9 +21424,34 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44B11",
+          "label": "Liberty",
+          "axis_role": "sovereignty"
+        },
+        {
           "code": "44G0",
-          "label": "Justice",
+          "label": "women's rights",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "feminism",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C7",
+          "label": "photograph",
+          "axis_role": "other"
+        },
+        {
+          "code": "31AA",
+          "label": "women's rights",
+          "axis_role": "anatomical"
         }
       ]
     },
@@ -17549,8 +21509,33 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "44G0",
-          "label": "living allegory",
+          "code": "44B11",
+          "label": "Columbia",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "carte de visite",
+          "axis_role": "other"
+        },
+        {
+          "code": "45",
+          "label": "Civil War",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "Civil War",
+          "axis_role": "other"
+        },
+        {
+          "code": "48",
+          "label": "carte de visite",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C7",
+          "label": "photograph",
           "axis_role": "other"
         }
       ]
@@ -17615,8 +21600,38 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
+          "code": "44B11",
+          "label": "Liberty",
+          "axis_role": "sovereignty"
+        },
+        {
           "code": "31AA",
           "label": "female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "1",
+          "label": "Goddess of Liberty",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B",
+          "label": "republican values",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "31A",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -17673,9 +21688,24 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B11",
+          "label": "Columbia",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "45",
+          "label": "recruitment",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "45L1",
+          "label": "sword",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "45L2",
+          "label": "flag",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -17723,9 +21753,29 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Liberty",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "war bonds",
           "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "war bonds",
+          "axis_role": "other"
+        },
+        {
+          "code": "45",
+          "label": "war bonds",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "45L2",
+          "label": "flag",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -17774,8 +21824,18 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Liberty",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Haymarket",
+          "axis_role": "other"
+        },
+        {
+          "code": "25H",
+          "label": "Haymarket",
           "axis_role": "other"
         }
       ]
@@ -17825,9 +21885,9 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B11",
+          "label": "Columbia",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -17874,8 +21934,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Columbia",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -17923,8 +21988,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44G0",
+          "label": "Justitia",
+          "axis_role": "personification"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -17972,8 +22042,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Columbia",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -18021,8 +22096,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Columbia",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -18070,9 +22150,14 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
-          "axis_role": "other"
+          "code": "44B11",
+          "label": "Columbia",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44B",
+          "label": "Republica",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -18122,8 +22207,38 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Columbia",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "45L2",
+          "label": "flag",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "25F23",
+          "label": "eagle",
+          "axis_role": "other"
+        },
+        {
+          "code": "46C",
+          "label": "ships",
+          "axis_role": "other"
+        },
+        {
+          "code": "26C",
+          "label": "Civil War",
+          "axis_role": "other"
+        },
+        {
+          "code": "45",
+          "label": "Civil War",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "Civil War",
           "axis_role": "other"
         }
       ]
@@ -18175,8 +22290,13 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "History / Columbia (instructing Youth)",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "9",
+          "label": "History / Columbia (instructing Youth)",
           "axis_role": "other"
         }
       ]
@@ -18230,6 +22350,31 @@
         {
           "code": "31AA",
           "label": "Female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "31A",
+          "label": "Female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "Female allegory",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C",
+          "label": "Science",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "Industry",
+          "axis_role": "other"
+        },
+        {
+          "code": "25I",
+          "label": "Electricity",
           "axis_role": "other"
         }
       ]
@@ -18284,7 +22429,32 @@
         {
           "code": "31AA",
           "label": "Female allegory",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "31A",
+          "label": "Female allegory",
           "axis_role": "other"
+        },
+        {
+          "code": "46",
+          "label": "Fame",
+          "axis_role": "other"
+        },
+        {
+          "code": "25I",
+          "label": "Electricity",
+          "axis_role": "other"
+        },
+        {
+          "code": "44B11",
+          "label": "Columbia/America",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "45L2",
+          "label": "Peace",
+          "axis_role": "sovereignty"
         }
       ]
     },
@@ -18336,8 +22506,28 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Columbia",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "45L1",
+          "label": "victory",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "Civil War",
+          "axis_role": "other"
+        },
+        {
+          "code": "45",
+          "label": "Civil War",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "Civil War",
           "axis_role": "other"
         }
       ]
@@ -18390,8 +22580,18 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Liberty (Seated)",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "25H",
+          "label": "Liberty (Seated)",
+          "axis_role": "other"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -18443,8 +22643,28 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B11",
+          "label": "Liberty",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "45L2",
+          "label": "olive branch",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "bare breast (Type I)",
+          "axis_role": "other"
+        },
+        {
+          "code": "45L",
+          "label": "chain mail (Type II)",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
@@ -18507,8 +22727,28 @@
     "standard_cataloging": {
       "iconclass_codes": [
         {
-          "code": "0000",
-          "label": "Unclassified",
+          "code": "44B",
+          "label": "república",
+          "axis_role": "sovereignty"
+        },
+        {
+          "code": "26C",
+          "label": "altar cívico",
+          "axis_role": "other"
+        },
+        {
+          "code": "48C5",
+          "label": "pintura",
+          "axis_role": "other"
+        },
+        {
+          "code": "31AA",
+          "label": "feminino",
+          "axis_role": "anatomical"
+        },
+        {
+          "code": "44",
+          "label": "regime_incerto",
           "axis_role": "other"
         }
       ]
