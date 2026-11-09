@@ -313,7 +313,7 @@ class PublicationSecurityTests(unittest.TestCase):
                            text=True, capture_output=True, check=True)
             for folder in ("scripts", "schemas", "site/data", "site/assets", "editorial"):
                 (root / folder).mkdir(parents=True, exist_ok=True)
-            for filename in ("publication_sync.py", "corpus_sync.py", "publication_stats.py", "build_data.py"):
+            for filename in ("publication_sync.py", "corpus_sync.py", "publication_stats.py", "build_data.py", "taxonomy.py"):
                 shutil.copyfile(sync.ROOT / "scripts" / filename, root / "scripts" / filename)
             for filename in ("publication.schema.json", "corpus-input.schema.json"):
                 shutil.copyfile(sync.ROOT / "schemas" / filename, root / "schemas" / filename)

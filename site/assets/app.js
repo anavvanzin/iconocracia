@@ -10,19 +10,11 @@
   }
   const publication = window.IconocraciaPublication;
   const $ = (selector) => document.querySelector(selector);
-  const isEn = () => document.documentElement?.getAttribute('data-lang') === 'en';
-  const tr = (pt, en) => isEn() ? en : pt;
   const normalize = (value) => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
   const safeURL = (value) => /^https?:\/\//i.test(value || '');
   const shortTitle = (item) => item.titulo.replace(/\s*\([^)]*\)\s*$/, '');
   const yearOf = (item) => Number(String(item.data).match(/\b\d{4}\b/)?.[0]) || null;
   const centuryOf = (item) => { const year = yearOf(item); return year ? String(Math.floor((year - 1) / 100) + 1) : 'sem-ano'; };
-  const inThesisStrand = (item) => {
-    if (item.pais !== 'Brasil') return false;
-    const year = yearOf(item);
-    if (year !== null) return year >= 1822 && year <= 1922;
-    return /xix\b/.test(normalize(item.data));
-  };
   // Agrupamento de navegação derivado do suporte; o valor original permanece na ficha.
   function typeOf(item) {
     const support = normalize(item.suporte);
@@ -43,7 +35,7 @@
   }
   function reproduce(item, container, lazy = false) {
     if (!item.tem_imagem) {
-      container.append(node('span', 'ex-missing', 'Sem reprodução disponível. Consulte o arquivo de origem.'));
+      container.append(node('span', 'ex-missing', 'Sem reprodução disponível — consulte o arquivo de origem.'));
       return;
     }
     const img = node('img');
@@ -59,7 +51,7 @@
       const sourceURL = item.imagem_fonte || item.imagem;
       const imageURL = publication ? publication.imageURL(sourceURL) : (safeURL(sourceURL) ? sourceURL : null);
       if (!fallback && imageURL && imageURL !== img.getAttribute('src')) { fallback = true; img.src = imageURL; }
-      else container.replaceChildren(node('span', 'ex-missing', 'Reprodução indisponível. Consulte o arquivo de origem.'));
+      else container.replaceChildren(node('span', 'ex-missing', 'Reprodução indisponível — consulte o arquivo de origem.'));
     });
     container.append(img);
   }
@@ -94,8 +86,6 @@
   let items = [], filtered = [], selected = null, activeConstellation = null;
   const fields = { q: $('#q'), pais: $('#f-pais'), regime: $('#f-regime'), periodo: $('#f-periodo'), tipo: $('#f-tipo') };
   const params = new URLSearchParams(location.search);
-  let activeStrand = params.get('recorte') === 'tese' ? 'tese' : '';
-  const strandAll = $('#strand-all'), strandTese = $('#strand-tese'), strandContext = $('#ex-strand-context');
   const stage = $('.ex-stage'), strip = $('#ex-filmstrip'), grid = $('#ex-grid'), constellation = $('#ex-constellation');
   const VIEWS = ['constelacao', 'palco', 'grade'];
   let view = VIEWS.includes(params.get('visao')) ? params.get('visao') : 'constelacao';
@@ -133,12 +123,29 @@
       const option = node('option', '', label(value)); option.value = value; element.append(option);
     });
   }
+  const interpretiveRegimes = new Set(['fundacional', 'normativo', 'militar']);
+  const isLegacyClassification = value => normalize(value) === 'contra-alegoria';
+  const classificationLabel = value => isLegacyClassification(value) ? `${value} (rótulo legado)` : value;
+  function fillClassifications(values) {
+    const groups = [
+      ['Regimes interpretativos', value => interpretiveRegimes.has(normalize(value))],
+      ['Classificações legadas', isLegacyClassification],
+      ['Outros rótulos catalogados', value => !interpretiveRegimes.has(normalize(value)) && !isLegacyClassification(value)],
+    ];
+    for (const [label, accepts] of groups) {
+      const options = values.filter(value => value && accepts(value));
+      if (!options.length) continue;
+      const group = node('optgroup'); group.label = label;
+      // Labels clarify status; values and shared ?regime= links retain exact matching.
+      fillOptions(group, options, classificationLabel);
+      fields.regime.append(group);
+    }
+  }
   function syncURL() {
     const url = new URL(location.href);
     for (const [key, el] of Object.entries(fields)) {
       if (el.value) url.searchParams.set(key, el.value); else url.searchParams.delete(key);
     }
-    if (activeStrand === 'tese') url.searchParams.set('recorte', 'tese'); else url.searchParams.delete('recorte');
     if (selected && (view !== 'constelacao' || selectionLinked)) url.searchParams.set('item', selected.id); else url.searchParams.delete('item');
     url.searchParams.set('visao', view);
     if (activeConstellation) url.searchParams.set('constelacao', activeConstellation.slug);
@@ -149,7 +156,6 @@
     const query = normalize(fields.q.value);
     const scoped = activeConstellation ? activeConstellation.item_ids.map(id => items.find(item => item.id === id)) : items;
     filtered = scoped.filter((item) => {
-      if (activeStrand === 'tese' && !inThesisStrand(item)) return false;
       if (fields.pais.value && fields.pais.value !== item.pais) return false;
       if (fields.regime.value && fields.regime.value !== item.regime) return false;
       if (fields.periodo.value && fields.periodo.value !== centuryOf(item)) return false;
@@ -159,26 +165,10 @@
     const previousId = selected?.id;
     selected = filtered.find((item) => item.id === previousId) || filtered[0] || null;
     if (view === 'constelacao' && selected?.id !== previousId) selectionLinked = false;
-    strandAll?.setAttribute('aria-pressed', String(activeStrand !== 'tese'));
-    strandTese?.setAttribute('aria-pressed', String(activeStrand === 'tese'));
-    if (strandContext) {
-      if (activeStrand === 'tese') {
-        strandContext.hidden = false;
-        strandContext.innerHTML = tr(
-          '<span>Recorte Doutoral Ativo</span> · <em>Mármore à Margem (Brasil, 1822–1922) · In marmore regnat, in iure tacet</em> · <a href="marmore-a-margem.html">Ler ensaio do recorte →</a>',
-          '<span>Active Doctoral Strand</span> · <em>Mármore à Margem (Brazil, 1822–1922) · In marmore regnat, in iure tacet</em> · <a href="/en/marmore-a-margem">Read strand essay →</a>'
-        );
-      } else {
-        strandContext.hidden = true;
-        strandContext.replaceChildren();
-      }
-    }
     $('#result-count').textContent = activeConstellation
-      ? filtered.length + tr(' de ', ' of ') + scoped.length + tr(' obras · ', ' works · ') + activeConstellation.title
-      : activeStrand === 'tese'
-        ? filtered.length + tr(' de ', ' of ') + items.length + tr(' registros · Mármore à Margem (Brasil, 1822–1922)', ' records · Marble at the Margin (Brazil, 1822–1922)')
-        : filtered.length + tr(' de ', ' of ') + items.length + tr(' registros · recorte do acervo', ' records · collection selection');
-    $('#clear-filters').hidden = !Object.values(fields).some((el) => el.value) && !activeStrand;
+      ? filtered.length + ' de ' + scoped.length + ' obras · ' + activeConstellation.title
+      : filtered.length + ' de ' + items.length + ' registros · recorte do acervo';
+    $('#clear-filters').hidden = !Object.values(fields).some((el) => el.value);
     renderStrip();
     if (view === 'grade') renderGrid();
     if (view === 'constelacao') renderConstellation();
@@ -292,21 +282,8 @@
     // A descrição extensa e a citação são preservadas integralmente na ficha.
     $('#ex-description').textContent = selected.instituicao || 'Instituição não informada';
     $('#ex-source').href = selected.fonte_url || '';
-    const docLayer = [[tr('País', 'Country'), selected.pais], [tr('Data', 'Date'), selected.data], [tr('Tipo de obra', 'Work type'), typeOf(selected)], [tr('Suporte', 'Medium'), selected.suporte]];
-    const readLayer = [
-      [tr('Recorte no atlas', 'Atlas strand'), inThesisStrand(selected) ? tr('Mármore à Margem · Brasil (1822–1922)', 'Marble at the Margin · Brazil (1822–1922)') : tr('Atlas comparativo transnacional', 'Transnational comparative atlas')],
-      [tr('Regime', 'Regime'), selected.regime],
-    ];
-    $('#ex-metadata').append(
-      node('dt', 'ex-layer-head', tr('Camada I · Registro documental', 'Layer I · Documentary record')),
-      node('dd', 'ex-layer-note', tr('Dados catalográficos e proveniência', 'Catalog data & archival provenance'))
-    );
-    docLayer.forEach(([label, value]) => { if (value) $('#ex-metadata').append(node('dt', '', label), node('dd', '', value)); });
-    $('#ex-metadata').append(
-      node('dt', 'ex-layer-head', tr('Camada II · Leitura na pesquisa', 'Layer II · Research reading')),
-      node('dd', 'ex-layer-note', tr('Classificação analítica situada', 'Situated analytical classification'))
-    );
-    readLayer.forEach(([label, value]) => { if (value) $('#ex-metadata').append(node('dt', '', label), node('dd', '', value)); });
+    const metadata = [['País', selected.pais], ['Classificação catalogada', classificationLabel(selected.regime)], ['Data', selected.data], ['Tipo de obra', typeOf(selected)], ['Suporte', selected.suporte]];
+    metadata.forEach(([label, value]) => { if (value) $('#ex-metadata').append(node('dt', '', label), node('dd', '', value)); });
     $('#ex-position').textContent = (index + 1) + ' / ' + filtered.length;
     strip.querySelectorAll('.ex-thumb').forEach((button) => {
       const active = button.dataset.id === selected.id;
@@ -330,53 +307,23 @@
     dialogReturnFocus = document.activeElement;
     dialog.replaceChildren();
     dialog.classList.toggle('ex-dialog-image-only', imageOnly);
-    const close = node('button', 'ex-dialog-close', tr('Fechar', 'Close')); close.type = 'button'; close.addEventListener('click', closeRecord);
+    const close = node('button', 'ex-dialog-close', 'Fechar'); close.type = 'button'; close.addEventListener('click', closeRecord);
     const title = node('h2', '', selected.titulo); title.id = 'dialog-title';
     const layout = node('div', 'ex-dialog-layout');
     const picture = node('div', 'ex-dialog-image'); reproduce(selected, picture);
     const details = node('div', 'ex-dialog-details'); details.append(title);
     if (!imageOnly) {
       const list = node('dl', 'ex-record');
-      list.append(
-        node('dt', 'ex-layer-head', tr('Camada I · Registro documental', 'Layer I · Documentary record')),
-        node('dd', 'ex-layer-note', tr('Dados catalográficos, arquivo de guarda e citação', 'Catalog data, holding institution & citation'))
-      );
-      for (const [label, value] of [
-        [tr('Registro', 'Record ID'), selected.id],
-        [tr('Autoria', 'Authorship'), selected.autoria],
-        [tr('País', 'Country'), selected.pais],
-        [tr('Data', 'Date'), selected.data],
-        [tr('Instituição', 'Institution'), selected.instituicao],
-        [tr('Suporte', 'Medium'), selected.suporte],
-        [tr('Direitos', 'Rights'), selected.direitos],
-        [tr('Crédito da reprodução', 'Reproduction credit'), selected.credito],
-        [tr('Citação', 'Citation'), selected.citacao],
-      ]) {
-        if (value) list.append(node('dt', '', label), node('dd', '', value));
-      }
-      list.append(
-        node('dt', 'ex-layer-head', tr('Camada II · Leitura na pesquisa', 'Layer II · Research reading')),
-        node('dd', 'ex-layer-note', tr('Enquadramento analítico no atlas Mnemosyne Viva', 'Analytical framing in the Mnemosyne Viva atlas'))
-      );
-      for (const [label, value] of [
-        [tr('Recorte no atlas', 'Atlas strand'), inThesisStrand(selected) ? tr('Mármore à Margem · Brasil (1822–1922)', 'Marble at the Margin · Brazil (1822–1922)') : tr('Atlas comparativo transnacional', 'Transnational comparative atlas')],
-        [tr('Regime', 'Regime'), selected.regime],
-        [tr('Motivos', 'Motifs'), (selected.motivos || []).join(', ')],
-        [tr('Descrição', 'Description'), selected.descricao],
-      ]) {
+      for (const [label, value] of [['Registro', selected.id], ['Autoria', selected.autoria], ['País', selected.pais], ['Data', selected.data], ['Instituição', selected.instituicao], ['Classificação catalogada', classificationLabel(selected.regime)], ['Suporte', selected.suporte], ['Motivos', (selected.motivos || []).join(', ')], ['Descrição', selected.descricao], ['Direitos', selected.direitos], ['Crédito da reprodução', selected.credito], ['Nota curatorial', selected.notas_curatoriais], ['Citação', selected.citacao]]) {
         if (value) list.append(node('dt', '', label), node('dd', '', value));
       }
       details.append(list);
       const analysis = publication?.approvedAnalysis(selected.analise_publica);
       if (analysis) {
         const section = node('details', 'ex-analysis');
-        section.append(node('summary', '', tr('Análise iconográfica', 'Iconographic analysis')));
+        section.append(node('summary', '', 'Análise iconográfica'));
         if (analysis.summary) section.append(node('p', 'ex-analysis-summary', analysis.summary));
-        for (const [label, key] of [
-          [tr('Nível 1 · pré-iconográfico', 'Level 1 · pre-iconographic'), 'level_1'],
-          [tr('Nível 2 · iconográfico', 'Level 2 · iconographic'), 'level_2'],
-          [tr('Nível 3 · iconológico', 'Level 3 · iconological'), 'level_3'],
-        ]) {
+        for (const [label, key] of [['Nível 1 · pré-iconográfico', 'level_1'], ['Nível 2 · iconográfico', 'level_2'], ['Nível 3 · iconológico', 'level_3']]) {
           if (typeof analysis.panofsky?.[key] === 'string') section.append(node('h3', '', label), node('p', '', analysis.panofsky[key]));
         }
         if (analysis.limitation) section.append(node('p', 'ex-analysis-limitation', analysis.limitation));
@@ -385,10 +332,10 @@
       }
     }
     if (safeURL(selected.fonte_url)) {
-      const source = node('a', 'ex-action', tr('Arquivo de origem', 'Source archive')); source.href = selected.fonte_url; source.target = '_blank'; source.rel = 'noopener'; details.append(source);
+      const source = node('a', 'ex-action', 'Arquivo de origem'); source.href = selected.fonte_url; source.target = '_blank'; source.rel = 'noopener'; details.append(source);
     }
     if (safeURL(selected.imagem_fonte) && selected.imagem_fonte !== selected.fonte_url) {
-      const source = node('a', 'ex-action', tr('Fonte da reprodução', 'Reproduction source')); source.href = selected.imagem_fonte; source.target = '_blank'; source.rel = 'noopener'; details.append(source);
+      const source = node('a', 'ex-action', 'Fonte da reprodução'); source.href = selected.imagem_fonte; source.target = '_blank'; source.rel = 'noopener'; details.append(source);
     }
     layout.append(picture, details); dialog.append(close, layout); dialog.showModal(); document.body.style.overflow = 'hidden'; close.focus();
   }
@@ -403,22 +350,15 @@
   $('.ex-filters').addEventListener('submit', (event) => { event.preventDefault(); filterItems(); });
   fields.q.addEventListener('input', debounce(filterItems, 200));
   Object.values(fields).filter((field) => field !== fields.q).forEach((field) => field.addEventListener('input', filterItems));
-  $('#clear-filters').addEventListener('click', () => { Object.values(fields).forEach((field) => { field.value = ''; }); activeStrand = ''; filterItems(); });
-  strandAll?.addEventListener('click', () => { activeStrand = ''; filterItems(); });
-  strandTese?.addEventListener('click', () => { activeStrand = 'tese'; filterItems(); });
+  $('#clear-filters').addEventListener('click', () => { Object.values(fields).forEach((field) => { field.value = ''; }); filterItems(); });
   $('#view-palco').addEventListener('click', () => setView('palco'));
   $('#view-grade').addEventListener('click', () => setView('grade'));
   $('#view-constelacao').addEventListener('click', () => setView('constelacao'));
-  window.addEventListener('iconocracia:lang', () => {
-    if (!items.length) return;
-    filterItems();
-    if (dialog.open) openRecord(dialog.classList.contains('ex-dialog-image-only'));
-  });
   // Create the recovery control here so cached HTML also works with this script.
   const retry = node('button', '', 'Tentar novamente');
   retry.id = 'retry-acervo'; retry.type = 'button'; retry.hidden = true;
   $('.ex-results-actions').prepend(retry);
-  const loadControls = document.querySelectorAll('.ex-filters input, .ex-filters select, .ex-filters button, .ex-view-toggle button, .ex-strand-btn, .ex-arrow, .ex-expand, #ex-open, #ex-more, #clear-filters');
+  const loadControls = document.querySelectorAll('.ex-filters input, .ex-filters select, .ex-filters button, .ex-view-toggle button, .ex-arrow, .ex-expand, #ex-open, #ex-more, #clear-filters');
   let loading = false;
 
   async function fetchAcervo(refresh = false) {
@@ -490,11 +430,10 @@
         field.replaceChildren(field.options[0]);
       });
       fillOptions(fields.pais, items.map((item) => item.pais));
-      fillOptions(fields.regime, items.map((item) => item.regime));
+      fillClassifications(items.map((item) => item.regime));
       fillOptions(fields.periodo, items.map(centuryOf), (value) => value === 'sem-ano' ? 'Sem ano numérico' : 'Século ' + value);
       fillOptions(fields.tipo, items.map(typeOf));
       Object.entries(fields).forEach(([key, field]) => { field.value = requested.get(key) || ''; });
-      activeStrand = requested.get('recorte') === 'tese' ? 'tese' : '';
       const linked = publication ? publication.resolveItem(items, requested.get('item')) : items.find(item => item.id === requested.get('item'));
       selected = linked || items[0];
       selectionLinked = !!linked;
@@ -508,7 +447,6 @@
       loadControls.forEach((control) => { control.disabled = true; });
       items = []; filtered = []; selected = null; activeConstellation = null;
       if ($('#ex-curatorial-context')) $('#ex-curatorial-context').hidden = true;
-      if (strandContext) { strandContext.hidden = true; strandContext.replaceChildren(); }
       // Do not call renderSelected: its empty-search path rewrites the URL.
       stage.hidden = false;
       document.querySelector('.ex-layout').classList.remove('ex-layout-wide');

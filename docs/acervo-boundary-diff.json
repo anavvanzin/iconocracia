@@ -1,6 +1,6 @@
 {
-  "baseline_commit": "8d75717f66c8003e1916f0a95617e985e0cf2491",
-  "source_file_sha256": "813aef09f2e57cacfec7e7cd1762cd945bfa7a97f70e9fedd9d11d18811367f8",
+  "baseline_commit": "b9a831085c77aa89960672bb5782cf8890406a68",
+  "source_file_sha256": "12ed2a340ed666535df386ad2bb3e0a03298ce22d52b3b3be49702b623c0fdf3",
   "legacy_build": {
     "total": 337,
     "paises": 17,
@@ -167,13 +167,13 @@
       }
     ],
     "meta": {
-      "source_sha256": "2e8945ad85c413ecc0fbd5d550c08a6427786b670509559a3370708f87a3b8ff",
-      "enriched_sha256": "2e8945ad85c413ecc0fbd5d550c08a6427786b670509559a3370708f87a3b8ff",
+      "source_sha256": "62413b27c49296f44e486fd450758d9d75d7467d5f0cc436ae392bcfa6b1952e",
+      "enriched_sha256": "62413b27c49296f44e486fd450758d9d75d7467d5f0cc436ae392bcfa6b1952e",
       "source_count": 337,
       "published_count": 337,
       "selected_status": "published",
       "selected_count": 337,
-      "items_sha256": "a2a36a84be3b26b3c3e93da1a5e040e77e43441106044247d1227477ed785fef",
+      "items_sha256": "35ce2d42c672c64febb54659c2c4f73e06d1dfeaa7177bb40cf888b6b8969320",
       "contract_version": "acervo/1"
     }
   },
@@ -861,7 +861,7 @@
       ]
     },
     "notas_curatoriais": {
-      "count": 337,
+      "count": 336,
       "ids": [
         "03a9622f-6b17-5876-843c-4e49e4684441",
         "0754a19f-a859-99e5-932d-17f5181496b2",
@@ -917,7 +917,6 @@
         "BR-002",
         "BR-003",
         "BR-004",
-        "BR-005",
         "BR-006",
         "BR-007",
         "BR-008",
