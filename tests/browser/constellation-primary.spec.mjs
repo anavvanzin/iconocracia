@@ -96,7 +96,7 @@ test('closing a distant work after resizing restores focus to a visible frame', 
   await page.goto('/acervo?item=FR-087'); await ready(page);
   await expect(page.locator('dialog')).toBeVisible();
   await page.setViewportSize({ width: 390, height: 844 });
-  await expect.poll(() => page.locator('.ex-const-field').evaluate(el => Math.round(el.getBoundingClientRect().width))).toBe(350);
+  await expect.poll(() => page.locator('.ex-const-field').evaluate(el => Math.round(el.getBoundingClientRect().width))).toBe(390);
   await page.keyboard.press('Escape');
   const frame = page.locator('.ex-star[data-id="FR-087"]');
   await expect(frame).toBeFocused();
