@@ -17,6 +17,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Pre-migration producer sources are read from commit 14ff9d8.
+          fetch-depth: 0
 
       - name: Configurar Python
         uses: actions/setup-python@v5
