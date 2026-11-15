@@ -157,33 +157,44 @@ function extractMotifs(item) {
 }
 
 /**
- * Parse date text to extract year range
+ * Use a catalog year when the date text has no four-digit year.
+ * Accepts an integer year or a four-digit string.
+ */
+function fallbackYearNumber(fallbackYear) {
+  if (typeof fallbackYear === 'number' && Number.isInteger(fallbackYear)) {
+    return fallbackYear;
+  }
+  if (typeof fallbackYear === 'string' && /^\d{4}$/.test(fallbackYear.trim())) {
+    return parseInt(fallbackYear.trim(), 10);
+  }
+  return null;
+}
+
+/**
+ * Parse date text to extract year range.
+ * When the text has no four-digit year, honor fallbackYear as both bounds.
  */
 function parseDateRange(dateText, fallbackYear = null) {
-  if (!dateText) return { start: null, end: null, text: dateText || '' };
-  
-  // Try to extract years
-  const years = dateText.match(/\d{4}/g);
+  const text = dateText || '';
+  const years = text.match(/\d{4}/g);
   if (years && years.length >= 2) {
     return {
-      start: parseInt(years[0]),
-      end: parseInt(years[years.length - 1]),
-      text: dateText
-    };
-  } else if (years && years.length === 1) {
-    return {
-      start: parseInt(years[0]),
-      end: parseInt(years[0]),
-      text: dateText
+      start: parseInt(years[0], 10),
+      end: parseInt(years[years.length - 1], 10),
+      text
     };
   }
-  
-  // Try fallback year
-  // Note: item is not available here, we need to handle it differently
-  // For now, just return null for start/end
-  return { start: null, end: null, text: dateText };
-  
-  return { start: null, end: null, text: dateText };
+  if (years && years.length === 1) {
+    const year = parseInt(years[0], 10);
+    return { start: year, end: year, text };
+  }
+
+  const fallback = fallbackYearNumber(fallbackYear);
+  if (fallback !== null) {
+    return { start: fallback, end: fallback, text };
+  }
+
+  return { start: null, end: null, text };
 }
 
 /**

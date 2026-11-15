@@ -139,8 +139,8 @@
     "support": "monumento/escultura",
     "object_type": "monumento/escultura",
     "date_text": "16th century",
-    "date_start": null,
-    "date_end": null,
+    "date_start": 1550,
+    "date_end": 1550,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -223,8 +223,8 @@
     "support": "?",
     "object_type": "?",
     "date_text": "18th century",
-    "date_start": null,
-    "date_end": null,
+    "date_start": 1750,
+    "date_end": 1750,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -1108,8 +1108,8 @@
     "support": "?",
     "object_type": "?",
     "date_text": "16th century",
-    "date_start": null,
-    "date_end": null,
+    "date_start": 1550,
+    "date_end": 1550,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -4611,8 +4611,8 @@
     "support": "ilustração jornalística / gravura",
     "object_type": "ilustração jornalística / gravura",
     "date_text": "século XIX",
-    "date_start": null,
-    "date_end": null,
+    "date_start": 1850,
+    "date_end": 1850,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -4655,7 +4655,8 @@
       }
     ],
     "strands": [
-      "atlas-global"
+      "atlas-global",
+      "brasil-1822-1922"
     ],
     "editorial_status": "draft",
     "rights_status": "unknown",
@@ -5058,8 +5059,8 @@
     "support": "gravura / frontispício de livro",
     "object_type": "gravura / frontispício de livro",
     "date_text": "séculos XVI–XVIII",
-    "date_start": null,
-    "date_end": null,
+    "date_start": 1600,
+    "date_end": 1600,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -7376,8 +7377,8 @@
     "support": "monumento/escultura",
     "object_type": "monumento/escultura",
     "date_text": "Early 20th century",
-    "date_start": null,
-    "date_end": null,
+    "date_start": 1950,
+    "date_end": 1950,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -8459,8 +8460,8 @@
     "support": "frontispício",
     "object_type": "frontispício",
     "date_text": "c. séc. XIII",
-    "date_start": null,
-    "date_end": null,
+    "date_start": 1250,
+    "date_end": 1250,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -12869,8 +12870,8 @@
     "support": "moeda",
     "object_type": "moeda",
     "date_text": "19th century",
-    "date_start": null,
-    "date_end": null,
+    "date_start": 1850,
+    "date_end": 1850,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -12962,8 +12963,8 @@
     "support": "?",
     "object_type": "?",
     "date_text": "18th century",
-    "date_start": null,
-    "date_end": null,
+    "date_start": 1750,
+    "date_end": 1750,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -14810,8 +14811,8 @@
     "support": "?",
     "object_type": "?",
     "date_text": "17th century",
-    "date_start": null,
-    "date_end": null,
+    "date_start": 1650,
+    "date_end": 1650,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -15496,8 +15497,8 @@
     "support": "estampa/gravura",
     "object_type": "estampa/gravura",
     "date_text": "Early 16th century",
-    "date_start": null,
-    "date_end": null,
+    "date_start": 1550,
+    "date_end": 1550,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -15657,8 +15658,8 @@
     "support": "?",
     "object_type": "?",
     "date_text": "17th century",
-    "date_start": null,
-    "date_end": null,
+    "date_start": 1650,
+    "date_end": 1650,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -16709,8 +16710,8 @@
     "support": "?",
     "object_type": "?",
     "date_text": "17th century",
-    "date_start": null,
-    "date_end": null,
+    "date_start": 1650,
+    "date_end": 1650,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -18926,8 +18927,8 @@
     "support": "?",
     "object_type": "?",
     "date_text": "17th century",
-    "date_start": null,
-    "date_end": null,
+    "date_start": 1650,
+    "date_end": 1650,
     "date_basis": null,
     "makers": [],
     "place": {
