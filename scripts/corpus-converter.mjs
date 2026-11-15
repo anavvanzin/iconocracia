@@ -171,11 +171,25 @@ function fallbackYearNumber(fallbackYear) {
 }
 
 /**
+ * Century intervals. Longer roman numerals are listed first so a search for
+ * XVI does not need to run inside XVIII; each pattern is still bounded so
+ * XVIII does not count as XVI. `séc.` is the catalog abbreviation.
+ */
+const CENTURY_SPANS = [
+  { pattern: /\b(?:18th\s+century|s[eé]c(?:ulo|\.)\s+xviii|xviii)\b/i, start: 1701, end: 1800 },
+  { pattern: /\b(?:17th\s+century|s[eé]c(?:ulo|\.)\s+xvii|xvii)\b/i, start: 1601, end: 1700 },
+  { pattern: /\b(?:16th\s+century|s[eé]c(?:ulo|\.)\s+xvi|xvi)\b/i, start: 1501, end: 1600 },
+  { pattern: /\b(?:13th\s+century|s[eé]c(?:ulo|\.)\s+xiii|xiii)\b/i, start: 1201, end: 1300 },
+  { pattern: /\b(?:19th\s+century|s[eé]c(?:ulo|\.)\s+xix|xix)\b/i, start: 1801, end: 1900 },
+  { pattern: /\b(?:20th\s+century|s[eé]c(?:ulo|\.)\s+xx|xx)\b/i, start: 1901, end: 2000 },
+];
+
+/**
  * Parse date text to extract year range.
- * Century expressions are mapped to explicit century intervals rather than
- * collapsing to a single midpoint year. When the text has no four-digit year
- * and no century expression (and is not flagged as 'year-estimado-seculo'),
- * honor fallbackYear as both bounds.
+ * Every century named in the text contributes to the interval, so
+ * "séculos XVI–XVIII" is 1501–1800 rather than the last century only.
+ * A catalog year is used only when the text has no four-digit year and no
+ * century expression, and the record is not flagged year-estimado-seculo.
  */
 function parseDateRange(dateText, fallbackYear = null, flags = []) {
   const text = dateText || '';
@@ -198,20 +212,14 @@ function parseDateRange(dateText, fallbackYear = null, flags = []) {
   if (/late\s+19th\s+century|final\s+do\s+s[eé]culo\s+xix/i.test(text)) {
     return { start: 1870, end: 1900, text };
   }
-  if (/\b(19th\s+century|s[eé]culo\s+xix|xix)\b/i.test(text)) {
-    return { start: 1801, end: 1900, text };
-  }
-  if (/\b(20th\s+century|s[eé]culo\s+xx|xx)\b/i.test(text)) {
-    return { start: 1901, end: 2000, text };
-  }
-  if (/\b(18th\s+century|s[eé]culo\s+xviii|xviii)\b/i.test(text)) {
-    return { start: 1701, end: 1800, text };
-  }
-  if (/\b(17th\s+century|s[eé]culo\s+xvii|xvii)\b/i.test(text)) {
-    return { start: 1601, end: 1700, text };
-  }
-  if (/\b(16th\s+century|s[eé]culo\s+xvi|xvi)\b/i.test(text)) {
-    return { start: 1501, end: 1600, text };
+
+  const centuries = CENTURY_SPANS.filter((span) => span.pattern.test(text));
+  if (centuries.length > 0) {
+    return {
+      start: Math.min(...centuries.map((span) => span.start)),
+      end: Math.max(...centuries.map((span) => span.end)),
+      text
+    };
   }
 
   const isCenturyEstimate = Array.isArray(flags) && flags.includes('year-estimado-seculo');
@@ -313,7 +321,7 @@ async function convertCorpus() {
     // 1. Create Object record
     // ====================
     const objectId = item.id;
-    const dateInfo = parseDateRange(item.date, item.year, item.flags);
+    const dateInfo = parseDateRange(item.date, item.year, item.audit_flags || item.flags);
     const countryCode = COUNTRY_CODES[item.country] || COUNTRY_CODES[item.country_pt] || 'XX';
     const support = mapSupport(item.support || item.medium || item.medium_norm);
     const motifs = extractMotifs(item);
@@ -556,7 +564,7 @@ async function convertCorpus() {
     const existingObject = objects.find(o => o.id === acervoItem.id);
     if (!existingObject) {
       // Create a new object from acervo
-      const acervoDateInfo = parseDateRange(acervoItem.data, acervoItem.ano, acervoItem.flags);
+      const acervoDateInfo = parseDateRange(acervoItem.data, acervoItem.ano, acervoItem.audit_flags || acervoItem.flags);
       const object = {
         id: acervoItem.id,
         title: acervoItem.titulo,
