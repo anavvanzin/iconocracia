@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@playwright/test": "1.63.0",
+    "ajv": "^8.20.0",
     "opentype.js": "^2.0.0",
     "wrangler": "^4.151.0"
   }

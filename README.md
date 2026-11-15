@@ -60,7 +60,11 @@ python scripts/corpus_sync.py \
 
 O campo `editorialStatus` é aplicado quando existir; registros sem esse campo no
 export upstream atual são tratados como publicados para manter compatibilidade.
-IDs são preservados como strings estáveis, inclusive UUIDs. `acervo.json` e
+IDs são preservados como strings estáveis, inclusive UUIDs. A [taxonomia pública](docs/taxonomia-publica.md)
+distingue três regimes interpretativos e contra-alegoria como teste crítico.
+`stats.por_regime` contém apenas os três regimes; `stats.por_rotulo_catalogado`
+preserva a distribuição histórica completa. Rótulos e registros são mantidos.
+`acervo.json` e
 `stats.json` continuam sendo artefatos gerados e não devem ser editados manualmente.
 
 ## Publicação editorial e constelações
@@ -82,7 +86,8 @@ node --test tests/test_*.mjs
 
 O export produz um pacote completo com `acervo.json`, `stats.json`,
 `publication-overlay.json` e `constellations.json`. Quando a projeção retorna
-à base, os bytes originais do catálogo e das estatísticas são restaurados. Uma
+à base, os bytes originais do catálogo e as contagens históricas são restaurados;
+a apresentação estatística mantém a taxonomia vigente. Uma
 alteração pública exige aprovação autoral, aprovação documental dos direitos
 com URL de evidência, crédito, texto alternativo e imagem local confinada a
 `site/`, vinculada à aprovação por SHA-256. A análise exige sua própria aprovação. O corpus é fixado por commit

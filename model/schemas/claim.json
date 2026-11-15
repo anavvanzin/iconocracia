@@ -1,0 +1,195 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://iconocracia.com/schemas/claim.json",
+  "title": "Claim",
+  "description": "Interpretive claim record for the Counter-Archive Right Axis. Represents critical operations, hypotheses, and interpretations distinct from documentary Object records. Only claims with review_state='approved' render on public pages.",
+  "type": "object",
+  "required": [
+    "id",
+    "statement",
+    "epistemic_status",
+    "review_state",
+    "about",
+    "concepts"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for this claim. Should be human-readable and descriptive.",
+      "minLength": 1,
+      "examples": ["CLAIM-BR-009-CSV-001", "CLAIM-PC-48C24-01"]
+    },
+    "statement": {
+      "type": "string",
+      "description": "The claim text. Must be clear, citable, and non-redundant with Object metadata.",
+      "minLength": 10
+    },
+    "statement_pt": {
+      "type": "string",
+      "description": "Portuguese version of the statement, if different from the primary statement."
+    },
+    "epistemic_status": {
+      "type": "string",
+      "description": "Epistemic classification of the claim.",
+      "enum": ["documented", "interpretation", "hypothesis"],
+      "default": "hypothesis"
+    },
+    "review_state": {
+      "type": "string",
+      "description": "Editorial review status. Only 'approved' claims appear on public pages.",
+      "enum": ["draft", "reviewed", "approved"],
+      "default": "draft"
+    },
+    "about": {
+      "type": "array",
+      "description": "Array of Object IDs this claim is about. Must be non-empty.",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "deconstructs_iconclass": {
+      "type": "object",
+      "description": "Iconclass deconstruction mapping for the Counter-Archive.",
+      "properties": {
+        "iconclass_code": {
+          "type": "string",
+          "description": "Standard Iconclass code being deconstructed (e.g., 31AA, 44G0, 48C24, 44B).",
+          "pattern": "^[0-9]{2}[A-Z][0-9]{0,4}$"
+        },
+        "counter_code": {
+          "type": "string",
+          "description": "Counter-Archive notation (e.g., 31AA::CSV, 44G0::FE, 48C24::PC).",
+          "pattern": "^[0-9]{2}[A-Z][0-9]*::[A-Z]{2,4}$"
+        },
+        "critical_label": {
+          "type": "string",
+          "description": "Human-readable label for the critical operation.",
+          "minLength": 1
+        }
+      },
+      "required": ["iconclass_code", "counter_code", "critical_label"],
+      "additionalProperties": false
+    },
+    "matrix_triad_dimension": {
+      "type": "string",
+      "description": "Which dimension of the hystera → matrix → matriz triad this claim addresses.",
+      "enum": ["hystera_tutelage", "numismatic_die_matriz", "digital_grid_matrix"]
+    },
+    "evidence": {
+      "type": "array",
+      "description": "Evidence supporting this claim. Required when epistemic_status is 'documented'.",
+      "items": {
+        "type": "object",
+        "required": ["source_id"],
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "description": "Reference to a Source entity.",
+            "minLength": 1
+          },
+          "locator": {
+            "type": "string",
+            "description": "Page, figure, or other locator within the source."
+          },
+          "note": {
+            "type": "string",
+            "description": "Explanation of how this source supports the claim."
+          },
+          "quotation": {
+            "type": "string",
+            "description": "Direct quotation from the source."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "concepts": {
+      "type": "array",
+      "description": "Array of Concept IDs this claim mobilizes.",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "counter_evidence": {
+      "type": "array",
+      "description": "Evidence that contradicts or complicates this claim.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "locator": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "open_questions": {
+      "type": "string",
+      "description": "Open questions or uncertainties related to this claim."
+    },
+    "supersedes": {
+      "type": "string",
+      "description": "ID of a claim this claim supersedes or replaces."
+    },
+    "superseded_by": {
+      "type": "array",
+      "description": "IDs of claims that supersede this claim.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "related_claims": {
+      "type": "array",
+      "description": "IDs of related claims.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "strands": {
+      "type": "array",
+      "description": "Strand IDs this claim is associated with.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "author_notes": {
+      "type": "string",
+      "description": "Internal author notes not for public display."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this claim was created."
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this claim was last updated."
+    },
+    "published_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this claim was approved for publication."
+    }
+  },
+  "additionalProperties": false,
+  "if": {
+    "properties": {
+      "epistemic_status": {
+        "const": "documented"
+      }
+    },
+    "required": ["evidence"]
+  }
+}

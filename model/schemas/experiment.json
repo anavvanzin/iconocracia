@@ -1,0 +1,235 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://iconocracia.com/schemas/experiment.json",
+  "title": "Experiment",
+  "description": "Interactive visual experiment in the Counter-Archive laboratory. Declares its pinned data inputs and methodological limits explicitly.",
+  "type": "object",
+  "required": [
+    "id",
+    "slug",
+    "title",
+    "description",
+    "experiment_type",
+    "editorial_status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for this experiment.",
+      "minLength": 1,
+      "examples": ["EXP-FUNDICAO-01", "EXP-ICONCLASS-DECONSTRUCTOR"]
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL-friendly slug for the experiment.",
+      "minLength": 1,
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "title": {
+      "type": "string",
+      "description": "Display title of the experiment.",
+      "minLength": 1
+    },
+    "subtitle": {
+      "type": "string",
+      "description": "Subtitle providing additional context."
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the experiment's purpose and methodology.",
+      "minLength": 50
+    },
+    "experiment_type": {
+      "type": "string",
+      "description": "Type of experiment.",
+      "enum": [
+        "arcade",
+        "deconstructor",
+        "visualization",
+        "simulation",
+        "classifier",
+        "explorer",
+        "other"
+      ]
+    },
+    "methodology": {
+      "type": "string",
+      "description": "Detailed methodological description.",
+      "minLength": 20
+    },
+    "method_note": {
+      "type": "string",
+      "description": "Explicit statement of methodological limits and constraints.",
+      "minLength": 10
+    },
+    "data_inputs": {
+      "type": "object",
+      "description": "Pinned data inputs for the experiment - explicitly declared.",
+      "properties": {
+        "objects": {
+          "type": "array",
+          "description": "Object IDs used as input.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "images": {
+          "type": "array",
+          "description": "Image IDs used as input.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "concepts": {
+          "type": "array",
+          "description": "Concept IDs used as input.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "claims": {
+          "type": "array",
+          "description": "Claim IDs used as input.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "constellations": {
+          "type": "array",
+          "description": "Constellation slugs used as input.",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": []
+    },
+    "data_constraints": {
+      "type": "array",
+      "description": "Explicit constraints on the data used.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "interactive_features": {
+      "type": "array",
+      "description": "Features available in the interactive experiment.",
+      "items": {
+        "type": "string",
+        "enum": [
+          "toggle",
+          "slider",
+          "filter",
+          "sort",
+          "search",
+          "highlight",
+          "compare",
+          "annotate",
+          "export",
+          "other"
+        ]
+      }
+    },
+    "visual_components": {
+      "type": "array",
+      "description": "Visual components of the experiment.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "component_id": {
+            "type": "string"
+          },
+          "component_type": {
+            "type": "string",
+            "enum": ["canvas", "grid", "timeline", "network", "chart", "map", "other"]
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "editorial_status": {
+      "type": "string",
+      "description": "Current editorial status.",
+      "enum": ["draft", "review", "published", "withdrawn"],
+      "default": "draft"
+    },
+    "technical_requirements": {
+      "type": "object",
+      "description": "Technical requirements for running the experiment.",
+      "properties": {
+        "browser_support": {
+          "type": "array",
+          "description": "Supported browsers.",
+          "items": {
+            "type": "string",
+            "enum": ["chrome", "firefox", "safari", "edge", "all"]
+          }
+        },
+        "javascript_required": {
+          "type": "boolean",
+          "default": true
+        },
+        "mobile_supported": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "implementation": {
+      "type": "object",
+      "description": "Implementation details for the experiment.",
+      "properties": {
+        "file_path": {
+          "type": "string",
+          "description": "Path to the experiment implementation file."
+        },
+        "entry_point": {
+          "type": "string",
+          "description": "Entry point for the experiment (e.g., HTML file, JS module)."
+        },
+        "framework": {
+          "type": "string",
+          "description": "Framework or library used.",
+          "enum": ["vanilla-js", "react", "vue", "svelte", "d3", "three-js", "p5-js", "canvas-api", "webgl", "other"]
+        },
+        "build_required": {
+          "type": "boolean",
+          "description": "Whether a build step is required.",
+          "default": false
+        }
+      }
+    },
+    "strands": {
+      "type": "array",
+      "description": "Strand IDs this experiment is associated with.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "description": "Tags for categorizing experiments.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string",
+      "description": "Internal editorial notes."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this experiment was created."
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this experiment was last updated."
+    }
+  },
+  "additionalProperties": false
+}

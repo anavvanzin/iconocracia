@@ -1,0 +1,350 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://iconocracia.com/schemas/object.json",
+  "title": "Object",
+  "description": "Documentary catalog record for an artifact in the Counter-Archive. Represents what is materially documented, distinct from interpretive claims.",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "support",
+    "date_text",
+    "country_pt",
+    "country_code",
+    "observed_description",
+    "observed_motifs",
+    "sources",
+    "editorial_status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier (e.g., BR-009, US-008). Preserved verbatim from legacy data.",
+      "minLength": 1,
+      "examples": ["BR-009", "US-008", "AR-001"]
+    },
+    "title": {
+      "type": "string",
+      "description": "Institutional title of the object as documented in source records.",
+      "minLength": 1
+    },
+    "display_title": {
+      "type": "string",
+      "description": "Optional display title for UI purposes, may differ from institutional title."
+    },
+    "support": {
+      "type": "string",
+      "description": "Physical support/medium of the object.",
+      "enum": [
+        "moeda",
+        "papel-moeda",
+        "medalha",
+        "selo",
+        "monumento",
+        "escultura",
+        "pintura",
+        "gravura",
+        "litografia",
+        "cartaz",
+        "fotografia",
+        "documento-juridico",
+        "matriz-cunho",
+        "outro"
+      ]
+    },
+    "object_type": {
+      "type": "string",
+      "description": "Alternative classification, if needed. Prefer support when possible."
+    },
+    "date_text": {
+      "type": "string",
+      "description": "Human-readable date range (e.g., '1899-1903', '1822-1824').",
+      "minLength": 1
+    },
+    "date_start": {
+      "type": ["integer", "null"],
+      "description": "Start year of date range, if determinable.",
+      "minimum": 1800,
+      "maximum": 2000
+    },
+    "date_end": {
+      "type": ["integer", "null"],
+      "description": "End year of date range, if determinable.",
+      "minimum": 1800,
+      "maximum": 2000
+    },
+    "date_basis": {
+      "type": "string",
+      "description": "Reference to source ID that provides the dating evidence."
+    },
+    "makers": {
+      "type": "array",
+      "description": "Array of agents responsible for the object's creation.",
+      "items": {
+        "type": "object",
+        "required": ["agent_id", "role"],
+        "properties": {
+          "agent_id": {
+            "type": "string",
+            "description": "Reference to an agent/creator identifier."
+          },
+          "role": {
+            "type": "string",
+            "description": "Role of the agent (e.g., escultor, gravador, desenhista).",
+            "enum": [
+              "escultor",
+              "gravador",
+              "desenhista",
+              "pintor",
+              "fotografo",
+              "arquiteto",
+              "cunhador",
+              "fundidor",
+              "desconhecido",
+              "outro"
+            ]
+          },
+          "agent_name": {
+            "type": "string",
+            "description": "Human-readable name of the agent."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "place": {
+      "type": "object",
+      "description": "Geographic and jurisdictional information.",
+      "properties": {
+        "country_code": {
+          "type": "string",
+          "description": "ISO 3166-1 alpha-2 country code.",
+          "pattern": "^[A-Z]{2}$"
+        },
+        "country_pt": {
+          "type": "string",
+          "description": "Country name in Portuguese.",
+          "minLength": 1
+        },
+        "city": {
+          "type": "string",
+          "description": "City of creation or production."
+        },
+        "jurisdiction": {
+          "type": "string",
+          "description": "Jurisdictional context (e.g., Império do Brasil, República Velha)."
+        },
+        "attribution_basis": {
+          "type": "string",
+          "description": "Reference to source ID that provides the geographic evidence."
+        }
+      },
+      "required": ["country_code", "country_pt"]
+    },
+    "holding": {
+      "type": "object",
+      "description": "Institution holding the physical object.",
+      "properties": {
+        "institution_id": {
+          "type": "string",
+          "description": "Identifier for the holding institution."
+        },
+        "institution_name": {
+          "type": "string",
+          "description": "Human-readable name of the institution."
+        },
+        "accession_number": {
+          "type": "string",
+          "description": "Institution's accession or catalog number."
+        },
+        "catalogue_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the institution's catalog record."
+        }
+      }
+    },
+    "observed_description": {
+      "type": "string",
+      "description": "Strict Panofskian Level 1 pre-iconographic description - what is visible without interpretation.",
+      "minLength": 10
+    },
+    "observed_motifs": {
+      "type": "array",
+      "description": "Array of controlled motif identifiers observed in the object.",
+      "items": {
+        "type": "string",
+        "enum": [
+          "espada",
+          "balanca",
+          "venda",
+          "barrete-frigio",
+          "fasces",
+          "livro-da-lei",
+          "coroa-de-louros",
+          "matriz-cunho",
+          "coluna",
+          "escudo",
+          "cruzeiro",
+          "olho-da-providencia",
+          "sol",
+          "lua",
+          "estrela",
+          "coroa",
+          "cetro",
+          "globo",
+          "caduceo",
+          "toga",
+          "tunica",
+          "sandalias",
+          "asa",
+          "leao",
+          "outro"
+        ]
+      },
+      "minItems": 1
+    },
+    "dimensions": {
+      "type": "object",
+      "description": "Physical dimensions of the object.",
+      "properties": {
+        "height_cm": {
+          "type": "number",
+          "description": "Height in centimeters.",
+          "minimum": 0
+        },
+        "width_cm": {
+          "type": "number",
+          "description": "Width in centimeters.",
+          "minimum": 0
+        },
+        "depth_cm": {
+          "type": "number",
+          "description": "Depth in centimeters.",
+          "minimum": 0
+        },
+        "diameter_cm": {
+          "type": "number",
+          "description": "Diameter for circular objects (e.g., coins, medals).",
+          "minimum": 0
+        },
+        "weight_g": {
+          "type": "number",
+          "description": "Weight in grams.",
+          "minimum": 0
+        },
+        "unit": {
+          "type": "string",
+          "description": "Unit of measurement if not metric."
+        }
+      }
+    },
+    "standard_cataloging": {
+      "type": "object",
+      "description": "Standard cataloging information including Iconclass codes.",
+      "properties": {
+        "iconclass_codes": {
+          "type": "array",
+          "description": "Array of Iconclass codes with their roles.",
+          "items": {
+            "type": "object",
+            "required": ["code", "label"],
+            "properties": {
+              "code": {
+                "type": "string",
+                "description": "Iconclass notation (e.g., 31AA, 44G0, 48C24, 44B).",
+                "pattern": "^[0-9]{2}[A-Z][0-9]{0,4}$"
+              },
+              "label": {
+                "type": "string",
+                "description": "Human-readable label for the Iconclass code."
+              },
+              "axis_role": {
+                "type": "string",
+                "description": "Role of this code in the classification axis.",
+                "enum": ["anatomical", "personification", "medium", "sovereignty", "other"]
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    "images": {
+      "type": "array",
+      "description": "References to image records associated with this object.",
+      "items": {
+        "type": "string",
+        "description": "Image ID reference."
+      }
+    },
+    "sources": {
+      "type": "array",
+      "description": "References to source records that document this object.",
+      "items": {
+        "type": "object",
+        "required": ["source_id", "field_supported"],
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "description": "Reference to a Source entity."
+          },
+          "locator": {
+            "type": "string",
+            "description": "Page, figure number, or other locator within the source."
+          },
+          "field_supported": {
+            "type": "string",
+            "description": "Which field(s) this source supports/validates.",
+            "enum": [
+              "title",
+              "date",
+              "support",
+              "maker",
+              "place",
+              "description",
+              "provenance",
+              "all"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "strands": {
+      "type": "array",
+      "description": "Array of strand IDs this object belongs to.",
+      "items": {
+        "type": "string",
+        "description": "Strand identifier (e.g., brasil-1822-1922, atlas-global)."
+      }
+    },
+    "editorial_status": {
+      "type": "string",
+      "description": "Current editorial status of this object record.",
+      "enum": ["draft", "review", "published", "withdrawn"],
+      "default": "draft"
+    },
+    "rights_status": {
+      "type": "string",
+      "description": "Rights status for the object metadata and imagery.",
+      "enum": ["public_domain", "cc_by_4_0", "cc_by_sa_4_0", "restricted", "unknown"]
+    },
+    "notes": {
+      "type": "string",
+      "description": "Internal editorial notes not for public display."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this record was created."
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this record was last updated."
+    }
+  },
+  "additionalProperties": false
+}

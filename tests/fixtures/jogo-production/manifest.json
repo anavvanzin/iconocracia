@@ -22,8 +22,8 @@
     },
     "jogo.json": {
       "source": "site/data/jogo.json",
-      "bytes": 34050,
-      "sha256": "1bda2f76cb95017826d5c34e928de947fb70539fae636964906a858e5cde4c4d"
+      "bytes": 34046,
+      "sha256": "ecabf901c06833dbf4f18c9e5bd5d88dc351529acb7dd7b40e5842365ba7741c"
     }
   },
   "upstream": {
