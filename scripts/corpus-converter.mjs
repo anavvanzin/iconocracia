@@ -172,9 +172,12 @@ function fallbackYearNumber(fallbackYear) {
 
 /**
  * Parse date text to extract year range.
- * When the text has no four-digit year, honor fallbackYear as both bounds.
+ * Century expressions are mapped to explicit century intervals rather than
+ * collapsing to a single midpoint year. When the text has no four-digit year
+ * and no century expression (and is not flagged as 'year-estimado-seculo'),
+ * honor fallbackYear as both bounds.
  */
-function parseDateRange(dateText, fallbackYear = null) {
+function parseDateRange(dateText, fallbackYear = null, flags = []) {
   const text = dateText || '';
   const years = text.match(/\d{4}/g);
   if (years && years.length >= 2) {
@@ -189,9 +192,34 @@ function parseDateRange(dateText, fallbackYear = null) {
     return { start: year, end: year, text };
   }
 
-  const fallback = fallbackYearNumber(fallbackYear);
-  if (fallback !== null) {
-    return { start: fallback, end: fallback, text };
+  if (/early\s+20th\s+century|in[ií]cio\s+do\s+s[eé]culo\s+xx/i.test(text)) {
+    return { start: 1901, end: 1930, text };
+  }
+  if (/late\s+19th\s+century|final\s+do\s+s[eé]culo\s+xix/i.test(text)) {
+    return { start: 1870, end: 1900, text };
+  }
+  if (/\b(19th\s+century|s[eé]culo\s+xix|xix)\b/i.test(text)) {
+    return { start: 1801, end: 1900, text };
+  }
+  if (/\b(20th\s+century|s[eé]culo\s+xx|xx)\b/i.test(text)) {
+    return { start: 1901, end: 2000, text };
+  }
+  if (/\b(18th\s+century|s[eé]culo\s+xviii|xviii)\b/i.test(text)) {
+    return { start: 1701, end: 1800, text };
+  }
+  if (/\b(17th\s+century|s[eé]culo\s+xvii|xvii)\b/i.test(text)) {
+    return { start: 1601, end: 1700, text };
+  }
+  if (/\b(16th\s+century|s[eé]culo\s+xvi|xvi)\b/i.test(text)) {
+    return { start: 1501, end: 1600, text };
+  }
+
+  const isCenturyEstimate = Array.isArray(flags) && flags.includes('year-estimado-seculo');
+  if (!isCenturyEstimate) {
+    const fallback = fallbackYearNumber(fallbackYear);
+    if (fallback !== null) {
+      return { start: fallback, end: fallback, text };
+    }
   }
 
   return { start: null, end: null, text };
@@ -285,7 +313,7 @@ async function convertCorpus() {
     // 1. Create Object record
     // ====================
     const objectId = item.id;
-    const dateInfo = parseDateRange(item.date, item.year);
+    const dateInfo = parseDateRange(item.date, item.year, item.flags);
     const countryCode = COUNTRY_CODES[item.country] || COUNTRY_CODES[item.country_pt] || 'XX';
     const support = mapSupport(item.support || item.medium || item.medium_norm);
     const motifs = extractMotifs(item);
@@ -297,7 +325,7 @@ async function convertCorpus() {
       display_title: item.title, // Can be overridden later
       support,
       object_type: support,
-      date_text: item.date || String(item.year || ''),
+      date_text: item.date || item.period || (item.year ? String(item.year) : 's.d.'),
       date_start: dateInfo.start,
       date_end: dateInfo.end,
       date_basis: null, // To be populated from sources
@@ -331,7 +359,11 @@ async function convertCorpus() {
     };
     
     // Add to strands if it's in the thesis scope
-    if (countryCode === 'BR' && object.date_start >= 1822 && object.date_start <= 1922) {
+    if (
+      countryCode === 'BR' &&
+      ((dateInfo.start !== null && dateInfo.start >= 1822 && dateInfo.start <= 1922) ||
+        /\bxix\b|19th\s+century/i.test(item.date || ''))
+    ) {
       object.strands.push('brasil-1822-1922');
     }
     
@@ -524,15 +556,16 @@ async function convertCorpus() {
     const existingObject = objects.find(o => o.id === acervoItem.id);
     if (!existingObject) {
       // Create a new object from acervo
+      const acervoDateInfo = parseDateRange(acervoItem.data, acervoItem.ano, acervoItem.flags);
       const object = {
         id: acervoItem.id,
         title: acervoItem.titulo,
         display_title: acervoItem.titulo,
         support: mapSupport(acervoItem.suporte),
         object_type: mapSupport(acervoItem.suporte),
-        date_text: acervoItem.data || '',
-        date_start: acervoItem.data ? parseInt(acervoItem.data.split('-')[0]) : null,
-        date_end: acervoItem.data ? parseInt(acervoItem.data.split('-').pop()) : null,
+        date_text: acervoItem.data || (acervoItem.ano ? String(acervoItem.ano) : 's.d.'),
+        date_start: acervoDateInfo.start,
+        date_end: acervoDateInfo.end,
         date_basis: null,
         makers: [],
         place: {
@@ -564,7 +597,11 @@ async function convertCorpus() {
       };
       
       // Add to strands if Brazil 1822-1922
-      if (object.place.country_code === 'BR' && object.date_start >= 1822 && object.date_start <= 1922) {
+      if (
+        object.place.country_code === 'BR' &&
+        ((object.date_start !== null && object.date_start >= 1822 && object.date_start <= 1922) ||
+          /\bxix\b|19th\s+century/i.test(acervoItem.data || ''))
+      ) {
         object.strands.push('brasil-1822-1922');
       }
       
@@ -583,7 +620,7 @@ async function convertCorpus() {
       slug: constell.slug,
       title: constell.title,
       subtitle: constell.subtitle || null,
-      question: null, // To be added later
+      question: constell.question || constell.thesis || constell.summary || constell.introduction || constell.description || constell.title,
       ghosted_formula: null,
       members: constell.cards ? constell.cards.map((card, index) => ({
         object_id: card.id || card.objectId || `constell-${constell.slug}-${index}`,

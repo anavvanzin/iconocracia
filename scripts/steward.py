@@ -336,7 +336,7 @@ def draft_overlay_entry(
         "source_url": str(record.get("imagem") or record.get("fonte_url") or ""),
         "catalog_url": str(record.get("fonte_url") or ""),
         "license": str(record.get("direitos") or ""),
-        "credit": str(record.get("instituicao") or ""),
+        "credit": str(record.get("credito") or ""),
         "alt": str(record.get("descricao") or record.get("titulo") or ""),
     }
     if local_abs.is_file():

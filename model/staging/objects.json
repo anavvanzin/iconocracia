@@ -62,8 +62,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.076Z",
-    "updated_at": "2026-11-09T06:25:53.081Z"
+    "created_at": "2026-11-15T20:30:19.341Z",
+    "updated_at": "2026-11-15T20:30:19.341Z"
   },
   {
     "id": "AT-001",
@@ -129,8 +129,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.082Z",
-    "updated_at": "2026-11-09T06:25:53.082Z"
+    "created_at": "2026-11-15T20:30:19.342Z",
+    "updated_at": "2026-11-15T20:30:19.342Z"
   },
   {
     "id": "EU-005",
@@ -139,8 +139,8 @@
     "support": "monumento/escultura",
     "object_type": "monumento/escultura",
     "date_text": "16th century",
-    "date_start": 1550,
-    "date_end": 1550,
+    "date_start": 1501,
+    "date_end": 1600,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -213,8 +213,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.082Z",
-    "updated_at": "2026-11-09T06:25:53.082Z"
+    "created_at": "2026-11-15T20:30:19.342Z",
+    "updated_at": "2026-11-15T20:30:19.342Z"
   },
   {
     "id": "EU-008",
@@ -223,8 +223,8 @@
     "support": "?",
     "object_type": "?",
     "date_text": "18th century",
-    "date_start": 1750,
-    "date_end": 1750,
+    "date_start": 1701,
+    "date_end": 1800,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -304,8 +304,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.082Z",
-    "updated_at": "2026-11-09T06:25:53.082Z"
+    "created_at": "2026-11-15T20:30:19.343Z",
+    "updated_at": "2026-11-15T20:30:19.343Z"
   },
   {
     "id": "fb26ccd4-5b0f-e074-b888-b5dd666f997c",
@@ -357,8 +357,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.082Z",
-    "updated_at": "2026-11-09T06:25:53.082Z"
+    "created_at": "2026-11-15T20:30:19.343Z",
+    "updated_at": "2026-11-15T20:30:19.343Z"
   },
   {
     "id": "BE-001",
@@ -449,8 +449,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.082Z",
-    "updated_at": "2026-11-09T06:25:53.082Z"
+    "created_at": "2026-11-15T20:30:19.343Z",
+    "updated_at": "2026-11-15T20:30:19.343Z"
   },
   {
     "id": "BE-002",
@@ -528,8 +528,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.082Z",
-    "updated_at": "2026-11-09T06:25:53.082Z"
+    "created_at": "2026-11-15T20:30:19.343Z",
+    "updated_at": "2026-11-15T20:30:19.343Z"
   },
   {
     "id": "BE-003",
@@ -582,8 +582,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.082Z",
-    "updated_at": "2026-11-09T06:25:53.082Z"
+    "created_at": "2026-11-15T20:30:19.343Z",
+    "updated_at": "2026-11-15T20:30:19.343Z"
   },
   {
     "id": "BE-004",
@@ -635,8 +635,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.082Z",
-    "updated_at": "2026-11-09T06:25:53.082Z"
+    "created_at": "2026-11-15T20:30:19.343Z",
+    "updated_at": "2026-11-15T20:30:19.343Z"
   },
   {
     "id": "BE-5F-LEOPOLD-1832",
@@ -694,8 +694,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.082Z",
-    "updated_at": "2026-11-09T06:25:53.082Z"
+    "created_at": "2026-11-15T20:30:19.343Z",
+    "updated_at": "2026-11-15T20:30:19.343Z"
   },
   {
     "id": "BE-CONGO-100F-1912",
@@ -774,8 +774,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.082Z",
-    "updated_at": "2026-11-09T06:25:53.082Z"
+    "created_at": "2026-11-15T20:30:19.344Z",
+    "updated_at": "2026-11-15T20:30:19.344Z"
   },
   {
     "id": "BE-CONGO-1912",
@@ -864,8 +864,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.082Z",
-    "updated_at": "2026-11-09T06:25:53.082Z"
+    "created_at": "2026-11-15T20:30:19.344Z",
+    "updated_at": "2026-11-15T20:30:19.344Z"
   },
   {
     "id": "BE-CONGO-MON-1921",
@@ -938,8 +938,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.082Z",
-    "updated_at": "2026-11-09T06:25:53.082Z"
+    "created_at": "2026-11-15T20:30:19.344Z",
+    "updated_at": "2026-11-15T20:30:19.344Z"
   },
   {
     "id": "BE-IND-1880",
@@ -1015,8 +1015,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.082Z",
-    "updated_at": "2026-11-09T06:25:53.082Z"
+    "created_at": "2026-11-15T20:30:19.344Z",
+    "updated_at": "2026-11-15T20:30:19.344Z"
   },
   {
     "id": "EU-002",
@@ -1098,8 +1098,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.344Z",
+    "updated_at": "2026-11-15T20:30:19.344Z"
   },
   {
     "id": "EU-007",
@@ -1108,8 +1108,8 @@
     "support": "?",
     "object_type": "?",
     "date_text": "16th century",
-    "date_start": 1550,
-    "date_end": 1550,
+    "date_start": 1501,
+    "date_end": 1600,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -1195,8 +1195,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.344Z",
+    "updated_at": "2026-11-15T20:30:19.344Z"
   },
   {
     "id": "03a9622f-6b17-5876-843c-4e49e4684441",
@@ -1243,8 +1243,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.348Z",
+    "updated_at": "2026-11-15T20:30:19.348Z"
   },
   {
     "id": "0bf85996-a2f4-53c6-9bf8-1334ede7d1b8",
@@ -1291,8 +1291,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.348Z",
+    "updated_at": "2026-11-15T20:30:19.348Z"
   },
   {
     "id": "14990163-f5e4-a143-0d6b-288477d89a2b",
@@ -1351,8 +1351,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.348Z",
+    "updated_at": "2026-11-15T20:30:19.348Z"
   },
   {
     "id": "2e077aa6-5e64-3c58-f33b-99b0bcfcef83",
@@ -1405,8 +1405,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.348Z",
+    "updated_at": "2026-11-15T20:30:19.348Z"
   },
   {
     "id": "3cca844a-daff-511a-abc2-f6a2a8ce2210",
@@ -1453,8 +1453,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.348Z",
+    "updated_at": "2026-11-15T20:30:19.348Z"
   },
   {
     "id": "49706189-9d27-da9e-59d5-3467a32a1f5e",
@@ -1513,8 +1513,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.348Z",
+    "updated_at": "2026-11-15T20:30:19.348Z"
   },
   {
     "id": "4a6fa350-a8f7-87ed-e4be-76860dba356b",
@@ -1594,8 +1594,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.348Z",
+    "updated_at": "2026-11-15T20:30:19.348Z"
   },
   {
     "id": "BR-001",
@@ -1682,8 +1682,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.348Z",
+    "updated_at": "2026-11-15T20:30:19.348Z"
   },
   {
     "id": "BR-002",
@@ -1775,8 +1775,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.349Z",
+    "updated_at": "2026-11-15T20:30:19.349Z"
   },
   {
     "id": "BR-003",
@@ -1858,8 +1858,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.349Z",
+    "updated_at": "2026-11-15T20:30:19.349Z"
   },
   {
     "id": "BR-004",
@@ -1961,8 +1961,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.349Z",
+    "updated_at": "2026-11-15T20:30:19.349Z"
   },
   {
     "id": "BR-005",
@@ -2056,8 +2056,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.349Z",
+    "updated_at": "2026-11-15T20:30:19.349Z"
   },
   {
     "id": "BR-006",
@@ -2154,8 +2154,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.349Z",
+    "updated_at": "2026-11-15T20:30:19.349Z"
   },
   {
     "id": "BR-007",
@@ -2248,8 +2248,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.349Z",
+    "updated_at": "2026-11-15T20:30:19.349Z"
   },
   {
     "id": "BR-008",
@@ -2326,8 +2326,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.349Z",
+    "updated_at": "2026-11-15T20:30:19.349Z"
   },
   {
     "id": "BR-009",
@@ -2422,8 +2422,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.349Z",
+    "updated_at": "2026-11-15T20:30:19.349Z"
   },
   {
     "id": "BR-010",
@@ -2505,8 +2505,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.349Z",
+    "updated_at": "2026-11-15T20:30:19.349Z"
   },
   {
     "id": "BR-017",
@@ -2554,8 +2554,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.349Z",
+    "updated_at": "2026-11-15T20:30:19.349Z"
   },
   {
     "id": "BR-018",
@@ -2609,8 +2609,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.349Z",
+    "updated_at": "2026-11-15T20:30:19.349Z"
   },
   {
     "id": "BR-019",
@@ -2663,8 +2663,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.349Z",
+    "updated_at": "2026-11-15T20:30:19.349Z"
   },
   {
     "id": "BR-020",
@@ -2712,8 +2712,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.349Z",
+    "updated_at": "2026-11-15T20:30:19.349Z"
   },
   {
     "id": "BR-021",
@@ -2761,8 +2761,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.350Z",
+    "updated_at": "2026-11-15T20:30:19.350Z"
   },
   {
     "id": "BR-022",
@@ -2815,8 +2815,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.350Z",
+    "updated_at": "2026-11-15T20:30:19.350Z"
   },
   {
     "id": "BR-023",
@@ -2864,8 +2864,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.350Z",
+    "updated_at": "2026-11-15T20:30:19.350Z"
   },
   {
     "id": "BR-024",
@@ -2913,8 +2913,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.083Z",
-    "updated_at": "2026-11-09T06:25:53.083Z"
+    "created_at": "2026-11-15T20:30:19.350Z",
+    "updated_at": "2026-11-15T20:30:19.350Z"
   },
   {
     "id": "BR-025",
@@ -2962,8 +2962,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.350Z",
+    "updated_at": "2026-11-15T20:30:19.350Z"
   },
   {
     "id": "BR-026",
@@ -3017,8 +3017,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.350Z",
+    "updated_at": "2026-11-15T20:30:19.350Z"
   },
   {
     "id": "BR-027",
@@ -3066,8 +3066,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.350Z",
+    "updated_at": "2026-11-15T20:30:19.350Z"
   },
   {
     "id": "BR-028",
@@ -3121,8 +3121,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.350Z",
+    "updated_at": "2026-11-15T20:30:19.350Z"
   },
   {
     "id": "BR-029",
@@ -3176,8 +3176,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.350Z",
+    "updated_at": "2026-11-15T20:30:19.350Z"
   },
   {
     "id": "BR-030",
@@ -3225,8 +3225,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.350Z",
+    "updated_at": "2026-11-15T20:30:19.350Z"
   },
   {
     "id": "BR-031",
@@ -3274,8 +3274,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.350Z",
+    "updated_at": "2026-11-15T20:30:19.350Z"
   },
   {
     "id": "BR-032",
@@ -3329,8 +3329,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.350Z",
+    "updated_at": "2026-11-15T20:30:19.350Z"
   },
   {
     "id": "BR-033",
@@ -3384,8 +3384,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.350Z",
+    "updated_at": "2026-11-15T20:30:19.350Z"
   },
   {
     "id": "BR-034",
@@ -3433,8 +3433,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.350Z",
+    "updated_at": "2026-11-15T20:30:19.350Z"
   },
   {
     "id": "BR-035",
@@ -3482,8 +3482,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.352Z",
+    "updated_at": "2026-11-15T20:30:19.352Z"
   },
   {
     "id": "BR-036",
@@ -3531,8 +3531,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.352Z",
+    "updated_at": "2026-11-15T20:30:19.352Z"
   },
   {
     "id": "BR-037",
@@ -3580,8 +3580,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.352Z",
+    "updated_at": "2026-11-15T20:30:19.352Z"
   },
   {
     "id": "BR-038",
@@ -3635,8 +3635,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.352Z",
+    "updated_at": "2026-11-15T20:30:19.352Z"
   },
   {
     "id": "BR-039",
@@ -3690,8 +3690,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.352Z",
+    "updated_at": "2026-11-15T20:30:19.352Z"
   },
   {
     "id": "BR-040",
@@ -3739,8 +3739,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.352Z",
+    "updated_at": "2026-11-15T20:30:19.352Z"
   },
   {
     "id": "BR-041",
@@ -3788,8 +3788,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.352Z",
+    "updated_at": "2026-11-15T20:30:19.352Z"
   },
   {
     "id": "BR-042",
@@ -3843,8 +3843,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.352Z",
+    "updated_at": "2026-11-15T20:30:19.352Z"
   },
   {
     "id": "BR-043",
@@ -3892,8 +3892,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.352Z",
+    "updated_at": "2026-11-15T20:30:19.352Z"
   },
   {
     "id": "BR-044",
@@ -3946,8 +3946,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.352Z",
+    "updated_at": "2026-11-15T20:30:19.352Z"
   },
   {
     "id": "BR-045",
@@ -3995,8 +3995,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.352Z",
+    "updated_at": "2026-11-15T20:30:19.352Z"
   },
   {
     "id": "BR-046",
@@ -4052,8 +4052,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.352Z",
+    "updated_at": "2026-11-15T20:30:19.352Z"
   },
   {
     "id": "BR-1000R-1906",
@@ -4106,8 +4106,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.352Z",
+    "updated_at": "2026-11-15T20:30:19.352Z"
   },
   {
     "id": "BR-1CR-1970",
@@ -4170,8 +4170,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.352Z",
+    "updated_at": "2026-11-15T20:30:19.352Z"
   },
   {
     "id": "BR-2000R-1907",
@@ -4241,8 +4241,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.352Z",
+    "updated_at": "2026-11-15T20:30:19.352Z"
   },
   {
     "id": "BR-50CR-1965",
@@ -4294,8 +4294,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.352Z",
+    "updated_at": "2026-11-15T20:30:19.352Z"
   },
   {
     "id": "SCOUT-414",
@@ -4349,8 +4349,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.352Z",
+    "updated_at": "2026-11-15T20:30:19.352Z"
   },
   {
     "id": "SCOUT-559",
@@ -4416,8 +4416,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.352Z",
+    "updated_at": "2026-11-15T20:30:19.352Z"
   },
   {
     "id": "SCOUT-560",
@@ -4481,8 +4481,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "SCOUT-561",
@@ -4541,8 +4541,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "SCOUT-562",
@@ -4601,8 +4601,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "SCOUT-563",
@@ -4611,8 +4611,8 @@
     "support": "ilustração jornalística / gravura",
     "object_type": "ilustração jornalística / gravura",
     "date_text": "século XIX",
-    "date_start": 1850,
-    "date_end": 1850,
+    "date_start": 1801,
+    "date_end": 1900,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -4661,8 +4661,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "SCOUT-564",
@@ -4721,8 +4721,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "SCOUT-565",
@@ -4781,8 +4781,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "SCOUT-566",
@@ -4852,8 +4852,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "SCOUT-567",
@@ -4918,8 +4918,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "SCOUT-568",
@@ -4984,8 +4984,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "SCOUT-569",
@@ -5049,8 +5049,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "SCOUT-570",
@@ -5059,8 +5059,8 @@
     "support": "gravura / frontispício de livro",
     "object_type": "gravura / frontispício de livro",
     "date_text": "séculos XVI–XVIII",
-    "date_start": 1600,
-    "date_end": 1600,
+    "date_start": 1701,
+    "date_end": 1800,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -5114,8 +5114,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "SCOUT-572",
@@ -5190,8 +5190,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "SCOUT-573",
@@ -5272,8 +5272,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.084Z",
-    "updated_at": "2026-11-09T06:25:53.084Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "SCOUT-574",
@@ -5364,8 +5364,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.086Z",
-    "updated_at": "2026-11-09T06:25:53.086Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "a7971ac5-e277-f70a-bb11-ba25db7e6ac0",
@@ -5424,8 +5424,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.086Z",
-    "updated_at": "2026-11-09T06:25:53.086Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "c9966731-1c38-5d06-9bc6-6081b5a87d1a",
@@ -5478,8 +5478,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.086Z",
-    "updated_at": "2026-11-09T06:25:53.086Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "dfe19295-505c-5df1-866e-e8bb695dbc5f",
@@ -5557,8 +5557,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.086Z",
-    "updated_at": "2026-11-09T06:25:53.086Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "e0399402-b59d-5050-9776-b67f2c69a6b2",
@@ -5605,8 +5605,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.086Z",
-    "updated_at": "2026-11-09T06:25:53.086Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "e1d2e177-0905-a3bc-2e17-f6dd4f040db0",
@@ -5665,8 +5665,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.086Z",
-    "updated_at": "2026-11-09T06:25:53.086Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "ff43ad57-b420-3e54-24ec-9d15caef8d64",
@@ -5746,8 +5746,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.086Z",
-    "updated_at": "2026-11-09T06:25:53.086Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "19238273-c090-53e6-b531-23397f36677b",
@@ -5794,8 +5794,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.086Z",
-    "updated_at": "2026-11-09T06:25:53.086Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "95844673-a438-57b7-9e87-b81a8628a0f0",
@@ -5842,8 +5842,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.086Z",
-    "updated_at": "2026-11-09T06:25:53.086Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "d44093ca-343e-580c-99f2-c740d8c68ef9",
@@ -5890,8 +5890,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.086Z",
-    "updated_at": "2026-11-09T06:25:53.086Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "3bc72151-1996-f7ca-b282-512024e54acf",
@@ -5949,8 +5949,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.086Z",
-    "updated_at": "2026-11-09T06:25:53.086Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "da35cbd9-2e8c-24a6-7c44-d7f1741e0a2a",
@@ -6008,8 +6008,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.086Z",
-    "updated_at": "2026-11-09T06:25:53.086Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "f988255c-abaa-fb73-74fb-fcbce9abdaa8",
@@ -6067,8 +6067,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.086Z",
-    "updated_at": "2026-11-09T06:25:53.086Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "0970108c-1619-50f5-bc85-719eb5f80aee",
@@ -6115,8 +6115,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.086Z",
-    "updated_at": "2026-11-09T06:25:53.086Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "1589cd9a-0569-5524-bb61-5c64de1e92d1",
@@ -6173,8 +6173,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.086Z",
-    "updated_at": "2026-11-09T06:25:53.086Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "2b7a1a18-1a29-5703-9264-6012425c65e8",
@@ -6282,8 +6282,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.086Z",
-    "updated_at": "2026-11-09T06:25:53.086Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "307f2209-2999-5366-964a-8e86009d4b5b",
@@ -6341,8 +6341,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.086Z",
-    "updated_at": "2026-11-09T06:25:53.086Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "324a90b6-403b-5b36-9bcf-d4c4db9efdc1",
@@ -6400,8 +6400,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.086Z",
-    "updated_at": "2026-11-09T06:25:53.086Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "6932b9c2-9bb3-5b21-9040-36f6323401e3",
@@ -6448,8 +6448,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.087Z",
-    "updated_at": "2026-11-09T06:25:53.087Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "69db3fb7-1fad-5090-b2a7-5e18c0438807",
@@ -6506,8 +6506,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.087Z",
-    "updated_at": "2026-11-09T06:25:53.087Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "73ee9bdb-039b-5acd-b425-871fbb998b36",
@@ -6565,8 +6565,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.087Z",
-    "updated_at": "2026-11-09T06:25:53.087Z"
+    "created_at": "2026-11-15T20:30:19.353Z",
+    "updated_at": "2026-11-15T20:30:19.353Z"
   },
   {
     "id": "7f2f25d9-e351-502e-b308-fd784e972fbf",
@@ -6641,8 +6641,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.087Z",
-    "updated_at": "2026-11-09T06:25:53.087Z"
+    "created_at": "2026-11-15T20:30:19.354Z",
+    "updated_at": "2026-11-15T20:30:19.354Z"
   },
   {
     "id": "FR-001",
@@ -6749,8 +6749,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.087Z",
-    "updated_at": "2026-11-09T06:25:53.087Z"
+    "created_at": "2026-11-15T20:30:19.354Z",
+    "updated_at": "2026-11-15T20:30:19.354Z"
   },
   {
     "id": "FR-002",
@@ -6852,8 +6852,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.087Z",
-    "updated_at": "2026-11-09T06:25:53.087Z"
+    "created_at": "2026-11-15T20:30:19.354Z",
+    "updated_at": "2026-11-15T20:30:19.354Z"
   },
   {
     "id": "FR-003",
@@ -6943,8 +6943,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.087Z",
-    "updated_at": "2026-11-09T06:25:53.087Z"
+    "created_at": "2026-11-15T20:30:19.354Z",
+    "updated_at": "2026-11-15T20:30:19.354Z"
   },
   {
     "id": "FR-004",
@@ -7061,8 +7061,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.087Z",
-    "updated_at": "2026-11-09T06:25:53.087Z"
+    "created_at": "2026-11-15T20:30:19.354Z",
+    "updated_at": "2026-11-15T20:30:19.354Z"
   },
   {
     "id": "FR-005",
@@ -7155,8 +7155,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.087Z",
-    "updated_at": "2026-11-09T06:25:53.087Z"
+    "created_at": "2026-11-15T20:30:19.354Z",
+    "updated_at": "2026-11-15T20:30:19.354Z"
   },
   {
     "id": "FR-006",
@@ -7263,8 +7263,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.087Z",
-    "updated_at": "2026-11-09T06:25:53.087Z"
+    "created_at": "2026-11-15T20:30:19.354Z",
+    "updated_at": "2026-11-15T20:30:19.354Z"
   },
   {
     "id": "FR-008",
@@ -7367,8 +7367,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.087Z",
-    "updated_at": "2026-11-09T06:25:53.087Z"
+    "created_at": "2026-11-15T20:30:19.354Z",
+    "updated_at": "2026-11-15T20:30:19.354Z"
   },
   {
     "id": "FR-009",
@@ -7377,8 +7377,8 @@
     "support": "monumento/escultura",
     "object_type": "monumento/escultura",
     "date_text": "Early 20th century",
-    "date_start": 1950,
-    "date_end": 1950,
+    "date_start": 1901,
+    "date_end": 1930,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -7466,8 +7466,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.087Z",
-    "updated_at": "2026-11-09T06:25:53.087Z"
+    "created_at": "2026-11-15T20:30:19.354Z",
+    "updated_at": "2026-11-15T20:30:19.354Z"
   },
   {
     "id": "FR-010",
@@ -7554,8 +7554,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.087Z",
-    "updated_at": "2026-11-09T06:25:53.087Z"
+    "created_at": "2026-11-15T20:30:19.354Z",
+    "updated_at": "2026-11-15T20:30:19.354Z"
   },
   {
     "id": "FR-011",
@@ -7656,8 +7656,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.087Z",
-    "updated_at": "2026-11-09T06:25:53.087Z"
+    "created_at": "2026-11-15T20:30:19.354Z",
+    "updated_at": "2026-11-15T20:30:19.354Z"
   },
   {
     "id": "FR-012",
@@ -7733,8 +7733,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.087Z",
-    "updated_at": "2026-11-09T06:25:53.087Z"
+    "created_at": "2026-11-15T20:30:19.354Z",
+    "updated_at": "2026-11-15T20:30:19.354Z"
   },
   {
     "id": "FR-013",
@@ -7839,8 +7839,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.087Z",
-    "updated_at": "2026-11-09T06:25:53.087Z"
+    "created_at": "2026-11-15T20:30:19.354Z",
+    "updated_at": "2026-11-15T20:30:19.354Z"
   },
   {
     "id": "FR-014",
@@ -7939,8 +7939,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.354Z",
+    "updated_at": "2026-11-15T20:30:19.354Z"
   },
   {
     "id": "FR-015",
@@ -8041,8 +8041,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.354Z",
+    "updated_at": "2026-11-15T20:30:19.354Z"
   },
   {
     "id": "FR-016",
@@ -8143,8 +8143,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.354Z",
+    "updated_at": "2026-11-15T20:30:19.354Z"
   },
   {
     "id": "FR-017",
@@ -8244,8 +8244,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.354Z",
+    "updated_at": "2026-11-15T20:30:19.354Z"
   },
   {
     "id": "FR-018",
@@ -8344,8 +8344,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-019",
@@ -8450,8 +8450,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-020",
@@ -8543,8 +8543,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-021",
@@ -8609,8 +8609,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-022",
@@ -8680,8 +8680,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-023",
@@ -8755,8 +8755,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-025",
@@ -8831,8 +8831,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-026",
@@ -8902,8 +8902,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-027",
@@ -8967,8 +8967,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-028",
@@ -9034,8 +9034,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-029",
@@ -9105,8 +9105,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-030",
@@ -9176,8 +9176,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-031",
@@ -9242,8 +9242,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-032",
@@ -9293,8 +9293,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-033",
@@ -9344,8 +9344,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-036",
@@ -9411,8 +9411,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-038",
@@ -9476,8 +9476,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-039",
@@ -9537,8 +9537,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-047",
@@ -9604,8 +9604,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-048",
@@ -9675,8 +9675,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-049",
@@ -9684,7 +9684,7 @@
     "display_title": "Allégorie : le perron avec ses deux blasons muets entre la Force et la Prudence ; au-dessus plane la Justice",
     "support": "moeda",
     "object_type": "moeda",
-    "date_text": "",
+    "date_text": "s.d.",
     "date_start": null,
     "date_end": null,
     "date_basis": null,
@@ -9729,8 +9729,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-050",
@@ -9738,7 +9738,7 @@
     "display_title": "Figures allégories de Vertus et de l'Ancien Testament : Enoch, allégorie de la Diligence, Mathusalem et allégorie de la Justice",
     "support": "moeda",
     "object_type": "moeda",
-    "date_text": "",
+    "date_text": "s.d.",
     "date_start": null,
     "date_end": null,
     "date_basis": null,
@@ -9783,8 +9783,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-051",
@@ -9837,8 +9837,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-052",
@@ -9885,8 +9885,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-053",
@@ -9894,7 +9894,7 @@
     "display_title": "GRAND JUGE ET MINISTRE DE LA JUSTICE : [en tête de page : [estampe] / Gautherot del. ; B. Roger Sc.",
     "support": "estampa/gravura",
     "object_type": "estampa/gravura",
-    "date_text": "",
+    "date_text": "s.d.",
     "date_start": null,
     "date_end": null,
     "date_basis": null,
@@ -9933,8 +9933,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-054",
@@ -9942,7 +9942,7 @@
     "display_title": "The Sun of Justice",
     "support": "moeda",
     "object_type": "moeda",
-    "date_text": "",
+    "date_text": "s.d.",
     "date_start": null,
     "date_end": null,
     "date_basis": null,
@@ -9987,8 +9987,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-055",
@@ -9996,7 +9996,7 @@
     "display_title": "La Sagesse et la Justice",
     "support": "moeda",
     "object_type": "moeda",
-    "date_text": "",
+    "date_text": "s.d.",
     "date_start": null,
     "date_end": null,
     "date_basis": null,
@@ -10041,8 +10041,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-056",
@@ -10050,7 +10050,7 @@
     "display_title": "[Allegory with Justitia and Pax in a cart in front of Albert and Isabella of Austria, Moritz of Orange, Spinola and other persons; Allegory with Justitia and Pax on a Car before Albert and Isabella of Austria, Maurice of Orange, Spinola and other Persons]",
     "support": "moeda",
     "object_type": "moeda",
-    "date_text": "",
+    "date_text": "s.d.",
     "date_start": null,
     "date_end": null,
     "date_basis": null,
@@ -10095,8 +10095,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.355Z",
+    "updated_at": "2026-11-15T20:30:19.355Z"
   },
   {
     "id": "FR-057",
@@ -10104,7 +10104,7 @@
     "display_title": "Iusticia [justice]",
     "support": "moeda",
     "object_type": "moeda",
-    "date_text": "",
+    "date_text": "s.d.",
     "date_start": null,
     "date_end": null,
     "date_basis": null,
@@ -10149,8 +10149,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.356Z",
+    "updated_at": "2026-11-15T20:30:19.356Z"
   },
   {
     "id": "FR-058",
@@ -10158,7 +10158,7 @@
     "display_title": "Iustitia Prudentia [Gerechtigkeit und Klugheit; Justice and Prudence; Rechtvaardigheid en Voorzichtigheid]",
     "support": "moeda",
     "object_type": "moeda",
-    "date_text": "",
+    "date_text": "s.d.",
     "date_start": null,
     "date_end": null,
     "date_basis": null,
@@ -10203,8 +10203,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.356Z",
+    "updated_at": "2026-11-15T20:30:19.356Z"
   },
   {
     "id": "FR-059",
@@ -10212,7 +10212,7 @@
     "display_title": "The old age with the image of justice",
     "support": "moeda",
     "object_type": "moeda",
-    "date_text": "",
+    "date_text": "s.d.",
     "date_start": null,
     "date_end": null,
     "date_basis": null,
@@ -10257,8 +10257,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.356Z",
+    "updated_at": "2026-11-15T20:30:19.356Z"
   },
   {
     "id": "FR-060",
@@ -10266,7 +10266,7 @@
     "display_title": "[Allegorie auf die Gerechtigkeit, die Barmherzigkeit und den Frieden; Allegory on justice, charity and peace]",
     "support": "moeda",
     "object_type": "moeda",
-    "date_text": "",
+    "date_text": "s.d.",
     "date_start": null,
     "date_end": null,
     "date_basis": null,
@@ -10311,8 +10311,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.356Z",
+    "updated_at": "2026-11-15T20:30:19.356Z"
   },
   {
     "id": "FR-061",
@@ -10320,7 +10320,7 @@
     "display_title": "[Justitia; Justice]",
     "support": "moeda",
     "object_type": "moeda",
-    "date_text": "",
+    "date_text": "s.d.",
     "date_start": null,
     "date_end": null,
     "date_basis": null,
@@ -10365,8 +10365,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.356Z",
+    "updated_at": "2026-11-15T20:30:19.356Z"
   },
   {
     "id": "FR-062",
@@ -10374,7 +10374,7 @@
     "display_title": "Polidore de Caravage Salles du Vatican á Rome; [Deux femmes de profil; La Justice] [Zwei Frauen im Profil; Allegorie der Gerechtigkeit]",
     "support": "moeda",
     "object_type": "moeda",
-    "date_text": "",
+    "date_text": "s.d.",
     "date_start": null,
     "date_end": null,
     "date_basis": null,
@@ -10419,8 +10419,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-063",
@@ -10428,7 +10428,7 @@
     "display_title": "Solimene Sacristie de L'Eglise de Saint Paul a Naples; [Allegorie der Gerechtigkeit]",
     "support": "moeda",
     "object_type": "moeda",
-    "date_text": "",
+    "date_text": "s.d.",
     "date_start": null,
     "date_end": null,
     "date_basis": null,
@@ -10473,8 +10473,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-064",
@@ -10482,7 +10482,7 @@
     "display_title": "[Gerechtigkeit; Justice]",
     "support": "moeda",
     "object_type": "moeda",
-    "date_text": "",
+    "date_text": "s.d.",
     "date_start": null,
     "date_end": null,
     "date_basis": null,
@@ -10527,8 +10527,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-065",
@@ -10536,7 +10536,7 @@
     "display_title": "Mourning allegories of peace and justice",
     "support": "moeda",
     "object_type": "moeda",
-    "date_text": "",
+    "date_text": "s.d.",
     "date_start": null,
     "date_end": null,
     "date_basis": null,
@@ -10581,8 +10581,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-066",
@@ -10590,7 +10590,7 @@
     "display_title": "Putti als Allegorien der Gerechtigkeit und der Klugheit",
     "support": "moeda",
     "object_type": "moeda",
-    "date_text": "",
+    "date_text": "s.d.",
     "date_start": null,
     "date_end": null,
     "date_basis": null,
@@ -10635,8 +10635,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-067",
@@ -10644,7 +10644,7 @@
     "display_title": "Justitia (Gerechtigkeit)",
     "support": "moeda",
     "object_type": "moeda",
-    "date_text": "",
+    "date_text": "s.d.",
     "date_start": null,
     "date_end": null,
     "date_basis": null,
@@ -10689,8 +10689,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-068",
@@ -10743,8 +10743,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-069",
@@ -10801,8 +10801,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-070",
@@ -10849,8 +10849,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-071",
@@ -10913,8 +10913,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-072",
@@ -10961,8 +10961,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-073",
@@ -11009,8 +11009,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-074",
@@ -11057,8 +11057,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-075",
@@ -11105,8 +11105,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-076",
@@ -11153,8 +11153,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-077",
@@ -11201,8 +11201,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-078",
@@ -11255,8 +11255,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-079",
@@ -11309,8 +11309,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-080",
@@ -11363,8 +11363,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-081",
@@ -11411,8 +11411,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-082",
@@ -11459,8 +11459,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-083",
@@ -11523,8 +11523,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-084",
@@ -11587,8 +11587,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-085",
@@ -11635,8 +11635,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-086",
@@ -11689,8 +11689,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-087",
@@ -11737,8 +11737,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-088",
@@ -11785,8 +11785,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-089",
@@ -11833,8 +11833,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-090",
@@ -11881,8 +11881,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-091",
@@ -11890,7 +11890,7 @@
     "display_title": "Le Triomphe de la Republique -- Ode triomphale, Fetes du Centenaire de 1789",
     "support": "estampa/gravura",
     "object_type": "estampa/gravura",
-    "date_text": "",
+    "date_text": "s.d.",
     "date_start": null,
     "date_end": null,
     "date_basis": null,
@@ -11951,8 +11951,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-092",
@@ -12009,8 +12009,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-093",
@@ -12063,8 +12063,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-094",
@@ -12121,8 +12121,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-095",
@@ -12185,8 +12185,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-096",
@@ -12239,8 +12239,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.088Z",
-    "updated_at": "2026-11-09T06:25:53.088Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-ASSIGNAT-1792",
@@ -12287,8 +12287,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.358Z",
+    "updated_at": "2026-11-15T20:30:19.358Z"
   },
   {
     "id": "FR-CERES-5F-1849",
@@ -12341,8 +12341,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "FR-HERC-1870",
@@ -12420,8 +12420,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "FR-PIAST-1885",
@@ -12509,8 +12509,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "FR-SEM-1898",
@@ -12588,8 +12588,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "FR-SEM-SELO-1903",
@@ -12670,8 +12670,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "SCOUT-337",
@@ -12732,8 +12732,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "d3003c32-2c2f-5bd0-95f6-69f557b795ba",
@@ -12790,8 +12790,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "f410c31b-283c-5f5f-95ce-7b6e809db88e",
@@ -12860,8 +12860,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "EU-009",
@@ -12870,8 +12870,8 @@
     "support": "moeda",
     "object_type": "moeda",
     "date_text": "19th century",
-    "date_start": 1850,
-    "date_end": 1850,
+    "date_start": 1801,
+    "date_end": 1900,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -12953,8 +12953,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "DE-003",
@@ -12963,8 +12963,8 @@
     "support": "?",
     "object_type": "?",
     "date_text": "18th century",
-    "date_start": 1750,
-    "date_end": 1750,
+    "date_start": 1701,
+    "date_end": 1800,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -13040,8 +13040,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "DE-004",
@@ -13117,8 +13117,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "DE-005",
@@ -13205,8 +13205,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "DE-008",
@@ -13286,8 +13286,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "DE-009",
@@ -13364,8 +13364,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "DE-010",
@@ -13441,8 +13441,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "DE-011",
@@ -13533,8 +13533,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "DE-012",
@@ -13623,8 +13623,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "DE-013",
@@ -13729,8 +13729,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "DE-014",
@@ -13794,8 +13794,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "DE-015",
@@ -13866,8 +13866,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "DE-016",
@@ -13919,8 +13919,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "DE-017",
@@ -13978,8 +13978,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "DE-018",
@@ -13987,7 +13987,7 @@
     "display_title": "1 Reichsmark — Weimar Republic (eagle replaces Germania)",
     "support": "papel-moeda",
     "object_type": "papel-moeda",
-    "date_text": "",
+    "date_text": "s.d.",
     "date_start": null,
     "date_end": null,
     "date_basis": null,
@@ -14037,8 +14037,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "DE-019",
@@ -14096,8 +14096,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "DE-020",
@@ -14105,7 +14105,7 @@
     "display_title": "Notgeld Bielefeld — Jungbrunnen (Fountain of Youth) silk note 1921",
     "support": "papel-moeda",
     "object_type": "papel-moeda",
-    "date_text": "",
+    "date_text": "Weimar Republic (1919-1933)",
     "date_start": null,
     "date_end": null,
     "date_basis": null,
@@ -14145,8 +14145,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "DE-021",
@@ -14198,8 +14198,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "DE-1000M-1910",
@@ -14266,8 +14266,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "DE-100M-1908",
@@ -14324,8 +14324,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "DE-50M-1919",
@@ -14388,8 +14388,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "DE-GERM-1900",
@@ -14487,8 +14487,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.359Z",
+    "updated_at": "2026-11-15T20:30:19.359Z"
   },
   {
     "id": "DE-GERM-BELG-1914",
@@ -14585,8 +14585,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "DE-WR-1919-50M",
@@ -14663,8 +14663,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "DE-WR-1924-50PF",
@@ -14722,8 +14722,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "EU-001",
@@ -14801,8 +14801,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "EU-006",
@@ -14811,8 +14811,8 @@
     "support": "?",
     "object_type": "?",
     "date_text": "17th century",
-    "date_start": 1650,
-    "date_end": 1650,
+    "date_start": 1601,
+    "date_end": 1700,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -14895,8 +14895,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "SCOUT-558",
@@ -14967,8 +14967,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "EU-003",
@@ -15055,8 +15055,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "089fc944-332e-5647-a2df-f366de58532f",
@@ -15103,8 +15103,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "08da86db-847d-51f8-b000-50fa8fb51ff3",
@@ -15151,8 +15151,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "09f8d8d5-4d94-5225-aa60-9827a8bf1c08",
@@ -15199,8 +15199,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "3cb602f7-56b5-5b48-871e-629b65b216c8",
@@ -15253,8 +15253,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "46131280-d556-5ccf-b78f-f90523da0334",
@@ -15307,8 +15307,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "64d57088-2726-543f-bc9e-e382da696aee",
@@ -15355,8 +15355,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "94a8fbc2-141d-5ce5-b363-2ee57d804b49",
@@ -15403,8 +15403,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.089Z",
-    "updated_at": "2026-11-09T06:25:53.089Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "DE-002",
@@ -15487,8 +15487,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.090Z",
-    "updated_at": "2026-11-09T06:25:53.090Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "DE-006",
@@ -15497,8 +15497,8 @@
     "support": "estampa/gravura",
     "object_type": "estampa/gravura",
     "date_text": "Early 16th century",
-    "date_start": 1550,
-    "date_end": 1550,
+    "date_start": 1501,
+    "date_end": 1600,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -15565,8 +15565,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.090Z",
-    "updated_at": "2026-11-09T06:25:53.090Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "DE-007",
@@ -15648,8 +15648,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.090Z",
-    "updated_at": "2026-11-09T06:25:53.090Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "EU-004",
@@ -15658,8 +15658,8 @@
     "support": "?",
     "object_type": "?",
     "date_text": "17th century",
-    "date_start": 1650,
-    "date_end": 1650,
+    "date_start": 1601,
+    "date_end": 1700,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -15730,8 +15730,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.090Z",
-    "updated_at": "2026-11-09T06:25:53.090Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "IT-005",
@@ -15790,8 +15790,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.090Z",
-    "updated_at": "2026-11-09T06:25:53.090Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "IT-006",
@@ -15840,8 +15840,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.090Z",
-    "updated_at": "2026-11-09T06:25:53.090Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "IT-007",
@@ -15896,8 +15896,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.090Z",
-    "updated_at": "2026-11-09T06:25:53.090Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "IT-008",
@@ -15947,8 +15947,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.090Z",
-    "updated_at": "2026-11-09T06:25:53.090Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "a4b437a8-91a7-21bc-1311-eac2ffc47da0",
@@ -16000,8 +16000,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.090Z",
-    "updated_at": "2026-11-09T06:25:53.090Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "ac900ea3-9461-bae5-e797-f93d58d4845b",
@@ -16059,8 +16059,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.090Z",
-    "updated_at": "2026-11-09T06:25:53.090Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "bc06d4cc-455f-530e-b86b-e046378979a3",
@@ -16107,8 +16107,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.090Z",
-    "updated_at": "2026-11-09T06:25:53.090Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "c8f02d8e-e599-5120-9829-f3f05c5d4b0f",
@@ -16155,8 +16155,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.090Z",
-    "updated_at": "2026-11-09T06:25:53.090Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "df5d3195-0161-5ded-b336-22f89cec0703",
@@ -16203,8 +16203,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.090Z",
-    "updated_at": "2026-11-09T06:25:53.090Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "MX-001",
@@ -16294,8 +16294,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.090Z",
-    "updated_at": "2026-11-09T06:25:53.090Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "MX-002",
@@ -16361,8 +16361,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.092Z",
-    "updated_at": "2026-11-09T06:25:53.092Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "SCOUT-571",
@@ -16420,8 +16420,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.092Z",
-    "updated_at": "2026-11-09T06:25:53.092Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "0754a19f-a859-99e5-932d-17f5181496b2",
@@ -16479,8 +16479,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.092Z",
-    "updated_at": "2026-11-09T06:25:53.092Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "6f5891d5-090c-499c-a3bc-4ff71ee6307b",
@@ -16532,8 +16532,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.092Z",
-    "updated_at": "2026-11-09T06:25:53.092Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "NL-001",
@@ -16622,8 +16622,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.092Z",
-    "updated_at": "2026-11-09T06:25:53.092Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "NL-002",
@@ -16700,8 +16700,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.092Z",
-    "updated_at": "2026-11-09T06:25:53.092Z"
+    "created_at": "2026-11-15T20:30:19.360Z",
+    "updated_at": "2026-11-15T20:30:19.360Z"
   },
   {
     "id": "NL-003",
@@ -16710,8 +16710,8 @@
     "support": "?",
     "object_type": "?",
     "date_text": "17th century",
-    "date_start": 1650,
-    "date_end": 1650,
+    "date_start": 1601,
+    "date_end": 1700,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -16783,8 +16783,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.092Z",
-    "updated_at": "2026-11-09T06:25:53.092Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "NL-004",
@@ -16888,8 +16888,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.092Z",
-    "updated_at": "2026-11-09T06:25:53.092Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "NL-005",
@@ -16990,8 +16990,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.092Z",
-    "updated_at": "2026-11-09T06:25:53.092Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "NL-006",
@@ -17100,8 +17100,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.092Z",
-    "updated_at": "2026-11-09T06:25:53.092Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "NL-007",
@@ -17205,8 +17205,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.092Z",
-    "updated_at": "2026-11-09T06:25:53.092Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "NL-008",
@@ -17304,8 +17304,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.092Z",
-    "updated_at": "2026-11-09T06:25:53.092Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "3f9ebcea-2b43-5823-b888-15c706bf65d1",
@@ -17352,8 +17352,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.092Z",
-    "updated_at": "2026-11-09T06:25:53.092Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "PT-001",
@@ -17441,8 +17441,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "PT-002",
@@ -17541,8 +17541,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "PT-003",
@@ -17620,8 +17620,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "PT-004",
@@ -17699,8 +17699,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "PT-005",
@@ -17808,8 +17808,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "PT-006",
@@ -17875,8 +17875,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "PT-007",
@@ -17942,8 +17942,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "bdb937eb-c607-5f77-ab0b-404b6199ff1b",
@@ -17990,8 +17990,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "d0038985-b3c8-5468-8d56-980c467faa9e",
@@ -18038,8 +18038,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "d9878afa-cb92-52bd-b308-e1563cdf9332",
@@ -18086,8 +18086,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "387bc54c-e8c7-50be-b24b-a3396f1bc1da",
@@ -18134,8 +18134,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "5b14d6a4-7b6d-5111-9253-b20bb72af0a1",
@@ -18195,8 +18195,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "7b5ea66e-0285-59ea-a652-264f8a5e90bd",
@@ -18243,8 +18243,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "ES-001",
@@ -18337,8 +18337,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "ES-002",
@@ -18428,8 +18428,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "ES-003",
@@ -18490,8 +18490,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "ES-004",
@@ -18557,8 +18557,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "b1966d16-8731-58e4-a898-8ef3c44f59cb",
@@ -18628,8 +18628,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "ce773ab1-3bfc-9f6e-754a-efe0c567916d",
@@ -18681,8 +18681,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "d8a81f31-5b21-573f-912e-64bb29559c06",
@@ -18768,8 +18768,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "DE-001",
@@ -18858,8 +18858,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "8d6151b3-9928-e42e-5dbc-713c10fe1a82",
@@ -18917,8 +18917,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.361Z",
+    "updated_at": "2026-11-15T20:30:19.361Z"
   },
   {
     "id": "UK-001",
@@ -18927,8 +18927,8 @@
     "support": "?",
     "object_type": "?",
     "date_text": "17th century",
-    "date_start": 1650,
-    "date_end": 1650,
+    "date_start": 1601,
+    "date_end": 1700,
     "date_basis": null,
     "makers": [],
     "place": {
@@ -19000,8 +19000,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "UK-002",
@@ -19083,8 +19083,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "UK-003",
@@ -19159,8 +19159,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "UK-004",
@@ -19254,8 +19254,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "UK-005",
@@ -19355,8 +19355,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "UK-006",
@@ -19441,8 +19441,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "UK-009",
@@ -19502,8 +19502,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "UK-010",
@@ -19559,8 +19559,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "UK-011",
@@ -19613,8 +19613,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "UK-012",
@@ -19667,8 +19667,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "UK-013",
@@ -19721,8 +19721,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "UK-014",
@@ -19775,8 +19775,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "UK-015",
@@ -19829,8 +19829,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "UK-016",
@@ -19883,8 +19883,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "UK-017",
@@ -19937,8 +19937,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "UK-018",
@@ -19985,8 +19985,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "UK-FLORIN-1902",
@@ -20039,8 +20039,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "UK-HALFPENNY-1695",
@@ -20109,8 +20109,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "UK-PENNY-1860",
@@ -20194,8 +20194,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "UK-PENNY-1895",
@@ -20203,7 +20203,7 @@
     "display_title": "One Penny -- Victoria Veiled Head / Britannia Seated with Trident",
     "support": "moeda",
     "object_type": "moeda",
-    "date_text": "",
+    "date_text": "s.d.",
     "date_start": null,
     "date_end": null,
     "date_basis": null,
@@ -20242,8 +20242,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "UK-PENNY-1912",
@@ -20290,8 +20290,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "UK-TRADE-1895",
@@ -20369,8 +20369,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "235c545a-f3b8-568a-f268-178806a4bf07",
@@ -20428,8 +20428,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "39ebfe77-0d0b-5130-8cce-f6f48d85a081",
@@ -20533,8 +20533,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.093Z",
-    "updated_at": "2026-11-09T06:25:53.093Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "473ac4d7-a507-51c6-8215-983c2442fc23",
@@ -20632,8 +20632,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "4f51943f-625d-c265-60ed-73edc3d29986",
@@ -20691,8 +20691,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "80b1d4ad-1aa4-7f87-35b7-ba8cea46f0cf",
@@ -20750,8 +20750,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "93b53069-d4b7-6c55-df87-f85d0341bdbe",
@@ -20809,8 +20809,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.362Z",
+    "updated_at": "2026-11-15T20:30:19.362Z"
   },
   {
     "id": "US-001",
@@ -20886,8 +20886,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-002",
@@ -20967,8 +20967,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-003",
@@ -21053,8 +21053,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-004",
@@ -21137,8 +21137,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-005",
@@ -21215,8 +21215,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-006",
@@ -21291,8 +21291,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-007",
@@ -21383,8 +21383,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-008",
@@ -21471,8 +21471,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-009",
@@ -21556,8 +21556,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-010",
@@ -21652,8 +21652,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-017",
@@ -21718,8 +21718,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-018",
@@ -21788,8 +21788,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-019",
@@ -21849,8 +21849,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-020",
@@ -21900,8 +21900,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-021",
@@ -21954,8 +21954,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-022",
@@ -22008,8 +22008,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-023",
@@ -22062,8 +22062,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-024",
@@ -22116,8 +22116,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-025",
@@ -22125,7 +22125,7 @@
     "display_title": "Statue of the Republic -- World's Columbian Exposition, Chicago",
     "support": "monumento/escultura",
     "object_type": "monumento/escultura",
-    "date_text": "",
+    "date_text": "s.d.",
     "date_start": null,
     "date_end": null,
     "date_basis": null,
@@ -22170,8 +22170,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-BANNER-1861",
@@ -22257,8 +22257,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-EDUC-1896-01",
@@ -22310,8 +22310,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-EDUC-1896-02",
@@ -22390,8 +22390,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-EDUC-1896-05",
@@ -22467,8 +22467,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-NAST-1864",
@@ -22546,8 +22546,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-SEATED-1840",
@@ -22605,8 +22605,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.363Z",
+    "updated_at": "2026-11-15T20:30:19.363Z"
   },
   {
     "id": "US-SLQ-1916",
@@ -22683,8 +22683,8 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.364Z",
+    "updated_at": "2026-11-15T20:30:19.364Z"
   },
   {
     "id": "UY-001",
@@ -22767,7 +22767,7 @@
     "editorial_status": "draft",
     "rights_status": "unknown",
     "notes": null,
-    "created_at": "2026-11-09T06:25:53.094Z",
-    "updated_at": "2026-11-09T06:25:53.094Z"
+    "created_at": "2026-11-15T20:30:19.364Z",
+    "updated_at": "2026-11-15T20:30:19.364Z"
   }
 ]

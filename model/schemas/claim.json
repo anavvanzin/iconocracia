@@ -189,7 +189,9 @@
       "epistemic_status": {
         "const": "documented"
       }
-    },
+    }
+  },
+  "then": {
     "required": ["evidence"]
   }
 }

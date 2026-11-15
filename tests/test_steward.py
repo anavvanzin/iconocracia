@@ -44,6 +44,7 @@ class StewardTests(unittest.TestCase):
         self.assertEqual(entry["editorial_status"], "review")
         self.assertEqual(entry["public_analysis"]["status"], "draft")
         self.assertEqual(entry["constellations"], ["marmore-a-margem"])
+        self.assertEqual(entry["image"]["credit"], "")
         self.assertEqual(len(entry["image"]["sha256"]), 64)
 
         with self.assertRaises(ValueError):
