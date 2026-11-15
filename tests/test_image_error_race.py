@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def extract_reproduce_helpers(source: str) -> str:
-    start = source.index("  const safeURL =")
+    start = source.index("  const publication =")
     end = source.index("  const searchShortcut")
     return source[start:end]
 

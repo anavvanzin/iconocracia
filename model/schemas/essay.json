@@ -1,0 +1,178 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://iconocracia.com/schemas/essay.json",
+  "title": "Essay",
+  "description": "Long-form scholarly essay or article in the Counter-Archive. May be authored by project contributors or external scholars.",
+  "type": "object",
+  "required": [
+    "id",
+    "slug",
+    "title",
+    "content",
+    "editorial_status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for this essay.",
+      "minLength": 1,
+      "examples": ["ESSAY-MM-INTRO", "ESSAY-GYNAIKEIA"]
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL-friendly slug for the essay.",
+      "minLength": 1,
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "title": {
+      "type": "string",
+      "description": "Title of the essay.",
+      "minLength": 1
+    },
+    "subtitle": {
+      "type": "string",
+      "description": "Subtitle of the essay."
+    },
+    "content": {
+      "type": "string",
+      "description": "Full content of the essay in Markdown format.",
+      "minLength": 100
+    },
+    "content_pt": {
+      "type": "string",
+      "description": "Portuguese version of the content, if different."
+    },
+    "abstract": {
+      "type": "string",
+      "description": "Brief abstract or summary of the essay.",
+      "minLength": 50
+    },
+    "authors": {
+      "type": "array",
+      "description": "Authors of the essay.",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "affiliation": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string",
+            "enum": ["author", "co-author", "editor", "translator"]
+          },
+          "orcid": {
+            "type": "string",
+            "pattern": "^0000-000[0-9]-[0-9]{3}[0-9X]$"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "strands": {
+      "type": "array",
+      "description": "Strand IDs this essay is associated with.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "concepts": {
+      "type": "array",
+      "description": "Concept IDs referenced or discussed in the essay.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "objects": {
+      "type": "array",
+      "description": "Object IDs discussed in the essay.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "description": "Source IDs cited in the essay.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "claims": {
+      "type": "array",
+      "description": "Claim IDs discussed or introduced in the essay.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "constellations": {
+      "type": "array",
+      "description": "Constellation slugs referenced in the essay.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "editorial_status": {
+      "type": "string",
+      "description": "Current editorial status.",
+      "enum": ["draft", "review", "published", "withdrawn"],
+      "default": "draft"
+    },
+    "peer_reviewed": {
+      "type": "boolean",
+      "description": "Whether this essay has undergone peer review.",
+      "default": false
+    },
+    "publication_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Publication date (YYYY-MM-DD)."
+    },
+    "language": {
+      "type": "string",
+      "description": "Primary language of the essay.",
+      "enum": ["pt-BR", "en", "fr", "es", "other"],
+      "default": "pt-BR"
+    },
+    "keywords": {
+      "type": "array",
+      "description": "Keywords for the essay.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "word_count": {
+      "type": "integer",
+      "description": "Approximate word count.",
+      "minimum": 0
+    },
+    "reading_time_minutes": {
+      "type": "integer",
+      "description": "Estimated reading time in minutes.",
+      "minimum": 1
+    },
+    "notes": {
+      "type": "string",
+      "description": "Internal editorial notes."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this essay was created."
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this essay was last updated."
+    },
+    "published_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this essay was published."
+    }
+  },
+  "additionalProperties": false
+}
