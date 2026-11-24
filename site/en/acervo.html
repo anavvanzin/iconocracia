@@ -31,7 +31,7 @@
 <body class="ex-page">
 <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="ex-header"><a class="ex-brand" href="/en"><span class="brand-flower brand-ornament" aria-hidden="true"></span><span class="ex-brand-text"><span class="ex-brand-title">MNEMOSYNE VIVA</span><span class="ex-brand-sub">ICONOCRACIA · RESEARCH ATLAS</span></span></a><nav aria-label="Main navigation"><a href="/en">Home</a><a href="/en/acervo" aria-current="page">Archive</a><a href="/en/constelacoes" data-constellations-link hidden>Constellations</a><a href="/en/sobre">Research &amp; Method</a><a href="/en/nachleben">Nachleben</a></nav><button class="ex-night" id="night-toggle" type="button" aria-pressed="false" aria-label="Toggle night mode"><svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.93 4.93l1.77 1.77M17.3 17.3l1.77 1.77M4.93 19.07l1.77-1.77M17.3 6.7l1.77-1.77"/></svg><span class="sr-only" data-theme-label>NOITE</span></button><a class="ex-lang" id="lang-toggle" href="/acervo" aria-label="Ler em português">PT</a><button class="ex-search-shortcut" aria-label="Search the archive" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/></svg></button></header>
+<header class="ex-header"><a class="ex-brand" href="/en"><span class="brand-flower brand-ornament" aria-hidden="true"></span><span class="ex-brand-text"><span class="ex-brand-title">MNEMOSYNE VIVA</span><span class="ex-brand-sub">ICONOCRACIA · RESEARCH ATLAS</span></span></a><nav aria-label="Main navigation"><a href="/en">Home</a><a href="/en/acervo" aria-current="page">Archive</a><a href="/en/marmore-a-margem">Mármore à Margem</a><a href="/en/constelacoes" data-constellations-link hidden>Constellations</a><a href="/en/sobre">Research &amp; Method</a><a href="/en/nachleben">Nachleben</a><a href="/en/jogo">Foundry</a></nav><button class="ex-night" id="night-toggle" type="button" aria-pressed="false" aria-label="Toggle night mode"><svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.93 4.93l1.77 1.77M17.3 17.3l1.77 1.77M4.93 19.07l1.77-1.77M17.3 6.7l1.77-1.77"/></svg><span class="sr-only" data-theme-label>NOITE</span></button><a class="ex-lang" id="lang-toggle" href="/acervo" aria-label="Ler em português">PT</a><button class="ex-search-shortcut" aria-label="Search the archive" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/></svg></button></header>
 
 <main id="main">
 <section class="exhibition" aria-label="Archive exhibition">
@@ -63,10 +63,11 @@
  <aside id="ex-strand-context" class="inscriptio-banner" hidden></aside>
 </div>
 <p id="ex-curatorial-context" class="ex-constellation-label" hidden></p>
+<p id="classification-note" class="ex-method-note">The method distinguishes three interpretive regimes: Foundational, Normative, and Military. Counter-allegory is a critical test, not a fourth regime; the filter preserves "Contra-alegoria" as a legacy label without reclassifying works. <a href="/en/sobre#regimes">Method and cataloged classifications</a>.</p>
 <form class="ex-filters" role="search">
  <label class="ex-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/></svg><span class="sr-only">Search the archive</span><input id="q" type="search" placeholder="Search the archive…" autocomplete="off"></label>
  <label><span class="sr-only">Country</span><select id="f-pais"><option value="">Country</option></select></label>
- <label><span class="sr-only">Regime</span><select id="f-regime"><option value="">Regime</option></select></label>
+ <label><span class="sr-only">Cataloged classification</span><select id="f-regime" aria-describedby="classification-note"><option value="">Cataloged classification</option></select></label>
  <label><span class="sr-only">Period</span><select id="f-periodo"><option value="">Period</option></select></label>
  <label><span class="sr-only">Work type</span><select id="f-tipo"><option value="">Work type</option></select></label>
  <button class="ex-filter-button" type="submit"><span>Filter archive</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h8m4 0h6M3 12h2m4 0h12M3 19h12m4 0h2"/><circle cx="13" cy="5" r="2"/><circle cx="7" cy="12" r="2"/><circle cx="17" cy="19" r="2"/></svg></button>
@@ -87,10 +88,12 @@
   <p class="ex-overline">WORK</p><h1 id="ex-title">Loading archive</h1><p id="ex-author" class="ex-author"></p><p id="ex-date" class="ex-date"></p>
   <p id="ex-description" class="ex-description"></p>
   <button class="ex-action ex-primary" id="ex-open" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H5v20h14V7zM14 2v5h5"/></svg><span>Open full record</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+  <button class="ex-action" id="ex-compare-toggle" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="7" height="16" rx="1"/><rect x="14" y="4" width="7" height="16" rx="1"/></svg><span>Pin to Montage Workbench</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
   <a class="ex-action" id="ex-source" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h7v7M21 3l-12 12M10 3H3v18h18v-7"/></svg><span>Source archive</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></a>
   <dl id="ex-metadata" class="ex-metadata"></dl><button id="ex-more" class="ex-more" type="button"><span>View full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
  </aside>
 </div>
+<aside id="ex-compare-tray" class="ex-compare-tray" aria-label="Montage workbench" hidden></aside>
 <noscript><p>Please enable JavaScript to explore the works. <a href="/data/acervo.json">Browse the archive metadata</a>.</p></noscript>
 </section>
 </main>
@@ -119,8 +122,9 @@
   </div>
 </footer>
 
-<script src="/assets/constellations.js?v=20261004-review-followup" defer></script>
-<script src="/assets/app.js?v=20261004-review-followup" defer></script>
+<script src="/assets/constellations.js?v=20261109-design-recovery" defer></script>
+<script src="/assets/compare-workbench.js?v=20261123-epistemic" defer></script>
+<script src="/assets/app.js?v=20261123-epistemic" defer></script>
 <script src="/assets/constellation-field.js?v=20261018-archival" defer></script>
 </body>
 </html>

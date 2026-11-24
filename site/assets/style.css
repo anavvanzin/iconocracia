@@ -1736,3 +1736,435 @@ input[type="text"], input[type="search"], textarea {
 button:disabled, [aria-disabled="true"] {
   cursor: var(--cursor-no);
 }
+
+/* ════════════════════════════════════════════════════════════
+   FASE 1–4 · APARATO EPISTÊMICO, MESA DE MONTAGEM E LABORATÓRIO
+   Herda estritamente os tokens de Mnemosyne Viva (dia e noite).
+   ════════════════════════════════════════════════════════════ */
+
+/* ── 1. Ficha epistêmica (Camada I vs. Camada II) & Panofsky ── */
+.ex-record-toolbar {
+  display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px;
+}
+.ex-record-toolbar .btn {
+  padding: 6px 12px; font-size: 11px; letter-spacing: .08em;
+}
+.ex-layer-section {
+  padding: 14px 16px; margin-bottom: 14px;
+  border: 1px solid var(--ex-line); border-radius: 3px;
+  background: var(--ex-reading);
+}
+.ex-layer-section--doc {
+  border-left: 3px solid var(--ex-ink);
+}
+.ex-layer-section--reading {
+  border-left: 3px solid var(--ex-selection);
+}
+html[data-theme="noite"] .ex-layer-section--reading {
+  border-left-color: var(--ex-action);
+}
+.ex-cite-actions {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px;
+  padding-top: 10px; border-top: 1px dashed var(--ex-line);
+}
+.ex-cite-btn {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em;
+  text-transform: uppercase; padding: 5px 10px;
+  background: transparent; color: var(--ex-ink);
+  border: 1px solid var(--ex-line); border-radius: 2px;
+  transition: background .18s, border-color .18s, color .18s;
+}
+.ex-cite-btn:hover, .ex-cite-btn:focus-visible {
+  background: var(--ex-action); color: #1d1033; border-color: var(--ex-ink);
+}
+.ex-chip-list {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px;
+}
+.ex-chip {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-family: var(--font-mono); font-size: 11px; line-height: 1.3;
+  padding: 3px 8px; border-radius: 2px;
+  border: 1px solid var(--ex-line); background: transparent; color: var(--ex-ink);
+  text-decoration: none;
+}
+.ex-chip--interactive:hover, .ex-chip--interactive:focus-visible,
+.ex-chip--code:hover, .ex-chip--code:focus-visible {
+  background: var(--ex-action); color: #1d1033; border-color: var(--ex-ink);
+}
+.ex-chip--code {
+  font-weight: 600; letter-spacing: .04em;
+}
+.ex-chip--shared {
+  background: var(--ex-action); color: #1d1033; border-color: var(--ex-ink); font-weight: 600;
+}
+.ex-panofsky {
+  margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--ex-line);
+}
+.ex-panofsky summary {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em;
+  text-transform: uppercase; font-weight: 600; padding: 4px 0;
+}
+.ex-panofsky-caveat {
+  font-size: .9rem; font-style: italic; color: var(--ex-muted); margin: 6px 0 10px;
+}
+.ex-panofsky h3 {
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--ex-muted); margin: 12px 0 6px;
+}
+.ex-claim-list {
+  list-style: none; padding: 0; margin: 6px 0 0; display: flex; flex-direction: column; gap: 8px;
+}
+.ex-claim-item {
+  padding: 8px 10px; border: 1px solid var(--ex-line); border-radius: 2px;
+}
+.ex-claim-meta {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 6px; margin-bottom: 4px;
+}
+.ex-claim-type {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--ex-muted);
+}
+.ex-status-pill {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .06em;
+  padding: 2px 7px; border-radius: 999px; border: 1px solid var(--ex-line);
+}
+.ex-status-pill--supported {
+  background: rgba(42, 122, 90, .14); border-color: var(--normativo); color: var(--ex-ink);
+}
+.ex-status-pill--tentative {
+  background: rgba(184, 146, 74, .18); border-color: var(--gold); color: var(--ex-ink);
+}
+.ex-claim-text {
+  margin: 0; font-size: .95rem; line-height: 1.45;
+}
+
+/* Indicador discreto de obra fixada na Mesa de Montagem */
+.ex-star.is-pinned, .ex-frame.is-pinned {
+  outline: 2px solid var(--ex-action); outline-offset: 2px;
+}
+
+/* ── 2. Mesa de Montagem (Compare Tray + Side-by-Side Plate) ── */
+.ex-compare-tray {
+  position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%);
+  z-index: 80; max-width: min(920px, calc(100vw - 24px)); width: max-content;
+  background: var(--ex-reading); color: var(--ex-ink);
+  border: 1.5px solid var(--ex-ink); border-radius: 4px;
+  box-shadow: 0 14px 36px rgba(18, 9, 36, .32);
+  padding: 10px 14px;
+}
+.ex-compare-tray-inner {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+}
+.ex-compare-tray-info {
+  display: flex; align-items: center; gap: 8px;
+}
+.ex-compare-tray-label {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em;
+  text-transform: uppercase; font-weight: 600;
+}
+.ex-compare-tray-count {
+  font-family: var(--font-mono); font-size: 11px; padding: 2px 6px;
+  background: var(--ex-action); color: #1d1033; border-radius: 2px; font-weight: 700;
+}
+.ex-compare-tray-thumbs {
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.ex-compare-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px 6px 3px 3px; border: 1px solid var(--ex-line); border-radius: 2px;
+}
+.ex-compare-pill img {
+  width: 28px; height: 28px; object-fit: cover; border-radius: 1px; display: block;
+}
+.ex-compare-pill-id {
+  font-family: var(--font-mono); font-size: 11px;
+}
+.ex-compare-pill-rm {
+  background: transparent; border: none; color: var(--ex-muted);
+  font-size: 15px; line-height: 1; padding: 0 4px;
+}
+.ex-compare-pill-rm:hover { color: var(--ex-ink); }
+.ex-compare-tray-actions {
+  display: flex; align-items: center; gap: 8px;
+}
+.ex-compare-tray-actions .btn {
+  padding: 6px 12px; font-size: 11px;
+}
+
+.ex-compare-dialog {
+  max-width: min(1240px, calc(100vw - 24px)); width: 100%;
+  padding: 24px; background: var(--ex-reading); color: var(--ex-ink);
+  border: 1.5px solid var(--ex-ink);
+}
+.ex-compare-header {
+  display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between;
+  gap: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--ex-line);
+}
+.ex-compare-header h2 {
+  font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 2px 0 0;
+}
+.ex-compare-header-actions {
+  display: flex; align-items: center; gap: 8px;
+}
+.ex-compare-note {
+  margin: 12px 0 18px;
+}
+.ex-compare-grid {
+  display: grid; gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.ex-compare-col {
+  border: 1px solid var(--ex-line); border-radius: 3px; padding: 14px;
+  display: flex; flex-direction: column; gap: 12px;
+  background: var(--ex-bg);
+}
+.ex-compare-figure {
+  margin: 0; display: flex; flex-direction: column; gap: 8px;
+}
+.ex-compare-figure img {
+  width: 100%; max-height: 300px; object-fit: contain;
+  background: rgba(29, 16, 51, .06); border-radius: 2px;
+}
+.ex-compare-cap {
+  display: flex; flex-direction: column; gap: 2px;
+}
+.ex-compare-id {
+  font-family: var(--font-mono); font-size: 11px; color: var(--ex-muted);
+}
+.ex-compare-dl {
+  margin: 0; display: flex; flex-direction: column; gap: 4px; font-size: .92rem;
+}
+.ex-compare-dl dt {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--ex-muted); margin-top: 8px;
+}
+.ex-compare-dl dd { margin: 0; }
+.ex-compare-claim {
+  margin: 4px 0; font-size: .88rem; line-height: 1.4;
+  padding-left: 8px; border-left: 2px solid var(--ex-line);
+}
+.ex-compare-col-actions {
+  margin-top: auto; padding-top: 10px; border-top: 1px solid var(--ex-line);
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+}
+.ex-compare-remove {
+  background: transparent; border: none; font-family: var(--font-mono);
+  font-size: 11px; text-transform: uppercase; color: var(--ex-muted);
+  text-decoration: underline;
+}
+
+/* ── 3. Lente Interativa do Atlas (index.html) ── */
+.atlas-lens {
+  margin-top: 1.5rem; margin-bottom: 1rem;
+}
+.atlas-lens-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 24px; padding: 20px 22px;
+  background: var(--ex-reading); border: 1px solid var(--ex-line); border-radius: 4px;
+}
+.atlas-lens-kicker {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em;
+  text-transform: uppercase; font-weight: 600; margin: 0 0 4px; color: var(--ex-ink);
+}
+.atlas-lens-sub {
+  font-size: .92rem; color: var(--ex-muted); margin: 0 0 12px;
+}
+.atlas-lens-bars {
+  display: flex; flex-direction: column; gap: 7px;
+}
+.atlas-bar-row {
+  display: grid; grid-template-columns: 118px 1fr 38px; align-items: center; gap: 10px;
+  text-decoration: none; color: var(--ex-ink); padding: 3px 4px; border-radius: 2px;
+  transition: background .15s;
+}
+.atlas-bar-row:hover, .atlas-bar-row:focus-visible {
+  background: rgba(228, 255, 56, .24);
+}
+.atlas-bar-label {
+  font-family: var(--font-mono); font-size: 11.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.atlas-bar-track {
+  height: 10px; background: rgba(29, 16, 51, .12); border-radius: 2px; overflow: hidden;
+}
+html[data-theme="noite"] .atlas-bar-track {
+  background: rgba(255, 255, 255, .12);
+}
+.atlas-bar-fill {
+  display: block; height: 100%; background: var(--ex-selection); border-radius: 2px;
+  transition: width .35s ease;
+}
+html[data-theme="noite"] .atlas-bar-fill {
+  background: var(--ex-action);
+}
+.atlas-bar-fill--fundacional { background: var(--fundacional); }
+.atlas-bar-fill--normativo { background: var(--normativo); }
+.atlas-bar-fill--militar { background: var(--militar); }
+.atlas-bar-fill--br { background: var(--ex-action); border: 1px solid var(--ex-ink); }
+.atlas-bar-count {
+  font-family: var(--font-mono); font-size: 11.5px; text-align: right; color: var(--ex-muted);
+}
+.atlas-lens-note {
+  margin: 12px 0 0; font-size: .86rem; color: var(--ex-muted); line-height: 1.45;
+}
+.atlas-lens-note a { color: var(--ex-ink); font-weight: 600; }
+
+/* ── 4. Dossier montage link ── */
+.dossier-actions {
+  margin-top: 12px; display: flex; justify-content: flex-end;
+}
+
+/* ── 5. Linha do Tempo Dupla: Lei vs. Mármore (marmore-a-margem.html) ── */
+.lm-timeline {
+  margin: 2rem 0 1rem;
+}
+.lm-tabs {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+  gap: 8px; margin-bottom: 16px;
+}
+.lm-tab {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 3px;
+  padding: 12px 14px; text-align: left;
+  background: var(--ex-reading); color: var(--ex-ink);
+  border: 1px solid var(--ex-line); border-radius: 3px;
+  transition: border-color .18s, background .18s, transform .18s;
+}
+.lm-tab:hover { transform: translateY(-1px); border-color: var(--ex-ink); }
+.lm-tab[aria-selected="true"] {
+  background: var(--ex-action); color: #1d1033; border-color: #1d1033;
+}
+.lm-tab-span {
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; opacity: .8;
+}
+.lm-tab-label {
+  font-family: var(--font-display); font-size: 1.15rem; line-height: 1.15;
+}
+.lm-tab-count {
+  font-family: var(--font-mono); font-size: 10.5px; margin-top: 2px; opacity: .85;
+}
+.lm-stage {
+  border: 1px solid var(--ex-line); border-radius: 4px;
+  background: var(--ex-reading); overflow: hidden;
+}
+.lm-track {
+  padding: 18px 20px;
+}
+.lm-track--law {
+  border-bottom: 1px solid var(--ex-line);
+  border-left: 4px solid var(--ex-ink);
+}
+.lm-track--marble {
+  border-left: 4px solid var(--ex-selection);
+}
+html[data-theme="noite"] .lm-track--marble {
+  border-left-color: var(--ex-action);
+}
+.lm-track-kicker {
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--ex-muted); margin: 0 0 6px;
+}
+.lm-track h3 {
+  font-family: var(--font-display); font-size: 1.55rem; margin: 0 0 8px;
+}
+.lm-marble-head {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px;
+}
+.lm-cards, .cm-cards {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(175px, 1fr)); gap: 12px;
+}
+.lm-card {
+  display: block; text-decoration: none; color: var(--ex-ink);
+  border: 1px solid var(--ex-line); border-radius: 3px; padding: 8px;
+  background: var(--ex-bg); transition: transform .18s, border-color .18s;
+}
+.lm-card:hover { transform: translateY(-2px); border-color: var(--ex-ink); }
+.lm-card figure { margin: 0; display: flex; flex-direction: column; gap: 6px; }
+.lm-card img { width: 100%; height: 148px; object-fit: cover; border-radius: 2px; display: block; }
+.lm-card figcaption { display: flex; flex-direction: column; gap: 3px; font-size: .88rem; }
+.lm-card-meta { font-family: var(--font-mono); font-size: 10px; color: var(--ex-muted); }
+.lm-foot { margin-top: 16px; display: flex; justify-content: flex-start; }
+
+/* ── 6. Matriz de Cruzamento Conceitual & Caderno de Vínculos (sobre.html) ── */
+.cm-selector {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 8px; margin: 1.2rem 0 14px;
+}
+.cm-btn {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 3px;
+  padding: 10px 12px; text-align: left;
+  background: var(--ex-reading); color: var(--ex-ink);
+  border: 1px solid var(--ex-line); border-radius: 3px;
+}
+.cm-btn[aria-selected="true"] {
+  background: var(--ex-action); color: #1d1033; border-color: #1d1033;
+}
+.cm-btn-name { font-family: var(--font-display); font-size: 1.15rem; line-height: 1.15; }
+.cm-btn-motto { font-family: var(--font-body); font-style: italic; font-size: .84rem; opacity: .85; }
+.cm-panel {
+  padding: 18px 20px; border: 1px solid var(--ex-line); border-radius: 4px;
+  background: var(--ex-reading); margin-bottom: 2rem;
+}
+.cm-panel-motto {
+  font-family: var(--font-display); font-style: italic; color: var(--ex-muted); margin: 0 0 2px;
+}
+.cm-panel h3 { margin: 0 0 8px; font-family: var(--font-display); font-size: 1.65rem; }
+.cm-panel-desc { margin: 0 0 16px; }
+.cm-ex-head {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 10px; margin-bottom: 12px;
+}
+
+.rl-list { display: flex; flex-direction: column; gap: 18px; margin-top: 14px; }
+.rl-card {
+  border: 1px solid var(--ex-line); border-radius: 4px;
+  background: var(--ex-reading); padding: 18px 20px;
+}
+.rl-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 8px; }
+.rl-badge {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em;
+  text-transform: uppercase; padding: 3px 8px; border-radius: 2px;
+  border: 1px solid var(--ex-line);
+}
+.rl-badge--revisao { background: rgba(184, 146, 74, .2); border-color: var(--gold); }
+.rl-badge--registrado { background: rgba(42, 122, 90, .18); border-color: var(--normativo); }
+.rl-id { font-family: var(--font-mono); font-size: 11px; color: var(--ex-muted); margin-left: auto; }
+.rl-head h3 { font-family: var(--font-display); font-size: 1.45rem; margin: 0 0 12px; }
+.rl-bridge {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px; margin-bottom: 14px;
+}
+.rl-ponta {
+  padding: 12px 14px; border: 1px solid var(--ex-line); border-radius: 3px;
+  background: var(--ex-bg);
+}
+.rl-ponta-tag {
+  display: block; font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em;
+  color: var(--ex-muted); margin-bottom: 4px;
+}
+.rl-ponta strong { display: block; font-size: .95rem; margin-bottom: 6px; }
+.rl-ponta blockquote {
+  margin: 0; padding-left: 10px; border-left: 2px solid var(--ex-line);
+  font-style: italic; font-size: .92rem;
+}
+.rl-tabs {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px;
+  border-bottom: 1px solid var(--ex-line); padding-bottom: 8px;
+}
+.rl-tab {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em;
+  padding: 6px 10px; background: transparent; color: var(--ex-ink);
+  border: 1px solid var(--ex-line); border-radius: 2px;
+}
+.rl-tab[aria-selected="true"] {
+  background: var(--ex-action); color: #1d1033; border-color: #1d1033; font-weight: 600;
+}
+.rl-tab-body {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px;
+}
+.rl-col-label {
+  display: block; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--ex-muted); margin-bottom: 4px;
+}
+.rl-col p { margin: 0; font-size: .95rem; line-height: 1.5; }
+.rl-foot { margin-top: 14px; padding-top: 10px; border-top: 1px dashed var(--ex-line); }
+
