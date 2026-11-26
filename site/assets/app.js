@@ -10,7 +10,7 @@
   }
   const publication = window.IconocraciaPublication;
   const $ = (selector) => document.querySelector(selector);
-  const isEn = () => document.documentElement?.getAttribute('data-lang') === 'en';
+  const isEn = () => document.documentElement?.getAttribute('data-lang') === 'en' || document.documentElement?.lang?.startsWith('en');
   const tr = (pt, en) => isEn() ? en : pt;
   const normalize = (value) => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
   const safeURL = (value) => /^https?:\/\//i.test(value || '');
@@ -389,14 +389,21 @@
     if (status === 'supported') return tr('Sustentado em fonte', 'Source-supported');
     return tr('Hipótese em revisão', 'Working hypothesis');
   }
-  function copyTextWithFeedback(text, button, doneText) {
+  async function copyTextWithFeedback(text, button, doneText) {
+    if (button.disabled) return;
     const orig = button.textContent;
-    const finish = () => {
+    button.disabled = true;
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(text);
       button.textContent = doneText;
-      setTimeout(() => { button.textContent = orig; }, 1800);
-    };
-    if (navigator.clipboard?.writeText) navigator.clipboard.writeText(text).then(finish).catch(finish);
-    else finish();
+    } catch {
+      button.textContent = tr('Falha ao copiar', 'Copy failed');
+    }
+    setTimeout(() => {
+      button.textContent = orig;
+      button.disabled = false;
+    }, 1800);
   }
   const compare = window.IconocraciaCompare?.createWorkbench({
     resolveItem: (all, id) => (publication ? publication.resolveItem(all, id) : all.find((x) => x.id === id)),
@@ -642,7 +649,7 @@
 
       const analysis = publication?.approvedAnalysis(selected.analise_publica);
       if (analysis) {
-        const section = node('details', 'ex-analysis');
+        const section = node('details', 'ex-analysis ex-approved-analysis');
         section.append(node('summary', '', tr('Análise iconográfica aprovada', 'Approved iconographic analysis')));
         if (analysis.summary) section.append(node('p', 'ex-analysis-summary', analysis.summary));
         for (const [label, key] of [

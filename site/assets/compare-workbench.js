@@ -128,18 +128,22 @@
       return dialogEl;
     }
 
-    function copyShareLink(button) {
+    async function copyShareLink(button) {
+      if (button.disabled) return;
       const shareUrl = buildCompareURL(pinnedIds);
-      const done = () => {
-        const orig = button.textContent;
+      const orig = button.textContent;
+      button.disabled = true;
+      try {
+        if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+        await navigator.clipboard.writeText(shareUrl);
         button.textContent = tr('Link copiado!', 'Link copied!');
-        setTimeout(() => { button.textContent = orig; }, 1800);
-      };
-      if (navigator.clipboard?.writeText) {
-        navigator.clipboard.writeText(shareUrl).then(done).catch(done);
-      } else {
-        done();
+      } catch {
+        button.textContent = tr('Falha ao copiar', 'Copy failed');
       }
+      setTimeout(() => {
+        button.textContent = orig;
+        button.disabled = false;
+      }, 1800);
     }
 
     function openDialog() {
