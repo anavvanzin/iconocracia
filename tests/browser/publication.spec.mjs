@@ -22,11 +22,12 @@ test('the corrected Germania record distinguishes printed date and reprints in t
   await page.locator('#f-tipo').selectOption('Moeda e cédula');
   await expect(page.locator('#ex-title')).toContainText('Germania em medalhão');
   await page.locator('#ex-open').click();
-  const record = page.locator('.ex-record');
+  const record = page.locator('.ex-layer-section--doc .ex-record');
+  const reading = page.locator('.ex-layer-section--reading .ex-record');
   await expect(record).toContainText('Paul Thumann (desenho); Hans Meyer (gravura)');
   await expect(record).toContainText('data impressa: 7 fev. 1908; reimpressões: 1918–1922');
   await expect(record).toContainText('data exata de produção do exemplar fotografado: [VERIFICAR]');
-  await expect(record).toContainText('alegorias da indústria e da agricultura');
+  await expect(reading).toContainText('alegorias da indústria e da agricultura');
   await expect(record).toContainText('DEUTSCHE BUNDESBANK');
   await expect(record).toContainText('STATISTISCHES AMT DER STADT NÜRNBERG');
 });
@@ -77,7 +78,7 @@ test('the real public artifact publishes only the approved Columbia reading and 
     expect(new URL(page.url()).searchParams.get('item')).toBe(ids[index]);
     expect(new URL(page.url()).searchParams.get('constelacao')).toBe(slug);
     await page.locator('#ex-open').click();
-    await expect(page.locator('.ex-analysis')).toHaveCount(0);
+    await expect(page.locator('.ex-approved-analysis')).toHaveCount(0);
     await page.keyboard.press('Escape');
     if (index === 0) await page.locator('.ex-next').click();
   }
@@ -92,7 +93,7 @@ test('the real public artifact publishes only the approved Columbia reading and 
     expect(new URL(page.url()).searchParams.get('item')).toBe(id);
     await page.locator('#ex-open').click();
     await expect(page.locator('#dialog-title')).toHaveText(catalog.find(item => item.id === id).titulo);
-    await expect(page.locator('.ex-analysis')).toHaveCount(0);
+    await expect(page.locator('.ex-approved-analysis')).toHaveCount(0);
   }
   expect(errors).toEqual([]);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
@@ -123,16 +124,16 @@ test('canonical aliases, ordered next work and approved analysis share the same 
   await expect(page.locator('#ex-curatorial-context')).toContainText(definition.title);
   await expect(page.locator('#result-count')).toContainText('2 de 2 obras');
   await page.locator('#ex-open').click();
-  await page.locator('.ex-analysis summary').click();
-  await expect(page.locator('.ex-analysis')).toContainText(approved.summary);
-  await expect(page.locator('.ex-analysis')).toContainText(approved.panofsky.level_1);
+  await page.locator('.ex-approved-analysis summary').click();
+  await expect(page.locator('.ex-approved-analysis')).toContainText(approved.summary);
+  await expect(page.locator('.ex-approved-analysis')).toContainText(approved.panofsky.level_1);
   await page.keyboard.press('Escape');
   await page.locator('.ex-next').click();
   await expect(page.locator('#ex-title')).toHaveText('A Justiça');
   expect(new URL(page.url()).searchParams.get('item')).toBe('BR-009');
   expect(new URL(page.url()).searchParams.get('constelacao')).toBe(definition.slug);
   await page.locator('#ex-open').click();
-  await expect(page.locator('.ex-analysis')).toHaveCount(0);
+  await expect(page.locator('.ex-approved-analysis')).toHaveCount(0);
   await expect(page.locator('body')).not.toContainText('PRIVATE DRAFT');
 });
 

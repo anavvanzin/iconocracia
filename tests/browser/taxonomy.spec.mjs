@@ -59,8 +59,8 @@ test('legacy deep links, combined filters, reloads and record captions keep the 
   await expect(page.locator('#ex-metadata')).toContainText('Classificação catalogada');
   await expect(page.locator('#ex-metadata')).toContainText('Contra-alegoria (rótulo legado)');
   await page.locator('#ex-open').click();
-  await expect(page.locator('.ex-record')).toContainText('BR-019');
-  await expect(page.locator('.ex-record')).toContainText('Contra-alegoria (rótulo legado)');
+  await expect(page.locator('.ex-layer-section--doc .ex-record')).toContainText('BR-019');
+  await expect(page.locator('.ex-layer-section--reading .ex-record')).toContainText('Contra-alegoria (rótulo legado)');
   await page.keyboard.press('Escape');
   await page.locator('#f-pais').selectOption('Brasil');
   const brazil = legacy.filter(item => item.pais === 'Brasil');

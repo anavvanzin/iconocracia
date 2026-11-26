@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "source": "IURIS_VISIO_Vault · VINCULOS_DE_PESQUISA.md",
+  "epistemic_note_pt": "Vínculos de pesquisa em andamento: registram explicitamente a fronteira entre o que está documentado nas fontes, a interpretação autoral, os limites críticos, as objeções alternativas e a próxima verificação arquivística.",
+  "epistemic_note_en": "Working research links: they explicitly record the boundary between what is documented in primary sources, authorial interpretation, critical limits, alternative objections, and the next archival verification step.",
+  "links": [
+    {
+      "id": "VL-01",
+      "status": "revisao",
+      "status_label_pt": "Em revisão",
+      "status_label_en": "Under review",
+      "relation": "APOIO",
+      "relation_label_pt": "Apoio empírico",
+      "relation_label_en": "Empirical support",
+      "title_pt": "Sublimação estética como suporte material da petrificação soberana",
+      "title_en": "Aesthetic sublimation as material support for sovereign petrification",
+      "corpus_item_id": "FR-CERES-5F-1849",
+      "ponta_a": {
+        "source_pt": "Diário de Campo · Moeda francesa Ceres (1849) — Painel I, §2",
+        "source_en": "Field Diary · French Ceres Coin (1849) — Panel I, §2",
+        "excerpt_pt": "Cunhagem de perfil clássico de 1849. O colo da deusa é cortado por um bisel simétrico, desprovido de sensualidade física. Cabelos assemelham-se a ramagens rígidas de parreira geométrica.",
+        "excerpt_en": "1849 classical profile coinage. The goddess's neck is cut by a symmetrical bevel, stripped of physical sensuality. Hair resembles rigid geometric vine branches."
+      },
+      "ponta_b": {
+        "source_pt": "Roteiro da Tese · Marco II: Petrificação da Marianne e dessexualização",
+        "source_en": "Thesis Tracker · Milestone II: Petrification of Marianne and desexualization",
+        "excerpt_pt": "O Capítulo II formula a hipótese de que a feminilidade de Estado opera expropriando a carne viva da cidadã para erigir a pedra heráldica cívica, dessexualizando o pertencimento nacional.",
+        "excerpt_en": "Chapter II formulates the hypothesis that State Femininity operates by expropriating the living flesh of the female citizen to erect civic heraldic stone, desexualizing national belonging."
+      },
+      "documentado_pt": "Em A: o bisel geométrico e a ausência de drapejado sensual na matriz metálica de 1849. Em B: a proposição teórica de Pierre Legendre sobre a expropriação da carne pelo Estado.",
+      "documentado_en": "In A: the geometric bevel and absence of sensual drapery in the 1849 metallic matrix. In B: Pierre Legendre's theoretical proposition on the State's expropriation of flesh.",
+      "interpretacao_pt": "Interpreta-se a rigidez da gravura numismática não como mera inabilidade do cunhador, mas como índice material da dessexualização litúrgica exigida pela República Francesa pós-1848.",
+      "interpretacao_en": "The rigidity of the numismatic engraving is read not as mere technical limitation of the die-cutter, but as a material index of the liturgical desexualization demanded by the post-1848 French Republic.",
+      "ganho_pt": "Mostra como o corte reto do bisel na moeda de 1849 oferece um indício empírico observável para a hipótese de dessexualização formulada no Capítulo II.",
+      "ganho_en": "Shows how the straight bevel cut on the 1849 coin offers an observable empirical clue for the desexualization hypothesis formulated in Chapter II.",
+      "limite_pt": "A correspondência visual e formal não comprova que os gravadores da Casa da Moeda de Paris leram teorias de dessexualização; trata-se de mimese discursiva institucional e não de intenção subjetiva deliberada [VERIFICAR registros da comissão de cunhagem de 1848–1849].",
+      "limite_en": "Visual and formal correspondence does not prove that Paris Mint engravers read theories of desexualization; it points to institutional discursive mimesis rather than deliberate subjective intent [VERIFY 1848–1849 coinage commission records].",
+      "objecao_pt": "A rigidez dos cabelos e do bisel pode decorrer de limitações técnicas do maquinário de prensa a vapor recém-adotado na década de 1840, e não de imperativo ideológico republicano.",
+      "objecao_en": "The rigidity of hair and bevel could stem from technical constraints of newly adopted steam-press machinery in the 1840s rather than republican ideological imperative.",
+      "verificacao_pt": "Consultar os cadernos técnicos de gravura da Monnaie de Paris (1848–1850) para verificar se moedas alegóricas masculinas sofriam a mesma simplificação geométrica [VERIFICAR].",
+      "verificacao_en": "Consult technical engraving ledgers of the Monnaie de Paris (1848–1850) to check whether male allegorical coins underwent the same geometric simplification [VERIFY]."
+    },
+    {
+      "id": "VL-02",
+      "status": "registrado",
+      "status_label_pt": "Registrado",
+      "status_label_en": "Recorded",
+      "relation": "EXPLICACAO_ATRIBUTO",
+      "relation_label_pt": "Explicação de atributo",
+      "relation_label_en": "Attribute explanation",
+      "title_pt": "Circulação burocrática do selo como ratificação micropolítica do contrato sexual",
+      "title_en": "Bureaucratic circulation of the stamp as micropolitical ratification of the sexual contract",
+      "corpus_item_id": "FR-SEM-SELO-1903",
+      "ponta_a": {
+        "source_pt": "Diário de Campo · Fichamento Carole Pateman, pp. 78–83 [Contrato Sexual]",
+        "source_en": "Field Diary · Carole Pateman Reading Notes, pp. 78–83 [Sexual Contract]",
+        "excerpt_pt": "Carole Pateman demonstra que a gênese da sociedade civil moderna não se ergue sobre um contrato social neutro, mas sobre um contrato sexual prévio que relega o corpo feminino à esfera pré-política.",
+        "excerpt_en": "Carole Pateman demonstrates that modern civil society is not erected upon a neutral social contract, but upon a prior sexual contract that relegates the female body to the pre-political sphere."
+      },
+      "ponta_b": {
+        "source_pt": "Roteiro da Tese · Lampejo Epistemológico #4 [Capítulo III]",
+        "source_en": "Thesis Tracker · Epistemological Note #4 [Chapter III]",
+        "excerpt_pt": "O selo postal republicano circulava cotidianamente em correspondências comerciais e atos civis, disseminando a imagem feminina purificada como selo fiscal de autoridade.",
+        "excerpt_en": "The republican postage stamp circulated daily across commercial correspondence and civil acts, disseminating the purified female image as a fiscal seal of authority."
+      },
+      "documentado_pt": "Em A: a conceituação teórica de Pateman sobre o contrato sexual como pacto fraterno entre homens livres. Em B: a materialidade cotidiana do selo postal como estampilha fiscal que autentica transações civis.",
+      "documentado_en": "In A: Pateman's theoretical account of the sexual contract as a fraternal pact among free men. In B: the everyday materiality of the postage stamp as a fiscal mark authenticating civil transactions.",
+      "interpretacao_pt": "Sugere-se que a circulação do selo postal atua como pedagogia visual cotidiana do contrato sexual, em que a efígie feminina valida a troca contratual entre cidadãos masculinos.",
+      "interpretacao_en": "It is suggested that postage stamp circulation operates as an everyday visual pedagogy of the sexual contract, in which the female effigy validates contractual exchange among male citizens.",
+      "ganho_pt": "Permite interrogar em que medida a aposição do selo postal feminino em contratos privados e cartas comerciais materializa a «ordem fraterna» descrita por Pateman.",
+      "ganho_en": "Allows asking to what extent affixing the female postage stamp to private contracts and commercial letters materializes the 'fraternal order' described by Pateman.",
+      "limite_pt": "O uso prático de selos postais envolvia população heterogênea; a circulação não atesta recepção ideológica uniforme sem estudos de história da leitura epistolar [VERIFICAR].",
+      "limite_en": "Practical use of postage stamps involved a heterogeneous public; circulation alone does not attest uniform ideological reception without studies in epistolary reading history [VERIFY].",
+      "objecao_pt": "O selo era manuseado primariamente como taxa tarifária de transporte postal sem atenção consciente à efígie estampada.",
+      "objecao_en": "The stamp was handled primarily as a postal tariff token without conscious attention to the printed effigy.",
+      "verificacao_pt": "Examinar relatórios do Ministério da Viação e Obras Públicas do Brasil (1890–1895) sobre a escolha do motivo da República para selos ordinários [VERIFICAR].",
+      "verificacao_en": "Examine reports of Brazil's Ministry of Transport and Public Works (1890–1895) regarding the choice of the Republic motif for ordinary postage stamps [VERIFY]."
+    },
+    {
+      "id": "VL-03",
+      "status": "registrado",
+      "status_label_pt": "Registrado",
+      "status_label_en": "Recorded",
+      "relation": "APOIO",
+      "relation_label_pt": "Apoio empírico",
+      "relation_label_en": "Empirical support",
+      "title_pt": "Purificação clássica como instrumento do Contrato Racial Visual",
+      "title_en": "Classical purification as an instrument of the Visual Racial Contract",
+      "ponta_a": {
+        "source_pt": "Diário de Campo · Contraste entre alegoria indígena e branquitude neoclássica — Painel III, §4",
+        "source_en": "Field Diary · Contrast between indigenous allegory and neoclassical whiteness — Panel III, §4",
+        "excerpt_pt": "O selo comemorativo de 1900 ostenta uma figura feminina alada de traços helênicos purificados sobre fundo de caravelas, sem menção corpórea ou iconográfica às mulheres indígenas ou negras que compunham a população real brasileira.",
+        "excerpt_en": "The 1900 commemorative stamp displays a winged female figure with purified Hellenic features against caravels, with no corporeal or iconographic mention of the Indigenous or Black women who composed Brazil's actual population."
+      },
+      "ponta_b": {
+        "source_pt": "Roteiro da Tese · Interlocução Charles Mills & Carole Pateman",
+        "source_en": "Thesis Tracker · Charles Mills & Carole Pateman Dialogue",
+        "excerpt_pt": "A tese investiga como a feminilidade de Estado neoclássica no Brasil opera simultaneamente como Contrato Racial Visual, branqueando a soberania sob a máscara do helenismo universal.",
+        "excerpt_en": "The dissertation investigates how neoclassical State Femininity in Brazil operates simultaneously as a Visual Racial Contract, whitening sovereignty beneath the mask of universal Hellenism."
+      },
+      "documentado_pt": "Em A: ausência iconográfica estrita de elementos etnográficos afro-ameríndios no selo comemorativo do IV Centenário (1900). Em B: o arcabouço conceitual do Contrato Racial de Charles Mills.",
+      "documentado_en": "In A: strict iconographic absence of Afro-Amerindian ethnographic elements on the 1900 Fourth Centenary commemorative stamp. In B: Charles Mills's conceptual framework of the Racial Contract.",
+      "interpretacao_pt": "A adoção dos cânones gregos de beleza no selo brasileiro não se reduz a gosto estilístico internacional, mas articula-se a um projeto de branqueamento visual da identidade jurídica estatal.",
+      "interpretacao_en": "The adoption of Greek canons of beauty on the Brazilian stamp is not reducible to international stylistic taste, but articulates with a visual whitening project of state legal identity.",
+      "ganho_pt": "Indica como a ausência sistemática de traços não-brancos nas efígies republicanas permite testar empiricamente o Contrato Racial Visual na cultura jurídica brasileira.",
+      "ganho_en": "Indicates how the systematic absence of non-white features in republican effigies enables empirically testing the Visual Racial Contract in Brazilian legal culture.",
+      "limite_pt": "A ausência iconográfica isolada em uma peça não comprova política de Estado oficial unificada sem confronto com as atas da comissão organizadora das festas do IV Centenário [VERIFICAR].",
+      "limite_en": "Isolated iconographic absence in a single piece does not prove a unified official state policy without cross-checking the minutes of the Fourth Centenary organizing committee [VERIFY].",
+      "objecao_pt": "A estética helênica era padrão difundido na União Postal Universal (UPU) e adotado por gravadores europeus contratados por diversos países membros.",
+      "objecao_en": "Hellenic aesthetics were a widespread standard within the Universal Postal Union (UPU) adopted by European engravers commissioned by multiple member states.",
+      "verificacao_pt": "Checar as atas da União Postal Universal em Berna (1897–1900) e os contratos de encomenda da Casa da Moeda do Rio de Janeiro [VERIFICAR].",
+      "verificacao_en": "Check Universal Postal Union minutes in Bern (1897–1900) and commissioning contracts of the Rio de Janeiro Mint [VERIFY]."
+    }
+  ]
+}
