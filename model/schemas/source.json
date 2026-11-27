@@ -1,0 +1,259 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://iconocracia.com/schemas/source.json",
+  "title": "Source",
+  "description": "Bibliographic source record following ABNT NBR 6023:2025 standards. Used to document and verify Object records.",
+  "type": "object",
+  "required": [
+    "id",
+    "source_type",
+    "title",
+    "date",
+    "verification"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for this source record.",
+      "minLength": 1,
+      "examples": ["SRC-BR-RJANRIO-16", "SRC-BR-CMB-001"]
+    },
+    "source_type": {
+      "type": "string",
+      "description": "Type of bibliographic source.",
+      "enum": [
+        "archival_document",
+        "catalogue_record",
+        "book",
+        "chapter",
+        "article",
+        "periodical",
+        "legislation",
+        "jurisprudence",
+        "web_page",
+        "thesis",
+        "report",
+        "interview",
+        "conference_paper",
+        "other"
+      ]
+    },
+    "authors": {
+      "type": "array",
+      "description": "Authors or creators of the source.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Full name of the author.",
+            "minLength": 1
+          },
+          "surname": {
+            "type": "string",
+            "description": "Surname for sorting."
+          },
+          "role": {
+            "type": "string",
+            "description": "Role of the author (author, editor, compiler, etc.)."
+          },
+          "institutional": {
+            "type": "boolean",
+            "description": "Whether this is an institutional author.",
+            "default": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "institutional_author": {
+      "type": "string",
+      "description": "Institutional author name (alternative to authors array)."
+    },
+    "title": {
+      "type": "string",
+      "description": "Title of the source.",
+      "minLength": 1
+    },
+    "subtitle": {
+      "type": "string",
+      "description": "Subtitle of the source."
+    },
+    "edition": {
+      "type": "string",
+      "description": "Edition information (e.g., 1st ed., 2nd ed.)."
+    },
+    "place": {
+      "type": "string",
+      "description": "Place of publication."
+    },
+    "publisher": {
+      "type": "string",
+      "description": "Publisher name."
+    },
+    "date": {
+      "type": "string",
+      "description": "Publication date. Can be a year, year range, or full date.",
+      "minLength": 1
+    },
+    "date_year": {
+      "type": "integer",
+      "description": "Publication year as integer for sorting.",
+      "minimum": 1800,
+      "maximum": 2100
+    },
+    "periodical": {
+      "type": "string",
+      "description": "Name of the periodical for journal articles."
+    },
+    "volume": {
+      "type": "string",
+      "description": "Volume number."
+    },
+    "number": {
+      "type": "string",
+      "description": "Issue number."
+    },
+    "pages": {
+      "type": "string",
+      "description": "Page range (e.g., 15-25, 145-167)."
+    },
+    "e_locator": {
+      "type": "string",
+      "description": "Electronic locator (ABNT NBR 6023:2025) - specific location within electronic source."
+    },
+    "doi": {
+      "type": "string",
+      "description": "Digital Object Identifier.",
+      "pattern": "^10\\..+/[a-zA-Z0-9\\._-]+$"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the source."
+    },
+    "accessed_on": {
+      "type": "string",
+      "format": "date",
+      "description": "Date when the source was accessed (YYYY-MM-DD)."
+    },
+    "isbn": {
+      "type": "string",
+      "description": "International Standard Book Number.",
+      "pattern": "^(978|979)-?[0-9]{1,5}-?[0-9]{1,7}-?[0-9]{1,7}-?[0-9Xx]$"
+    },
+    "issn": {
+      "type": "string",
+      "description": "International Standard Serial Number.",
+      "pattern": "^[0-9]{4}-?[0-9]{3}[0-9Xx]$"
+    },
+    "repository": {
+      "type": "string",
+      "description": "Archive or repository name for archival documents."
+    },
+    "fonds": {
+      "type": "string",
+      "description": "Fonds identifier in archival collections."
+    },
+    "call_number": {
+      "type": "string",
+      "description": "Call number or shelf mark (e.g., BR RJANRIO 16, BR RJMRAHI MP-DI-001)."
+    },
+    "series": {
+      "type": "string",
+      "description": "Series name for archival documents."
+    },
+    "box": {
+      "type": "string",
+      "description": "Box number in archival collections."
+    },
+    "folder": {
+      "type": "string",
+      "description": "Folder identifier."
+    },
+    "document_number": {
+      "type": "string",
+      "description": "Document number within fonds."
+    },
+    "court": {
+      "type": "string",
+      "description": "Court name for jurisprudence sources."
+    },
+    "case_number": {
+      "type": "string",
+      "description": "Case identifier."
+    },
+    "relator": {
+      "type": "string",
+      "description": "Reporting judge for jurisprudence."
+    },
+    "judged_on": {
+      "type": "string",
+      "format": "date",
+      "description": "Date when the judgment was issued (YYYY-MM-DD)."
+    },
+    "legislation_type": {
+      "type": "string",
+      "description": "Type of legislation for legislation sources.",
+      "enum": ["constitution", "law", "decree", "decree-law", "provisional-measure", "ordinance", "resolution", "other"]
+    },
+    "legislation_number": {
+      "type": "string",
+      "description": "Legislation number (e.g., 181 for Decree 181/1890)."
+    },
+    "legislation_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of legislation (YYYY-MM-DD)."
+    },
+    "citation_abnt": {
+      "type": "string",
+      "description": "Generated ABNT NBR 6023:2025 citation. Should be generated deterministically from structured fields."
+    },
+    "citation_abnt_generated": {
+      "type": "boolean",
+      "description": "Whether citation_abnt was generated from structured fields (true) or is a legacy placeholder (false).",
+      "default": false
+    },
+    "verification": {
+      "type": "string",
+      "description": "Verification status of this source.",
+      "enum": ["checked_original", "secondary_source", "unverified", "placeholder"]
+    },
+    "verification_note": {
+      "type": "string",
+      "description": "Note explaining the verification status."
+    },
+    "language": {
+      "type": "string",
+      "description": "Language of the source.",
+      "enum": ["pt-BR", "pt-PT", "en", "fr", "es", "de", "it", "la", "other"]
+    },
+    "abstract": {
+      "type": "string",
+      "description": "Abstract or summary of the source."
+    },
+    "keywords": {
+      "type": "array",
+      "description": "Keywords or tags for the source.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string",
+      "description": "Internal editorial notes."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this source record was created."
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this source record was last updated."
+    }
+  },
+  "additionalProperties": false
+}

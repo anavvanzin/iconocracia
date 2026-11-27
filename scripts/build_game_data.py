@@ -104,7 +104,7 @@ REGIME_PT = {
 NOTA_ESCOPO_ICONE = {
     "BR-009": (
         "Fora do recorte de 1822–1922: a escultura é de 1961 e foi atacada em "
-        "8 de janeiro de 2023. Entra no jogo como ícone — a âncora de iconoclastia "
+        "8 de janeiro de 2023. Entra no jogo como ícone e âncora de iconoclastia "
         "do acervo."
     ),
 }

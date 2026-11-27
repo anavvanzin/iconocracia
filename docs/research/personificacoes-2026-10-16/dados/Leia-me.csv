@@ -1,0 +1,19 @@
+﻿Campo,Definição / regra
+Data,2026-10-16
+Fonte dataset,https://docs.google.com/spreadsheets/d/1e_DTrwHEm3DCkyvK5xuwifmkE0e3MbN-7TJFVXblo1s/edit
+Fonte relatório,https://docs.google.com/document/d/1QmTjMn8FM02IyU15tYbk2brsSH_CcxHE0f33eFMjw_A/edit
+Unidade,"Uma linha original por rótulo territorial. Não equivale a uma imagem, figura única ou Estado."
+Cobertura,51 linhas examinadas; identificação externa parcial. Pendência documental não significa registro falso.
+Originais,"As três abas-fonte preservadas como valores, sem alteração. Formatação e histórico nativos não foram arquivados."
+Revisados,Mesmo total de 51 linhas. Campos originais de tipo/animal preservados. Alterações cronológicas qualificadas; propostas e cenários em campos adicionais.
+Animal,"Preenchimento ≠ coocorrência visual. Travessão = não informado, nunca ausência demonstrada."
+Tipo cenário mínimo,"Apenas Portugal é recodificado de Epônima clássica para Alegoria republicana. Todos os outros tipos ficam originais, inclusive os problemáticos. Não é distribuição historicamente validada."
+Geografia,M49 é cenário explícito. Armenia e Georgia passam à Ásia; referente da linha UE passa a continente Europa.
+Subconjunto estatal,"48 linhas com etiqueta de um único Estado: exclui UE/continente, Veneza e Coreias agregadas. Não implica validação iconográfica dessas 48."
+Classificação,"Separar nome/origem nominal, função maternal/sacrificial/guerreira, referente territorial, regime, suporte e data por objeto. Não impor classes mutuamente exclusivas."
+Relações animais,"Criar tabela por objeto com animal, papel (atributo/agressor/montaria/metamorfose/símbolo paralelo), evidência e fonte."
+Cronologia,"Separar tempo do mito, primeira atestação, produção do objeto, evento comemorado e apropriação nacional."
+Corpus ICONOCRACIA,"Nenhuma incorporação. Exigir objeto identificável, proveniência, data, suporte, vínculo com autoridade jurídica e adequação ao recorte metodológico vigente."
+Limites de fontes,Resultados de busca e metadados não equivalem a leitura integral. Alguns editores bloquearam acesso. Diagnósticos bibliográficos parciais estão marcados.
+Reprodutibilidade,Contagens e tabelas calculadas em recalcular.py sobre inputs.json. As fórmulas do Resumo também recalculam contagens originais.
+Checksum SHA-256 inputs.json,666ed776cde889e91eed0b0408910dbb004b825fdee905d9635b100fe580827f

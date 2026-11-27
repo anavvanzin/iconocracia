@@ -1,0 +1,195 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://iconocracia.com/schemas/constellation.json",
+  "title": "Constellation",
+  "description": "Warburgian constellation - an authored montage of objects organized around a research question rather than linear chronology. Represents visual, historical, and conceptual connections.",
+  "type": "object",
+  "required": [
+    "slug",
+    "title",
+    "question",
+    "members",
+    "editorial_status"
+  ],
+  "properties": {
+    "slug": {
+      "type": "string",
+      "description": "URL-friendly slug for the constellation (e.g., columbia-dois-chamados).",
+      "minLength": 1,
+      "pattern": "^[a-z0-9][a-z0-9-]*$",
+      "examples": ["columbia-dois-chamados", "hystera-matriz-casa-da-moeda"]
+    },
+    "title": {
+      "type": "string",
+      "description": "Display title of the constellation.",
+      "minLength": 1
+    },
+    "subtitle": {
+      "type": "string",
+      "description": "Subtitle providing additional context."
+    },
+    "question": {
+      "type": "string",
+      "description": "The central research question the constellation addresses.",
+      "minLength": 10
+    },
+    "ghosted_formula": {
+      "type": "string",
+      "description": "Evocative phrase or formula that captures the constellation's insight.",
+      "examples": ["A espada vem antes da reivindicação — e volta depois dela."]
+    },
+    "members": {
+      "type": "array",
+      "description": "Ordered list of objects in the constellation with their roles.",
+      "items": {
+        "type": "object",
+        "required": ["object_id", "role_label"],
+        "properties": {
+          "object_id": {
+            "type": "string",
+            "description": "Reference to an Object entity.",
+            "minLength": 1
+          },
+          "role_label": {
+            "type": "string",
+            "description": "Label describing the role of this object in the constellation.",
+            "minLength": 1
+          },
+          "caption": {
+            "type": "string",
+            "description": "Caption for this object within the constellation."
+          },
+          "alt_override": {
+            "type": "string",
+            "description": "Alternative alt text specific to this constellation context."
+          },
+          "position": {
+            "type": "object",
+            "description": "Visual position in the constellation layout.",
+            "properties": {
+              "x": {
+                "type": "number",
+                "description": "X coordinate (0-100)."
+              },
+              "y": {
+                "type": "number",
+                "description": "Y coordinate (0-100)."
+              },
+              "rotation": {
+                "type": "number",
+                "description": "Rotation in degrees.",
+                "minimum": 0,
+                "maximum": 360
+              },
+              "scale": {
+                "type": "number",
+                "description": "Scale factor.",
+                "minimum": 0.1,
+                "maximum": 5
+              }
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 2
+    },
+    "links": {
+      "type": "array",
+      "description": "Connections between objects in the constellation.",
+      "items": {
+        "type": "object",
+        "required": ["from_object_id", "to_object_id", "basis", "rationale"],
+        "properties": {
+          "from_object_id": {
+            "type": "string",
+            "description": "Source object ID.",
+            "minLength": 1
+          },
+          "to_object_id": {
+            "type": "string",
+            "description": "Target object ID.",
+            "minLength": 1
+          },
+          "basis": {
+            "type": "string",
+            "description": "Basis for the connection.",
+            "enum": ["visual", "historical", "conceptual", "formal", "iconographic", "material"]
+          },
+          "rationale": {
+            "type": "string",
+            "description": "Explanation of why these objects are connected.",
+            "minLength": 10
+          },
+          "evidence_sources": {
+            "type": "array",
+            "description": "Source IDs supporting this connection.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "bidirectional": {
+            "type": "boolean",
+            "description": "Whether the connection is bidirectional.",
+            "default": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "reading_claims": {
+      "type": "array",
+      "description": "Claim IDs that provide the interpretive reading of this constellation.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "method_note": {
+      "type": "string",
+      "description": "Explicit statement of methodological limits, non-demonstrated causal links, and constraints.",
+      "minLength": 10
+    },
+    "editorial_status": {
+      "type": "string",
+      "description": "Current editorial status.",
+      "enum": ["draft", "review", "published", "withdrawn"],
+      "default": "draft"
+    },
+    "concepts": {
+      "type": "array",
+      "description": "Concept IDs associated with this constellation.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "strands": {
+      "type": "array",
+      "description": "Strand IDs this constellation belongs to.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "description": "Tags for categorizing constellations.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string",
+      "description": "Internal editorial notes."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this constellation was created."
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this constellation was last updated."
+    }
+  },
+  "additionalProperties": false
+}

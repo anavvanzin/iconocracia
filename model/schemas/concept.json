@@ -1,0 +1,129 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://iconocracia.com/schemas/concept.json",
+  "title": "Concept",
+  "description": "Critical concept in the Counter-Archive knowledge base. Defines the proprietary vocabulary and Counter-Archive notations that expand upon standard Iconclass.",
+  "type": "object",
+  "required": [
+    "id",
+    "term",
+    "definition",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier using kebab-case (e.g., contrato-sexual-visual, feminilidade-de-estado).",
+      "minLength": 1,
+      "pattern": "^[a-z][a-z0-9-]*$",
+      "examples": ["contrato-sexual-visual", "feminilidade-de-estado", "purificacao-classica"]
+    },
+    "term": {
+      "type": "string",
+      "description": "Display term for the concept.",
+      "minLength": 1,
+      "examples": ["Contrato Sexual Visual", "Feminilidade de Estado", "Purificação Clássica"]
+    },
+    "term_pt": {
+      "type": "string",
+      "description": "Portuguese term if different from primary term."
+    },
+    "definition": {
+      "type": "string",
+      "description": "Authored definition of the concept. Must be human-authored, not machine-generated.",
+      "minLength": 20
+    },
+    "short_definition": {
+      "type": "string",
+      "description": "Brief one-sentence definition for tooltips and summaries."
+    },
+    "status": {
+      "type": "string",
+      "description": "Current status of this concept in the knowledge base.",
+      "enum": ["core", "working", "retired", "deprecated"],
+      "default": "working"
+    },
+    "provisional_thesis_title": {
+      "type": "boolean",
+      "description": "Whether this concept represents a provisional thesis title proposal.",
+      "default": false
+    },
+    "iconclass_target": {
+      "type": "string",
+      "description": "Standard Iconclass code this concept deconstructs or expands.",
+      "pattern": "^[0-9]{2}[A-Z][0-9]{0,4}$"
+    },
+    "counter_notation": {
+      "type": "string",
+      "description": "Counter-Archive notation (e.g., 31AA::CSV, 44G0::FE, 48C24::PC).",
+      "pattern": "^[0-9]{2}[A-Z][0-9]*::[A-Z]{2,4}$"
+    },
+    "counter_notation_prefix": {
+      "type": "string",
+      "description": "Counter-Archive notation prefix without the Iconclass part (e.g., ANIMA.CSV, ANIMA.FE)."
+    },
+    "interlocutors": {
+      "type": "array",
+      "description": "Scholarly interlocutors and theoretical references.",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "related_concepts": {
+      "type": "array",
+      "description": "IDs of related concepts.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "description": "Source IDs that support or define this concept.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "strands": {
+      "type": "array",
+      "description": "Strand IDs this concept is associated with.",
+      "items": {
+        "type": "string",
+        "enum": ["atlas-global", "brasil-1822-1922"]
+      }
+    },
+    "genealogy": {
+      "type": "string",
+      "description": "Historical or theoretical genealogy of the concept."
+    },
+    "examples": {
+      "type": "array",
+      "description": "Example Object IDs that exemplify this concept.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "description": "Tags for categorizing concepts.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string",
+      "description": "Internal editorial notes."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this concept was created."
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this concept was last updated."
+    }
+  },
+  "additionalProperties": false
+}
